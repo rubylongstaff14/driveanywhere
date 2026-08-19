@@ -570,6 +570,9 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
   const isEgypt       = route.slug === "egypt-pyramids";
   const isDubai       = route.slug === "dubai-marina-circuit";
   const isNewYork     = route.slug === "new-york-harbor-circuit";
+  const isTokyo       = route.slug === "tokyo-drift-circuit";
+  const isAlps        = route.slug === "alps-mountain-pass";
+  const isRio         = route.slug === "rio-coast-circuit";
 
   // River sits east of the loop (high-x side) for Westminster and Embankment
   const riverCX = bounds.maxX + 60;
@@ -748,7 +751,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]}>
           <planeGeometry args={[w, d]} />
           <meshStandardMaterial
-            color={isEgypt ? "#c4a06a" : isDubai ? "#c2a878" : isNewYork ? "#6a7580" : "#7a848e"}
+            color={isEgypt ? "#c4a06a" : isDubai ? "#c2a878" : isNewYork ? "#6a7580" : isAlps ? "#4a6b3a" : isRio ? "#5a8a5a" : isTokyo ? "#3a3a44" : "#7a848e"}
             roughness={1}
           />
         </mesh>
@@ -1452,6 +1455,106 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             width={110}
             depth={90}
           />
+        </>
+      )}
+
+      {/* --- Alps Mountain Pass --- */}
+      {isAlps && (
+        <>
+          {/* Mountain peaks surrounding the circuit */}
+          {[
+            [bounds.minX - 200, bounds.minZ - 180, 140, 85],
+            [bounds.maxX + 250, bounds.minZ - 120, 180, 110],
+            [bounds.minX - 280, bounds.maxZ + 150, 160, 95],
+            [bounds.maxX + 300, bounds.maxZ + 200, 200, 130],
+            [bounds.minX - 150, gcz, 120, 75],
+            [bounds.maxX + 350, gcz - 60, 170, 105],
+            [gcx - 100, bounds.minZ - 280, 190, 120],
+            [gcx + 80, bounds.maxZ + 280, 150, 90],
+          ].map(([x, z, r, h], i) => (
+            <mesh key={`mtn-${i}`} position={[x, 0, z]} rotation={[0, i * 1.1, 0]} castShadow={quality.shadows}>
+              <coneGeometry args={[r, h, 6]} />
+              <meshStandardMaterial color={i % 2 === 0 ? "#6b7b6a" : "#5a6a58"} roughness={0.95} flatShading />
+            </mesh>
+          ))}
+          {/* Snow caps on the larger peaks */}
+          {[
+            [bounds.minX - 200, bounds.minZ - 180, 50, 20, 85],
+            [bounds.maxX + 250, bounds.minZ - 120, 65, 25, 110],
+            [bounds.maxX + 300, bounds.maxZ + 200, 72, 30, 130],
+            [bounds.maxX + 350, gcz - 60, 60, 24, 105],
+            [gcx - 100, bounds.minZ - 280, 68, 28, 120],
+          ].map(([x, z, r, h, baseH], i) => (
+            <mesh key={`snow-${i}`} position={[x, baseH * 0.65, z]} rotation={[0, i * 1.1, 0]}>
+              <coneGeometry args={[r * 0.45, h, 6]} />
+              <meshStandardMaterial color="#f0f4f8" roughness={0.8} flatShading />
+            </mesh>
+          ))}
+          {/* Pine trees along the roadside */}
+          {Array.from({ length: 40 }, (_, i) => {
+            const s = samples[Math.floor((i / 40) * samples.length)];
+            if (!s) return null;
+            const side = i % 2 === 0 ? 1 : -1;
+            const offset = 18 + (i % 5) * 4;
+            return (
+              <mesh key={`pine-${i}`} position={[s.position.x + s.normal.x * side * offset, 0, s.position.z + s.normal.z * side * offset]}>
+                <coneGeometry args={[2.5, 12, 5]} />
+                <meshStandardMaterial color="#2d5a27" roughness={0.9} flatShading />
+              </mesh>
+            );
+          })}
+        </>
+      )}
+
+      {/* --- Tokyo Drift Circuit --- */}
+      {isTokyo && (
+        <>
+          {/* Neon glow panels on buildings (simulated with emissive boxes) */}
+          {[
+            [bounds.minX + 40, 18, bounds.minZ + 30, "#ff00ff"],
+            [bounds.maxX - 30, 22, bounds.minZ + 80, "#00ffff"],
+            [bounds.minX + 80, 15, bounds.maxZ - 40, "#ff3366"],
+            [bounds.maxX - 60, 20, bounds.maxZ - 80, "#6633ff"],
+            [gcx + 30, 25, gcz - 40, "#ff6600"],
+            [gcx - 50, 16, gcz + 60, "#00ff66"],
+          ].map(([x, y, z, color], i) => (
+            <mesh key={`neon-${i}`} position={[x as number, y as number, z as number]}>
+              <boxGeometry args={[8, 3, 0.3]} />
+              <meshStandardMaterial color={color as string} emissive={color as string} emissiveIntensity={2} toneMapped={false} />
+            </mesh>
+          ))}
+        </>
+      )}
+
+      {/* --- Rio Coast Circuit --- */}
+      {isRio && (
+        <>
+          {/* Ocean on the east side */}
+          <ThamesRiver
+            cx={bounds.maxX + 120}
+            cz={gcz}
+            length={bounds.maxZ - bounds.minZ + 200}
+            width={300}
+          />
+          {/* Beach strip */}
+          <mesh position={[bounds.maxX + 20, 0.03, gcz]} rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[60, bounds.maxZ - bounds.minZ + 120]} />
+            <meshStandardMaterial color="#e8d5a0" roughness={1} />
+          </mesh>
+          {/* Sugarloaf mountain */}
+          <mesh position={[bounds.maxX + 180, 0, bounds.minZ - 60]} castShadow={quality.shadows}>
+            <coneGeometry args={[45, 70, 8]} />
+            <meshStandardMaterial color="#4a6848" roughness={0.9} flatShading />
+          </mesh>
+          {/* Corcovado hill */}
+          <mesh position={[bounds.minX - 100, 0, gcz - 80]} castShadow={quality.shadows}>
+            <coneGeometry args={[55, 55, 7]} />
+            <meshStandardMaterial color="#3d5c3a" roughness={0.9} flatShading />
+          </mesh>
+          {/* Palm trees along coast */}
+          {[-150, -90, -30, 30, 90, 150].map((dz, i) => (
+            <PalmTree key={`rio-palm-${i}`} position={[bounds.maxX + 8, 0, gcz + dz]} scale={0.85 + (i % 3) * 0.1} />
+          ))}
         </>
       )}
 

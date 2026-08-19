@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="Alps Mountain Pass route preview">
+  <defs>
+    <linearGradient id="skyAlps" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a8abe"/>
+      <stop offset="100%" stop-color="#a8d4f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#skyAlps)"/>
+  <rect y="500" width="1280" height="300" fill="#3a6830"/>
+  <polygon points="100,500 250,180 400,500" fill="#5a7058"/>
+  <polygon points="200,500 380,120 560,500" fill="#4a6048"/>
+  <polygon points="500,500 700,100 900,500" fill="#5a7058"/>
+  <polygon points="800,500 950,160 1100,500" fill="#4a6048"/>
+  <polygon points="1000,500 1150,140 1280,500" fill="#5a7058"/>
+  <polygon points="200,220 250,180 300,220" fill="#f0f4f8"/>
+  <polygon points="340,170 380,120 420,170" fill="#f0f4f8"/>
+  <polygon points="650,150 700,100 750,150" fill="#f0f4f8"/>
+  <polygon points="900,200 950,160 1000,200" fill="#f0f4f8"/>
+  <polygon points="1100,190 1150,140 1200,190" fill="#f0f4f8"/>
+  <path d="M80 580 Q300 450 500 520 Q700 580 900 480 Q1100 400 1200 460" fill="none" stroke="#555" stroke-width="36"/>
+  <path d="M80 580 Q300 450 500 520 Q700 580 900 480 Q1100 400 1200 460" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="14 18"/>
+  <text x="64" y="84" fill="#2a4a2a" font-family="monospace" font-size="28">ALPS MOUNTAIN PASS</text>
+</svg>
