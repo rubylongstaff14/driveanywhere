@@ -466,11 +466,22 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
   }), [route.buildings, facades]);
 
   const visibleBuildings = useMemo(() => {
-    if (quality.sceneryDensity >= 0.7) return buildings;
-    return buildings.filter(
+    const roadClearance = 12;
+    const roadClearanceSq = roadClearance * roadClearance;
+    const filtered = buildings.filter((b) => {
+      for (let i = 0; i < samples.length; i += 4) {
+        const s = samples[i];
+        const dx = b.cx - s.position.x;
+        const dz = b.cz - s.position.z;
+        if (dx * dx + dz * dz < roadClearanceSq) return false;
+      }
+      return true;
+    });
+    if (quality.sceneryDensity >= 0.7) return filtered;
+    return filtered.filter(
       (b, i) => Boolean(b.landmark) || b.height >= 70 || i % 2 === 0,
     );
-  }, [buildings, quality.sceneryDensity]);
+  }, [buildings, samples, quality.sceneryDensity]);
 
   useEffect(
     () => () => {
@@ -692,10 +703,10 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
     const hx = kemmel.position.x;
     const hz = kemmel.position.z;
     return {
-      great: [hx + ex * 175, 0, hz + ez * 175 + 35] as [number, number, number],
-      khafre: [hx + ex * 255, 0, hz + ez * 255 + 110] as [number, number, number],
-      menkaure: [hx + ex * 300, 0, hz + ez * 300 - 50] as [number, number, number],
-      sphinx: [hx + ex * 130, 0, hz + ez * 130 - 95] as [number, number, number],
+      great: [hx + ex * 220, 0, hz + ez * 220 + 35] as [number, number, number],
+      khafre: [hx + ex * 310, 0, hz + ez * 310 + 110] as [number, number, number],
+      menkaure: [hx + ex * 360, 0, hz + ez * 360 - 50] as [number, number, number],
+      sphinx: [hx + ex * 180, 0, hz + ez * 180 - 95] as [number, number, number],
       museum: [hx - Math.abs(ex) * 160 - 40, 0, hz - 120] as [number, number, number],
       cairoTower: [bounds.minX - 160, 0, gcz] as [number, number, number],
     };

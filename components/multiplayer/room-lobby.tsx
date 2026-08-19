@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 
@@ -199,6 +199,9 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
           </div>
         )}
 
+        {/* Lobby Chat */}
+        <LobbyChat />
+
         {/* Player list */}
         <div className="rounded-xl border border-white/10 bg-ink-950 p-5">
           <h2 className="mb-3 text-xs font-medium uppercase tracking-widest text-mist">
@@ -249,6 +252,56 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function LobbyChat() {
+  const chatMessages = useMultiplayerStore((s) => s.chatMessages);
+  const sendChat = useMultiplayerStore((s) => s.sendChat);
+  const myId = useMultiplayerStore((s) => s.myId);
+  const [text, setText] = useState("");
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (listRef.current) listRef.current.scrollTop = listRef.current.scrollHeight;
+  }, [chatMessages.length]);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const trimmed = text.trim();
+    if (trimmed) sendChat(trimmed);
+    setText("");
+  }
+
+  return (
+    <div className="mb-6 rounded-xl border border-white/10 bg-ink-950 p-5">
+      <h2 className="mb-3 text-xs font-medium uppercase tracking-widest text-mist">Chat</h2>
+      <div ref={listRef} className="mb-3 h-32 overflow-y-auto space-y-0.5 rounded-lg bg-ink-975 p-2">
+        {chatMessages.length === 0 && (
+          <p className="text-xs text-white/30">No messages yet...</p>
+        )}
+        {chatMessages.map((m, i) => (
+          <div key={i} className="text-xs">
+            <span className={`font-medium ${m.playerId === myId ? "text-accent" : "text-white/70"}`}>
+              {m.playerName}:
+            </span>{" "}
+            <span className="text-white/90">{m.text}</span>
+          </div>
+        ))}
+      </div>
+      <form onSubmit={handleSubmit} className="flex gap-2">
+        <input
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          maxLength={150}
+          placeholder="Type a message..."
+          className="flex-1 rounded-lg border border-white/10 bg-ink-975 px-3 py-1.5 text-sm text-white outline-none placeholder:text-white/30 focus:border-accent"
+        />
+        <button type="submit" className="rounded-lg bg-accent px-4 py-1.5 text-xs font-medium text-white hover:bg-accent/80">
+          Send
+        </button>
+      </form>
     </div>
   );
 }

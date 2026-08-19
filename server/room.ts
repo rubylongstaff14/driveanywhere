@@ -142,7 +142,7 @@ export class Room {
   }
 
   private beginCountdown(): void {
-    let count = 3;
+    let count = 5;
     this.broadcast({ type: "countdown", value: count });
     this.countdownTimer = setInterval(() => {
       count--;
