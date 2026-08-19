@@ -45,13 +45,14 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
   }, [currentRoom, connected, router]);
 
   const raceVehicleId = useMultiplayerStore((s) => s.raceVehicleId);
+  const raceLoading = useMultiplayerStore((s) => s.raceLoading);
 
   useEffect(() => {
-    if (racing && currentRoom) {
+    if (raceLoading && currentRoom) {
       const vehicle = raceVehicleId ?? currentRoom.vehicleId ?? "sports";
       router.push(`/play/${currentRoom.map}?mode=online&roomId=${currentRoom.id}&vehicle=${vehicle}`);
     }
-  }, [racing, currentRoom, router, raceVehicleId]);
+  }, [raceLoading, currentRoom, router, raceVehicleId]);
 
   if (!currentRoom) {
     return (

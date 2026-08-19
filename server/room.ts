@@ -124,6 +124,7 @@ export class Room {
   startCountdown(): void {
     this.status = "countdown";
     for (const p of this.players) p.loaded = false;
+    this.broadcast({ type: "race_loading", map: this.map, vehicleId: this.vehicleId });
     this.broadcast({ type: "waiting_for_players", loaded: 0, total: this.players.length });
   }
 

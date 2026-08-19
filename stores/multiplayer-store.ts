@@ -27,6 +27,7 @@ interface MultiplayerState {
   results: RaceResult[] | null;
   remoteCarStates: Record<string, CarState>;
   raceVehicleId: string | null;
+  raceLoading: boolean;
   loadingProgress: { loaded: number; total: number } | null;
 
   connect: () => void;
@@ -61,6 +62,9 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
       case "room_error":
         set({ error: msg.message });
         break;
+      case "race_loading":
+        set({ raceLoading: true, raceVehicleId: msg.vehicleId });
+        break;
       case "waiting_for_players":
         set({ loadingProgress: { loaded: msg.loaded, total: msg.total } });
         break;
@@ -68,7 +72,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         set({ countdownValue: msg.value, loadingProgress: null });
         break;
       case "race_go":
-        set({ racing: true, countdownValue: null, raceStartTimestamp: msg.startTimestamp, raceVehicleId: msg.vehicleId, remoteCarStates: {} });
+        set({ racing: true, raceLoading: false, countdownValue: null, raceStartTimestamp: msg.startTimestamp, raceVehicleId: msg.vehicleId, remoteCarStates: {} });
         break;
       case "car_update":
         set((s) => ({
@@ -99,6 +103,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     results: null,
     remoteCarStates: {},
     raceVehicleId: null,
+    raceLoading: false,
     loadingProgress: null,
 
     connect: () => {
