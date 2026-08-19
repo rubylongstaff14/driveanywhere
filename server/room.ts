@@ -170,7 +170,7 @@ export class Room {
         if (!p.carState) continue;
         this.broadcast({ type: "car_update", playerId: p.id, state: p.carState }, p.id);
       }
-    }, 50); // 20Hz
+    }, 33); // 30Hz
   }
 
   playerFinished(playerId: string, timeMs: number, splits: number[]): void {

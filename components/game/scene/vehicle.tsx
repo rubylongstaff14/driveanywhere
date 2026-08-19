@@ -672,7 +672,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
     // Broadcast position to multiplayer server at ~20Hz
     if (useMultiplayerStore.getState().racing) {
       const now = performance.now();
-      if (!scratch.current.lastNetSend || now - scratch.current.lastNetSend > 50) {
+      if (!scratch.current.lastNetSend || now - scratch.current.lastNetSend > 33) {
         scratch.current.lastNetSend = now;
         const rot = body.rotation();
         sendCarState({

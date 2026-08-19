@@ -97,7 +97,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
         />
         <RouteIntroCamera route={route} samples={samples} />
         <Physics gravity={[0, -20, 0]} paused={paused} timeStep={1 / 60}>
-          <RouteWorld route={route} samples={samples} quality={quality} />
+          <RouteWorld route={route} samples={samples} quality={quality} desert={route.slug === "egypt-pyramids" || route.slug === "dubai-marina-circuit"} />
           <Vehicle route={route} samples={samples} />
         </Physics>
         {opponents.length > 0 && raceMode === "ai" ? (

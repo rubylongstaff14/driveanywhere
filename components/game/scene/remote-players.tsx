@@ -27,7 +27,7 @@ function RemoteCar({ playerId, color }: RemoteCarProps) {
     targetPos.current.set(state.x, state.y, state.z);
     targetQuat.current.set(state.qx, state.qy, state.qz, state.qw);
 
-    const rate = 1 - Math.exp(-12 * delta);
+    const rate = 1 - Math.exp(-20 * delta);
     meshRef.current.position.lerp(targetPos.current, rate);
     meshRef.current.quaternion.slerp(targetQuat.current, rate);
 

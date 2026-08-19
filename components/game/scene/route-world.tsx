@@ -375,9 +375,10 @@ interface RouteWorldProps {
   route: RouteData;
   samples: RoadSample[];
   quality: QualityConfig;
+  desert?: boolean;
 }
 
-export function RouteWorld({ route, samples, quality }: RouteWorldProps) {
+export function RouteWorld({ route, samples, quality, desert = false }: RouteWorldProps) {
   const buildingRefs = useRef<Array<THREE.Group | null>>([]);
   const cullFrame = useRef(0);
   // ---- geometry (memo to avoid recomputing every render) ----
@@ -759,11 +760,11 @@ export function RouteWorld({ route, samples, quality }: RouteWorldProps) {
           map={asphalt.color}
           roughnessMap={asphalt.roughness}
           normalMap={asphalt.normal}
-          color="#dce2e8"
+          color={desert ? "#a8aeb8" : "#dce2e8"}
           roughness={0.9}
-          metalness={0.015}
+          metalness={desert ? 0.02 : 0.015}
           normalScale={[0.28, 0.28]}
-          envMapIntensity={0.18}
+          envMapIntensity={desert ? 0.05 : 0.18}
           polygonOffset
           polygonOffsetFactor={-1}
           polygonOffsetUnits={-1}
