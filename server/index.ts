@@ -38,7 +38,7 @@ wss.on("connection", (ws) => {
     switch (msg.type) {
       case "list_rooms": {
         const list = [...rooms.values()]
-          .filter((r) => r.status === "waiting" || r.status === "results")
+          .filter((r) => r.persistent || r.status === "waiting" || r.status === "results")
           .map((r) => r.toInfo());
         sendTo(ws, { type: "rooms_list", rooms: list });
         break;
@@ -183,7 +183,11 @@ function handleLeave(ws: WebSocket): void {
   if (room.humanCount === 0 && !room.persistent) {
     room.destroy();
     rooms.delete(room.id);
-  } else if (room.humanCount > 0) {
+  } else if (room.humanCount === 0 && room.persistent) {
+    if (room.status !== "waiting") {
+      room.reset();
+    }
+  } else {
     room.broadcast({ type: "room_updated", room: room.toInfo() });
   }
 }

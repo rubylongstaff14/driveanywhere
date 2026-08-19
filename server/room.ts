@@ -218,9 +218,16 @@ export class Room {
     }, 8000);
   }
 
-  destroy(): void {
+  reset(): void {
     if (this.countdownTimer) clearInterval(this.countdownTimer);
     if (this.broadcastTimer) clearInterval(this.broadcastTimer);
+    this.countdownTimer = null;
+    this.broadcastTimer = null;
+    this.status = "waiting";
+  }
+
+  destroy(): void {
+    this.reset();
     this.broadcast({ type: "room_closed" });
   }
 }
