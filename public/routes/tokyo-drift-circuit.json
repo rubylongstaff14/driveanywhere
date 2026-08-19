@@ -1,0 +1,3291 @@
+{
+  "id": "a7c3e9f1-4b82-4d6a-9e15-3f8a2c7d0b14",
+  "slug": "tokyo-drift-circuit",
+  "name": "Tokyo Drift Circuit",
+  "description": "Neon-lit street circuit weaving through the tight blocks of Shibuya and Shinjuku — hairpins under glowing billboards, 90-degree kinks between towers, and a long Meiji-dori blast past Tokyo Metropolitan Government Building.",
+  "city": "Tokyo",
+  "country": "Japan",
+  "latitude": 35.6595,
+  "longitude": 139.7004,
+  "distanceMetres": 2480,
+  "estimatedDurationSeconds": 168,
+  "difficulty": "hard",
+  "tags": [
+    "night",
+    "neon",
+    "drift",
+    "city-streets",
+    "japan",
+    "landmarks"
+  ],
+  "thumbnail": "/images/routes/tokyo-drift-circuit.svg",
+  "startPosition": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "startRotation": 0,
+  "roadWidth": 13,
+  "checkpoints": [
+    {
+      "id": "tdc-cp-0",
+      "index": 0,
+      "position": {
+        "x": 30,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": 0,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-1",
+      "index": 1,
+      "position": {
+        "x": 120,
+        "y": 0.5,
+        "z": 0
+      },
+      "rotation": 0,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-2",
+      "index": 2,
+      "position": {
+        "x": 200,
+        "y": 1,
+        "z": 0
+      },
+      "rotation": 0,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-3",
+      "index": 3,
+      "position": {
+        "x": 200,
+        "y": 1.5,
+        "z": 100
+      },
+      "rotation": 1.5708,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-4",
+      "index": 4,
+      "position": {
+        "x": 200,
+        "y": 2,
+        "z": 200
+      },
+      "rotation": 1.5708,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-5",
+      "index": 5,
+      "position": {
+        "x": 100,
+        "y": 2.5,
+        "z": 250
+      },
+      "rotation": 3.1416,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-6",
+      "index": 6,
+      "position": {
+        "x": 0,
+        "y": 3,
+        "z": 250
+      },
+      "rotation": 3.1416,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-7",
+      "index": 7,
+      "position": {
+        "x": -100,
+        "y": 3.5,
+        "z": 250
+      },
+      "rotation": 3.1416,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-8",
+      "index": 8,
+      "position": {
+        "x": -150,
+        "y": 4,
+        "z": 200
+      },
+      "rotation": -1.5708,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-9",
+      "index": 9,
+      "position": {
+        "x": -150,
+        "y": 3,
+        "z": 100
+      },
+      "rotation": -1.5708,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-10",
+      "index": 10,
+      "position": {
+        "x": -100,
+        "y": 2,
+        "z": 50
+      },
+      "rotation": 0,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-11",
+      "index": 11,
+      "position": {
+        "x": -50,
+        "y": 1,
+        "z": 50
+      },
+      "rotation": 0,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-12",
+      "index": 12,
+      "position": {
+        "x": -50,
+        "y": 0.5,
+        "z": -20
+      },
+      "rotation": -1.5708,
+      "width": 13,
+      "required": true
+    },
+    {
+      "id": "tdc-cp-13",
+      "index": 13,
+      "position": {
+        "x": -20,
+        "y": 0,
+        "z": -20
+      },
+      "rotation": 0,
+      "width": 13,
+      "required": true
+    }
+  ],
+  "roadPoints": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 40,
+      "y": 0,
+      "z": 0,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 80,
+      "y": 0.3,
+      "z": 0,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 120,
+      "y": 0.5,
+      "z": 0,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 160,
+      "y": 0.8,
+      "z": 0,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 200,
+      "y": 1,
+      "z": 0,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 210,
+      "y": 1.1,
+      "z": 15,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 12,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 200,
+      "y": 1.2,
+      "z": 40,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 200,
+      "y": 1.3,
+      "z": 70,
+      "width": 14,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 200,
+      "y": 1.5,
+      "z": 100,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 215,
+      "y": 1.7,
+      "z": 130,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 210,
+      "y": 1.9,
+      "z": 160,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 200,
+      "y": 2,
+      "z": 200,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 185,
+      "y": 2.2,
+      "z": 225,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 12,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 160,
+      "y": 2.4,
+      "z": 240,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 120,
+      "y": 2.5,
+      "z": 250,
+      "width": 14,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 60,
+      "y": 2.8,
+      "z": 250,
+      "width": 14,
+      "banking": 0,
+      "speedRecommendation": 28,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "z": 250,
+      "width": 14,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -50,
+      "y": 3.2,
+      "z": 250,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -100,
+      "y": 3.5,
+      "z": 250,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -130,
+      "y": 3.7,
+      "z": 240,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 12,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -150,
+      "y": 3.9,
+      "z": 220,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -150,
+      "y": 4,
+      "z": 200,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -150,
+      "y": 3.7,
+      "z": 170,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -150,
+      "y": 3.3,
+      "z": 140,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -150,
+      "y": 3,
+      "z": 100,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -140,
+      "y": 2.7,
+      "z": 80,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 12,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -120,
+      "y": 2.4,
+      "z": 60,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -100,
+      "y": 2,
+      "z": 50,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -80,
+      "y": 1.8,
+      "z": 55,
+      "width": 12,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -60,
+      "y": 1.5,
+      "z": 45,
+      "width": 12,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -50,
+      "y": 1.2,
+      "z": 50,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -50,
+      "y": 1,
+      "z": 30,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 12,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -50,
+      "y": 0.8,
+      "z": 10,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -50,
+      "y": 0.5,
+      "z": -20,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -45,
+      "y": 0.3,
+      "z": -30,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 12,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -30,
+      "y": 0.2,
+      "z": -25,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -15,
+      "y": 0.1,
+      "z": -15,
+      "width": 13,
+      "banking": 0,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "width": 13,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "tdc-landmark-0",
+      "name": "Tokyo Tower",
+      "footprint": [
+        {
+          "x": 260,
+          "y": 0,
+          "z": -80
+        },
+        {
+          "x": 280,
+          "y": 0,
+          "z": -80
+        },
+        {
+          "x": 280,
+          "y": 0,
+          "z": -60
+        },
+        {
+          "x": 260,
+          "y": 0,
+          "z": -60
+        }
+      ],
+      "height": 250,
+      "baseHeight": 0,
+      "floors": 60,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "steel",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-1",
+      "name": "Shibuya 109",
+      "footprint": [
+        {
+          "x": -30,
+          "y": 0,
+          "z": -60
+        },
+        {
+          "x": -15,
+          "y": 0,
+          "z": -60
+        },
+        {
+          "x": -15,
+          "y": 0,
+          "z": -45
+        },
+        {
+          "x": -30,
+          "y": 0,
+          "z": -45
+        }
+      ],
+      "height": 40,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "modern_commercial",
+      "facadeMaterial": "glass",
+      "roofType": "round",
+      "confidence": 0.9,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-2",
+      "name": "Mode Gakuen Cocoon Tower",
+      "footprint": [
+        {
+          "x": -190,
+          "y": 0,
+          "z": 280
+        },
+        {
+          "x": -170,
+          "y": 0,
+          "z": 280
+        },
+        {
+          "x": -170,
+          "y": 0,
+          "z": 300
+        },
+        {
+          "x": -190,
+          "y": 0,
+          "z": 300
+        }
+      ],
+      "height": 204,
+      "baseHeight": 0,
+      "floors": 50,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "round",
+      "confidence": 0.9,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-3",
+      "name": "Mori Tower",
+      "footprint": [
+        {
+          "x": 250,
+          "y": 0,
+          "z": 120
+        },
+        {
+          "x": 275,
+          "y": 0,
+          "z": 120
+        },
+        {
+          "x": 275,
+          "y": 0,
+          "z": 145
+        },
+        {
+          "x": 250,
+          "y": 0,
+          "z": 145
+        }
+      ],
+      "height": 238,
+      "baseHeight": 0,
+      "floors": 54,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.9,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-4",
+      "name": "NTT Docomo Yoyogi Building",
+      "footprint": [
+        {
+          "x": -200,
+          "y": 0,
+          "z": -50
+        },
+        {
+          "x": -180,
+          "y": 0,
+          "z": -50
+        },
+        {
+          "x": -180,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": -200,
+          "y": 0,
+          "z": -30
+        }
+      ],
+      "height": 240,
+      "baseHeight": 0,
+      "floors": 50,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "steel",
+      "roofType": "pyramidal",
+      "confidence": 0.9,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-5",
+      "name": "Shinjuku Park Tower",
+      "footprint": [
+        {
+          "x": -210,
+          "y": 0,
+          "z": 150
+        },
+        {
+          "x": -190,
+          "y": 0,
+          "z": 150
+        },
+        {
+          "x": -190,
+          "y": 0,
+          "z": 175
+        },
+        {
+          "x": -210,
+          "y": 0,
+          "z": 175
+        }
+      ],
+      "height": 235,
+      "baseHeight": 0,
+      "floors": 52,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "pyramidal",
+      "confidence": 0.9,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-6",
+      "name": "Tokyo Metropolitan Government Building",
+      "footprint": [
+        {
+          "x": -220,
+          "y": 0,
+          "z": 210
+        },
+        {
+          "x": -195,
+          "y": 0,
+          "z": 210
+        },
+        {
+          "x": -195,
+          "y": 0,
+          "z": 240
+        },
+        {
+          "x": -220,
+          "y": 0,
+          "z": 240
+        }
+      ],
+      "height": 243,
+      "baseHeight": 0,
+      "floors": 48,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-7",
+      "name": "Cerulean Tower",
+      "footprint": [
+        {
+          "x": -40,
+          "y": 0,
+          "z": -80
+        },
+        {
+          "x": -20,
+          "y": 0,
+          "z": -80
+        },
+        {
+          "x": -20,
+          "y": 0,
+          "z": -65
+        },
+        {
+          "x": -40,
+          "y": 0,
+          "z": -65
+        }
+      ],
+      "height": 184,
+      "baseHeight": 0,
+      "floors": 41,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.9,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-8",
+      "name": "Mark City",
+      "footprint": [
+        {
+          "x": 30,
+          "y": 0,
+          "z": -50
+        },
+        {
+          "x": 55,
+          "y": 0,
+          "z": -50
+        },
+        {
+          "x": 55,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": 30,
+          "y": 0,
+          "z": -30
+        }
+      ],
+      "height": 90,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "modern_commercial",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-9",
+      "name": "Shibuya Hikarie",
+      "footprint": [
+        {
+          "x": 50,
+          "y": 0,
+          "z": -70
+        },
+        {
+          "x": 70,
+          "y": 0,
+          "z": -70
+        },
+        {
+          "x": 70,
+          "y": 0,
+          "z": -50
+        },
+        {
+          "x": 50,
+          "y": 0,
+          "z": -50
+        }
+      ],
+      "height": 183,
+      "baseHeight": 0,
+      "floors": 34,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.9,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-10",
+      "name": "Shibuya Stream",
+      "footprint": [
+        {
+          "x": 70,
+          "y": 0,
+          "z": -90
+        },
+        {
+          "x": 90,
+          "y": 0,
+          "z": -90
+        },
+        {
+          "x": 90,
+          "y": 0,
+          "z": -70
+        },
+        {
+          "x": 70,
+          "y": 0,
+          "z": -70
+        }
+      ],
+      "height": 100,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-11",
+      "name": "Shibuya Scramble Square",
+      "footprint": [
+        {
+          "x": 25,
+          "y": 0,
+          "z": -90
+        },
+        {
+          "x": 50,
+          "y": 0,
+          "z": -90
+        },
+        {
+          "x": 50,
+          "y": 0,
+          "z": -70
+        },
+        {
+          "x": 25,
+          "y": 0,
+          "z": -70
+        }
+      ],
+      "height": 230,
+      "baseHeight": 0,
+      "floors": 47,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-12",
+      "name": "Tokyu Plaza Shibuya",
+      "footprint": [
+        {
+          "x": -10,
+          "y": 0,
+          "z": -95
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "z": -95
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "z": -75
+        },
+        {
+          "x": -10,
+          "y": 0,
+          "z": -75
+        }
+      ],
+      "height": 70,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "modern_commercial",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-13",
+      "name": "Miyashita Park",
+      "footprint": [
+        {
+          "x": 100,
+          "y": 0,
+          "z": -50
+        },
+        {
+          "x": 140,
+          "y": 0,
+          "z": -50
+        },
+        {
+          "x": 140,
+          "y": 0,
+          "z": -35
+        },
+        {
+          "x": 100,
+          "y": 0,
+          "z": -35
+        }
+      ],
+      "height": 25,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "modern_commercial",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-landmark-14",
+      "name": "Shibuya Fukuras",
+      "footprint": [
+        {
+          "x": -15,
+          "y": 0,
+          "z": -115
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "z": -115
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "z": -100
+        },
+        {
+          "x": -15,
+          "y": 0,
+          "z": -100
+        }
+      ],
+      "height": 103,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-b0",
+      "footprint": [
+        {
+          "x": 225,
+          "y": 0,
+          "z": -20
+        },
+        {
+          "x": 240,
+          "y": 0,
+          "z": -20
+        },
+        {
+          "x": 240,
+          "y": 0,
+          "z": -5
+        },
+        {
+          "x": 225,
+          "y": 0,
+          "z": -5
+        }
+      ],
+      "height": 35,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b1",
+      "footprint": [
+        {
+          "x": 230,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 250,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 250,
+          "y": 0,
+          "z": 35
+        },
+        {
+          "x": 230,
+          "y": 0,
+          "z": 35
+        }
+      ],
+      "height": 55,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b2",
+      "footprint": [
+        {
+          "x": 225,
+          "y": 0,
+          "z": 50
+        },
+        {
+          "x": 245,
+          "y": 0,
+          "z": 50
+        },
+        {
+          "x": 245,
+          "y": 0,
+          "z": 70
+        },
+        {
+          "x": 225,
+          "y": 0,
+          "z": 70
+        }
+      ],
+      "height": 42,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_commercial",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b3",
+      "footprint": [
+        {
+          "x": 230,
+          "y": 0,
+          "z": 85
+        },
+        {
+          "x": 250,
+          "y": 0,
+          "z": 85
+        },
+        {
+          "x": 250,
+          "y": 0,
+          "z": 105
+        },
+        {
+          "x": 230,
+          "y": 0,
+          "z": 105
+        }
+      ],
+      "height": 65,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b4",
+      "name": "Roppongi Hills Gate Tower",
+      "footprint": [
+        {
+          "x": 240,
+          "y": 0,
+          "z": 140
+        },
+        {
+          "x": 260,
+          "y": 0,
+          "z": 140
+        },
+        {
+          "x": 260,
+          "y": 0,
+          "z": 165
+        },
+        {
+          "x": 240,
+          "y": 0,
+          "z": 165
+        }
+      ],
+      "height": 120,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b5",
+      "footprint": [
+        {
+          "x": 225,
+          "y": 0,
+          "z": 175
+        },
+        {
+          "x": 245,
+          "y": 0,
+          "z": 175
+        },
+        {
+          "x": 245,
+          "y": 0,
+          "z": 195
+        },
+        {
+          "x": 225,
+          "y": 0,
+          "z": 195
+        }
+      ],
+      "height": 48,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b6",
+      "footprint": [
+        {
+          "x": 170,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 185,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 185,
+          "y": 0,
+          "z": 30
+        },
+        {
+          "x": 170,
+          "y": 0,
+          "z": 30
+        }
+      ],
+      "height": 28,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b7",
+      "name": "Aoyama Bell Commons",
+      "footprint": [
+        {
+          "x": 170,
+          "y": 0,
+          "z": 50
+        },
+        {
+          "x": 188,
+          "y": 0,
+          "z": 50
+        },
+        {
+          "x": 188,
+          "y": 0,
+          "z": 70
+        },
+        {
+          "x": 170,
+          "y": 0,
+          "z": 70
+        }
+      ],
+      "height": 60,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "modern_commercial",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b8",
+      "footprint": [
+        {
+          "x": 170,
+          "y": 0,
+          "z": 90
+        },
+        {
+          "x": 185,
+          "y": 0,
+          "z": 90
+        },
+        {
+          "x": 185,
+          "y": 0,
+          "z": 110
+        },
+        {
+          "x": 170,
+          "y": 0,
+          "z": 110
+        }
+      ],
+      "height": 32,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b9",
+      "footprint": [
+        {
+          "x": 172,
+          "y": 0,
+          "z": 130
+        },
+        {
+          "x": 190,
+          "y": 0,
+          "z": 130
+        },
+        {
+          "x": 190,
+          "y": 0,
+          "z": 150
+        },
+        {
+          "x": 172,
+          "y": 0,
+          "z": 150
+        }
+      ],
+      "height": 45,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b10",
+      "name": "Shibuya Solasta",
+      "footprint": [
+        {
+          "x": 170,
+          "y": 0,
+          "z": 170
+        },
+        {
+          "x": 185,
+          "y": 0,
+          "z": 170
+        },
+        {
+          "x": 185,
+          "y": 0,
+          "z": 190
+        },
+        {
+          "x": 170,
+          "y": 0,
+          "z": 190
+        }
+      ],
+      "height": 107,
+      "baseHeight": 0,
+      "floors": 21,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b11",
+      "footprint": [
+        {
+          "x": 160,
+          "y": 0,
+          "z": 210
+        },
+        {
+          "x": 175,
+          "y": 0,
+          "z": 210
+        },
+        {
+          "x": 175,
+          "y": 0,
+          "z": 225
+        },
+        {
+          "x": 160,
+          "y": 0,
+          "z": 225
+        }
+      ],
+      "height": 22,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b12",
+      "name": "Shinjuku Southern Terrace",
+      "footprint": [
+        {
+          "x": 140,
+          "y": 0,
+          "z": 270
+        },
+        {
+          "x": 165,
+          "y": 0,
+          "z": 270
+        },
+        {
+          "x": 165,
+          "y": 0,
+          "z": 290
+        },
+        {
+          "x": 140,
+          "y": 0,
+          "z": 290
+        }
+      ],
+      "height": 75,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "modern_commercial",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b13",
+      "footprint": [
+        {
+          "x": 80,
+          "y": 0,
+          "z": 275
+        },
+        {
+          "x": 100,
+          "y": 0,
+          "z": 275
+        },
+        {
+          "x": 100,
+          "y": 0,
+          "z": 295
+        },
+        {
+          "x": 80,
+          "y": 0,
+          "z": 295
+        }
+      ],
+      "height": 38,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b14",
+      "name": "Takashimaya Times Square",
+      "footprint": [
+        {
+          "x": 30,
+          "y": 0,
+          "z": 270
+        },
+        {
+          "x": 55,
+          "y": 0,
+          "z": 270
+        },
+        {
+          "x": 55,
+          "y": 0,
+          "z": 300
+        },
+        {
+          "x": 30,
+          "y": 0,
+          "z": 300
+        }
+      ],
+      "height": 85,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "modern_commercial",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b15",
+      "footprint": [
+        {
+          "x": -30,
+          "y": 0,
+          "z": 275
+        },
+        {
+          "x": -10,
+          "y": 0,
+          "z": 275
+        },
+        {
+          "x": -10,
+          "y": 0,
+          "z": 295
+        },
+        {
+          "x": -30,
+          "y": 0,
+          "z": 295
+        }
+      ],
+      "height": 52,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b16",
+      "name": "Odakyu Department Store",
+      "footprint": [
+        {
+          "x": -70,
+          "y": 0,
+          "z": 270
+        },
+        {
+          "x": -45,
+          "y": 0,
+          "z": 270
+        },
+        {
+          "x": -45,
+          "y": 0,
+          "z": 295
+        },
+        {
+          "x": -70,
+          "y": 0,
+          "z": 295
+        }
+      ],
+      "height": 60,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "modern_commercial",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b17",
+      "footprint": [
+        {
+          "x": 130,
+          "y": 0,
+          "z": 215
+        },
+        {
+          "x": 145,
+          "y": 0,
+          "z": 215
+        },
+        {
+          "x": 145,
+          "y": 0,
+          "z": 230
+        },
+        {
+          "x": 130,
+          "y": 0,
+          "z": 230
+        }
+      ],
+      "height": 30,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b18",
+      "name": "Keio Department Store",
+      "footprint": [
+        {
+          "x": 60,
+          "y": 0,
+          "z": 215
+        },
+        {
+          "x": 85,
+          "y": 0,
+          "z": 215
+        },
+        {
+          "x": 85,
+          "y": 0,
+          "z": 235
+        },
+        {
+          "x": 60,
+          "y": 0,
+          "z": 235
+        }
+      ],
+      "height": 55,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_commercial",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b19",
+      "footprint": [
+        {
+          "x": -10,
+          "y": 0,
+          "z": 218
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "z": 218
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "z": 235
+        },
+        {
+          "x": -10,
+          "y": 0,
+          "z": 235
+        }
+      ],
+      "height": 40,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b20",
+      "name": "Lumine Shinjuku",
+      "footprint": [
+        {
+          "x": -60,
+          "y": 0,
+          "z": 218
+        },
+        {
+          "x": -40,
+          "y": 0,
+          "z": 218
+        },
+        {
+          "x": -40,
+          "y": 0,
+          "z": 235
+        },
+        {
+          "x": -60,
+          "y": 0,
+          "z": 235
+        }
+      ],
+      "height": 48,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "modern_commercial",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b21",
+      "footprint": [
+        {
+          "x": -175,
+          "y": 0,
+          "z": 270
+        },
+        {
+          "x": -160,
+          "y": 0,
+          "z": 270
+        },
+        {
+          "x": -160,
+          "y": 0,
+          "z": 290
+        },
+        {
+          "x": -175,
+          "y": 0,
+          "z": 290
+        }
+      ],
+      "height": 35,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b22",
+      "name": "Sompo Japan Building",
+      "footprint": [
+        {
+          "x": -185,
+          "y": 0,
+          "z": 230
+        },
+        {
+          "x": -170,
+          "y": 0,
+          "z": 230
+        },
+        {
+          "x": -170,
+          "y": 0,
+          "z": 250
+        },
+        {
+          "x": -185,
+          "y": 0,
+          "z": 250
+        }
+      ],
+      "height": 126,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b23",
+      "footprint": [
+        {
+          "x": -180,
+          "y": 0,
+          "z": 195
+        },
+        {
+          "x": -165,
+          "y": 0,
+          "z": 195
+        },
+        {
+          "x": -165,
+          "y": 0,
+          "z": 215
+        },
+        {
+          "x": -180,
+          "y": 0,
+          "z": 215
+        }
+      ],
+      "height": 28,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b24",
+      "footprint": [
+        {
+          "x": -180,
+          "y": 0,
+          "z": 120
+        },
+        {
+          "x": -165,
+          "y": 0,
+          "z": 120
+        },
+        {
+          "x": -165,
+          "y": 0,
+          "z": 140
+        },
+        {
+          "x": -180,
+          "y": 0,
+          "z": 140
+        }
+      ],
+      "height": 50,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b25",
+      "name": "Shinjuku Mitsui Building",
+      "footprint": [
+        {
+          "x": -185,
+          "y": 0,
+          "z": 80
+        },
+        {
+          "x": -170,
+          "y": 0,
+          "z": 80
+        },
+        {
+          "x": -170,
+          "y": 0,
+          "z": 105
+        },
+        {
+          "x": -185,
+          "y": 0,
+          "z": 105
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "steel",
+      "roofType": "flat",
+      "confidence": 0.9,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-b26",
+      "footprint": [
+        {
+          "x": -130,
+          "y": 0,
+          "z": 215
+        },
+        {
+          "x": -115,
+          "y": 0,
+          "z": 215
+        },
+        {
+          "x": -115,
+          "y": 0,
+          "z": 230
+        },
+        {
+          "x": -130,
+          "y": 0,
+          "z": 230
+        }
+      ],
+      "height": 25,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b27",
+      "footprint": [
+        {
+          "x": -135,
+          "y": 0,
+          "z": 180
+        },
+        {
+          "x": -120,
+          "y": 0,
+          "z": 180
+        },
+        {
+          "x": -120,
+          "y": 0,
+          "z": 195
+        },
+        {
+          "x": -135,
+          "y": 0,
+          "z": 195
+        }
+      ],
+      "height": 38,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "modern_commercial",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b28",
+      "name": "Shinjuku Nomura Building",
+      "footprint": [
+        {
+          "x": -135,
+          "y": 0,
+          "z": 140
+        },
+        {
+          "x": -118,
+          "y": 0,
+          "z": 140
+        },
+        {
+          "x": -118,
+          "y": 0,
+          "z": 162
+        },
+        {
+          "x": -135,
+          "y": 0,
+          "z": 162
+        }
+      ],
+      "height": 180,
+      "baseHeight": 0,
+      "floors": 50,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.9,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b29",
+      "footprint": [
+        {
+          "x": -130,
+          "y": 0,
+          "z": 110
+        },
+        {
+          "x": -115,
+          "y": 0,
+          "z": 110
+        },
+        {
+          "x": -115,
+          "y": 0,
+          "z": 125
+        },
+        {
+          "x": -130,
+          "y": 0,
+          "z": 125
+        }
+      ],
+      "height": 32,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b30",
+      "name": "Yoyogi National Stadium",
+      "footprint": [
+        {
+          "x": -95,
+          "y": 0,
+          "z": 75
+        },
+        {
+          "x": -75,
+          "y": 0,
+          "z": 75
+        },
+        {
+          "x": -75,
+          "y": 0,
+          "z": 95
+        },
+        {
+          "x": -95,
+          "y": 0,
+          "z": 95
+        }
+      ],
+      "height": 30,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "modern_commercial",
+      "facadeMaterial": "concrete",
+      "roofType": "round",
+      "confidence": 0.85,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-b31",
+      "footprint": [
+        {
+          "x": -35,
+          "y": 0,
+          "z": 70
+        },
+        {
+          "x": -20,
+          "y": 0,
+          "z": 70
+        },
+        {
+          "x": -20,
+          "y": 0,
+          "z": 85
+        },
+        {
+          "x": -35,
+          "y": 0,
+          "z": 85
+        }
+      ],
+      "height": 24,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b32",
+      "name": "Shibuya Parco",
+      "footprint": [
+        {
+          "x": -90,
+          "y": 0,
+          "z": 20
+        },
+        {
+          "x": -70,
+          "y": 0,
+          "z": 20
+        },
+        {
+          "x": -70,
+          "y": 0,
+          "z": 40
+        },
+        {
+          "x": -90,
+          "y": 0,
+          "z": 40
+        }
+      ],
+      "height": 68,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "modern_commercial",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b33",
+      "footprint": [
+        {
+          "x": -30,
+          "y": 0,
+          "z": 20
+        },
+        {
+          "x": -18,
+          "y": 0,
+          "z": 20
+        },
+        {
+          "x": -18,
+          "y": 0,
+          "z": 35
+        },
+        {
+          "x": -30,
+          "y": 0,
+          "z": 35
+        }
+      ],
+      "height": 20,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b34",
+      "name": "Aoyama Gakuin University",
+      "footprint": [
+        {
+          "x": 150,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": 175,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": 175,
+          "y": 0,
+          "z": -50
+        },
+        {
+          "x": 150,
+          "y": 0,
+          "z": -50
+        }
+      ],
+      "height": 45,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "modern_commercial",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b35",
+      "footprint": [
+        {
+          "x": 15,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 35,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 35,
+          "y": 0,
+          "z": 30
+        },
+        {
+          "x": 15,
+          "y": 0,
+          "z": 30
+        }
+      ],
+      "height": 28,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b36",
+      "name": "Shibuya Cast",
+      "footprint": [
+        {
+          "x": 55,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 75,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 75,
+          "y": 0,
+          "z": 35
+        },
+        {
+          "x": 55,
+          "y": 0,
+          "z": 35
+        }
+      ],
+      "height": 50,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b37",
+      "footprint": [
+        {
+          "x": 100,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 120,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 120,
+          "y": 0,
+          "z": 30
+        },
+        {
+          "x": 100,
+          "y": 0,
+          "z": 30
+        }
+      ],
+      "height": 35,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b38",
+      "footprint": [
+        {
+          "x": 140,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 158,
+          "y": 0,
+          "z": 15
+        },
+        {
+          "x": 158,
+          "y": 0,
+          "z": 30
+        },
+        {
+          "x": 140,
+          "y": 0,
+          "z": 30
+        }
+      ],
+      "height": 42,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_commercial",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b39",
+      "name": "Omotesando Hills",
+      "footprint": [
+        {
+          "x": 155,
+          "y": 0,
+          "z": -55
+        },
+        {
+          "x": 180,
+          "y": 0,
+          "z": -55
+        },
+        {
+          "x": 180,
+          "y": 0,
+          "z": -35
+        },
+        {
+          "x": 155,
+          "y": 0,
+          "z": -35
+        }
+      ],
+      "height": 24,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "modern_commercial",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b40",
+      "footprint": [
+        {
+          "x": 100,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": 120,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": 120,
+          "y": 0,
+          "z": -15
+        },
+        {
+          "x": 100,
+          "y": 0,
+          "z": -15
+        }
+      ],
+      "height": 30,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b41",
+      "footprint": [
+        {
+          "x": 55,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": 75,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": 75,
+          "y": 0,
+          "z": -15
+        },
+        {
+          "x": 55,
+          "y": 0,
+          "z": -15
+        }
+      ],
+      "height": 38,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b42",
+      "name": "Harajuku Quest",
+      "footprint": [
+        {
+          "x": 15,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": 35,
+          "y": 0,
+          "z": -30
+        },
+        {
+          "x": 35,
+          "y": 0,
+          "z": -15
+        },
+        {
+          "x": 15,
+          "y": 0,
+          "z": -15
+        }
+      ],
+      "height": 26,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "modern_commercial",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b43",
+      "name": "Shinjuku Sumitomo Building",
+      "footprint": [
+        {
+          "x": -230,
+          "y": 0,
+          "z": 100
+        },
+        {
+          "x": -215,
+          "y": 0,
+          "z": 100
+        },
+        {
+          "x": -215,
+          "y": 0,
+          "z": 125
+        },
+        {
+          "x": -230,
+          "y": 0,
+          "z": 125
+        }
+      ],
+      "height": 195,
+      "baseHeight": 0,
+      "floors": 52,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b44",
+      "name": "Shinjuku Center Building",
+      "footprint": [
+        {
+          "x": -240,
+          "y": 0,
+          "z": 140
+        },
+        {
+          "x": -225,
+          "y": 0,
+          "z": 140
+        },
+        {
+          "x": -225,
+          "y": 0,
+          "z": 165
+        },
+        {
+          "x": -240,
+          "y": 0,
+          "z": 165
+        }
+      ],
+      "height": 180,
+      "baseHeight": 0,
+      "floors": 47,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "steel",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b45",
+      "footprint": [
+        {
+          "x": 260,
+          "y": 0,
+          "z": 30
+        },
+        {
+          "x": 280,
+          "y": 0,
+          "z": 30
+        },
+        {
+          "x": 280,
+          "y": 0,
+          "z": 50
+        },
+        {
+          "x": 260,
+          "y": 0,
+          "z": 50
+        }
+      ],
+      "height": 65,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b46",
+      "name": "Midtown Tower",
+      "footprint": [
+        {
+          "x": 260,
+          "y": 0,
+          "z": 170
+        },
+        {
+          "x": 285,
+          "y": 0,
+          "z": 170
+        },
+        {
+          "x": 285,
+          "y": 0,
+          "z": 200
+        },
+        {
+          "x": 260,
+          "y": 0,
+          "z": 200
+        }
+      ],
+      "height": 248,
+      "baseHeight": 0,
+      "floors": 54,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.9,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "tdc-b47",
+      "footprint": [
+        {
+          "x": -240,
+          "y": 0,
+          "z": 190
+        },
+        {
+          "x": -225,
+          "y": 0,
+          "z": 190
+        },
+        {
+          "x": -225,
+          "y": 0,
+          "z": 210
+        },
+        {
+          "x": -240,
+          "y": 0,
+          "z": 210
+        }
+      ],
+      "height": 55,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "residential_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b48",
+      "name": "Keio Plaza Hotel",
+      "footprint": [
+        {
+          "x": -195,
+          "y": 0,
+          "z": 50
+        },
+        {
+          "x": -175,
+          "y": 0,
+          "z": 50
+        },
+        {
+          "x": -175,
+          "y": 0,
+          "z": 72
+        },
+        {
+          "x": -195,
+          "y": 0,
+          "z": 72
+        }
+      ],
+      "height": 170,
+      "baseHeight": 0,
+      "floors": 47,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.85,
+      "source": "procedural"
+    },
+    {
+      "id": "tdc-b49",
+      "name": "Hilton Tokyo",
+      "footprint": [
+        {
+          "x": -220,
+          "y": 0,
+          "z": 50
+        },
+        {
+          "x": -205,
+          "y": 0,
+          "z": 50
+        },
+        {
+          "x": -205,
+          "y": 0,
+          "z": 70
+        },
+        {
+          "x": -220,
+          "y": 0,
+          "z": 70
+        }
+      ],
+      "height": 105,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.8,
+      "source": "procedural"
+    }
+  ],
+  "sceneryObjects": [
+    {
+      "id": "tdc-light-0",
+      "type": "street_light",
+      "position": {
+        "x": 10,
+        "y": 0,
+        "z": -8
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-1",
+      "type": "street_light",
+      "position": {
+        "x": 40,
+        "y": 0,
+        "z": -8
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-2",
+      "type": "street_light",
+      "position": {
+        "x": 70,
+        "y": 0,
+        "z": -8
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-3",
+      "type": "street_light",
+      "position": {
+        "x": 100,
+        "y": 0,
+        "z": -8
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-4",
+      "type": "street_light",
+      "position": {
+        "x": 130,
+        "y": 0,
+        "z": -8
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-5",
+      "type": "street_light",
+      "position": {
+        "x": 160,
+        "y": 0,
+        "z": -8
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-6",
+      "type": "street_light",
+      "position": {
+        "x": 190,
+        "y": 0.9,
+        "z": -8
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-7",
+      "type": "street_light",
+      "position": {
+        "x": 10,
+        "y": 0,
+        "z": 8
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-8",
+      "type": "street_light",
+      "position": {
+        "x": 50,
+        "y": 0.1,
+        "z": 8
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-9",
+      "type": "street_light",
+      "position": {
+        "x": 90,
+        "y": 0.3,
+        "z": 8
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-10",
+      "type": "street_light",
+      "position": {
+        "x": 130,
+        "y": 0.6,
+        "z": 8
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-11",
+      "type": "street_light",
+      "position": {
+        "x": 170,
+        "y": 0.8,
+        "z": 8
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-12",
+      "type": "street_light",
+      "position": {
+        "x": 215,
+        "y": 1.2,
+        "z": 30
+      },
+      "rotation": 1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-13",
+      "type": "street_light",
+      "position": {
+        "x": 215,
+        "y": 1.4,
+        "z": 70
+      },
+      "rotation": 1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-14",
+      "type": "street_light",
+      "position": {
+        "x": 215,
+        "y": 1.6,
+        "z": 110
+      },
+      "rotation": 1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-15",
+      "type": "street_light",
+      "position": {
+        "x": 215,
+        "y": 1.8,
+        "z": 150
+      },
+      "rotation": 1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-16",
+      "type": "street_light",
+      "position": {
+        "x": 215,
+        "y": 2,
+        "z": 190
+      },
+      "rotation": 1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-17",
+      "type": "street_light",
+      "position": {
+        "x": 140,
+        "y": 2.3,
+        "z": 260
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-18",
+      "type": "street_light",
+      "position": {
+        "x": 100,
+        "y": 2.5,
+        "z": 260
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-19",
+      "type": "street_light",
+      "position": {
+        "x": 60,
+        "y": 2.7,
+        "z": 260
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-20",
+      "type": "street_light",
+      "position": {
+        "x": 20,
+        "y": 2.9,
+        "z": 260
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-21",
+      "type": "street_light",
+      "position": {
+        "x": -20,
+        "y": 3.1,
+        "z": 260
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-22",
+      "type": "street_light",
+      "position": {
+        "x": -60,
+        "y": 3.3,
+        "z": 260
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-23",
+      "type": "street_light",
+      "position": {
+        "x": -100,
+        "y": 3.5,
+        "z": 260
+      },
+      "rotation": 3.1416,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-24",
+      "type": "street_light",
+      "position": {
+        "x": -160,
+        "y": 3.9,
+        "z": 210
+      },
+      "rotation": -1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-25",
+      "type": "street_light",
+      "position": {
+        "x": -160,
+        "y": 3.6,
+        "z": 170
+      },
+      "rotation": -1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-26",
+      "type": "street_light",
+      "position": {
+        "x": -160,
+        "y": 3.3,
+        "z": 130
+      },
+      "rotation": -1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-27",
+      "type": "street_light",
+      "position": {
+        "x": -160,
+        "y": 3,
+        "z": 100
+      },
+      "rotation": -1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-28",
+      "type": "street_light",
+      "position": {
+        "x": -110,
+        "y": 2.3,
+        "z": 42
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-29",
+      "type": "street_light",
+      "position": {
+        "x": -70,
+        "y": 1.7,
+        "z": 42
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-30",
+      "type": "street_light",
+      "position": {
+        "x": -40,
+        "y": 1,
+        "z": 15
+      },
+      "rotation": -1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-light-31",
+      "type": "street_light",
+      "position": {
+        "x": -40,
+        "y": 0.7,
+        "z": -10
+      },
+      "rotation": -1.5708,
+      "scale": 1
+    },
+    {
+      "id": "tdc-barrier-0",
+      "type": "barrier",
+      "position": {
+        "x": 218,
+        "y": 1.1,
+        "z": 10
+      },
+      "rotation": 1.2,
+      "scale": 1.5
+    },
+    {
+      "id": "tdc-barrier-1",
+      "type": "barrier",
+      "position": {
+        "x": 195,
+        "y": 1.1,
+        "z": 15
+      },
+      "rotation": 1.8,
+      "scale": 1.5
+    },
+    {
+      "id": "tdc-barrier-2",
+      "type": "barrier",
+      "position": {
+        "x": 192,
+        "y": 2.2,
+        "z": 218
+      },
+      "rotation": 0.8,
+      "scale": 1.5
+    },
+    {
+      "id": "tdc-barrier-3",
+      "type": "barrier",
+      "position": {
+        "x": 178,
+        "y": 2.3,
+        "z": 232
+      },
+      "rotation": 2.4,
+      "scale": 1.5
+    },
+    {
+      "id": "tdc-barrier-4",
+      "type": "barrier",
+      "position": {
+        "x": -125,
+        "y": 3.7,
+        "z": 245
+      },
+      "rotation": -0.5,
+      "scale": 1.5
+    },
+    {
+      "id": "tdc-barrier-5",
+      "type": "barrier",
+      "position": {
+        "x": -145,
+        "y": 3.8,
+        "z": 228
+      },
+      "rotation": -1.2,
+      "scale": 1.5
+    },
+    {
+      "id": "tdc-barrier-6",
+      "type": "barrier",
+      "position": {
+        "x": -145,
+        "y": 2.6,
+        "z": 85
+      },
+      "rotation": -0.3,
+      "scale": 1.5
+    },
+    {
+      "id": "tdc-barrier-7",
+      "type": "barrier",
+      "position": {
+        "x": -135,
+        "y": 2.5,
+        "z": 72
+      },
+      "rotation": 0.5,
+      "scale": 1.5
+    },
+    {
+      "id": "tdc-barrier-8",
+      "type": "barrier",
+      "position": {
+        "x": -42,
+        "y": 1,
+        "z": 35
+      },
+      "rotation": -1.5708,
+      "scale": 1.2
+    },
+    {
+      "id": "tdc-barrier-9",
+      "type": "barrier",
+      "position": {
+        "x": -58,
+        "y": 1,
+        "z": 35
+      },
+      "rotation": -1.5708,
+      "scale": 1.2
+    },
+    {
+      "id": "tdc-barrier-10",
+      "type": "barrier",
+      "position": {
+        "x": -48,
+        "y": 0.4,
+        "z": -28
+      },
+      "rotation": 0.6,
+      "scale": 1.2
+    },
+    {
+      "id": "tdc-barrier-11",
+      "type": "barrier",
+      "position": {
+        "x": -38,
+        "y": 0.3,
+        "z": -32
+      },
+      "rotation": 0.3,
+      "scale": 1.2
+    },
+    {
+      "id": "tdc-tree-0",
+      "type": "tree",
+      "position": {
+        "x": 120,
+        "y": 2.5,
+        "z": 265
+      },
+      "rotation": 0,
+      "scale": 1.2
+    },
+    {
+      "id": "tdc-tree-1",
+      "type": "tree",
+      "position": {
+        "x": 80,
+        "y": 2.7,
+        "z": 265
+      },
+      "rotation": 0.5,
+      "scale": 1
+    },
+    {
+      "id": "tdc-tree-2",
+      "type": "tree",
+      "position": {
+        "x": 40,
+        "y": 2.9,
+        "z": 265
+      },
+      "rotation": 1.2,
+      "scale": 1.1
+    },
+    {
+      "id": "tdc-tree-3",
+      "type": "tree",
+      "position": {
+        "x": 0,
+        "y": 3,
+        "z": 265
+      },
+      "rotation": 2.1,
+      "scale": 0.9
+    },
+    {
+      "id": "tdc-tree-4",
+      "type": "tree",
+      "position": {
+        "x": -40,
+        "y": 3.2,
+        "z": 265
+      },
+      "rotation": 0.8,
+      "scale": 1.3
+    },
+    {
+      "id": "tdc-tree-5",
+      "type": "tree",
+      "position": {
+        "x": -80,
+        "y": 3.4,
+        "z": 265
+      },
+      "rotation": 1.9,
+      "scale": 1
+    }
+  ],
+  "spawnPoints": [
+    {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "x": -5,
+      "y": 0,
+      "z": -5
+    },
+    {
+      "x": -10,
+      "y": 0,
+      "z": 0
+    },
+    {
+      "x": -15,
+      "y": 0,
+      "z": -5
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "generatedBy": "manual",
+    "notes": "Neon-lit Tokyo street circuit; tight 90-degree turns for drift-style racing; default weather: night"
+  },
+  "dataAttribution": "Stylised Shibuya / Shinjuku circuit — original procedural geometry"
+}

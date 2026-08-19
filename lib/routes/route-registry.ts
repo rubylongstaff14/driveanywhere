@@ -1,8 +1,11 @@
+import alpsMountainPass from "@/public/routes/alps-mountain-pass.json";
 import canaryWharfLoop from "@/public/routes/canary-wharf-loop.json";
 import dubaiMarinaCircuit from "@/public/routes/dubai-marina-circuit.json";
 import egyptPyramids from "@/public/routes/egypt-pyramids.json";
 import embankmentRun from "@/public/routes/embankment-run.json";
 import newYorkHarborCircuit from "@/public/routes/new-york-harbor-circuit.json";
+import rioCoastCircuit from "@/public/routes/rio-coast-circuit.json";
+import tokyoDriftCircuit from "@/public/routes/tokyo-drift-circuit.json";
 import westminsterSprint from "@/public/routes/westminster-sprint.json";
 import { routeDataSchema, type RouteData } from "@/lib/validation/route-data";
 
@@ -21,6 +24,9 @@ const RAW_ROUTES: Record<string, unknown> = {
   "egypt-pyramids": egyptPyramids,
   "dubai-marina-circuit": dubaiMarinaCircuit,
   "new-york-harbor-circuit": newYorkHarborCircuit,
+  "tokyo-drift-circuit": tokyoDriftCircuit,
+  "alps-mountain-pass": alpsMountainPass,
+  "rio-coast-circuit": rioCoastCircuit,
 };
 
 const cache = new Map<string, RouteData>();

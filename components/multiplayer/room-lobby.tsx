@@ -77,6 +77,9 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
     { slug: "dubai-marina-circuit", name: "Dubai Marina Circuit" },
     { slug: "egypt-pyramids", name: "Egypt Pyramids" },
     { slug: "new-york-harbor-circuit", name: "New York Harbor Circuit" },
+    { slug: "tokyo-drift-circuit", name: "Tokyo Drift Circuit" },
+    { slug: "alps-mountain-pass", name: "Alps Mountain Pass" },
+    { slug: "rio-coast-circuit", name: "Rio Coast Circuit" },
   ];
 
   return (
