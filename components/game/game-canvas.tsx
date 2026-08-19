@@ -7,6 +7,7 @@ import { Suspense, useEffect, useMemo } from "react";
 import * as THREE from "three";
 import { AiPack } from "@/components/game/scene/ai-pack";
 import { GhostCar } from "@/components/game/scene/ghost-car";
+import { RemotePlayers } from "@/components/game/scene/remote-players";
 import { RainField } from "@/components/game/scene/rain-field";
 import { RouteIntroCamera } from "@/components/game/scene/route-intro-camera";
 import { RouteWorld } from "@/components/game/scene/route-world";
@@ -105,6 +106,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
         {ghostEnabled && raceMode === "solo" ? (
           <GhostCar routeId={route.id} />
         ) : null}
+        <RemotePlayers />
         <RainField wet={weather === "rain"} />
       </Suspense>
     </Canvas>

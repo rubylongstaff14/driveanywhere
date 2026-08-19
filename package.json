@@ -14,7 +14,10 @@
     "seed:routes": "tsx scripts/seed-local-data.ts",
     "geo:fetch:canary-wharf": "tsx scripts/geo/fetch-canary-wharf-osm.ts",
     "geo:generate:canary-wharf": "tsx scripts/geo/generate-canary-wharf-route.ts",
-    "geo:list-roads": "tsx scripts/geo/list-osm-roads.ts"
+    "geo:list-roads": "tsx scripts/geo/list-osm-roads.ts",
+    "server": "tsx server/index.ts",
+    "server:build": "npx tsc -p server/tsconfig.json",
+    "server:start": "node server/dist/index.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.7.1",
@@ -32,6 +35,7 @@
     "react-hook-form": "^7.84.0",
     "tailwind-merge": "^3.6.0",
     "three": "^0.185.1",
+    "ws": "^8.21.3",
     "zod": "^4.4.3",
     "zustand": "^5.0.14"
   },
@@ -44,6 +48,7 @@
     "@types/node": "^20.19.43",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/ws": "^8.18.1",
     "@vitejs/plugin-react": "^6.0.5",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",

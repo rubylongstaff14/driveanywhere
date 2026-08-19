@@ -32,6 +32,8 @@ import {
   splitToneForSector,
 } from "@/lib/game/sectors";
 import { weatherGripMul } from "@/lib/game/weather";
+import { sendCarState } from "@/lib/multiplayer/ws-client";
+import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import type { RouteData } from "@/lib/validation/route-data";
 import { useGameStore } from "@/stores/game-store";
 import { useSettingsStore } from "@/stores/settings-store";
@@ -94,6 +96,9 @@ export function Vehicle({ route, samples }: VehicleProps) {
     forward:     new THREE.Vector3(),
     quat:        new THREE.Quaternion(),
     camReady:    false,
+    lastNetSend: 0,
+    gear:        0,
+    steer:       0,
   });
 
   const paused     = useGameStore((s) => s.paused);
@@ -335,6 +340,8 @@ export function Vehicle({ route, samples }: VehicleProps) {
       vehicle.mass,
     );
     steerAngle.current = controls.steer;
+    scratch.current.gear = gearState.gear;
+    scratch.current.steer = controls.steer;
 
     // Impact feel — only real wall/barrier dumps (sudden lateral kill).
     // AI cars are visuals only and must never fake a hit.
@@ -662,6 +669,22 @@ export function Vehicle({ route, samples }: VehicleProps) {
     }
 
     cam2.lookAt(lookAtSmooth);
+
+    // Broadcast position to multiplayer server at ~20Hz
+    if (useMultiplayerStore.getState().racing) {
+      const now = performance.now();
+      if (!scratch.current.lastNetSend || now - scratch.current.lastNetSend > 50) {
+        scratch.current.lastNetSend = now;
+        const rot = body.rotation();
+        sendCarState({
+          x: pos.x, y: pos.y, z: pos.z,
+          qx: rot.x, qy: rot.y, qz: rot.z, qw: rot.w,
+          speed: speedKph,
+          gear: scratch.current.gear ?? 0,
+          steer: scratch.current.steer ?? 0,
+        });
+      }
+    }
 
     // FOV stays nearly fixed so speed doesn't smear the view.
     const cam = cameraRef.current;

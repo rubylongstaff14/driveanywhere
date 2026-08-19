@@ -1,0 +1,179 @@
+import { WebSocketServer, WebSocket } from "ws";
+import { Room } from "./room";
+import type { ClientMessage, ServerMessage } from "../lib/multiplayer/protocol";
+
+const PORT = Number(process.env.WS_PORT) || 8080;
+
+const wss = new WebSocketServer({ port: PORT });
+const rooms = new Map<string, Room>();
+const playerRooms = new Map<WebSocket, { roomId: string; playerId: string }>();
+
+let nextPlayerId = 1;
+function genPlayerId(): string {
+  return `player_${nextPlayerId++}`;
+}
+
+function sendTo(ws: WebSocket, msg: ServerMessage): void {
+  try { ws.send(JSON.stringify(msg)); } catch { /* disconnected */ }
+}
+
+function cleanupEmptyRooms(): void {
+  for (const [id, room] of rooms) {
+    if (room.humanCount === 0) {
+      room.destroy();
+      rooms.delete(id);
+    }
+  }
+}
+
+wss.on("connection", (ws) => {
+  ws.on("message", (raw) => {
+    let msg: ClientMessage;
+    try {
+      msg = JSON.parse(raw.toString());
+    } catch {
+      return;
+    }
+
+    switch (msg.type) {
+      case "list_rooms": {
+        const list = [...rooms.values()]
+          .filter((r) => r.status === "waiting" || r.status === "results")
+          .map((r) => r.toInfo());
+        sendTo(ws, { type: "rooms_list", rooms: list });
+        break;
+      }
+
+      case "create_room": {
+        const room = new Room(msg.name, msg.map, msg.difficulty, msg.aiCount);
+        const playerId = genPlayerId();
+        room.addPlayer(ws, playerId, msg.playerName, msg.vehicleId, true);
+        rooms.set(room.id, room);
+        playerRooms.set(ws, { roomId: room.id, playerId });
+        sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
+        break;
+      }
+
+      case "join_room": {
+        const room = rooms.get(msg.roomId);
+        if (!room || room.humanCount >= room.maxPlayers || room.status !== "waiting") {
+          sendTo(ws, { type: "room_error", message: "Cannot join this room" });
+          break;
+        }
+        const playerId = genPlayerId();
+        room.addPlayer(ws, playerId, msg.playerName, msg.vehicleId, false);
+        playerRooms.set(ws, { roomId: room.id, playerId });
+        sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
+        room.broadcast({ type: "room_updated", room: room.toInfo() }, playerId);
+        break;
+      }
+
+      case "leave_room": {
+        handleLeave(ws);
+        break;
+      }
+
+      case "ready":
+      case "unready": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room) break;
+        const player = room.players.find((p) => p.id === info.playerId);
+        if (player) {
+          player.ready = msg.type === "ready";
+          room.broadcast({ type: "room_updated", room: room.toInfo() });
+        }
+        break;
+      }
+
+      case "host_set_map":
+      case "host_set_difficulty":
+      case "host_set_ai": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room) break;
+        const player = room.players.find((p) => p.id === info.playerId);
+        if (!player?.isHost || room.status !== "waiting") break;
+        if (msg.type === "host_set_map") room.map = msg.map;
+        if (msg.type === "host_set_difficulty") room.difficulty = msg.difficulty;
+        if (msg.type === "host_set_ai") room.aiCount = Math.min(4, Math.max(0, msg.aiCount));
+        room.broadcast({ type: "room_updated", room: room.toInfo() });
+        break;
+      }
+
+      case "host_kick": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room) break;
+        const player = room.players.find((p) => p.id === info.playerId);
+        if (!player?.isHost) break;
+        const target = room.players.find((p) => p.id === msg.playerId);
+        if (target && !target.isHost) {
+          sendTo(target.ws, { type: "kicked" });
+          playerRooms.delete(target.ws);
+          room.removePlayer(target.id);
+          room.broadcast({ type: "room_updated", room: room.toInfo() });
+        }
+        break;
+      }
+
+      case "host_start": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room) break;
+        const player = room.players.find((p) => p.id === info.playerId);
+        if (!player?.isHost || room.status !== "waiting") break;
+        if (room.players.length < 2 || !room.allReady()) {
+          sendTo(ws, { type: "room_error", message: "Not all players are ready" });
+          break;
+        }
+        room.startCountdown();
+        break;
+      }
+
+      case "car_state": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room || room.status !== "racing") break;
+        const player = room.players.find((p) => p.id === info.playerId);
+        if (player) player.carState = msg.state;
+        break;
+      }
+
+      case "race_finish": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room || room.status !== "racing") break;
+        room.playerFinished(info.playerId, msg.timeMs);
+        break;
+      }
+    }
+  });
+
+  ws.on("close", () => {
+    handleLeave(ws);
+  });
+});
+
+function handleLeave(ws: WebSocket): void {
+  const info = playerRooms.get(ws);
+  if (!info) return;
+  playerRooms.delete(ws);
+  const room = rooms.get(info.roomId);
+  if (!room) return;
+  room.removePlayer(info.playerId);
+  if (room.humanCount === 0) {
+    room.destroy();
+    rooms.delete(room.id);
+  } else {
+    room.broadcast({ type: "room_updated", room: room.toInfo() });
+  }
+}
+
+console.log(`[WS Server] Listening on port ${PORT}`);

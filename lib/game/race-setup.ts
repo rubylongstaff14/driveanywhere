@@ -12,7 +12,7 @@ export const AI_PAINTS = [
   { paint: "#9b4dff", paintDark: "#5a1fad", label: "Violet" },
 ] as const;
 
-export type RaceMode = "solo" | "ai";
+export type RaceMode = "solo" | "ai" | "online";
 
 export interface RaceSetup {
   mode: RaceMode;
@@ -55,7 +55,7 @@ export function parseRaceSetup(input: {
   ghost?: string | boolean | null;
   weather?: string | null;
 }): RaceSetup {
-  const mode: RaceMode = input.mode === "ai" ? "ai" : "solo";
+  const mode: RaceMode = input.mode === "online" ? "online" : input.mode === "ai" ? "ai" : "solo";
   const ghostFlag =
     input.ghost === true || input.ghost === "1" || input.ghost === "true";
   return {

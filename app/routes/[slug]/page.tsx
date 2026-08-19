@@ -102,7 +102,10 @@ export default async function RouteDetailPage({
 
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href={`/play/${route.slug}`} size="lg">
-              Start route
+              Play Solo
+            </ButtonLink>
+            <ButtonLink href="/play/online" variant="secondary" size="lg">
+              Play Online
             </ButtonLink>
             <ButtonLink href="/routes" variant="secondary" size="lg">
               Back to library
