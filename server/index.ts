@@ -138,6 +138,15 @@ wss.on("connection", (ws) => {
         break;
       }
 
+      case "loaded": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room || room.status !== "countdown") break;
+        room.playerLoaded(info.playerId);
+        break;
+      }
+
       case "car_state": {
         const info = playerRooms.get(ws);
         if (!info) break;

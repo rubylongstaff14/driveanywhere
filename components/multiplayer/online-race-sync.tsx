@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import { useGameStore } from "@/stores/game-store";
+import { sendMsg } from "@/lib/multiplayer/ws-client";
 
 /**
  * Bridges multiplayer store events into the game store.
@@ -20,6 +21,18 @@ export function OnlineRaceSync() {
   const reportedFinish = useRef(false);
   const sectorSplits = useRef<number[]>([]);
 
+  const sentLoaded = useRef(false);
+  const garageConfirmed = useGameStore((s) => s.garageConfirmed);
+  const sessionConfirmed = useGameStore((s) => s.sessionConfirmed);
+
+  // Once game scene has loaded, notify server
+  useEffect(() => {
+    if (garageConfirmed && sessionConfirmed && !sentLoaded.current) {
+      sentLoaded.current = true;
+      sendMsg({ type: "loaded" });
+    }
+  }, [garageConfirmed, sessionConfirmed]);
+
   // Server countdown -> game store countdown
   useEffect(() => {
     if (countdownValue !== null) {
@@ -32,6 +45,7 @@ export function OnlineRaceSync() {
     if (racing) {
       useGameStore.setState({ countdown: null, paused: false, introActive: false });
       reportedFinish.current = false;
+      sentLoaded.current = false;
       sectorSplits.current = [];
     }
   }, [racing]);

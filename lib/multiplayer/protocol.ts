@@ -58,6 +58,7 @@ export type ClientMessage =
   | { type: "host_set_vehicle"; vehicleId: string }
   | { type: "host_kick"; playerId: string }
   | { type: "host_start" }
+  | { type: "loaded" }
   | { type: "car_state"; state: CarState }
   | { type: "race_finish"; timeMs: number; splits: number[] };
 
@@ -68,6 +69,7 @@ export type ServerMessage =
   | { type: "room_joined"; room: RoomInfo; yourId: string }
   | { type: "room_updated"; room: RoomInfo }
   | { type: "room_error"; message: string }
+  | { type: "waiting_for_players"; loaded: number; total: number }
   | { type: "countdown"; value: number }
   | { type: "race_go"; startTimestamp: number; vehicleId: string }
   | { type: "car_update"; playerId: string; state: CarState }

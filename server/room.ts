@@ -19,6 +19,7 @@ export interface ConnectedPlayer {
   carState: CarState | null;
   finishTimeMs: number | null;
   splits: number[];
+  loaded: boolean;
 }
 
 export class Room {
@@ -84,6 +85,7 @@ export class Room {
       carState: null,
       finishTimeMs: null,
       splits: [],
+      loaded: false,
     };
     this.players.push(player);
     return player;
@@ -121,6 +123,22 @@ export class Room {
 
   startCountdown(): void {
     this.status = "countdown";
+    for (const p of this.players) p.loaded = false;
+    this.broadcast({ type: "waiting_for_players", loaded: 0, total: this.players.length });
+  }
+
+  playerLoaded(playerId: string): void {
+    const p = this.players.find((pl) => pl.id === playerId);
+    if (!p) return;
+    p.loaded = true;
+    const loadedCount = this.players.filter((pl) => pl.loaded).length;
+    this.broadcast({ type: "waiting_for_players", loaded: loadedCount, total: this.players.length });
+    if (loadedCount === this.players.length) {
+      this.beginCountdown();
+    }
+  }
+
+  private beginCountdown(): void {
     let count = 3;
     this.broadcast({ type: "countdown", value: count });
     this.countdownTimer = setInterval(() => {
