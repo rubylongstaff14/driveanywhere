@@ -428,6 +428,36 @@ const IDENTITIES: Record<string, LandmarkIdentity> = {
   "120 Wall Street": { label: "120 Wall", color: "#8890a0", accent: "#d0d8e0", band: "#505868" },
   "American Copper Buildings": { label: "American Copper", color: "#b87850", accent: "#e0a878", band: "#784828" },
   "The Spiral": { label: "The Spiral", color: "#a8c0b0", accent: "#e0f4e8", band: "#608070" },
+
+  // ---- Tokyo ----
+  "Tokyo Tower": { label: "Tokyo Tower", color: "#c8102e", accent: "#f4f4f1", band: "#8a1020" },
+  "Shibuya 109": { label: "Shibuya 109", color: "#f0f0f0", accent: "#ff3388", band: "#d8d8d8" },
+  "Mode Gakuen Cocoon Tower": { label: "Cocoon Tower", color: "#4a5860", accent: "#88a0a8", band: "#2a3438" },
+  "Mori Tower": { label: "Mori Tower", color: "#98b0c0", accent: "#e8f4fc", band: "#5a7888" },
+  "NTT Docomo Yoyogi Building": { label: "Docomo Tower", color: "#e8eef4", accent: "#c8102e", band: "#b8c4d0" },
+  "Tokyo Metropolitan Government Building": { label: "TMG Building", color: "#a8bcc8", accent: "#e0ecf4", band: "#6a8494" },
+  "Shibuya Scramble Square": { label: "Scramble Square", color: "#8898a8", accent: "#ff6600", band: "#586878" },
+  "Shibuya Hikarie": { label: "Shibuya Hikarie", color: "#b0c0cc", accent: "#00ccff", band: "#708090" },
+  "Midtown Tower": { label: "Midtown Tower", color: "#c8d4dc", accent: "#f0f8ff", band: "#8898a8" },
+  "Takashimaya Times Square": { label: "Takashimaya", color: "#8a7060", accent: "#d4b898", band: "#5a4838" },
+  "Cerulean Tower": { label: "Cerulean Tower", color: "#68a0c8", accent: "#d0ecff", band: "#4080a8" },
+
+  // ---- Alps ----
+  "Matterhorn Lodge": { label: "Matterhorn Lodge", color: "#8a6848", accent: "#564235", band: "#6a5038" },
+  "Hotel Zermatterhof": { label: "Zermatterhof", color: "#9a7858", accent: "#5a4030", band: "#7a6040" },
+  "Grand Hotel Zermatt": { label: "Grand Hotel", color: "#a88868", accent: "#604838", band: "#886848" },
+  "Gornergrat Station": { label: "Gornergrat", color: "#7a8898", accent: "#c8dce8", band: "#506070" },
+  "Klein Matterhorn Station": { label: "Klein Matterhorn", color: "#8898a8", accent: "#e8f4ff", band: "#586878" },
+  "Hörnlihütte": { label: "Hörnlihütte", color: "#7a6048", accent: "#4a3828", band: "#604830" },
+
+  // ---- Rio ----
+  "Cristo Redentor Viewpoint": { label: "Cristo Redentor", color: "#a8b0a0", accent: "#e8ece4", band: "#788070" },
+  "Copacabana Palace": { label: "Copacabana Palace", color: "#f0ece4", accent: "#c9a84a", band: "#d8d0c0" },
+  "Museum of Tomorrow": { label: "Museum of Tomorrow", color: "#88b8c8", accent: "#e8f8ff", band: "#5090a8" },
+  "Edificio Italia": { label: "Edificio Italia", color: "#c8b898", accent: "#e8dcc0", band: "#988868" },
+  "Lapa Arches": { label: "Lapa Arches", color: "#f0ece4", accent: "#d8d0c0", band: "#c8c0b0" },
+  "Metropolitan Cathedral": { label: "Cathedral", color: "#989890", accent: "#d8d8d0", band: "#686860" },
+  "Hotel Fasano": { label: "Hotel Fasano", color: "#e8e0d0", accent: "#c9a060", band: "#c8b898" },
 };
 
 /** Exact OSM name matches first; then partial / height fallbacks. */
@@ -505,6 +535,37 @@ export function getLandmarkIdentity(
   if (lower.includes("south quay")) return IDENTITIES["South Quay Plaza"];
   if (lower.includes("landmark east")) return IDENTITIES["Landmark East Tower"];
   if (lower.includes("landmark west")) return IDENTITIES["Landmark West Tower"];
+
+  if (lower.includes("tokyo tower")) return IDENTITIES["Tokyo Tower"];
+  if (lower.includes("shibuya 109")) return IDENTITIES["Shibuya 109"];
+  if (lower.includes("cocoon")) return IDENTITIES["Mode Gakuen Cocoon Tower"];
+  if (lower.includes("docomo")) return IDENTITIES["NTT Docomo Yoyogi Building"];
+  if (lower.includes("metropolitan government")) return IDENTITIES["Tokyo Metropolitan Government Building"];
+  if (lower.includes("scramble square")) return IDENTITIES["Shibuya Scramble Square"];
+  if (lower.includes("hikarie")) return IDENTITIES["Shibuya Hikarie"];
+  if (lower.includes("midtown tower")) return IDENTITIES["Midtown Tower"];
+  if (lower.includes("cristo")) return IDENTITIES["Cristo Redentor Viewpoint"];
+  if (lower.includes("copacabana palace")) return IDENTITIES["Copacabana Palace"];
+  if (lower.includes("museum of tomorrow")) return IDENTITIES["Museum of Tomorrow"];
+  if (lower.includes("edificio italia")) return IDENTITIES["Edificio Italia"];
+  if (lower.includes("lapa arch")) return IDENTITIES["Lapa Arches"];
+  if (lower.includes("metropolitan cathedral")) return IDENTITIES["Metropolitan Cathedral"];
+  if (lower.includes("chalet") || lower.includes("hütte") || lower.includes("berghaus") || lower.includes("gasthof") || lower.includes("lodge")) {
+    return {
+      label: name.length > 20 ? `${name.slice(0, 18)}…` : name,
+      color: "#8a6848",
+      accent: "#564235",
+      band: "#6a5038",
+    };
+  }
+  if (lower.includes("gornergrat") || lower.includes("matterhorn station") || lower.includes("bergstation")) {
+    return {
+      label: name.length > 20 ? `${name.slice(0, 18)}…` : name,
+      color: "#7a8898",
+      accent: "#c8dce8",
+      band: "#506070",
+    };
+  }
 
   if (height >= 140) {
     return {

@@ -117,6 +117,26 @@ function takeFraction<T>(items: T[], f: number): T[] {
   return items.filter((_, i) => i % step < 1);
 }
 
+function nearestRoadSample(
+  samples: RoadSample[],
+  x: number,
+  z: number,
+): RoadSample | null {
+  let best: RoadSample | null = null;
+  let bestDistSq = Infinity;
+  for (let i = 0; i < samples.length; i += 1) {
+    const sample = samples[i];
+    const dx = sample.position.x - x;
+    const dz = sample.position.z - z;
+    const distSq = dx * dx + dz * dz;
+    if (distSq < bestDistSq) {
+      bestDistSq = distSq;
+      best = sample;
+    }
+  }
+  return best;
+}
+
 function createExtrudedBuilding(
   footprint: RouteData["buildings"][number]["footprint"],
   height: number,
@@ -493,12 +513,54 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
   );
 
   // ---- scenery filtering ----
-  const streetLights = useMemo(() =>
-    takeFraction(route.sceneryObjects.filter((o) => o.type === "street_light"), quality.sceneryDensity),
-    [quality.sceneryDensity, route.sceneryObjects]);
-  const trees = useMemo(() =>
-    takeFraction(route.sceneryObjects.filter((o) => o.type === "tree"), quality.sceneryDensity),
-    [quality.sceneryDensity, route.sceneryObjects]);
+  const streetLights = useMemo(
+    () =>
+      takeFraction(
+        route.sceneryObjects.filter((o) => o.type === "street_light"),
+        quality.sceneryDensity,
+      ).map((o) => {
+        const nearest = nearestRoadSample(samples, o.position.x, o.position.z);
+        const nearTrack =
+          nearest &&
+          Math.hypot(
+            nearest.position.x - o.position.x,
+            nearest.position.z - o.position.z,
+          ) <= route.roadWidth + 18;
+        return {
+          ...o,
+          position: {
+            ...o.position,
+            // Snap trackside lights to the ribbon elevation; distant lights fall
+            // back to the world floor so they never hover over empty space.
+            y: nearTrack ? nearest.position.y : 0,
+          },
+        };
+      }),
+    [quality.sceneryDensity, route.sceneryObjects, route.roadWidth, samples],
+  );
+  const trees = useMemo(
+    () =>
+      takeFraction(
+        route.sceneryObjects.filter((o) => o.type === "tree"),
+        quality.sceneryDensity,
+      ).map((o) => {
+        const nearest = nearestRoadSample(samples, o.position.x, o.position.z);
+        const nearTrack =
+          nearest &&
+          Math.hypot(
+            nearest.position.x - o.position.x,
+            nearest.position.z - o.position.z,
+          ) <= route.roadWidth + 24;
+        return {
+          ...o,
+          position: {
+            ...o.position,
+            y: nearTrack ? Math.max(0, nearest.position.y - 0.2) : 0,
+          },
+        };
+      }),
+    [quality.sceneryDensity, route.sceneryObjects, route.roadWidth, samples],
+  );
 
   // ---- ground / wall dimensions ----
   // Oversized pad so long circuits (Egypt D-lap, Embankment) never run off
@@ -1461,68 +1523,77 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       {/* --- Alps Mountain Pass --- */}
       {isAlps && (
         <>
-          {/* Mountain peaks surrounding the circuit */}
+          {/* High alpine wall surrounding the pass so the road feels embedded in
+              a mountain basin rather than sitting in an open field. */}
           {[
-            [bounds.minX - 200, bounds.minZ - 180, 140, 85],
-            [bounds.maxX + 250, bounds.minZ - 120, 180, 110],
-            [bounds.minX - 280, bounds.maxZ + 150, 160, 95],
-            [bounds.maxX + 300, bounds.maxZ + 200, 200, 130],
-            [bounds.minX - 150, gcz, 120, 75],
-            [bounds.maxX + 350, gcz - 60, 170, 105],
-            [gcx - 100, bounds.minZ - 280, 190, 120],
-            [gcx + 80, bounds.maxZ + 280, 150, 90],
+            [bounds.minX - 360, bounds.minZ - 260, 300, 260],
+            [bounds.minX - 420, gcz - 120, 360, 320],
+            [bounds.minX - 320, bounds.maxZ + 220, 320, 280],
+            [gcx - 140, bounds.minZ - 420, 340, 340],
+            [gcx + 160, bounds.maxZ + 420, 360, 360],
+            [bounds.maxX + 420, bounds.minZ - 220, 340, 300],
+            [bounds.maxX + 500, gcz + 40, 420, 390],
+            [bounds.maxX + 360, bounds.maxZ + 260, 320, 280],
+            [gcx + 10, gcz - 540, 260, 240],
+            [gcx - 20, gcz + 540, 260, 230],
           ].map(([x, z, r, h], i) => (
-            <mesh key={`mtn-${i}`} position={[x, 0, z]} rotation={[0, i * 1.1, 0]} castShadow={quality.shadows}>
-              <coneGeometry args={[r, h, 6]} />
-              <meshStandardMaterial color={i % 2 === 0 ? "#6b7b6a" : "#5a6a58"} roughness={0.95} flatShading />
-            </mesh>
+            <group key={`mtn-${i}`} position={[x, 0, z]} rotation={[0, i * 0.7, 0]}>
+              <mesh castShadow={quality.shadows}>
+                <coneGeometry args={[r, h, 7]} />
+                <meshStandardMaterial
+                  color={i % 2 === 0 ? "#5f6f62" : "#6e7f72"}
+                  roughness={0.97}
+                  flatShading
+                />
+              </mesh>
+              <mesh position={[0, h * 0.64, 0]}>
+                <coneGeometry args={[r * 0.42, h * 0.28, 7]} />
+                <meshStandardMaterial color="#eef3f7" roughness={0.84} flatShading />
+              </mesh>
+            </group>
           ))}
-          {/* Snow caps on the larger peaks */}
+          {/* Chalet clusters around the lower slopes to sell the alpine villages. */}
           {[
-            [bounds.minX - 200, bounds.minZ - 180, 50, 20, 85],
-            [bounds.maxX + 250, bounds.minZ - 120, 65, 25, 110],
-            [bounds.maxX + 300, bounds.maxZ + 200, 72, 30, 130],
-            [bounds.maxX + 350, gcz - 60, 60, 24, 105],
-            [gcx - 100, bounds.minZ - 280, 68, 28, 120],
-          ].map(([x, z, r, h, baseH], i) => (
-            <mesh key={`snow-${i}`} position={[x, baseH * 0.65, z]} rotation={[0, i * 1.1, 0]}>
-              <coneGeometry args={[r * 0.45, h, 6]} />
-              <meshStandardMaterial color="#f0f4f8" roughness={0.8} flatShading />
-            </mesh>
+            [bounds.minX - 110, gcz - 120],
+            [bounds.minX - 70, gcz + 110],
+            [gcx + 210, bounds.minZ - 120],
+            [gcx + 260, bounds.maxZ + 90],
+            [bounds.maxX + 110, gcz - 160],
+            [bounds.maxX + 90, gcz + 150],
+          ].map(([x, z], i) => (
+            <group key={`chalet-${i}`} position={[x, 0, z]}>
+              <mesh position={[0, 4, 0]} castShadow={quality.shadows}>
+                <boxGeometry args={[11, 8, 8]} />
+                <meshStandardMaterial color="#7a6451" roughness={0.96} />
+              </mesh>
+              <mesh position={[0, 9, 0]} castShadow={quality.shadows}>
+                <coneGeometry args={[7.5, 6, 4]} />
+                <meshStandardMaterial color="#564235" roughness={0.94} flatShading />
+              </mesh>
+            </group>
           ))}
           {/* Pine trees along the roadside */}
-          {Array.from({ length: 40 }, (_, i) => {
-            const s = samples[Math.floor((i / 40) * samples.length)];
-            if (!s) return null;
-            const side = i % 2 === 0 ? 1 : -1;
-            const offset = 18 + (i % 5) * 4;
-            return (
-              <mesh key={`pine-${i}`} position={[s.position.x + s.normal.x * side * offset, 0, s.position.z + s.normal.z * side * offset]}>
-                <coneGeometry args={[2.5, 12, 5]} />
-                <meshStandardMaterial color="#2d5a27" roughness={0.9} flatShading />
-              </mesh>
-            );
-          })}
-        </>
-      )}
-
-      {/* --- Tokyo Drift Circuit --- */}
-      {isTokyo && (
-        <>
-          {/* Neon glow panels on buildings (simulated with emissive boxes) */}
-          {[
-            [bounds.minX + 40, 18, bounds.minZ + 30, "#ff00ff"],
-            [bounds.maxX - 30, 22, bounds.minZ + 80, "#00ffff"],
-            [bounds.minX + 80, 15, bounds.maxZ - 40, "#ff3366"],
-            [bounds.maxX - 60, 20, bounds.maxZ - 80, "#6633ff"],
-            [gcx + 30, 25, gcz - 40, "#ff6600"],
-            [gcx - 50, 16, gcz + 60, "#00ff66"],
-          ].map(([x, y, z, color], i) => (
-            <mesh key={`neon-${i}`} position={[x as number, y as number, z as number]}>
-              <boxGeometry args={[8, 3, 0.3]} />
-              <meshStandardMaterial color={color as string} emissive={color as string} emissiveIntensity={2} toneMapped={false} />
-            </mesh>
-          ))}
+          {Array.from({ length: quality.sceneryDensity >= 0.8 ? 64 : 36 }).map(
+            (_, i, items) => {
+              const s = samples[Math.floor((i / items.length) * samples.length)];
+              if (!s) return null;
+              const side = i % 2 === 0 ? 1 : -1;
+              const offset = 18 + (i % 5) * 4;
+              return (
+                <mesh
+                  key={`pine-${i}`}
+                  position={[
+                    s.position.x + s.normal.x * side * offset,
+                    Math.max(0, s.position.y - 0.4),
+                    s.position.z + s.normal.z * side * offset,
+                  ]}
+                >
+                  <coneGeometry args={[2.5, 12, 5]} />
+                  <meshStandardMaterial color="#2d5a27" roughness={0.9} flatShading />
+                </mesh>
+              );
+            },
+          )}
         </>
       )}
 
@@ -1563,7 +1634,16 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           ================================================================ */}
       {visibleBuildings.map((b, buildingIndex) => {
         const iconicKind = resolveIconicKind(b.name);
-        const useIconic = Boolean(iconicKind && b.landmark && b.name);
+        const landmarkIdentity =
+          b.landmark ??
+          (b.name
+            ? {
+                label: b.name.length > 22 ? `${b.name.slice(0, 20)}…` : b.name,
+                color: b.facadeColour,
+                accent: "#e8f0f8",
+              }
+            : null);
+        const useIconic = Boolean(iconicKind && landmarkIdentity && b.name);
         return (
         <group
           key={b.id}
@@ -1572,13 +1652,13 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           }}
           position={[b.cx, 0, b.cz]}
         >
-          {useIconic && iconicKind && b.landmark && b.name ? (
+          {useIconic && iconicKind && landmarkIdentity && b.name ? (
             <IconicTower
               kind={iconicKind}
               height={b.renderHeight}
               width={b.width}
               depth={b.depth}
-              identity={b.landmark}
+              identity={landmarkIdentity}
               name={b.name}
               facadeMaps={
                 b.facadeMaterial === "concrete" || b.facadeMaterial === "brick"

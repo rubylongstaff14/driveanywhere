@@ -11,6 +11,11 @@ import * as THREE from "three";
 import { LandmarkNameTag } from "@/components/game/scene/landmarks";
 import type { FacadeMaps } from "@/lib/game/building-textures";
 import type { LandmarkIdentity } from "@/lib/game/landmark-identity";
+import {
+  renderRegionalIconicBody,
+  resolveRegionalIconicKind,
+  type RegionalIconicKind,
+} from "@/components/game/scene/iconic-towers-regional";
 
 /**
  * Full-body iconic tower meshes — distinctive silhouettes instead of extruded
@@ -59,7 +64,8 @@ export type IconicKind =
   | "canary-pyramid"
   | "canary-halo"
   | "canary-diagrid"
-  | "egypt-pylon";
+  | "egypt-pylon"
+  | RegionalIconicKind;
 
 const NAME_TO_KIND: Record<string, IconicKind> = {
   // Dubai
@@ -196,6 +202,8 @@ const NAME_TO_KIND: Record<string, IconicKind> = {
 
 export function resolveIconicKind(name?: string): IconicKind | null {
   if (!name) return null;
+  const regional = resolveRegionalIconicKind(name);
+  if (regional) return regional;
   if (NAME_TO_KIND[name]) return NAME_TO_KIND[name];
   const lower = name.toLowerCase();
   if (lower.includes("burj khalifa")) return "burj-khalifa";
@@ -224,7 +232,37 @@ export function resolveIconicKind(name?: string): IconicKind | null {
   if (lower.includes("national theatre") || lower.includes("festival hall") || lower.includes("tate modern") || lower.includes("battersea")) {
     return "national-theatre";
   }
-  if (lower.includes("waterloo") || lower.includes("station")) return "station-shed";
+  if (
+    lower.includes("chalet") ||
+    lower.includes("berghaus") ||
+    lower.includes("gasthof") ||
+    lower.includes("hütte") ||
+    lower.includes("hut") ||
+    lower.includes("lodge")
+  ) {
+    return "alpine-chalet";
+  }
+  if (
+    lower.includes("gornergrat") ||
+    lower.includes("bergstation") ||
+    lower.includes("matterhorn station") ||
+    lower.includes("sugarloaf mountain station")
+  ) {
+    return "alpine-cable-station";
+  }
+  if (lower.includes("cristo")) return "cristo-redentor";
+  if (lower.includes("museum of tomorrow")) return "rio-museum-tomorrow";
+  if (lower.includes("lapa arch")) return "lapa-arches";
+  if (lower.includes("metropolitan cathedral")) return "rio-cathedral";
+  if (lower.includes("edificio italia")) return "edificio-italia";
+  if (lower.includes("tokyo tower")) return "tokyo-tower";
+  if (lower.includes("shibuya 109")) return "shibuya-109";
+  if (lower.includes("cocoon")) return "cocoon-tower";
+  if (lower.includes("docomo")) return "docomo-clock";
+  if (lower.includes("metropolitan government")) return "tmgb-twin";
+  if (lower.includes("waterloo") || (lower.includes("station") && !lower.includes("berg"))) {
+    return "station-shed";
+  }
   if (lower.includes("canada square")) return "canary-pyramid";
   if (lower.includes("hsbc")) return "canary-halo";
   if (lower.includes("newfoundland")) return "canary-diagrid";
@@ -1036,8 +1074,18 @@ export function IconicTower({
     });
   }, [castShadow, kind, h, w]);
 
+  const regionalBody = renderRegionalIconicBody(
+    kind as RegionalIconicKind,
+    h,
+    w,
+    paint,
+    accent,
+  );
+
   let body: ReactNode;
-  switch (kind) {
+  if (regionalBody) {
+    body = regionalBody;
+  } else switch (kind) {
     case "burj-khalifa":
       body = <BurjKhalifaMesh h={h} paint={paint} />;
       break;

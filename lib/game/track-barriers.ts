@@ -44,8 +44,8 @@ export function buildTrackBarriers(samples: RoadSample[]): TrackBarrier[] {
   const out: TrackBarrier[] = [];
   if (samples.length < 3) return out;
 
-  const GAP = 0.08;
-  const MIN_EDGE_CLEAR = 1.38;
+  const GAP = 0.05;
+  const MIN_EDGE_CLEAR = 0.82;
 
   for (const side of [-1, 1] as const) {
     type PathPt = {
@@ -58,7 +58,7 @@ export function buildTrackBarriers(samples: RoadSample[]): TrackBarrier[] {
     };
     const runs: PathPt[][] = [];
     let run: PathPt[] = [];
-    let smoothOff = samples[0].width / 2 + 1.68;
+      let smoothOff = samples[0].width / 2 + 1.18;
     let lastIndex = -999;
 
     for (let i = 1; i < samples.length - 1; i += 1) {
@@ -100,8 +100,8 @@ export function buildTrackBarriers(samples: RoadSample[]): TrackBarrier[] {
         continue;
       }
 
-      const flare = elevated ? 1.15 : 1.45;
-      const targetOff = cur.width / 2 + (elevated ? 1.95 : 1.68) + bend * flare;
+      const flare = elevated ? 0.95 : 1.18;
+      const targetOff = cur.width / 2 + (elevated ? 1.28 : 1.12) + bend * flare;
       smoothOff += (targetOff - smoothOff) * Math.min(1, step / 3.2);
 
       // Also break if we jumped several samples (defensive).
