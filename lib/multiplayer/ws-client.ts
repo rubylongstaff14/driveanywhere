@@ -10,8 +10,10 @@ export function getWsUrl(): string {
   if (typeof window === "undefined") return "";
   const env = process.env.NEXT_PUBLIC_WS_URL;
   if (env) return env;
-  const proto = window.location.protocol === "https:" ? "wss:" : "ws:";
-  return `${proto}//${window.location.hostname}:8080`;
+  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+    return "ws://localhost:8080";
+  }
+  return "ws://18.201.159.229:8080";
 }
 
 let connectionAttempts = 0;
