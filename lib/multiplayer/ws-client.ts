@@ -5,6 +5,8 @@ type MessageHandler = (msg: ServerMessage) => void;
 let socket: WebSocket | null = null;
 let handler: MessageHandler | null = null;
 let reconnectTimer: ReturnType<typeof setTimeout> | null = null;
+let onOpenCallback: (() => void) | null = null;
+let onCloseCallback: (() => void) | null = null;
 
 export function getWsUrl(): string {
   if (typeof window === "undefined") return "";
@@ -18,6 +20,11 @@ export function getWsUrl(): string {
 
 let connectionAttempts = 0;
 
+export function setConnectionCallbacks(onOpen: () => void, onClose: () => void): void {
+  onOpenCallback = onOpen;
+  onCloseCallback = onClose;
+}
+
 export function connectWs(onMessage: MessageHandler): void {
   if (socket?.readyState === WebSocket.OPEN || socket?.readyState === WebSocket.CONNECTING) return;
   handler = onMessage;
@@ -28,6 +35,7 @@ export function connectWs(onMessage: MessageHandler): void {
     socket = new WebSocket(url);
   } catch {
     socket = null;
+    onCloseCallback?.();
     scheduleReconnect(onMessage);
     return;
   }
@@ -37,6 +45,7 @@ export function connectWs(onMessage: MessageHandler): void {
       clearTimeout(reconnectTimer);
       reconnectTimer = null;
     }
+    onOpenCallback?.();
   };
   socket.onmessage = (ev) => {
     try {
@@ -46,6 +55,7 @@ export function connectWs(onMessage: MessageHandler): void {
   };
   socket.onclose = () => {
     socket = null;
+    onCloseCallback?.();
     scheduleReconnect(onMessage);
   };
   socket.onerror = () => {

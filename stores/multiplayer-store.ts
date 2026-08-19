@@ -12,6 +12,7 @@ import {
   connectWs,
   disconnectWs,
   sendMsg,
+  setConnectionCallbacks,
 } from "@/lib/multiplayer/ws-client";
 
 interface MultiplayerState {
@@ -93,8 +94,14 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     remoteCarStates: {},
 
     connect: () => {
+      setConnectionCallbacks(
+        () => {
+          set({ connected: true });
+          sendMsg({ type: "list_rooms" });
+        },
+        () => set({ connected: false }),
+      );
       connectWs(handleMessage);
-      set({ connected: true });
     },
     disconnect: () => {
       disconnectWs();
