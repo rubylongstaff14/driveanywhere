@@ -15,7 +15,7 @@ export function getWsUrl(): string {
   if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
     return "ws://localhost:8080";
   }
-  return "ws://18.201.159.229:8080";
+  return "wss://18-201-159-229.sslip.io";
 }
 
 let connectionAttempts = 0;
