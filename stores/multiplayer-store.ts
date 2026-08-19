@@ -78,11 +78,11 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
       case "race_go":
         set({ racing: true, raceLoading: false, countdownValue: null, raceStartTimestamp: msg.startTimestamp, raceVehicleId: msg.vehicleId, remoteCarStates: {} });
         break;
-      case "car_update":
-        set((s) => ({
-          remoteCarStates: { ...s.remoteCarStates, [msg.playerId]: msg.state },
-        }));
+      case "car_update": {
+        const states = get().remoteCarStates;
+        states[msg.playerId] = msg.state;
         break;
+      }
       case "chat":
         set((s) => ({
           chatMessages: [...s.chatMessages.slice(-49), { playerId: msg.playerId, playerName: msg.playerName, text: msg.text, timestamp: Date.now() }],

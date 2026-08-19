@@ -61,12 +61,16 @@ function RemoteCar({ playerId, color }: RemoteCarProps) {
 export function RemotePlayers() {
   const myId = useMultiplayerStore((s) => s.myId);
   const currentRoom = useMultiplayerStore((s) => s.currentRoom);
-  const remoteCarStates = useMultiplayerStore((s) => s.remoteCarStates);
+  const remotePlayerIds = useMultiplayerStore((s) => {
+    const ids = Object.keys(s.remoteCarStates);
+    return ids.sort().join(",");
+  });
 
   if (!currentRoom || !myId) return null;
 
+  const ids = remotePlayerIds ? remotePlayerIds.split(",") : [];
   const remotePlayers = currentRoom.players.filter(
-    (p) => p.id !== myId && remoteCarStates[p.id],
+    (p) => p.id !== myId && ids.includes(p.id),
   );
 
   return (
