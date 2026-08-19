@@ -7,6 +7,7 @@ export interface RoomInfo {
   map: string;
   difficulty: "easy" | "medium" | "hard";
   aiCount: number;
+  vehicleId: string;
   maxPlayers: number;
   players: PlayerSlot[];
   status: "waiting" | "countdown" | "racing" | "results";
@@ -54,6 +55,7 @@ export type ClientMessage =
   | { type: "host_set_map"; map: string }
   | { type: "host_set_difficulty"; difficulty: "easy" | "medium" | "hard" }
   | { type: "host_set_ai"; aiCount: number }
+  | { type: "host_set_vehicle"; vehicleId: string }
   | { type: "host_kick"; playerId: string }
   | { type: "host_start" }
   | { type: "car_state"; state: CarState }
@@ -67,7 +69,7 @@ export type ServerMessage =
   | { type: "room_updated"; room: RoomInfo }
   | { type: "room_error"; message: string }
   | { type: "countdown"; value: number }
-  | { type: "race_go"; startTimestamp: number }
+  | { type: "race_go"; startTimestamp: number; vehicleId: string }
   | { type: "car_update"; playerId: string; state: CarState }
   | { type: "race_results"; results: RaceResult[] }
   | { type: "kicked" }

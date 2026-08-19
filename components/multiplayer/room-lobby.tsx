@@ -25,6 +25,7 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
     hostSetMap,
     hostSetDifficulty,
     hostSetAi,
+    hostSetVehicle,
     hostKick,
     hostStart,
   } = useMultiplayerStore();
@@ -43,11 +44,14 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
     }
   }, [currentRoom, connected, router]);
 
+  const raceVehicleId = useMultiplayerStore((s) => s.raceVehicleId);
+
   useEffect(() => {
     if (racing && currentRoom) {
-      router.push(`/play/${currentRoom.map}?mode=online&roomId=${currentRoom.id}`);
+      const vehicle = raceVehicleId ?? currentRoom.vehicleId ?? "sports";
+      router.push(`/play/${currentRoom.map}?mode=online&roomId=${currentRoom.id}&vehicle=${vehicle}`);
     }
-  }, [racing, currentRoom, router]);
+  }, [racing, currentRoom, router, raceVehicleId]);
 
   if (!currentRoom) {
     return (
@@ -56,6 +60,14 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
       </div>
     );
   }
+
+  const vehicles = [
+    { id: "sports", name: "Sports Car" },
+    { id: "supercar", name: "Supercar" },
+    { id: "muscle", name: "Muscle Car" },
+    { id: "rally", name: "Rally Car" },
+    { id: "f1", name: "Formula 1" },
+  ];
 
   const maps = [
     { slug: "westminster-sprint", name: "Westminster Sprint" },
@@ -76,6 +88,8 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
               {maps.find((m) => m.slug === currentRoom.map)?.name ?? currentRoom.map}
               {" · "}
               {currentRoom.difficulty}
+              {" · "}
+              {vehicles.find((v) => v.id === currentRoom.vehicleId)?.name ?? "Sports Car"}
               {currentRoom.aiCount > 0 && ` · ${currentRoom.aiCount} AI`}
             </p>
           </div>
@@ -125,7 +139,7 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
         {isHost && currentRoom.status === "waiting" && (
           <div className="mb-6 rounded-xl border border-accent/20 bg-accent/5 p-5">
             <h2 className="mb-3 text-xs font-medium uppercase tracking-widest text-accent">Host Controls</h2>
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               <div>
                 <label className="mb-1 block text-[10px] text-mist">Map</label>
                 <select
@@ -148,6 +162,18 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                   <option value="easy">Easy</option>
                   <option value="medium">Medium</option>
                   <option value="hard">Hard</option>
+                </select>
+              </div>
+              <div>
+                <label className="mb-1 block text-[10px] text-mist">Vehicle</label>
+                <select
+                  className="w-full rounded-lg border border-white/10 bg-ink-975 px-2 py-1.5 text-xs text-white"
+                  value={currentRoom.vehicleId}
+                  onChange={(e) => hostSetVehicle(e.target.value)}
+                >
+                  {vehicles.map((v) => (
+                    <option key={v.id} value={v.id}>{v.name}</option>
+                  ))}
                 </select>
               </div>
               <div>

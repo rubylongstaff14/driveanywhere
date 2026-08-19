@@ -26,6 +26,7 @@ interface MultiplayerState {
   raceStartTimestamp: number | null;
   results: RaceResult[] | null;
   remoteCarStates: Record<string, CarState>;
+  raceVehicleId: string | null;
 
   connect: () => void;
   disconnect: () => void;
@@ -37,6 +38,7 @@ interface MultiplayerState {
   hostSetMap: (map: string) => void;
   hostSetDifficulty: (d: "easy" | "medium" | "hard") => void;
   hostSetAi: (count: number) => void;
+  hostSetVehicle: (vehicleId: string) => void;
   hostKick: (playerId: string) => void;
   hostStart: () => void;
   reportFinish: (timeMs: number, splits?: number[]) => void;
@@ -62,7 +64,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         set({ countdownValue: msg.value });
         break;
       case "race_go":
-        set({ racing: true, countdownValue: null, raceStartTimestamp: msg.startTimestamp, remoteCarStates: {} });
+        set({ racing: true, countdownValue: null, raceStartTimestamp: msg.startTimestamp, raceVehicleId: msg.vehicleId, remoteCarStates: {} });
         break;
       case "car_update":
         set((s) => ({
@@ -92,6 +94,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     raceStartTimestamp: null,
     results: null,
     remoteCarStates: {},
+    raceVehicleId: null,
 
     connect: () => {
       setConnectionCallbacks(
@@ -120,6 +123,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     hostSetMap: (map) => sendMsg({ type: "host_set_map", map }),
     hostSetDifficulty: (d) => sendMsg({ type: "host_set_difficulty", difficulty: d }),
     hostSetAi: (count) => sendMsg({ type: "host_set_ai", aiCount: count }),
+    hostSetVehicle: (vehicleId) => sendMsg({ type: "host_set_vehicle", vehicleId }),
     hostKick: (playerId) => sendMsg({ type: "host_kick", playerId }),
     hostStart: () => sendMsg({ type: "host_start" }),
     reportFinish: (timeMs, splits?: number[]) => sendMsg({ type: "race_finish", timeMs, splits: splits ?? [] }),

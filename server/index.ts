@@ -90,7 +90,8 @@ wss.on("connection", (ws) => {
 
       case "host_set_map":
       case "host_set_difficulty":
-      case "host_set_ai": {
+      case "host_set_ai":
+      case "host_set_vehicle": {
         const info = playerRooms.get(ws);
         if (!info) break;
         const room = rooms.get(info.roomId);
@@ -100,6 +101,7 @@ wss.on("connection", (ws) => {
         if (msg.type === "host_set_map") room.map = msg.map;
         if (msg.type === "host_set_difficulty") room.difficulty = msg.difficulty;
         if (msg.type === "host_set_ai") room.aiCount = Math.min(4, Math.max(0, msg.aiCount));
+        if (msg.type === "host_set_vehicle") room.vehicleId = msg.vehicleId;
         room.broadcast({ type: "room_updated", room: room.toInfo() });
         break;
       }

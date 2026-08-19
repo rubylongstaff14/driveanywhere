@@ -27,6 +27,7 @@ export class Room {
   map: string;
   difficulty: "easy" | "medium" | "hard";
   aiCount: number;
+  vehicleId = "sports";
   maxPlayers = 6;
   persistent = false;
   players: ConnectedPlayer[] = [];
@@ -59,6 +60,7 @@ export class Room {
       map: this.map,
       difficulty: this.difficulty,
       aiCount: this.aiCount,
+      vehicleId: this.vehicleId,
       maxPlayers: this.maxPlayers,
       players: this.players.map((p) => ({
         id: p.id,
@@ -140,7 +142,7 @@ export class Room {
       p.carState = null;
       p.finishTimeMs = null;
     }
-    this.broadcast({ type: "race_go", startTimestamp: this.raceStartTimestamp });
+    this.broadcast({ type: "race_go", startTimestamp: this.raceStartTimestamp, vehicleId: this.vehicleId });
     this.startBroadcastLoop();
   }
 
