@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { submitAttempt } from "@/lib/database/mock/attempts";
 import { formatLapTime } from "@/lib/utils/format";
 import { useAuthStore } from "@/stores/auth-store";
@@ -60,6 +60,38 @@ export function PauseMenu({
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [submittedFor, setSubmittedFor] = useState<number | null>(null);
   const submitted = finished && submittedFor === restartToken;
+
+  // Auto-submit time on race finish for leaderboard
+  useEffect(() => {
+    if (!finished || submittedFor === restartToken || invalid) return;
+    if (checkpointIndex < requiredCheckpoints) return;
+    let activeUser = user;
+    if (!activeUser) {
+      const guestResult = useAuthStore.getState().continueAsGuest();
+      if (!guestResult.ok) return;
+      activeUser = useAuthStore.getState().user;
+    }
+    if (!activeUser) return;
+    const result = submitAttempt({
+      routeId,
+      routeSlug,
+      userId: activeUser.id,
+      displayName: activeUser.displayName,
+      isGuest: activeUser.mode === "guest",
+      completionTimeMs: elapsedMs,
+      checkpointCount: checkpointIndex,
+      requiredCheckpointCount: requiredCheckpoints,
+      isValidClient: true,
+      invalidReason: null,
+    });
+    setSubmittedFor(restartToken);
+    if (result.ok) {
+      const pb = useGameStore.getState().personalBestMs;
+      if (pb === null || result.attempt.completionTimeMs < pb) {
+        setPersonalBest(result.attempt.completionTimeMs);
+      }
+    }
+  }, [finished, restartToken]);
 
   // Intro fly-through and start lights own the screen.
   if (countdown !== null || introActive) {

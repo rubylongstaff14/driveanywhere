@@ -38,11 +38,12 @@ function catmullRom(
 
 export function sampleRoad(
   points: RoadPoint[],
-  segmentsPerSpan = 10,
+  segmentsPerSpan = 16,
 ): RoadSample[] {
   if (points.length < 2) return [];
 
   const vecs = points.map((p) => new THREE.Vector3(p.x, Math.max(0, p.y ?? 0), p.z));
+  const widths = points.map((p) => p.width);
   const samples: RoadSample[] = [];
 
   for (let i = 0; i < vecs.length - 1; i += 1) {
@@ -50,19 +51,21 @@ export function sampleRoad(
     const p1 = vecs[i];
     const p2 = vecs[i + 1];
     const p3 = vecs[Math.min(vecs.length - 1, i + 2)];
-    const w = points[i].width;
+    const w0 = widths[i];
+    const w1 = widths[Math.min(widths.length - 1, i + 1)];
 
     for (let s = 0; s < segmentsPerSpan; s += 1) {
       const t = s / segmentsPerSpan;
       const pos = catmullRom(p0, p1, p2, p3, t);
       pos.y = Math.max(0, pos.y);
-      const ahead = catmullRom(p0, p1, p2, p3, Math.min(1, t + 0.04));
+      const lookAhead = Math.min(1, t + 0.02);
+      const ahead = catmullRom(p0, p1, p2, p3, lookAhead);
       ahead.y = Math.max(0, ahead.y);
       const tang = ahead.clone().sub(pos);
-      // Horizontal tangent for road-normal / yaw; keep mild vertical for pitch.
       const flat = new THREE.Vector3(tang.x, 0, tang.z);
       if (flat.lengthSq() < 0.001) continue;
       flat.normalize();
+      const w = w0 + (w1 - w0) * t;
       samples.push({
         position: pos,
         tangent: tang.normalize(),
@@ -158,7 +161,7 @@ export function createRoadGeometry(
  */
 export function createRoadShoulderApronGeometry(
   samples: RoadSample[],
-  apronWidth = 1.35,
+  apronWidth = 1.8,
 ): THREE.BufferGeometry {
   const positions: number[] = [];
   const indices: number[] = [];
