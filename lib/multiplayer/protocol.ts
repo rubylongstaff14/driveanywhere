@@ -32,6 +32,17 @@ export interface CarState {
   speed: number;
   gear: number;
   steer: number;
+  checkpointIndex: number;
+  raceTimeMs: number;
+}
+
+export interface RacePosition {
+  playerId: string;
+  playerName: string;
+  position: number;
+  checkpointIndex: number;
+  raceTimeMs: number;
+  delta: number | null;
 }
 
 export interface RaceResult {
@@ -59,6 +70,7 @@ export type ClientMessage =
   | { type: "host_kick"; playerId: string }
   | { type: "host_start" }
   | { type: "loaded" }
+  | { type: "chat"; text: string }
   | { type: "car_state"; state: CarState }
   | { type: "race_finish"; timeMs: number; splits: number[] };
 
@@ -75,5 +87,7 @@ export type ServerMessage =
   | { type: "race_go"; startTimestamp: number; vehicleId: string }
   | { type: "car_update"; playerId: string; state: CarState }
   | { type: "race_results"; results: RaceResult[] }
+  | { type: "chat"; playerId: string; playerName: string; text: string }
+  | { type: "race_positions"; positions: RacePosition[] }
   | { type: "kicked" }
   | { type: "room_closed" };

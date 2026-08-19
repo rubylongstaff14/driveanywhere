@@ -675,12 +675,15 @@ export function Vehicle({ route, samples }: VehicleProps) {
       if (!scratch.current.lastNetSend || now - scratch.current.lastNetSend > 33) {
         scratch.current.lastNetSend = now;
         const rot = body.rotation();
+        const gs = useGameStore.getState();
         sendCarState({
           x: pos.x, y: pos.y, z: pos.z,
           qx: rot.x, qy: rot.y, qz: rot.z, qw: rot.w,
           speed: speedKph,
           gear: scratch.current.gear ?? 0,
           steer: scratch.current.steer ?? 0,
+          checkpointIndex: gs.checkpointIndex ?? 0,
+          raceTimeMs: gs.elapsedMs ?? 0,
         });
       }
     }

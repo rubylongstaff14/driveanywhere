@@ -2,6 +2,7 @@ import type { WebSocket } from "ws";
 import type {
   CarState,
   PlayerSlot,
+  RacePosition,
   RaceResult,
   RoomInfo,
   ServerMessage,
@@ -36,6 +37,7 @@ export class Room {
   raceStartTimestamp: number | null = null;
   private countdownTimer: ReturnType<typeof setInterval> | null = null;
   private broadcastTimer: ReturnType<typeof setInterval> | null = null;
+  private positionsTimer: ReturnType<typeof setInterval> | null = null;
 
   constructor(name: string, map: string, difficulty: "easy" | "medium" | "hard", aiCount: number) {
     this.id = `room_${nextRoomId++}`;
@@ -163,6 +165,7 @@ export class Room {
     }
     this.broadcast({ type: "race_go", startTimestamp: this.raceStartTimestamp, vehicleId: this.vehicleId });
     this.startBroadcastLoop();
+    this.startPositionsLoop();
   }
 
   private startBroadcastLoop(): void {
@@ -184,9 +187,33 @@ export class Room {
     }
   }
 
+  private startPositionsLoop(): void {
+    this.positionsTimer = setInterval(() => {
+      const sorted = [...this.players]
+        .sort((a, b) => {
+          const aCp = a.carState?.checkpointIndex ?? 0;
+          const bCp = b.carState?.checkpointIndex ?? 0;
+          if (aCp !== bCp) return bCp - aCp;
+          return (a.carState?.raceTimeMs ?? Infinity) - (b.carState?.raceTimeMs ?? Infinity);
+        });
+      const leaderTime = sorted[0]?.carState?.raceTimeMs ?? 0;
+      const positions: RacePosition[] = sorted.map((p, i) => ({
+        playerId: p.id,
+        playerName: p.name,
+        position: i + 1,
+        checkpointIndex: p.carState?.checkpointIndex ?? 0,
+        raceTimeMs: p.carState?.raceTimeMs ?? 0,
+        delta: i === 0 ? null : (p.carState?.raceTimeMs ?? 0) - leaderTime,
+      }));
+      this.broadcast({ type: "race_positions", positions });
+    }, 500);
+  }
+
   endRace(): void {
     if (this.broadcastTimer) clearInterval(this.broadcastTimer);
+    if (this.positionsTimer) clearInterval(this.positionsTimer);
     this.broadcastTimer = null;
+    this.positionsTimer = null;
     this.status = "results";
 
     const results: RaceResult[] = this.players
@@ -222,8 +249,10 @@ export class Room {
   reset(): void {
     if (this.countdownTimer) clearInterval(this.countdownTimer);
     if (this.broadcastTimer) clearInterval(this.broadcastTimer);
+    if (this.positionsTimer) clearInterval(this.positionsTimer);
     this.countdownTimer = null;
     this.broadcastTimer = null;
+    this.positionsTimer = null;
     this.status = "waiting";
   }
 

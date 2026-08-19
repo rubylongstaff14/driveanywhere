@@ -4,6 +4,7 @@ import { create } from "zustand";
 import type {
   CarState,
   PlayerSlot,
+  RacePosition,
   RaceResult,
   RoomInfo,
   ServerMessage,
@@ -29,6 +30,8 @@ interface MultiplayerState {
   raceVehicleId: string | null;
   raceLoading: boolean;
   loadingProgress: { loaded: number; total: number } | null;
+  chatMessages: { playerId: string; playerName: string; text: string; timestamp: number }[];
+  racePositions: RacePosition[];
 
   connect: () => void;
   disconnect: () => void;
@@ -44,6 +47,7 @@ interface MultiplayerState {
   hostKick: (playerId: string) => void;
   hostStart: () => void;
   reportFinish: (timeMs: number, splits?: number[]) => void;
+  sendChat: (text: string) => void;
   clearError: () => void;
 }
 
@@ -79,8 +83,16 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
           remoteCarStates: { ...s.remoteCarStates, [msg.playerId]: msg.state },
         }));
         break;
+      case "chat":
+        set((s) => ({
+          chatMessages: [...s.chatMessages.slice(-49), { playerId: msg.playerId, playerName: msg.playerName, text: msg.text, timestamp: Date.now() }],
+        }));
+        break;
+      case "race_positions":
+        set({ racePositions: msg.positions });
+        break;
       case "race_results":
-        set({ racing: false, results: msg.results });
+        set({ racing: false, results: msg.results, racePositions: [] });
         break;
       case "kicked":
         set({ currentRoom: null, myId: null, error: "You were kicked from the room" });
@@ -105,6 +117,8 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     raceVehicleId: null,
     raceLoading: false,
     loadingProgress: null,
+    chatMessages: [],
+    racePositions: [],
 
     connect: () => {
       setConnectionCallbacks(
@@ -137,6 +151,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     hostKick: (playerId) => sendMsg({ type: "host_kick", playerId }),
     hostStart: () => sendMsg({ type: "host_start" }),
     reportFinish: (timeMs, splits?: number[]) => sendMsg({ type: "race_finish", timeMs, splits: splits ?? [] }),
+    sendChat: (text) => sendMsg({ type: "chat", text }),
     clearError: () => set({ error: null }),
   };
 });

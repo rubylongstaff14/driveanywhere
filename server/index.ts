@@ -147,6 +147,19 @@ wss.on("connection", (ws) => {
         break;
       }
 
+      case "chat": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room) break;
+        const player = room.players.find((p) => p.id === info.playerId);
+        if (!player) break;
+        const text = (msg.text || "").slice(0, 150).trim();
+        if (!text) break;
+        room.broadcast({ type: "chat", playerId: info.playerId, playerName: player.name, text });
+        break;
+      }
+
       case "car_state": {
         const info = playerRooms.get(ws);
         if (!info) break;
