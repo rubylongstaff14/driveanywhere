@@ -451,6 +451,13 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
   const buildings = useMemo(() => route.buildings.map((b) => {
     const renderHeight = Math.max(1, b.height - b.baseHeight);
     const extruded = createExtrudedBuilding(b.footprint, renderHeight);
+    const isAlpsRoute = route.slug === "alps-mountain-pass";
+    const nearest = isAlpsRoute
+      ? nearestRoadSample(samples, extruded.cx, extruded.cz)
+      : null;
+    const groundY = isAlpsRoute
+      ? Math.max(0, (nearest?.position.y ?? 0) + b.baseHeight)
+      : b.baseHeight;
     const facade =
       b.name === "Newfoundland Quay"
         ? facades.glassDiagrid
@@ -467,6 +474,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       ...b,
       ...extruded,
       renderHeight,
+      groundY,
       // Facade maps are shared by material family. Cloning one texture for
       // every building uploaded hundreds of duplicate GPU textures.
       tex: facade.color,
@@ -483,7 +491,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       })(),
       landmark: getLandmarkIdentity(b.name, b.height),
     };
-  }), [route.buildings, facades]);
+  }), [route.buildings, facades, samples, route.slug]);
 
   const visibleBuildings = useMemo(() => {
     const roadClearance = 12;
@@ -1012,7 +1020,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               args={[hw, h / 2, hd]}
               position={[
                 b.cx,
-                h / 2,
+                b.groundY + h / 2,
                 b.cz,
               ]}
             />
@@ -1523,36 +1531,50 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       {/* --- Alps Mountain Pass --- */}
       {isAlps && (
         <>
-          {/* High alpine wall surrounding the pass so the road feels embedded in
-              a mountain basin rather than sitting in an open field. */}
-          {[
-            [bounds.minX - 360, bounds.minZ - 260, 300, 260],
-            [bounds.minX - 420, gcz - 120, 360, 320],
-            [bounds.minX - 320, bounds.maxZ + 220, 320, 280],
-            [gcx - 140, bounds.minZ - 420, 340, 340],
-            [gcx + 160, bounds.maxZ + 420, 360, 360],
-            [bounds.maxX + 420, bounds.minZ - 220, 340, 300],
-            [bounds.maxX + 500, gcz + 40, 420, 390],
-            [bounds.maxX + 360, bounds.maxZ + 260, 320, 280],
-            [gcx + 10, gcz - 540, 260, 240],
-            [gcx - 20, gcz + 540, 260, 230],
-          ].map(([x, z, r, h], i) => (
-            <group key={`mtn-${i}`} position={[x, 0, z]} rotation={[0, i * 0.7, 0]}>
-              <mesh castShadow={quality.shadows}>
-                <coneGeometry args={[r, h, 7]} />
-                <meshStandardMaterial
-                  color={i % 2 === 0 ? "#5f6f62" : "#6e7f72"}
-                  roughness={0.97}
-                  flatShading
-                />
-              </mesh>
-              <mesh position={[0, h * 0.64, 0]}>
-                <coneGeometry args={[r * 0.42, h * 0.28, 7]} />
-                <meshStandardMaterial color="#eef3f7" roughness={0.84} flatShading />
-              </mesh>
-            </group>
-          ))}
-          {/* Chalet clusters around the lower slopes to sell the alpine villages. */}
+          {/* Alps backdrop: high peaks generated from the centreline so the
+              road feels like it is climbing through a full mountain basin. */}
+          {samples.map((s, i) => {
+            if (i % Math.max(3, Math.floor(samples.length / 26)) !== 0) return null;
+            const sideOffset = 185 + (i % 4) * 55;
+            const peakH = 250 + (i % 3) * 60;
+            const peakR = 120 + (i % 4) * 18;
+            const baseY = Math.max(0, s.position.y - 18);
+            const peakMat = i % 2 === 0 ? "#5f6f62" : "#6e7f72";
+            const snowMat = "#eef3f7";
+
+            const makePeak = (side: number, tag: string) => (
+              <group
+                key={`alps-${tag}-${i}`}
+                position={[
+                  s.position.x + s.normal.x * side * sideOffset,
+                  baseY,
+                  s.position.z + s.normal.z * side * sideOffset,
+                ]}
+                rotation={[0, i * 0.4 * side, 0]}
+              >
+                <mesh position={[0, peakH / 2, 0]} castShadow={quality.shadows}>
+                  <coneGeometry args={[peakR, peakH, 7]} />
+                  <meshStandardMaterial color={peakMat} roughness={0.97} flatShading />
+                </mesh>
+                <mesh position={[0, peakH * 0.86, 0]}>
+                  <coneGeometry args={[peakR * 0.42, peakH * 0.18, 7]} />
+                  <meshStandardMaterial color={snowMat} roughness={0.84} flatShading />
+                </mesh>
+              </group>
+            );
+
+            const left = makePeak(-1, "L");
+            const right = makePeak(1, "R");
+            return (
+              <>
+                {left}
+                {right}
+              </>
+            );
+          })}
+
+          {/* Small alpine chalet clusters placed on the nearest ribbon height
+              so they never float when the road climbs. */}
           {[
             [bounds.minX - 110, gcz - 120],
             [bounds.minX - 70, gcz + 110],
@@ -1560,18 +1582,22 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             [gcx + 260, bounds.maxZ + 90],
             [bounds.maxX + 110, gcz - 160],
             [bounds.maxX + 90, gcz + 150],
-          ].map(([x, z], i) => (
-            <group key={`chalet-${i}`} position={[x, 0, z]}>
-              <mesh position={[0, 4, 0]} castShadow={quality.shadows}>
-                <boxGeometry args={[11, 8, 8]} />
-                <meshStandardMaterial color="#7a6451" roughness={0.96} />
-              </mesh>
-              <mesh position={[0, 9, 0]} castShadow={quality.shadows}>
-                <coneGeometry args={[7.5, 6, 4]} />
-                <meshStandardMaterial color="#564235" roughness={0.94} flatShading />
-              </mesh>
-            </group>
-          ))}
+          ].map(([x, z], i) => {
+            const nearest = nearestRoadSample(samples, x, z);
+            const y = Math.max(0, nearest?.position.y ?? 0) - 1.5;
+            return (
+              <group key={`chalet-${i}`} position={[x, y, z]}>
+                <mesh position={[0, 4, 0]} castShadow={quality.shadows}>
+                  <boxGeometry args={[11, 8, 8]} />
+                  <meshStandardMaterial color="#7a6451" roughness={0.96} />
+                </mesh>
+                <mesh position={[0, 9, 0]} castShadow={quality.shadows}>
+                  <coneGeometry args={[7.5, 6, 4]} />
+                  <meshStandardMaterial color="#564235" roughness={0.94} flatShading />
+                </mesh>
+              </group>
+            );
+          })}
           {/* Pine trees along the roadside */}
           {Array.from({ length: quality.sceneryDensity >= 0.8 ? 64 : 36 }).map(
             (_, i, items) => {
@@ -1650,7 +1676,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           ref={(node) => {
             buildingRefs.current[buildingIndex] = node;
           }}
-          position={[b.cx, 0, b.cz]}
+          position={[b.cx, b.groundY, b.cz]}
         >
           {useIconic && iconicKind && landmarkIdentity && b.name ? (
             <IconicTower

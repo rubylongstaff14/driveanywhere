@@ -27,6 +27,11 @@ interface MultiplayerState {
   raceStartTimestamp: number | null;
   results: RaceResult[] | null;
   remoteCarStates: Record<string, CarState>;
+  /**
+   * Timestamped car-state history used for client-side interpolation to hide
+   * network jitter/latency.
+   */
+  remoteCarStateHistory: Record<string, { state: CarState; timestamp: number }[]>;
   raceVehicleId: string | null;
   raceLoading: boolean;
   loadingProgress: { loaded: number; total: number } | null;
@@ -58,7 +63,16 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         set({ rooms: msg.rooms });
         break;
       case "room_joined":
-        set({ currentRoom: msg.room, myId: msg.yourId, error: null, results: null, racing: false, countdownValue: null });
+        set({
+          currentRoom: msg.room,
+          myId: msg.yourId,
+          error: null,
+          results: null,
+          racing: false,
+          countdownValue: null,
+          remoteCarStates: {},
+          remoteCarStateHistory: {},
+        });
         break;
       case "room_updated":
         set({ currentRoom: msg.room });
@@ -76,11 +90,25 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         set({ countdownValue: msg.value, loadingProgress: null });
         break;
       case "race_go":
-        set({ racing: true, raceLoading: false, countdownValue: null, raceStartTimestamp: msg.startTimestamp, raceVehicleId: msg.vehicleId, remoteCarStates: {} });
+        set({
+          racing: true,
+          raceLoading: false,
+          countdownValue: null,
+          raceStartTimestamp: msg.startTimestamp,
+          raceVehicleId: msg.vehicleId,
+          remoteCarStates: {},
+          remoteCarStateHistory: {},
+        });
         break;
       case "car_update": {
         const states = get().remoteCarStates;
         states[msg.playerId] = msg.state;
+
+        const history = get().remoteCarStateHistory;
+        if (!history[msg.playerId]) history[msg.playerId] = [];
+        history[msg.playerId].push({ state: msg.state, timestamp: Date.now() });
+        // Keep a tiny sliding window for interpolation.
+        while (history[msg.playerId].length > 3) history[msg.playerId].shift();
         break;
       }
       case "chat":
@@ -92,7 +120,13 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         set({ racePositions: msg.positions });
         break;
       case "race_results":
-        set({ racing: false, results: msg.results, racePositions: [] });
+        set({
+          racing: false,
+          results: msg.results,
+          racePositions: [],
+          remoteCarStates: {},
+          remoteCarStateHistory: {},
+        });
         break;
       case "kicked":
         set({ currentRoom: null, myId: null, error: "You were kicked from the room" });
@@ -114,6 +148,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     raceStartTimestamp: null,
     results: null,
     remoteCarStates: {},
+    remoteCarStateHistory: {},
     raceVehicleId: null,
     raceLoading: false,
     loadingProgress: null,
@@ -132,7 +167,17 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     },
     disconnect: () => {
       disconnectWs();
-      set({ connected: false, currentRoom: null, myId: null, rooms: [] });
+      set({
+        connected: false,
+        currentRoom: null,
+        myId: null,
+        rooms: [],
+        racing: false,
+        remoteCarStates: {},
+        remoteCarStateHistory: {},
+        results: null,
+        error: null,
+      });
     },
     listRooms: () => sendMsg({ type: "list_rooms" }),
     createRoom: (name, map, difficulty, aiCount, playerName, vehicleId) =>
@@ -141,7 +186,14 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
       sendMsg({ type: "join_room", roomId, playerName, vehicleId }),
     leaveRoom: () => {
       sendMsg({ type: "leave_room" });
-      set({ currentRoom: null, myId: null, results: null, racing: false });
+      set({
+        currentRoom: null,
+        myId: null,
+        results: null,
+        racing: false,
+        remoteCarStates: {},
+        remoteCarStateHistory: {},
+      });
     },
     setReady: (ready) => sendMsg({ type: ready ? "ready" : "unready" }),
     hostSetMap: (map) => sendMsg({ type: "host_set_map", map }),
