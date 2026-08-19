@@ -28,6 +28,7 @@ export class Room {
   difficulty: "easy" | "medium" | "hard";
   aiCount: number;
   maxPlayers = 6;
+  persistent = false;
   players: ConnectedPlayer[] = [];
   status: "waiting" | "countdown" | "racing" | "results" = "waiting";
   raceStartTimestamp: number | null = null;
@@ -111,7 +112,9 @@ export class Room {
   }
 
   allReady(): boolean {
-    return this.players.length >= 2 && this.players.every((p) => p.ready);
+    if (this.players.length === 0) return false;
+    if (this.players.length === 1 && this.aiCount === 0) return false;
+    return this.players.every((p) => p.ready);
   }
 
   startCountdown(): void {

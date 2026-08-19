@@ -20,7 +20,8 @@ export function ServerBrowser() {
     clearError,
   } = useMultiplayerStore();
 
-  const playerName = user?.username ?? `Player${Math.floor(Math.random() * 999)}`;
+  const defaultName = user?.username ?? `Guest${Math.floor(Math.random() * 9999)}`;
+  const [playerName, setPlayerName] = useState(defaultName);
   const [showCreate, setShowCreate] = useState(false);
   const [roomName, setRoomName] = useState(`${playerName}'s Race`);
   const [map, setMap] = useState("westminster-sprint");
@@ -96,6 +97,17 @@ export function ServerBrowser() {
           </div>
         </div>
 
+        {/* Guest name */}
+        <div className="mb-6 flex items-center gap-3 rounded-xl border border-white/10 bg-ink-950 px-4 py-3">
+          <label className="text-xs text-mist whitespace-nowrap">Your Name</label>
+          <input
+            className="flex-1 rounded-lg border border-white/10 bg-ink-975 px-3 py-1.5 text-sm text-white outline-none focus:border-accent"
+            value={playerName}
+            onChange={(e) => setPlayerName(e.target.value)}
+            maxLength={20}
+          />
+        </div>
+
         {error && (
           <div className="mb-4 rounded-lg border border-signal/30 bg-signal/10 px-4 py-2 text-sm text-signal">
             {error}
@@ -163,7 +175,12 @@ export function ServerBrowser() {
         )}
 
         <div className="space-y-3">
-          {rooms.length === 0 && (
+          {!connected && (
+            <p className="py-12 text-center text-sm text-mist">
+              Connecting to game server... Make sure the WebSocket server is running.
+            </p>
+          )}
+          {connected && rooms.length === 0 && (
             <p className="py-12 text-center text-sm text-mist">
               No servers available. Create one to get started.
             </p>

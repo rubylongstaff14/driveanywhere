@@ -61,7 +61,8 @@ wss.on("connection", (ws) => {
           break;
         }
         const playerId = genPlayerId();
-        room.addPlayer(ws, playerId, msg.playerName, msg.vehicleId, false);
+        const becomeHost = room.humanCount === 0;
+        room.addPlayer(ws, playerId, msg.playerName, msg.vehicleId, becomeHost);
         playerRooms.set(ws, { roomId: room.id, playerId });
         sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
         room.broadcast({ type: "room_updated", room: room.toInfo() }, playerId);
@@ -127,8 +128,8 @@ wss.on("connection", (ws) => {
         if (!room) break;
         const player = room.players.find((p) => p.id === info.playerId);
         if (!player?.isHost || room.status !== "waiting") break;
-        if (room.players.length < 2 || !room.allReady()) {
-          sendTo(ws, { type: "room_error", message: "Not all players are ready" });
+        if (!room.allReady()) {
+          sendTo(ws, { type: "room_error", message: "Not all players are ready (min 2 players, or 1 + AI)" });
           break;
         }
         room.startCountdown();
@@ -168,12 +169,26 @@ function handleLeave(ws: WebSocket): void {
   const room = rooms.get(info.roomId);
   if (!room) return;
   room.removePlayer(info.playerId);
-  if (room.humanCount === 0) {
+  if (room.humanCount === 0 && !room.persistent) {
     room.destroy();
     rooms.delete(room.id);
-  } else {
+  } else if (room.humanCount > 0) {
     room.broadcast({ type: "room_updated", room: room.toInfo() });
   }
 }
 
-console.log(`[WS Server] Listening on port ${PORT}`);
+// Create 3 persistent default servers
+const defaultServers = [
+  { name: "Westminster Sprint — Open Lobby", map: "westminster-sprint", difficulty: "medium" as const },
+  { name: "Dubai Marina — All Welcome", map: "dubai-marina-circuit", difficulty: "medium" as const },
+  { name: "New York Harbor — Competitive", map: "new-york-harbor-circuit", difficulty: "hard" as const },
+];
+
+for (const cfg of defaultServers) {
+  const room = new Room(cfg.name, cfg.map, cfg.difficulty, 2);
+  room.maxPlayers = 6;
+  room.persistent = true;
+  rooms.set(room.id, room);
+}
+
+console.log(`[WS Server] Listening on port ${PORT} with ${defaultServers.length} default servers`);

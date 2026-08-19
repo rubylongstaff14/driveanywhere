@@ -14,14 +14,23 @@ export function getWsUrl(): string {
   return `${proto}//${window.location.hostname}:8080`;
 }
 
+let connectionAttempts = 0;
+
 export function connectWs(onMessage: MessageHandler): void {
-  if (socket?.readyState === WebSocket.OPEN) return;
+  if (socket?.readyState === WebSocket.OPEN || socket?.readyState === WebSocket.CONNECTING) return;
   handler = onMessage;
   const url = getWsUrl();
   if (!url) return;
 
-  socket = new WebSocket(url);
+  try {
+    socket = new WebSocket(url);
+  } catch {
+    socket = null;
+    scheduleReconnect(onMessage);
+    return;
+  }
   socket.onopen = () => {
+    connectionAttempts = 0;
     if (reconnectTimer) {
       clearTimeout(reconnectTimer);
       reconnectTimer = null;
@@ -35,11 +44,17 @@ export function connectWs(onMessage: MessageHandler): void {
   };
   socket.onclose = () => {
     socket = null;
-    reconnectTimer = setTimeout(() => connectWs(onMessage), 3000);
+    scheduleReconnect(onMessage);
   };
   socket.onerror = () => {
     socket?.close();
   };
+}
+
+function scheduleReconnect(onMessage: MessageHandler): void {
+  connectionAttempts += 1;
+  const delay = Math.min(10000, 1000 * Math.pow(1.5, connectionAttempts));
+  reconnectTimer = setTimeout(() => connectWs(onMessage), delay);
 }
 
 export function disconnectWs(): void {

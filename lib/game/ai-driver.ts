@@ -163,7 +163,7 @@ export function aiTopSpeed(vehicle: VehicleDef, paceMul = 1): number {
  */
 export function aiSkillCornerMul(skill: number): number {
   const s = Math.max(0, Math.min(1, skill));
-  return 0.66 + s * 0.26;
+  return 0.62 + s * 0.42;
 }
 
 export function aiCruiseSpeed(

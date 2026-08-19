@@ -542,8 +542,8 @@ export function Vehicle({ route, samples }: VehicleProps) {
     const body = bodyRef.current;
     if (!body) return;
     if (introActive) return;
-    // Hitched frames used to slam the chase cam onto the target.
-    const delta = Math.min(0.033, Math.max(0.001, rawDelta));
+    // Clamp to avoid teleport on tab-back or hitch, but allow 60Hz+ frames.
+    const delta = Math.min(0.05, Math.max(0.0005, rawDelta));
 
     const { camTarget, lookAt, lookAtSmooth, camSmooth, forward, quat } =
       scratch.current;
@@ -630,19 +630,18 @@ export function Vehicle({ route, samples }: VehicleProps) {
         .addScaledVector(forward, 28);
     }
 
-    // Snap only on mode change or a true teleport — hitch frames used to
-    // exceed 22 m and slam the lens onto the car.
     const cam2 = cameraRef.current;
     const modeChanged = prevCameraMode.current !== cameraMode;
     prevCameraMode.current = cameraMode;
-    const jumped = !scratch.current.camReady || modeChanged;
+    const teleportDist = camSmooth.distanceToSquared(camTarget);
+    const jumped = !scratch.current.camReady || modeChanged || teleportDist > 900;
     if (jumped) {
       camSmooth.copy(camTarget);
       lookAtSmooth.copy(lookAt);
       scratch.current.camReady = true;
     } else {
-      const followRate = cameraMode === "chase" ? 7.5 : 14;
-      const lookRate = cameraMode === "chase" ? 9 : 16;
+      const followRate = cameraMode === "chase" ? 9.5 : 14;
+      const lookRate = cameraMode === "chase" ? 11 : 16;
       camSmooth.lerp(camTarget, 1 - Math.exp(-followRate * delta));
       lookAtSmooth.lerp(lookAt, 1 - Math.exp(-lookRate * delta));
     }

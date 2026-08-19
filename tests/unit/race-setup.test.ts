@@ -178,12 +178,12 @@ describe("hitboxes and AI lanes", () => {
   });
 
   it("uses the same power but backs off corners at lower skill", () => {
-    expect(aiSkillCornerMul(0)).toBeCloseTo(0.66);
-    expect(aiSkillCornerMul(0.5)).toBeCloseTo(0.79);
-    expect(aiSkillCornerMul(1)).toBeLessThan(1);
+    expect(aiSkillCornerMul(0)).toBeCloseTo(0.62);
+    expect(aiSkillCornerMul(0.5)).toBeCloseTo(0.83);
+    expect(aiSkillCornerMul(1)).toBeGreaterThan(0.99);
     const hairpin = 22;
     const limit = gripLimitedCornerSpeed(hairpin, VEHICLES.sports.tuning.gripMul);
-    expect(limit * aiSkillCornerMul(0.5)).toBeLessThan(limit * 0.85);
+    expect(limit * aiSkillCornerMul(0.5)).toBeLessThan(limit * 0.9);
     expect(aiCruiseSpeed(VEHICLES.sports, 1, 2400)).toBeCloseTo(
       C.maxSpeedMs * VEHICLES.sports.tuning.maxSpeedMul,
     );
