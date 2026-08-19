@@ -20,13 +20,12 @@ export function ServerBrowser() {
     clearError,
   } = useMultiplayerStore();
 
+  const playerName = user?.username ?? `Player${Math.floor(Math.random() * 999)}`;
   const [showCreate, setShowCreate] = useState(false);
-  const [roomName, setRoomName] = useState("");
+  const [roomName, setRoomName] = useState(`${playerName}'s Race`);
   const [map, setMap] = useState("westminster-sprint");
   const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">("medium");
   const [aiCount, setAiCount] = useState(2);
-
-  const playerName = user?.username ?? `Player${Math.floor(Math.random() * 999)}`;
 
   useEffect(() => {
     if (!connected) connect();
@@ -69,22 +68,32 @@ export function ServerBrowser() {
       <div className="mx-auto max-w-3xl">
         <div className="mb-8 flex items-center justify-between">
           <div>
-            <Link href="/routes" className="text-xs text-mist hover:text-white">
-              &larr; Back to routes
+            <Link href="/" className="text-xs text-mist hover:text-white">
+              &larr; Home
             </Link>
-            <h1 className="mt-2 font-display text-3xl">Online Racing</h1>
+            <h1 className="mt-2 font-display text-3xl">Play Online</h1>
             <p className="mt-1 text-sm text-mist">
               {connected ? "Connected" : "Connecting..."}
               {" · "}
               {rooms.length} server{rooms.length !== 1 ? "s" : ""} available
             </p>
           </div>
-          <button
-            onClick={() => setShowCreate(!showCreate)}
-            className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent/80"
-          >
-            {showCreate ? "Cancel" : "Create Server"}
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={() => {
+                createRoom(`${playerName}'s Race`, "westminster-sprint", "medium", 2, playerName, "sports");
+              }}
+              className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent/80"
+            >
+              Quick Play
+            </button>
+            <button
+              onClick={() => setShowCreate(!showCreate)}
+              className="rounded-lg border border-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/5"
+            >
+              {showCreate ? "Cancel" : "Custom Server"}
+            </button>
+          </div>
         </div>
 
         {error && (

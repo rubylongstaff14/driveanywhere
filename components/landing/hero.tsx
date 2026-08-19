@@ -31,11 +31,11 @@ export function Hero() {
             not photoreal digital twins.
           </p>
           <div className="flex flex-wrap gap-3">
-            <ButtonLink href="/routes" size="lg">
-              Play a route
+            <ButtonLink href="/play/online" size="lg">
+              Play Online
             </ButtonLink>
-            <ButtonLink href="/register" variant="secondary" size="lg">
-              Create account
+            <ButtonLink href="/routes" variant="secondary" size="lg">
+              Play Solo
             </ButtonLink>
           </div>
         </div>

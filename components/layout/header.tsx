@@ -9,10 +9,10 @@ import { Logo } from "@/components/layout/logo";
 import { cn } from "@/lib/utils/cn";
 
 const navItems = [
-  { href: "/routes", label: "Routes" },
+  { href: "/play/online", label: "Play Online" },
+  { href: "/routes", label: "Solo" },
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/profile", label: "Profile" },
-  { href: "/attribution", label: "Attribution" },
 ];
 
 export function Header() {

@@ -16,6 +16,7 @@ export function OnlineResultsOverlay() {
   const me = results.find((r) => r.playerId === myId);
 
   function handlePlayAgain() {
+    useMultiplayerStore.setState({ results: null, racing: false });
     if (currentRoom) {
       router.push(`/play/online/${currentRoom.id}`);
     } else {
