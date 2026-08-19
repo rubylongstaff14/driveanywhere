@@ -18,8 +18,8 @@ describe.each(getRouteDataSlugs())("completable without obstruction: %s", (slug)
     expect(walls.length).toBeGreaterThan(20);
     for (const wall of walls) {
       const clear = barrierMinClearance(samples, wall);
-      // Asphalt half-width + car half (~1 m) + margin.
-      expect(clear).toBeGreaterThanOrEqual(route.roadWidth / 2 + 1.2);
+      // Distance outside the asphalt edge — car half (~1 m) + margin.
+      expect(clear).toBeGreaterThanOrEqual(1.2);
     }
   });
 

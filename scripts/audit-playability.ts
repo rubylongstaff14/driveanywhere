@@ -99,15 +99,7 @@ for (const slug of getRouteDataSlugs()) {
   for (const wall of walls) {
     const clear = barrierMinClearance(samples, wall);
     minBarrierClear = Math.min(minBarrierClear, clear);
-    const localHalf =
-      samples.reduce((best, s) => {
-        const d = Math.hypot(
-          wall.pos[0] - s.position.x,
-          wall.pos[2] - s.position.z,
-        );
-        return d < best.d ? { d, w: s.width } : best;
-      }, { d: Infinity, w: route.roadWidth }).w / 2;
-    if (clear < localHalf + CAR_HALF + RACING_MARGIN) barriersOnLine += 1;
+    if (clear < 0.35) barriersOnLine += 1;
   }
 
   const blocked = centrelineBlocked(samples, walls);

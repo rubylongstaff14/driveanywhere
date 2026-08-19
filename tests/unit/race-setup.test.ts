@@ -191,9 +191,9 @@ describe("hitboxes and AI lanes", () => {
 });
 
 describe("route geometry readiness", () => {
-  it("bundles all six playable circuits", () => {
+  it("bundles all nine playable circuits", () => {
     const slugs = getRouteDataSlugs();
-    expect(slugs).toHaveLength(6);
+    expect(slugs).toHaveLength(9);
     for (const slug of slugs) {
       const data = getRouteData(slug);
       expect(data?.roadPoints.length).toBeGreaterThan(8);

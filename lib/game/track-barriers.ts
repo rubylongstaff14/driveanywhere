@@ -45,7 +45,7 @@ export function buildTrackBarriers(samples: RoadSample[]): TrackBarrier[] {
   if (samples.length < 3) return out;
 
   const GAP = 0.05;
-  const MIN_EDGE_CLEAR = 0.82;
+  const MIN_EDGE_CLEAR = 1.15;
 
   for (const side of [-1, 1] as const) {
     type PathPt = {
@@ -58,7 +58,7 @@ export function buildTrackBarriers(samples: RoadSample[]): TrackBarrier[] {
     };
     const runs: PathPt[][] = [];
     let run: PathPt[] = [];
-      let smoothOff = samples[0].width / 2 + 1.18;
+      let smoothOff = samples[0].width / 2 + 1.42;
     let lastIndex = -999;
 
     for (let i = 1; i < samples.length - 1; i += 1) {
@@ -101,7 +101,7 @@ export function buildTrackBarriers(samples: RoadSample[]): TrackBarrier[] {
       }
 
       const flare = elevated ? 0.95 : 1.18;
-      const targetOff = cur.width / 2 + (elevated ? 1.28 : 1.12) + bend * flare;
+      const targetOff = cur.width / 2 + (elevated ? 1.32 : 1.38) + bend * flare;
       smoothOff += (targetOff - smoothOff) * Math.min(1, step / 3.2);
 
       // Also break if we jumped several samples (defensive).
@@ -241,12 +241,8 @@ export function barrierMinClearance(
   ] as const;
   let best = Infinity;
   for (const [qx, qz] of probes) {
-    for (const sample of samples) {
-      best = Math.min(
-        best,
-        Math.hypot(qx - sample.position.x, qz - sample.position.z),
-      );
-    }
+    const edgeClear = clearanceToRibbon(samples, qx, qz);
+    best = Math.min(best, edgeClear);
   }
   return best;
 }

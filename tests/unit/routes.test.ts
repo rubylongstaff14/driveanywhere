@@ -4,9 +4,9 @@ import { getPublishedRoutes, getRouteBySlug } from "@/lib/routes/get-routes";
 import { routeSummarySchema } from "@/lib/validation/route-meta";
 
 describe("mock routes", () => {
-  it("seeds six published routes including Dubai and New York", async () => {
+  it("seeds nine published routes including Dubai, Tokyo, and New York", async () => {
     const routes = await getPublishedRoutes();
-    expect(routes).toHaveLength(6);
+    expect(routes).toHaveLength(9);
     expect(routes.every((route) => route.isPublished)).toBe(true);
     expect(routes.map((route) => route.slug)).toEqual(
       expect.arrayContaining([
@@ -16,11 +16,15 @@ describe("mock routes", () => {
         "egypt-pyramids",
         "dubai-marina-circuit",
         "new-york-harbor-circuit",
+        "tokyo-drift-circuit",
+        "alps-mountain-pass",
+        "rio-coast-circuit",
       ]),
     );
     expect(routes.some((route) => route.city === "Giza")).toBe(true);
     expect(routes.some((route) => route.city === "Dubai")).toBe(true);
     expect(routes.some((route) => route.city === "New York")).toBe(true);
+    expect(routes.some((route) => route.city === "Tokyo")).toBe(true);
   });
 
   it("validates every mock route against the Zod schema", () => {

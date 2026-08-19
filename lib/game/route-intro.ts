@@ -112,6 +112,8 @@ export function buildRouteIntroPath(
     bounds.maxZ - bounds.minZ,
     120,
   );
+  const compact = Math.min(1, span / 900);
+  const aerialLift = 36 * compact + 12;
   const diag = Math.atan2(
     bounds.maxZ - bounds.minZ,
     bounds.maxX - bounds.minX,
@@ -122,6 +124,7 @@ export function buildRouteIntroPath(
   const s58 = interpolateRoadSample(samples, 0.58);
   const s76 = interpolateRoadSample(samples, 0.76);
   const landmark = landmarkFocus(route);
+  const useLandmarkBeat = Boolean(landmark && span >= 850);
 
   const flatFwd = new THREE.Vector3(
     Math.sin(spawn.yaw),
@@ -143,38 +146,42 @@ export function buildRouteIntroPath(
 
   const establish = new THREE.Vector3(
     cx - Math.cos(diag) * span * 0.46,
-    span * 0.34 + 36,
+    span * 0.34 * compact + aerialLift,
     cz - Math.sin(diag) * span * 0.46,
   );
   const orbitEntry = new THREE.Vector3(
     cx + Math.cos(diag + 0.9) * span * 0.4,
-    span * 0.26 + 28,
+    span * 0.26 * compact + aerialLift * 0.75,
     cz + Math.sin(diag + 0.9) * span * 0.36,
   );
-  const glideA = trackSideCam(s18, 1, s18.width * 0.85 + 32, 24, 18);
-  const glideB = trackSideCam(s38, -1, s38.width * 0.9 + 28, 20, 14);
-  const glideC = trackSideCam(s58, 1, s58.width * 0.8 + 26, 18, 12);
+  const glideA = trackSideCam(s18, 1, s18.width * 0.85 + 32, 16 * compact + 14, 18);
+  const glideB = trackSideCam(s38, -1, s38.width * 0.9 + 28, 14 * compact + 12, 14);
+  const glideC = trackSideCam(s58, 1, s58.width * 0.8 + 26, 12 * compact + 10, 12);
 
-  const skylinePos = landmark
+  const skylinePos = useLandmarkBeat
     ? new THREE.Vector3(
-        landmark.x + span * 0.1,
-        landmark.y + 22,
-        landmark.z + span * 0.14,
+        landmark!.x + span * 0.1,
+        landmark!.y + 14 * compact + 10,
+        landmark!.z + span * 0.14,
       )
-    : trackSideCam(s76, -1, s76.width * 0.75 + 36, 26, 8);
+    : trackSideCam(s76, -1, s76.width * 0.75 + 36, 18 * compact + 12, 8);
 
-  const skylineLook = landmark
-    ? landmark.clone()
+  const skylineLook = useLandmarkBeat
+    ? landmark!.clone()
     : trackLook(s76, 24, 4);
 
   const gridApproach = new THREE.Vector3(
     spawn.position.x + flatRight.x * 22 + flatFwd.x * 14,
-    spawn.position.y + 16,
+    spawn.position.y + 10 * compact + 8,
     spawn.position.z + flatRight.z * 22 + flatFwd.z * 14,
   );
 
+  const establishToOrbit = establish.clone().lerp(orbitEntry, 0.42);
+  establishToOrbit.y = (establish.y + orbitEntry.y) * 0.55;
+
   const positions = [
     establish,
+    establishToOrbit,
     orbitEntry,
     glideA,
     glideB,
@@ -185,6 +192,7 @@ export function buildRouteIntroPath(
   ];
 
   const lookAts = [
+    new THREE.Vector3(cx, 8, cz),
     new THREE.Vector3(cx, 8, cz),
     trackLook(s18, 32, 5),
     trackLook(s38, 28, 4),
@@ -198,8 +206,8 @@ export function buildRouteIntroPath(
   ];
 
   return {
-    position: new THREE.CatmullRomCurve3(positions, false, "catmullrom", 0.42),
-    lookAt: new THREE.CatmullRomCurve3(lookAts, false, "catmullrom", 0.42),
+    position: new THREE.CatmullRomCurve3(positions, false, "catmullrom", 0.38),
+    lookAt: new THREE.CatmullRomCurve3(lookAts, false, "catmullrom", 0.38),
   };
 }
 

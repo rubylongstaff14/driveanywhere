@@ -65,6 +65,13 @@ function indexAtDistanceBack(
   return Math.max(1, apex - 1);
 }
 
+function headingChange(samples: RoadSample[], from: number, to: number): number {
+  const a = samples[from].tangent;
+  const b = samples[to].tangent;
+  const dot = Math.max(-1, Math.min(1, a.x * b.x + a.z * b.z));
+  return Math.acos(dot);
+}
+
 /**
  * Place 100 / 50 / 25 m boards before corners. Regenerates from the live
  * centreline so layout edits move the signs automatically.
@@ -74,20 +81,22 @@ export function buildTurnSigns(samples: RoadSample[]): TrackSign[] {
   if (samples.length < 30) return out;
 
   const LOOKAHEAD = 18;
-  const MIN_GAP = 28;
+  const MIN_GAP = 22;
   let lastApex = -999;
 
   for (let i = 10; i < samples.length - LOOKAHEAD - 2; i += 2) {
     let peak = 0;
     let peakAt = i;
     for (let j = i; j < i + LOOKAHEAD; j += 1) {
-      const b = sampleBend(samples, j);
+      const local = sampleBend(samples, j);
+      const sweep = headingChange(samples, Math.max(0, j - 4), Math.min(samples.length - 1, j + 4));
+      const b = Math.max(local, sweep * 0.55);
       if (b > peak) {
         peak = b;
         peakAt = j;
       }
     }
-    if (peak < 0.24) continue;
+    if (peak < 0.18) continue;
     if (peakAt - lastApex < MIN_GAP) continue;
 
     const cross = bendCross(samples, peakAt);
