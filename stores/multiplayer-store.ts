@@ -38,7 +38,7 @@ interface MultiplayerState {
   hostSetAi: (count: number) => void;
   hostKick: (playerId: string) => void;
   hostStart: () => void;
-  reportFinish: (timeMs: number) => void;
+  reportFinish: (timeMs: number, splits?: number[]) => void;
   clearError: () => void;
 }
 
@@ -115,7 +115,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     hostSetAi: (count) => sendMsg({ type: "host_set_ai", aiCount: count }),
     hostKick: (playerId) => sendMsg({ type: "host_kick", playerId }),
     hostStart: () => sendMsg({ type: "host_start" }),
-    reportFinish: (timeMs) => sendMsg({ type: "race_finish", timeMs }),
+    reportFinish: (timeMs, splits?: number[]) => sendMsg({ type: "race_finish", timeMs, splits: splits ?? [] }),
     clearError: () => set({ error: null }),
   };
 });

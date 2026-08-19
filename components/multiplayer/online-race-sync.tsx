@@ -16,7 +16,9 @@ export function OnlineRaceSync() {
   const reportFinish = useMultiplayerStore((s) => s.reportFinish);
   const finished = useGameStore((s) => s.finished);
   const elapsedMs = useGameStore((s) => s.elapsedMs);
+  const splitMs = useGameStore((s) => s.splitMs);
   const reportedFinish = useRef(false);
+  const sectorSplits = useRef<number[]>([]);
 
   // Server countdown -> game store countdown
   useEffect(() => {
@@ -30,14 +32,22 @@ export function OnlineRaceSync() {
     if (racing) {
       useGameStore.setState({ countdown: null, paused: false, introActive: false });
       reportedFinish.current = false;
+      sectorSplits.current = [];
     }
   }, [racing]);
 
-  // Player finishes -> report to server
+  // Track sector splits
+  useEffect(() => {
+    if (splitMs !== null && racing) {
+      sectorSplits.current.push(splitMs);
+    }
+  }, [splitMs, racing]);
+
+  // Player finishes -> report to server with splits
   useEffect(() => {
     if (finished && !reportedFinish.current && racing) {
       reportedFinish.current = true;
-      reportFinish(elapsedMs);
+      reportFinish(elapsedMs, sectorSplits.current);
     }
   }, [finished, racing, elapsedMs, reportFinish]);
 

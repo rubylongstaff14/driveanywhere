@@ -10,6 +10,7 @@ import { RaceCountdown } from "@/components/game/race-countdown";
 import { RaceSetupOverlay } from "@/components/game/race-setup-overlay";
 import { RouteIntroOverlay } from "@/components/game/route-intro-overlay";
 import { OnlineRaceSync } from "@/components/multiplayer/online-race-sync";
+import { OnlineResultsOverlay } from "@/components/multiplayer/online-results-overlay";
 import { VehicleSelect } from "@/components/game/vehicle-select";
 import { getPersonalBest } from "@/lib/database/mock/attempts";
 import { resetTelemetry } from "@/lib/game/telemetry";
@@ -143,6 +144,7 @@ export function GameExperience({
       />
       <RaceCountdown />
       {raceSetup.mode === "online" && <OnlineRaceSync />}
+      {raceSetup.mode === "online" && <OnlineResultsOverlay />}
 
       <div className="pointer-events-none absolute bottom-4 right-4 z-10 hidden md:block">
         <Minimap route={route} />

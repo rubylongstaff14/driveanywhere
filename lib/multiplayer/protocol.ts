@@ -39,6 +39,7 @@ export interface RaceResult {
   timeMs: number | null;
   position: number;
   finished: boolean;
+  splits?: number[];
 }
 
 // --- Client -> Server messages ---
@@ -56,7 +57,7 @@ export type ClientMessage =
   | { type: "host_kick"; playerId: string }
   | { type: "host_start" }
   | { type: "car_state"; state: CarState }
-  | { type: "race_finish"; timeMs: number };
+  | { type: "race_finish"; timeMs: number; splits: number[] };
 
 // --- Server -> Client messages ---
 

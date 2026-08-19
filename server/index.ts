@@ -150,7 +150,7 @@ wss.on("connection", (ws) => {
         if (!info) break;
         const room = rooms.get(info.roomId);
         if (!room || room.status !== "racing") break;
-        room.playerFinished(info.playerId, msg.timeMs);
+        room.playerFinished(info.playerId, msg.timeMs, msg.splits);
         break;
       }
     }

@@ -18,6 +18,7 @@ export interface ConnectedPlayer {
   vehicleId: string;
   carState: CarState | null;
   finishTimeMs: number | null;
+  splits: number[];
 }
 
 export class Room {
@@ -79,6 +80,7 @@ export class Room {
       vehicleId,
       carState: null,
       finishTimeMs: null,
+      splits: [],
     };
     this.players.push(player);
     return player;
@@ -148,10 +150,11 @@ export class Room {
     }, 50); // 20Hz
   }
 
-  playerFinished(playerId: string, timeMs: number): void {
+  playerFinished(playerId: string, timeMs: number, splits: number[]): void {
     const p = this.players.find((pl) => pl.id === playerId);
     if (!p) return;
     p.finishTimeMs = timeMs;
+    p.splits = splits;
     if (this.players.every((pl) => pl.finishTimeMs !== null)) {
       this.endRace();
     }
@@ -169,6 +172,7 @@ export class Room {
         timeMs: p.finishTimeMs,
         position: i + 1,
         finished: p.finishTimeMs !== null,
+        splits: p.splits,
       }))
       .sort((a, b) => {
         if (a.finished && !b.finished) return -1;
@@ -185,6 +189,7 @@ export class Room {
         p.ready = p.isHost;
         p.carState = null;
         p.finishTimeMs = null;
+        p.splits = [];
       }
       this.broadcast({ type: "room_updated", room: this.toInfo() });
     }, 8000);
