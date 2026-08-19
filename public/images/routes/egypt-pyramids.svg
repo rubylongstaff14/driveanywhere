@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="Giza Desert Circuit route preview">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5a8ab8"/>
+      <stop offset="55%" stop-color="#c8a878"/>
+      <stop offset="100%" stop-color="#8a6840"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#sky)"/>
+  <rect y="480" width="1280" height="320" fill="#c4a06a"/>
+  <path d="M0 520 C240 500 400 560 560 540 C760 515 900 580 1080 550 C1180 535 1240 520 1280 515 L1280 800 L0 800 Z" fill="#b89058"/>
+  <path d="M80 560 C280 540 420 600 580 580 C780 555 920 620 1100 590 C1180 575 1230 560 1280 555" fill="none" stroke="#6a5a48" stroke-width="48"/>
+  <path d="M80 560 C280 540 420 600 580 580 C780 555 920 620 1100 590 C1180 575 1230 560 1280 555" fill="none" stroke="#e8c878" stroke-width="4" stroke-dasharray="18 22"/>
+  <polygon points="420,480 520,220 620,480" fill="#d4b078"/>
+  <polygon points="620,500 700,260 780,500" fill="#e8dcc0"/>
+  <polygon points="780,520 830,360 880,520" fill="#c09860"/>
+  <rect x="300" y="470" width="90" height="28" fill="#b89058"/>
+  <rect x="360" y="430" width="28" height="40" fill="#d4b078"/>
+  <circle cx="1080" cy="140" r="56" fill="#f5d080" opacity="0.55"/>
+  <text x="64" y="84" fill="#5a3a18" font-family="monospace" font-size="28">GIZA DESERT CIRCUIT</text>
+</svg>

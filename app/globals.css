@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --ink-975: #05070a;
+  --ink-950: #07090d;
+  --ink-900: #0b1018;
+  --panel: #101722;
+  --panel-elevated: #161e2b;
+  --line: #243041;
+  --fog: #8b97a8;
+  --mist: #b7c0ce;
+  --accent: #f5a623;
+  --accent-bright: #ffc857;
+  --signal: #ff5c5c;
+  --background: var(--ink-950);
+  --foreground: #f3f5f8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink-975: var(--ink-975);
+  --color-ink-950: var(--ink-950);
+  --color-ink-900: var(--ink-900);
+  --color-panel: var(--panel);
+  --color-panel-elevated: var(--panel-elevated);
+  --color-line: var(--line);
+  --color-fog: var(--fog);
+  --color-mist: var(--mist);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-signal: var(--signal);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+@layer base {
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 35%, transparent);
+    color: white;
+  }
+}

@@ -1,0 +1,6868 @@
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "slug": "westminster-sprint",
+  "name": "Westminster Sprint",
+  "description": "Monaco-style street rhythm — hairpin, riverside harbour run past Big Ben and Parliament, then a tight chicane and Abbey esses.",
+  "city": "London",
+  "country": "United Kingdom",
+  "latitude": 51.4994,
+  "longitude": -0.1245,
+  "distanceMetres": 2541,
+  "estimatedDurationSeconds": 181,
+  "difficulty": "hard",
+  "tags": [
+    "monaco-style",
+    "street",
+    "landmarks"
+  ],
+  "thumbnail": "/images/routes/westminster-sprint.svg",
+  "startPosition": {
+    "x": -20,
+    "y": 0,
+    "z": -260
+  },
+  "startRotation": 1.7357,
+  "roadWidth": 17,
+  "checkpoints": [
+    {
+      "id": "westminster-sprint-cp-0",
+      "index": 0,
+      "position": {
+        "x": 54.64,
+        "y": 0.02,
+        "z": -269.58
+      },
+      "rotation": 1.4658,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-1",
+      "index": 1,
+      "position": {
+        "x": 156.9,
+        "y": 1.31,
+        "z": -113.41
+      },
+      "rotation": -0.6402,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-2",
+      "index": 2,
+      "position": {
+        "x": 188.46,
+        "y": 0.68,
+        "z": 65.79
+      },
+      "rotation": -0.346,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-3",
+      "index": 3,
+      "position": {
+        "x": 36.77,
+        "y": 0.21,
+        "z": 42.81
+      },
+      "rotation": -2.6639,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-4",
+      "index": 4,
+      "position": {
+        "x": 95.97,
+        "y": 0,
+        "z": 180.87
+      },
+      "rotation": 1.3865,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-5",
+      "index": 5,
+      "position": {
+        "x": 272.54,
+        "y": 0,
+        "z": 217.13
+      },
+      "rotation": -0.878,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-6",
+      "index": 6,
+      "position": {
+        "x": 228.94,
+        "y": 0,
+        "z": 373.06
+      },
+      "rotation": -1.0945,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-7",
+      "index": 7,
+      "position": {
+        "x": 21.33,
+        "y": 0.41,
+        "z": 376.24
+      },
+      "rotation": -1.1105,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-8",
+      "index": 8,
+      "position": {
+        "x": -135,
+        "y": 0.8,
+        "z": 335
+      },
+      "rotation": -2.465,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-9",
+      "index": 9,
+      "position": {
+        "x": -139.69,
+        "y": 0.67,
+        "z": 153.85
+      },
+      "rotation": -2.3469,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-10",
+      "index": 10,
+      "position": {
+        "x": -166.8,
+        "y": 0.18,
+        "z": -19.34
+      },
+      "rotation": 2.7118,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "westminster-sprint-cp-11",
+      "index": 11,
+      "position": {
+        "x": -105,
+        "y": 0,
+        "z": -205
+      },
+      "rotation": 2.3441,
+      "width": 17,
+      "required": true
+    }
+  ],
+  "roadPoints": [
+    {
+      "x": -20,
+      "y": 0,
+      "z": -260,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 50,
+      "y": 0,
+      "z": -270,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 110,
+      "y": 0.4,
+      "z": -250,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 150,
+      "y": 0.8,
+      "z": -195,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 165,
+      "y": 1.2,
+      "z": -130,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 130,
+      "y": 1.5,
+      "z": -75,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 155,
+      "y": 1.2,
+      "z": -25,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 195,
+      "y": 0.8,
+      "z": 35,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 155,
+      "y": 0.5,
+      "z": 115,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 70,
+      "y": 0.3,
+      "z": 105,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 30,
+      "y": 0.2,
+      "z": 35,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 5,
+      "y": 0.2,
+      "z": 90,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 40,
+      "y": 0,
+      "z": 160,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 130,
+      "y": 0,
+      "z": 185,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 215,
+      "y": 0,
+      "z": 170,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 280,
+      "y": 0,
+      "z": 205,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 235,
+      "y": 0,
+      "z": 250,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 280,
+      "y": 0,
+      "z": 295,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 255,
+      "y": 0,
+      "z": 355,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 185,
+      "y": 0,
+      "z": 390,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 100,
+      "y": 0.2,
+      "z": 400,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 25,
+      "y": 0.4,
+      "z": 375,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -10,
+      "y": 0.5,
+      "z": 420,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -70,
+      "y": 0.6,
+      "z": 390,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -135,
+      "y": 0.8,
+      "z": 335,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -180,
+      "y": 1,
+      "z": 250,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -125,
+      "y": 0.8,
+      "z": 180,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -165,
+      "y": 0.5,
+      "z": 120,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -125,
+      "y": 0.3,
+      "z": 55,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -170,
+      "y": 0.2,
+      "z": -5,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -135,
+      "y": 0.1,
+      "z": -75,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -155,
+      "y": 0,
+      "z": -145,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -105,
+      "y": 0,
+      "z": -205,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -60,
+      "y": 0,
+      "z": -240,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -20,
+      "y": 0,
+      "z": -260,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "westminster-sprint-b0",
+      "footprint": [
+        {
+          "x": -2.06,
+          "y": 0,
+          "z": -232.93
+        },
+        {
+          "x": 4.79,
+          "y": 0,
+          "z": -234.37
+        },
+        {
+          "x": 6.44,
+          "y": 0,
+          "z": -226.54
+        },
+        {
+          "x": -0.41,
+          "y": 0,
+          "z": -225.1
+        }
+      ],
+      "height": 14,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b1",
+      "footprint": [
+        {
+          "x": -18.08,
+          "y": 0,
+          "z": -303.69
+        },
+        {
+          "x": -9.07,
+          "y": 0,
+          "z": -305.59
+        },
+        {
+          "x": -6.91,
+          "y": 0,
+          "z": -295.31
+        },
+        {
+          "x": -15.91,
+          "y": 0,
+          "z": -293.42
+        }
+      ],
+      "height": 16,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b2",
+      "footprint": [
+        {
+          "x": 35.88,
+          "y": 0,
+          "z": -235.72
+        },
+        {
+          "x": 47.27,
+          "y": 0,
+          "z": -236.28
+        },
+        {
+          "x": 47.9,
+          "y": 0,
+          "z": -223.29
+        },
+        {
+          "x": 36.52,
+          "y": 0,
+          "z": -222.74
+        }
+      ],
+      "height": 18.1,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b3",
+      "footprint": [
+        {
+          "x": 30.78,
+          "y": 0,
+          "z": -317.57
+        },
+        {
+          "x": 44.37,
+          "y": 0,
+          "z": -318.23
+        },
+        {
+          "x": 44.76,
+          "y": 0,
+          "z": -310.24
+        },
+        {
+          "x": 31.17,
+          "y": 0,
+          "z": -309.58
+        }
+      ],
+      "height": 20.1,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b4",
+      "footprint": [
+        {
+          "x": 69.86,
+          "y": 0,
+          "z": -237.71
+        },
+        {
+          "x": 76.53,
+          "y": 0,
+          "z": -235.6
+        },
+        {
+          "x": 73.36,
+          "y": 0,
+          "z": -225.59
+        },
+        {
+          "x": 66.69,
+          "y": 0,
+          "z": -227.7
+        }
+      ],
+      "height": 22.2,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b5",
+      "footprint": [
+        {
+          "x": 90.71,
+          "y": 0,
+          "z": -307.21
+        },
+        {
+          "x": 99.48,
+          "y": 0,
+          "z": -304.43
+        },
+        {
+          "x": 95.56,
+          "y": 0,
+          "z": -292.04
+        },
+        {
+          "x": 86.79,
+          "y": 0,
+          "z": -294.81
+        }
+      ],
+      "height": 24.2,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b6",
+      "footprint": [
+        {
+          "x": 87.66,
+          "y": 0,
+          "z": -221.44
+        },
+        {
+          "x": 95.93,
+          "y": 0,
+          "z": -213.59
+        },
+        {
+          "x": 90.42,
+          "y": 0,
+          "z": -207.79
+        },
+        {
+          "x": 82.15,
+          "y": 0,
+          "z": -215.63
+        }
+      ],
+      "height": 14.2,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b7",
+      "footprint": [
+        {
+          "x": 145.88,
+          "y": 0,
+          "z": -284.4
+        },
+        {
+          "x": 155.74,
+          "y": 0,
+          "z": -275.04
+        },
+        {
+          "x": 148.52,
+          "y": 0,
+          "z": -267.43
+        },
+        {
+          "x": 138.65,
+          "y": 0,
+          "z": -276.79
+        }
+      ],
+      "height": 16.3,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b8",
+      "footprint": [
+        {
+          "x": 115.43,
+          "y": 0,
+          "z": -201.7
+        },
+        {
+          "x": 118.94,
+          "y": 0,
+          "z": -195.65
+        },
+        {
+          "x": 107.69,
+          "y": 0,
+          "z": -189.13
+        },
+        {
+          "x": 104.18,
+          "y": 0,
+          "z": -195.18
+        }
+      ],
+      "height": 18.3,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b9",
+      "footprint": [
+        {
+          "x": 174.4,
+          "y": 0,
+          "z": -237.15
+        },
+        {
+          "x": 179.02,
+          "y": 0,
+          "z": -229.19
+        },
+        {
+          "x": 172.09,
+          "y": 0,
+          "z": -225.18
+        },
+        {
+          "x": 167.48,
+          "y": 0,
+          "z": -233.14
+        }
+      ],
+      "height": 20.4,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b10",
+      "footprint": [
+        {
+          "x": 123.94,
+          "y": 0,
+          "z": -166.16
+        },
+        {
+          "x": 127.6,
+          "y": 0,
+          "z": -155.37
+        },
+        {
+          "x": 117.66,
+          "y": 0,
+          "z": -152
+        },
+        {
+          "x": 114,
+          "y": 0,
+          "z": -162.79
+        }
+      ],
+      "height": 22.4,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b11",
+      "footprint": [
+        {
+          "x": 204.8,
+          "y": 0,
+          "z": -194.73
+        },
+        {
+          "x": 209.17,
+          "y": 0,
+          "z": -181.85
+        },
+        {
+          "x": 196.86,
+          "y": 0,
+          "z": -177.68
+        },
+        {
+          "x": 192.49,
+          "y": 0,
+          "z": -190.56
+        }
+      ],
+      "height": 24.4,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b12",
+      "footprint": [
+        {
+          "x": 136.18,
+          "y": 0,
+          "z": -139.02
+        },
+        {
+          "x": 134.87,
+          "y": 0,
+          "z": -132.14
+        },
+        {
+          "x": 127.01,
+          "y": 0,
+          "z": -133.63
+        },
+        {
+          "x": 128.31,
+          "y": 0,
+          "z": -140.51
+        }
+      ],
+      "height": 14.5,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b13",
+      "footprint": [
+        {
+          "x": 207.66,
+          "y": 0,
+          "z": -126.6
+        },
+        {
+          "x": 205.95,
+          "y": 0,
+          "z": -117.56
+        },
+        {
+          "x": 195.63,
+          "y": 0,
+          "z": -119.52
+        },
+        {
+          "x": 197.35,
+          "y": 0,
+          "z": -128.56
+        }
+      ],
+      "height": 16.5,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b14",
+      "footprint": [
+        {
+          "x": 121.55,
+          "y": 0,
+          "z": -124.47
+        },
+        {
+          "x": 114.03,
+          "y": 0,
+          "z": -115.9
+        },
+        {
+          "x": 104.26,
+          "y": 0,
+          "z": -124.47
+        },
+        {
+          "x": 111.78,
+          "y": 0,
+          "z": -133.04
+        }
+      ],
+      "height": 18.6,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b15",
+      "footprint": [
+        {
+          "x": 183.92,
+          "y": 0,
+          "z": -71.22
+        },
+        {
+          "x": 174.95,
+          "y": 0,
+          "z": -61
+        },
+        {
+          "x": 168.94,
+          "y": 0,
+          "z": -66.27
+        },
+        {
+          "x": 177.91,
+          "y": 0,
+          "z": -76.5
+        }
+      ],
+      "height": 20.6,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b16",
+      "footprint": [
+        {
+          "x": 106.55,
+          "y": 0,
+          "z": -47.62
+        },
+        {
+          "x": 109.64,
+          "y": 0,
+          "z": -41.34
+        },
+        {
+          "x": 100.22,
+          "y": 0,
+          "z": -36.7
+        },
+        {
+          "x": 97.13,
+          "y": 0,
+          "z": -42.98
+        }
+      ],
+      "height": 22.6,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b17",
+      "footprint": [
+        {
+          "x": 171.14,
+          "y": 0,
+          "z": -80.67
+        },
+        {
+          "x": 175.21,
+          "y": 0,
+          "z": -72.41
+        },
+        {
+          "x": 163.55,
+          "y": 0,
+          "z": -66.67
+        },
+        {
+          "x": 159.48,
+          "y": 0,
+          "z": -74.92
+        }
+      ],
+      "height": 24.7,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b18",
+      "footprint": [
+        {
+          "x": 121.08,
+          "y": 0,
+          "z": -10.12
+        },
+        {
+          "x": 127.21,
+          "y": 0,
+          "z": -0.51
+        },
+        {
+          "x": 120.46,
+          "y": 0,
+          "z": 3.79
+        },
+        {
+          "x": 114.33,
+          "y": 0,
+          "z": -5.82
+        }
+      ],
+      "height": 14.7,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b19",
+      "footprint": [
+        {
+          "x": 192.78,
+          "y": 0,
+          "z": -57.17
+        },
+        {
+          "x": 200.09,
+          "y": 0,
+          "z": -45.7
+        },
+        {
+          "x": 191.24,
+          "y": 0,
+          "z": -40.05
+        },
+        {
+          "x": 183.93,
+          "y": 0,
+          "z": -51.52
+        }
+      ],
+      "height": 16.8,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b20",
+      "footprint": [
+        {
+          "x": 159.1,
+          "y": 0,
+          "z": 21.96
+        },
+        {
+          "x": 163.51,
+          "y": 0,
+          "z": 27.4
+        },
+        {
+          "x": 153.41,
+          "y": 0,
+          "z": 35.59
+        },
+        {
+          "x": 149,
+          "y": 0,
+          "z": 30.15
+        }
+      ],
+      "height": 18.8,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b21",
+      "footprint": [
+        {
+          "x": 211.85,
+          "y": 0,
+          "z": -22.22
+        },
+        {
+          "x": 217.65,
+          "y": 0,
+          "z": -15.08
+        },
+        {
+          "x": 211.43,
+          "y": 0,
+          "z": -10.04
+        },
+        {
+          "x": 205.64,
+          "y": 0,
+          "z": -17.18
+        }
+      ],
+      "height": 20.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b22",
+      "footprint": [
+        {
+          "x": 160.09,
+          "y": 0,
+          "z": 34.3
+        },
+        {
+          "x": 158.08,
+          "y": 0,
+          "z": 45.52
+        },
+        {
+          "x": 147.74,
+          "y": 0,
+          "z": 43.66
+        },
+        {
+          "x": 149.76,
+          "y": 0,
+          "z": 32.44
+        }
+      ],
+      "height": 22.9,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b23",
+      "footprint": [
+        {
+          "x": 244.69,
+          "y": 0,
+          "z": 48.39
+        },
+        {
+          "x": 242.28,
+          "y": 0,
+          "z": 61.78
+        },
+        {
+          "x": 229.48,
+          "y": 0,
+          "z": 59.48
+        },
+        {
+          "x": 231.89,
+          "y": 0,
+          "z": 46.09
+        }
+      ],
+      "height": 24.9,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b24",
+      "footprint": [
+        {
+          "x": 154.73,
+          "y": 0,
+          "z": 68.67
+        },
+        {
+          "x": 151.41,
+          "y": 0,
+          "z": 74.83
+        },
+        {
+          "x": 144.37,
+          "y": 0,
+          "z": 71.04
+        },
+        {
+          "x": 147.68,
+          "y": 0,
+          "z": 64.88
+        }
+      ],
+      "height": 15,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b25",
+      "footprint": [
+        {
+          "x": 219.14,
+          "y": 0,
+          "z": 102.07
+        },
+        {
+          "x": 214.78,
+          "y": 0,
+          "z": 110.17
+        },
+        {
+          "x": 205.54,
+          "y": 0,
+          "z": 105.2
+        },
+        {
+          "x": 209.89,
+          "y": 0,
+          "z": 97.09
+        }
+      ],
+      "height": 17,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b26",
+      "footprint": [
+        {
+          "x": 143.56,
+          "y": 0,
+          "z": 83.27
+        },
+        {
+          "x": 132.89,
+          "y": 0,
+          "z": 87.28
+        },
+        {
+          "x": 128.32,
+          "y": 0,
+          "z": 75.11
+        },
+        {
+          "x": 138.99,
+          "y": 0,
+          "z": 71.1
+        }
+      ],
+      "height": 19,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b27",
+      "footprint": [
+        {
+          "x": 173.41,
+          "y": 0,
+          "z": 159.65
+        },
+        {
+          "x": 160.67,
+          "y": 0,
+          "z": 164.43
+        },
+        {
+          "x": 157.86,
+          "y": 0,
+          "z": 156.94
+        },
+        {
+          "x": 170.6,
+          "y": 0,
+          "z": 152.16
+        }
+      ],
+      "height": 21.1,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b28",
+      "footprint": [
+        {
+          "x": 120.02,
+          "y": 0,
+          "z": 91.41
+        },
+        {
+          "x": 113.09,
+          "y": 0,
+          "z": 90.42
+        },
+        {
+          "x": 114.57,
+          "y": 0,
+          "z": 80.02
+        },
+        {
+          "x": 121.5,
+          "y": 0,
+          "z": 81.01
+        }
+      ],
+      "height": 23.1,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b29",
+      "footprint": [
+        {
+          "x": 110.88,
+          "y": 0,
+          "z": 163.39
+        },
+        {
+          "x": 101.77,
+          "y": 0,
+          "z": 162.09
+        },
+        {
+          "x": 103.6,
+          "y": 0,
+          "z": 149.22
+        },
+        {
+          "x": 112.71,
+          "y": 0,
+          "z": 150.52
+        }
+      ],
+      "height": 25.2,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b30",
+      "footprint": [
+        {
+          "x": 95.41,
+          "y": 0,
+          "z": 78.05
+        },
+        {
+          "x": 86.01,
+          "y": 0,
+          "z": 71.6
+        },
+        {
+          "x": 90.53,
+          "y": 0,
+          "z": 65
+        },
+        {
+          "x": 99.93,
+          "y": 0,
+          "z": 71.45
+        }
+      ],
+      "height": 15.2,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b31",
+      "footprint": [
+        {
+          "x": 87.24,
+          "y": 0,
+          "z": 64.15
+        },
+        {
+          "x": 82.04,
+          "y": 0,
+          "z": 51.58
+        },
+        {
+          "x": 91.74,
+          "y": 0,
+          "z": 47.57
+        },
+        {
+          "x": 96.94,
+          "y": 0,
+          "z": 60.14
+        }
+      ],
+      "height": 17.2,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b32",
+      "footprint": [
+        {
+          "x": 24.63,
+          "y": 0,
+          "z": 7.48
+        },
+        {
+          "x": 17.82,
+          "y": 0,
+          "z": 9.11
+        },
+        {
+          "x": 14.8,
+          "y": 0,
+          "z": -3.54
+        },
+        {
+          "x": 21.61,
+          "y": 0,
+          "z": -5.16
+        }
+      ],
+      "height": 19.3,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b33",
+      "footprint": [
+        {
+          "x": 48.65,
+          "y": 0,
+          "z": 103.33
+        },
+        {
+          "x": 39.7,
+          "y": 0,
+          "z": 105.46
+        },
+        {
+          "x": 37.84,
+          "y": 0,
+          "z": 97.68
+        },
+        {
+          "x": 46.79,
+          "y": 0,
+          "z": 95.54
+        }
+      ],
+      "height": 21.3,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b34",
+      "footprint": [
+        {
+          "x": -25.51,
+          "y": 0,
+          "z": 55.28
+        },
+        {
+          "x": -28.33,
+          "y": 0,
+          "z": 66.33
+        },
+        {
+          "x": -38.5,
+          "y": 0,
+          "z": 63.73
+        },
+        {
+          "x": -35.68,
+          "y": 0,
+          "z": 52.68
+        }
+      ],
+      "height": 23.4,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b35",
+      "footprint": [
+        {
+          "x": -28.75,
+          "y": 0,
+          "z": 114.46
+        },
+        {
+          "x": -24.84,
+          "y": 0,
+          "z": 127.49
+        },
+        {
+          "x": -37.29,
+          "y": 0,
+          "z": 131.22
+        },
+        {
+          "x": -41.2,
+          "y": 0,
+          "z": 118.2
+        }
+      ],
+      "height": 25.4,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b36",
+      "footprint": [
+        {
+          "x": 44.41,
+          "y": 0,
+          "z": 95.94
+        },
+        {
+          "x": 46.42,
+          "y": 0,
+          "z": 102.64
+        },
+        {
+          "x": 38.76,
+          "y": 0,
+          "z": 104.94
+        },
+        {
+          "x": 36.75,
+          "y": 0,
+          "z": 98.24
+        }
+      ],
+      "height": 15.4,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b37",
+      "footprint": [
+        {
+          "x": -0.29,
+          "y": 0,
+          "z": 163.84
+        },
+        {
+          "x": 5.38,
+          "y": 0,
+          "z": 171.08
+        },
+        {
+          "x": -2.89,
+          "y": 0,
+          "z": 177.55
+        },
+        {
+          "x": -8.56,
+          "y": 0,
+          "z": 170.31
+        }
+      ],
+      "height": 17.5,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b38",
+      "footprint": [
+        {
+          "x": 61.36,
+          "y": 0,
+          "z": 114.19
+        },
+        {
+          "x": 68.38,
+          "y": 0,
+          "z": 123.17
+        },
+        {
+          "x": 58.15,
+          "y": 0,
+          "z": 131.18
+        },
+        {
+          "x": 51.12,
+          "y": 0,
+          "z": 122.2
+        }
+      ],
+      "height": 19.5,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b39",
+      "footprint": [
+        {
+          "x": 41.16,
+          "y": 0,
+          "z": 206.38
+        },
+        {
+          "x": 53.86,
+          "y": 0,
+          "z": 211.27
+        },
+        {
+          "x": 50.98,
+          "y": 0,
+          "z": 218.73
+        },
+        {
+          "x": 38.29,
+          "y": 0,
+          "z": 213.84
+        }
+      ],
+      "height": 21.6,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b40",
+      "footprint": [
+        {
+          "x": 72.69,
+          "y": 0,
+          "z": 133.7
+        },
+        {
+          "x": 79.22,
+          "y": 0,
+          "z": 136.22
+        },
+        {
+          "x": 75.45,
+          "y": 0,
+          "z": 146.02
+        },
+        {
+          "x": 68.92,
+          "y": 0,
+          "z": 143.5
+        }
+      ],
+      "height": 23.6,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b41",
+      "footprint": [
+        {
+          "x": 93.68,
+          "y": 0,
+          "z": 211.78
+        },
+        {
+          "x": 102.77,
+          "y": 0,
+          "z": 213.22
+        },
+        {
+          "x": 100.73,
+          "y": 0,
+          "z": 226.06
+        },
+        {
+          "x": 91.65,
+          "y": 0,
+          "z": 224.62
+        }
+      ],
+      "height": 25.6,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b42",
+      "footprint": [
+        {
+          "x": 104.4,
+          "y": 0,
+          "z": 137.14
+        },
+        {
+          "x": 115.66,
+          "y": 0,
+          "z": 138.93
+        },
+        {
+          "x": 114.41,
+          "y": 0,
+          "z": 146.83
+        },
+        {
+          "x": 103.15,
+          "y": 0,
+          "z": 145.04
+        }
+      ],
+      "height": 15.7,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b43",
+      "footprint": [
+        {
+          "x": 140.42,
+          "y": 0,
+          "z": 223.7
+        },
+        {
+          "x": 153.93,
+          "y": 0,
+          "z": 222.09
+        },
+        {
+          "x": 155.17,
+          "y": 0,
+          "z": 232.51
+        },
+        {
+          "x": 141.67,
+          "y": 0,
+          "z": 234.13
+        }
+      ],
+      "height": 17.7,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b44",
+      "footprint": [
+        {
+          "x": 134.29,
+          "y": 0,
+          "z": 144.72
+        },
+        {
+          "x": 141.24,
+          "y": 0,
+          "z": 143.89
+        },
+        {
+          "x": 142.79,
+          "y": 0,
+          "z": 156.8
+        },
+        {
+          "x": 135.84,
+          "y": 0,
+          "z": 157.63
+        }
+      ],
+      "height": 19.8,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b45",
+      "footprint": [
+        {
+          "x": 190.46,
+          "y": 0,
+          "z": 206.67
+        },
+        {
+          "x": 199.35,
+          "y": 0,
+          "z": 204.3
+        },
+        {
+          "x": 201.41,
+          "y": 0,
+          "z": 212.03
+        },
+        {
+          "x": 192.52,
+          "y": 0,
+          "z": 214.4
+        }
+      ],
+      "height": 21.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b46",
+      "footprint": [
+        {
+          "x": 169.01,
+          "y": 0,
+          "z": 130.47
+        },
+        {
+          "x": 180.02,
+          "y": 0,
+          "z": 127.54
+        },
+        {
+          "x": 182.73,
+          "y": 0,
+          "z": 137.68
+        },
+        {
+          "x": 171.71,
+          "y": 0,
+          "z": 140.62
+        }
+      ],
+      "height": 23.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b47",
+      "footprint": [
+        {
+          "x": 210.22,
+          "y": 0,
+          "z": 206.74
+        },
+        {
+          "x": 223.38,
+          "y": 0,
+          "z": 210.19
+        },
+        {
+          "x": 220.08,
+          "y": 0,
+          "z": 222.76
+        },
+        {
+          "x": 206.92,
+          "y": 0,
+          "z": 219.31
+        }
+      ],
+      "height": 25.9,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b48",
+      "footprint": [
+        {
+          "x": 209.27,
+          "y": 0,
+          "z": 232.16
+        },
+        {
+          "x": 206.61,
+          "y": 0,
+          "z": 238.63
+        },
+        {
+          "x": 199.21,
+          "y": 0,
+          "z": 235.6
+        },
+        {
+          "x": 201.86,
+          "y": 0,
+          "z": 229.13
+        }
+      ],
+      "height": 15.9,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b49",
+      "footprint": [
+        {
+          "x": 239,
+          "y": 0,
+          "z": 298.53
+        },
+        {
+          "x": 246.6,
+          "y": 0,
+          "z": 303.72
+        },
+        {
+          "x": 240.67,
+          "y": 0,
+          "z": 312.39
+        },
+        {
+          "x": 233.08,
+          "y": 0,
+          "z": 307.19
+        }
+      ],
+      "height": 18,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b50",
+      "footprint": [
+        {
+          "x": 247.1,
+          "y": 0,
+          "z": 296.96
+        },
+        {
+          "x": 245.52,
+          "y": 0,
+          "z": 308.25
+        },
+        {
+          "x": 232.65,
+          "y": 0,
+          "z": 306.45
+        },
+        {
+          "x": 234.22,
+          "y": 0,
+          "z": 295.16
+        }
+      ],
+      "height": 20,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b51",
+      "footprint": [
+        {
+          "x": 234.45,
+          "y": 0,
+          "z": 317.54
+        },
+        {
+          "x": 226.02,
+          "y": 0,
+          "z": 328.21
+        },
+        {
+          "x": 219.74,
+          "y": 0,
+          "z": 323.25
+        },
+        {
+          "x": 228.17,
+          "y": 0,
+          "z": 312.58
+        }
+      ],
+      "height": 22,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b52",
+      "footprint": [
+        {
+          "x": 218.86,
+          "y": 0,
+          "z": 345.91
+        },
+        {
+          "x": 212.64,
+          "y": 0,
+          "z": 349.12
+        },
+        {
+          "x": 207.83,
+          "y": 0,
+          "z": 339.78
+        },
+        {
+          "x": 214.05,
+          "y": 0,
+          "z": 336.58
+        }
+      ],
+      "height": 24.1,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b53",
+      "footprint": [
+        {
+          "x": 185.83,
+          "y": 0,
+          "z": 357.55
+        },
+        {
+          "x": 177.05,
+          "y": 0,
+          "z": 360.28
+        },
+        {
+          "x": 173.19,
+          "y": 0,
+          "z": 347.86
+        },
+        {
+          "x": 181.98,
+          "y": 0,
+          "z": 345.13
+        }
+      ],
+      "height": 14.1,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b54",
+      "footprint": [
+        {
+          "x": 209.23,
+          "y": 0,
+          "z": 429.24
+        },
+        {
+          "x": 198.34,
+          "y": 0,
+          "z": 432.61
+        },
+        {
+          "x": 195.97,
+          "y": 0,
+          "z": 424.97
+        },
+        {
+          "x": 206.86,
+          "y": 0,
+          "z": 421.6
+        }
+      ],
+      "height": 16.2,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b55",
+      "footprint": [
+        {
+          "x": 150.03,
+          "y": 0,
+          "z": 358.64
+        },
+        {
+          "x": 136.58,
+          "y": 0,
+          "z": 360.68
+        },
+        {
+          "x": 135.01,
+          "y": 0,
+          "z": 350.3
+        },
+        {
+          "x": 148.45,
+          "y": 0,
+          "z": 348.26
+        }
+      ],
+      "height": 18.2,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b56",
+      "footprint": [
+        {
+          "x": 158.63,
+          "y": 0,
+          "z": 437.39
+        },
+        {
+          "x": 151.7,
+          "y": 0,
+          "z": 438.44
+        },
+        {
+          "x": 149.76,
+          "y": 0,
+          "z": 425.59
+        },
+        {
+          "x": 156.68,
+          "y": 0,
+          "z": 424.54
+        }
+      ],
+      "height": 20.2,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b57",
+      "footprint": [
+        {
+          "x": 112.17,
+          "y": 0,
+          "z": 367.42
+        },
+        {
+          "x": 102.98,
+          "y": 0,
+          "z": 366.92
+        },
+        {
+          "x": 103.41,
+          "y": 0,
+          "z": 358.94
+        },
+        {
+          "x": 112.59,
+          "y": 0,
+          "z": 359.43
+        }
+      ],
+      "height": 22.3,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b58",
+      "footprint": [
+        {
+          "x": 109.05,
+          "y": 0,
+          "z": 446.51
+        },
+        {
+          "x": 97.66,
+          "y": 0,
+          "z": 445.9
+        },
+        {
+          "x": 98.22,
+          "y": 0,
+          "z": 435.42
+        },
+        {
+          "x": 109.61,
+          "y": 0,
+          "z": 436.03
+        }
+      ],
+      "height": 24.3,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b59",
+      "footprint": [
+        {
+          "x": 92.56,
+          "y": 0,
+          "z": 359.59
+        },
+        {
+          "x": 80.19,
+          "y": 0,
+          "z": 353.94
+        },
+        {
+          "x": 85.59,
+          "y": 0,
+          "z": 342.11
+        },
+        {
+          "x": 97.96,
+          "y": 0,
+          "z": 347.76
+        }
+      ],
+      "height": 14.4,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b60",
+      "footprint": [
+        {
+          "x": 58.23,
+          "y": 0,
+          "z": 426.8
+        },
+        {
+          "x": 51.87,
+          "y": 0,
+          "z": 423.9
+        },
+        {
+          "x": 55.19,
+          "y": 0,
+          "z": 416.62
+        },
+        {
+          "x": 61.56,
+          "y": 0,
+          "z": 419.53
+        }
+      ],
+      "height": 16.4,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b61",
+      "footprint": [
+        {
+          "x": 34.47,
+          "y": 0,
+          "z": 342.78
+        },
+        {
+          "x": 25.27,
+          "y": 0,
+          "z": 342.56
+        },
+        {
+          "x": 25.52,
+          "y": 0,
+          "z": 332.07
+        },
+        {
+          "x": 34.72,
+          "y": 0,
+          "z": 332.29
+        }
+      ],
+      "height": 18.4,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b62",
+      "footprint": [
+        {
+          "x": 33.67,
+          "y": 0,
+          "z": 421.94
+        },
+        {
+          "x": 22.28,
+          "y": 0,
+          "z": 421.66
+        },
+        {
+          "x": 22.59,
+          "y": 0,
+          "z": 408.67
+        },
+        {
+          "x": 33.98,
+          "y": 0,
+          "z": 408.94
+        }
+      ],
+      "height": 20.5,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b63",
+      "footprint": [
+        {
+          "x": -30.28,
+          "y": 0,
+          "z": 383.13
+        },
+        {
+          "x": -36.19,
+          "y": 0,
+          "z": 395.38
+        },
+        {
+          "x": -43.39,
+          "y": 0,
+          "z": 391.91
+        },
+        {
+          "x": -37.48,
+          "y": 0,
+          "z": 379.66
+        }
+      ],
+      "height": 22.5,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b64",
+      "footprint": [
+        {
+          "x": 39.58,
+          "y": 0,
+          "z": 420.49
+        },
+        {
+          "x": 36.54,
+          "y": 0,
+          "z": 426.8
+        },
+        {
+          "x": 27.08,
+          "y": 0,
+          "z": 422.24
+        },
+        {
+          "x": 30.12,
+          "y": 0,
+          "z": 415.93
+        }
+      ],
+      "height": 24.6,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b65",
+      "footprint": [
+        {
+          "x": -12.33,
+          "y": 0,
+          "z": 389.78
+        },
+        {
+          "x": -20.69,
+          "y": 0,
+          "z": 385.94
+        },
+        {
+          "x": -15.26,
+          "y": 0,
+          "z": 374.13
+        },
+        {
+          "x": -6.9,
+          "y": 0,
+          "z": 377.97
+        }
+      ],
+      "height": 14.6,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b66",
+      "footprint": [
+        {
+          "x": -42.83,
+          "y": 0,
+          "z": 458.75
+        },
+        {
+          "x": -53.19,
+          "y": 0,
+          "z": 453.99
+        },
+        {
+          "x": -49.85,
+          "y": 0,
+          "z": 446.72
+        },
+        {
+          "x": -39.49,
+          "y": 0,
+          "z": 451.48
+        }
+      ],
+      "height": 16.6,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b67",
+      "footprint": [
+        {
+          "x": -37.94,
+          "y": 0,
+          "z": 365.16
+        },
+        {
+          "x": -49.13,
+          "y": 0,
+          "z": 357.43
+        },
+        {
+          "x": -43.16,
+          "y": 0,
+          "z": 348.79
+        },
+        {
+          "x": -31.97,
+          "y": 0,
+          "z": 356.52
+        }
+      ],
+      "height": 18.7,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b68",
+      "footprint": [
+        {
+          "x": -85.64,
+          "y": 0,
+          "z": 428.4
+        },
+        {
+          "x": -91.4,
+          "y": 0,
+          "z": 424.42
+        },
+        {
+          "x": -84.01,
+          "y": 0,
+          "z": 413.73
+        },
+        {
+          "x": -78.25,
+          "y": 0,
+          "z": 417.71
+        }
+      ],
+      "height": 20.7,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b69",
+      "footprint": [
+        {
+          "x": -74.64,
+          "y": 0,
+          "z": 346.13
+        },
+        {
+          "x": -81.94,
+          "y": 0,
+          "z": 340.53
+        },
+        {
+          "x": -77.07,
+          "y": 0,
+          "z": 334.18
+        },
+        {
+          "x": -69.77,
+          "y": 0,
+          "z": 339.78
+        }
+      ],
+      "height": 22.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b70",
+      "footprint": [
+        {
+          "x": -121.94,
+          "y": 0,
+          "z": 409.6
+        },
+        {
+          "x": -130.98,
+          "y": 0,
+          "z": 402.67
+        },
+        {
+          "x": -124.59,
+          "y": 0,
+          "z": 394.33
+        },
+        {
+          "x": -115.55,
+          "y": 0,
+          "z": 401.27
+        }
+      ],
+      "height": 24.8,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b71",
+      "footprint": [
+        {
+          "x": -98.15,
+          "y": 0,
+          "z": 320.72
+        },
+        {
+          "x": -107.01,
+          "y": 0,
+          "z": 310.4
+        },
+        {
+          "x": -97.14,
+          "y": 0,
+          "z": 301.93
+        },
+        {
+          "x": -88.28,
+          "y": 0,
+          "z": 312.25
+        }
+      ],
+      "height": 14.8,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b72",
+      "footprint": [
+        {
+          "x": -157.52,
+          "y": 0,
+          "z": 367.31
+        },
+        {
+          "x": -162.08,
+          "y": 0,
+          "z": 362
+        },
+        {
+          "x": -156.01,
+          "y": 0,
+          "z": 356.79
+        },
+        {
+          "x": -151.45,
+          "y": 0,
+          "z": 362.1
+        }
+      ],
+      "height": 16.9,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b73",
+      "footprint": [
+        {
+          "x": -127.67,
+          "y": 0,
+          "z": 291.79
+        },
+        {
+          "x": -132.91,
+          "y": 0,
+          "z": 284.23
+        },
+        {
+          "x": -124.27,
+          "y": 0,
+          "z": 278.25
+        },
+        {
+          "x": -119.04,
+          "y": 0,
+          "z": 285.82
+        }
+      ],
+      "height": 18.9,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b74",
+      "footprint": [
+        {
+          "x": -192.14,
+          "y": 0,
+          "z": 337.73
+        },
+        {
+          "x": -198.62,
+          "y": 0,
+          "z": 328.35
+        },
+        {
+          "x": -187.93,
+          "y": 0,
+          "z": 320.95
+        },
+        {
+          "x": -181.45,
+          "y": 0,
+          "z": 330.33
+        }
+      ],
+      "height": 21,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b75",
+      "footprint": [
+        {
+          "x": -135.51,
+          "y": 0,
+          "z": 265.25
+        },
+        {
+          "x": -140.66,
+          "y": 0,
+          "z": 252.66
+        },
+        {
+          "x": -133.26,
+          "y": 0,
+          "z": 249.63
+        },
+        {
+          "x": -128.11,
+          "y": 0,
+          "z": 262.22
+        }
+      ],
+      "height": 23,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b76",
+      "footprint": [
+        {
+          "x": -210.01,
+          "y": 0,
+          "z": 292.17
+        },
+        {
+          "x": -212.67,
+          "y": 0,
+          "z": 285.69
+        },
+        {
+          "x": -202.95,
+          "y": 0,
+          "z": 281.72
+        },
+        {
+          "x": -200.3,
+          "y": 0,
+          "z": 288.2
+        }
+      ],
+      "height": 25,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b77",
+      "footprint": [
+        {
+          "x": -151.06,
+          "y": 0,
+          "z": 255.82
+        },
+        {
+          "x": -145.6,
+          "y": 0,
+          "z": 248.41
+        },
+        {
+          "x": -135.14,
+          "y": 0,
+          "z": 256.13
+        },
+        {
+          "x": -140.6,
+          "y": 0,
+          "z": 263.53
+        }
+      ],
+      "height": 15.1,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b78",
+      "footprint": [
+        {
+          "x": -212.39,
+          "y": 0,
+          "z": 211.93
+        },
+        {
+          "x": -205.62,
+          "y": 0,
+          "z": 202.76
+        },
+        {
+          "x": -199.18,
+          "y": 0,
+          "z": 207.51
+        },
+        {
+          "x": -205.95,
+          "y": 0,
+          "z": 216.68
+        }
+      ],
+      "height": 17.1,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b79",
+      "footprint": [
+        {
+          "x": -120.48,
+          "y": 0,
+          "z": 236.64
+        },
+        {
+          "x": -110.5,
+          "y": 0,
+          "z": 227.41
+        },
+        {
+          "x": -103.37,
+          "y": 0,
+          "z": 235.11
+        },
+        {
+          "x": -113.35,
+          "y": 0,
+          "z": 244.35
+        }
+      ],
+      "height": 19.2,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b80",
+      "footprint": [
+        {
+          "x": -171.8,
+          "y": 0,
+          "z": 176.29
+        },
+        {
+          "x": -166.66,
+          "y": 0,
+          "z": 171.54
+        },
+        {
+          "x": -157.83,
+          "y": 0,
+          "z": 181.08
+        },
+        {
+          "x": -162.97,
+          "y": 0,
+          "z": 185.83
+        }
+      ],
+      "height": 21.2,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b81",
+      "footprint": [
+        {
+          "x": -98.04,
+          "y": 0,
+          "z": 152.86
+        },
+        {
+          "x": -102.91,
+          "y": 0,
+          "z": 145.05
+        },
+        {
+          "x": -96.12,
+          "y": 0,
+          "z": 140.82
+        },
+        {
+          "x": -91.25,
+          "y": 0,
+          "z": 148.62
+        }
+      ],
+      "height": 23.2,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b82",
+      "footprint": [
+        {
+          "x": -164.62,
+          "y": 0,
+          "z": 195.67
+        },
+        {
+          "x": -170.65,
+          "y": 0,
+          "z": 185.99
+        },
+        {
+          "x": -161.74,
+          "y": 0,
+          "z": 180.44
+        },
+        {
+          "x": -155.71,
+          "y": 0,
+          "z": 190.11
+        }
+      ],
+      "height": 25.3,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b83",
+      "footprint": [
+        {
+          "x": -123.94,
+          "y": 0,
+          "z": 117.81
+        },
+        {
+          "x": -132.86,
+          "y": 0,
+          "z": 107.55
+        },
+        {
+          "x": -123.05,
+          "y": 0,
+          "z": 99.02
+        },
+        {
+          "x": -114.13,
+          "y": 0,
+          "z": 109.29
+        }
+      ],
+      "height": 15.3,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b84",
+      "footprint": [
+        {
+          "x": -183.02,
+          "y": 0,
+          "z": 164.78
+        },
+        {
+          "x": -187.61,
+          "y": 0,
+          "z": 159.5
+        },
+        {
+          "x": -181.57,
+          "y": 0,
+          "z": 154.25
+        },
+        {
+          "x": -176.98,
+          "y": 0,
+          "z": 159.54
+        }
+      ],
+      "height": 17.4,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b85",
+      "footprint": [
+        {
+          "x": -131.58,
+          "y": 0,
+          "z": 121.11
+        },
+        {
+          "x": -125.65,
+          "y": 0,
+          "z": 114.08
+        },
+        {
+          "x": -117.62,
+          "y": 0,
+          "z": 120.84
+        },
+        {
+          "x": -123.55,
+          "y": 0,
+          "z": 127.88
+        }
+      ],
+      "height": 19.4,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b86",
+      "footprint": [
+        {
+          "x": -192.83,
+          "y": 0,
+          "z": 70.97
+        },
+        {
+          "x": -185.49,
+          "y": 0,
+          "z": 62.25
+        },
+        {
+          "x": -175.55,
+          "y": 0,
+          "z": 70.62
+        },
+        {
+          "x": -182.89,
+          "y": 0,
+          "z": 79.34
+        }
+      ],
+      "height": 21.4,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b87",
+      "footprint": [
+        {
+          "x": -98.76,
+          "y": 0,
+          "z": 95.15
+        },
+        {
+          "x": -91.73,
+          "y": 0,
+          "z": 83.51
+        },
+        {
+          "x": -84.88,
+          "y": 0,
+          "z": 87.65
+        },
+        {
+          "x": -91.92,
+          "y": 0,
+          "z": 99.28
+        }
+      ],
+      "height": 23.5,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b88",
+      "footprint": [
+        {
+          "x": -164.79,
+          "y": 0,
+          "z": 51.38
+        },
+        {
+          "x": -161.17,
+          "y": 0,
+          "z": 45.39
+        },
+        {
+          "x": -152.19,
+          "y": 0,
+          "z": 50.82
+        },
+        {
+          "x": -155.81,
+          "y": 0,
+          "z": 56.81
+        }
+      ],
+      "height": 25.5,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b89",
+      "footprint": [
+        {
+          "x": -118.39,
+          "y": 0,
+          "z": 9.79
+        },
+        {
+          "x": -125.19,
+          "y": 0,
+          "z": 3.6
+        },
+        {
+          "x": -116.44,
+          "y": 0,
+          "z": -6.01
+        },
+        {
+          "x": -109.64,
+          "y": 0,
+          "z": 0.18
+        }
+      ],
+      "height": 15.6,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b90",
+      "footprint": [
+        {
+          "x": -168.36,
+          "y": 0,
+          "z": 66.27
+        },
+        {
+          "x": -176.79,
+          "y": 0,
+          "z": 58.59
+        },
+        {
+          "x": -171.4,
+          "y": 0,
+          "z": 52.68
+        },
+        {
+          "x": -162.97,
+          "y": 0,
+          "z": 60.35
+        }
+      ],
+      "height": 17.6,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b91",
+      "footprint": [
+        {
+          "x": -130.21,
+          "y": 0,
+          "z": -6.02
+        },
+        {
+          "x": -134.45,
+          "y": 0,
+          "z": -18.94
+        },
+        {
+          "x": -124.48,
+          "y": 0,
+          "z": -22.22
+        },
+        {
+          "x": -120.23,
+          "y": 0,
+          "z": -9.3
+        }
+      ],
+      "height": 19.6,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b92",
+      "footprint": [
+        {
+          "x": -206.43,
+          "y": 0,
+          "z": 15.55
+        },
+        {
+          "x": -208.62,
+          "y": 0,
+          "z": 8.9
+        },
+        {
+          "x": -196.27,
+          "y": 0,
+          "z": 4.84
+        },
+        {
+          "x": -194.08,
+          "y": 0,
+          "z": 11.49
+        }
+      ],
+      "height": 21.7,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b93",
+      "footprint": [
+        {
+          "x": -129.78,
+          "y": 0,
+          "z": -16.13
+        },
+        {
+          "x": -124.39,
+          "y": 0,
+          "z": -23.58
+        },
+        {
+          "x": -117.91,
+          "y": 0,
+          "z": -18.89
+        },
+        {
+          "x": -123.3,
+          "y": 0,
+          "z": -11.44
+        }
+      ],
+      "height": 23.7,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b94",
+      "footprint": [
+        {
+          "x": -194.55,
+          "y": 0,
+          "z": -61.63
+        },
+        {
+          "x": -187.87,
+          "y": 0,
+          "z": -70.87
+        },
+        {
+          "x": -179.36,
+          "y": 0,
+          "z": -64.71
+        },
+        {
+          "x": -186.04,
+          "y": 0,
+          "z": -55.48
+        }
+      ],
+      "height": 25.8,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b95",
+      "footprint": [
+        {
+          "x": -98.56,
+          "y": 0,
+          "z": -64.19
+        },
+        {
+          "x": -97.08,
+          "y": 0,
+          "z": -77.71
+        },
+        {
+          "x": -84.16,
+          "y": 0,
+          "z": -76.3
+        },
+        {
+          "x": -85.63,
+          "y": 0,
+          "z": -62.78
+        }
+      ],
+      "height": 15.8,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b96",
+      "footprint": [
+        {
+          "x": -173.16,
+          "y": 0,
+          "z": -75.64
+        },
+        {
+          "x": -172.4,
+          "y": 0,
+          "z": -82.6
+        },
+        {
+          "x": -164.44,
+          "y": 0,
+          "z": -81.73
+        },
+        {
+          "x": -165.2,
+          "y": 0,
+          "z": -74.77
+        }
+      ],
+      "height": 17.8,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b97",
+      "footprint": [
+        {
+          "x": -117.54,
+          "y": 0,
+          "z": -125.36
+        },
+        {
+          "x": -121.5,
+          "y": 0,
+          "z": -133.66
+        },
+        {
+          "x": -112.03,
+          "y": 0,
+          "z": -138.19
+        },
+        {
+          "x": -108.06,
+          "y": 0,
+          "z": -129.89
+        }
+      ],
+      "height": 19.9,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b98",
+      "footprint": [
+        {
+          "x": -188.48,
+          "y": 0,
+          "z": -90.26
+        },
+        {
+          "x": -193.4,
+          "y": 0,
+          "z": -100.54
+        },
+        {
+          "x": -181.67,
+          "y": 0,
+          "z": -106.15
+        },
+        {
+          "x": -176.75,
+          "y": 0,
+          "z": -95.86
+        }
+      ],
+      "height": 21.9,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b99",
+      "footprint": [
+        {
+          "x": -119.02,
+          "y": 0,
+          "z": -130.14
+        },
+        {
+          "x": -112.85,
+          "y": 0,
+          "z": -142.26
+        },
+        {
+          "x": -105.72,
+          "y": 0,
+          "z": -138.63
+        },
+        {
+          "x": -111.89,
+          "y": 0,
+          "z": -126.51
+        }
+      ],
+      "height": 24,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b100",
+      "footprint": [
+        {
+          "x": -188.05,
+          "y": 0,
+          "z": -169.01
+        },
+        {
+          "x": -184.87,
+          "y": 0,
+          "z": -175.25
+        },
+        {
+          "x": -175.51,
+          "y": 0,
+          "z": -170.48
+        },
+        {
+          "x": -178.69,
+          "y": 0,
+          "z": -164.25
+        }
+      ],
+      "height": 14,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b101",
+      "footprint": [
+        {
+          "x": -107.39,
+          "y": 0,
+          "z": -160.39
+        },
+        {
+          "x": -100.74,
+          "y": 0,
+          "z": -166.75
+        },
+        {
+          "x": -91.75,
+          "y": 0,
+          "z": -157.36
+        },
+        {
+          "x": -98.4,
+          "y": 0,
+          "z": -151
+        }
+      ],
+      "height": 16,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b102",
+      "footprint": [
+        {
+          "x": -160.31,
+          "y": 0,
+          "z": -214.11
+        },
+        {
+          "x": -152.07,
+          "y": 0,
+          "z": -221.99
+        },
+        {
+          "x": -146.54,
+          "y": 0,
+          "z": -216.21
+        },
+        {
+          "x": -154.78,
+          "y": 0,
+          "z": -208.33
+        }
+      ],
+      "height": 18.1,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b103",
+      "footprint": [
+        {
+          "x": -74.57,
+          "y": 0,
+          "z": -180.88
+        },
+        {
+          "x": -64.34,
+          "y": 0,
+          "z": -189.85
+        },
+        {
+          "x": -57.42,
+          "y": 0,
+          "z": -181.95
+        },
+        {
+          "x": -67.64,
+          "y": 0,
+          "z": -172.99
+        }
+      ],
+      "height": 20.1,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b104",
+      "footprint": [
+        {
+          "x": -124.27,
+          "y": 0,
+          "z": -242.57
+        },
+        {
+          "x": -119.01,
+          "y": 0,
+          "z": -247.18
+        },
+        {
+          "x": -110.44,
+          "y": 0,
+          "z": -237.41
+        },
+        {
+          "x": -115.7,
+          "y": 0,
+          "z": -232.79
+        }
+      ],
+      "height": 22.2,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b105",
+      "footprint": [
+        {
+          "x": -46,
+          "y": 0,
+          "z": -209.44
+        },
+        {
+          "x": -38.24,
+          "y": 0,
+          "z": -214.38
+        },
+        {
+          "x": -33.94,
+          "y": 0,
+          "z": -207.63
+        },
+        {
+          "x": -41.71,
+          "y": 0,
+          "z": -202.69
+        }
+      ],
+      "height": 24.2,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-b106",
+      "footprint": [
+        {
+          "x": -89.43,
+          "y": 0,
+          "z": -275.62
+        },
+        {
+          "x": -79.81,
+          "y": 0,
+          "z": -281.74
+        },
+        {
+          "x": -74.17,
+          "y": 0,
+          "z": -272.88
+        },
+        {
+          "x": -83.79,
+          "y": 0,
+          "z": -266.76
+        }
+      ],
+      "height": 14.2,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "westminster-sprint-landmark-0",
+      "name": "Foreign Office",
+      "footprint": [
+        {
+          "x": 191.7,
+          "y": 0,
+          "z": -246.82
+        },
+        {
+          "x": 233.7,
+          "y": 0,
+          "z": -246.82
+        },
+        {
+          "x": 233.7,
+          "y": 0,
+          "z": -214.82
+        },
+        {
+          "x": 191.7,
+          "y": 0,
+          "z": -214.82
+        }
+      ],
+      "height": 55,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-1",
+      "name": "Treasury Building",
+      "footprint": [
+        {
+          "x": 178.37,
+          "y": 0,
+          "z": -101.54
+        },
+        {
+          "x": 216.37,
+          "y": 0,
+          "z": -101.54
+        },
+        {
+          "x": 216.37,
+          "y": 0,
+          "z": -71.54
+        },
+        {
+          "x": 178.37,
+          "y": 0,
+          "z": -71.54
+        }
+      ],
+      "height": 52,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-2",
+      "name": "Banqueting House",
+      "footprint": [
+        {
+          "x": 231.6,
+          "y": 0,
+          "z": 84.72
+        },
+        {
+          "x": 265.6,
+          "y": 0,
+          "z": 84.72
+        },
+        {
+          "x": 265.6,
+          "y": 0,
+          "z": 112.72
+        },
+        {
+          "x": 231.6,
+          "y": 0,
+          "z": 112.72
+        }
+      ],
+      "height": 36,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-3",
+      "name": "Admiralty Arch",
+      "footprint": [
+        {
+          "x": 106.05,
+          "y": 0,
+          "z": 32.74
+        },
+        {
+          "x": 154.05,
+          "y": 0,
+          "z": 32.74
+        },
+        {
+          "x": 154.05,
+          "y": 0,
+          "z": 56.74
+        },
+        {
+          "x": 106.05,
+          "y": 0,
+          "z": 56.74
+        }
+      ],
+      "height": 40,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-4",
+      "name": "Portcullis House",
+      "footprint": [
+        {
+          "x": 83.67,
+          "y": 0,
+          "z": 65.54
+        },
+        {
+          "x": 117.67,
+          "y": 0,
+          "z": 65.54
+        },
+        {
+          "x": 117.67,
+          "y": 0,
+          "z": 97.54
+        },
+        {
+          "x": 83.67,
+          "y": 0,
+          "z": 97.54
+        }
+      ],
+      "height": 46,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-5",
+      "name": "Millbank Tower",
+      "footprint": [
+        {
+          "x": 118.32,
+          "y": 0,
+          "z": 77.87
+        },
+        {
+          "x": 144.32,
+          "y": 0,
+          "z": 77.87
+        },
+        {
+          "x": 144.32,
+          "y": 0,
+          "z": 103.87
+        },
+        {
+          "x": 118.32,
+          "y": 0,
+          "z": 103.87
+        }
+      ],
+      "height": 118,
+      "baseHeight": 0,
+      "floors": 34,
+      "style": "concrete_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-6",
+      "name": "Tate Britain",
+      "footprint": [
+        {
+          "x": 293.46,
+          "y": 0,
+          "z": 299.13
+        },
+        {
+          "x": 341.46,
+          "y": 0,
+          "z": 299.13
+        },
+        {
+          "x": 341.46,
+          "y": 0,
+          "z": 331.13
+        },
+        {
+          "x": 293.46,
+          "y": 0,
+          "z": 331.13
+        }
+      ],
+      "height": 42,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-7",
+      "name": "MI6 Building",
+      "footprint": [
+        {
+          "x": 234.22,
+          "y": 0,
+          "z": 429.08
+        },
+        {
+          "x": 280.22,
+          "y": 0,
+          "z": 429.08
+        },
+        {
+          "x": 280.22,
+          "y": 0,
+          "z": 463.08
+        },
+        {
+          "x": 234.22,
+          "y": 0,
+          "z": 463.08
+        }
+      ],
+      "height": 68,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-8",
+      "name": "Vauxhall Tower",
+      "footprint": [
+        {
+          "x": 113.87,
+          "y": 0,
+          "z": 468.33
+        },
+        {
+          "x": 141.87,
+          "y": 0,
+          "z": 468.33
+        },
+        {
+          "x": 141.87,
+          "y": 0,
+          "z": 496.33
+        },
+        {
+          "x": 113.87,
+          "y": 0,
+          "z": 496.33
+        }
+      ],
+      "height": 140,
+      "baseHeight": 0,
+      "floors": 40,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-9",
+      "name": "Lambeth Palace",
+      "footprint": [
+        {
+          "x": 37.26,
+          "y": 0,
+          "z": 440.96
+        },
+        {
+          "x": 75.26,
+          "y": 0,
+          "z": 440.96
+        },
+        {
+          "x": 75.26,
+          "y": 0,
+          "z": 472.96
+        },
+        {
+          "x": 37.26,
+          "y": 0,
+          "z": 472.96
+        }
+      ],
+      "height": 44,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-10",
+      "name": "St Thomas' Hospital",
+      "footprint": [
+        {
+          "x": -154.65,
+          "y": 0,
+          "z": 418.82
+        },
+        {
+          "x": -104.65,
+          "y": 0,
+          "z": 418.82
+        },
+        {
+          "x": -104.65,
+          "y": 0,
+          "z": 448.82
+        },
+        {
+          "x": -154.65,
+          "y": 0,
+          "z": 448.82
+        }
+      ],
+      "height": 48,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-11",
+      "name": "Methodist Central Hall",
+      "footprint": [
+        {
+          "x": -266.45,
+          "y": 0,
+          "z": 257.24
+        },
+        {
+          "x": -228.45,
+          "y": 0,
+          "z": 257.24
+        },
+        {
+          "x": -228.45,
+          "y": 0,
+          "z": 295.24
+        },
+        {
+          "x": -266.45,
+          "y": 0,
+          "z": 295.24
+        }
+      ],
+      "height": 58,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "round",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-12",
+      "name": "Scotland Yard",
+      "footprint": [
+        {
+          "x": -121.29,
+          "y": 0,
+          "z": 74.99
+        },
+        {
+          "x": -83.29,
+          "y": 0,
+          "z": 74.99
+        },
+        {
+          "x": -83.29,
+          "y": 0,
+          "z": 104.99
+        },
+        {
+          "x": -121.29,
+          "y": 0,
+          "z": 104.99
+        }
+      ],
+      "height": 62,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-13",
+      "name": "Imperial War Museum",
+      "footprint": [
+        {
+          "x": -229.39,
+          "y": 0,
+          "z": 55.39
+        },
+        {
+          "x": -189.39,
+          "y": 0,
+          "z": 55.39
+        },
+        {
+          "x": -189.39,
+          "y": 0,
+          "z": 87.39
+        },
+        {
+          "x": -229.39,
+          "y": 0,
+          "z": 87.39
+        }
+      ],
+      "height": 40,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "westminster-sprint-landmark-14",
+      "name": "Churchill War Rooms",
+      "footprint": [
+        {
+          "x": -227.33,
+          "y": 0,
+          "z": -107.51
+        },
+        {
+          "x": -195.33,
+          "y": 0,
+          "z": -107.51
+        },
+        {
+          "x": -195.33,
+          "y": 0,
+          "z": -81.51
+        },
+        {
+          "x": -227.33,
+          "y": 0,
+          "z": -81.51
+        }
+      ],
+      "height": 30,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    }
+  ],
+  "sceneryObjects": [
+    {
+      "id": "westminster-sprint-light-0",
+      "type": "street_light",
+      "position": {
+        "x": -11.59,
+        "y": 0,
+        "z": -251.26
+      },
+      "rotation": 1.7693,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-1",
+      "type": "street_light",
+      "position": {
+        "x": -1.8,
+        "y": 0,
+        "z": -273.95
+      },
+      "rotation": 1.7746,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-1",
+      "type": "tree",
+      "position": {
+        "x": 3.08,
+        "y": 0,
+        "z": -250.35
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-2",
+      "type": "street_light",
+      "position": {
+        "x": 24.37,
+        "y": 0,
+        "z": -258.24
+      },
+      "rotation": 1.7197,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-3",
+      "type": "street_light",
+      "position": {
+        "x": 39.42,
+        "y": 0,
+        "z": -280.15
+      },
+      "rotation": 1.6196,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-3",
+      "type": "tree",
+      "position": {
+        "x": 40.6,
+        "y": 0,
+        "z": -256.07
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-4",
+      "type": "street_light",
+      "position": {
+        "x": 53.58,
+        "y": 0,
+        "z": -259.53
+      },
+      "rotation": 1.4658,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-5",
+      "type": "street_light",
+      "position": {
+        "x": 75.31,
+        "y": 0,
+        "z": -276.34
+      },
+      "rotation": 1.3388,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-5",
+      "type": "tree",
+      "position": {
+        "x": 69.77,
+        "y": 0,
+        "z": -252.88
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-6",
+      "type": "street_light",
+      "position": {
+        "x": 86.61,
+        "y": 0,
+        "z": -251.62
+      },
+      "rotation": 1.1805,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-7",
+      "type": "street_light",
+      "position": {
+        "x": 111.96,
+        "y": 0,
+        "z": -260.98
+      },
+      "rotation": 0.9828,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-7",
+      "type": "tree",
+      "position": {
+        "x": 98.59,
+        "y": 0,
+        "z": -240.93
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-8",
+      "type": "street_light",
+      "position": {
+        "x": 113.04,
+        "y": 0,
+        "z": -233.73
+      },
+      "rotation": 0.7628,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-9",
+      "type": "street_light",
+      "position": {
+        "x": 141.09,
+        "y": 0,
+        "z": -231.1
+      },
+      "rotation": 0.6104,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-9",
+      "type": "tree",
+      "position": {
+        "x": 121.34,
+        "y": 0,
+        "z": -217.29
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-10",
+      "type": "street_light",
+      "position": {
+        "x": 132.24,
+        "y": 0,
+        "z": -207.4
+      },
+      "rotation": 0.5253,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-11",
+      "type": "street_light",
+      "position": {
+        "x": 159.17,
+        "y": 0,
+        "z": -199.23
+      },
+      "rotation": 0.4319,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-11",
+      "type": "tree",
+      "position": {
+        "x": 137.29,
+        "y": 0,
+        "z": -189.14
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-12",
+      "type": "street_light",
+      "position": {
+        "x": 148.09,
+        "y": 0,
+        "z": -173.37
+      },
+      "rotation": 0.3534,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-13",
+      "type": "street_light",
+      "position": {
+        "x": 171.94,
+        "y": 0,
+        "z": -165.11
+      },
+      "rotation": 0.2616,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-13",
+      "type": "tree",
+      "position": {
+        "x": 148.66,
+        "y": 0,
+        "z": -158.88
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-14",
+      "type": "street_light",
+      "position": {
+        "x": 155.47,
+        "y": 0,
+        "z": -142.78
+      },
+      "rotation": 0.0658,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-15",
+      "type": "street_light",
+      "position": {
+        "x": 173.45,
+        "y": 0,
+        "z": -122.46
+      },
+      "rotation": -0.3316,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-15",
+      "type": "tree",
+      "position": {
+        "x": 150.66,
+        "y": 0,
+        "z": -130.31
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-16",
+      "type": "street_light",
+      "position": {
+        "x": 145.93,
+        "y": 0,
+        "z": -115.84
+      },
+      "rotation": -0.6891,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-17",
+      "type": "street_light",
+      "position": {
+        "x": 151.02,
+        "y": 0,
+        "z": -91.04
+      },
+      "rotation": -0.7201,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-17",
+      "type": "tree",
+      "position": {
+        "x": 132.9,
+        "y": 0,
+        "z": -106.93
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-18",
+      "type": "street_light",
+      "position": {
+        "x": 123.21,
+        "y": 0,
+        "z": -86.93
+      },
+      "rotation": -0.453,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-19",
+      "type": "street_light",
+      "position": {
+        "x": 140.82,
+        "y": 0,
+        "z": -66.95
+      },
+      "rotation": 0.2821,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-19",
+      "type": "tree",
+      "position": {
+        "x": 117.67,
+        "y": 0,
+        "z": -60.24
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-20",
+      "type": "street_light",
+      "position": {
+        "x": 131.73,
+        "y": 0,
+        "z": -41.2
+      },
+      "rotation": 0.5957,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-21",
+      "type": "street_light",
+      "position": {
+        "x": 158.47,
+        "y": 0,
+        "z": -38.3
+      },
+      "rotation": 0.597,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-21",
+      "type": "tree",
+      "position": {
+        "x": 138.54,
+        "y": 0,
+        "z": -24.75
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-22",
+      "type": "street_light",
+      "position": {
+        "x": 149.37,
+        "y": 0,
+        "z": -15.2
+      },
+      "rotation": 0.6206,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-23",
+      "type": "street_light",
+      "position": {
+        "x": 178.83,
+        "y": 0,
+        "z": -12.04
+      },
+      "rotation": 0.753,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-23",
+      "type": "tree",
+      "position": {
+        "x": 161.24,
+        "y": 0,
+        "z": 4.44
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-24",
+      "type": "street_light",
+      "position": {
+        "x": 174.82,
+        "y": 0,
+        "z": 13.72
+      },
+      "rotation": 0.6813,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-25",
+      "type": "street_light",
+      "position": {
+        "x": 202.94,
+        "y": 0,
+        "z": 22.12
+      },
+      "rotation": 0.3195,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-25",
+      "type": "tree",
+      "position": {
+        "x": 180.06,
+        "y": 0,
+        "z": 29.69
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-26",
+      "type": "street_light",
+      "position": {
+        "x": 184.66,
+        "y": 0,
+        "z": 39.3
+      },
+      "rotation": -0.1002,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-27",
+      "type": "street_light",
+      "position": {
+        "x": 200.38,
+        "y": 0,
+        "z": 61.97
+      },
+      "rotation": -0.296,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-27",
+      "type": "tree",
+      "position": {
+        "x": 177.32,
+        "y": 0,
+        "z": 54.94
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-28",
+      "type": "street_light",
+      "position": {
+        "x": 176.49,
+        "y": 0,
+        "z": 68.73
+      },
+      "rotation": -0.394,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-29",
+      "type": "street_light",
+      "position": {
+        "x": 184.5,
+        "y": 0,
+        "z": 97.53
+      },
+      "rotation": -0.5497,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-29",
+      "type": "tree",
+      "position": {
+        "x": 163.95,
+        "y": 0,
+        "z": 84.94
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-30",
+      "type": "street_light",
+      "position": {
+        "x": 160.21,
+        "y": 0,
+        "z": 97.01
+      },
+      "rotation": -0.6907,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-31",
+      "type": "street_light",
+      "position": {
+        "x": 153.76,
+        "y": 0,
+        "z": 126.66
+      },
+      "rotation": -1.2117,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-31",
+      "type": "tree",
+      "position": {
+        "x": 145.29,
+        "y": 0,
+        "z": 104.09
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-32",
+      "type": "street_light",
+      "position": {
+        "x": 132.18,
+        "y": 0,
+        "z": 110.36
+      },
+      "rotation": -1.5211,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-33",
+      "type": "street_light",
+      "position": {
+        "x": 118.5,
+        "y": 0,
+        "z": 130.22
+      },
+      "rotation": -1.6554,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-33",
+      "type": "tree",
+      "position": {
+        "x": 120.54,
+        "y": 0,
+        "z": 106.21
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-34",
+      "type": "street_light",
+      "position": {
+        "x": 101.35,
+        "y": 0,
+        "z": 106.89
+      },
+      "rotation": -1.8173,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-35",
+      "type": "street_light",
+      "position": {
+        "x": 76.1,
+        "y": 0,
+        "z": 119.61
+      },
+      "rotation": -1.9858,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-35",
+      "type": "tree",
+      "position": {
+        "x": 85.82,
+        "y": 0,
+        "z": 97.55
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-36",
+      "type": "street_light",
+      "position": {
+        "x": 72.75,
+        "y": 0,
+        "z": 94.29
+      },
+      "rotation": -2.34,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-37",
+      "type": "street_light",
+      "position": {
+        "x": 45.88,
+        "y": 0,
+        "z": 90.36
+      },
+      "rotation": -2.6653,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-37",
+      "type": "tree",
+      "position": {
+        "x": 67.3,
+        "y": 0,
+        "z": 79.31
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-38",
+      "type": "street_light",
+      "position": {
+        "x": 58.25,
+        "y": 0,
+        "z": 68.78
+      },
+      "rotation": -2.7494,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-39",
+      "type": "street_light",
+      "position": {
+        "x": 31.96,
+        "y": 0,
+        "z": 56.99
+      },
+      "rotation": -2.7609,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-39",
+      "type": "tree",
+      "position": {
+        "x": 54.33,
+        "y": 0,
+        "z": 48.03
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-40",
+      "type": "street_light",
+      "position": {
+        "x": 38.94,
+        "y": 0,
+        "z": 28.69
+      },
+      "rotation": -2.2894,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-41",
+      "type": "street_light",
+      "position": {
+        "x": 28.01,
+        "y": 0,
+        "z": 47.34
+      },
+      "rotation": -0.6577,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-41",
+      "type": "tree",
+      "position": {
+        "x": 8.93,
+        "y": 0,
+        "z": 32.61
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-42",
+      "type": "street_light",
+      "position": {
+        "x": 1.28,
+        "y": 0,
+        "z": 55.24
+      },
+      "rotation": -0.3618,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-43",
+      "type": "street_light",
+      "position": {
+        "x": 16.04,
+        "y": 0,
+        "z": 76.86
+      },
+      "rotation": -0.1882,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-43",
+      "type": "tree",
+      "position": {
+        "x": -7.63,
+        "y": 0,
+        "z": 72.35
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-44",
+      "type": "street_light",
+      "position": {
+        "x": -4.48,
+        "y": 0,
+        "z": 96.07
+      },
+      "rotation": 0.1417,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-45",
+      "type": "street_light",
+      "position": {
+        "x": 18.7,
+        "y": 0,
+        "z": 107.31
+      },
+      "rotation": 0.2917,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-45",
+      "type": "tree",
+      "position": {
+        "x": -4.39,
+        "y": 0,
+        "z": 114.24
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-46",
+      "type": "street_light",
+      "position": {
+        "x": 6.14,
+        "y": 0,
+        "z": 131.1
+      },
+      "rotation": 0.4315,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-47",
+      "type": "street_light",
+      "position": {
+        "x": 32.59,
+        "y": 0,
+        "z": 137.16
+      },
+      "rotation": 0.5971,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-47",
+      "type": "tree",
+      "position": {
+        "x": 12.66,
+        "y": 0,
+        "z": 150.71
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-48",
+      "type": "street_light",
+      "position": {
+        "x": 28.81,
+        "y": 0,
+        "z": 163.77
+      },
+      "rotation": 0.825,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-49",
+      "type": "street_light",
+      "position": {
+        "x": 54.72,
+        "y": 0,
+        "z": 157.35
+      },
+      "rotation": 1.086,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-49",
+      "type": "tree",
+      "position": {
+        "x": 43.49,
+        "y": 0,
+        "z": 178.67
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-50",
+      "type": "street_light",
+      "position": {
+        "x": 65.1,
+        "y": 0,
+        "z": 183.47
+      },
+      "rotation": 1.2494,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-51",
+      "type": "street_light",
+      "position": {
+        "x": 84.33,
+        "y": 0,
+        "z": 168.02
+      },
+      "rotation": 1.3253,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-51",
+      "type": "tree",
+      "position": {
+        "x": 78.47,
+        "y": 0,
+        "z": 191.39
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-52",
+      "type": "street_light",
+      "position": {
+        "x": 101.47,
+        "y": 0,
+        "z": 192.06
+      },
+      "rotation": 1.4136,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-53",
+      "type": "street_light",
+      "position": {
+        "x": 118,
+        "y": 0,
+        "z": 173.88
+      },
+      "rotation": 1.464,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-53",
+      "type": "tree",
+      "position": {
+        "x": 115.43,
+        "y": 0,
+        "z": 197.84
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-54",
+      "type": "street_light",
+      "position": {
+        "x": 136.66,
+        "y": 0,
+        "z": 195.13
+      },
+      "rotation": 1.609,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-55",
+      "type": "street_light",
+      "position": {
+        "x": 152.91,
+        "y": 0,
+        "z": 172.34
+      },
+      "rotation": 1.8027,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-55",
+      "type": "tree",
+      "position": {
+        "x": 158.45,
+        "y": 0,
+        "z": 195.8
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-56",
+      "type": "street_light",
+      "position": {
+        "x": 176.96,
+        "y": 0,
+        "z": 186.55
+      },
+      "rotation": 1.8619,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-57",
+      "type": "street_light",
+      "position": {
+        "x": 190.1,
+        "y": 0,
+        "z": 161.96
+      },
+      "rotation": 1.7926,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-57",
+      "type": "tree",
+      "position": {
+        "x": 195.4,
+        "y": 0,
+        "z": 185.46
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-58",
+      "type": "street_light",
+      "position": {
+        "x": 209.44,
+        "y": 0,
+        "z": 179.73
+      },
+      "rotation": 1.5589,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-59",
+      "type": "street_light",
+      "position": {
+        "x": 228.86,
+        "y": 0,
+        "z": 162.52
+      },
+      "rotation": 1.3141,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-59",
+      "type": "tree",
+      "position": {
+        "x": 222.74,
+        "y": 0,
+        "z": 185.83
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-60",
+      "type": "street_light",
+      "position": {
+        "x": 240.32,
+        "y": 0,
+        "z": 187.72
+      },
+      "rotation": 1.1761,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-61",
+      "type": "street_light",
+      "position": {
+        "x": 266.02,
+        "y": 0,
+        "z": 177.98
+      },
+      "rotation": 1.0375,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-61",
+      "type": "tree",
+      "position": {
+        "x": 253.77,
+        "y": 0,
+        "z": 198.73
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-62",
+      "type": "street_light",
+      "position": {
+        "x": 266.8,
+        "y": 0,
+        "z": 203.3
+      },
+      "rotation": 0.8171,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-63",
+      "type": "street_light",
+      "position": {
+        "x": 287.02,
+        "y": 0,
+        "z": 216.41
+      },
+      "rotation": -0.5766,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-63",
+      "type": "tree",
+      "position": {
+        "x": 266.82,
+        "y": 0,
+        "z": 203.27
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-64",
+      "type": "street_light",
+      "position": {
+        "x": 258,
+        "y": 0,
+        "z": 215.24
+      },
+      "rotation": -0.973,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-65",
+      "type": "street_light",
+      "position": {
+        "x": 254.84,
+        "y": 0,
+        "z": 241.72
+      },
+      "rotation": -0.947,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-65",
+      "type": "tree",
+      "position": {
+        "x": 240.76,
+        "y": 0,
+        "z": 222.16
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-66",
+      "type": "street_light",
+      "position": {
+        "x": 226.36,
+        "y": 0,
+        "z": 242.94
+      },
+      "rotation": -0.3886,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-67",
+      "type": "street_light",
+      "position": {
+        "x": 249.78,
+        "y": 0,
+        "z": 254.64
+      },
+      "rotation": 0.8791,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-67",
+      "type": "tree",
+      "position": {
+        "x": 234.41,
+        "y": 0,
+        "z": 273.2
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-68",
+      "type": "street_light",
+      "position": {
+        "x": 250.64,
+        "y": 0,
+        "z": 279.96
+      },
+      "rotation": 0.9817,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-69",
+      "type": "street_light",
+      "position": {
+        "x": 276.04,
+        "y": 0,
+        "z": 273.25
+      },
+      "rotation": 0.8827,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-69",
+      "type": "tree",
+      "position": {
+        "x": 260.73,
+        "y": 0,
+        "z": 291.86
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-70",
+      "type": "street_light",
+      "position": {
+        "x": 270.4,
+        "y": 0,
+        "z": 299.51
+      },
+      "rotation": 0.0619,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-71",
+      "type": "street_light",
+      "position": {
+        "x": 287.77,
+        "y": 0,
+        "z": 319.22
+      },
+      "rotation": -0.2881,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-71",
+      "type": "tree",
+      "position": {
+        "x": 264.66,
+        "y": 0,
+        "z": 312.37
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-72",
+      "type": "street_light",
+      "position": {
+        "x": 263.49,
+        "y": 0,
+        "z": 325.75
+      },
+      "rotation": -0.4619,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-73",
+      "type": "street_light",
+      "position": {
+        "x": 269.47,
+        "y": 0,
+        "z": 353.87
+      },
+      "rotation": -0.6686,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-73",
+      "type": "tree",
+      "position": {
+        "x": 250.56,
+        "y": 0,
+        "z": 338.93
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-74",
+      "type": "street_light",
+      "position": {
+        "x": 244.79,
+        "y": 0,
+        "z": 350.71
+      },
+      "rotation": -0.8549,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-75",
+      "type": "street_light",
+      "position": {
+        "x": 238.89,
+        "y": 0,
+        "z": 379.17
+      },
+      "rotation": -1.0578,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-75",
+      "type": "tree",
+      "position": {
+        "x": 227.06,
+        "y": 0,
+        "z": 358.17
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-76",
+      "type": "street_light",
+      "position": {
+        "x": 214.35,
+        "y": 0,
+        "z": 368.81
+      },
+      "rotation": -1.1568,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-77",
+      "type": "street_light",
+      "position": {
+        "x": 205.18,
+        "y": 0,
+        "z": 394.12
+      },
+      "rotation": -1.2301,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-77",
+      "type": "tree",
+      "position": {
+        "x": 197.13,
+        "y": 0,
+        "z": 371.41
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-78",
+      "type": "street_light",
+      "position": {
+        "x": 182.2,
+        "y": 0,
+        "z": 380.3
+      },
+      "rotation": -1.2894,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-79",
+      "type": "street_light",
+      "position": {
+        "x": 169.77,
+        "y": 0,
+        "z": 404.29
+      },
+      "rotation": -1.3539,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-79",
+      "type": "tree",
+      "position": {
+        "x": 164.58,
+        "y": 0,
+        "z": 380.76
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-80",
+      "type": "street_light",
+      "position": {
+        "x": 147.58,
+        "y": 0,
+        "z": 387.89
+      },
+      "rotation": -1.4204,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-81",
+      "type": "street_light",
+      "position": {
+        "x": 131,
+        "y": 0,
+        "z": 410.11
+      },
+      "rotation": -1.4953,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-81",
+      "type": "tree",
+      "position": {
+        "x": 129.18,
+        "y": 0,
+        "z": 386.08
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-82",
+      "type": "street_light",
+      "position": {
+        "x": 111.92,
+        "y": 0,
+        "z": 390.53
+      },
+      "rotation": -1.5875,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-83",
+      "type": "street_light",
+      "position": {
+        "x": 92.24,
+        "y": 0,
+        "z": 409.03
+      },
+      "rotation": -1.7706,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-83",
+      "type": "tree",
+      "position": {
+        "x": 97.02,
+        "y": 0,
+        "z": 385.4
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-84",
+      "type": "street_light",
+      "position": {
+        "x": 80.58,
+        "y": 0,
+        "z": 384.05
+      },
+      "rotation": -1.9679,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-85",
+      "type": "street_light",
+      "position": {
+        "x": 60.71,
+        "y": 0,
+        "z": 397.18
+      },
+      "rotation": -2.0162,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-85",
+      "type": "tree",
+      "position": {
+        "x": 71.09,
+        "y": 0,
+        "z": 375.43
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-86",
+      "type": "street_light",
+      "position": {
+        "x": 52.44,
+        "y": 0,
+        "z": 370.93
+      },
+      "rotation": -1.9797,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-87",
+      "type": "street_light",
+      "position": {
+        "x": 28.86,
+        "y": 0,
+        "z": 384.81
+      },
+      "rotation": -1.5947,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-87",
+      "type": "tree",
+      "position": {
+        "x": 29.44,
+        "y": 0,
+        "z": 360.72
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-88",
+      "type": "street_light",
+      "position": {
+        "x": 4.23,
+        "y": 0,
+        "z": 379.61
+      },
+      "rotation": -0.556,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-89",
+      "type": "street_light",
+      "position": {
+        "x": 15.84,
+        "y": 0,
+        "z": 401.81
+      },
+      "rotation": -0.4069,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-89",
+      "type": "tree",
+      "position": {
+        "x": -6.29,
+        "y": 0,
+        "z": 392.27
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-90",
+      "type": "street_light",
+      "position": {
+        "x": -10.91,
+        "y": 0,
+        "z": 409.49
+      },
+      "rotation": -0.8232,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-91",
+      "type": "street_light",
+      "position": {
+        "x": -23.86,
+        "y": 0,
+        "z": 428.7
+      },
+      "rotation": -1.8457,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-91",
+      "type": "tree",
+      "position": {
+        "x": -17.31,
+        "y": 0,
+        "z": 405.51
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-92",
+      "type": "street_light",
+      "position": {
+        "x": -29,
+        "y": 0,
+        "z": 404.76
+      },
+      "rotation": -2.0546,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-93",
+      "type": "street_light",
+      "position": {
+        "x": -57.41,
+        "y": 0,
+        "z": 410.95
+      },
+      "rotation": -2.1645,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-93",
+      "type": "tree",
+      "position": {
+        "x": -43.93,
+        "y": 0,
+        "z": 390.98
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-94",
+      "type": "street_light",
+      "position": {
+        "x": -59.76,
+        "y": 0,
+        "z": 384.78
+      },
+      "rotation": -2.1753,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-95",
+      "type": "street_light",
+      "position": {
+        "x": -84.94,
+        "y": 0,
+        "z": 392.03
+      },
+      "rotation": -2.1749,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-95",
+      "type": "tree",
+      "position": {
+        "x": -71.25,
+        "y": 0,
+        "z": 372.2
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-96",
+      "type": "street_light",
+      "position": {
+        "x": -87.66,
+        "y": 0,
+        "z": 365.31
+      },
+      "rotation": -2.2081,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-97",
+      "type": "street_light",
+      "position": {
+        "x": -114.76,
+        "y": 0,
+        "z": 369.73
+      },
+      "rotation": -2.268,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-97",
+      "type": "tree",
+      "position": {
+        "x": -99.29,
+        "y": 0,
+        "z": 351.25
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-98",
+      "type": "street_light",
+      "position": {
+        "x": -115.16,
+        "y": 0,
+        "z": 342.08
+      },
+      "rotation": -2.3562,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-99",
+      "type": "street_light",
+      "position": {
+        "x": -142.88,
+        "y": 0,
+        "z": 341.32
+      },
+      "rotation": -2.465,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-99",
+      "type": "tree",
+      "position": {
+        "x": -124.08,
+        "y": 0,
+        "z": 326.23
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-100",
+      "type": "street_light",
+      "position": {
+        "x": -135.35,
+        "y": 0,
+        "z": 318.14
+      },
+      "rotation": -2.4861,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-101",
+      "type": "street_light",
+      "position": {
+        "x": -164.95,
+        "y": 0,
+        "z": 311.99
+      },
+      "rotation": -2.5364,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-101",
+      "type": "tree",
+      "position": {
+        "x": -145.13,
+        "y": 0,
+        "z": 298.28
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-102",
+      "type": "street_light",
+      "position": {
+        "x": -156.36,
+        "y": 0,
+        "z": 288.21
+      },
+      "rotation": -2.5972,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-103",
+      "type": "street_light",
+      "position": {
+        "x": -184.36,
+        "y": 0,
+        "z": 277.89
+      },
+      "rotation": -2.7532,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-103",
+      "type": "tree",
+      "position": {
+        "x": -162.06,
+        "y": 0,
+        "z": 268.76
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-104",
+      "type": "street_light",
+      "position": {
+        "x": -169.12,
+        "y": 0,
+        "z": 259.51
+      },
+      "rotation": -2.9312,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-105",
+      "type": "street_light",
+      "position": {
+        "x": -185.43,
+        "y": 0,
+        "z": 234.3
+      },
+      "rotation": 2.6436,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-105",
+      "type": "tree",
+      "position": {
+        "x": -164.26,
+        "y": 0,
+        "z": 245.81
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-106",
+      "type": "street_light",
+      "position": {
+        "x": -161.28,
+        "y": 0,
+        "z": 235.36
+      },
+      "rotation": 2.4108,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-107",
+      "type": "street_light",
+      "position": {
+        "x": -159.48,
+        "y": 0,
+        "z": 205.85
+      },
+      "rotation": 2.2923,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-107",
+      "type": "tree",
+      "position": {
+        "x": -143.57,
+        "y": 0,
+        "z": 223.95
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-108",
+      "type": "street_light",
+      "position": {
+        "x": -134.87,
+        "y": 0,
+        "z": 211.06
+      },
+      "rotation": 2.3171,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-109",
+      "type": "street_light",
+      "position": {
+        "x": -137.24,
+        "y": 0,
+        "z": 183.87
+      },
+      "rotation": 2.5691,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-109",
+      "type": "tree",
+      "position": {
+        "x": -116.98,
+        "y": 0,
+        "z": 196.93
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-110",
+      "type": "street_light",
+      "position": {
+        "x": -117.08,
+        "y": 0,
+        "z": 167.13
+      },
+      "rotation": -2.7542,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-111",
+      "type": "street_light",
+      "position": {
+        "x": -142.94,
+        "y": 0,
+        "z": 164.93
+      },
+      "rotation": -2.3911,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-111",
+      "type": "tree",
+      "position": {
+        "x": -125.32,
+        "y": 0,
+        "z": 148.49
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-112",
+      "type": "street_light",
+      "position": {
+        "x": -141.48,
+        "y": 0,
+        "z": 138.25
+      },
+      "rotation": -2.3349,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-113",
+      "type": "street_light",
+      "position": {
+        "x": -168.24,
+        "y": 0,
+        "z": 138.86
+      },
+      "rotation": -2.5236,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-113",
+      "type": "tree",
+      "position": {
+        "x": -148.6,
+        "y": 0,
+        "z": 124.9
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-114",
+      "type": "street_light",
+      "position": {
+        "x": -154.6,
+        "y": 0,
+        "z": 117.94
+      },
+      "rotation": 2.8974,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-115",
+      "type": "street_light",
+      "position": {
+        "x": -160.86,
+        "y": 0,
+        "z": 90.44
+      },
+      "rotation": 2.4417,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-115",
+      "type": "tree",
+      "position": {
+        "x": -142.42,
+        "y": 0,
+        "z": 105.97
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-116",
+      "type": "street_light",
+      "position": {
+        "x": -137.21,
+        "y": 0,
+        "z": 94.29
+      },
+      "rotation": 2.4038,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-117",
+      "type": "street_light",
+      "position": {
+        "x": -140.7,
+        "y": 0,
+        "z": 67.36
+      },
+      "rotation": 2.5064,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-117",
+      "type": "tree",
+      "position": {
+        "x": -121.3,
+        "y": 0,
+        "z": 81.66
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-118",
+      "type": "street_light",
+      "position": {
+        "x": -114.91,
+        "y": 0,
+        "z": 54.6
+      },
+      "rotation": -3.1016,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-119",
+      "type": "street_light",
+      "position": {
+        "x": -141.47,
+        "y": 0,
+        "z": 44.58
+      },
+      "rotation": -2.404,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-119",
+      "type": "tree",
+      "position": {
+        "x": -123.63,
+        "y": 0,
+        "z": 28.37
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-120",
+      "type": "street_light",
+      "position": {
+        "x": -140.46,
+        "y": 0,
+        "z": 17.78
+      },
+      "rotation": -2.2992,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-121",
+      "type": "street_light",
+      "position": {
+        "x": -167.96,
+        "y": 0,
+        "z": 19.52
+      },
+      "rotation": -2.4031,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-121",
+      "type": "tree",
+      "position": {
+        "x": -150.14,
+        "y": 0,
+        "z": 3.3
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-122",
+      "type": "street_light",
+      "position": {
+        "x": -159.45,
+        "y": 0,
+        "z": -3.57
+      },
+      "rotation": -2.8242,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-123",
+      "type": "street_light",
+      "position": {
+        "x": -175.98,
+        "y": 0,
+        "z": -23.55
+      },
+      "rotation": 2.7118,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-123",
+      "type": "tree",
+      "position": {
+        "x": -154.07,
+        "y": 0,
+        "z": -13.51
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-124",
+      "type": "street_light",
+      "position": {
+        "x": -149.44,
+        "y": 0,
+        "z": -28.5
+      },
+      "rotation": 2.5304,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-125",
+      "type": "street_light",
+      "position": {
+        "x": -155.05,
+        "y": 0,
+        "z": -55.31
+      },
+      "rotation": 2.5399,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-125",
+      "type": "tree",
+      "position": {
+        "x": -135.18,
+        "y": 0,
+        "z": -41.67
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-126",
+      "type": "street_light",
+      "position": {
+        "x": -128.52,
+        "y": 0,
+        "z": -60.97
+      },
+      "rotation": 2.7403,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-127",
+      "type": "street_light",
+      "position": {
+        "x": -144.98,
+        "y": 0,
+        "z": -79.44
+      },
+      "rotation": -3.0839,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-127",
+      "type": "tree",
+      "position": {
+        "x": -120.92,
+        "y": 0,
+        "z": -80.83
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-128",
+      "type": "street_light",
+      "position": {
+        "x": -129.35,
+        "y": 0,
+        "z": -99
+      },
+      "rotation": -2.7652,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-129",
+      "type": "street_light",
+      "position": {
+        "x": -157.55,
+        "y": 0,
+        "z": -111.35
+      },
+      "rotation": -2.696,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-129",
+      "type": "tree",
+      "position": {
+        "x": -135.81,
+        "y": 0,
+        "z": -121.73
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-130",
+      "type": "street_light",
+      "position": {
+        "x": -144.58,
+        "y": 0,
+        "z": -133.21
+      },
+      "rotation": -2.8868,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-131",
+      "type": "street_light",
+      "position": {
+        "x": -163.02,
+        "y": 0,
+        "z": -153.22
+      },
+      "rotation": 2.7809,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-131",
+      "type": "tree",
+      "position": {
+        "x": -140.47,
+        "y": 0,
+        "z": -144.71
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-132",
+      "type": "street_light",
+      "position": {
+        "x": -137.51,
+        "y": 0,
+        "z": -157.65
+      },
+      "rotation": 2.5117,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-133",
+      "type": "street_light",
+      "position": {
+        "x": -141.36,
+        "y": 0,
+        "z": -184.17
+      },
+      "rotation": 2.3781,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-133",
+      "type": "tree",
+      "position": {
+        "x": -123.95,
+        "y": 0,
+        "z": -167.51
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "westminster-sprint-light-134",
+      "type": "street_light",
+      "position": {
+        "x": -114.06,
+        "y": 0,
+        "z": -182.6
+      },
+      "rotation": 2.3229,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-135",
+      "type": "street_light",
+      "position": {
+        "x": -115.57,
+        "y": 0,
+        "z": -208.8
+      },
+      "rotation": 2.3343,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-135",
+      "type": "tree",
+      "position": {
+        "x": -98.9,
+        "y": 0,
+        "z": -191.39
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "westminster-sprint-light-136",
+      "type": "street_light",
+      "position": {
+        "x": -88.28,
+        "y": 0,
+        "z": -206.83
+      },
+      "rotation": 2.2907,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-137",
+      "type": "street_light",
+      "position": {
+        "x": -84.61,
+        "y": 0,
+        "z": -235.53
+      },
+      "rotation": 2.1989,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-137",
+      "type": "tree",
+      "position": {
+        "x": -70.45,
+        "y": 0,
+        "z": -216.03
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "westminster-sprint-light-138",
+      "type": "street_light",
+      "position": {
+        "x": -60.56,
+        "y": 0,
+        "z": -227.58
+      },
+      "rotation": 2.1546,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-light-139",
+      "type": "street_light",
+      "position": {
+        "x": -55.16,
+        "y": 0,
+        "z": -254.53
+      },
+      "rotation": 2.0647,
+      "scale": 1
+    },
+    {
+      "id": "westminster-sprint-tree-139",
+      "type": "tree",
+      "position": {
+        "x": -43.74,
+        "y": 0,
+        "z": -233.31
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "westminster-sprint-light-140",
+      "type": "street_light",
+      "position": {
+        "x": -29.89,
+        "y": 0,
+        "z": -244.42
+      },
+      "rotation": 1.9983,
+      "scale": 1
+    }
+  ],
+  "spawnPoints": [
+    {
+      "x": -20,
+      "y": 0,
+      "z": -260
+    }
+  ],
+  "metadata": {
+    "version": 8,
+    "generatedBy": "seed-local-data",
+    "notes": "Procedural stylised circuit — not a digital twin of any real location"
+  },
+  "dataAttribution": "© OpenStreetMap contributors"
+}

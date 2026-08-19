@@ -1,0 +1,6809 @@
+{
+  "id": "e1f2a3b4-c5d6-4789-b234-567890abcdef",
+  "slug": "dubai-marina-circuit",
+  "name": "Dubai Marina Circuit",
+  "description": "Marina GP loop around a turquoise basin — hairpin at water level, climb to a hotel crest, then a long east straight staring at Burj Khalifa.",
+  "city": "Dubai",
+  "country": "United Arab Emirates",
+  "latitude": 25.0805,
+  "longitude": 55.1403,
+  "distanceMetres": 2060,
+  "estimatedDurationSeconds": 147,
+  "difficulty": "medium",
+  "tags": [
+    "marina",
+    "skyline",
+    "glass",
+    "landmarks"
+  ],
+  "thumbnail": "/images/routes/dubai-marina-circuit.svg",
+  "startPosition": {
+    "x": -40,
+    "y": 0,
+    "z": -320
+  },
+  "startRotation": 1.8498,
+  "roadWidth": 17,
+  "checkpoints": [
+    {
+      "id": "dubai-marina-circuit-cp-0",
+      "index": 0,
+      "position": {
+        "x": 14.81,
+        "y": 0,
+        "z": -337.35
+      },
+      "rotation": 1.7884,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-1",
+      "index": 1,
+      "position": {
+        "x": 152.27,
+        "y": 0.77,
+        "z": -287.43
+      },
+      "rotation": 0.8929,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-2",
+      "index": 2,
+      "position": {
+        "x": 230,
+        "y": 0.5,
+        "z": -170
+      },
+      "rotation": 0.3626,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-3",
+      "index": 3,
+      "position": {
+        "x": 202.51,
+        "y": 0,
+        "z": -47.41
+      },
+      "rotation": -0.59,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-4",
+      "index": 4,
+      "position": {
+        "x": 266.25,
+        "y": 0.82,
+        "z": 75.83
+      },
+      "rotation": 0.17,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-5",
+      "index": 5,
+      "position": {
+        "x": 270.54,
+        "y": 2.46,
+        "z": 223.37
+      },
+      "rotation": -0.1735,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-6",
+      "index": 6,
+      "position": {
+        "x": 182.96,
+        "y": 5.66,
+        "z": 333.79
+      },
+      "rotation": -1.0956,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-7",
+      "index": 7,
+      "position": {
+        "x": 35.89,
+        "y": 8.43,
+        "z": 357.04
+      },
+      "rotation": -1.7373,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-8",
+      "index": 8,
+      "position": {
+        "x": -78.57,
+        "y": 9.87,
+        "z": 281.87
+      },
+      "rotation": 2.7055,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-9",
+      "index": 9,
+      "position": {
+        "x": -104.74,
+        "y": 6.14,
+        "z": 183.24
+      },
+      "rotation": -2.1081,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-10",
+      "index": 10,
+      "position": {
+        "x": -218.87,
+        "y": 3.32,
+        "z": 96.23
+      },
+      "rotation": -2.5682,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-11",
+      "index": 11,
+      "position": {
+        "x": -220.55,
+        "y": 1.75,
+        "z": -29.48
+      },
+      "rotation": -2.3462,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-12",
+      "index": 12,
+      "position": {
+        "x": -206.33,
+        "y": 0.96,
+        "z": -155.33
+      },
+      "rotation": 2.525,
+      "width": 17,
+      "required": true
+    },
+    {
+      "id": "dubai-marina-circuit-cp-13",
+      "index": 13,
+      "position": {
+        "x": -106.41,
+        "y": 0.11,
+        "z": -264.61
+      },
+      "rotation": 2.3378,
+      "width": 17,
+      "required": true
+    }
+  ],
+  "roadPoints": [
+    {
+      "x": -40,
+      "y": 0,
+      "z": -320,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 40,
+      "y": 0,
+      "z": -340,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 120,
+      "y": 0.5,
+      "z": -310,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 190,
+      "y": 1,
+      "z": -250,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 230,
+      "y": 0.5,
+      "z": -170,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 250,
+      "y": 0,
+      "z": -90,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 200,
+      "y": 0,
+      "z": -40,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 250,
+      "y": 0.5,
+      "z": 20,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 270,
+      "y": 1,
+      "z": 100,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 275,
+      "y": 2,
+      "z": 190,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 250,
+      "y": 3.5,
+      "z": 280,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 170,
+      "y": 6,
+      "z": 340,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 70,
+      "y": 8,
+      "z": 360,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -20,
+      "y": 9,
+      "z": 340,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -80,
+      "y": 10,
+      "z": 290,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -40,
+      "y": 8,
+      "z": 230,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -110,
+      "y": 6,
+      "z": 180,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -180,
+      "y": 4,
+      "z": 140,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -230,
+      "y": 3,
+      "z": 70,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -200,
+      "y": 2,
+      "z": 0,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -250,
+      "y": 1.5,
+      "z": -70,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -210,
+      "y": 1,
+      "z": -150,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -150,
+      "y": 0.5,
+      "z": -220,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -90,
+      "y": 0,
+      "z": -280,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -40,
+      "y": 0,
+      "z": -320,
+      "width": 17,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "dubai-marina-circuit-b0",
+      "footprint": [
+        {
+          "x": -16.21,
+          "y": 0,
+          "z": -296.28
+        },
+        {
+          "x": -9.61,
+          "y": 0,
+          "z": -298.63
+        },
+        {
+          "x": -6.93,
+          "y": 0,
+          "z": -291.09
+        },
+        {
+          "x": -13.52,
+          "y": 0,
+          "z": -288.74
+        }
+      ],
+      "height": 14,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b1",
+      "footprint": [
+        {
+          "x": -41.58,
+          "y": 0,
+          "z": -364.25
+        },
+        {
+          "x": -32.92,
+          "y": 0,
+          "z": -367.34
+        },
+        {
+          "x": -29.39,
+          "y": 0,
+          "z": -357.45
+        },
+        {
+          "x": -38.06,
+          "y": 0,
+          "z": -354.36
+        }
+      ],
+      "height": 19.8,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b2",
+      "footprint": [
+        {
+          "x": 5.63,
+          "y": 0,
+          "z": -299.55
+        },
+        {
+          "x": 16.57,
+          "y": 0,
+          "z": -302.76
+        },
+        {
+          "x": 20.23,
+          "y": 0,
+          "z": -290.28
+        },
+        {
+          "x": 9.29,
+          "y": 0,
+          "z": -287.07
+        }
+      ],
+      "height": 25.6,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b3",
+      "footprint": [
+        {
+          "x": -18.48,
+          "y": 0,
+          "z": -377.93
+        },
+        {
+          "x": -5.43,
+          "y": 0,
+          "z": -381.76
+        },
+        {
+          "x": -3.18,
+          "y": 0,
+          "z": -374.08
+        },
+        {
+          "x": -16.23,
+          "y": 0,
+          "z": -370.26
+        }
+      ],
+      "height": 31.3,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b4",
+      "footprint": [
+        {
+          "x": 27.55,
+          "y": 0,
+          "z": -310.63
+        },
+        {
+          "x": 34.51,
+          "y": 0,
+          "z": -311.4
+        },
+        {
+          "x": 35.67,
+          "y": 0,
+          "z": -300.96
+        },
+        {
+          "x": 28.71,
+          "y": 0,
+          "z": -300.19
+        }
+      ],
+      "height": 37.1,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b5",
+      "footprint": [
+        {
+          "x": 18.48,
+          "y": 0,
+          "z": -382.62
+        },
+        {
+          "x": 27.63,
+          "y": 0,
+          "z": -383.63
+        },
+        {
+          "x": 29.06,
+          "y": 0,
+          "z": -370.71
+        },
+        {
+          "x": 19.91,
+          "y": 0,
+          "z": -369.7
+        }
+      ],
+      "height": 42.9,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b6",
+      "footprint": [
+        {
+          "x": 43.63,
+          "y": 0,
+          "z": -303
+        },
+        {
+          "x": 54.74,
+          "y": 0,
+          "z": -300.47
+        },
+        {
+          "x": 52.96,
+          "y": 0,
+          "z": -292.67
+        },
+        {
+          "x": 41.85,
+          "y": 0,
+          "z": -295.2
+        }
+      ],
+      "height": 14.7,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b7",
+      "footprint": [
+        {
+          "x": 61.62,
+          "y": 0,
+          "z": -386.85
+        },
+        {
+          "x": 74.88,
+          "y": 0,
+          "z": -383.83
+        },
+        {
+          "x": 72.55,
+          "y": 0,
+          "z": -373.59
+        },
+        {
+          "x": 59.29,
+          "y": 0,
+          "z": -376.61
+        }
+      ],
+      "height": 20.5,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b8",
+      "footprint": [
+        {
+          "x": 72.23,
+          "y": 0,
+          "z": -303.76
+        },
+        {
+          "x": 78.65,
+          "y": 0,
+          "z": -300.97
+        },
+        {
+          "x": 73.46,
+          "y": 0,
+          "z": -289.05
+        },
+        {
+          "x": 67.05,
+          "y": 0,
+          "z": -291.84
+        }
+      ],
+      "height": 26.2,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b9",
+      "footprint": [
+        {
+          "x": 98.67,
+          "y": 0,
+          "z": -367.29
+        },
+        {
+          "x": 107.11,
+          "y": 0,
+          "z": -363.62
+        },
+        {
+          "x": 103.92,
+          "y": 0,
+          "z": -356.28
+        },
+        {
+          "x": 95.48,
+          "y": 0,
+          "z": -359.95
+        }
+      ],
+      "height": 32,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b10",
+      "footprint": [
+        {
+          "x": 86.99,
+          "y": 0,
+          "z": -288.13
+        },
+        {
+          "x": 96.97,
+          "y": 0,
+          "z": -282.61
+        },
+        {
+          "x": 91.88,
+          "y": 0,
+          "z": -273.42
+        },
+        {
+          "x": 81.91,
+          "y": 0,
+          "z": -278.94
+        }
+      ],
+      "height": 37.8,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b11",
+      "footprint": [
+        {
+          "x": 127.55,
+          "y": 0,
+          "z": -363.69
+        },
+        {
+          "x": 139.45,
+          "y": 0,
+          "z": -357.1
+        },
+        {
+          "x": 133.16,
+          "y": 0,
+          "z": -345.73
+        },
+        {
+          "x": 121.26,
+          "y": 0,
+          "z": -352.31
+        }
+      ],
+      "height": 43.6,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b12",
+      "footprint": [
+        {
+          "x": 111.26,
+          "y": 0,
+          "z": -280.13
+        },
+        {
+          "x": 117.09,
+          "y": 0,
+          "z": -276.26
+        },
+        {
+          "x": 112.66,
+          "y": 0,
+          "z": -269.6
+        },
+        {
+          "x": 106.83,
+          "y": 0,
+          "z": -273.47
+        }
+      ],
+      "height": 15.4,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b13",
+      "footprint": [
+        {
+          "x": 150.52,
+          "y": 0,
+          "z": -341.16
+        },
+        {
+          "x": 158.18,
+          "y": 0,
+          "z": -336.06
+        },
+        {
+          "x": 152.36,
+          "y": 0,
+          "z": -327.32
+        },
+        {
+          "x": 144.7,
+          "y": 0,
+          "z": -332.41
+        }
+      ],
+      "height": 21.1,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b14",
+      "footprint": [
+        {
+          "x": 131.14,
+          "y": 0,
+          "z": -260.76
+        },
+        {
+          "x": 139.84,
+          "y": 0,
+          "z": -253.4
+        },
+        {
+          "x": 131.45,
+          "y": 0,
+          "z": -243.47
+        },
+        {
+          "x": 122.75,
+          "y": 0,
+          "z": -250.83
+        }
+      ],
+      "height": 26.9,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b15",
+      "footprint": [
+        {
+          "x": 183.22,
+          "y": 0,
+          "z": -324.1
+        },
+        {
+          "x": 193.61,
+          "y": 0,
+          "z": -315.32
+        },
+        {
+          "x": 188.45,
+          "y": 0,
+          "z": -309.21
+        },
+        {
+          "x": 178.06,
+          "y": 0,
+          "z": -317.99
+        }
+      ],
+      "height": 32.7,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b16",
+      "footprint": [
+        {
+          "x": 153.98,
+          "y": 0,
+          "z": -247.37
+        },
+        {
+          "x": 158.82,
+          "y": 0,
+          "z": -242.31
+        },
+        {
+          "x": 151.23,
+          "y": 0,
+          "z": -235.05
+        },
+        {
+          "x": 146.39,
+          "y": 0,
+          "z": -240.11
+        }
+      ],
+      "height": 38.5,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b17",
+      "footprint": [
+        {
+          "x": 205.62,
+          "y": 0,
+          "z": -298.33
+        },
+        {
+          "x": 211.98,
+          "y": 0,
+          "z": -291.69
+        },
+        {
+          "x": 202.59,
+          "y": 0,
+          "z": -282.7
+        },
+        {
+          "x": 196.23,
+          "y": 0,
+          "z": -289.34
+        }
+      ],
+      "height": 44.3,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b18",
+      "footprint": [
+        {
+          "x": 160.79,
+          "y": 0,
+          "z": -228.16
+        },
+        {
+          "x": 167.44,
+          "y": 0,
+          "z": -218.91
+        },
+        {
+          "x": 160.95,
+          "y": 0,
+          "z": -214.24
+        },
+        {
+          "x": 154.29,
+          "y": 0,
+          "z": -223.49
+        }
+      ],
+      "height": 16,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b19",
+      "footprint": [
+        {
+          "x": 169.99,
+          "y": 0,
+          "z": -210.8
+        },
+        {
+          "x": 176.36,
+          "y": 0,
+          "z": -198.79
+        },
+        {
+          "x": 167.09,
+          "y": 0,
+          "z": -193.87
+        },
+        {
+          "x": 160.71,
+          "y": 0,
+          "z": -205.88
+        }
+      ],
+      "height": 21.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b20",
+      "footprint": [
+        {
+          "x": 194.13,
+          "y": 0,
+          "z": -186.25
+        },
+        {
+          "x": 196.79,
+          "y": 0,
+          "z": -179.77
+        },
+        {
+          "x": 184.76,
+          "y": 0,
+          "z": -174.84
+        },
+        {
+          "x": 182.1,
+          "y": 0,
+          "z": -181.32
+        }
+      ],
+      "height": 27.6,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b21",
+      "footprint": [
+        {
+          "x": 197.23,
+          "y": 0,
+          "z": -162.49
+        },
+        {
+          "x": 200.5,
+          "y": 0,
+          "z": -153.89
+        },
+        {
+          "x": 193.02,
+          "y": 0,
+          "z": -151.05
+        },
+        {
+          "x": 189.75,
+          "y": 0,
+          "z": -159.65
+        }
+      ],
+      "height": 33.4,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b22",
+      "footprint": [
+        {
+          "x": 206.33,
+          "y": 0,
+          "z": -133.42
+        },
+        {
+          "x": 210.24,
+          "y": 0,
+          "z": -122.71
+        },
+        {
+          "x": 200.38,
+          "y": 0,
+          "z": -119.11
+        },
+        {
+          "x": 196.47,
+          "y": 0,
+          "z": -129.82
+        }
+      ],
+      "height": 39.2,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b23",
+      "footprint": [
+        {
+          "x": 210.86,
+          "y": 0,
+          "z": -114.77
+        },
+        {
+          "x": 213.85,
+          "y": 0,
+          "z": -101.5
+        },
+        {
+          "x": 201.17,
+          "y": 0,
+          "z": -98.65
+        },
+        {
+          "x": 198.18,
+          "y": 0,
+          "z": -111.91
+        }
+      ],
+      "height": 44.9,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b24",
+      "footprint": [
+        {
+          "x": 223.12,
+          "y": 0,
+          "z": -102.14
+        },
+        {
+          "x": 219.98,
+          "y": 0,
+          "z": -95.89
+        },
+        {
+          "x": 212.83,
+          "y": 0,
+          "z": -99.49
+        },
+        {
+          "x": 215.98,
+          "y": 0,
+          "z": -105.74
+        }
+      ],
+      "height": 16.7,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b25",
+      "footprint": [
+        {
+          "x": 214.54,
+          "y": 0,
+          "z": -96.34
+        },
+        {
+          "x": 206.84,
+          "y": 0,
+          "z": -91.31
+        },
+        {
+          "x": 201.1,
+          "y": 0,
+          "z": -100.1
+        },
+        {
+          "x": 208.8,
+          "y": 0,
+          "z": -105.13
+        }
+      ],
+      "height": 22.5,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b26",
+      "footprint": [
+        {
+          "x": 184.85,
+          "y": 0,
+          "z": -78.67
+        },
+        {
+          "x": 176.91,
+          "y": 0,
+          "z": -70.48
+        },
+        {
+          "x": 167.58,
+          "y": 0,
+          "z": -79.53
+        },
+        {
+          "x": 175.52,
+          "y": 0,
+          "z": -87.72
+        }
+      ],
+      "height": 28.3,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b27",
+      "footprint": [
+        {
+          "x": 168.26,
+          "y": 0,
+          "z": -10.42
+        },
+        {
+          "x": 176.2,
+          "y": 0,
+          "z": 0.63
+        },
+        {
+          "x": 169.7,
+          "y": 0,
+          "z": 5.29
+        },
+        {
+          "x": 161.76,
+          "y": 0,
+          "z": -5.75
+        }
+      ],
+      "height": 34.1,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b28",
+      "footprint": [
+        {
+          "x": 203.71,
+          "y": 0,
+          "z": 11.53
+        },
+        {
+          "x": 208.94,
+          "y": 0,
+          "z": 16.18
+        },
+        {
+          "x": 201.96,
+          "y": 0,
+          "z": 24.02
+        },
+        {
+          "x": 196.73,
+          "y": 0,
+          "z": 19.37
+        }
+      ],
+      "height": 39.8,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b29",
+      "footprint": [
+        {
+          "x": 216.73,
+          "y": 0,
+          "z": 26.12
+        },
+        {
+          "x": 222.53,
+          "y": 0,
+          "z": 33.26
+        },
+        {
+          "x": 212.43,
+          "y": 0,
+          "z": 41.45
+        },
+        {
+          "x": 206.64,
+          "y": 0,
+          "z": 34.3
+        }
+      ],
+      "height": 45.6,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b30",
+      "footprint": [
+        {
+          "x": 220.11,
+          "y": 0,
+          "z": 42.32
+        },
+        {
+          "x": 223.86,
+          "y": 0,
+          "z": 53.08
+        },
+        {
+          "x": 216.31,
+          "y": 0,
+          "z": 55.72
+        },
+        {
+          "x": 212.55,
+          "y": 0,
+          "z": 44.96
+        }
+      ],
+      "height": 17.4,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b31",
+      "footprint": [
+        {
+          "x": 224.82,
+          "y": 0,
+          "z": 64.98
+        },
+        {
+          "x": 227.52,
+          "y": 0,
+          "z": 78.31
+        },
+        {
+          "x": 217.23,
+          "y": 0,
+          "z": 80.4
+        },
+        {
+          "x": 214.53,
+          "y": 0,
+          "z": 67.07
+        }
+      ],
+      "height": 23.2,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b32",
+      "footprint": [
+        {
+          "x": 221.61,
+          "y": 0,
+          "z": 97.47
+        },
+        {
+          "x": 222.64,
+          "y": 0,
+          "z": 104.39
+        },
+        {
+          "x": 209.78,
+          "y": 0,
+          "z": 106.31
+        },
+        {
+          "x": 208.75,
+          "y": 0,
+          "z": 99.39
+        }
+      ],
+      "height": 29,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b33",
+      "footprint": [
+        {
+          "x": 219.15,
+          "y": 0,
+          "z": 120.88
+        },
+        {
+          "x": 220.33,
+          "y": 0,
+          "z": 130.01
+        },
+        {
+          "x": 212.4,
+          "y": 0,
+          "z": 131.03
+        },
+        {
+          "x": 211.22,
+          "y": 0,
+          "z": 121.91
+        }
+      ],
+      "height": 34.7,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b34",
+      "footprint": [
+        {
+          "x": 219.69,
+          "y": 0,
+          "z": 142.83
+        },
+        {
+          "x": 220.54,
+          "y": 0,
+          "z": 154.2
+        },
+        {
+          "x": 210.07,
+          "y": 0,
+          "z": 154.98
+        },
+        {
+          "x": 209.22,
+          "y": 0,
+          "z": 143.61
+        }
+      ],
+      "height": 40.5,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b35",
+      "footprint": [
+        {
+          "x": 226.94,
+          "y": 0,
+          "z": 168.06
+        },
+        {
+          "x": 226.34,
+          "y": 0,
+          "z": 181.64
+        },
+        {
+          "x": 213.35,
+          "y": 0,
+          "z": 181.06
+        },
+        {
+          "x": 213.96,
+          "y": 0,
+          "z": 167.48
+        }
+      ],
+      "height": 46.3,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b36",
+      "footprint": [
+        {
+          "x": 224.29,
+          "y": 0,
+          "z": 193.51
+        },
+        {
+          "x": 223.43,
+          "y": 0,
+          "z": 200.45
+        },
+        {
+          "x": 215.49,
+          "y": 0,
+          "z": 199.47
+        },
+        {
+          "x": 216.35,
+          "y": 0,
+          "z": 192.52
+        }
+      ],
+      "height": 18.1,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b37",
+      "footprint": [
+        {
+          "x": 227,
+          "y": 0,
+          "z": 216.91
+        },
+        {
+          "x": 225.18,
+          "y": 0,
+          "z": 225.93
+        },
+        {
+          "x": 214.89,
+          "y": 0,
+          "z": 223.85
+        },
+        {
+          "x": 216.71,
+          "y": 0,
+          "z": 214.83
+        }
+      ],
+      "height": 23.9,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b38",
+      "footprint": [
+        {
+          "x": 226.41,
+          "y": 0,
+          "z": 237.19
+        },
+        {
+          "x": 222.45,
+          "y": 0,
+          "z": 247.88
+        },
+        {
+          "x": 210.26,
+          "y": 0,
+          "z": 243.36
+        },
+        {
+          "x": 214.22,
+          "y": 0,
+          "z": 232.67
+        }
+      ],
+      "height": 29.6,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b39",
+      "footprint": [
+        {
+          "x": 221.14,
+          "y": 0,
+          "z": 251.62
+        },
+        {
+          "x": 213.37,
+          "y": 0,
+          "z": 262.79
+        },
+        {
+          "x": 206.8,
+          "y": 0,
+          "z": 258.22
+        },
+        {
+          "x": 214.57,
+          "y": 0,
+          "z": 247.05
+        }
+      ],
+      "height": 35.4,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b40",
+      "footprint": [
+        {
+          "x": 214.83,
+          "y": 0,
+          "z": 276.98
+        },
+        {
+          "x": 209.68,
+          "y": 0,
+          "z": 281.72
+        },
+        {
+          "x": 202.56,
+          "y": 0,
+          "z": 274
+        },
+        {
+          "x": 207.71,
+          "y": 0,
+          "z": 269.26
+        }
+      ],
+      "height": 41.2,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b41",
+      "footprint": [
+        {
+          "x": 195.12,
+          "y": 0,
+          "z": 290.57
+        },
+        {
+          "x": 187.5,
+          "y": 0,
+          "z": 295.73
+        },
+        {
+          "x": 180.22,
+          "y": 0,
+          "z": 284.96
+        },
+        {
+          "x": 187.84,
+          "y": 0,
+          "z": 279.8
+        }
+      ],
+      "height": 47,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b42",
+      "footprint": [
+        {
+          "x": 171.28,
+          "y": 0,
+          "z": 298.64
+        },
+        {
+          "x": 161.15,
+          "y": 0,
+          "z": 303.85
+        },
+        {
+          "x": 157.49,
+          "y": 0,
+          "z": 296.74
+        },
+        {
+          "x": 167.62,
+          "y": 0,
+          "z": 291.52
+        }
+      ],
+      "height": 18.8,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b43",
+      "footprint": [
+        {
+          "x": 211.49,
+          "y": 0,
+          "z": 374.38
+        },
+        {
+          "x": 199.4,
+          "y": 0,
+          "z": 380.61
+        },
+        {
+          "x": 194.6,
+          "y": 0,
+          "z": 371.27
+        },
+        {
+          "x": 206.69,
+          "y": 0,
+          "z": 365.05
+        }
+      ],
+      "height": 24.5,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b44",
+      "footprint": [
+        {
+          "x": 150.74,
+          "y": 0,
+          "z": 318.23
+        },
+        {
+          "x": 144.14,
+          "y": 0,
+          "z": 320.58
+        },
+        {
+          "x": 139.78,
+          "y": 0,
+          "z": 308.33
+        },
+        {
+          "x": 146.37,
+          "y": 0,
+          "z": 305.98
+        }
+      ],
+      "height": 30.3,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b45",
+      "footprint": [
+        {
+          "x": 174.88,
+          "y": 0,
+          "z": 382.66
+        },
+        {
+          "x": 166.22,
+          "y": 0,
+          "z": 385.75
+        },
+        {
+          "x": 163.53,
+          "y": 0,
+          "z": 378.22
+        },
+        {
+          "x": 172.19,
+          "y": 0,
+          "z": 375.13
+        }
+      ],
+      "height": 36.1,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b46",
+      "footprint": [
+        {
+          "x": 132.24,
+          "y": 0,
+          "z": 316.06
+        },
+        {
+          "x": 121.19,
+          "y": 0,
+          "z": 318.85
+        },
+        {
+          "x": 118.62,
+          "y": 0,
+          "z": 308.67
+        },
+        {
+          "x": 129.67,
+          "y": 0,
+          "z": 305.88
+        }
+      ],
+      "height": 41.9,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b47",
+      "footprint": [
+        {
+          "x": 154.26,
+          "y": 0,
+          "z": 398.95
+        },
+        {
+          "x": 141.07,
+          "y": 0,
+          "z": 402.27
+        },
+        {
+          "x": 137.9,
+          "y": 0,
+          "z": 389.66
+        },
+        {
+          "x": 151.08,
+          "y": 0,
+          "z": 386.34
+        }
+      ],
+      "height": 47.7,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b48",
+      "footprint": [
+        {
+          "x": 105.16,
+          "y": 0,
+          "z": 327.25
+        },
+        {
+          "x": 98.23,
+          "y": 0,
+          "z": 328.21
+        },
+        {
+          "x": 97.13,
+          "y": 0,
+          "z": 320.28
+        },
+        {
+          "x": 104.07,
+          "y": 0,
+          "z": 319.33
+        }
+      ],
+      "height": 19.4,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b49",
+      "footprint": [
+        {
+          "x": 116.17,
+          "y": 0,
+          "z": 398.97
+        },
+        {
+          "x": 107.06,
+          "y": 0,
+          "z": 400.23
+        },
+        {
+          "x": 105.62,
+          "y": 0,
+          "z": 389.83
+        },
+        {
+          "x": 114.74,
+          "y": 0,
+          "z": 388.57
+        }
+      ],
+      "height": 25.2,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b50",
+      "footprint": [
+        {
+          "x": 81.58,
+          "y": 0,
+          "z": 325.65
+        },
+        {
+          "x": 70.19,
+          "y": 0,
+          "z": 325.98
+        },
+        {
+          "x": 69.81,
+          "y": 0,
+          "z": 312.99
+        },
+        {
+          "x": 81.2,
+          "y": 0,
+          "z": 312.65
+        }
+      ],
+      "height": 31,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b51",
+      "footprint": [
+        {
+          "x": 85.08,
+          "y": 0,
+          "z": 407.58
+        },
+        {
+          "x": 71.49,
+          "y": 0,
+          "z": 407.98
+        },
+        {
+          "x": 71.25,
+          "y": 0,
+          "z": 399.98
+        },
+        {
+          "x": 84.85,
+          "y": 0,
+          "z": 399.58
+        }
+      ],
+      "height": 36.8,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b52",
+      "footprint": [
+        {
+          "x": 55.98,
+          "y": 0,
+          "z": 330.67
+        },
+        {
+          "x": 49.02,
+          "y": 0,
+          "z": 329.94
+        },
+        {
+          "x": 50.11,
+          "y": 0,
+          "z": 319.5
+        },
+        {
+          "x": 57.07,
+          "y": 0,
+          "z": 320.23
+        }
+      ],
+      "height": 42.6,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b53",
+      "footprint": [
+        {
+          "x": 49.54,
+          "y": 0,
+          "z": 402.94
+        },
+        {
+          "x": 40.39,
+          "y": 0,
+          "z": 401.99
+        },
+        {
+          "x": 41.74,
+          "y": 0,
+          "z": 389.06
+        },
+        {
+          "x": 50.89,
+          "y": 0,
+          "z": 390.01
+        }
+      ],
+      "height": 14.3,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b54",
+      "footprint": [
+        {
+          "x": 36.25,
+          "y": 0,
+          "z": 319.98
+        },
+        {
+          "x": 25.13,
+          "y": 0,
+          "z": 317.43
+        },
+        {
+          "x": 26.92,
+          "y": 0,
+          "z": 309.63
+        },
+        {
+          "x": 38.04,
+          "y": 0,
+          "z": 312.18
+        }
+      ],
+      "height": 20.1,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b55",
+      "footprint": [
+        {
+          "x": 18.13,
+          "y": 0,
+          "z": 403.8
+        },
+        {
+          "x": 4.87,
+          "y": 0,
+          "z": 400.76
+        },
+        {
+          "x": 7.22,
+          "y": 0,
+          "z": 390.52
+        },
+        {
+          "x": 20.48,
+          "y": 0,
+          "z": 393.57
+        }
+      ],
+      "height": 25.9,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b56",
+      "footprint": [
+        {
+          "x": 4.46,
+          "y": 0,
+          "z": 320.44
+        },
+        {
+          "x": -2.06,
+          "y": 0,
+          "z": 317.89
+        },
+        {
+          "x": 2.66,
+          "y": 0,
+          "z": 305.78
+        },
+        {
+          "x": 9.18,
+          "y": 0,
+          "z": 308.33
+        }
+      ],
+      "height": 31.7,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b57",
+      "footprint": [
+        {
+          "x": -19.54,
+          "y": 0,
+          "z": 384.93
+        },
+        {
+          "x": -28.11,
+          "y": 0,
+          "z": 381.58
+        },
+        {
+          "x": -25.2,
+          "y": 0,
+          "z": 374.13
+        },
+        {
+          "x": -16.63,
+          "y": 0,
+          "z": 377.47
+        }
+      ],
+      "height": 37.5,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b58",
+      "footprint": [
+        {
+          "x": -9.45,
+          "y": 0,
+          "z": 305.94
+        },
+        {
+          "x": -19.53,
+          "y": 0,
+          "z": 300.61
+        },
+        {
+          "x": -14.62,
+          "y": 0,
+          "z": 291.33
+        },
+        {
+          "x": -4.54,
+          "y": 0,
+          "z": 296.66
+        }
+      ],
+      "height": 43.2,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b59",
+      "footprint": [
+        {
+          "x": -48.58,
+          "y": 0,
+          "z": 382.25
+        },
+        {
+          "x": -60.6,
+          "y": 0,
+          "z": 375.89
+        },
+        {
+          "x": -54.52,
+          "y": 0,
+          "z": 364.4
+        },
+        {
+          "x": -42.5,
+          "y": 0,
+          "z": 370.76
+        }
+      ],
+      "height": 15,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b60",
+      "footprint": [
+        {
+          "x": -37.12,
+          "y": 0,
+          "z": 295.8
+        },
+        {
+          "x": -42.68,
+          "y": 0,
+          "z": 291.54
+        },
+        {
+          "x": -37.82,
+          "y": 0,
+          "z": 285.19
+        },
+        {
+          "x": -32.26,
+          "y": 0,
+          "z": 289.44
+        }
+      ],
+      "height": 20.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b61",
+      "footprint": [
+        {
+          "x": -80.32,
+          "y": 0,
+          "z": 354.09
+        },
+        {
+          "x": -87.63,
+          "y": 0,
+          "z": 348.5
+        },
+        {
+          "x": -81.25,
+          "y": 0,
+          "z": 340.16
+        },
+        {
+          "x": -73.94,
+          "y": 0,
+          "z": 345.75
+        }
+      ],
+      "height": 26.6,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b62",
+      "footprint": [
+        {
+          "x": -44.52,
+          "y": 0,
+          "z": 285.92
+        },
+        {
+          "x": -50.19,
+          "y": 0,
+          "z": 276.03
+        },
+        {
+          "x": -38.91,
+          "y": 0,
+          "z": 269.56
+        },
+        {
+          "x": -33.24,
+          "y": 0,
+          "z": 279.45
+        }
+      ],
+      "height": 32.4,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b63",
+      "footprint": [
+        {
+          "x": -115.11,
+          "y": 0,
+          "z": 327.65
+        },
+        {
+          "x": -121.88,
+          "y": 0,
+          "z": 315.85
+        },
+        {
+          "x": -114.94,
+          "y": 0,
+          "z": 311.87
+        },
+        {
+          "x": -108.17,
+          "y": 0,
+          "z": 323.67
+        }
+      ],
+      "height": 38.1,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b64",
+      "footprint": [
+        {
+          "x": -53.1,
+          "y": 0,
+          "z": 294.66
+        },
+        {
+          "x": -48.54,
+          "y": 0,
+          "z": 289.34
+        },
+        {
+          "x": -40.57,
+          "y": 0,
+          "z": 296.17
+        },
+        {
+          "x": -45.12,
+          "y": 0,
+          "z": 301.49
+        }
+      ],
+      "height": 43.9,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b65",
+      "footprint": [
+        {
+          "x": -108.91,
+          "y": 0,
+          "z": 248.29
+        },
+        {
+          "x": -102.92,
+          "y": 0,
+          "z": 241.3
+        },
+        {
+          "x": -93.05,
+          "y": 0,
+          "z": 249.76
+        },
+        {
+          "x": -99.04,
+          "y": 0,
+          "z": 256.75
+        }
+      ],
+      "height": 15.7,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b66",
+      "footprint": [
+        {
+          "x": -33.19,
+          "y": 0,
+          "z": 285.7
+        },
+        {
+          "x": -25.04,
+          "y": 0,
+          "z": 277.73
+        },
+        {
+          "x": -19.45,
+          "y": 0,
+          "z": 283.45
+        },
+        {
+          "x": -27.6,
+          "y": 0,
+          "z": 291.42
+        }
+      ],
+      "height": 21.5,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b67",
+      "footprint": [
+        {
+          "x": -93.91,
+          "y": 0,
+          "z": 225.14
+        },
+        {
+          "x": -84.18,
+          "y": 0,
+          "z": 215.63
+        },
+        {
+          "x": -76.84,
+          "y": 0,
+          "z": 223.14
+        },
+        {
+          "x": -86.57,
+          "y": 0,
+          "z": 232.65
+        }
+      ],
+      "height": 27.3,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b68",
+      "footprint": [
+        {
+          "x": -12.45,
+          "y": 0,
+          "z": 226.96
+        },
+        {
+          "x": -14.09,
+          "y": 0,
+          "z": 220.15
+        },
+        {
+          "x": -1.45,
+          "y": 0,
+          "z": 217.1
+        },
+        {
+          "x": 0.19,
+          "y": 0,
+          "z": 223.91
+        }
+      ],
+      "height": 33,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b69",
+      "footprint": [
+        {
+          "x": -79.07,
+          "y": 0,
+          "z": 244.15
+        },
+        {
+          "x": -81.23,
+          "y": 0,
+          "z": 235.21
+        },
+        {
+          "x": -73.45,
+          "y": 0,
+          "z": 233.33
+        },
+        {
+          "x": -71.29,
+          "y": 0,
+          "z": 242.28
+        }
+      ],
+      "height": 38.8,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b70",
+      "footprint": [
+        {
+          "x": -31.74,
+          "y": 0,
+          "z": 185.5
+        },
+        {
+          "x": -41.03,
+          "y": 0,
+          "z": 178.89
+        },
+        {
+          "x": -34.94,
+          "y": 0,
+          "z": 170.34
+        },
+        {
+          "x": -25.65,
+          "y": 0,
+          "z": 176.95
+        }
+      ],
+      "height": 44.6,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b71",
+      "footprint": [
+        {
+          "x": -80.57,
+          "y": 0,
+          "z": 256
+        },
+        {
+          "x": -91.65,
+          "y": 0,
+          "z": 248.11
+        },
+        {
+          "x": -84.11,
+          "y": 0,
+          "z": 237.52
+        },
+        {
+          "x": -73.03,
+          "y": 0,
+          "z": 245.41
+        }
+      ],
+      "height": 16.4,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b72",
+      "footprint": [
+        {
+          "x": -62.92,
+          "y": 0,
+          "z": 172.14
+        },
+        {
+          "x": -69.05,
+          "y": 0,
+          "z": 168.76
+        },
+        {
+          "x": -65.18,
+          "y": 0,
+          "z": 161.75
+        },
+        {
+          "x": -59.06,
+          "y": 0,
+          "z": 165.14
+        }
+      ],
+      "height": 22.2,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b73",
+      "footprint": [
+        {
+          "x": -97.03,
+          "y": 0,
+          "z": 236.18
+        },
+        {
+          "x": -105.09,
+          "y": 0,
+          "z": 231.73
+        },
+        {
+          "x": -100.01,
+          "y": 0,
+          "z": 222.54
+        },
+        {
+          "x": -91.96,
+          "y": 0,
+          "z": 226.99
+        }
+      ],
+      "height": 27.9,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b74",
+      "footprint": [
+        {
+          "x": -82.39,
+          "y": 0,
+          "z": 156.86
+        },
+        {
+          "x": -92.18,
+          "y": 0,
+          "z": 151.03
+        },
+        {
+          "x": -85.53,
+          "y": 0,
+          "z": 139.86
+        },
+        {
+          "x": -75.74,
+          "y": 0,
+          "z": 145.69
+        }
+      ],
+      "height": 33.7,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b75",
+      "footprint": [
+        {
+          "x": -123.41,
+          "y": 0,
+          "z": 227.87
+        },
+        {
+          "x": -135.1,
+          "y": 0,
+          "z": 220.91
+        },
+        {
+          "x": -131,
+          "y": 0,
+          "z": 214.04
+        },
+        {
+          "x": -119.32,
+          "y": 0,
+          "z": 221
+        }
+      ],
+      "height": 39.5,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b76",
+      "footprint": [
+        {
+          "x": -114.83,
+          "y": 0,
+          "z": 144.41
+        },
+        {
+          "x": -121.12,
+          "y": 0,
+          "z": 141.34
+        },
+        {
+          "x": -116.52,
+          "y": 0,
+          "z": 131.91
+        },
+        {
+          "x": -110.23,
+          "y": 0,
+          "z": 134.98
+        }
+      ],
+      "height": 45.3,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b77",
+      "footprint": [
+        {
+          "x": -145.65,
+          "y": 0,
+          "z": 210.1
+        },
+        {
+          "x": -153.92,
+          "y": 0,
+          "z": 206.07
+        },
+        {
+          "x": -148.22,
+          "y": 0,
+          "z": 194.38
+        },
+        {
+          "x": -139.95,
+          "y": 0,
+          "z": 198.42
+        }
+      ],
+      "height": 17.1,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b78",
+      "footprint": [
+        {
+          "x": -134.16,
+          "y": 0,
+          "z": 126.53
+        },
+        {
+          "x": -144.2,
+          "y": 0,
+          "z": 121.14
+        },
+        {
+          "x": -140.42,
+          "y": 0,
+          "z": 114.09
+        },
+        {
+          "x": -130.38,
+          "y": 0,
+          "z": 119.48
+        }
+      ],
+      "height": 22.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b79",
+      "footprint": [
+        {
+          "x": -173.71,
+          "y": 0,
+          "z": 202.62
+        },
+        {
+          "x": -185.7,
+          "y": 0,
+          "z": 196.19
+        },
+        {
+          "x": -180.73,
+          "y": 0,
+          "z": 186.94
+        },
+        {
+          "x": -168.75,
+          "y": 0,
+          "z": 193.37
+        }
+      ],
+      "height": 28.6,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b80",
+      "footprint": [
+        {
+          "x": -159.06,
+          "y": 0,
+          "z": 121.83
+        },
+        {
+          "x": -164.28,
+          "y": 0,
+          "z": 117.17
+        },
+        {
+          "x": -155.61,
+          "y": 0,
+          "z": 107.48
+        },
+        {
+          "x": -150.4,
+          "y": 0,
+          "z": 112.14
+        }
+      ],
+      "height": 34.4,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b81",
+      "footprint": [
+        {
+          "x": -204.1,
+          "y": 0,
+          "z": 173.85
+        },
+        {
+          "x": -210.96,
+          "y": 0,
+          "z": 167.72
+        },
+        {
+          "x": -205.63,
+          "y": 0,
+          "z": 161.76
+        },
+        {
+          "x": -198.77,
+          "y": 0,
+          "z": 167.89
+        }
+      ],
+      "height": 40.2,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b82",
+      "footprint": [
+        {
+          "x": -168.36,
+          "y": 0,
+          "z": 102.21
+        },
+        {
+          "x": -176.14,
+          "y": 0,
+          "z": 93.88
+        },
+        {
+          "x": -168.47,
+          "y": 0,
+          "z": 86.71
+        },
+        {
+          "x": -160.69,
+          "y": 0,
+          "z": 95.04
+        }
+      ],
+      "height": 46,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b83",
+      "footprint": [
+        {
+          "x": -230.25,
+          "y": 0,
+          "z": 161.57
+        },
+        {
+          "x": -239.54,
+          "y": 0,
+          "z": 151.64
+        },
+        {
+          "x": -230.04,
+          "y": 0,
+          "z": 142.76
+        },
+        {
+          "x": -220.75,
+          "y": 0,
+          "z": 152.69
+        }
+      ],
+      "height": 17.7,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b84",
+      "footprint": [
+        {
+          "x": -188.78,
+          "y": 0,
+          "z": 86.96
+        },
+        {
+          "x": -192.86,
+          "y": 0,
+          "z": 81.27
+        },
+        {
+          "x": -186.35,
+          "y": 0,
+          "z": 76.62
+        },
+        {
+          "x": -182.28,
+          "y": 0,
+          "z": 82.31
+        }
+      ],
+      "height": 23.5,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b85",
+      "footprint": [
+        {
+          "x": -247.15,
+          "y": 0,
+          "z": 130.08
+        },
+        {
+          "x": -252.5,
+          "y": 0,
+          "z": 122.59
+        },
+        {
+          "x": -243.96,
+          "y": 0,
+          "z": 116.48
+        },
+        {
+          "x": -238.61,
+          "y": 0,
+          "z": 123.97
+        }
+      ],
+      "height": 29.3,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b86",
+      "footprint": [
+        {
+          "x": -194.53,
+          "y": 0,
+          "z": 71.69
+        },
+        {
+          "x": -197.5,
+          "y": 0,
+          "z": 60.68
+        },
+        {
+          "x": -184.95,
+          "y": 0,
+          "z": 57.3
+        },
+        {
+          "x": -181.98,
+          "y": 0,
+          "z": 68.3
+        }
+      ],
+      "height": 35.1,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b87",
+      "footprint": [
+        {
+          "x": -273.41,
+          "y": 0,
+          "z": 94.12
+        },
+        {
+          "x": -276.96,
+          "y": 0,
+          "z": 80.99
+        },
+        {
+          "x": -269.23,
+          "y": 0,
+          "z": 78.9
+        },
+        {
+          "x": -265.69,
+          "y": 0,
+          "z": 92.03
+        }
+      ],
+      "height": 40.9,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b88",
+      "footprint": [
+        {
+          "x": -201.44,
+          "y": 0,
+          "z": 66.94
+        },
+        {
+          "x": -198.06,
+          "y": 0,
+          "z": 60.81
+        },
+        {
+          "x": -188.86,
+          "y": 0,
+          "z": 65.88
+        },
+        {
+          "x": -192.24,
+          "y": 0,
+          "z": 72.01
+        }
+      ],
+      "height": 46.6,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b89",
+      "footprint": [
+        {
+          "x": -265.51,
+          "y": 0,
+          "z": 32.89
+        },
+        {
+          "x": -261.07,
+          "y": 0,
+          "z": 24.83
+        },
+        {
+          "x": -249.68,
+          "y": 0,
+          "z": 31.11
+        },
+        {
+          "x": -254.12,
+          "y": 0,
+          "z": 39.16
+        }
+      ],
+      "height": 18.4,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b90",
+      "footprint": [
+        {
+          "x": -180.31,
+          "y": 0,
+          "z": 49.5
+        },
+        {
+          "x": -174.17,
+          "y": 0,
+          "z": 39.89
+        },
+        {
+          "x": -167.43,
+          "y": 0,
+          "z": 44.2
+        },
+        {
+          "x": -173.57,
+          "y": 0,
+          "z": 53.81
+        }
+      ],
+      "height": 24.2,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b91",
+      "footprint": [
+        {
+          "x": -253.18,
+          "y": 0,
+          "z": 4.28
+        },
+        {
+          "x": -245.86,
+          "y": 0,
+          "z": -7.18
+        },
+        {
+          "x": -237.01,
+          "y": 0,
+          "z": -1.53
+        },
+        {
+          "x": -244.33,
+          "y": 0,
+          "z": 9.93
+        }
+      ],
+      "height": 30,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b92",
+      "footprint": [
+        {
+          "x": -172.28,
+          "y": 0,
+          "z": -0.5
+        },
+        {
+          "x": -173.29,
+          "y": 0,
+          "z": -7.42
+        },
+        {
+          "x": -160.43,
+          "y": 0,
+          "z": -9.3
+        },
+        {
+          "x": -159.42,
+          "y": 0,
+          "z": -2.37
+        }
+      ],
+      "height": 35.8,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b93",
+      "footprint": [
+        {
+          "x": -240.21,
+          "y": 0,
+          "z": 10.5
+        },
+        {
+          "x": -241.53,
+          "y": 0,
+          "z": 1.4
+        },
+        {
+          "x": -233.62,
+          "y": 0,
+          "z": 0.24
+        },
+        {
+          "x": -232.29,
+          "y": 0,
+          "z": 9.35
+        }
+      ],
+      "height": 41.5,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b94",
+      "footprint": [
+        {
+          "x": -186.3,
+          "y": 0,
+          "z": -45.11
+        },
+        {
+          "x": -194.24,
+          "y": 0,
+          "z": -53.3
+        },
+        {
+          "x": -186.7,
+          "y": 0,
+          "z": -60.61
+        },
+        {
+          "x": -178.77,
+          "y": 0,
+          "z": -52.42
+        }
+      ],
+      "height": 47.3,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b95",
+      "footprint": [
+        {
+          "x": -247.08,
+          "y": 0,
+          "z": 15.38
+        },
+        {
+          "x": -256.55,
+          "y": 0,
+          "z": 5.62
+        },
+        {
+          "x": -247.22,
+          "y": 0,
+          "z": -3.43
+        },
+        {
+          "x": -237.75,
+          "y": 0,
+          "z": 6.33
+        }
+      ],
+      "height": 19.1,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b96",
+      "footprint": [
+        {
+          "x": -211.15,
+          "y": 0,
+          "z": -62.13
+        },
+        {
+          "x": -215.92,
+          "y": 0,
+          "z": -67.25
+        },
+        {
+          "x": -210.06,
+          "y": 0,
+          "z": -72.7
+        },
+        {
+          "x": -205.29,
+          "y": 0,
+          "z": -67.57
+        }
+      ],
+      "height": 24.9,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b97",
+      "footprint": [
+        {
+          "x": -263.53,
+          "y": 0,
+          "z": -11.92
+        },
+        {
+          "x": -269.8,
+          "y": 0,
+          "z": -18.66
+        },
+        {
+          "x": -262.11,
+          "y": 0,
+          "z": -25.81
+        },
+        {
+          "x": -255.84,
+          "y": 0,
+          "z": -19.07
+        }
+      ],
+      "height": 30.7,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b98",
+      "footprint": [
+        {
+          "x": -215.53,
+          "y": 0,
+          "z": -67.33
+        },
+        {
+          "x": -216.54,
+          "y": 0,
+          "z": -78.69
+        },
+        {
+          "x": -203.59,
+          "y": 0,
+          "z": -79.83
+        },
+        {
+          "x": -202.58,
+          "y": 0,
+          "z": -68.48
+        }
+      ],
+      "height": 36.4,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b99",
+      "footprint": [
+        {
+          "x": -297.11,
+          "y": 0,
+          "z": -59
+        },
+        {
+          "x": -298.31,
+          "y": 0,
+          "z": -72.55
+        },
+        {
+          "x": -290.34,
+          "y": 0,
+          "z": -73.25
+        },
+        {
+          "x": -289.14,
+          "y": 0,
+          "z": -59.71
+        }
+      ],
+      "height": 42.2,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b100",
+      "footprint": [
+        {
+          "x": -220.25,
+          "y": 0,
+          "z": -78.62
+        },
+        {
+          "x": -217.68,
+          "y": 0,
+          "z": -85.13
+        },
+        {
+          "x": -207.92,
+          "y": 0,
+          "z": -81.28
+        },
+        {
+          "x": -210.48,
+          "y": 0,
+          "z": -74.77
+        }
+      ],
+      "height": 14,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b101",
+      "footprint": [
+        {
+          "x": -288.15,
+          "y": 0,
+          "z": -104.21
+        },
+        {
+          "x": -284.77,
+          "y": 0,
+          "z": -112.76
+        },
+        {
+          "x": -272.68,
+          "y": 0,
+          "z": -108
+        },
+        {
+          "x": -276.05,
+          "y": 0,
+          "z": -99.44
+        }
+      ],
+      "height": 19.8,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b102",
+      "footprint": [
+        {
+          "x": -205.36,
+          "y": 0,
+          "z": -91.53
+        },
+        {
+          "x": -199.28,
+          "y": 0,
+          "z": -101.17
+        },
+        {
+          "x": -192.51,
+          "y": 0,
+          "z": -96.9
+        },
+        {
+          "x": -198.6,
+          "y": 0,
+          "z": -87.26
+        }
+      ],
+      "height": 25.6,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b103",
+      "footprint": [
+        {
+          "x": -278.45,
+          "y": 0,
+          "z": -136.38
+        },
+        {
+          "x": -271.19,
+          "y": 0,
+          "z": -147.88
+        },
+        {
+          "x": -262.32,
+          "y": 0,
+          "z": -142.27
+        },
+        {
+          "x": -269.58,
+          "y": 0,
+          "z": -130.77
+        }
+      ],
+      "height": 31.3,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b104",
+      "footprint": [
+        {
+          "x": -197,
+          "y": 0,
+          "z": -120.41
+        },
+        {
+          "x": -192.99,
+          "y": 0,
+          "z": -126.15
+        },
+        {
+          "x": -182.33,
+          "y": 0,
+          "z": -118.72
+        },
+        {
+          "x": -186.33,
+          "y": 0,
+          "z": -112.97
+        }
+      ],
+      "height": 37.1,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b105",
+      "footprint": [
+        {
+          "x": -254.06,
+          "y": 0,
+          "z": -158.86
+        },
+        {
+          "x": -248.8,
+          "y": 0,
+          "z": -166.4
+        },
+        {
+          "x": -242.24,
+          "y": 0,
+          "z": -161.83
+        },
+        {
+          "x": -247.5,
+          "y": 0,
+          "z": -154.28
+        }
+      ],
+      "height": 42.9,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b106",
+      "footprint": [
+        {
+          "x": -174.17,
+          "y": 0,
+          "z": -139.54
+        },
+        {
+          "x": -167.13,
+          "y": 0,
+          "z": -148.51
+        },
+        {
+          "x": -158.87,
+          "y": 0,
+          "z": -142.03
+        },
+        {
+          "x": -165.91,
+          "y": 0,
+          "z": -133.06
+        }
+      ],
+      "height": 14.7,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b107",
+      "footprint": [
+        {
+          "x": -242.32,
+          "y": 0,
+          "z": -191.6
+        },
+        {
+          "x": -233.93,
+          "y": 0,
+          "z": -202.3
+        },
+        {
+          "x": -223.7,
+          "y": 0,
+          "z": -194.27
+        },
+        {
+          "x": -232.09,
+          "y": 0,
+          "z": -183.57
+        }
+      ],
+      "height": 20.5,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b108",
+      "footprint": [
+        {
+          "x": -161.19,
+          "y": 0,
+          "z": -163.67
+        },
+        {
+          "x": -156.53,
+          "y": 0,
+          "z": -168.89
+        },
+        {
+          "x": -150.56,
+          "y": 0,
+          "z": -163.56
+        },
+        {
+          "x": -155.22,
+          "y": 0,
+          "z": -158.34
+        }
+      ],
+      "height": 26.2,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b109",
+      "footprint": [
+        {
+          "x": -216.06,
+          "y": 0,
+          "z": -211.14
+        },
+        {
+          "x": -209.94,
+          "y": 0,
+          "z": -218.01
+        },
+        {
+          "x": -202.1,
+          "y": 0,
+          "z": -211.02
+        },
+        {
+          "x": -208.23,
+          "y": 0,
+          "z": -204.15
+        }
+      ],
+      "height": 32,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b110",
+      "footprint": [
+        {
+          "x": -142.22,
+          "y": 0,
+          "z": -178.38
+        },
+        {
+          "x": -134.43,
+          "y": 0,
+          "z": -186.7
+        },
+        {
+          "x": -124.94,
+          "y": 0,
+          "z": -177.81
+        },
+        {
+          "x": -132.73,
+          "y": 0,
+          "z": -169.49
+        }
+      ],
+      "height": 37.8,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b111",
+      "footprint": [
+        {
+          "x": -202.83,
+          "y": 0,
+          "z": -233.61
+        },
+        {
+          "x": -193.54,
+          "y": 0,
+          "z": -243.54
+        },
+        {
+          "x": -187.7,
+          "y": 0,
+          "z": -238.07
+        },
+        {
+          "x": -196.99,
+          "y": 0,
+          "z": -228.15
+        }
+      ],
+      "height": 43.6,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b112",
+      "footprint": [
+        {
+          "x": -122.85,
+          "y": 0,
+          "z": -206.98
+        },
+        {
+          "x": -118.04,
+          "y": 0,
+          "z": -212.07
+        },
+        {
+          "x": -110.41,
+          "y": 0,
+          "z": -204.86
+        },
+        {
+          "x": -115.21,
+          "y": 0,
+          "z": -199.77
+        }
+      ],
+      "height": 15.4,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b113",
+      "footprint": [
+        {
+          "x": -176.34,
+          "y": 0,
+          "z": -256.01
+        },
+        {
+          "x": -170.02,
+          "y": 0,
+          "z": -262.69
+        },
+        {
+          "x": -160.57,
+          "y": 0,
+          "z": -253.77
+        },
+        {
+          "x": -166.89,
+          "y": 0,
+          "z": -247.08
+        }
+      ],
+      "height": 21.1,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b114",
+      "footprint": [
+        {
+          "x": -101.74,
+          "y": 0,
+          "z": -217.68
+        },
+        {
+          "x": -93.72,
+          "y": 0,
+          "z": -225.79
+        },
+        {
+          "x": -88.04,
+          "y": 0,
+          "z": -220.16
+        },
+        {
+          "x": -96.05,
+          "y": 0,
+          "z": -212.06
+        }
+      ],
+      "height": 26.9,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b115",
+      "footprint": [
+        {
+          "x": -163.5,
+          "y": 0,
+          "z": -277.18
+        },
+        {
+          "x": -153.93,
+          "y": 0,
+          "z": -286.85
+        },
+        {
+          "x": -146.47,
+          "y": 0,
+          "z": -279.47
+        },
+        {
+          "x": -156.03,
+          "y": 0,
+          "z": -269.8
+        }
+      ],
+      "height": 32.7,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b116",
+      "footprint": [
+        {
+          "x": -85.78,
+          "y": 0,
+          "z": -246.31
+        },
+        {
+          "x": -80.71,
+          "y": 0,
+          "z": -251.13
+        },
+        {
+          "x": -71.75,
+          "y": 0,
+          "z": -241.71
+        },
+        {
+          "x": -76.82,
+          "y": 0,
+          "z": -236.89
+        }
+      ],
+      "height": 38.5,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b117",
+      "footprint": [
+        {
+          "x": -133.99,
+          "y": 0,
+          "z": -295.4
+        },
+        {
+          "x": -127.33,
+          "y": 0,
+          "z": -301.74
+        },
+        {
+          "x": -121.81,
+          "y": 0,
+          "z": -295.94
+        },
+        {
+          "x": -128.48,
+          "y": 0,
+          "z": -289.6
+        }
+      ],
+      "height": 44.3,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b118",
+      "footprint": [
+        {
+          "x": -63.32,
+          "y": 0,
+          "z": -256.5
+        },
+        {
+          "x": -54.64,
+          "y": 0,
+          "z": -263.89
+        },
+        {
+          "x": -47.83,
+          "y": 0,
+          "z": -255.89
+        },
+        {
+          "x": -56.52,
+          "y": 0,
+          "z": -248.51
+        }
+      ],
+      "height": 16,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b119",
+      "footprint": [
+        {
+          "x": -119.74,
+          "y": 0,
+          "z": -321.08
+        },
+        {
+          "x": -109.39,
+          "y": 0,
+          "z": -329.9
+        },
+        {
+          "x": -100.96,
+          "y": 0,
+          "z": -320
+        },
+        {
+          "x": -111.32,
+          "y": 0,
+          "z": -311.19
+        }
+      ],
+      "height": 21.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b120",
+      "footprint": [
+        {
+          "x": -45.67,
+          "y": 0,
+          "z": -277.88
+        },
+        {
+          "x": -40.13,
+          "y": 0,
+          "z": -282.16
+        },
+        {
+          "x": -35.24,
+          "y": 0,
+          "z": -275.83
+        },
+        {
+          "x": -40.77,
+          "y": 0,
+          "z": -271.55
+        }
+      ],
+      "height": 27.6,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-b121",
+      "footprint": [
+        {
+          "x": -90.92,
+          "y": 0,
+          "z": -334.6
+        },
+        {
+          "x": -83.64,
+          "y": 0,
+          "z": -340.22
+        },
+        {
+          "x": -77.22,
+          "y": 0,
+          "z": -331.92
+        },
+        {
+          "x": -84.49,
+          "y": 0,
+          "z": -326.29
+        }
+      ],
+      "height": 33.4,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-0",
+      "name": "Burj Khalifa",
+      "footprint": [
+        {
+          "x": 337,
+          "y": 0,
+          "z": 122
+        },
+        {
+          "x": 373,
+          "y": 0,
+          "z": 122
+        },
+        {
+          "x": 373,
+          "y": 0,
+          "z": 158
+        },
+        {
+          "x": 337,
+          "y": 0,
+          "z": 158
+        }
+      ],
+      "height": 320,
+      "baseHeight": 0,
+      "floors": 91,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-1",
+      "name": "Museum of the Future",
+      "footprint": [
+        {
+          "x": 320,
+          "y": 0,
+          "z": 24
+        },
+        {
+          "x": 360,
+          "y": 0,
+          "z": 24
+        },
+        {
+          "x": 360,
+          "y": 0,
+          "z": 56
+        },
+        {
+          "x": 320,
+          "y": 0,
+          "z": 56
+        }
+      ],
+      "height": 95,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-2",
+      "name": "Dubai Frame",
+      "footprint": [
+        {
+          "x": 356,
+          "y": 0,
+          "z": 234
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "z": 234
+        },
+        {
+          "x": 384,
+          "y": 0,
+          "z": 246
+        },
+        {
+          "x": 356,
+          "y": 0,
+          "z": 246
+        }
+      ],
+      "height": 110,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-3",
+      "name": "Burj Al Arab",
+      "footprint": [
+        {
+          "x": -44.65,
+          "y": 0,
+          "z": -420.2
+        },
+        {
+          "x": -12.65,
+          "y": 0,
+          "z": -420.2
+        },
+        {
+          "x": -12.65,
+          "y": 0,
+          "z": -392.2
+        },
+        {
+          "x": -44.65,
+          "y": 0,
+          "z": -392.2
+        }
+      ],
+      "height": 180,
+      "baseHeight": 0,
+      "floors": 51,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-4",
+      "name": "Cayan Tower",
+      "footprint": [
+        {
+          "x": 59.78,
+          "y": 0,
+          "z": -423.57
+        },
+        {
+          "x": 87.78,
+          "y": 0,
+          "z": -423.57
+        },
+        {
+          "x": 87.78,
+          "y": 0,
+          "z": -395.57
+        },
+        {
+          "x": 59.78,
+          "y": 0,
+          "z": -395.57
+        }
+      ],
+      "height": 160,
+      "baseHeight": 0,
+      "floors": 46,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-5",
+      "name": "Emirates Tower One",
+      "footprint": [
+        {
+          "x": 135.6,
+          "y": 0,
+          "z": -390.53
+        },
+        {
+          "x": 165.6,
+          "y": 0,
+          "z": -390.53
+        },
+        {
+          "x": 165.6,
+          "y": 0,
+          "z": -360.53
+        },
+        {
+          "x": 135.6,
+          "y": 0,
+          "z": -360.53
+        }
+      ],
+      "height": 175,
+      "baseHeight": 0,
+      "floors": 50,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-6",
+      "name": "Emirates Tower Two",
+      "footprint": [
+        {
+          "x": 197.76,
+          "y": 0,
+          "z": -348.02
+        },
+        {
+          "x": 225.76,
+          "y": 0,
+          "z": -348.02
+        },
+        {
+          "x": 225.76,
+          "y": 0,
+          "z": -320.02
+        },
+        {
+          "x": 197.76,
+          "y": 0,
+          "z": -320.02
+        }
+      ],
+      "height": 155,
+      "baseHeight": 0,
+      "floors": 44,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-7",
+      "name": "Address Downtown",
+      "footprint": [
+        {
+          "x": 115.89,
+          "y": 0,
+          "z": -203.11
+        },
+        {
+          "x": 149.89,
+          "y": 0,
+          "z": -203.11
+        },
+        {
+          "x": 149.89,
+          "y": 0,
+          "z": -173.11
+        },
+        {
+          "x": 115.89,
+          "y": 0,
+          "z": -173.11
+        }
+      ],
+      "height": 150,
+      "baseHeight": 0,
+      "floors": 43,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-8",
+      "name": "Marina 101",
+      "footprint": [
+        {
+          "x": 139.88,
+          "y": 0,
+          "z": -135.35
+        },
+        {
+          "x": 169.88,
+          "y": 0,
+          "z": -135.35
+        },
+        {
+          "x": 169.88,
+          "y": 0,
+          "z": -105.35
+        },
+        {
+          "x": 139.88,
+          "y": 0,
+          "z": -105.35
+        }
+      ],
+      "height": 200,
+      "baseHeight": 0,
+      "floors": 57,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-9",
+      "name": "Princess Tower",
+      "footprint": [
+        {
+          "x": 165.33,
+          "y": 0,
+          "z": -155.96
+        },
+        {
+          "x": 193.33,
+          "y": 0,
+          "z": -155.96
+        },
+        {
+          "x": 193.33,
+          "y": 0,
+          "z": -127.96
+        },
+        {
+          "x": 165.33,
+          "y": 0,
+          "z": -127.96
+        }
+      ],
+      "height": 190,
+      "baseHeight": 0,
+      "floors": 54,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-10",
+      "name": "Address Beach Resort",
+      "footprint": [
+        {
+          "x": 137.14,
+          "y": 0,
+          "z": 22.44
+        },
+        {
+          "x": 173.14,
+          "y": 0,
+          "z": 22.44
+        },
+        {
+          "x": 173.14,
+          "y": 0,
+          "z": 50.44
+        },
+        {
+          "x": 137.14,
+          "y": 0,
+          "z": 50.44
+        }
+      ],
+      "height": 120,
+      "baseHeight": 0,
+      "floors": 34,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-11",
+      "name": "Gate Village DIFC",
+      "footprint": [
+        {
+          "x": 164.81,
+          "y": 0,
+          "z": 51.52
+        },
+        {
+          "x": 204.81,
+          "y": 0,
+          "z": 51.52
+        },
+        {
+          "x": 204.81,
+          "y": 0,
+          "z": 83.52
+        },
+        {
+          "x": 164.81,
+          "y": 0,
+          "z": 83.52
+        }
+      ],
+      "height": 85,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-12",
+      "name": "JW Marriott Marquis",
+      "footprint": [
+        {
+          "x": 172,
+          "y": 0,
+          "z": 119.13
+        },
+        {
+          "x": 204,
+          "y": 0,
+          "z": 119.13
+        },
+        {
+          "x": 204,
+          "y": 0,
+          "z": 151.13
+        },
+        {
+          "x": 172,
+          "y": 0,
+          "z": 151.13
+        }
+      ],
+      "height": 170,
+      "baseHeight": 0,
+      "floors": 49,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-13",
+      "name": "Elite Residence",
+      "footprint": [
+        {
+          "x": 175.39,
+          "y": 0,
+          "z": 184.48
+        },
+        {
+          "x": 203.39,
+          "y": 0,
+          "z": 184.48
+        },
+        {
+          "x": 203.39,
+          "y": 0,
+          "z": 212.48
+        },
+        {
+          "x": 175.39,
+          "y": 0,
+          "z": 212.48
+        }
+      ],
+      "height": 165,
+      "baseHeight": 0,
+      "floors": 47,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-14",
+      "name": "Ocean Heights",
+      "footprint": [
+        {
+          "x": 163.78,
+          "y": 0,
+          "z": 217.69
+        },
+        {
+          "x": 193.78,
+          "y": 0,
+          "z": 217.69
+        },
+        {
+          "x": 193.78,
+          "y": 0,
+          "z": 245.69
+        },
+        {
+          "x": 163.78,
+          "y": 0,
+          "z": 245.69
+        }
+      ],
+      "height": 155,
+      "baseHeight": 0,
+      "floors": 44,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-15",
+      "name": "HHHR Tower",
+      "footprint": [
+        {
+          "x": 201.98,
+          "y": 0,
+          "z": 383.03
+        },
+        {
+          "x": 227.98,
+          "y": 0,
+          "z": 383.03
+        },
+        {
+          "x": 227.98,
+          "y": 0,
+          "z": 409.03
+        },
+        {
+          "x": 201.98,
+          "y": 0,
+          "z": 409.03
+        }
+      ],
+      "height": 145,
+      "baseHeight": 0,
+      "floors": 41,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-16",
+      "name": "Almas Tower",
+      "footprint": [
+        {
+          "x": 100.19,
+          "y": 0,
+          "z": 416.73
+        },
+        {
+          "x": 132.19,
+          "y": 0,
+          "z": 416.73
+        },
+        {
+          "x": 132.19,
+          "y": 0,
+          "z": 448.73
+        },
+        {
+          "x": 100.19,
+          "y": 0,
+          "z": 448.73
+        }
+      ],
+      "height": 180,
+      "baseHeight": 0,
+      "floors": 51,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-17",
+      "name": "Torch Tower",
+      "footprint": [
+        {
+          "x": -7.4,
+          "y": 0,
+          "z": 420.35
+        },
+        {
+          "x": 16.6,
+          "y": 0,
+          "z": 420.35
+        },
+        {
+          "x": 16.6,
+          "y": 0,
+          "z": 444.35
+        },
+        {
+          "x": -7.4,
+          "y": 0,
+          "z": 444.35
+        }
+      ],
+      "height": 170,
+      "baseHeight": 0,
+      "floors": 49,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-18",
+      "name": "Cielo Tower",
+      "footprint": [
+        {
+          "x": -105.05,
+          "y": 0,
+          "z": 363.91
+        },
+        {
+          "x": -79.05,
+          "y": 0,
+          "z": 363.91
+        },
+        {
+          "x": -79.05,
+          "y": 0,
+          "z": 389.91
+        },
+        {
+          "x": -105.05,
+          "y": 0,
+          "z": 389.91
+        }
+      ],
+      "height": 130,
+      "baseHeight": 0,
+      "floors": 37,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-19",
+      "name": "Damac Heights",
+      "footprint": [
+        {
+          "x": -8.59,
+          "y": 0,
+          "z": 303.05
+        },
+        {
+          "x": 19.41,
+          "y": 0,
+          "z": 303.05
+        },
+        {
+          "x": 19.41,
+          "y": 0,
+          "z": 331.05
+        },
+        {
+          "x": -8.59,
+          "y": 0,
+          "z": 331.05
+        }
+      ],
+      "height": 165,
+      "baseHeight": 0,
+      "floors": 47,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-20",
+      "name": "Emirates Crown",
+      "footprint": [
+        {
+          "x": -124.85,
+          "y": 0,
+          "z": 248.77
+        },
+        {
+          "x": -94.85,
+          "y": 0,
+          "z": 248.77
+        },
+        {
+          "x": -94.85,
+          "y": 0,
+          "z": 276.77
+        },
+        {
+          "x": -124.85,
+          "y": 0,
+          "z": 276.77
+        }
+      ],
+      "height": 140,
+      "baseHeight": 0,
+      "floors": 40,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-21",
+      "name": "23 Marina",
+      "footprint": [
+        {
+          "x": -200.54,
+          "y": 0,
+          "z": 214.35
+        },
+        {
+          "x": -172.54,
+          "y": 0,
+          "z": 214.35
+        },
+        {
+          "x": -172.54,
+          "y": 0,
+          "z": 242.35
+        },
+        {
+          "x": -200.54,
+          "y": 0,
+          "z": 242.35
+        }
+      ],
+      "height": 185,
+      "baseHeight": 0,
+      "floors": 53,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-22",
+      "name": "The Palm Tower",
+      "footprint": [
+        {
+          "x": -290.96,
+          "y": 0,
+          "z": 142.24
+        },
+        {
+          "x": -260.96,
+          "y": 0,
+          "z": 142.24
+        },
+        {
+          "x": -260.96,
+          "y": 0,
+          "z": 172.24
+        },
+        {
+          "x": -290.96,
+          "y": 0,
+          "z": 172.24
+        }
+      ],
+      "height": 160,
+      "baseHeight": 0,
+      "floors": 46,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-23",
+      "name": "Atlantis The Royal",
+      "footprint": [
+        {
+          "x": -300.28,
+          "y": 0,
+          "z": -28.25
+        },
+        {
+          "x": -260.28,
+          "y": 0,
+          "z": -28.25
+        },
+        {
+          "x": -260.28,
+          "y": 0,
+          "z": 5.75
+        },
+        {
+          "x": -300.28,
+          "y": 0,
+          "z": 5.75
+        }
+      ],
+      "height": 110,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-24",
+      "name": "One Za'abeel",
+      "footprint": [
+        {
+          "x": -292.39,
+          "y": 0,
+          "z": 0.84
+        },
+        {
+          "x": -256.39,
+          "y": 0,
+          "z": 0.84
+        },
+        {
+          "x": -256.39,
+          "y": 0,
+          "z": 30.84
+        },
+        {
+          "x": -292.39,
+          "y": 0,
+          "z": 30.84
+        }
+      ],
+      "height": 150,
+      "baseHeight": 0,
+      "floors": 43,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-25",
+      "name": "ICD Brookfield Place",
+      "footprint": [
+        {
+          "x": -325.97,
+          "y": 0,
+          "z": -133.36
+        },
+        {
+          "x": -291.97,
+          "y": 0,
+          "z": -133.36
+        },
+        {
+          "x": -291.97,
+          "y": 0,
+          "z": -101.36
+        },
+        {
+          "x": -325.97,
+          "y": 0,
+          "z": -101.36
+        }
+      ],
+      "height": 135,
+      "baseHeight": 0,
+      "floors": 39,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-26",
+      "name": "Boulevard Plaza 1",
+      "footprint": [
+        {
+          "x": -284.09,
+          "y": 0,
+          "z": -196.94
+        },
+        {
+          "x": -252.09,
+          "y": 0,
+          "z": -196.94
+        },
+        {
+          "x": -252.09,
+          "y": 0,
+          "z": -166.94
+        },
+        {
+          "x": -284.09,
+          "y": 0,
+          "z": -166.94
+        }
+      ],
+      "height": 125,
+      "baseHeight": 0,
+      "floors": 36,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-27",
+      "name": "Boulevard Plaza 2",
+      "footprint": [
+        {
+          "x": -257.97,
+          "y": 0,
+          "z": -235.06
+        },
+        {
+          "x": -225.97,
+          "y": 0,
+          "z": -235.06
+        },
+        {
+          "x": -225.97,
+          "y": 0,
+          "z": -205.06
+        },
+        {
+          "x": -257.97,
+          "y": 0,
+          "z": -205.06
+        }
+      ],
+      "height": 120,
+      "baseHeight": 0,
+      "floors": 34,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-28",
+      "name": "The Index",
+      "footprint": [
+        {
+          "x": -231.24,
+          "y": 0,
+          "z": -270.42
+        },
+        {
+          "x": -203.24,
+          "y": 0,
+          "z": -270.42
+        },
+        {
+          "x": -203.24,
+          "y": 0,
+          "z": -242.42
+        },
+        {
+          "x": -231.24,
+          "y": 0,
+          "z": -242.42
+        }
+      ],
+      "height": 160,
+      "baseHeight": 0,
+      "floors": 46,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-29",
+      "name": "Rose Rayhaan",
+      "footprint": [
+        {
+          "x": -215.77,
+          "y": 0,
+          "z": -281.99
+        },
+        {
+          "x": -189.77,
+          "y": 0,
+          "z": -281.99
+        },
+        {
+          "x": -189.77,
+          "y": 0,
+          "z": -255.99
+        },
+        {
+          "x": -215.77,
+          "y": 0,
+          "z": -255.99
+        }
+      ],
+      "height": 165,
+      "baseHeight": 0,
+      "floors": 47,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-30",
+      "name": "Burj Vista 1",
+      "footprint": [
+        {
+          "x": -202.57,
+          "y": 0,
+          "z": -296.24
+        },
+        {
+          "x": -172.57,
+          "y": 0,
+          "z": -296.24
+        },
+        {
+          "x": -172.57,
+          "y": 0,
+          "z": -268.24
+        },
+        {
+          "x": -202.57,
+          "y": 0,
+          "z": -268.24
+        }
+      ],
+      "height": 145,
+      "baseHeight": 0,
+      "floors": 41,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "dubai-marina-circuit-landmark-31",
+      "name": "Burj Vista 2",
+      "footprint": [
+        {
+          "x": -185.29,
+          "y": 0,
+          "z": -316.79
+        },
+        {
+          "x": -155.29,
+          "y": 0,
+          "z": -316.79
+        },
+        {
+          "x": -155.29,
+          "y": 0,
+          "z": -288.79
+        },
+        {
+          "x": -185.29,
+          "y": 0,
+          "z": -288.79
+        }
+      ],
+      "height": 140,
+      "baseHeight": 0,
+      "floors": 40,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    }
+  ],
+  "sceneryObjects": [
+    {
+      "id": "dubai-marina-circuit-light-0",
+      "type": "street_light",
+      "position": {
+        "x": -29.51,
+        "y": 0,
+        "z": -312.69
+      },
+      "rotation": 1.8995,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-1",
+      "type": "street_light",
+      "position": {
+        "x": -20.67,
+        "y": 0,
+        "z": -337.25
+      },
+      "rotation": 1.9075,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-2",
+      "type": "street_light",
+      "position": {
+        "x": 4.36,
+        "y": 0,
+        "z": -324.18
+      },
+      "rotation": 1.8558,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-3",
+      "type": "street_light",
+      "position": {
+        "x": 12.63,
+        "y": 0,
+        "z": -347.21
+      },
+      "rotation": 1.7884,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-4",
+      "type": "street_light",
+      "position": {
+        "x": 34.44,
+        "y": 0,
+        "z": -329.97
+      },
+      "rotation": 1.6044,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-5",
+      "type": "street_light",
+      "position": {
+        "x": 53.27,
+        "y": 0,
+        "z": -348.55
+      },
+      "rotation": 1.3958,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-6",
+      "type": "street_light",
+      "position": {
+        "x": 65.9,
+        "y": 0,
+        "z": -324.59
+      },
+      "rotation": 1.2611,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-7",
+      "type": "street_light",
+      "position": {
+        "x": 90.44,
+        "y": 0,
+        "z": -336.84
+      },
+      "rotation": 1.1604,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-8",
+      "type": "street_light",
+      "position": {
+        "x": 98.81,
+        "y": 0,
+        "z": -310.38
+      },
+      "rotation": 1.0856,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-9",
+      "type": "street_light",
+      "position": {
+        "x": 125.21,
+        "y": 0,
+        "z": -318.65
+      },
+      "rotation": 1.0284,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-10",
+      "type": "street_light",
+      "position": {
+        "x": 125.19,
+        "y": 0,
+        "z": -294.77
+      },
+      "rotation": 0.984,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-11",
+      "type": "street_light",
+      "position": {
+        "x": 153.12,
+        "y": 0,
+        "z": -299.62
+      },
+      "rotation": 0.916,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-12",
+      "type": "street_light",
+      "position": {
+        "x": 155.92,
+        "y": 0,
+        "z": -271.14
+      },
+      "rotation": 0.8446,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-13",
+      "type": "street_light",
+      "position": {
+        "x": 179.57,
+        "y": 0,
+        "z": -276.66
+      },
+      "rotation": 0.7921,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-14",
+      "type": "street_light",
+      "position": {
+        "x": 178.23,
+        "y": 0,
+        "z": -248.46
+      },
+      "rotation": 0.7008,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-15",
+      "type": "street_light",
+      "position": {
+        "x": 205.89,
+        "y": 0,
+        "z": -245.19
+      },
+      "rotation": 0.5841,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-16",
+      "type": "street_light",
+      "position": {
+        "x": 198.4,
+        "y": 0,
+        "z": -218.17
+      },
+      "rotation": 0.4877,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-17",
+      "type": "street_light",
+      "position": {
+        "x": 225.05,
+        "y": 0,
+        "z": -209.45
+      },
+      "rotation": 0.42,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-18",
+      "type": "street_light",
+      "position": {
+        "x": 211.56,
+        "y": 0,
+        "z": -189.61
+      },
+      "rotation": 0.389,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-19",
+      "type": "street_light",
+      "position": {
+        "x": 237.27,
+        "y": 0,
+        "z": -179.34
+      },
+      "rotation": 0.3626,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-20",
+      "type": "street_light",
+      "position": {
+        "x": 225.11,
+        "y": 0,
+        "z": -154.63
+      },
+      "rotation": 0.3734,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-21",
+      "type": "street_light",
+      "position": {
+        "x": 250.98,
+        "y": 0,
+        "z": -143.66
+      },
+      "rotation": 0.3503,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-22",
+      "type": "street_light",
+      "position": {
+        "x": 237.63,
+        "y": 0,
+        "z": -119.52
+      },
+      "rotation": 0.2669,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-23",
+      "type": "street_light",
+      "position": {
+        "x": 260.76,
+        "y": 0,
+        "z": -106.11
+      },
+      "rotation": 0.0941,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-24",
+      "type": "street_light",
+      "position": {
+        "x": 239.33,
+        "y": 0,
+        "z": -90.07
+      },
+      "rotation": -0.4663,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-25",
+      "type": "street_light",
+      "position": {
+        "x": 244.22,
+        "y": 0,
+        "z": -65.94
+      },
+      "rotation": -0.8947,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-26",
+      "type": "street_light",
+      "position": {
+        "x": 217.7,
+        "y": 0,
+        "z": -72.27
+      },
+      "rotation": -1.0037,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-27",
+      "type": "street_light",
+      "position": {
+        "x": 215.43,
+        "y": 0,
+        "z": -46.32
+      },
+      "rotation": -0.8852,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-28",
+      "type": "street_light",
+      "position": {
+        "x": 190.82,
+        "y": 0,
+        "z": -33.4
+      },
+      "rotation": 0.2675,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-29",
+      "type": "street_light",
+      "position": {
+        "x": 215.46,
+        "y": 0,
+        "z": -30.84
+      },
+      "rotation": 0.7213,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-30",
+      "type": "street_light",
+      "position": {
+        "x": 213.9,
+        "y": 0,
+        "z": -4.34
+      },
+      "rotation": 0.8426,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-31",
+      "type": "street_light",
+      "position": {
+        "x": 242.03,
+        "y": 0,
+        "z": -6.13
+      },
+      "rotation": 0.7994,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-32",
+      "type": "street_light",
+      "position": {
+        "x": 238.7,
+        "y": 0,
+        "z": 20.66
+      },
+      "rotation": 0.5859,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-33",
+      "type": "street_light",
+      "position": {
+        "x": 263.96,
+        "y": 0,
+        "z": 26.6
+      },
+      "rotation": 0.3745,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-34",
+      "type": "street_light",
+      "position": {
+        "x": 250.24,
+        "y": 0,
+        "z": 49.38
+      },
+      "rotation": 0.2704,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-35",
+      "type": "street_light",
+      "position": {
+        "x": 273.95,
+        "y": 0,
+        "z": 61.96
+      },
+      "rotation": 0.2,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-36",
+      "type": "street_light",
+      "position": {
+        "x": 257.28,
+        "y": 0,
+        "z": 83.44
+      },
+      "rotation": 0.1596,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-37",
+      "type": "street_light",
+      "position": {
+        "x": 279.99,
+        "y": 0,
+        "z": 98.54
+      },
+      "rotation": 0.1455,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-38",
+      "type": "street_light",
+      "position": {
+        "x": 262.59,
+        "y": 0,
+        "z": 119.92
+      },
+      "rotation": 0.1283,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-39",
+      "type": "street_light",
+      "position": {
+        "x": 284.82,
+        "y": 0,
+        "z": 136.95
+      },
+      "rotation": 0.0915,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-40",
+      "type": "street_light",
+      "position": {
+        "x": 265.95,
+        "y": 0,
+        "z": 157.8
+      },
+      "rotation": 0.0345,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-41",
+      "type": "street_light",
+      "position": {
+        "x": 286.28,
+        "y": 0,
+        "z": 170.69
+      },
+      "rotation": -0.0156,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-42",
+      "type": "street_light",
+      "position": {
+        "x": 264.95,
+        "y": 0,
+        "z": 188.97
+      },
+      "rotation": -0.1026,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-43",
+      "type": "street_light",
+      "position": {
+        "x": 282.63,
+        "y": 0,
+        "z": 211.19
+      },
+      "rotation": -0.1355,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-44",
+      "type": "street_light",
+      "position": {
+        "x": 260.59,
+        "y": 0,
+        "z": 221.63
+      },
+      "rotation": -0.1735,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-45",
+      "type": "street_light",
+      "position": {
+        "x": 275.88,
+        "y": 0,
+        "z": 246.18
+      },
+      "rotation": -0.266,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-46",
+      "type": "street_light",
+      "position": {
+        "x": 250.27,
+        "y": 0,
+        "z": 258.68
+      },
+      "rotation": -0.4089,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-47",
+      "type": "street_light",
+      "position": {
+        "x": 262.23,
+        "y": 0,
+        "z": 279.66
+      },
+      "rotation": -0.5372,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-48",
+      "type": "street_light",
+      "position": {
+        "x": 234.1,
+        "y": 0,
+        "z": 283.76
+      },
+      "rotation": -0.7295,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-49",
+      "type": "street_light",
+      "position": {
+        "x": 232.83,
+        "y": 0,
+        "z": 312.99
+      },
+      "rotation": -0.8682,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-50",
+      "type": "street_light",
+      "position": {
+        "x": 208.75,
+        "y": 0,
+        "z": 306.2
+      },
+      "rotation": -0.9426,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-51",
+      "type": "street_light",
+      "position": {
+        "x": 207.69,
+        "y": 0,
+        "z": 331.29
+      },
+      "rotation": -1.0077,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-52",
+      "type": "street_light",
+      "position": {
+        "x": 178.34,
+        "y": 0,
+        "z": 324.81
+      },
+      "rotation": -1.0956,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-53",
+      "type": "street_light",
+      "position": {
+        "x": 174.08,
+        "y": 0,
+        "z": 349.24
+      },
+      "rotation": -1.1554,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-54",
+      "type": "street_light",
+      "position": {
+        "x": 146.65,
+        "y": 0,
+        "z": 338.03
+      },
+      "rotation": -1.2621,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-55",
+      "type": "street_light",
+      "position": {
+        "x": 137.82,
+        "y": 0,
+        "z": 361.53
+      },
+      "rotation": -1.3239,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-56",
+      "type": "street_light",
+      "position": {
+        "x": 111.56,
+        "y": 0,
+        "z": 346.36
+      },
+      "rotation": -1.4071,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-57",
+      "type": "street_light",
+      "position": {
+        "x": 99.54,
+        "y": 0,
+        "z": 368.41
+      },
+      "rotation": -1.4599,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-58",
+      "type": "street_light",
+      "position": {
+        "x": 76.59,
+        "y": 0,
+        "z": 349.8
+      },
+      "rotation": -1.5415,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-59",
+      "type": "street_light",
+      "position": {
+        "x": 62.83,
+        "y": 0,
+        "z": 369.97
+      },
+      "rotation": -1.6071,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-60",
+      "type": "street_light",
+      "position": {
+        "x": 44.05,
+        "y": 0,
+        "z": 348.07
+      },
+      "rotation": -1.7067,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-61",
+      "type": "street_light",
+      "position": {
+        "x": 27.18,
+        "y": 0,
+        "z": 365.71
+      },
+      "rotation": -1.7672,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-62",
+      "type": "street_light",
+      "position": {
+        "x": 12.34,
+        "y": 0,
+        "z": 341.3
+      },
+      "rotation": -1.8542,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-63",
+      "type": "street_light",
+      "position": {
+        "x": -12.48,
+        "y": 0,
+        "z": 354.19
+      },
+      "rotation": -1.943,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-64",
+      "type": "street_light",
+      "position": {
+        "x": -20.95,
+        "y": 0,
+        "z": 328.33
+      },
+      "rotation": -2.0323,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-65",
+      "type": "street_light",
+      "position": {
+        "x": -47.46,
+        "y": 0,
+        "z": 336.84
+      },
+      "rotation": -2.1129,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-66",
+      "type": "street_light",
+      "position": {
+        "x": -51.99,
+        "y": 0,
+        "z": 309.48
+      },
+      "rotation": -2.2238,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-67",
+      "type": "street_light",
+      "position": {
+        "x": -78.53,
+        "y": 0,
+        "z": 312.65
+      },
+      "rotation": -2.4088,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-68",
+      "type": "street_light",
+      "position": {
+        "x": -69.99,
+        "y": 0,
+        "z": 288.62
+      },
+      "rotation": -3.0045,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-69",
+      "type": "street_light",
+      "position": {
+        "x": -84.37,
+        "y": 0,
+        "z": 271.89
+      },
+      "rotation": 2.5373,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-70",
+      "type": "street_light",
+      "position": {
+        "x": -57.06,
+        "y": 0,
+        "z": 271.72
+      },
+      "rotation": 2.3391,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-71",
+      "type": "street_light",
+      "position": {
+        "x": -57.6,
+        "y": 0,
+        "z": 244.16
+      },
+      "rotation": 2.3833,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-72",
+      "type": "street_light",
+      "position": {
+        "x": -29.66,
+        "y": 0,
+        "z": 235.01
+      },
+      "rotation": 3.0416,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-73",
+      "type": "street_light",
+      "position": {
+        "x": -54.77,
+        "y": 0,
+        "z": 225.68
+      },
+      "rotation": -2.3429,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-74",
+      "type": "street_light",
+      "position": {
+        "x": -56.83,
+        "y": 0,
+        "z": 198.86
+      },
+      "rotation": -2.1432,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-75",
+      "type": "street_light",
+      "position": {
+        "x": -79.23,
+        "y": 0,
+        "z": 208.98
+      },
+      "rotation": -2.0884,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-76",
+      "type": "street_light",
+      "position": {
+        "x": -88.15,
+        "y": 0,
+        "z": 181.02
+      },
+      "rotation": -2.0736,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-77",
+      "type": "street_light",
+      "position": {
+        "x": -115.29,
+        "y": 0,
+        "z": 188.61
+      },
+      "rotation": -2.1218,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-78",
+      "type": "street_light",
+      "position": {
+        "x": -120.77,
+        "y": 0,
+        "z": 162.31
+      },
+      "rotation": -2.0423,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-79",
+      "type": "street_light",
+      "position": {
+        "x": -145.38,
+        "y": 0,
+        "z": 172.85
+      },
+      "rotation": -2.0144,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-80",
+      "type": "street_light",
+      "position": {
+        "x": -151.7,
+        "y": 0,
+        "z": 147.19
+      },
+      "rotation": -2.063,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-81",
+      "type": "street_light",
+      "position": {
+        "x": -176.91,
+        "y": 0,
+        "z": 155.43
+      },
+      "rotation": -2.1896,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-82",
+      "type": "street_light",
+      "position": {
+        "x": -177.43,
+        "y": 0,
+        "z": 128.59
+      },
+      "rotation": -2.3293,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-83",
+      "type": "street_light",
+      "position": {
+        "x": -205.45,
+        "y": 0,
+        "z": 129.08
+      },
+      "rotation": -2.3899,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-84",
+      "type": "street_light",
+      "position": {
+        "x": -199.28,
+        "y": 0,
+        "z": 105.62
+      },
+      "rotation": -2.4456,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-85",
+      "type": "street_light",
+      "position": {
+        "x": -227.35,
+        "y": 0,
+        "z": 101.71
+      },
+      "rotation": -2.5682,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-86",
+      "type": "street_light",
+      "position": {
+        "x": -217.8,
+        "y": 0,
+        "z": 76.66
+      },
+      "rotation": -2.7765,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-87",
+      "type": "street_light",
+      "position": {
+        "x": -238.96,
+        "y": 0,
+        "z": 57.36
+      },
+      "rotation": 2.8768,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-88",
+      "type": "street_light",
+      "position": {
+        "x": -213.4,
+        "y": 0,
+        "z": 50.44
+      },
+      "rotation": 2.5734,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-89",
+      "type": "street_light",
+      "position": {
+        "x": -219.77,
+        "y": 0,
+        "z": 24.26
+      },
+      "rotation": 2.537,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-90",
+      "type": "street_light",
+      "position": {
+        "x": -193.3,
+        "y": 0,
+        "z": 18.98
+      },
+      "rotation": 2.7367,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-91",
+      "type": "street_light",
+      "position": {
+        "x": -210.77,
+        "y": 0,
+        "z": -1.42
+      },
+      "rotation": -2.7815,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-92",
+      "type": "street_light",
+      "position": {
+        "x": -203.5,
+        "y": 0,
+        "z": -26.38
+      },
+      "rotation": -2.42,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-93",
+      "type": "street_light",
+      "position": {
+        "x": -227.62,
+        "y": 0,
+        "z": -22.26
+      },
+      "rotation": -2.3462,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-94",
+      "type": "street_light",
+      "position": {
+        "x": -228.11,
+        "y": 0,
+        "z": -51.14
+      },
+      "rotation": -2.3925,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-95",
+      "type": "street_light",
+      "position": {
+        "x": -255.9,
+        "y": 0,
+        "z": -54.93
+      },
+      "rotation": -2.675,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-96",
+      "type": "street_light",
+      "position": {
+        "x": -239.89,
+        "y": 0,
+        "z": -74.68
+      },
+      "rotation": 3.0675,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-97",
+      "type": "street_light",
+      "position": {
+        "x": -255.11,
+        "y": 0,
+        "z": -96.12
+      },
+      "rotation": 2.766,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-98",
+      "type": "street_light",
+      "position": {
+        "x": -228.17,
+        "y": 0,
+        "z": -104.87
+      },
+      "rotation": 2.6092,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-99",
+      "type": "street_light",
+      "position": {
+        "x": -237.87,
+        "y": 0,
+        "z": -127.34
+      },
+      "rotation": 2.5559,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-100",
+      "type": "street_light",
+      "position": {
+        "x": -209.27,
+        "y": 0,
+        "z": -133.23
+      },
+      "rotation": 2.5327,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-101",
+      "type": "street_light",
+      "position": {
+        "x": -214.57,
+        "y": 0,
+        "z": -161.17
+      },
+      "rotation": 2.525,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-102",
+      "type": "street_light",
+      "position": {
+        "x": -190.52,
+        "y": 0,
+        "z": -159.61
+      },
+      "rotation": 2.4765,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-103",
+      "type": "street_light",
+      "position": {
+        "x": -193.3,
+        "y": 0,
+        "z": -187.86
+      },
+      "rotation": 2.4251,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-104",
+      "type": "street_light",
+      "position": {
+        "x": -164.83,
+        "y": 0,
+        "z": -189.3
+      },
+      "rotation": 2.3964,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-105",
+      "type": "street_light",
+      "position": {
+        "x": -170.59,
+        "y": 0,
+        "z": -212.74
+      },
+      "rotation": 2.3891,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-106",
+      "type": "street_light",
+      "position": {
+        "x": -142.6,
+        "y": 0,
+        "z": -213.13
+      },
+      "rotation": 2.3933,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-107",
+      "type": "street_light",
+      "position": {
+        "x": -144.26,
+        "y": 0,
+        "z": -240.86
+      },
+      "rotation": 2.3789,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-108",
+      "type": "street_light",
+      "position": {
+        "x": -116.58,
+        "y": 0,
+        "z": -240.36
+      },
+      "rotation": 2.362,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-109",
+      "type": "street_light",
+      "position": {
+        "x": -117.75,
+        "y": 0,
+        "z": -267.68
+      },
+      "rotation": 2.3442,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-110",
+      "type": "street_light",
+      "position": {
+        "x": -91.14,
+        "y": 0,
+        "z": -265.2
+      },
+      "rotation": 2.3242,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-111",
+      "type": "street_light",
+      "position": {
+        "x": -92.66,
+        "y": 0,
+        "z": -291.16
+      },
+      "rotation": 2.2912,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-112",
+      "type": "street_light",
+      "position": {
+        "x": -63.07,
+        "y": 0,
+        "z": -289.5
+      },
+      "rotation": 2.243,
+      "scale": 1
+    },
+    {
+      "id": "dubai-marina-circuit-light-113",
+      "type": "street_light",
+      "position": {
+        "x": -63.54,
+        "y": 0,
+        "z": -314.73
+      },
+      "rotation": 2.2242,
+      "scale": 1
+    }
+  ],
+  "spawnPoints": [
+    {
+      "x": -40,
+      "y": 0,
+      "z": -320
+    }
+  ],
+  "metadata": {
+    "version": 8,
+    "generatedBy": "seed-local-data",
+    "notes": "Marina basin inside the loop; east +X reserved for Burj Khalifa, Museum of the Future, and Dubai Frame"
+  },
+  "dataAttribution": "Stylised Dubai Marina / Downtown circuit — original procedural geometry"
+}

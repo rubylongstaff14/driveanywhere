@@ -1,0 +1,19 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="Westminster Sprint route preview">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2740"/>
+      <stop offset="100%" stop-color="#0b1018"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#sky)"/>
+  <rect y="520" width="1280" height="280" fill="#121820"/>
+  <path d="M0 560 C220 540 360 600 520 580 C720 555 860 620 1040 590 C1140 575 1220 560 1280 555 L1280 800 L0 800 Z" fill="#2a3342"/>
+  <path d="M0 580 C240 555 380 615 540 595 C740 570 880 635 1060 605 C1160 590 1220 575 1280 570" fill="none" stroke="#3d4658" stroke-width="54"/>
+  <path d="M0 580 C240 555 380 615 540 595 C740 570 880 635 1060 605 C1160 590 1220 575 1280 570" fill="none" stroke="#f5a623" stroke-width="4" stroke-dasharray="18 22"/>
+  <rect x="180" y="250" width="70" height="280" fill="#6d788a"/>
+  <rect x="280" y="300" width="90" height="230" fill="#4f5a6c"/>
+  <rect x="900" y="220" width="110" height="310" fill="#7a8496"/>
+  <rect x="1040" y="280" width="80" height="250" fill="#586274"/>
+  <circle cx="640" cy="120" r="48" fill="#f5a623" opacity="0.35"/>
+  <text x="64" y="84" fill="#f5a623" font-family="monospace" font-size="28">WESTMINSTER SPRINT</text>
+</svg>

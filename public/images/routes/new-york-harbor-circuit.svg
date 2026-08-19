@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="New York Harbor Circuit route preview">
+  <defs>
+    <linearGradient id="skyNyc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2838"/>
+      <stop offset="100%" stop-color="#0a1018"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#skyNyc)"/>
+  <rect y="560" width="1280" height="240" fill="#121820"/>
+  <ellipse cx="700" cy="590" rx="340" ry="110" fill="#1a3040" opacity="0.5"/>
+  <path d="M280 560 Q640 420 980 560 Q640 680 280 560" fill="none" stroke="#3f4a55" stroke-width="52"/>
+  <path d="M280 560 Q640 420 980 560 Q640 680 280 560" fill="none" stroke="#7eb4e0" stroke-width="4" stroke-dasharray="14 18"/>
+  <rect x="420" y="220" width="70" height="340" fill="#c8c4b8"/>
+  <rect x="500" y="280" width="55" height="280" fill="#a8b0b8"/>
+  <polygon points="500,280 527,200 555,280" fill="#e8d090"/>
+  <rect x="580" y="180" width="60" height="380" fill="#c8d8e8"/>
+  <polygon points="900,520 920,400 940,520" fill="#4a8a72"/>
+  <text x="64" y="84" fill="#7eb4e0" font-family="monospace" font-size="28">NEW YORK HARBOR CIRCUIT</text>
+</svg>

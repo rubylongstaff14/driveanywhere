@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="Embankment Run route preview">
+  <defs>
+    <linearGradient id="sky2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102033"/>
+      <stop offset="100%" stop-color="#0b1018"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#sky2)"/>
+  <path d="M0 430 C300 390 500 480 780 430 C980 395 1120 450 1280 420 L1280 800 L0 800 Z" fill="#0e3a4a"/>
+  <path d="M0 470 C280 440 520 520 800 470 C1000 435 1140 490 1280 460" fill="none" stroke="#334155" stroke-width="64"/>
+  <path d="M0 470 C280 440 520 520 800 470 C1000 435 1140 490 1280 460" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="14 18"/>
+  <rect x="120" y="260" width="60" height="200" fill="#5b6a7d"/>
+  <rect x="210" y="220" width="75" height="240" fill="#475569"/>
+  <rect x="980" y="240" width="95" height="230" fill="#64748b"/>
+  <text x="64" y="84" fill="#38bdf8" font-family="monospace" font-size="28">EMBANKMENT RUN</text>
+</svg>

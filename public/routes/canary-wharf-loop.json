@@ -1,0 +1,7801 @@
+{
+  "id": "c3d4e5f6-a7b8-4012-8def-123456789012",
+  "slug": "canary-wharf-loop",
+  "name": "Canary Wharf Circuit",
+  "description": "Silverstone-style flowing lap — Maggotts–Becketts esses between towers, Hangar Straight past Canada Square, then Village and Luffield.",
+  "city": "London",
+  "country": "United Kingdom",
+  "latitude": 51.5054,
+  "longitude": -0.0235,
+  "distanceMetres": 1960,
+  "estimatedDurationSeconds": 140,
+  "difficulty": "hard",
+  "tags": [
+    "silverstone-style",
+    "flow",
+    "docklands"
+  ],
+  "thumbnail": "/images/routes/canary-wharf-loop.svg",
+  "startPosition": {
+    "x": -40,
+    "y": 0,
+    "z": -280
+  },
+  "startRotation": 1.8478,
+  "roadWidth": 16,
+  "checkpoints": [
+    {
+      "id": "canary-wharf-loop-cp-0",
+      "index": 0,
+      "position": {
+        "x": 15.54,
+        "y": 0.14,
+        "z": -297.35
+      },
+      "rotation": 1.7897,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-1",
+      "index": 1,
+      "position": {
+        "x": 154.2,
+        "y": 0.42,
+        "z": -230.39
+      },
+      "rotation": 0.7432,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-2",
+      "index": 2,
+      "position": {
+        "x": 177.71,
+        "y": 0.76,
+        "z": -90.81
+      },
+      "rotation": -0.8054,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-3",
+      "index": 3,
+      "position": {
+        "x": 176.5,
+        "y": 0.99,
+        "z": 41.95
+      },
+      "rotation": -0.3949,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-4",
+      "index": 4,
+      "position": {
+        "x": 240.92,
+        "y": 0.96,
+        "z": 187.67
+      },
+      "rotation": 0.033,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-5",
+      "index": 5,
+      "position": {
+        "x": 160,
+        "y": 0.6,
+        "z": 315
+      },
+      "rotation": -1.0962,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-6",
+      "index": 6,
+      "position": {
+        "x": 5.98,
+        "y": 0.3,
+        "z": 300.53
+      },
+      "rotation": -1.3193,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-7",
+      "index": 7,
+      "position": {
+        "x": -116.52,
+        "y": 0.2,
+        "z": 263.02
+      },
+      "rotation": -2.5192,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-8",
+      "index": 8,
+      "position": {
+        "x": -230,
+        "y": 0.04,
+        "z": 141.25
+      },
+      "rotation": -2.3467,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-9",
+      "index": 9,
+      "position": {
+        "x": -247.78,
+        "y": 0.05,
+        "z": -2.17
+      },
+      "rotation": 2.4131,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-10",
+      "index": 10,
+      "position": {
+        "x": -145.79,
+        "y": 0.31,
+        "z": -121.02
+      },
+      "rotation": 2.0696,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "canary-wharf-loop-cp-11",
+      "index": 11,
+      "position": {
+        "x": -100,
+        "y": 0.1,
+        "z": -235
+      },
+      "rotation": 2.1629,
+      "width": 16,
+      "required": true
+    }
+  ],
+  "roadPoints": [
+    {
+      "x": -40,
+      "y": 0,
+      "z": -280,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 40,
+      "y": 0.2,
+      "z": -300,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 110,
+      "y": 0.3,
+      "z": -270,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 175,
+      "y": 0.5,
+      "z": -205,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 210,
+      "y": 0.7,
+      "z": -130,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 165,
+      "y": 0.8,
+      "z": -70,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 210,
+      "y": 1,
+      "z": -10,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 175,
+      "y": 1,
+      "z": 50,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 220,
+      "y": 1.2,
+      "z": 100,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 240,
+      "y": 1,
+      "z": 170,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 230,
+      "y": 0.8,
+      "z": 255,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 160,
+      "y": 0.6,
+      "z": 315,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 75,
+      "y": 0.4,
+      "z": 335,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 10,
+      "y": 0.3,
+      "z": 300,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -40,
+      "y": 0.3,
+      "z": 335,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -95,
+      "y": 0.2,
+      "z": 290,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -145,
+      "y": 0.2,
+      "z": 225,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -200,
+      "y": 0.1,
+      "z": 170,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -255,
+      "y": 0,
+      "z": 110,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -270,
+      "y": 0,
+      "z": 35,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -225,
+      "y": 0.1,
+      "z": -25,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -175,
+      "y": 0.2,
+      "z": -55,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -160,
+      "y": 0.3,
+      "z": -110,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -110,
+      "y": 0.3,
+      "z": -145,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -145,
+      "y": 0.2,
+      "z": -195,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -100,
+      "y": 0.1,
+      "z": -235,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -45,
+      "y": 0,
+      "z": -265,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -40,
+      "y": 0,
+      "z": -280,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "canary-wharf-loop-b0",
+      "footprint": [
+        {
+          "x": -16.27,
+          "y": 0,
+          "z": -256.71
+        },
+        {
+          "x": -9.66,
+          "y": 0,
+          "z": -259.01
+        },
+        {
+          "x": -7.03,
+          "y": 0,
+          "z": -251.46
+        },
+        {
+          "x": -13.64,
+          "y": 0,
+          "z": -249.15
+        }
+      ],
+      "height": 36,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b1",
+      "footprint": [
+        {
+          "x": -40.87,
+          "y": 0,
+          "z": -323.9
+        },
+        {
+          "x": -32.19,
+          "y": 0,
+          "z": -326.93
+        },
+        {
+          "x": -28.73,
+          "y": 0,
+          "z": -317.02
+        },
+        {
+          "x": -37.41,
+          "y": 0,
+          "z": -313.99
+        }
+      ],
+      "height": 46,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b2",
+      "footprint": [
+        {
+          "x": 6.11,
+          "y": 0,
+          "z": -260.02
+        },
+        {
+          "x": 17.06,
+          "y": 0,
+          "z": -263.2
+        },
+        {
+          "x": 20.69,
+          "y": 0,
+          "z": -250.72
+        },
+        {
+          "x": 9.74,
+          "y": 0,
+          "z": -247.54
+        }
+      ],
+      "height": 56.1,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b3",
+      "footprint": [
+        {
+          "x": -17.54,
+          "y": 0,
+          "z": -337.5
+        },
+        {
+          "x": -4.48,
+          "y": 0,
+          "z": -341.29
+        },
+        {
+          "x": -2.24,
+          "y": 0,
+          "z": -333.61
+        },
+        {
+          "x": -15.3,
+          "y": 0,
+          "z": -329.82
+        }
+      ],
+      "height": 66.1,
+      "baseHeight": 0,
+      "floors": 21,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b4",
+      "footprint": [
+        {
+          "x": 28.11,
+          "y": 0,
+          "z": -271.13
+        },
+        {
+          "x": 35.07,
+          "y": 0,
+          "z": -271.92
+        },
+        {
+          "x": 36.26,
+          "y": 0,
+          "z": -261.49
+        },
+        {
+          "x": 29.3,
+          "y": 0,
+          "z": -260.69
+        }
+      ],
+      "height": 76.1,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b5",
+      "footprint": [
+        {
+          "x": 18.93,
+          "y": 0,
+          "z": -342.09
+        },
+        {
+          "x": 28.07,
+          "y": 0,
+          "z": -343.13
+        },
+        {
+          "x": 29.54,
+          "y": 0,
+          "z": -330.22
+        },
+        {
+          "x": 20.4,
+          "y": 0,
+          "z": -329.18
+        }
+      ],
+      "height": 86.2,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b6",
+      "footprint": [
+        {
+          "x": 38.27,
+          "y": 0,
+          "z": -264.23
+        },
+        {
+          "x": 49.47,
+          "y": 0,
+          "z": -262.11
+        },
+        {
+          "x": 47.99,
+          "y": 0,
+          "z": -254.25
+        },
+        {
+          "x": 36.79,
+          "y": 0,
+          "z": -256.37
+        }
+      ],
+      "height": 37.2,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b7",
+      "footprint": [
+        {
+          "x": 52.91,
+          "y": 0,
+          "z": -347.71
+        },
+        {
+          "x": 66.28,
+          "y": 0,
+          "z": -345.19
+        },
+        {
+          "x": 64.33,
+          "y": 0,
+          "z": -334.87
+        },
+        {
+          "x": 50.97,
+          "y": 0,
+          "z": -337.39
+        }
+      ],
+      "height": 47.2,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b8",
+      "footprint": [
+        {
+          "x": 61.5,
+          "y": 0,
+          "z": -267.23
+        },
+        {
+          "x": 67.86,
+          "y": 0,
+          "z": -264.31
+        },
+        {
+          "x": 62.44,
+          "y": 0,
+          "z": -252.5
+        },
+        {
+          "x": 56.08,
+          "y": 0,
+          "z": -255.42
+        }
+      ],
+      "height": 57.2,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b9",
+      "footprint": [
+        {
+          "x": 88.77,
+          "y": 0,
+          "z": -329.31
+        },
+        {
+          "x": 97.13,
+          "y": 0,
+          "z": -325.48
+        },
+        {
+          "x": 93.8,
+          "y": 0,
+          "z": -318.21
+        },
+        {
+          "x": 85.43,
+          "y": 0,
+          "z": -322.04
+        }
+      ],
+      "height": 67.3,
+      "baseHeight": 0,
+      "floors": 21,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b10",
+      "footprint": [
+        {
+          "x": 76.53,
+          "y": 0,
+          "z": -250.49
+        },
+        {
+          "x": 86.08,
+          "y": 0,
+          "z": -244.26
+        },
+        {
+          "x": 80.34,
+          "y": 0,
+          "z": -235.46
+        },
+        {
+          "x": 70.8,
+          "y": 0,
+          "z": -241.69
+        }
+      ],
+      "height": 77.3,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b11",
+      "footprint": [
+        {
+          "x": 121.92,
+          "y": 0,
+          "z": -322.07
+        },
+        {
+          "x": 133.31,
+          "y": 0,
+          "z": -314.64
+        },
+        {
+          "x": 126.21,
+          "y": 0,
+          "z": -303.75
+        },
+        {
+          "x": 114.82,
+          "y": 0,
+          "z": -311.18
+        }
+      ],
+      "height": 87.3,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b12",
+      "footprint": [
+        {
+          "x": 98.72,
+          "y": 0,
+          "z": -241.72
+        },
+        {
+          "x": 104.2,
+          "y": 0,
+          "z": -237.36
+        },
+        {
+          "x": 99.22,
+          "y": 0,
+          "z": -231.1
+        },
+        {
+          "x": 93.74,
+          "y": 0,
+          "z": -235.46
+        }
+      ],
+      "height": 38.4,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b13",
+      "footprint": [
+        {
+          "x": 142.37,
+          "y": 0,
+          "z": -298.42
+        },
+        {
+          "x": 149.57,
+          "y": 0,
+          "z": -292.7
+        },
+        {
+          "x": 143.04,
+          "y": 0,
+          "z": -284.48
+        },
+        {
+          "x": 135.84,
+          "y": 0,
+          "z": -290.2
+        }
+      ],
+      "height": 48.4,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b14",
+      "footprint": [
+        {
+          "x": 112.41,
+          "y": 0,
+          "z": -224.81
+        },
+        {
+          "x": 120.64,
+          "y": 0,
+          "z": -216.92
+        },
+        {
+          "x": 111.65,
+          "y": 0,
+          "z": -207.53
+        },
+        {
+          "x": 103.42,
+          "y": 0,
+          "z": -215.42
+        }
+      ],
+      "height": 58.4,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b15",
+      "footprint": [
+        {
+          "x": 167.67,
+          "y": 0,
+          "z": -284.04
+        },
+        {
+          "x": 177.49,
+          "y": 0,
+          "z": -274.63
+        },
+        {
+          "x": 171.96,
+          "y": 0,
+          "z": -268.85
+        },
+        {
+          "x": 162.14,
+          "y": 0,
+          "z": -278.26
+        }
+      ],
+      "height": 68.5,
+      "baseHeight": 0,
+      "floors": 21,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b16",
+      "footprint": [
+        {
+          "x": 135.24,
+          "y": 0,
+          "z": -209.29
+        },
+        {
+          "x": 139.86,
+          "y": 0,
+          "z": -204.04
+        },
+        {
+          "x": 131.98,
+          "y": 0,
+          "z": -197.1
+        },
+        {
+          "x": 127.35,
+          "y": 0,
+          "z": -202.36
+        }
+      ],
+      "height": 78.5,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b17",
+      "footprint": [
+        {
+          "x": 188.24,
+          "y": 0,
+          "z": -257.37
+        },
+        {
+          "x": 194.31,
+          "y": 0,
+          "z": -250.46
+        },
+        {
+          "x": 184.55,
+          "y": 0,
+          "z": -241.88
+        },
+        {
+          "x": 178.47,
+          "y": 0,
+          "z": -248.79
+        }
+      ],
+      "height": 88.5,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b18",
+      "footprint": [
+        {
+          "x": 142.41,
+          "y": 0,
+          "z": -188.46
+        },
+        {
+          "x": 149.09,
+          "y": 0,
+          "z": -179.22
+        },
+        {
+          "x": 142.61,
+          "y": 0,
+          "z": -174.53
+        },
+        {
+          "x": 135.93,
+          "y": 0,
+          "z": -183.77
+        }
+      ],
+      "height": 39.5,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b19",
+      "footprint": [
+        {
+          "x": 210.43,
+          "y": 0,
+          "z": -239.03
+        },
+        {
+          "x": 218.4,
+          "y": 0,
+          "z": -228.01
+        },
+        {
+          "x": 209.89,
+          "y": 0,
+          "z": -221.85
+        },
+        {
+          "x": 201.92,
+          "y": 0,
+          "z": -232.87
+        }
+      ],
+      "height": 49.6,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b20",
+      "footprint": [
+        {
+          "x": 164.92,
+          "y": 0,
+          "z": -172.2
+        },
+        {
+          "x": 168.71,
+          "y": 0,
+          "z": -166.31
+        },
+        {
+          "x": 157.77,
+          "y": 0,
+          "z": -159.28
+        },
+        {
+          "x": 153.99,
+          "y": 0,
+          "z": -165.16
+        }
+      ],
+      "height": 59.6,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b21",
+      "footprint": [
+        {
+          "x": 221.34,
+          "y": 0,
+          "z": -209.81
+        },
+        {
+          "x": 226.32,
+          "y": 0,
+          "z": -202.07
+        },
+        {
+          "x": 219.59,
+          "y": 0,
+          "z": -197.74
+        },
+        {
+          "x": 214.61,
+          "y": 0,
+          "z": -205.48
+        }
+      ],
+      "height": 69.6,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b22",
+      "footprint": [
+        {
+          "x": 168.24,
+          "y": 0,
+          "z": -151.85
+        },
+        {
+          "x": 173.12,
+          "y": 0,
+          "z": -141.54
+        },
+        {
+          "x": 163.63,
+          "y": 0,
+          "z": -137.05
+        },
+        {
+          "x": 158.75,
+          "y": 0,
+          "z": -147.35
+        }
+      ],
+      "height": 79.7,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b23",
+      "footprint": [
+        {
+          "x": 244.35,
+          "y": 0,
+          "z": -189.13
+        },
+        {
+          "x": 250.18,
+          "y": 0,
+          "z": -176.84
+        },
+        {
+          "x": 238.43,
+          "y": 0,
+          "z": -171.27
+        },
+        {
+          "x": 232.61,
+          "y": 0,
+          "z": -183.56
+        }
+      ],
+      "height": 89.7,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b24",
+      "footprint": [
+        {
+          "x": 180.39,
+          "y": 0,
+          "z": -136.83
+        },
+        {
+          "x": 180.77,
+          "y": 0,
+          "z": -129.84
+        },
+        {
+          "x": 172.78,
+          "y": 0,
+          "z": -129.41
+        },
+        {
+          "x": 172.4,
+          "y": 0,
+          "z": -136.4
+        }
+      ],
+      "height": 40.7,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b25",
+      "footprint": [
+        {
+          "x": 251.78,
+          "y": 0,
+          "z": -141.77
+        },
+        {
+          "x": 252.27,
+          "y": 0,
+          "z": -132.59
+        },
+        {
+          "x": 241.79,
+          "y": 0,
+          "z": -132.02
+        },
+        {
+          "x": 241.29,
+          "y": 0,
+          "z": -141.21
+        }
+      ],
+      "height": 50.8,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b26",
+      "footprint": [
+        {
+          "x": 179.3,
+          "y": 0,
+          "z": -138.56
+        },
+        {
+          "x": 171.64,
+          "y": 0,
+          "z": -130.12
+        },
+        {
+          "x": 162.01,
+          "y": 0,
+          "z": -138.86
+        },
+        {
+          "x": 169.67,
+          "y": 0,
+          "z": -147.3
+        }
+      ],
+      "height": 60.8,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b27",
+      "footprint": [
+        {
+          "x": 240.02,
+          "y": 0,
+          "z": -84.95
+        },
+        {
+          "x": 230.88,
+          "y": 0,
+          "z": -74.87
+        },
+        {
+          "x": 224.96,
+          "y": 0,
+          "z": -80.25
+        },
+        {
+          "x": 234.1,
+          "y": 0,
+          "z": -90.32
+        }
+      ],
+      "height": 70.8,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b28",
+      "footprint": [
+        {
+          "x": 165.89,
+          "y": 0,
+          "z": -118.27
+        },
+        {
+          "x": 160.69,
+          "y": 0,
+          "z": -113.58
+        },
+        {
+          "x": 153.66,
+          "y": 0,
+          "z": -121.39
+        },
+        {
+          "x": 158.87,
+          "y": 0,
+          "z": -126.07
+        }
+      ],
+      "height": 80.8,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b29",
+      "footprint": [
+        {
+          "x": 214.57,
+          "y": 0,
+          "z": -65.82
+        },
+        {
+          "x": 207.73,
+          "y": 0,
+          "z": -59.67
+        },
+        {
+          "x": 199.04,
+          "y": 0,
+          "z": -69.33
+        },
+        {
+          "x": 205.88,
+          "y": 0,
+          "z": -75.48
+        }
+      ],
+      "height": 90.9,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b30",
+      "footprint": [
+        {
+          "x": 132.48,
+          "y": 0,
+          "z": -89.63
+        },
+        {
+          "x": 129.35,
+          "y": 0,
+          "z": -78.66
+        },
+        {
+          "x": 121.66,
+          "y": 0,
+          "z": -80.85
+        },
+        {
+          "x": 124.78,
+          "y": 0,
+          "z": -91.82
+        }
+      ],
+      "height": 41.9,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b31",
+      "footprint": [
+        {
+          "x": 214.28,
+          "y": 0,
+          "z": -67.46
+        },
+        {
+          "x": 210.56,
+          "y": 0,
+          "z": -54.38
+        },
+        {
+          "x": 200.46,
+          "y": 0,
+          "z": -57.26
+        },
+        {
+          "x": 204.19,
+          "y": 0,
+          "z": -70.33
+        }
+      ],
+      "height": 51.9,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b32",
+      "footprint": [
+        {
+          "x": 151.08,
+          "y": 0,
+          "z": -37.6
+        },
+        {
+          "x": 155.72,
+          "y": 0,
+          "z": -32.35
+        },
+        {
+          "x": 145.98,
+          "y": 0,
+          "z": -23.74
+        },
+        {
+          "x": 141.34,
+          "y": 0,
+          "z": -28.99
+        }
+      ],
+      "height": 62,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b33",
+      "footprint": [
+        {
+          "x": 201.15,
+          "y": 0,
+          "z": -83.32
+        },
+        {
+          "x": 207.25,
+          "y": 0,
+          "z": -76.43
+        },
+        {
+          "x": 201.25,
+          "y": 0,
+          "z": -71.13
+        },
+        {
+          "x": 195.16,
+          "y": 0,
+          "z": -78.03
+        }
+      ],
+      "height": 72,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b34",
+      "footprint": [
+        {
+          "x": 163.74,
+          "y": 0,
+          "z": -14
+        },
+        {
+          "x": 172.11,
+          "y": 0,
+          "z": -6.26
+        },
+        {
+          "x": 164.98,
+          "y": 0,
+          "z": 1.45
+        },
+        {
+          "x": 156.61,
+          "y": 0,
+          "z": -6.29
+        }
+      ],
+      "height": 82,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b35",
+      "footprint": [
+        {
+          "x": 220.48,
+          "y": 0,
+          "z": -76.97
+        },
+        {
+          "x": 230.46,
+          "y": 0,
+          "z": -67.73
+        },
+        {
+          "x": 221.64,
+          "y": 0,
+          "z": -58.19
+        },
+        {
+          "x": 211.65,
+          "y": 0,
+          "z": -67.42
+        }
+      ],
+      "height": 92.1,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b36",
+      "footprint": [
+        {
+          "x": 180.05,
+          "y": 0,
+          "z": -7.79
+        },
+        {
+          "x": 182.37,
+          "y": 0,
+          "z": -1.19
+        },
+        {
+          "x": 174.83,
+          "y": 0,
+          "z": 1.47
+        },
+        {
+          "x": 172.5,
+          "y": 0,
+          "z": -5.13
+        }
+      ],
+      "height": 43.1,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b37",
+      "footprint": [
+        {
+          "x": 247.17,
+          "y": 0,
+          "z": -32.59
+        },
+        {
+          "x": 250.23,
+          "y": 0,
+          "z": -23.91
+        },
+        {
+          "x": 240.32,
+          "y": 0,
+          "z": -20.42
+        },
+        {
+          "x": 237.27,
+          "y": 0,
+          "z": -29.1
+        }
+      ],
+      "height": 53.1,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b38",
+      "footprint": [
+        {
+          "x": 179.36,
+          "y": 0,
+          "z": -16.62
+        },
+        {
+          "x": 172.77,
+          "y": 0,
+          "z": -7.31
+        },
+        {
+          "x": 162.16,
+          "y": 0,
+          "z": -14.82
+        },
+        {
+          "x": 168.74,
+          "y": 0,
+          "z": -24.13
+        }
+      ],
+      "height": 63.1,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b39",
+      "footprint": [
+        {
+          "x": 246.12,
+          "y": 0,
+          "z": 29.25
+        },
+        {
+          "x": 238.27,
+          "y": 0,
+          "z": 40.36
+        },
+        {
+          "x": 231.74,
+          "y": 0,
+          "z": 35.74
+        },
+        {
+          "x": 239.59,
+          "y": 0,
+          "z": 24.63
+        }
+      ],
+      "height": 73.2,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b40",
+      "footprint": [
+        {
+          "x": 165.32,
+          "y": 0,
+          "z": 8.63
+        },
+        {
+          "x": 160.86,
+          "y": 0,
+          "z": 14.03
+        },
+        {
+          "x": 152.76,
+          "y": 0,
+          "z": 7.34
+        },
+        {
+          "x": 157.22,
+          "y": 0,
+          "z": 1.94
+        }
+      ],
+      "height": 83.2,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b41",
+      "footprint": [
+        {
+          "x": 221.2,
+          "y": 0,
+          "z": 53.33
+        },
+        {
+          "x": 215.34,
+          "y": 0,
+          "z": 60.42
+        },
+        {
+          "x": 205.32,
+          "y": 0,
+          "z": 52.15
+        },
+        {
+          "x": 211.17,
+          "y": 0,
+          "z": 45.05
+        }
+      ],
+      "height": 93.2,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b42",
+      "footprint": [
+        {
+          "x": 139.73,
+          "y": 0,
+          "z": 59.63
+        },
+        {
+          "x": 143.27,
+          "y": 0,
+          "z": 70.47
+        },
+        {
+          "x": 135.66,
+          "y": 0,
+          "z": 72.95
+        },
+        {
+          "x": 132.12,
+          "y": 0,
+          "z": 62.11
+        }
+      ],
+      "height": 44.3,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b43",
+      "footprint": [
+        {
+          "x": 219.94,
+          "y": 0,
+          "z": 32.25
+        },
+        {
+          "x": 224.17,
+          "y": 0,
+          "z": 45.18
+        },
+        {
+          "x": 214.18,
+          "y": 0,
+          "z": 48.44
+        },
+        {
+          "x": 209.96,
+          "y": 0,
+          "z": 35.52
+        }
+      ],
+      "height": 54.3,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b44",
+      "footprint": [
+        {
+          "x": 169.97,
+          "y": 0,
+          "z": 89.52
+        },
+        {
+          "x": 175.33,
+          "y": 0,
+          "z": 94.02
+        },
+        {
+          "x": 166.98,
+          "y": 0,
+          "z": 103.98
+        },
+        {
+          "x": 161.62,
+          "y": 0,
+          "z": 99.48
+        }
+      ],
+      "height": 64.3,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b45",
+      "footprint": [
+        {
+          "x": 212.69,
+          "y": 0,
+          "z": 36.86
+        },
+        {
+          "x": 219.74,
+          "y": 0,
+          "z": 42.77
+        },
+        {
+          "x": 214.6,
+          "y": 0,
+          "z": 48.9
+        },
+        {
+          "x": 207.55,
+          "y": 0,
+          "z": 42.99
+        }
+      ],
+      "height": 74.4,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b46",
+      "footprint": [
+        {
+          "x": 182.18,
+          "y": 0,
+          "z": 109.15
+        },
+        {
+          "x": 190.35,
+          "y": 0,
+          "z": 117.1
+        },
+        {
+          "x": 183.03,
+          "y": 0,
+          "z": 124.62
+        },
+        {
+          "x": 174.86,
+          "y": 0,
+          "z": 116.67
+        }
+      ],
+      "height": 84.4,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b47",
+      "footprint": [
+        {
+          "x": 240.49,
+          "y": 0,
+          "z": 47.64
+        },
+        {
+          "x": 250.24,
+          "y": 0,
+          "z": 57.12
+        },
+        {
+          "x": 241.17,
+          "y": 0,
+          "z": 66.44
+        },
+        {
+          "x": 231.43,
+          "y": 0,
+          "z": 56.95
+        }
+      ],
+      "height": 94.4,
+      "baseHeight": 0,
+      "floors": 30,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b48",
+      "footprint": [
+        {
+          "x": 196.21,
+          "y": 0,
+          "z": 118.08
+        },
+        {
+          "x": 199.16,
+          "y": 0,
+          "z": 124.43
+        },
+        {
+          "x": 191.9,
+          "y": 0,
+          "z": 127.8
+        },
+        {
+          "x": 188.95,
+          "y": 0,
+          "z": 121.45
+        }
+      ],
+      "height": 45.4,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b49",
+      "footprint": [
+        {
+          "x": 260.62,
+          "y": 0,
+          "z": 86.92
+        },
+        {
+          "x": 264.5,
+          "y": 0,
+          "z": 95.26
+        },
+        {
+          "x": 254.98,
+          "y": 0,
+          "z": 99.69
+        },
+        {
+          "x": 251.1,
+          "y": 0,
+          "z": 91.35
+        }
+      ],
+      "height": 55.5,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b50",
+      "footprint": [
+        {
+          "x": 199.59,
+          "y": 0,
+          "z": 136.76
+        },
+        {
+          "x": 202.78,
+          "y": 0,
+          "z": 147.7
+        },
+        {
+          "x": 190.3,
+          "y": 0,
+          "z": 151.34
+        },
+        {
+          "x": 187.11,
+          "y": 0,
+          "z": 140.4
+        }
+      ],
+      "height": 65.5,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b51",
+      "footprint": [
+        {
+          "x": 277.03,
+          "y": 0,
+          "z": 113
+        },
+        {
+          "x": 280.84,
+          "y": 0,
+          "z": 126.06
+        },
+        {
+          "x": 273.16,
+          "y": 0,
+          "z": 128.3
+        },
+        {
+          "x": 269.35,
+          "y": 0,
+          "z": 115.24
+        }
+      ],
+      "height": 75.5,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b52",
+      "footprint": [
+        {
+          "x": 210.47,
+          "y": 0,
+          "z": 159.2
+        },
+        {
+          "x": 211.37,
+          "y": 0,
+          "z": 166.14
+        },
+        {
+          "x": 200.96,
+          "y": 0,
+          "z": 167.49
+        },
+        {
+          "x": 200.06,
+          "y": 0,
+          "z": 160.55
+        }
+      ],
+      "height": 85.6,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b53",
+      "footprint": [
+        {
+          "x": 281.29,
+          "y": 0,
+          "z": 148.91
+        },
+        {
+          "x": 282.47,
+          "y": 0,
+          "z": 158.04
+        },
+        {
+          "x": 269.58,
+          "y": 0,
+          "z": 159.71
+        },
+        {
+          "x": 268.39,
+          "y": 0,
+          "z": 150.58
+        }
+      ],
+      "height": 36.6,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b54",
+      "footprint": [
+        {
+          "x": 204.66,
+          "y": 0,
+          "z": 183.17
+        },
+        {
+          "x": 205.03,
+          "y": 0,
+          "z": 194.56
+        },
+        {
+          "x": 197.04,
+          "y": 0,
+          "z": 194.83
+        },
+        {
+          "x": 196.66,
+          "y": 0,
+          "z": 183.43
+        }
+      ],
+      "height": 46.6,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b55",
+      "footprint": [
+        {
+          "x": 289.32,
+          "y": 0,
+          "z": 179.27
+        },
+        {
+          "x": 289.77,
+          "y": 0,
+          "z": 192.86
+        },
+        {
+          "x": 279.28,
+          "y": 0,
+          "z": 193.21
+        },
+        {
+          "x": 278.83,
+          "y": 0,
+          "z": 179.62
+        }
+      ],
+      "height": 56.7,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b56",
+      "footprint": [
+        {
+          "x": 213.94,
+          "y": 0,
+          "z": 207.74
+        },
+        {
+          "x": 213.45,
+          "y": 0,
+          "z": 214.72
+        },
+        {
+          "x": 200.48,
+          "y": 0,
+          "z": 213.81
+        },
+        {
+          "x": 200.97,
+          "y": 0,
+          "z": 206.83
+        }
+      ],
+      "height": 66.7,
+      "baseHeight": 0,
+      "floors": 21,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b57",
+      "footprint": [
+        {
+          "x": 281.65,
+          "y": 0,
+          "z": 211.4
+        },
+        {
+          "x": 281,
+          "y": 0,
+          "z": 220.58
+        },
+        {
+          "x": 273.02,
+          "y": 0,
+          "z": 220.02
+        },
+        {
+          "x": 273.67,
+          "y": 0,
+          "z": 210.84
+        }
+      ],
+      "height": 76.7,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b58",
+      "footprint": [
+        {
+          "x": 204.54,
+          "y": 0,
+          "z": 223.48
+        },
+        {
+          "x": 201.53,
+          "y": 0,
+          "z": 234.47
+        },
+        {
+          "x": 191.41,
+          "y": 0,
+          "z": 231.7
+        },
+        {
+          "x": 194.41,
+          "y": 0,
+          "z": 220.71
+        }
+      ],
+      "height": 86.7,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b59",
+      "footprint": [
+        {
+          "x": 286.58,
+          "y": 0,
+          "z": 244.77
+        },
+        {
+          "x": 282.99,
+          "y": 0,
+          "z": 257.89
+        },
+        {
+          "x": 270.45,
+          "y": 0,
+          "z": 254.46
+        },
+        {
+          "x": 274.04,
+          "y": 0,
+          "z": 241.34
+        }
+      ],
+      "height": 37.8,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b60",
+      "footprint": [
+        {
+          "x": 204.15,
+          "y": 0,
+          "z": 241.03
+        },
+        {
+          "x": 200.3,
+          "y": 0,
+          "z": 246.88
+        },
+        {
+          "x": 193.62,
+          "y": 0,
+          "z": 242.49
+        },
+        {
+          "x": 197.46,
+          "y": 0,
+          "z": 236.64
+        }
+      ],
+      "height": 47.8,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b61",
+      "footprint": [
+        {
+          "x": 264.56,
+          "y": 0,
+          "z": 279.39
+        },
+        {
+          "x": 259.51,
+          "y": 0,
+          "z": 287.08
+        },
+        {
+          "x": 250.73,
+          "y": 0,
+          "z": 281.31
+        },
+        {
+          "x": 255.78,
+          "y": 0,
+          "z": 273.62
+        }
+      ],
+      "height": 57.8,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b62",
+      "footprint": [
+        {
+          "x": 190.89,
+          "y": 0,
+          "z": 251.73
+        },
+        {
+          "x": 182.66,
+          "y": 0,
+          "z": 259.62
+        },
+        {
+          "x": 173.66,
+          "y": 0,
+          "z": 250.24
+        },
+        {
+          "x": 181.88,
+          "y": 0,
+          "z": 242.35
+        }
+      ],
+      "height": 67.9,
+      "baseHeight": 0,
+      "floors": 21,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b63",
+      "footprint": [
+        {
+          "x": 247.77,
+          "y": 0,
+          "z": 309.4
+        },
+        {
+          "x": 237.96,
+          "y": 0,
+          "z": 318.82
+        },
+        {
+          "x": 232.42,
+          "y": 0,
+          "z": 313.05
+        },
+        {
+          "x": 242.23,
+          "y": 0,
+          "z": 303.63
+        }
+      ],
+      "height": 77.9,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b64",
+      "footprint": [
+        {
+          "x": 175,
+          "y": 0,
+          "z": 272.52
+        },
+        {
+          "x": 169.31,
+          "y": 0,
+          "z": 276.59
+        },
+        {
+          "x": 163.21,
+          "y": 0,
+          "z": 268.04
+        },
+        {
+          "x": 168.9,
+          "y": 0,
+          "z": 263.97
+        }
+      ],
+      "height": 87.9,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b65",
+      "footprint": [
+        {
+          "x": 217.47,
+          "y": 0,
+          "z": 330.12
+        },
+        {
+          "x": 209.98,
+          "y": 0,
+          "z": 335.46
+        },
+        {
+          "x": 202.43,
+          "y": 0,
+          "z": 324.88
+        },
+        {
+          "x": 209.91,
+          "y": 0,
+          "z": 319.54
+        }
+      ],
+      "height": 39,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b66",
+      "footprint": [
+        {
+          "x": 153.13,
+          "y": 0,
+          "z": 277.65
+        },
+        {
+          "x": 143.15,
+          "y": 0,
+          "z": 283.17
+        },
+        {
+          "x": 139.28,
+          "y": 0,
+          "z": 276.17
+        },
+        {
+          "x": 149.26,
+          "y": 0,
+          "z": 270.65
+        }
+      ],
+      "height": 49,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b67",
+      "footprint": [
+        {
+          "x": 195.09,
+          "y": 0,
+          "z": 351.29
+        },
+        {
+          "x": 183.19,
+          "y": 0,
+          "z": 357.87
+        },
+        {
+          "x": 178.11,
+          "y": 0,
+          "z": 348.68
+        },
+        {
+          "x": 190.01,
+          "y": 0,
+          "z": 342.1
+        }
+      ],
+      "height": 59,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b68",
+      "footprint": [
+        {
+          "x": 135.83,
+          "y": 0,
+          "z": 296.51
+        },
+        {
+          "x": 129.31,
+          "y": 0,
+          "z": 299.06
+        },
+        {
+          "x": 124.57,
+          "y": 0,
+          "z": 286.95
+        },
+        {
+          "x": 131.09,
+          "y": 0,
+          "z": 284.4
+        }
+      ],
+      "height": 69,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b69",
+      "footprint": [
+        {
+          "x": 161.58,
+          "y": 0,
+          "z": 359.24
+        },
+        {
+          "x": 153.01,
+          "y": 0,
+          "z": 362.59
+        },
+        {
+          "x": 150.1,
+          "y": 0,
+          "z": 355.14
+        },
+        {
+          "x": 158.66,
+          "y": 0,
+          "z": 351.79
+        }
+      ],
+      "height": 79.1,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b70",
+      "footprint": [
+        {
+          "x": 114.45,
+          "y": 0,
+          "z": 295.73
+        },
+        {
+          "x": 103.37,
+          "y": 0,
+          "z": 298.44
+        },
+        {
+          "x": 100.88,
+          "y": 0,
+          "z": 288.24
+        },
+        {
+          "x": 111.95,
+          "y": 0,
+          "z": 285.53
+        }
+      ],
+      "height": 89.1,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b71",
+      "footprint": [
+        {
+          "x": 135.65,
+          "y": 0,
+          "z": 377.79
+        },
+        {
+          "x": 122.44,
+          "y": 0,
+          "z": 381.02
+        },
+        {
+          "x": 119.35,
+          "y": 0,
+          "z": 368.4
+        },
+        {
+          "x": 132.56,
+          "y": 0,
+          "z": 365.17
+        }
+      ],
+      "height": 40.1,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b72",
+      "footprint": [
+        {
+          "x": 93.41,
+          "y": 0,
+          "z": 305.39
+        },
+        {
+          "x": 86.43,
+          "y": 0,
+          "z": 305.93
+        },
+        {
+          "x": 85.82,
+          "y": 0,
+          "z": 297.95
+        },
+        {
+          "x": 92.8,
+          "y": 0,
+          "z": 297.42
+        }
+      ],
+      "height": 50.2,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b73",
+      "footprint": [
+        {
+          "x": 99.95,
+          "y": 0,
+          "z": 376.65
+        },
+        {
+          "x": 90.77,
+          "y": 0,
+          "z": 377.35
+        },
+        {
+          "x": 89.97,
+          "y": 0,
+          "z": 366.88
+        },
+        {
+          "x": 99.15,
+          "y": 0,
+          "z": 366.18
+        }
+      ],
+      "height": 60.2,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b74",
+      "footprint": [
+        {
+          "x": 83.69,
+          "y": 0,
+          "z": 302.95
+        },
+        {
+          "x": 72.66,
+          "y": 0,
+          "z": 300.08
+        },
+        {
+          "x": 75.93,
+          "y": 0,
+          "z": 287.5
+        },
+        {
+          "x": 86.97,
+          "y": 0,
+          "z": 290.37
+        }
+      ],
+      "height": 70.2,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b75",
+      "footprint": [
+        {
+          "x": 64.34,
+          "y": 0,
+          "z": 381.61
+        },
+        {
+          "x": 51.18,
+          "y": 0,
+          "z": 378.18
+        },
+        {
+          "x": 53.19,
+          "y": 0,
+          "z": 370.44
+        },
+        {
+          "x": 66.36,
+          "y": 0,
+          "z": 373.87
+        }
+      ],
+      "height": 80.3,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b76",
+      "footprint": [
+        {
+          "x": 64.83,
+          "y": 0,
+          "z": 299.8
+        },
+        {
+          "x": 59.26,
+          "y": 0,
+          "z": 295.56
+        },
+        {
+          "x": 65.61,
+          "y": 0,
+          "z": 287.2
+        },
+        {
+          "x": 71.18,
+          "y": 0,
+          "z": 291.43
+        }
+      ],
+      "height": 90.3,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b77",
+      "footprint": [
+        {
+          "x": 22.43,
+          "y": 0,
+          "z": 357.44
+        },
+        {
+          "x": 15.1,
+          "y": 0,
+          "z": 351.87
+        },
+        {
+          "x": 22.97,
+          "y": 0,
+          "z": 341.52
+        },
+        {
+          "x": 30.29,
+          "y": 0,
+          "z": 347.09
+        }
+      ],
+      "height": 41.3,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b78",
+      "footprint": [
+        {
+          "x": 44.91,
+          "y": 0,
+          "z": 274.94
+        },
+        {
+          "x": 34.92,
+          "y": 0,
+          "z": 269.46
+        },
+        {
+          "x": 38.76,
+          "y": 0,
+          "z": 262.44
+        },
+        {
+          "x": 48.76,
+          "y": 0,
+          "z": 267.92
+        }
+      ],
+      "height": 51.3,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b79",
+      "footprint": [
+        {
+          "x": 5.17,
+          "y": 0,
+          "z": 349.8
+        },
+        {
+          "x": -6.76,
+          "y": 0,
+          "z": 343.27
+        },
+        {
+          "x": -1.71,
+          "y": 0,
+          "z": 334.06
+        },
+        {
+          "x": 10.22,
+          "y": 0,
+          "z": 340.59
+        }
+      ],
+      "height": 61.4,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b80",
+      "footprint": [
+        {
+          "x": -14.37,
+          "y": 0,
+          "z": 280.26
+        },
+        {
+          "x": -20.08,
+          "y": 0,
+          "z": 284.3
+        },
+        {
+          "x": -27.59,
+          "y": 0,
+          "z": 273.7
+        },
+        {
+          "x": -21.88,
+          "y": 0,
+          "z": 269.65
+        }
+      ],
+      "height": 71.4,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b81",
+      "footprint": [
+        {
+          "x": 25.72,
+          "y": 0,
+          "z": 334.95
+        },
+        {
+          "x": 18.21,
+          "y": 0,
+          "z": 340.27
+        },
+        {
+          "x": 13.59,
+          "y": 0,
+          "z": 333.74
+        },
+        {
+          "x": 21.1,
+          "y": 0,
+          "z": 328.42
+        }
+      ],
+      "height": 81.4,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b82",
+      "footprint": [
+        {
+          "x": -40.9,
+          "y": 0,
+          "z": 294.22
+        },
+        {
+          "x": -48.59,
+          "y": 0,
+          "z": 302.64
+        },
+        {
+          "x": -56.34,
+          "y": 0,
+          "z": 295.56
+        },
+        {
+          "x": -48.66,
+          "y": 0,
+          "z": 287.14
+        }
+      ],
+      "height": 91.5,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b83",
+      "footprint": [
+        {
+          "x": 22.43,
+          "y": 0,
+          "z": 350.55
+        },
+        {
+          "x": 13.26,
+          "y": 0,
+          "z": 360.59
+        },
+        {
+          "x": 3.66,
+          "y": 0,
+          "z": 351.83
+        },
+        {
+          "x": 12.83,
+          "y": 0,
+          "z": 341.78
+        }
+      ],
+      "height": 42.5,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b84",
+      "footprint": [
+        {
+          "x": -34.54,
+          "y": 0,
+          "z": 305.8
+        },
+        {
+          "x": -41.52,
+          "y": 0,
+          "z": 305.33
+        },
+        {
+          "x": -40.98,
+          "y": 0,
+          "z": 297.35
+        },
+        {
+          "x": -34,
+          "y": 0,
+          "z": 297.82
+        }
+      ],
+      "height": 52.5,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b85",
+      "footprint": [
+        {
+          "x": -38.22,
+          "y": 0,
+          "z": 377.26
+        },
+        {
+          "x": -47.4,
+          "y": 0,
+          "z": 376.65
+        },
+        {
+          "x": -46.7,
+          "y": 0,
+          "z": 366.17
+        },
+        {
+          "x": -37.52,
+          "y": 0,
+          "z": 366.79
+        }
+      ],
+      "height": 62.6,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b86",
+      "footprint": [
+        {
+          "x": -37.25,
+          "y": 0,
+          "z": 300.61
+        },
+        {
+          "x": -45.89,
+          "y": 0,
+          "z": 293.18
+        },
+        {
+          "x": -37.41,
+          "y": 0,
+          "z": 283.32
+        },
+        {
+          "x": -28.77,
+          "y": 0,
+          "z": 290.76
+        }
+      ],
+      "height": 72.6,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b87",
+      "footprint": [
+        {
+          "x": -89.25,
+          "y": 0,
+          "z": 362.73
+        },
+        {
+          "x": -99.56,
+          "y": 0,
+          "z": 353.85
+        },
+        {
+          "x": -94.34,
+          "y": 0,
+          "z": 347.79
+        },
+        {
+          "x": -84.03,
+          "y": 0,
+          "z": 356.66
+        }
+      ],
+      "height": 82.6,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b88",
+      "footprint": [
+        {
+          "x": -56.55,
+          "y": 0,
+          "z": 289.82
+        },
+        {
+          "x": -61.35,
+          "y": 0,
+          "z": 284.72
+        },
+        {
+          "x": -53.7,
+          "y": 0,
+          "z": 277.52
+        },
+        {
+          "x": -48.9,
+          "y": 0,
+          "z": 282.62
+        }
+      ],
+      "height": 92.6,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b89",
+      "footprint": [
+        {
+          "x": -107.86,
+          "y": 0,
+          "z": 339.69
+        },
+        {
+          "x": -114.17,
+          "y": 0,
+          "z": 333
+        },
+        {
+          "x": -104.71,
+          "y": 0,
+          "z": 324.08
+        },
+        {
+          "x": -98.4,
+          "y": 0,
+          "z": 330.78
+        }
+      ],
+      "height": 43.7,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b90",
+      "footprint": [
+        {
+          "x": -67.9,
+          "y": 0,
+          "z": 266.3
+        },
+        {
+          "x": -75.45,
+          "y": 0,
+          "z": 257.76
+        },
+        {
+          "x": -69.46,
+          "y": 0,
+          "z": 252.46
+        },
+        {
+          "x": -61.9,
+          "y": 0,
+          "z": 261
+        }
+      ],
+      "height": 53.7,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b91",
+      "footprint": [
+        {
+          "x": -130.65,
+          "y": 0,
+          "z": 323.27
+        },
+        {
+          "x": -139.66,
+          "y": 0,
+          "z": 313.09
+        },
+        {
+          "x": -131.8,
+          "y": 0,
+          "z": 306.13
+        },
+        {
+          "x": -122.79,
+          "y": 0,
+          "z": 316.32
+        }
+      ],
+      "height": 63.7,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b92",
+      "footprint": [
+        {
+          "x": -89.17,
+          "y": 0,
+          "z": 254.73
+        },
+        {
+          "x": -93.3,
+          "y": 0,
+          "z": 249.08
+        },
+        {
+          "x": -82.81,
+          "y": 0,
+          "z": 241.4
+        },
+        {
+          "x": -78.68,
+          "y": 0,
+          "z": 247.05
+        }
+      ],
+      "height": 73.8,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b93",
+      "footprint": [
+        {
+          "x": -143.22,
+          "y": 0,
+          "z": 295.66
+        },
+        {
+          "x": -148.66,
+          "y": 0,
+          "z": 288.24
+        },
+        {
+          "x": -142.2,
+          "y": 0,
+          "z": 283.52
+        },
+        {
+          "x": -136.77,
+          "y": 0,
+          "z": 290.94
+        }
+      ],
+      "height": 83.8,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b94",
+      "footprint": [
+        {
+          "x": -99,
+          "y": 0,
+          "z": 227.46
+        },
+        {
+          "x": -105.72,
+          "y": 0,
+          "z": 218.26
+        },
+        {
+          "x": -97.25,
+          "y": 0,
+          "z": 212.06
+        },
+        {
+          "x": -90.52,
+          "y": 0,
+          "z": 221.27
+        }
+      ],
+      "height": 93.8,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b95",
+      "footprint": [
+        {
+          "x": -166.77,
+          "y": 0,
+          "z": 278.36
+        },
+        {
+          "x": -174.79,
+          "y": 0,
+          "z": 267.38
+        },
+        {
+          "x": -164.3,
+          "y": 0,
+          "z": 259.71
+        },
+        {
+          "x": -156.27,
+          "y": 0,
+          "z": 270.69
+        }
+      ],
+      "height": 44.9,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b96",
+      "footprint": [
+        {
+          "x": -120.45,
+          "y": 0,
+          "z": 208.28
+        },
+        {
+          "x": -125.04,
+          "y": 0,
+          "z": 203
+        },
+        {
+          "x": -119.01,
+          "y": 0,
+          "z": 197.75
+        },
+        {
+          "x": -114.41,
+          "y": 0,
+          "z": 203.03
+        }
+      ],
+      "height": 54.9,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b97",
+      "footprint": [
+        {
+          "x": -173.7,
+          "y": 0,
+          "z": 256.07
+        },
+        {
+          "x": -179.74,
+          "y": 0,
+          "z": 249.13
+        },
+        {
+          "x": -171.82,
+          "y": 0,
+          "z": 242.24
+        },
+        {
+          "x": -165.78,
+          "y": 0,
+          "z": 249.18
+        }
+      ],
+      "height": 64.9,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b98",
+      "footprint": [
+        {
+          "x": -136.69,
+          "y": 0,
+          "z": 184.81
+        },
+        {
+          "x": -144.83,
+          "y": 0,
+          "z": 176.83
+        },
+        {
+          "x": -135.74,
+          "y": 0,
+          "z": 167.55
+        },
+        {
+          "x": -127.59,
+          "y": 0,
+          "z": 175.52
+        }
+      ],
+      "height": 74.9,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b99",
+      "footprint": [
+        {
+          "x": -192.59,
+          "y": 0,
+          "z": 243.44
+        },
+        {
+          "x": -202.3,
+          "y": 0,
+          "z": 233.93
+        },
+        {
+          "x": -196.7,
+          "y": 0,
+          "z": 228.21
+        },
+        {
+          "x": -186.99,
+          "y": 0,
+          "z": 237.73
+        }
+      ],
+      "height": 85,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b100",
+      "footprint": [
+        {
+          "x": -162.04,
+          "y": 0,
+          "z": 167.85
+        },
+        {
+          "x": -167.08,
+          "y": 0,
+          "z": 163
+        },
+        {
+          "x": -159.8,
+          "y": 0,
+          "z": 155.43
+        },
+        {
+          "x": -154.76,
+          "y": 0,
+          "z": 160.28
+        }
+      ],
+      "height": 36,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b101",
+      "footprint": [
+        {
+          "x": -210.84,
+          "y": 0,
+          "z": 220.19
+        },
+        {
+          "x": -217.47,
+          "y": 0,
+          "z": 213.81
+        },
+        {
+          "x": -208.46,
+          "y": 0,
+          "z": 204.44
+        },
+        {
+          "x": -201.83,
+          "y": 0,
+          "z": 210.82
+        }
+      ],
+      "height": 46,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b102",
+      "footprint": [
+        {
+          "x": -170.19,
+          "y": 0,
+          "z": 148.86
+        },
+        {
+          "x": -178.15,
+          "y": 0,
+          "z": 140.7
+        },
+        {
+          "x": -172.43,
+          "y": 0,
+          "z": 135.11
+        },
+        {
+          "x": -164.47,
+          "y": 0,
+          "z": 143.27
+        }
+      ],
+      "height": 56.1,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b103",
+      "footprint": [
+        {
+          "x": -230.06,
+          "y": 0,
+          "z": 208.86
+        },
+        {
+          "x": -239.56,
+          "y": 0,
+          "z": 199.12
+        },
+        {
+          "x": -232.05,
+          "y": 0,
+          "z": 191.79
+        },
+        {
+          "x": -222.54,
+          "y": 0,
+          "z": 201.52
+        }
+      ],
+      "height": 66.1,
+      "baseHeight": 0,
+      "floors": 21,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b104",
+      "footprint": [
+        {
+          "x": -200.27,
+          "y": 0,
+          "z": 132.25
+        },
+        {
+          "x": -205.38,
+          "y": 0,
+          "z": 127.46
+        },
+        {
+          "x": -196.49,
+          "y": 0,
+          "z": 117.97
+        },
+        {
+          "x": -191.38,
+          "y": 0,
+          "z": 122.76
+        }
+      ],
+      "height": 76.1,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b105",
+      "footprint": [
+        {
+          "x": -245.82,
+          "y": 0,
+          "z": 182.47
+        },
+        {
+          "x": -252.54,
+          "y": 0,
+          "z": 176.18
+        },
+        {
+          "x": -247.07,
+          "y": 0,
+          "z": 170.35
+        },
+        {
+          "x": -240.35,
+          "y": 0,
+          "z": 176.64
+        }
+      ],
+      "height": 86.2,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b106",
+      "footprint": [
+        {
+          "x": -208.83,
+          "y": 0,
+          "z": 113.3
+        },
+        {
+          "x": -216.56,
+          "y": 0,
+          "z": 104.92
+        },
+        {
+          "x": -208.84,
+          "y": 0,
+          "z": 97.8
+        },
+        {
+          "x": -201.11,
+          "y": 0,
+          "z": 106.18
+        }
+      ],
+      "height": 37.2,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b107",
+      "footprint": [
+        {
+          "x": -270.38,
+          "y": 0,
+          "z": 171.57
+        },
+        {
+          "x": -279.6,
+          "y": 0,
+          "z": 161.58
+        },
+        {
+          "x": -270.04,
+          "y": 0,
+          "z": 152.76
+        },
+        {
+          "x": -260.82,
+          "y": 0,
+          "z": 162.76
+        }
+      ],
+      "height": 47.2,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b108",
+      "footprint": [
+        {
+          "x": -227.3,
+          "y": 0,
+          "z": 99.26
+        },
+        {
+          "x": -230.58,
+          "y": 0,
+          "z": 93.08
+        },
+        {
+          "x": -223.52,
+          "y": 0,
+          "z": 89.33
+        },
+        {
+          "x": -220.23,
+          "y": 0,
+          "z": 95.51
+        }
+      ],
+      "height": 57.2,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b109",
+      "footprint": [
+        {
+          "x": -289.99,
+          "y": 0,
+          "z": 133.77
+        },
+        {
+          "x": -294.3,
+          "y": 0,
+          "z": 125.65
+        },
+        {
+          "x": -285.03,
+          "y": 0,
+          "z": 120.73
+        },
+        {
+          "x": -280.71,
+          "y": 0,
+          "z": 128.85
+        }
+      ],
+      "height": 67.3,
+      "baseHeight": 0,
+      "floors": 21,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b110",
+      "footprint": [
+        {
+          "x": -230.35,
+          "y": 0,
+          "z": 83.52
+        },
+        {
+          "x": -234.11,
+          "y": 0,
+          "z": 72.76
+        },
+        {
+          "x": -221.84,
+          "y": 0,
+          "z": 68.47
+        },
+        {
+          "x": -218.08,
+          "y": 0,
+          "z": 79.23
+        }
+      ],
+      "height": 77.3,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b111",
+      "footprint": [
+        {
+          "x": -306.45,
+          "y": 0,
+          "z": 111.29
+        },
+        {
+          "x": -310.94,
+          "y": 0,
+          "z": 98.45
+        },
+        {
+          "x": -303.39,
+          "y": 0,
+          "z": 95.81
+        },
+        {
+          "x": -298.9,
+          "y": 0,
+          "z": 108.65
+        }
+      ],
+      "height": 87.3,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b112",
+      "footprint": [
+        {
+          "x": -242.24,
+          "y": 0,
+          "z": 61.27
+        },
+        {
+          "x": -243.11,
+          "y": 0,
+          "z": 54.33
+        },
+        {
+          "x": -232.69,
+          "y": 0,
+          "z": 53.03
+        },
+        {
+          "x": -231.83,
+          "y": 0,
+          "z": 59.97
+        }
+      ],
+      "height": 38.4,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b113",
+      "footprint": [
+        {
+          "x": -313.11,
+          "y": 0,
+          "z": 71.22
+        },
+        {
+          "x": -314.25,
+          "y": 0,
+          "z": 62.09
+        },
+        {
+          "x": -301.35,
+          "y": 0,
+          "z": 60.48
+        },
+        {
+          "x": -300.21,
+          "y": 0,
+          "z": 69.61
+        }
+      ],
+      "height": 48.4,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b114",
+      "footprint": [
+        {
+          "x": -236.07,
+          "y": 0,
+          "z": 48.59
+        },
+        {
+          "x": -233.54,
+          "y": 0,
+          "z": 37.48
+        },
+        {
+          "x": -225.74,
+          "y": 0,
+          "z": 39.26
+        },
+        {
+          "x": -228.27,
+          "y": 0,
+          "z": 50.37
+        }
+      ],
+      "height": 58.4,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b115",
+      "footprint": [
+        {
+          "x": -318.94,
+          "y": 0,
+          "z": 30.8
+        },
+        {
+          "x": -315.92,
+          "y": 0,
+          "z": 17.54
+        },
+        {
+          "x": -305.68,
+          "y": 0,
+          "z": 19.88
+        },
+        {
+          "x": -308.71,
+          "y": 0,
+          "z": 33.14
+        }
+      ],
+      "height": 68.5,
+      "baseHeight": 0,
+      "floors": 21,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b116",
+      "footprint": [
+        {
+          "x": -238.49,
+          "y": 0,
+          "z": 29.63
+        },
+        {
+          "x": -234.46,
+          "y": 0,
+          "z": 23.9
+        },
+        {
+          "x": -223.83,
+          "y": 0,
+          "z": 31.38
+        },
+        {
+          "x": -227.85,
+          "y": 0,
+          "z": 37.1
+        }
+      ],
+      "height": 78.5,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b117",
+      "footprint": [
+        {
+          "x": -294.58,
+          "y": 0,
+          "z": -8.47
+        },
+        {
+          "x": -289.29,
+          "y": 0,
+          "z": -15.99
+        },
+        {
+          "x": -282.75,
+          "y": 0,
+          "z": -11.39
+        },
+        {
+          "x": -288.04,
+          "y": 0,
+          "z": -3.87
+        }
+      ],
+      "height": 88.5,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b118",
+      "footprint": [
+        {
+          "x": -222.42,
+          "y": 0,
+          "z": 21.63
+        },
+        {
+          "x": -214.61,
+          "y": 0,
+          "z": 13.32
+        },
+        {
+          "x": -206.96,
+          "y": 0,
+          "z": 20.51
+        },
+        {
+          "x": -214.77,
+          "y": 0,
+          "z": 28.82
+        }
+      ],
+      "height": 39.5,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b119",
+      "footprint": [
+        {
+          "x": -284.91,
+          "y": 0,
+          "z": -35.63
+        },
+        {
+          "x": -275.59,
+          "y": 0,
+          "z": -45.54
+        },
+        {
+          "x": -266.12,
+          "y": 0,
+          "z": -36.63
+        },
+        {
+          "x": -275.44,
+          "y": 0,
+          "z": -26.72
+        }
+      ],
+      "height": 49.6,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b120",
+      "footprint": [
+        {
+          "x": -207.82,
+          "y": 0,
+          "z": -0.76
+        },
+        {
+          "x": -202.63,
+          "y": 0,
+          "z": -5.46
+        },
+        {
+          "x": -197.26,
+          "y": 0,
+          "z": 0.48
+        },
+        {
+          "x": -202.46,
+          "y": 0,
+          "z": 5.17
+        }
+      ],
+      "height": 59.6,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b121",
+      "footprint": [
+        {
+          "x": -256.6,
+          "y": 0,
+          "z": -53.12
+        },
+        {
+          "x": -249.78,
+          "y": 0,
+          "z": -59.29
+        },
+        {
+          "x": -242.74,
+          "y": 0,
+          "z": -51.49
+        },
+        {
+          "x": -249.56,
+          "y": 0,
+          "z": -45.33
+        }
+      ],
+      "height": 69.6,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b122",
+      "footprint": [
+        {
+          "x": -194.08,
+          "y": 0,
+          "z": -5.52
+        },
+        {
+          "x": -183.61,
+          "y": 0,
+          "z": -10.01
+        },
+        {
+          "x": -178.48,
+          "y": 0,
+          "z": 1.94
+        },
+        {
+          "x": -188.96,
+          "y": 0,
+          "z": 6.43
+        }
+      ],
+      "height": 79.7,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b123",
+      "footprint": [
+        {
+          "x": -227.01,
+          "y": 0,
+          "z": -79.53
+        },
+        {
+          "x": -214.51,
+          "y": 0,
+          "z": -84.89
+        },
+        {
+          "x": -211.36,
+          "y": 0,
+          "z": -77.54
+        },
+        {
+          "x": -223.86,
+          "y": 0,
+          "z": -72.18
+        }
+      ],
+      "height": 89.7,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b124",
+      "footprint": [
+        {
+          "x": -165.65,
+          "y": 0,
+          "z": -25.29
+        },
+        {
+          "x": -160.15,
+          "y": 0,
+          "z": -29.61
+        },
+        {
+          "x": -153.66,
+          "y": 0,
+          "z": -21.35
+        },
+        {
+          "x": -159.17,
+          "y": 0,
+          "z": -17.03
+        }
+      ],
+      "height": 40.7,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b125",
+      "footprint": [
+        {
+          "x": -210.71,
+          "y": 0,
+          "z": -80.88
+        },
+        {
+          "x": -203.48,
+          "y": 0,
+          "z": -86.56
+        },
+        {
+          "x": -195.45,
+          "y": 0,
+          "z": -76.34
+        },
+        {
+          "x": -202.68,
+          "y": 0,
+          "z": -70.65
+        }
+      ],
+      "height": 50.8,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b126",
+      "footprint": [
+        {
+          "x": -133.6,
+          "y": 0,
+          "z": -62.77
+        },
+        {
+          "x": -131.95,
+          "y": 0,
+          "z": -74.05
+        },
+        {
+          "x": -124.03,
+          "y": 0,
+          "z": -72.89
+        },
+        {
+          "x": -125.68,
+          "y": 0,
+          "z": -61.61
+        }
+      ],
+      "height": 60.8,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b127",
+      "footprint": [
+        {
+          "x": -217.62,
+          "y": 0,
+          "z": -73.91
+        },
+        {
+          "x": -215.65,
+          "y": 0,
+          "z": -87.37
+        },
+        {
+          "x": -205.26,
+          "y": 0,
+          "z": -85.85
+        },
+        {
+          "x": -207.23,
+          "y": 0,
+          "z": -72.39
+        }
+      ],
+      "height": 70.8,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b128",
+      "footprint": [
+        {
+          "x": -139.74,
+          "y": 0,
+          "z": -88.69
+        },
+        {
+          "x": -137.92,
+          "y": 0,
+          "z": -95.45
+        },
+        {
+          "x": -125.36,
+          "y": 0,
+          "z": -92.07
+        },
+        {
+          "x": -127.18,
+          "y": 0,
+          "z": -85.31
+        }
+      ],
+      "height": 80.8,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b129",
+      "footprint": [
+        {
+          "x": -205.49,
+          "y": 0,
+          "z": -105.25
+        },
+        {
+          "x": -203.1,
+          "y": 0,
+          "z": -114.13
+        },
+        {
+          "x": -195.37,
+          "y": 0,
+          "z": -112.06
+        },
+        {
+          "x": -197.77,
+          "y": 0,
+          "z": -103.17
+        }
+      ],
+      "height": 90.9,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b130",
+      "footprint": [
+        {
+          "x": -136.43,
+          "y": 0,
+          "z": -85.98
+        },
+        {
+          "x": -126.76,
+          "y": 0,
+          "z": -92.02
+        },
+        {
+          "x": -121.2,
+          "y": 0,
+          "z": -83.12
+        },
+        {
+          "x": -130.87,
+          "y": 0,
+          "z": -77.07
+        }
+      ],
+      "height": 41.9,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b131",
+      "footprint": [
+        {
+          "x": -182.28,
+          "y": 0,
+          "z": -157.26
+        },
+        {
+          "x": -170.75,
+          "y": 0,
+          "z": -164.47
+        },
+        {
+          "x": -163.86,
+          "y": 0,
+          "z": -153.45
+        },
+        {
+          "x": -175.39,
+          "y": 0,
+          "z": -146.24
+        }
+      ],
+      "height": 51.9,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b132",
+      "footprint": [
+        {
+          "x": -117.32,
+          "y": 0,
+          "z": -102.02
+        },
+        {
+          "x": -111.06,
+          "y": 0,
+          "z": -105.14
+        },
+        {
+          "x": -107.5,
+          "y": 0,
+          "z": -97.98
+        },
+        {
+          "x": -113.76,
+          "y": 0,
+          "z": -94.86
+        }
+      ],
+      "height": 62,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b133",
+      "footprint": [
+        {
+          "x": -78.22,
+          "y": 0,
+          "z": -149.57
+        },
+        {
+          "x": -79.96,
+          "y": 0,
+          "z": -158.61
+        },
+        {
+          "x": -69.65,
+          "y": 0,
+          "z": -160.59
+        },
+        {
+          "x": -67.91,
+          "y": 0,
+          "z": -151.56
+        }
+      ],
+      "height": 72,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b134",
+      "footprint": [
+        {
+          "x": -154.76,
+          "y": 0,
+          "z": -133.74
+        },
+        {
+          "x": -156.91,
+          "y": 0,
+          "z": -144.93
+        },
+        {
+          "x": -144.14,
+          "y": 0,
+          "z": -147.39
+        },
+        {
+          "x": -141.99,
+          "y": 0,
+          "z": -136.19
+        }
+      ],
+      "height": 82,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b135",
+      "footprint": [
+        {
+          "x": -94.98,
+          "y": 0,
+          "z": -193.38
+        },
+        {
+          "x": -104.79,
+          "y": 0,
+          "z": -202.81
+        },
+        {
+          "x": -99.24,
+          "y": 0,
+          "z": -208.57
+        },
+        {
+          "x": -89.44,
+          "y": 0,
+          "z": -199.15
+        }
+      ],
+      "height": 92.1,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b136",
+      "footprint": [
+        {
+          "x": -151.52,
+          "y": 0,
+          "z": -139.32
+        },
+        {
+          "x": -156.56,
+          "y": 0,
+          "z": -144.18
+        },
+        {
+          "x": -149.29,
+          "y": 0,
+          "z": -151.75
+        },
+        {
+          "x": -144.24,
+          "y": 0,
+          "z": -146.89
+        }
+      ],
+      "height": 43.1,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b137",
+      "footprint": [
+        {
+          "x": -114.29,
+          "y": 0,
+          "z": -197.66
+        },
+        {
+          "x": -118.39,
+          "y": 0,
+          "z": -205.89
+        },
+        {
+          "x": -106.76,
+          "y": 0,
+          "z": -211.7
+        },
+        {
+          "x": -102.65,
+          "y": 0,
+          "z": -203.46
+        }
+      ],
+      "height": 53.1,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b138",
+      "footprint": [
+        {
+          "x": -180.37,
+          "y": 0,
+          "z": -163.46
+        },
+        {
+          "x": -185.46,
+          "y": 0,
+          "z": -173.67
+        },
+        {
+          "x": -178.3,
+          "y": 0,
+          "z": -177.24
+        },
+        {
+          "x": -173.21,
+          "y": 0,
+          "z": -167.04
+        }
+      ],
+      "height": 63.1,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b139",
+      "footprint": [
+        {
+          "x": -114.41,
+          "y": 0,
+          "z": -177.76
+        },
+        {
+          "x": -104.4,
+          "y": 0,
+          "z": -186.97
+        },
+        {
+          "x": -97.29,
+          "y": 0,
+          "z": -179.25
+        },
+        {
+          "x": -107.29,
+          "y": 0,
+          "z": -170.04
+        }
+      ],
+      "height": 73.2,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b140",
+      "footprint": [
+        {
+          "x": -164.91,
+          "y": 0,
+          "z": -237.49
+        },
+        {
+          "x": -159.76,
+          "y": 0,
+          "z": -242.23
+        },
+        {
+          "x": -150.95,
+          "y": 0,
+          "z": -232.67
+        },
+        {
+          "x": -156.1,
+          "y": 0,
+          "z": -227.93
+        }
+      ],
+      "height": 83.2,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b141",
+      "footprint": [
+        {
+          "x": -101.94,
+          "y": 0,
+          "z": -194.57
+        },
+        {
+          "x": -94.22,
+          "y": 0,
+          "z": -199.57
+        },
+        {
+          "x": -89.86,
+          "y": 0,
+          "z": -192.86
+        },
+        {
+          "x": -97.58,
+          "y": 0,
+          "z": -187.85
+        }
+      ],
+      "height": 93.2,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b142",
+      "footprint": [
+        {
+          "x": -145.37,
+          "y": 0,
+          "z": -259.54
+        },
+        {
+          "x": -135.81,
+          "y": 0,
+          "z": -265.75
+        },
+        {
+          "x": -130.09,
+          "y": 0,
+          "z": -256.93
+        },
+        {
+          "x": -139.66,
+          "y": 0,
+          "z": -250.73
+        }
+      ],
+      "height": 44.3,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b143",
+      "footprint": [
+        {
+          "x": -79.38,
+          "y": 0,
+          "z": -204.69
+        },
+        {
+          "x": -67.66,
+          "y": 0,
+          "z": -211.58
+        },
+        {
+          "x": -61.07,
+          "y": 0,
+          "z": -200.38
+        },
+        {
+          "x": -72.79,
+          "y": 0,
+          "z": -193.48
+        }
+      ],
+      "height": 54.3,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b144",
+      "footprint": [
+        {
+          "x": -114.26,
+          "y": 0,
+          "z": -270.49
+        },
+        {
+          "x": -108.23,
+          "y": 0,
+          "z": -274.04
+        },
+        {
+          "x": -104.17,
+          "y": 0,
+          "z": -267.14
+        },
+        {
+          "x": -110.2,
+          "y": 0,
+          "z": -263.6
+        }
+      ],
+      "height": 64.3,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b145",
+      "footprint": [
+        {
+          "x": -60.22,
+          "y": 0,
+          "z": -221.21
+        },
+        {
+          "x": -51.97,
+          "y": 0,
+          "z": -225.27
+        },
+        {
+          "x": -47.34,
+          "y": 0,
+          "z": -215.84
+        },
+        {
+          "x": -55.6,
+          "y": 0,
+          "z": -211.79
+        }
+      ],
+      "height": 74.4,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-b146",
+      "footprint": [
+        {
+          "x": -95.65,
+          "y": 0,
+          "z": -290.88
+        },
+        {
+          "x": -85.42,
+          "y": 0,
+          "z": -295.9
+        },
+        {
+          "x": -79.69,
+          "y": 0,
+          "z": -284.24
+        },
+        {
+          "x": -89.93,
+          "y": 0,
+          "z": -279.21
+        }
+      ],
+      "height": 84.4,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-0",
+      "name": "One Canada Square",
+      "footprint": [
+        {
+          "x": 59,
+          "y": 0,
+          "z": 159
+        },
+        {
+          "x": 101,
+          "y": 0,
+          "z": 159
+        },
+        {
+          "x": 101,
+          "y": 0,
+          "z": 201
+        },
+        {
+          "x": 59,
+          "y": 0,
+          "z": 201
+        }
+      ],
+      "height": 235,
+      "baseHeight": 0,
+      "floors": 67,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-1",
+      "name": "HSBC UK",
+      "footprint": [
+        {
+          "x": 111,
+          "y": 0,
+          "z": 181
+        },
+        {
+          "x": 149,
+          "y": 0,
+          "z": 181
+        },
+        {
+          "x": 149,
+          "y": 0,
+          "z": 219
+        },
+        {
+          "x": 111,
+          "y": 0,
+          "z": 219
+        }
+      ],
+      "height": 200,
+      "baseHeight": 0,
+      "floors": 57,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-2",
+      "name": "Citi",
+      "footprint": [
+        {
+          "x": 22,
+          "y": 0,
+          "z": -58
+        },
+        {
+          "x": 58,
+          "y": 0,
+          "z": -58
+        },
+        {
+          "x": 58,
+          "y": 0,
+          "z": -22
+        },
+        {
+          "x": 22,
+          "y": 0,
+          "z": -22
+        }
+      ],
+      "height": 200,
+      "baseHeight": 0,
+      "floors": 57,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-3",
+      "name": "Newfoundland Quay",
+      "footprint": [
+        {
+          "x": -96,
+          "y": 0,
+          "z": -56
+        },
+        {
+          "x": -64,
+          "y": 0,
+          "z": -56
+        },
+        {
+          "x": -64,
+          "y": 0,
+          "z": -24
+        },
+        {
+          "x": -96,
+          "y": 0,
+          "z": -24
+        }
+      ],
+      "height": 220,
+      "baseHeight": 0,
+      "floors": 63,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-4",
+      "name": "Landmark Pinnacle",
+      "footprint": [
+        {
+          "x": 6,
+          "y": 0,
+          "z": -174
+        },
+        {
+          "x": 34,
+          "y": 0,
+          "z": -174
+        },
+        {
+          "x": 34,
+          "y": 0,
+          "z": -146
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "z": -146
+        }
+      ],
+      "height": 233,
+      "baseHeight": 0,
+      "floors": 67,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-5",
+      "name": "JP Morgan",
+      "footprint": [
+        {
+          "x": -117,
+          "y": 0,
+          "z": 83
+        },
+        {
+          "x": -83,
+          "y": 0,
+          "z": 83
+        },
+        {
+          "x": -83,
+          "y": 0,
+          "z": 117
+        },
+        {
+          "x": -117,
+          "y": 0,
+          "z": 117
+        }
+      ],
+      "height": 163,
+      "baseHeight": 0,
+      "floors": 47,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-6",
+      "name": "40 Bank Street",
+      "footprint": [
+        {
+          "x": -35,
+          "y": 0,
+          "z": 145
+        },
+        {
+          "x": -5,
+          "y": 0,
+          "z": 145
+        },
+        {
+          "x": -5,
+          "y": 0,
+          "z": 175
+        },
+        {
+          "x": -35,
+          "y": 0,
+          "z": 175
+        }
+      ],
+      "height": 153,
+      "baseHeight": 0,
+      "floors": 44,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-7",
+      "name": "Novotel London Canary Wharf",
+      "footprint": [
+        {
+          "x": 136.55,
+          "y": 0,
+          "z": -174.85
+        },
+        {
+          "x": 162.55,
+          "y": 0,
+          "z": -174.85
+        },
+        {
+          "x": 162.55,
+          "y": 0,
+          "z": -138.85
+        },
+        {
+          "x": 136.55,
+          "y": 0,
+          "z": -138.85
+        }
+      ],
+      "height": 128,
+      "baseHeight": 0,
+      "floors": 37,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-8",
+      "name": "Barclays",
+      "footprint": [
+        {
+          "x": 22,
+          "y": 0,
+          "z": 42
+        },
+        {
+          "x": 58,
+          "y": 0,
+          "z": 42
+        },
+        {
+          "x": 58,
+          "y": 0,
+          "z": 78
+        },
+        {
+          "x": 22,
+          "y": 0,
+          "z": 78
+        }
+      ],
+      "height": 140,
+      "baseHeight": 0,
+      "floors": 40,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-9",
+      "name": "Morgan Stanley",
+      "footprint": [
+        {
+          "x": 74,
+          "y": 0,
+          "z": -106
+        },
+        {
+          "x": 106,
+          "y": 0,
+          "z": -106
+        },
+        {
+          "x": 106,
+          "y": 0,
+          "z": -74
+        },
+        {
+          "x": 74,
+          "y": 0,
+          "z": -74
+        }
+      ],
+      "height": 110,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "concrete_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-10",
+      "name": "South Quay Plaza",
+      "footprint": [
+        {
+          "x": -57,
+          "y": 0,
+          "z": -197
+        },
+        {
+          "x": -23,
+          "y": 0,
+          "z": -197
+        },
+        {
+          "x": -23,
+          "y": 0,
+          "z": -163
+        },
+        {
+          "x": -57,
+          "y": 0,
+          "z": -163
+        }
+      ],
+      "height": 215,
+      "baseHeight": 0,
+      "floors": 61,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-11",
+      "name": "Hampton Tower",
+      "footprint": [
+        {
+          "x": 129.41,
+          "y": 0,
+          "z": -343.58
+        },
+        {
+          "x": 157.41,
+          "y": 0,
+          "z": -343.58
+        },
+        {
+          "x": 157.41,
+          "y": 0,
+          "z": -315.58
+        },
+        {
+          "x": 129.41,
+          "y": 0,
+          "z": -315.58
+        }
+      ],
+      "height": 188,
+      "baseHeight": 0,
+      "floors": 54,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-12",
+      "name": "Wardian East",
+      "footprint": [
+        {
+          "x": 130.62,
+          "y": 0,
+          "z": -143.92
+        },
+        {
+          "x": 156.62,
+          "y": 0,
+          "z": -143.92
+        },
+        {
+          "x": 156.62,
+          "y": 0,
+          "z": -117.92
+        },
+        {
+          "x": 130.62,
+          "y": 0,
+          "z": -117.92
+        }
+      ],
+      "height": 207,
+      "baseHeight": 0,
+      "floors": 59,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-13",
+      "name": "Wardian West",
+      "footprint": [
+        {
+          "x": 238.87,
+          "y": 0,
+          "z": -87.53
+        },
+        {
+          "x": 264.87,
+          "y": 0,
+          "z": -87.53
+        },
+        {
+          "x": 264.87,
+          "y": 0,
+          "z": -61.53
+        },
+        {
+          "x": 238.87,
+          "y": 0,
+          "z": -61.53
+        }
+      ],
+      "height": 187,
+      "baseHeight": 0,
+      "floors": 53,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-14",
+      "name": "1 West India Quay",
+      "footprint": [
+        {
+          "x": 153.16,
+          "y": 0,
+          "z": 136.87
+        },
+        {
+          "x": 183.16,
+          "y": 0,
+          "z": 136.87
+        },
+        {
+          "x": 183.16,
+          "y": 0,
+          "z": 166.87
+        },
+        {
+          "x": 153.16,
+          "y": 0,
+          "z": 166.87
+        }
+      ],
+      "height": 111,
+      "baseHeight": 0,
+      "floors": 32,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-15",
+      "name": "Bank of America",
+      "footprint": [
+        {
+          "x": 238.75,
+          "y": 0,
+          "z": 312.53
+        },
+        {
+          "x": 272.75,
+          "y": 0,
+          "z": 312.53
+        },
+        {
+          "x": 272.75,
+          "y": 0,
+          "z": 342.53
+        },
+        {
+          "x": 238.75,
+          "y": 0,
+          "z": 342.53
+        }
+      ],
+      "height": 105,
+      "baseHeight": 0,
+      "floors": 30,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-16",
+      "name": "Credit Suisse",
+      "footprint": [
+        {
+          "x": 59.33,
+          "y": 0,
+          "z": 243.18
+        },
+        {
+          "x": 95.33,
+          "y": 0,
+          "z": 243.18
+        },
+        {
+          "x": 95.33,
+          "y": 0,
+          "z": 275.18
+        },
+        {
+          "x": 59.33,
+          "y": 0,
+          "z": 275.18
+        }
+      ],
+      "height": 118,
+      "baseHeight": 0,
+      "floors": 34,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-17",
+      "name": "East Wintergarden",
+      "footprint": [
+        {
+          "x": -184.66,
+          "y": 0,
+          "z": 293.66
+        },
+        {
+          "x": -144.66,
+          "y": 0,
+          "z": 293.66
+        },
+        {
+          "x": -144.66,
+          "y": 0,
+          "z": 317.66
+        },
+        {
+          "x": -184.66,
+          "y": 0,
+          "z": 317.66
+        }
+      ],
+      "height": 32,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-18",
+      "name": "7 Westferry Circus",
+      "footprint": [
+        {
+          "x": -209.92,
+          "y": 0,
+          "z": 67.22
+        },
+        {
+          "x": -177.92,
+          "y": 0,
+          "z": 67.22
+        },
+        {
+          "x": -177.92,
+          "y": 0,
+          "z": 99.22
+        },
+        {
+          "x": -209.92,
+          "y": 0,
+          "z": 99.22
+        }
+      ],
+      "height": 82,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-19",
+      "name": "Hilton London Canary Wharf",
+      "footprint": [
+        {
+          "x": -244.3,
+          "y": 0,
+          "z": -111.47
+        },
+        {
+          "x": -210.3,
+          "y": 0,
+          "z": -111.47
+        },
+        {
+          "x": -210.3,
+          "y": 0,
+          "z": -83.47
+        },
+        {
+          "x": -244.3,
+          "y": 0,
+          "z": -83.47
+        }
+      ],
+      "height": 68,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "canary-wharf-loop-landmark-20",
+      "name": "Cascades Tower",
+      "footprint": [
+        {
+          "x": -62.13,
+          "y": 0,
+          "z": -195.73
+        },
+        {
+          "x": -34.13,
+          "y": 0,
+          "z": -195.73
+        },
+        {
+          "x": -34.13,
+          "y": 0,
+          "z": -167.73
+        },
+        {
+          "x": -62.13,
+          "y": 0,
+          "z": -167.73
+        }
+      ],
+      "height": 98,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "apartment_block",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    }
+  ],
+  "sceneryObjects": [
+    {
+      "id": "canary-wharf-loop-light-0",
+      "type": "street_light",
+      "position": {
+        "x": -29.63,
+        "y": 0,
+        "z": -273.14
+      },
+      "rotation": 1.894,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-1",
+      "type": "street_light",
+      "position": {
+        "x": -20.04,
+        "y": 0,
+        "z": -296.8
+      },
+      "rotation": 1.9013,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-1",
+      "type": "tree",
+      "position": {
+        "x": -12.54,
+        "y": 0,
+        "z": -274.95
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-2",
+      "type": "street_light",
+      "position": {
+        "x": -1.5,
+        "y": 0,
+        "z": -282.72
+      },
+      "rotation": 1.875,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-3",
+      "type": "street_light",
+      "position": {
+        "x": 13.45,
+        "y": 0,
+        "z": -306.72
+      },
+      "rotation": 1.7897,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-3",
+      "type": "tree",
+      "position": {
+        "x": 18.47,
+        "y": 0,
+        "z": -284.17
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-4",
+      "type": "street_light",
+      "position": {
+        "x": 34.74,
+        "y": 0,
+        "z": -290.47
+      },
+      "rotation": 1.606,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-5",
+      "type": "street_light",
+      "position": {
+        "x": 52.35,
+        "y": 0,
+        "z": -308.08
+      },
+      "rotation": 1.3842,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-5",
+      "type": "tree",
+      "position": {
+        "x": 48.06,
+        "y": 0,
+        "z": -285.38
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-6",
+      "type": "street_light",
+      "position": {
+        "x": 67.32,
+        "y": 0,
+        "z": -283.6
+      },
+      "rotation": 1.1817,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-7",
+      "type": "street_light",
+      "position": {
+        "x": 90.39,
+        "y": 0,
+        "z": -293.77
+      },
+      "rotation": 1.0703,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-7",
+      "type": "tree",
+      "position": {
+        "x": 79.3,
+        "y": 0,
+        "z": -273.5
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-8",
+      "type": "street_light",
+      "position": {
+        "x": 95.1,
+        "y": 0,
+        "z": -268.52
+      },
+      "rotation": 0.9927,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-9",
+      "type": "street_light",
+      "position": {
+        "x": 120.63,
+        "y": 0,
+        "z": -274.14
+      },
+      "rotation": 0.9271,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-9",
+      "type": "tree",
+      "position": {
+        "x": 106.77,
+        "y": 0,
+        "z": -255.66
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-10",
+      "type": "street_light",
+      "position": {
+        "x": 123.48,
+        "y": 0,
+        "z": -247.06
+      },
+      "rotation": 0.8504,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-11",
+      "type": "street_light",
+      "position": {
+        "x": 151.48,
+        "y": 0,
+        "z": -247.1
+      },
+      "rotation": 0.7854,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-11",
+      "type": "tree",
+      "position": {
+        "x": 135.14,
+        "y": 0,
+        "z": -230.77
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-12",
+      "type": "street_light",
+      "position": {
+        "x": 147.14,
+        "y": 0,
+        "z": -223.89
+      },
+      "rotation": 0.7432,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-13",
+      "type": "street_light",
+      "position": {
+        "x": 174.83,
+        "y": 0,
+        "z": -221.11
+      },
+      "rotation": 0.6745,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-13",
+      "type": "tree",
+      "position": {
+        "x": 156.79,
+        "y": 0,
+        "z": -206.69
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-14",
+      "type": "street_light",
+      "position": {
+        "x": 170.77,
+        "y": 0,
+        "z": -194.38
+      },
+      "rotation": 0.6139,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-15",
+      "type": "street_light",
+      "position": {
+        "x": 197.59,
+        "y": 0,
+        "z": -189.06
+      },
+      "rotation": 0.5717,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-15",
+      "type": "tree",
+      "position": {
+        "x": 178.17,
+        "y": 0,
+        "z": -176.56
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-16",
+      "type": "street_light",
+      "position": {
+        "x": 187.97,
+        "y": 0,
+        "z": -168
+      },
+      "rotation": 0.5198,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-17",
+      "type": "street_light",
+      "position": {
+        "x": 213.51,
+        "y": 0,
+        "z": -159.75
+      },
+      "rotation": 0.3912,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-17",
+      "type": "tree",
+      "position": {
+        "x": 192.15,
+        "y": 0,
+        "z": -150.94
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-18",
+      "type": "street_light",
+      "position": {
+        "x": 200.45,
+        "y": 0,
+        "z": -134.4
+      },
+      "rotation": 0.0538,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-19",
+      "type": "street_light",
+      "position": {
+        "x": 215.39,
+        "y": 0,
+        "z": -116.01
+      },
+      "rotation": -0.5033,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-19",
+      "type": "tree",
+      "position": {
+        "x": 195.16,
+        "y": 0,
+        "z": -127.15
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-20",
+      "type": "street_light",
+      "position": {
+        "x": 189.45,
+        "y": 0,
+        "z": -114.34
+      },
+      "rotation": -0.7989,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-21",
+      "type": "street_light",
+      "position": {
+        "x": 188.61,
+        "y": 0,
+        "z": -87.79
+      },
+      "rotation": -0.838,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-21",
+      "type": "tree",
+      "position": {
+        "x": 173.16,
+        "y": 0,
+        "z": -104.96
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-22",
+      "type": "street_light",
+      "position": {
+        "x": 162.46,
+        "y": 0,
+        "z": -88.36
+      },
+      "rotation": -0.6455,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-23",
+      "type": "street_light",
+      "position": {
+        "x": 174.88,
+        "y": 0,
+        "z": -68.31
+      },
+      "rotation": 0.2736,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-23",
+      "type": "tree",
+      "position": {
+        "x": 152.63,
+        "y": 0,
+        "z": -62.07
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-24",
+      "type": "street_light",
+      "position": {
+        "x": 170.92,
+        "y": 0,
+        "z": -41.79
+      },
+      "rotation": 0.7845,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-25",
+      "type": "street_light",
+      "position": {
+        "x": 198.11,
+        "y": 0,
+        "z": -42.76
+      },
+      "rotation": 0.8244,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-25",
+      "type": "tree",
+      "position": {
+        "x": 182.42,
+        "y": 0,
+        "z": -25.8
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-26",
+      "type": "street_light",
+      "position": {
+        "x": 196.43,
+        "y": 0,
+        "z": -16.98
+      },
+      "rotation": 0.6586,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-27",
+      "type": "street_light",
+      "position": {
+        "x": 219.56,
+        "y": 0,
+        "z": -10.82
+      },
+      "rotation": 0.0856,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-27",
+      "type": "tree",
+      "position": {
+        "x": 196.55,
+        "y": 0,
+        "z": -8.85
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-28",
+      "type": "street_light",
+      "position": {
+        "x": 195.66,
+        "y": 0,
+        "z": 1.89
+      },
+      "rotation": -0.6156,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-29",
+      "type": "street_light",
+      "position": {
+        "x": 199.67,
+        "y": 0,
+        "z": 27.01
+      },
+      "rotation": -0.7282,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-29",
+      "type": "tree",
+      "position": {
+        "x": 182.42,
+        "y": 0,
+        "z": 11.64
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-30",
+      "type": "street_light",
+      "position": {
+        "x": 173.76,
+        "y": 0,
+        "z": 27.91
+      },
+      "rotation": -0.6324,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-31",
+      "type": "street_light",
+      "position": {
+        "x": 184.93,
+        "y": 0,
+        "z": 50.85
+      },
+      "rotation": 0.3159,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-31",
+      "type": "tree",
+      "position": {
+        "x": 162.98,
+        "y": 0,
+        "z": 58.03
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-32",
+      "type": "street_light",
+      "position": {
+        "x": 179.7,
+        "y": 0,
+        "z": 74.85
+      },
+      "rotation": 0.8284,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-33",
+      "type": "street_light",
+      "position": {
+        "x": 204.24,
+        "y": 0,
+        "z": 70.18
+      },
+      "rotation": 0.8992,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-33",
+      "type": "tree",
+      "position": {
+        "x": 189.86,
+        "y": 0,
+        "z": 88.26
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-34",
+      "type": "street_light",
+      "position": {
+        "x": 206.99,
+        "y": 0,
+        "z": 98.25
+      },
+      "rotation": 0.7237,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-35",
+      "type": "street_light",
+      "position": {
+        "x": 230.85,
+        "y": 0,
+        "z": 100.04
+      },
+      "rotation": 0.4656,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-35",
+      "type": "tree",
+      "position": {
+        "x": 210.21,
+        "y": 0,
+        "z": 110.41
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-36",
+      "type": "street_light",
+      "position": {
+        "x": 221.18,
+        "y": 0,
+        "z": 126.15
+      },
+      "rotation": 0.3445,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-37",
+      "type": "street_light",
+      "position": {
+        "x": 244.13,
+        "y": 0,
+        "z": 135.49
+      },
+      "rotation": 0.2535,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-37",
+      "type": "tree",
+      "position": {
+        "x": 221.77,
+        "y": 0,
+        "z": 141.29
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-38",
+      "type": "street_light",
+      "position": {
+        "x": 229.42,
+        "y": 0,
+        "z": 160.27
+      },
+      "rotation": 0.1288,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-39",
+      "type": "street_light",
+      "position": {
+        "x": 249.94,
+        "y": 0,
+        "z": 175.11
+      },
+      "rotation": 0.0579,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-39",
+      "type": "tree",
+      "position": {
+        "x": 226.87,
+        "y": 0,
+        "z": 176.45
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-40",
+      "type": "street_light",
+      "position": {
+        "x": 231.48,
+        "y": 0,
+        "z": 194.06
+      },
+      "rotation": 0.0142,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-41",
+      "type": "street_light",
+      "position": {
+        "x": 250.56,
+        "y": 0,
+        "z": 207.05
+      },
+      "rotation": -0.0371,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-41",
+      "type": "tree",
+      "position": {
+        "x": 227.47,
+        "y": 0,
+        "z": 206.19
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-42",
+      "type": "street_light",
+      "position": {
+        "x": 229.74,
+        "y": 0,
+        "z": 224.4
+      },
+      "rotation": -0.1542,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-43",
+      "type": "street_light",
+      "position": {
+        "x": 243.9,
+        "y": 0,
+        "z": 247.21
+      },
+      "rotation": -0.3364,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-43",
+      "type": "tree",
+      "position": {
+        "x": 222.1,
+        "y": 0,
+        "z": 239.58
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-44",
+      "type": "street_light",
+      "position": {
+        "x": 218.86,
+        "y": 0,
+        "z": 254.88
+      },
+      "rotation": -0.5811,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-45",
+      "type": "street_light",
+      "position": {
+        "x": 221.77,
+        "y": 0,
+        "z": 281.74
+      },
+      "rotation": -0.7597,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-45",
+      "type": "tree",
+      "position": {
+        "x": 205.02,
+        "y": 0,
+        "z": 265.83
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-46",
+      "type": "street_light",
+      "position": {
+        "x": 193.61,
+        "y": 0,
+        "z": 281.64
+      },
+      "rotation": -0.8846,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-47",
+      "type": "street_light",
+      "position": {
+        "x": 194.14,
+        "y": 0,
+        "z": 305.36
+      },
+      "rotation": -0.9509,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-47",
+      "type": "tree",
+      "position": {
+        "x": 180.72,
+        "y": 0,
+        "z": 286.56
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-48",
+      "type": "street_light",
+      "position": {
+        "x": 166.43,
+        "y": 0,
+        "z": 300.48
+      },
+      "rotation": -1.0379,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-49",
+      "type": "street_light",
+      "position": {
+        "x": 158.44,
+        "y": 0,
+        "z": 326.47
+      },
+      "rotation": -1.1302,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-49",
+      "type": "tree",
+      "position": {
+        "x": 148.59,
+        "y": 0,
+        "z": 305.58
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-50",
+      "type": "street_light",
+      "position": {
+        "x": 138.92,
+        "y": 0,
+        "z": 313.98
+      },
+      "rotation": -1.1975,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-51",
+      "type": "street_light",
+      "position": {
+        "x": 126.17,
+        "y": 0,
+        "z": 338.5
+      },
+      "rotation": -1.2963,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-51",
+      "type": "tree",
+      "position": {
+        "x": 119.91,
+        "y": 0,
+        "z": 316.26
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-52",
+      "type": "street_light",
+      "position": {
+        "x": 102.92,
+        "y": 0,
+        "z": 324.09
+      },
+      "rotation": -1.4062,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-53",
+      "type": "street_light",
+      "position": {
+        "x": 86.46,
+        "y": 0,
+        "z": 344.98
+      },
+      "rotation": -1.5463,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-53",
+      "type": "tree",
+      "position": {
+        "x": 85.89,
+        "y": 0,
+        "z": 321.88
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-54",
+      "type": "street_light",
+      "position": {
+        "x": 72.13,
+        "y": 0,
+        "z": 324.74
+      },
+      "rotation": -1.8256,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-55",
+      "type": "street_light",
+      "position": {
+        "x": 49.4,
+        "y": 0,
+        "z": 335.08
+      },
+      "rotation": -2.1347,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-55",
+      "type": "tree",
+      "position": {
+        "x": 61.75,
+        "y": 0,
+        "z": 315.56
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-56",
+      "type": "street_light",
+      "position": {
+        "x": 46.22,
+        "y": 0,
+        "z": 309
+      },
+      "rotation": -2.234,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-57",
+      "type": "street_light",
+      "position": {
+        "x": 17.96,
+        "y": 0,
+        "z": 312.28
+      },
+      "rotation": -2.0718,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-57",
+      "type": "tree",
+      "position": {
+        "x": 29.06,
+        "y": 0,
+        "z": 292.02
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-58",
+      "type": "street_light",
+      "position": {
+        "x": 3.59,
+        "y": 0,
+        "z": 291.24
+      },
+      "rotation": -1.3193,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-59",
+      "type": "street_light",
+      "position": {
+        "x": -1.93,
+        "y": 0,
+        "z": 317.36
+      },
+      "rotation": -0.7792,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-59",
+      "type": "tree",
+      "position": {
+        "x": -18.36,
+        "y": 0,
+        "z": 301.13
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-60",
+      "type": "street_light",
+      "position": {
+        "x": -26.1,
+        "y": 0,
+        "z": 315.45
+      },
+      "rotation": -0.7399,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-61",
+      "type": "street_light",
+      "position": {
+        "x": -34.48,
+        "y": 0,
+        "z": 344.22
+      },
+      "rotation": -1.3788,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-61",
+      "type": "tree",
+      "position": {
+        "x": -38.89,
+        "y": 0,
+        "z": 321.55
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-62",
+      "type": "street_light",
+      "position": {
+        "x": -46.86,
+        "y": 0,
+        "z": 322.63
+      },
+      "rotation": -2.0801,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-63",
+      "type": "street_light",
+      "position": {
+        "x": -74.04,
+        "y": 0,
+        "z": 325.78
+      },
+      "rotation": -2.3205,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-63",
+      "type": "tree",
+      "position": {
+        "x": -58.3,
+        "y": 0,
+        "z": 308.87
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-64",
+      "type": "street_light",
+      "position": {
+        "x": -72.52,
+        "y": 0,
+        "z": 300.06
+      },
+      "rotation": -2.3858,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-65",
+      "type": "street_light",
+      "position": {
+        "x": -98.23,
+        "y": 0,
+        "z": 300.57
+      },
+      "rotation": -2.3903,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-65",
+      "type": "tree",
+      "position": {
+        "x": -81.35,
+        "y": 0,
+        "z": 284.8
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-66",
+      "type": "street_light",
+      "position": {
+        "x": -94.97,
+        "y": 0,
+        "z": 275.55
+      },
+      "rotation": -2.4494,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-67",
+      "type": "street_light",
+      "position": {
+        "x": -120.77,
+        "y": 0,
+        "z": 273.52
+      },
+      "rotation": -2.5096,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-67",
+      "type": "tree",
+      "position": {
+        "x": -102.13,
+        "y": 0,
+        "z": 259.88
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-68",
+      "type": "street_light",
+      "position": {
+        "x": -115.66,
+        "y": 0,
+        "z": 247.65
+      },
+      "rotation": -2.5242,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-69",
+      "type": "street_light",
+      "position": {
+        "x": -141.72,
+        "y": 0,
+        "z": 244.4
+      },
+      "rotation": -2.4964,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-69",
+      "type": "tree",
+      "position": {
+        "x": -123.26,
+        "y": 0,
+        "z": 230.51
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-70",
+      "type": "street_light",
+      "position": {
+        "x": -137.76,
+        "y": 0,
+        "z": 218.7
+      },
+      "rotation": -2.4256,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-71",
+      "type": "street_light",
+      "position": {
+        "x": -167.14,
+        "y": 0,
+        "z": 215.49
+      },
+      "rotation": -2.3562,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-71",
+      "type": "tree",
+      "position": {
+        "x": -150.8,
+        "y": 0,
+        "z": 199.16
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-72",
+      "type": "street_light",
+      "position": {
+        "x": -165.55,
+        "y": 0,
+        "z": 190.25
+      },
+      "rotation": -2.3337,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-73",
+      "type": "street_light",
+      "position": {
+        "x": -190.79,
+        "y": 0,
+        "z": 192.71
+      },
+      "rotation": -2.3366,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-73",
+      "type": "tree",
+      "position": {
+        "x": -174.78,
+        "y": 0,
+        "z": 176.06
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-74",
+      "type": "street_light",
+      "position": {
+        "x": -189.22,
+        "y": 0,
+        "z": 167.33
+      },
+      "rotation": -2.3644,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-75",
+      "type": "street_light",
+      "position": {
+        "x": -214.86,
+        "y": 0,
+        "z": 168.74
+      },
+      "rotation": -2.3367,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-75",
+      "type": "tree",
+      "position": {
+        "x": -198.85,
+        "y": 0,
+        "z": 152.09
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-76",
+      "type": "street_light",
+      "position": {
+        "x": -214.72,
+        "y": 0,
+        "z": 142.55
+      },
+      "rotation": -2.3237,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-77",
+      "type": "street_light",
+      "position": {
+        "x": -241.1,
+        "y": 0,
+        "z": 143.73
+      },
+      "rotation": -2.3681,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-77",
+      "type": "tree",
+      "position": {
+        "x": -224.57,
+        "y": 0,
+        "z": 127.59
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-78",
+      "type": "street_light",
+      "position": {
+        "x": -238.31,
+        "y": 0,
+        "z": 118.02
+      },
+      "rotation": -2.4766,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-79",
+      "type": "street_light",
+      "position": {
+        "x": -266.12,
+        "y": 0,
+        "z": 109.18
+      },
+      "rotation": -2.699,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-79",
+      "type": "tree",
+      "position": {
+        "x": -245.25,
+        "y": 0,
+        "z": 99.29
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-80",
+      "type": "street_light",
+      "position": {
+        "x": -254.89,
+        "y": 0,
+        "z": 86.06
+      },
+      "rotation": -2.8052,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-81",
+      "type": "street_light",
+      "position": {
+        "x": -278.12,
+        "y": 0,
+        "z": 74.58
+      },
+      "rotation": -2.9233,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-81",
+      "type": "tree",
+      "position": {
+        "x": -255.57,
+        "y": 0,
+        "z": 69.58
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-82",
+      "type": "street_light",
+      "position": {
+        "x": -261.68,
+        "y": 0,
+        "z": 55.1
+      },
+      "rotation": -3.0718,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-83",
+      "type": "street_light",
+      "position": {
+        "x": -279.36,
+        "y": 0,
+        "z": 32.86
+      },
+      "rotation": 2.9171,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-83",
+      "type": "tree",
+      "position": {
+        "x": -256.84,
+        "y": 0,
+        "z": 38
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-84",
+      "type": "street_light",
+      "position": {
+        "x": -255.96,
+        "y": 0,
+        "z": 25.16
+      },
+      "rotation": 2.6483,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-85",
+      "type": "street_light",
+      "position": {
+        "x": -262.77,
+        "y": 0,
+        "z": 0.79
+      },
+      "rotation": 2.4831,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-85",
+      "type": "tree",
+      "position": {
+        "x": -244.5,
+        "y": 0,
+        "z": 14.92
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-86",
+      "type": "street_light",
+      "position": {
+        "x": -236.91,
+        "y": 0,
+        "z": 0.18
+      },
+      "rotation": 2.3869,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-87",
+      "type": "street_light",
+      "position": {
+        "x": -235.13,
+        "y": 0,
+        "z": -28.63
+      },
+      "rotation": 2.3314,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-87",
+      "type": "tree",
+      "position": {
+        "x": -219.2,
+        "y": 0,
+        "z": -11.89
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-88",
+      "type": "street_light",
+      "position": {
+        "x": -209.26,
+        "y": 0,
+        "z": -24.61
+      },
+      "rotation": 2.0857,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-89",
+      "type": "street_light",
+      "position": {
+        "x": -201.87,
+        "y": 0,
+        "z": -49.15
+      },
+      "rotation": 1.9716,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-89",
+      "type": "tree",
+      "position": {
+        "x": -192.86,
+        "y": 0,
+        "z": -27.88
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-90",
+      "type": "street_light",
+      "position": {
+        "x": -178.31,
+        "y": 0,
+        "z": -39.38
+      },
+      "rotation": 2.1406,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-91",
+      "type": "street_light",
+      "position": {
+        "x": -180.27,
+        "y": 0,
+        "z": -65.2
+      },
+      "rotation": 2.771,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-91",
+      "type": "tree",
+      "position": {
+        "x": -158.74,
+        "y": 0,
+        "z": -56.83
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-92",
+      "type": "street_light",
+      "position": {
+        "x": -158.42,
+        "y": 0,
+        "z": -76.76
+      },
+      "rotation": 3.026,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-93",
+      "type": "street_light",
+      "position": {
+        "x": -174.17,
+        "y": 0,
+        "z": -101.58
+      },
+      "rotation": 2.8786,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-93",
+      "type": "tree",
+      "position": {
+        "x": -151.86,
+        "y": 0,
+        "z": -95.58
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-94",
+      "type": "street_light",
+      "position": {
+        "x": -150.59,
+        "y": 0,
+        "z": -106.22
+      },
+      "rotation": 2.3452,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-95",
+      "type": "street_light",
+      "position": {
+        "x": -145.52,
+        "y": 0,
+        "z": -131.96
+      },
+      "rotation": 2.0325,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-95",
+      "type": "tree",
+      "position": {
+        "x": -135.23,
+        "y": 0,
+        "z": -111.27
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-96",
+      "type": "street_light",
+      "position": {
+        "x": -123.05,
+        "y": 0,
+        "z": -121.4
+      },
+      "rotation": 2.032,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-97",
+      "type": "street_light",
+      "position": {
+        "x": -119.51,
+        "y": 0,
+        "z": -146.6
+      },
+      "rotation": 2.6523,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-97",
+      "type": "tree",
+      "position": {
+        "x": -99.12,
+        "y": 0,
+        "z": -135.74
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-98",
+      "type": "street_light",
+      "position": {
+        "x": -108.83,
+        "y": 0,
+        "z": -164.71
+      },
+      "rotation": -2.4357,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-99",
+      "type": "street_light",
+      "position": {
+        "x": -133.84,
+        "y": 0,
+        "z": -162.77
+      },
+      "rotation": -2.3364,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-99",
+      "type": "tree",
+      "position": {
+        "x": -117.83,
+        "y": 0,
+        "z": -179.42
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "canary-wharf-loop-light-100",
+      "type": "street_light",
+      "position": {
+        "x": -133.41,
+        "y": 0,
+        "z": -190.2
+      },
+      "rotation": -2.528,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-101",
+      "type": "street_light",
+      "position": {
+        "x": -151.26,
+        "y": 0,
+        "z": -205.97
+      },
+      "rotation": 2.6362,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-101",
+      "type": "tree",
+      "position": {
+        "x": -131.04,
+        "y": 0,
+        "z": -194.79
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-102",
+      "type": "street_light",
+      "position": {
+        "x": -125.76,
+        "y": 0,
+        "z": -205.93
+      },
+      "rotation": 2.2559,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-103",
+      "type": "street_light",
+      "position": {
+        "x": -121.14,
+        "y": 0,
+        "z": -232.65
+      },
+      "rotation": 2.146,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-103",
+      "type": "tree",
+      "position": {
+        "x": -108.57,
+        "y": 0,
+        "z": -213.26
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "canary-wharf-loop-light-104",
+      "type": "street_light",
+      "position": {
+        "x": -98.39,
+        "y": 0,
+        "z": -224.49
+      },
+      "rotation": 2.1588,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-105",
+      "type": "street_light",
+      "position": {
+        "x": -92.62,
+        "y": 0,
+        "z": -250.76
+      },
+      "rotation": 2.0759,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-105",
+      "type": "tree",
+      "position": {
+        "x": -81.44,
+        "y": 0,
+        "z": -230.55
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "canary-wharf-loop-light-106",
+      "type": "street_light",
+      "position": {
+        "x": -65.77,
+        "y": 0,
+        "z": -242.95
+      },
+      "rotation": 2.0272,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-light-107",
+      "type": "street_light",
+      "position": {
+        "x": -58.2,
+        "y": 0,
+        "z": -268.2
+      },
+      "rotation": 2.063,
+      "scale": 1
+    },
+    {
+      "id": "canary-wharf-loop-tree-107",
+      "type": "tree",
+      "position": {
+        "x": -47.28,
+        "y": 0,
+        "z": -247.85
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "canary-wharf-loop-light-108",
+      "type": "street_light",
+      "position": {
+        "x": -31.08,
+        "y": 0,
+        "z": -266.76
+      },
+      "rotation": 2.7058,
+      "scale": 1
+    }
+  ],
+  "spawnPoints": [
+    {
+      "x": -40,
+      "y": 0,
+      "z": -280
+    }
+  ],
+  "metadata": {
+    "version": 8,
+    "generatedBy": "seed-local-data",
+    "notes": "Silverstone-inspired docklands lap with tower viewing on Hangar Straight"
+  },
+  "dataAttribution": "© OpenStreetMap contributors"
+}

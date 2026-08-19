@@ -1,0 +1,7155 @@
+{
+  "id": "f2a3b4c5-d6e7-4890-b345-678901abcdef",
+  "slug": "new-york-harbor-circuit",
+  "name": "New York Harbor Circuit",
+  "description": "Street GP fantasy — Times Square hairpin, Midtown canyon, Hudson riverside blast past Liberty, then climb Hudson Yards.",
+  "city": "New York",
+  "country": "United States",
+  "latitude": 40.758,
+  "longitude": -73.9855,
+  "distanceMetres": 1764,
+  "estimatedDurationSeconds": 126,
+  "difficulty": "hard",
+  "tags": [
+    "street",
+    "harbor",
+    "midtown",
+    "landmarks"
+  ],
+  "thumbnail": "/images/routes/new-york-harbor-circuit.svg",
+  "startPosition": {
+    "x": -60,
+    "y": 0,
+    "z": -280
+  },
+  "startRotation": 1.8478,
+  "roadWidth": 16,
+  "checkpoints": [
+    {
+      "id": "new-york-harbor-circuit-cp-0",
+      "index": 0,
+      "position": {
+        "x": -11.11,
+        "y": 0,
+        "z": -295.73
+      },
+      "rotation": 1.8255,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-1",
+      "index": 1,
+      "position": {
+        "x": 103.66,
+        "y": 0.62,
+        "z": -257.47
+      },
+      "rotation": 0.7854,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-2",
+      "index": 2,
+      "position": {
+        "x": 106.76,
+        "y": 0.98,
+        "z": -156.85
+      },
+      "rotation": -0.6992,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-3",
+      "index": 3,
+      "position": {
+        "x": 168.77,
+        "y": 1.61,
+        "z": -64.36
+      },
+      "rotation": 0.4561,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-4",
+      "index": 4,
+      "position": {
+        "x": 199.09,
+        "y": 2.32,
+        "z": 57.45
+      },
+      "rotation": 0.0789,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-5",
+      "index": 5,
+      "position": {
+        "x": 181.93,
+        "y": 3.04,
+        "z": 185.69
+      },
+      "rotation": -0.5236,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-6",
+      "index": 6,
+      "position": {
+        "x": 92.54,
+        "y": 3.68,
+        "z": 268.96
+      },
+      "rotation": -1.0213,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-7",
+      "index": 7,
+      "position": {
+        "x": -29.47,
+        "y": 4.46,
+        "z": 278.68
+      },
+      "rotation": -2.0686,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-8",
+      "index": 8,
+      "position": {
+        "x": -50,
+        "y": 4.44,
+        "z": 212.5
+      },
+      "rotation": -1.0282,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-9",
+      "index": 9,
+      "position": {
+        "x": -147.9,
+        "y": 5.41,
+        "z": 187.47
+      },
+      "rotation": 2.7133,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-10",
+      "index": 10,
+      "position": {
+        "x": -162.42,
+        "y": 6.43,
+        "z": 87.58
+      },
+      "rotation": -2.2509,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-11",
+      "index": 11,
+      "position": {
+        "x": -201.66,
+        "y": 7.55,
+        "z": -25
+      },
+      "rotation": 2.6291,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-12",
+      "index": 12,
+      "position": {
+        "x": -200,
+        "y": 3,
+        "z": -140
+      },
+      "rotation": 2.9275,
+      "width": 16,
+      "required": true
+    },
+    {
+      "id": "new-york-harbor-circuit-cp-13",
+      "index": 13,
+      "position": {
+        "x": -117.12,
+        "y": 0.8,
+        "z": -234.03
+      },
+      "rotation": 2.3418,
+      "width": 16,
+      "required": true
+    }
+  ],
+  "roadPoints": [
+    {
+      "x": -60,
+      "y": 0,
+      "z": -280,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 20,
+      "y": 0,
+      "z": -300,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 90,
+      "y": 0.5,
+      "z": -270,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 140,
+      "y": 1,
+      "z": -200,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 100,
+      "y": 1,
+      "z": -140,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 160,
+      "y": 1.5,
+      "z": -80,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 190,
+      "y": 2,
+      "z": 0,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 200,
+      "y": 2.5,
+      "z": 90,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 185,
+      "y": 3,
+      "z": 180,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 120,
+      "y": 3.5,
+      "z": 250,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": 40,
+      "y": 4,
+      "z": 290,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -40,
+      "y": 4.5,
+      "z": 270,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -20,
+      "y": 4,
+      "z": 200,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -90,
+      "y": 5,
+      "z": 230,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -150,
+      "y": 5.5,
+      "z": 200,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -120,
+      "y": 5,
+      "z": 130,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -180,
+      "y": 7,
+      "z": 70,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 18,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -210,
+      "y": 8,
+      "z": 0,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -180,
+      "y": 6,
+      "z": -70,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -200,
+      "y": 3,
+      "z": -140,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -150,
+      "y": 1.5,
+      "z": -200,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -100,
+      "y": 0.5,
+      "z": -250,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 24,
+      "surfaceType": "asphalt"
+    },
+    {
+      "x": -60,
+      "y": 0,
+      "z": -280,
+      "width": 16,
+      "banking": 0,
+      "speedRecommendation": 14,
+      "surfaceType": "asphalt"
+    }
+  ],
+  "buildings": [
+    {
+      "id": "new-york-harbor-circuit-b0",
+      "footprint": [
+        {
+          "x": -36.27,
+          "y": 0,
+          "z": -256.71
+        },
+        {
+          "x": -29.66,
+          "y": 0,
+          "z": -259.01
+        },
+        {
+          "x": -27.03,
+          "y": 0,
+          "z": -251.46
+        },
+        {
+          "x": -33.64,
+          "y": 0,
+          "z": -249.15
+        }
+      ],
+      "height": 18,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b1",
+      "footprint": [
+        {
+          "x": -60.87,
+          "y": 0,
+          "z": -323.9
+        },
+        {
+          "x": -52.19,
+          "y": 0,
+          "z": -326.93
+        },
+        {
+          "x": -48.73,
+          "y": 0,
+          "z": -317.02
+        },
+        {
+          "x": -57.41,
+          "y": 0,
+          "z": -313.99
+        }
+      ],
+      "height": 25.5,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b2",
+      "footprint": [
+        {
+          "x": -19.75,
+          "y": 0,
+          "z": -258.11
+        },
+        {
+          "x": -8.87,
+          "y": 0,
+          "z": -261.52
+        },
+        {
+          "x": -4.98,
+          "y": 0,
+          "z": -249.12
+        },
+        {
+          "x": -15.86,
+          "y": 0,
+          "z": -245.71
+        }
+      ],
+      "height": 33,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b3",
+      "footprint": [
+        {
+          "x": -45.06,
+          "y": 0,
+          "z": -335.06
+        },
+        {
+          "x": -32.08,
+          "y": 0,
+          "z": -339.14
+        },
+        {
+          "x": -29.69,
+          "y": 0,
+          "z": -331.5
+        },
+        {
+          "x": -42.66,
+          "y": 0,
+          "z": -327.43
+        }
+      ],
+      "height": 40.4,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b4",
+      "footprint": [
+        {
+          "x": 3.49,
+          "y": 0,
+          "z": -270.23
+        },
+        {
+          "x": 10.38,
+          "y": 0,
+          "z": -271.43
+        },
+        {
+          "x": 12.19,
+          "y": 0,
+          "z": -261.09
+        },
+        {
+          "x": 5.29,
+          "y": 0,
+          "z": -259.89
+        }
+      ],
+      "height": 47.9,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b5",
+      "footprint": [
+        {
+          "x": -9.9,
+          "y": 0,
+          "z": -340.52
+        },
+        {
+          "x": -0.84,
+          "y": 0,
+          "z": -342.11
+        },
+        {
+          "x": 1.4,
+          "y": 0,
+          "z": -329.3
+        },
+        {
+          "x": -7.67,
+          "y": 0,
+          "z": -327.72
+        }
+      ],
+      "height": 55.4,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b6",
+      "footprint": [
+        {
+          "x": 15.3,
+          "y": 0,
+          "z": -264.35
+        },
+        {
+          "x": 26.62,
+          "y": 0,
+          "z": -262.97
+        },
+        {
+          "x": 25.65,
+          "y": 0,
+          "z": -255.03
+        },
+        {
+          "x": 14.33,
+          "y": 0,
+          "z": -256.41
+        }
+      ],
+      "height": 18.9,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b7",
+      "footprint": [
+        {
+          "x": 24.53,
+          "y": 0,
+          "z": -348.61
+        },
+        {
+          "x": 38.03,
+          "y": 0,
+          "z": -346.95
+        },
+        {
+          "x": 36.75,
+          "y": 0,
+          "z": -336.53
+        },
+        {
+          "x": 23.25,
+          "y": 0,
+          "z": -338.19
+        }
+      ],
+      "height": 26.4,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b8",
+      "footprint": [
+        {
+          "x": 38.74,
+          "y": 0,
+          "z": -268.82
+        },
+        {
+          "x": 45.27,
+          "y": 0,
+          "z": -266.3
+        },
+        {
+          "x": 40.58,
+          "y": 0,
+          "z": -254.17
+        },
+        {
+          "x": 34.06,
+          "y": 0,
+          "z": -256.7
+        }
+      ],
+      "height": 33.8,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b9",
+      "footprint": [
+        {
+          "x": 62.18,
+          "y": 0,
+          "z": -332.45
+        },
+        {
+          "x": 70.76,
+          "y": 0,
+          "z": -329.13
+        },
+        {
+          "x": 67.87,
+          "y": 0,
+          "z": -321.67
+        },
+        {
+          "x": 59.29,
+          "y": 0,
+          "z": -324.99
+        }
+      ],
+      "height": 41.3,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b10",
+      "footprint": [
+        {
+          "x": 48.99,
+          "y": 0,
+          "z": -255.94
+        },
+        {
+          "x": 58.78,
+          "y": 0,
+          "z": -250.1
+        },
+        {
+          "x": 53.4,
+          "y": 0,
+          "z": -241.08
+        },
+        {
+          "x": 43.61,
+          "y": 0,
+          "z": -246.92
+        }
+      ],
+      "height": 48.8,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b11",
+      "footprint": [
+        {
+          "x": 91.48,
+          "y": 0,
+          "z": -329.28
+        },
+        {
+          "x": 103.16,
+          "y": 0,
+          "z": -322.31
+        },
+        {
+          "x": 96.5,
+          "y": 0,
+          "z": -311.15
+        },
+        {
+          "x": 84.82,
+          "y": 0,
+          "z": -318.12
+        }
+      ],
+      "height": 56.3,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b12",
+      "footprint": [
+        {
+          "x": 68.45,
+          "y": 0,
+          "z": -249.56
+        },
+        {
+          "x": 73.83,
+          "y": 0,
+          "z": -245.08
+        },
+        {
+          "x": 68.71,
+          "y": 0,
+          "z": -238.93
+        },
+        {
+          "x": 63.33,
+          "y": 0,
+          "z": -243.4
+        }
+      ],
+      "height": 19.8,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b13",
+      "footprint": [
+        {
+          "x": 113.35,
+          "y": 0,
+          "z": -305.27
+        },
+        {
+          "x": 120.42,
+          "y": 0,
+          "z": -299.39
+        },
+        {
+          "x": 113.71,
+          "y": 0,
+          "z": -291.32
+        },
+        {
+          "x": 106.64,
+          "y": 0,
+          "z": -297.2
+        }
+      ],
+      "height": 27.2,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b14",
+      "footprint": [
+        {
+          "x": 80.02,
+          "y": 0,
+          "z": -233.71
+        },
+        {
+          "x": 87.84,
+          "y": 0,
+          "z": -225.42
+        },
+        {
+          "x": 78.38,
+          "y": 0,
+          "z": -216.5
+        },
+        {
+          "x": 70.56,
+          "y": 0,
+          "z": -224.79
+        }
+      ],
+      "height": 34.7,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b15",
+      "footprint": [
+        {
+          "x": 138.18,
+          "y": 0,
+          "z": -290.1
+        },
+        {
+          "x": 147.51,
+          "y": 0,
+          "z": -280.21
+        },
+        {
+          "x": 141.69,
+          "y": 0,
+          "z": -274.72
+        },
+        {
+          "x": 132.36,
+          "y": 0,
+          "z": -284.61
+        }
+      ],
+      "height": 42.2,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b16",
+      "footprint": [
+        {
+          "x": 97.35,
+          "y": 0,
+          "z": -222.42
+        },
+        {
+          "x": 101.62,
+          "y": 0,
+          "z": -216.87
+        },
+        {
+          "x": 93.3,
+          "y": 0,
+          "z": -210.47
+        },
+        {
+          "x": 89.03,
+          "y": 0,
+          "z": -216.02
+        }
+      ],
+      "height": 49.7,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b17",
+      "footprint": [
+        {
+          "x": 106.16,
+          "y": 0,
+          "z": -206.54
+        },
+        {
+          "x": 110.02,
+          "y": 0,
+          "z": -198.19
+        },
+        {
+          "x": 98.21,
+          "y": 0,
+          "z": -192.74
+        },
+        {
+          "x": 94.36,
+          "y": 0,
+          "z": -201.09
+        }
+      ],
+      "height": 57.2,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b18",
+      "footprint": [
+        {
+          "x": 107.71,
+          "y": 0,
+          "z": -211.15
+        },
+        {
+          "x": 102.95,
+          "y": 0,
+          "z": -200.79
+        },
+        {
+          "x": 95.68,
+          "y": 0,
+          "z": -204.13
+        },
+        {
+          "x": 100.44,
+          "y": 0,
+          "z": -214.49
+        }
+      ],
+      "height": 20.6,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b19",
+      "footprint": [
+        {
+          "x": 102.52,
+          "y": 0,
+          "z": -205.9
+        },
+        {
+          "x": 92.67,
+          "y": 0,
+          "z": -196.52
+        },
+        {
+          "x": 85.43,
+          "y": 0,
+          "z": -204.13
+        },
+        {
+          "x": 95.28,
+          "y": 0,
+          "z": -213.5
+        }
+      ],
+      "height": 28.1,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b20",
+      "footprint": [
+        {
+          "x": 154.03,
+          "y": 0,
+          "z": -147.03
+        },
+        {
+          "x": 148.96,
+          "y": 0,
+          "z": -142.21
+        },
+        {
+          "x": 139.99,
+          "y": 0,
+          "z": -151.62
+        },
+        {
+          "x": 145.06,
+          "y": 0,
+          "z": -156.45
+        }
+      ],
+      "height": 35.6,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b21",
+      "footprint": [
+        {
+          "x": 84.62,
+          "y": 0,
+          "z": -181.48
+        },
+        {
+          "x": 78.7,
+          "y": 0,
+          "z": -174.44
+        },
+        {
+          "x": 72.58,
+          "y": 0,
+          "z": -179.59
+        },
+        {
+          "x": 78.5,
+          "y": 0,
+          "z": -186.63
+        }
+      ],
+      "height": 43.1,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b22",
+      "footprint": [
+        {
+          "x": 145.14,
+          "y": 0,
+          "z": -132.03
+        },
+        {
+          "x": 137.8,
+          "y": 0,
+          "z": -123.3
+        },
+        {
+          "x": 129.77,
+          "y": 0,
+          "z": -130.06
+        },
+        {
+          "x": 137.1,
+          "y": 0,
+          "z": -138.78
+        }
+      ],
+      "height": 50.6,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b23",
+      "footprint": [
+        {
+          "x": 69.11,
+          "y": 0,
+          "z": -116.79
+        },
+        {
+          "x": 76.66,
+          "y": 0,
+          "z": -105.47
+        },
+        {
+          "x": 65.84,
+          "y": 0,
+          "z": -98.26
+        },
+        {
+          "x": 58.3,
+          "y": 0,
+          "z": -109.58
+        }
+      ],
+      "height": 58,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b24",
+      "footprint": [
+        {
+          "x": 132.84,
+          "y": 0,
+          "z": -155.32
+        },
+        {
+          "x": 136.73,
+          "y": 0,
+          "z": -149.5
+        },
+        {
+          "x": 130.07,
+          "y": 0,
+          "z": -145.06
+        },
+        {
+          "x": 126.19,
+          "y": 0,
+          "z": -150.88
+        }
+      ],
+      "height": 21.5,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b25",
+      "footprint": [
+        {
+          "x": 97.17,
+          "y": 0,
+          "z": -93.39
+        },
+        {
+          "x": 104.4,
+          "y": 0,
+          "z": -87.7
+        },
+        {
+          "x": 97.9,
+          "y": 0,
+          "z": -79.44
+        },
+        {
+          "x": 90.67,
+          "y": 0,
+          "z": -85.13
+        }
+      ],
+      "height": 29,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b26",
+      "footprint": [
+        {
+          "x": 144.63,
+          "y": 0,
+          "z": -155.48
+        },
+        {
+          "x": 153.59,
+          "y": 0,
+          "z": -148.43
+        },
+        {
+          "x": 145.55,
+          "y": 0,
+          "z": -138.22
+        },
+        {
+          "x": 136.59,
+          "y": 0,
+          "z": -145.27
+        }
+      ],
+      "height": 36.5,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b27",
+      "footprint": [
+        {
+          "x": 107.18,
+          "y": 0,
+          "z": -75.92
+        },
+        {
+          "x": 117.94,
+          "y": 0,
+          "z": -67.59
+        },
+        {
+          "x": 113.04,
+          "y": 0,
+          "z": -61.27
+        },
+        {
+          "x": 102.28,
+          "y": 0,
+          "z": -69.59
+        }
+      ],
+      "height": 44,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b28",
+      "footprint": [
+        {
+          "x": 132.32,
+          "y": 0,
+          "z": -69.72
+        },
+        {
+          "x": 136.75,
+          "y": 0,
+          "z": -64.3
+        },
+        {
+          "x": 128.63,
+          "y": 0,
+          "z": -57.65
+        },
+        {
+          "x": 124.19,
+          "y": 0,
+          "z": -63.07
+        }
+      ],
+      "height": 51.4,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b29",
+      "footprint": [
+        {
+          "x": 139.54,
+          "y": 0,
+          "z": -55.15
+        },
+        {
+          "x": 143.6,
+          "y": 0,
+          "z": -46.89
+        },
+        {
+          "x": 131.93,
+          "y": 0,
+          "z": -41.16
+        },
+        {
+          "x": 127.87,
+          "y": 0,
+          "z": -49.42
+        }
+      ],
+      "height": 58.9,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b30",
+      "footprint": [
+        {
+          "x": 142.19,
+          "y": 0,
+          "z": -35.19
+        },
+        {
+          "x": 146,
+          "y": 0,
+          "z": -24.45
+        },
+        {
+          "x": 138.46,
+          "y": 0,
+          "z": -21.78
+        },
+        {
+          "x": 134.65,
+          "y": 0,
+          "z": -32.52
+        }
+      ],
+      "height": 22.4,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b31",
+      "footprint": [
+        {
+          "x": 146.84,
+          "y": 0,
+          "z": -14.74
+        },
+        {
+          "x": 150.4,
+          "y": 0,
+          "z": -1.62
+        },
+        {
+          "x": 140.26,
+          "y": 0,
+          "z": 1.13
+        },
+        {
+          "x": 136.7,
+          "y": 0,
+          "z": -11.99
+        }
+      ],
+      "height": 29.9,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b32",
+      "footprint": [
+        {
+          "x": 151.23,
+          "y": 0,
+          "z": 5.46
+        },
+        {
+          "x": 152.82,
+          "y": 0,
+          "z": 12.27
+        },
+        {
+          "x": 140.16,
+          "y": 0,
+          "z": 15.23
+        },
+        {
+          "x": 138.57,
+          "y": 0,
+          "z": 8.41
+        }
+      ],
+      "height": 37.4,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b33",
+      "footprint": [
+        {
+          "x": 150.1,
+          "y": 0,
+          "z": 27.9
+        },
+        {
+          "x": 151.63,
+          "y": 0,
+          "z": 36.97
+        },
+        {
+          "x": 143.74,
+          "y": 0,
+          "z": 38.3
+        },
+        {
+          "x": 142.21,
+          "y": 0,
+          "z": 29.23
+        }
+      ],
+      "height": 44.8,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b34",
+      "footprint": [
+        {
+          "x": 151.33,
+          "y": 0,
+          "z": 49.8
+        },
+        {
+          "x": 152.44,
+          "y": 0,
+          "z": 61.15
+        },
+        {
+          "x": 141.99,
+          "y": 0,
+          "z": 62.17
+        },
+        {
+          "x": 140.88,
+          "y": 0,
+          "z": 50.82
+        }
+      ],
+      "height": 52.3,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b35",
+      "footprint": [
+        {
+          "x": 150.74,
+          "y": 0,
+          "z": 65.65
+        },
+        {
+          "x": 151.27,
+          "y": 0,
+          "z": 79.24
+        },
+        {
+          "x": 138.28,
+          "y": 0,
+          "z": 79.74
+        },
+        {
+          "x": 137.75,
+          "y": 0,
+          "z": 66.16
+        }
+      ],
+      "height": 59.8,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b36",
+      "footprint": [
+        {
+          "x": 150.45,
+          "y": 0,
+          "z": 91.48
+        },
+        {
+          "x": 150.23,
+          "y": 0,
+          "z": 98.48
+        },
+        {
+          "x": 142.24,
+          "y": 0,
+          "z": 98.24
+        },
+        {
+          "x": 142.45,
+          "y": 0,
+          "z": 91.24
+        }
+      ],
+      "height": 23.3,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b37",
+      "footprint": [
+        {
+          "x": 155.48,
+          "y": 0,
+          "z": 114.96
+        },
+        {
+          "x": 154.76,
+          "y": 0,
+          "z": 124.13
+        },
+        {
+          "x": 144.29,
+          "y": 0,
+          "z": 123.3
+        },
+        {
+          "x": 145.02,
+          "y": 0,
+          "z": 114.13
+        }
+      ],
+      "height": 30.8,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b38",
+      "footprint": [
+        {
+          "x": 152.13,
+          "y": 0,
+          "z": 129.92
+        },
+        {
+          "x": 150.31,
+          "y": 0,
+          "z": 141.18
+        },
+        {
+          "x": 137.48,
+          "y": 0,
+          "z": 139.1
+        },
+        {
+          "x": 139.3,
+          "y": 0,
+          "z": 127.85
+        }
+      ],
+      "height": 38.2,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b39",
+      "footprint": [
+        {
+          "x": 155.11,
+          "y": 0,
+          "z": 148.63
+        },
+        {
+          "x": 150.58,
+          "y": 0,
+          "z": 161.45
+        },
+        {
+          "x": 143.03,
+          "y": 0,
+          "z": 158.78
+        },
+        {
+          "x": 147.57,
+          "y": 0,
+          "z": 145.96
+        }
+      ],
+      "height": 45.7,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b40",
+      "footprint": [
+        {
+          "x": 151.68,
+          "y": 0,
+          "z": 169.68
+        },
+        {
+          "x": 147.86,
+          "y": 0,
+          "z": 175.55
+        },
+        {
+          "x": 139.07,
+          "y": 0,
+          "z": 169.81
+        },
+        {
+          "x": 142.89,
+          "y": 0,
+          "z": 163.95
+        }
+      ],
+      "height": 53.2,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b41",
+      "footprint": [
+        {
+          "x": 146.03,
+          "y": 0,
+          "z": 184.54
+        },
+        {
+          "x": 140.06,
+          "y": 0,
+          "z": 191.54
+        },
+        {
+          "x": 130.17,
+          "y": 0,
+          "z": 183.1
+        },
+        {
+          "x": 136.14,
+          "y": 0,
+          "z": 176.1
+        }
+      ],
+      "height": 60.7,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b42",
+      "footprint": [
+        {
+          "x": 126.05,
+          "y": 0,
+          "z": 197.66
+        },
+        {
+          "x": 117.68,
+          "y": 0,
+          "z": 205.39
+        },
+        {
+          "x": 112.25,
+          "y": 0,
+          "z": 199.52
+        },
+        {
+          "x": 120.62,
+          "y": 0,
+          "z": 191.78
+        }
+      ],
+      "height": 24.2,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b43",
+      "footprint": [
+        {
+          "x": 111.7,
+          "y": 0,
+          "z": 207.87
+        },
+        {
+          "x": 101.16,
+          "y": 0,
+          "z": 216.45
+        },
+        {
+          "x": 94.53,
+          "y": 0,
+          "z": 208.31
+        },
+        {
+          "x": 105.08,
+          "y": 0,
+          "z": 199.72
+        }
+      ],
+      "height": 31.6,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b44",
+      "footprint": [
+        {
+          "x": 96.62,
+          "y": 0,
+          "z": 233.75
+        },
+        {
+          "x": 90.9,
+          "y": 0,
+          "z": 237.8
+        },
+        {
+          "x": 83.39,
+          "y": 0,
+          "z": 227.19
+        },
+        {
+          "x": 89.1,
+          "y": 0,
+          "z": 223.14
+        }
+      ],
+      "height": 39.1,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b45",
+      "footprint": [
+        {
+          "x": 136.69,
+          "y": 0,
+          "z": 288.46
+        },
+        {
+          "x": 129.18,
+          "y": 0,
+          "z": 293.77
+        },
+        {
+          "x": 124.56,
+          "y": 0,
+          "z": 287.24
+        },
+        {
+          "x": 132.06,
+          "y": 0,
+          "z": 281.93
+        }
+      ],
+      "height": 46.6,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b46",
+      "footprint": [
+        {
+          "x": 79.19,
+          "y": 0,
+          "z": 236.26
+        },
+        {
+          "x": 69.47,
+          "y": 0,
+          "z": 242.22
+        },
+        {
+          "x": 63.99,
+          "y": 0,
+          "z": 233.26
+        },
+        {
+          "x": 73.71,
+          "y": 0,
+          "z": 227.31
+        }
+      ],
+      "height": 54.1,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b47",
+      "footprint": [
+        {
+          "x": 124.4,
+          "y": 0,
+          "z": 307.96
+        },
+        {
+          "x": 112.8,
+          "y": 0,
+          "z": 315.06
+        },
+        {
+          "x": 106.01,
+          "y": 0,
+          "z": 303.98
+        },
+        {
+          "x": 117.61,
+          "y": 0,
+          "z": 296.88
+        }
+      ],
+      "height": 61.6,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b48",
+      "footprint": [
+        {
+          "x": 60.5,
+          "y": 0,
+          "z": 252.97
+        },
+        {
+          "x": 54.09,
+          "y": 0,
+          "z": 255.79
+        },
+        {
+          "x": 50.86,
+          "y": 0,
+          "z": 248.47
+        },
+        {
+          "x": 57.27,
+          "y": 0,
+          "z": 245.64
+        }
+      ],
+      "height": 25,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b49",
+      "footprint": [
+        {
+          "x": 90.35,
+          "y": 0,
+          "z": 318
+        },
+        {
+          "x": 81.93,
+          "y": 0,
+          "z": 321.71
+        },
+        {
+          "x": 77.7,
+          "y": 0,
+          "z": 312.1
+        },
+        {
+          "x": 86.12,
+          "y": 0,
+          "z": 308.39
+        }
+      ],
+      "height": 32.5,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b50",
+      "footprint": [
+        {
+          "x": 44.77,
+          "y": 0,
+          "z": 255
+        },
+        {
+          "x": 33.59,
+          "y": 0,
+          "z": 257.22
+        },
+        {
+          "x": 31.05,
+          "y": 0,
+          "z": 244.47
+        },
+        {
+          "x": 42.23,
+          "y": 0,
+          "z": 242.25
+        }
+      ],
+      "height": 40,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b51",
+      "footprint": [
+        {
+          "x": 61.68,
+          "y": 0,
+          "z": 334.22
+        },
+        {
+          "x": 48.34,
+          "y": 0,
+          "z": 336.88
+        },
+        {
+          "x": 46.78,
+          "y": 0,
+          "z": 329.03
+        },
+        {
+          "x": 60.12,
+          "y": 0,
+          "z": 326.37
+        }
+      ],
+      "height": 47.5,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b52",
+      "footprint": [
+        {
+          "x": 25.83,
+          "y": 0,
+          "z": 262.52
+        },
+        {
+          "x": 18.84,
+          "y": 0,
+          "z": 262.21
+        },
+        {
+          "x": 19.32,
+          "y": 0,
+          "z": 251.72
+        },
+        {
+          "x": 26.31,
+          "y": 0,
+          "z": 252.03
+        }
+      ],
+      "height": 55,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b53",
+      "footprint": [
+        {
+          "x": 23.68,
+          "y": 0,
+          "z": 334.05
+        },
+        {
+          "x": 14.49,
+          "y": 0,
+          "z": 333.63
+        },
+        {
+          "x": 15.08,
+          "y": 0,
+          "z": 320.64
+        },
+        {
+          "x": 24.27,
+          "y": 0,
+          "z": 321.06
+        }
+      ],
+      "height": 18.4,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b54",
+      "footprint": [
+        {
+          "x": 12.51,
+          "y": 0,
+          "z": 253.74
+        },
+        {
+          "x": 1.29,
+          "y": 0,
+          "z": 251.71
+        },
+        {
+          "x": 2.72,
+          "y": 0,
+          "z": 243.84
+        },
+        {
+          "x": 13.94,
+          "y": 0,
+          "z": 245.87
+        }
+      ],
+      "height": 25.9,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b55",
+      "footprint": [
+        {
+          "x": -1.51,
+          "y": 0,
+          "z": 337.33
+        },
+        {
+          "x": -14.9,
+          "y": 0,
+          "z": 334.91
+        },
+        {
+          "x": -13.03,
+          "y": 0,
+          "z": 324.58
+        },
+        {
+          "x": 0.36,
+          "y": 0,
+          "z": 327
+        }
+      ],
+      "height": 33.4,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b56",
+      "footprint": [
+        {
+          "x": -10.49,
+          "y": 0,
+          "z": 257.72
+        },
+        {
+          "x": -16.91,
+          "y": 0,
+          "z": 254.94
+        },
+        {
+          "x": -11.75,
+          "y": 0,
+          "z": 243.01
+        },
+        {
+          "x": -5.33,
+          "y": 0,
+          "z": 245.79
+        }
+      ],
+      "height": 40.9,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b57",
+      "footprint": [
+        {
+          "x": -36.42,
+          "y": 0,
+          "z": 320.38
+        },
+        {
+          "x": -44.87,
+          "y": 0,
+          "z": 316.72
+        },
+        {
+          "x": -41.69,
+          "y": 0,
+          "z": 309.38
+        },
+        {
+          "x": -33.24,
+          "y": 0,
+          "z": 313.04
+        }
+      ],
+      "height": 48.4,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b58",
+      "footprint": [
+        {
+          "x": -6.14,
+          "y": 0,
+          "z": 265.25
+        },
+        {
+          "x": -8.32,
+          "y": 0,
+          "z": 254.06
+        },
+        {
+          "x": 1.99,
+          "y": 0,
+          "z": 252.06
+        },
+        {
+          "x": 4.17,
+          "y": 0,
+          "z": 263.25
+        }
+      ],
+      "height": 55.8,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b59",
+      "footprint": [
+        {
+          "x": -89.12,
+          "y": 0,
+          "z": 282.5
+        },
+        {
+          "x": -91.72,
+          "y": 0,
+          "z": 269.15
+        },
+        {
+          "x": -78.96,
+          "y": 0,
+          "z": 266.67
+        },
+        {
+          "x": -76.36,
+          "y": 0,
+          "z": 280.02
+        }
+      ],
+      "height": 19.3,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b60",
+      "footprint": [
+        {
+          "x": -10.71,
+          "y": 0,
+          "z": 259.25
+        },
+        {
+          "x": -8,
+          "y": 0,
+          "z": 252.8
+        },
+        {
+          "x": -0.62,
+          "y": 0,
+          "z": 255.9
+        },
+        {
+          "x": -3.34,
+          "y": 0,
+          "z": 262.35
+        }
+      ],
+      "height": 26.8,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b61",
+      "footprint": [
+        {
+          "x": 1.91,
+          "y": 0,
+          "z": 237.38
+        },
+        {
+          "x": 5.86,
+          "y": 0,
+          "z": 229.07
+        },
+        {
+          "x": 15.35,
+          "y": 0,
+          "z": 233.58
+        },
+        {
+          "x": 11.39,
+          "y": 0,
+          "z": 241.89
+        }
+      ],
+      "height": 34.3,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b62",
+      "footprint": [
+        {
+          "x": -79.97,
+          "y": 0,
+          "z": 199.64
+        },
+        {
+          "x": -75.07,
+          "y": 0,
+          "z": 189.34
+        },
+        {
+          "x": -63.33,
+          "y": 0,
+          "z": 194.93
+        },
+        {
+          "x": -68.23,
+          "y": 0,
+          "z": 205.22
+        }
+      ],
+      "height": 41.8,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b63",
+      "footprint": [
+        {
+          "x": -12.27,
+          "y": 0,
+          "z": 160.49
+        },
+        {
+          "x": -25.83,
+          "y": 0,
+          "z": 159.38
+        },
+        {
+          "x": -25.18,
+          "y": 0,
+          "z": 151.41
+        },
+        {
+          "x": -11.62,
+          "y": 0,
+          "z": 152.51
+        }
+      ],
+      "height": 49.2,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b64",
+      "footprint": [
+        {
+          "x": -55.7,
+          "y": 0,
+          "z": 182.96
+        },
+        {
+          "x": -61.71,
+          "y": 0,
+          "z": 186.55
+        },
+        {
+          "x": -67.1,
+          "y": 0,
+          "z": 177.53
+        },
+        {
+          "x": -61.09,
+          "y": 0,
+          "z": 173.94
+        }
+      ],
+      "height": 56.7,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b65",
+      "footprint": [
+        {
+          "x": -7.83,
+          "y": 0,
+          "z": 261
+        },
+        {
+          "x": -15.73,
+          "y": 0,
+          "z": 265.72
+        },
+        {
+          "x": -22.39,
+          "y": 0,
+          "z": 254.56
+        },
+        {
+          "x": -14.49,
+          "y": 0,
+          "z": 249.84
+        }
+      ],
+      "height": 20.2,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b66",
+      "footprint": [
+        {
+          "x": -74.72,
+          "y": 0,
+          "z": 185.33
+        },
+        {
+          "x": -84.66,
+          "y": 0,
+          "z": 190.9
+        },
+        {
+          "x": -88.57,
+          "y": 0,
+          "z": 183.92
+        },
+        {
+          "x": -78.63,
+          "y": 0,
+          "z": 178.35
+        }
+      ],
+      "height": 27.7,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b67",
+      "footprint": [
+        {
+          "x": -85.76,
+          "y": 0,
+          "z": 190.72
+        },
+        {
+          "x": -99.11,
+          "y": 0,
+          "z": 193.34
+        },
+        {
+          "x": -101.13,
+          "y": 0,
+          "z": 183.03
+        },
+        {
+          "x": -87.78,
+          "y": 0,
+          "z": 180.42
+        }
+      ],
+      "height": 35.2,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b68",
+      "footprint": [
+        {
+          "x": -73.97,
+          "y": 0,
+          "z": 268.05
+        },
+        {
+          "x": -80.83,
+          "y": 0,
+          "z": 269.39
+        },
+        {
+          "x": -83.34,
+          "y": 0,
+          "z": 256.64
+        },
+        {
+          "x": -76.47,
+          "y": 0,
+          "z": 255.29
+        }
+      ],
+      "height": 42.6,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b69",
+      "footprint": [
+        {
+          "x": -97.46,
+          "y": 0,
+          "z": 196.52
+        },
+        {
+          "x": -106.34,
+          "y": 0,
+          "z": 194.11
+        },
+        {
+          "x": -104.25,
+          "y": 0,
+          "z": 186.39
+        },
+        {
+          "x": -95.37,
+          "y": 0,
+          "z": 188.8
+        }
+      ],
+      "height": 50.1,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b70",
+      "footprint": [
+        {
+          "x": -116.87,
+          "y": 0,
+          "z": 272.23
+        },
+        {
+          "x": -127.88,
+          "y": 0,
+          "z": 269.24
+        },
+        {
+          "x": -125.13,
+          "y": 0,
+          "z": 259.11
+        },
+        {
+          "x": -114.12,
+          "y": 0,
+          "z": 262.09
+        }
+      ],
+      "height": 57.6,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b71",
+      "footprint": [
+        {
+          "x": -107.44,
+          "y": 0,
+          "z": 189.69
+        },
+        {
+          "x": -119.37,
+          "y": 0,
+          "z": 183.16
+        },
+        {
+          "x": -113.14,
+          "y": 0,
+          "z": 171.76
+        },
+        {
+          "x": -101.21,
+          "y": 0,
+          "z": 178.28
+        }
+      ],
+      "height": 21.1,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b72",
+      "footprint": [
+        {
+          "x": -146.02,
+          "y": 0,
+          "z": 253.39
+        },
+        {
+          "x": -152.17,
+          "y": 0,
+          "z": 250.03
+        },
+        {
+          "x": -148.33,
+          "y": 0,
+          "z": 243.01
+        },
+        {
+          "x": -142.19,
+          "y": 0,
+          "z": 246.37
+        }
+      ],
+      "height": 28.6,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b73",
+      "footprint": [
+        {
+          "x": -118.31,
+          "y": 0,
+          "z": 196.49
+        },
+        {
+          "x": -120.63,
+          "y": 0,
+          "z": 187.59
+        },
+        {
+          "x": -110.47,
+          "y": 0,
+          "z": 184.94
+        },
+        {
+          "x": -108.15,
+          "y": 0,
+          "z": 193.84
+        }
+      ],
+      "height": 36,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b74",
+      "footprint": [
+        {
+          "x": -193.65,
+          "y": 0,
+          "z": 217.27
+        },
+        {
+          "x": -196.53,
+          "y": 0,
+          "z": 206.24
+        },
+        {
+          "x": -183.95,
+          "y": 0,
+          "z": 202.96
+        },
+        {
+          "x": -181.07,
+          "y": 0,
+          "z": 213.99
+        }
+      ],
+      "height": 43.5,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b75",
+      "footprint": [
+        {
+          "x": -114.52,
+          "y": 0,
+          "z": 208.06
+        },
+        {
+          "x": -107.77,
+          "y": 0,
+          "z": 196.25
+        },
+        {
+          "x": -100.83,
+          "y": 0,
+          "z": 200.21
+        },
+        {
+          "x": -107.57,
+          "y": 0,
+          "z": 212.02
+        }
+      ],
+      "height": 51,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b76",
+      "footprint": [
+        {
+          "x": -180.75,
+          "y": 0,
+          "z": 166.46
+        },
+        {
+          "x": -177.28,
+          "y": 0,
+          "z": 160.38
+        },
+        {
+          "x": -168.17,
+          "y": 0,
+          "z": 165.58
+        },
+        {
+          "x": -171.63,
+          "y": 0,
+          "z": 171.66
+        }
+      ],
+      "height": 58.5,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b77",
+      "footprint": [
+        {
+          "x": -108.52,
+          "y": 0,
+          "z": 181.92
+        },
+        {
+          "x": -103.46,
+          "y": 0,
+          "z": 174.24
+        },
+        {
+          "x": -92.6,
+          "y": 0,
+          "z": 181.4
+        },
+        {
+          "x": -97.67,
+          "y": 0,
+          "z": 189.08
+        }
+      ],
+      "height": 22,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b78",
+      "footprint": [
+        {
+          "x": -171.23,
+          "y": 0,
+          "z": 141.88
+        },
+        {
+          "x": -164.96,
+          "y": 0,
+          "z": 132.36
+        },
+        {
+          "x": -158.28,
+          "y": 0,
+          "z": 136.76
+        },
+        {
+          "x": -164.56,
+          "y": 0,
+          "z": 146.28
+        }
+      ],
+      "height": 29.4,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b79",
+      "footprint": [
+        {
+          "x": -84.91,
+          "y": 0,
+          "z": 155.5
+        },
+        {
+          "x": -81.68,
+          "y": 0,
+          "z": 142.29
+        },
+        {
+          "x": -71.48,
+          "y": 0,
+          "z": 144.79
+        },
+        {
+          "x": -74.71,
+          "y": 0,
+          "z": 158
+        }
+      ],
+      "height": 36.9,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b80",
+      "footprint": [
+        {
+          "x": -160.04,
+          "y": 0,
+          "z": 133.71
+        },
+        {
+          "x": -158.37,
+          "y": 0,
+          "z": 126.92
+        },
+        {
+          "x": -145.74,
+          "y": 0,
+          "z": 130.01
+        },
+        {
+          "x": -147.41,
+          "y": 0,
+          "z": 136.81
+        }
+      ],
+      "height": 44.4,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b81",
+      "footprint": [
+        {
+          "x": -99.55,
+          "y": 0,
+          "z": 98.81
+        },
+        {
+          "x": -105.54,
+          "y": 0,
+          "z": 91.82
+        },
+        {
+          "x": -99.46,
+          "y": 0,
+          "z": 86.62
+        },
+        {
+          "x": -93.47,
+          "y": 0,
+          "z": 93.6
+        }
+      ],
+      "height": 51.9,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b82",
+      "footprint": [
+        {
+          "x": -158.17,
+          "y": 0,
+          "z": 150.5
+        },
+        {
+          "x": -165.59,
+          "y": 0,
+          "z": 141.85
+        },
+        {
+          "x": -157.61,
+          "y": 0,
+          "z": 135.01
+        },
+        {
+          "x": -150.2,
+          "y": 0,
+          "z": 143.67
+        }
+      ],
+      "height": 59.4,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b83",
+      "footprint": [
+        {
+          "x": -118.34,
+          "y": 0,
+          "z": 74.92
+        },
+        {
+          "x": -129.12,
+          "y": 0,
+          "z": 66.62
+        },
+        {
+          "x": -121.18,
+          "y": 0,
+          "z": 56.32
+        },
+        {
+          "x": -110.41,
+          "y": 0,
+          "z": 64.62
+        }
+      ],
+      "height": 22.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b84",
+      "footprint": [
+        {
+          "x": -166.37,
+          "y": 0,
+          "z": 131.84
+        },
+        {
+          "x": -171.91,
+          "y": 0,
+          "z": 127.57
+        },
+        {
+          "x": -167.03,
+          "y": 0,
+          "z": 121.23
+        },
+        {
+          "x": -161.48,
+          "y": 0,
+          "z": 125.5
+        }
+      ],
+      "height": 30.3,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b85",
+      "footprint": [
+        {
+          "x": -139,
+          "y": 0,
+          "z": 65.94
+        },
+        {
+          "x": -146.16,
+          "y": 0,
+          "z": 60.16
+        },
+        {
+          "x": -139.55,
+          "y": 0,
+          "z": 51.99
+        },
+        {
+          "x": -132.4,
+          "y": 0,
+          "z": 57.78
+        }
+      ],
+      "height": 37.8,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b86",
+      "footprint": [
+        {
+          "x": -187.29,
+          "y": 0,
+          "z": 127.4
+        },
+        {
+          "x": -196.16,
+          "y": 0,
+          "z": 120.23
+        },
+        {
+          "x": -187.98,
+          "y": 0,
+          "z": 110.12
+        },
+        {
+          "x": -179.12,
+          "y": 0,
+          "z": 117.29
+        }
+      ],
+      "height": 45.3,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b87",
+      "footprint": [
+        {
+          "x": -144.2,
+          "y": 0,
+          "z": 52.2
+        },
+        {
+          "x": -152.23,
+          "y": 0,
+          "z": 41.23
+        },
+        {
+          "x": -145.78,
+          "y": 0,
+          "z": 36.51
+        },
+        {
+          "x": -137.74,
+          "y": 0,
+          "z": 47.48
+        }
+      ],
+      "height": 52.8,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b88",
+      "footprint": [
+        {
+          "x": -209.19,
+          "y": 0,
+          "z": 95.72
+        },
+        {
+          "x": -213.33,
+          "y": 0,
+          "z": 90.07
+        },
+        {
+          "x": -204.86,
+          "y": 0,
+          "z": 83.87
+        },
+        {
+          "x": -200.72,
+          "y": 0,
+          "z": 89.52
+        }
+      ],
+      "height": 60.2,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b89",
+      "footprint": [
+        {
+          "x": -164.11,
+          "y": 0,
+          "z": 39.21
+        },
+        {
+          "x": -168.8,
+          "y": 0,
+          "z": 31.3
+        },
+        {
+          "x": -157.63,
+          "y": 0,
+          "z": 24.67
+        },
+        {
+          "x": -152.93,
+          "y": 0,
+          "z": 32.58
+        }
+      ],
+      "height": 23.7,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b90",
+      "footprint": [
+        {
+          "x": -227.52,
+          "y": 0,
+          "z": 78.15
+        },
+        {
+          "x": -233.34,
+          "y": 0,
+          "z": 68.34
+        },
+        {
+          "x": -226.46,
+          "y": 0,
+          "z": 64.26
+        },
+        {
+          "x": -220.64,
+          "y": 0,
+          "z": 74.06
+        }
+      ],
+      "height": 31.2,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b91",
+      "footprint": [
+        {
+          "x": -166.79,
+          "y": 0,
+          "z": 18.63
+        },
+        {
+          "x": -171.48,
+          "y": 0,
+          "z": 5.87
+        },
+        {
+          "x": -161.63,
+          "y": 0,
+          "z": 2.25
+        },
+        {
+          "x": -156.93,
+          "y": 0,
+          "z": 15.01
+        }
+      ],
+      "height": 38.7,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b92",
+      "footprint": [
+        {
+          "x": -241.28,
+          "y": 0,
+          "z": 42.49
+        },
+        {
+          "x": -243.7,
+          "y": 0,
+          "z": 35.92
+        },
+        {
+          "x": -231.49,
+          "y": 0,
+          "z": 31.44
+        },
+        {
+          "x": -229.08,
+          "y": 0,
+          "z": 38.01
+        }
+      ],
+      "height": 46.2,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b93",
+      "footprint": [
+        {
+          "x": -176.7,
+          "y": 0,
+          "z": 6.77
+        },
+        {
+          "x": -177.5,
+          "y": 0,
+          "z": -2.39
+        },
+        {
+          "x": -169.53,
+          "y": 0,
+          "z": -3.08
+        },
+        {
+          "x": -168.73,
+          "y": 0,
+          "z": 6.08
+        }
+      ],
+      "height": 53.6,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b94",
+      "footprint": [
+        {
+          "x": -254.46,
+          "y": 0,
+          "z": 14.62
+        },
+        {
+          "x": -255.45,
+          "y": 0,
+          "z": 3.26
+        },
+        {
+          "x": -244.99,
+          "y": 0,
+          "z": 2.36
+        },
+        {
+          "x": -244,
+          "y": 0,
+          "z": 13.71
+        }
+      ],
+      "height": 61.1,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b95",
+      "footprint": [
+        {
+          "x": -174.33,
+          "y": 0,
+          "z": 2.52
+        },
+        {
+          "x": -168.28,
+          "y": 0,
+          "z": -9.65
+        },
+        {
+          "x": -156.64,
+          "y": 0,
+          "z": -3.86
+        },
+        {
+          "x": -162.7,
+          "y": 0,
+          "z": 8.31
+        }
+      ],
+      "height": 24.6,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b96",
+      "footprint": [
+        {
+          "x": -239.48,
+          "y": 0,
+          "z": -33.57
+        },
+        {
+          "x": -236.36,
+          "y": 0,
+          "z": -39.84
+        },
+        {
+          "x": -229.2,
+          "y": 0,
+          "z": -36.27
+        },
+        {
+          "x": -232.32,
+          "y": 0,
+          "z": -30.01
+        }
+      ],
+      "height": 32.1,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b97",
+      "footprint": [
+        {
+          "x": -168.03,
+          "y": 0,
+          "z": -19.57
+        },
+        {
+          "x": -163.21,
+          "y": 0,
+          "z": -27.41
+        },
+        {
+          "x": -154.27,
+          "y": 0,
+          "z": -21.92
+        },
+        {
+          "x": -159.08,
+          "y": 0,
+          "z": -14.08
+        }
+      ],
+      "height": 39.6,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b98",
+      "footprint": [
+        {
+          "x": -235.2,
+          "y": 0,
+          "z": -59.53
+        },
+        {
+          "x": -229.24,
+          "y": 0,
+          "z": -69.24
+        },
+        {
+          "x": -218.16,
+          "y": 0,
+          "z": -62.44
+        },
+        {
+          "x": -224.12,
+          "y": 0,
+          "z": -52.72
+        }
+      ],
+      "height": 47,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b99",
+      "footprint": [
+        {
+          "x": -147.17,
+          "y": 0,
+          "z": -40.7
+        },
+        {
+          "x": -142.73,
+          "y": 0,
+          "z": -53.55
+        },
+        {
+          "x": -135.17,
+          "y": 0,
+          "z": -50.93
+        },
+        {
+          "x": -139.61,
+          "y": 0,
+          "z": -38.08
+        }
+      ],
+      "height": 54.5,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b100",
+      "footprint": [
+        {
+          "x": -219.95,
+          "y": 0,
+          "z": -69.36
+        },
+        {
+          "x": -217.66,
+          "y": 0,
+          "z": -75.97
+        },
+        {
+          "x": -207.74,
+          "y": 0,
+          "z": -72.54
+        },
+        {
+          "x": -210.03,
+          "y": 0,
+          "z": -65.93
+        }
+      ],
+      "height": 18,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b101",
+      "footprint": [
+        {
+          "x": -151.98,
+          "y": 0,
+          "z": -90.03
+        },
+        {
+          "x": -154.78,
+          "y": 0,
+          "z": -98.8
+        },
+        {
+          "x": -142.4,
+          "y": 0,
+          "z": -102.76
+        },
+        {
+          "x": -139.6,
+          "y": 0,
+          "z": -94
+        }
+      ],
+      "height": 25.5,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b102",
+      "footprint": [
+        {
+          "x": -222.51,
+          "y": 0,
+          "z": -66.31
+        },
+        {
+          "x": -225.98,
+          "y": 0,
+          "z": -77.17
+        },
+        {
+          "x": -218.36,
+          "y": 0,
+          "z": -79.61
+        },
+        {
+          "x": -214.89,
+          "y": 0,
+          "z": -68.75
+        }
+      ],
+      "height": 33,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b103",
+      "footprint": [
+        {
+          "x": -153.97,
+          "y": 0,
+          "z": -116.22
+        },
+        {
+          "x": -159.93,
+          "y": 0,
+          "z": -128.44
+        },
+        {
+          "x": -150.49,
+          "y": 0,
+          "z": -133.04
+        },
+        {
+          "x": -144.54,
+          "y": 0,
+          "z": -120.82
+        }
+      ],
+      "height": 40.4,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b104",
+      "footprint": [
+        {
+          "x": -225.68,
+          "y": 0,
+          "z": -84.96
+        },
+        {
+          "x": -228.74,
+          "y": 0,
+          "z": -91.25
+        },
+        {
+          "x": -217.06,
+          "y": 0,
+          "z": -96.95
+        },
+        {
+          "x": -213.99,
+          "y": 0,
+          "z": -90.65
+        }
+      ],
+      "height": 47.9,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b105",
+      "footprint": [
+        {
+          "x": -167.26,
+          "y": 0,
+          "z": -129.89
+        },
+        {
+          "x": -168.37,
+          "y": 0,
+          "z": -139.03
+        },
+        {
+          "x": -160.43,
+          "y": 0,
+          "z": -139.99
+        },
+        {
+          "x": -159.32,
+          "y": 0,
+          "z": -130.85
+        }
+      ],
+      "height": 55.4,
+      "baseHeight": 0,
+      "floors": 17,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b106",
+      "footprint": [
+        {
+          "x": -244.72,
+          "y": 0,
+          "z": -119.42
+        },
+        {
+          "x": -246.09,
+          "y": 0,
+          "z": -130.74
+        },
+        {
+          "x": -235.66,
+          "y": 0,
+          "z": -132
+        },
+        {
+          "x": -234.29,
+          "y": 0,
+          "z": -120.68
+        }
+      ],
+      "height": 18.9,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b107",
+      "footprint": [
+        {
+          "x": -166.44,
+          "y": 0,
+          "z": -128.15
+        },
+        {
+          "x": -159.13,
+          "y": 0,
+          "z": -139.63
+        },
+        {
+          "x": -148.17,
+          "y": 0,
+          "z": -132.65
+        },
+        {
+          "x": -155.47,
+          "y": 0,
+          "z": -121.17
+        }
+      ],
+      "height": 26.4,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b108",
+      "footprint": [
+        {
+          "x": -227.43,
+          "y": 0,
+          "z": -170.88
+        },
+        {
+          "x": -223.67,
+          "y": 0,
+          "z": -176.78
+        },
+        {
+          "x": -216.92,
+          "y": 0,
+          "z": -172.49
+        },
+        {
+          "x": -220.68,
+          "y": 0,
+          "z": -166.58
+        }
+      ],
+      "height": 33.8,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b109",
+      "footprint": [
+        {
+          "x": -160.01,
+          "y": 0,
+          "z": -145.92
+        },
+        {
+          "x": -153.59,
+          "y": 0,
+          "z": -152.5
+        },
+        {
+          "x": -146.07,
+          "y": 0,
+          "z": -145.17
+        },
+        {
+          "x": -152.5,
+          "y": 0,
+          "z": -138.58
+        }
+      ],
+      "height": 41.3,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b110",
+      "footprint": [
+        {
+          "x": -216.7,
+          "y": 0,
+          "z": -199.72
+        },
+        {
+          "x": -208.74,
+          "y": 0,
+          "z": -207.88
+        },
+        {
+          "x": -199.44,
+          "y": 0,
+          "z": -198.8
+        },
+        {
+          "x": -207.4,
+          "y": 0,
+          "z": -190.64
+        }
+      ],
+      "height": 48.8,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b111",
+      "footprint": [
+        {
+          "x": -139.73,
+          "y": 0,
+          "z": -154.76
+        },
+        {
+          "x": -129.88,
+          "y": 0,
+          "z": -164.14
+        },
+        {
+          "x": -124.36,
+          "y": 0,
+          "z": -158.35
+        },
+        {
+          "x": -134.21,
+          "y": 0,
+          "z": -148.97
+        }
+      ],
+      "height": 56.3,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b112",
+      "footprint": [
+        {
+          "x": -191.24,
+          "y": 0,
+          "z": -213.63
+        },
+        {
+          "x": -186.17,
+          "y": 0,
+          "z": -218.46
+        },
+        {
+          "x": -178.93,
+          "y": 0,
+          "z": -210.86
+        },
+        {
+          "x": -183.99,
+          "y": 0,
+          "z": -206.03
+        }
+      ],
+      "height": 19.8,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b113",
+      "footprint": [
+        {
+          "x": -127.25,
+          "y": 0,
+          "z": -180.01
+        },
+        {
+          "x": -121.01,
+          "y": 0,
+          "z": -186.77
+        },
+        {
+          "x": -111.45,
+          "y": 0,
+          "z": -177.96
+        },
+        {
+          "x": -117.69,
+          "y": 0,
+          "z": -171.19
+        }
+      ],
+      "height": 27.2,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b114",
+      "footprint": [
+        {
+          "x": -182.69,
+          "y": 0,
+          "z": -229.63
+        },
+        {
+          "x": -174.96,
+          "y": 0,
+          "z": -238.01
+        },
+        {
+          "x": -169.08,
+          "y": 0,
+          "z": -232.59
+        },
+        {
+          "x": -176.81,
+          "y": 0,
+          "z": -224.21
+        }
+      ],
+      "height": 34.7,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b115",
+      "footprint": [
+        {
+          "x": -105.66,
+          "y": 0,
+          "z": -191.55
+        },
+        {
+          "x": -96.11,
+          "y": 0,
+          "z": -201.23
+        },
+        {
+          "x": -88.63,
+          "y": 0,
+          "z": -193.86
+        },
+        {
+          "x": -98.18,
+          "y": 0,
+          "z": -184.17
+        }
+      ],
+      "height": 42.2,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b116",
+      "footprint": [
+        {
+          "x": -158.98,
+          "y": 0,
+          "z": -248.77
+        },
+        {
+          "x": -154.07,
+          "y": 0,
+          "z": -253.76
+        },
+        {
+          "x": -144.81,
+          "y": 0,
+          "z": -244.63
+        },
+        {
+          "x": -149.73,
+          "y": 0,
+          "z": -239.65
+        }
+      ],
+      "height": 49.7,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b117",
+      "footprint": [
+        {
+          "x": -94.21,
+          "y": 0,
+          "z": -210.58
+        },
+        {
+          "x": -87.56,
+          "y": 0,
+          "z": -216.94
+        },
+        {
+          "x": -82.03,
+          "y": 0,
+          "z": -211.16
+        },
+        {
+          "x": -88.68,
+          "y": 0,
+          "z": -204.8
+        }
+      ],
+      "height": 57.2,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b118",
+      "footprint": [
+        {
+          "x": -149.03,
+          "y": 0,
+          "z": -266.29
+        },
+        {
+          "x": -140.79,
+          "y": 0,
+          "z": -274.17
+        },
+        {
+          "x": -133.53,
+          "y": 0,
+          "z": -266.59
+        },
+        {
+          "x": -141.77,
+          "y": 0,
+          "z": -258.71
+        }
+      ],
+      "height": 20.6,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b119",
+      "footprint": [
+        {
+          "x": -75.35,
+          "y": 0,
+          "z": -222.71
+        },
+        {
+          "x": -64.81,
+          "y": 0,
+          "z": -231.31
+        },
+        {
+          "x": -56.59,
+          "y": 0,
+          "z": -221.24
+        },
+        {
+          "x": -67.13,
+          "y": 0,
+          "z": -212.64
+        }
+      ],
+      "height": 28.1,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-b120",
+      "footprint": [
+        {
+          "x": -119.83,
+          "y": 0,
+          "z": -282.44
+        },
+        {
+          "x": -114.41,
+          "y": 0,
+          "z": -286.86
+        },
+        {
+          "x": -109.35,
+          "y": 0,
+          "z": -280.67
+        },
+        {
+          "x": -114.77,
+          "y": 0,
+          "z": -276.24
+        }
+      ],
+      "height": 35.6,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.7,
+      "source": "procedural"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-0",
+      "name": "Statue of Liberty",
+      "footprint": [
+        {
+          "x": 264,
+          "y": 0,
+          "z": 39
+        },
+        {
+          "x": 286,
+          "y": 0,
+          "z": 39
+        },
+        {
+          "x": 286,
+          "y": 0,
+          "z": 61
+        },
+        {
+          "x": 264,
+          "y": 0,
+          "z": 61
+        }
+      ],
+      "height": 95,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "concrete",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-1",
+      "name": "Brooklyn Bridge",
+      "footprint": [
+        {
+          "x": 236,
+          "y": 0,
+          "z": 146
+        },
+        {
+          "x": 284,
+          "y": 0,
+          "z": 146
+        },
+        {
+          "x": 284,
+          "y": 0,
+          "z": 164
+        },
+        {
+          "x": 236,
+          "y": 0,
+          "z": 164
+        }
+      ],
+      "height": 85,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-2",
+      "name": "Empire State Building",
+      "footprint": [
+        {
+          "x": 90.62,
+          "y": 0,
+          "z": -360.05
+        },
+        {
+          "x": 124.62,
+          "y": 0,
+          "z": -360.05
+        },
+        {
+          "x": 124.62,
+          "y": 0,
+          "z": -326.05
+        },
+        {
+          "x": 90.62,
+          "y": 0,
+          "z": -326.05
+        }
+      ],
+      "height": 240,
+      "baseHeight": 0,
+      "floors": 69,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-3",
+      "name": "Chrysler Building",
+      "footprint": [
+        {
+          "x": 42.36,
+          "y": 0,
+          "z": -201.08
+        },
+        {
+          "x": 72.36,
+          "y": 0,
+          "z": -201.08
+        },
+        {
+          "x": 72.36,
+          "y": 0,
+          "z": -171.08
+        },
+        {
+          "x": 42.36,
+          "y": 0,
+          "z": -171.08
+        }
+      ],
+      "height": 200,
+      "baseHeight": 0,
+      "floors": 57,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-4",
+      "name": "One World Trade Center",
+      "footprint": [
+        {
+          "x": 40.38,
+          "y": 0,
+          "z": -70.26
+        },
+        {
+          "x": 76.38,
+          "y": 0,
+          "z": -70.26
+        },
+        {
+          "x": 76.38,
+          "y": 0,
+          "z": -34.26
+        },
+        {
+          "x": 40.38,
+          "y": 0,
+          "z": -34.26
+        }
+      ],
+      "height": 260,
+      "baseHeight": 0,
+      "floors": 74,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-5",
+      "name": "Flatiron",
+      "footprint": [
+        {
+          "x": 95.93,
+          "y": 0,
+          "z": -30.27
+        },
+        {
+          "x": 119.93,
+          "y": 0,
+          "z": -30.27
+        },
+        {
+          "x": 119.93,
+          "y": 0,
+          "z": 5.73
+        },
+        {
+          "x": 95.93,
+          "y": 0,
+          "z": 5.73
+        }
+      ],
+      "height": 90,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-6",
+      "name": "Citigroup Center",
+      "footprint": [
+        {
+          "x": 100.98,
+          "y": 0,
+          "z": 27.39
+        },
+        {
+          "x": 132.98,
+          "y": 0,
+          "z": 27.39
+        },
+        {
+          "x": 132.98,
+          "y": 0,
+          "z": 59.39
+        },
+        {
+          "x": 100.98,
+          "y": 0,
+          "z": 59.39
+        }
+      ],
+      "height": 170,
+      "baseHeight": 0,
+      "floors": 49,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-7",
+      "name": "Woolworth Building",
+      "footprint": [
+        {
+          "x": 107.66,
+          "y": 0,
+          "z": 86.22
+        },
+        {
+          "x": 135.66,
+          "y": 0,
+          "z": 86.22
+        },
+        {
+          "x": 135.66,
+          "y": 0,
+          "z": 114.22
+        },
+        {
+          "x": 107.66,
+          "y": 0,
+          "z": 114.22
+        }
+      ],
+      "height": 160,
+      "baseHeight": 0,
+      "floors": 46,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-8",
+      "name": "30 Rockefeller Plaza",
+      "footprint": [
+        {
+          "x": 92.69,
+          "y": 0,
+          "z": 124.82
+        },
+        {
+          "x": 132.69,
+          "y": 0,
+          "z": 124.82
+        },
+        {
+          "x": 132.69,
+          "y": 0,
+          "z": 156.82
+        },
+        {
+          "x": 92.69,
+          "y": 0,
+          "z": 156.82
+        }
+      ],
+      "height": 175,
+      "baseHeight": 0,
+      "floors": 50,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-9",
+      "name": "Seagram Building",
+      "footprint": [
+        {
+          "x": 79.78,
+          "y": 0,
+          "z": 158.22
+        },
+        {
+          "x": 109.78,
+          "y": 0,
+          "z": 158.22
+        },
+        {
+          "x": 109.78,
+          "y": 0,
+          "z": 186.22
+        },
+        {
+          "x": 79.78,
+          "y": 0,
+          "z": 186.22
+        }
+      ],
+      "height": 130,
+      "baseHeight": 0,
+      "floors": 37,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-10",
+      "name": "Lever House",
+      "footprint": [
+        {
+          "x": 108.92,
+          "y": 0,
+          "z": 309.83
+        },
+        {
+          "x": 140.92,
+          "y": 0,
+          "z": 309.83
+        },
+        {
+          "x": 140.92,
+          "y": 0,
+          "z": 333.83
+        },
+        {
+          "x": 108.92,
+          "y": 0,
+          "z": 333.83
+        }
+      ],
+      "height": 110,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-11",
+      "name": "432 Park Avenue",
+      "footprint": [
+        {
+          "x": 15.97,
+          "y": 0,
+          "z": 352.73
+        },
+        {
+          "x": 39.97,
+          "y": 0,
+          "z": 352.73
+        },
+        {
+          "x": 39.97,
+          "y": 0,
+          "z": 376.73
+        },
+        {
+          "x": 15.97,
+          "y": 0,
+          "z": 376.73
+        }
+      ],
+      "height": 220,
+      "baseHeight": 0,
+      "floors": 63,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-12",
+      "name": "Hearst Tower",
+      "footprint": [
+        {
+          "x": -113.35,
+          "y": 0,
+          "z": 289.91
+        },
+        {
+          "x": -83.35,
+          "y": 0,
+          "z": 289.91
+        },
+        {
+          "x": -83.35,
+          "y": 0,
+          "z": 319.91
+        },
+        {
+          "x": -113.35,
+          "y": 0,
+          "z": 319.91
+        }
+      ],
+      "height": 145,
+      "baseHeight": 0,
+      "floors": 41,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-13",
+      "name": "MetLife Building",
+      "footprint": [
+        {
+          "x": 43.65,
+          "y": 0,
+          "z": 170.65
+        },
+        {
+          "x": 79.65,
+          "y": 0,
+          "z": 170.65
+        },
+        {
+          "x": 79.65,
+          "y": 0,
+          "z": 202.65
+        },
+        {
+          "x": 43.65,
+          "y": 0,
+          "z": 202.65
+        }
+      ],
+      "height": 155,
+      "baseHeight": 0,
+      "floors": 44,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-14",
+      "name": "One Vanderbilt",
+      "footprint": [
+        {
+          "x": -72.71,
+          "y": 0,
+          "z": 280.21
+        },
+        {
+          "x": -40.71,
+          "y": 0,
+          "z": 280.21
+        },
+        {
+          "x": -40.71,
+          "y": 0,
+          "z": 312.21
+        },
+        {
+          "x": -72.71,
+          "y": 0,
+          "z": 312.21
+        }
+      ],
+      "height": 190,
+      "baseHeight": 0,
+      "floors": 54,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-15",
+      "name": "Central Park Tower",
+      "footprint": [
+        {
+          "x": -218.93,
+          "y": 0,
+          "z": 240.95
+        },
+        {
+          "x": -192.93,
+          "y": 0,
+          "z": 240.95
+        },
+        {
+          "x": -192.93,
+          "y": 0,
+          "z": 266.95
+        },
+        {
+          "x": -218.93,
+          "y": 0,
+          "z": 266.95
+        }
+      ],
+      "height": 230,
+      "baseHeight": 0,
+      "floors": 66,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-16",
+      "name": "111 West 57th Street",
+      "footprint": [
+        {
+          "x": -201.72,
+          "y": 0,
+          "z": 103.35
+        },
+        {
+          "x": -179.72,
+          "y": 0,
+          "z": 103.35
+        },
+        {
+          "x": -179.72,
+          "y": 0,
+          "z": 131.35
+        },
+        {
+          "x": -201.72,
+          "y": 0,
+          "z": 131.35
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 60,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-17",
+      "name": "Bank of America Tower",
+      "footprint": [
+        {
+          "x": -214.66,
+          "y": 0,
+          "z": 129.57
+        },
+        {
+          "x": -182.66,
+          "y": 0,
+          "z": 129.57
+        },
+        {
+          "x": -182.66,
+          "y": 0,
+          "z": 161.57
+        },
+        {
+          "x": -214.66,
+          "y": 0,
+          "z": 161.57
+        }
+      ],
+      "height": 180,
+      "baseHeight": 0,
+      "floors": 51,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-18",
+      "name": "4 Times Square",
+      "footprint": [
+        {
+          "x": -273.71,
+          "y": 0,
+          "z": 56.05
+        },
+        {
+          "x": -239.71,
+          "y": 0,
+          "z": 56.05
+        },
+        {
+          "x": -239.71,
+          "y": 0,
+          "z": 86.05
+        },
+        {
+          "x": -273.71,
+          "y": 0,
+          "z": 86.05
+        }
+      ],
+      "height": 140,
+      "baseHeight": 0,
+      "floors": 40,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-19",
+      "name": "New York Times Building",
+      "footprint": [
+        {
+          "x": -291.54,
+          "y": 0,
+          "z": -3.45
+        },
+        {
+          "x": -255.54,
+          "y": 0,
+          "z": -3.45
+        },
+        {
+          "x": -255.54,
+          "y": 0,
+          "z": 24.55
+        },
+        {
+          "x": -291.54,
+          "y": 0,
+          "z": 24.55
+        }
+      ],
+      "height": 150,
+      "baseHeight": 0,
+      "floors": 43,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-20",
+      "name": "8 Spruce Street",
+      "footprint": [
+        {
+          "x": -272.64,
+          "y": 0,
+          "z": -80.18
+        },
+        {
+          "x": -244.64,
+          "y": 0,
+          "z": -80.18
+        },
+        {
+          "x": -244.64,
+          "y": 0,
+          "z": -52.18
+        },
+        {
+          "x": -272.64,
+          "y": 0,
+          "z": -52.18
+        }
+      ],
+      "height": 165,
+      "baseHeight": 0,
+      "floors": 47,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-21",
+      "name": "56 Leonard",
+      "footprint": [
+        {
+          "x": -259.45,
+          "y": 0,
+          "z": -95.23
+        },
+        {
+          "x": -233.45,
+          "y": 0,
+          "z": -95.23
+        },
+        {
+          "x": -233.45,
+          "y": 0,
+          "z": -69.23
+        },
+        {
+          "x": -259.45,
+          "y": 0,
+          "z": -69.23
+        }
+      ],
+      "height": 155,
+      "baseHeight": 0,
+      "floors": 44,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-22",
+      "name": "VIA 57 West",
+      "footprint": [
+        {
+          "x": -271.91,
+          "y": 0,
+          "z": -80.7
+        },
+        {
+          "x": -231.91,
+          "y": 0,
+          "z": -80.7
+        },
+        {
+          "x": -231.91,
+          "y": 0,
+          "z": -50.7
+        },
+        {
+          "x": -271.91,
+          "y": 0,
+          "z": -50.7
+        }
+      ],
+      "height": 120,
+      "baseHeight": 0,
+      "floors": 34,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-23",
+      "name": "The Edge",
+      "footprint": [
+        {
+          "x": -277.47,
+          "y": 0,
+          "z": -121.65
+        },
+        {
+          "x": -249.47,
+          "y": 0,
+          "z": -121.65
+        },
+        {
+          "x": -249.47,
+          "y": 0,
+          "z": -97.65
+        },
+        {
+          "x": -277.47,
+          "y": 0,
+          "z": -97.65
+        }
+      ],
+      "height": 100,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-24",
+      "name": "One57",
+      "footprint": [
+        {
+          "x": -260.97,
+          "y": 0,
+          "z": -213.96
+        },
+        {
+          "x": -232.97,
+          "y": 0,
+          "z": -213.96
+        },
+        {
+          "x": -232.97,
+          "y": 0,
+          "z": -185.96
+        },
+        {
+          "x": -260.97,
+          "y": 0,
+          "z": -185.96
+        }
+      ],
+      "height": 175,
+      "baseHeight": 0,
+      "floors": 50,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-25",
+      "name": "15 Hudson Yards",
+      "footprint": [
+        {
+          "x": -243.03,
+          "y": 0,
+          "z": -233.75
+        },
+        {
+          "x": -213.03,
+          "y": 0,
+          "z": -233.75
+        },
+        {
+          "x": -213.03,
+          "y": 0,
+          "z": -203.75
+        },
+        {
+          "x": -243.03,
+          "y": 0,
+          "z": -203.75
+        }
+      ],
+      "height": 160,
+      "baseHeight": 0,
+      "floors": 46,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-26",
+      "name": "30 Hudson Yards",
+      "footprint": [
+        {
+          "x": -232.77,
+          "y": 0,
+          "z": -253.22
+        },
+        {
+          "x": -198.77,
+          "y": 0,
+          "z": -253.22
+        },
+        {
+          "x": -198.77,
+          "y": 0,
+          "z": -219.22
+        },
+        {
+          "x": -232.77,
+          "y": 0,
+          "z": -219.22
+        }
+      ],
+      "height": 195,
+      "baseHeight": 0,
+      "floors": 56,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-27",
+      "name": "Goldman Sachs Tower",
+      "footprint": [
+        {
+          "x": -224.74,
+          "y": 0,
+          "z": -263.69
+        },
+        {
+          "x": -188.74,
+          "y": 0,
+          "z": -263.69
+        },
+        {
+          "x": -188.74,
+          "y": 0,
+          "z": -231.69
+        },
+        {
+          "x": -224.74,
+          "y": 0,
+          "z": -231.69
+        }
+      ],
+      "height": 170,
+      "baseHeight": 0,
+      "floors": 49,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-28",
+      "name": "40 Wall Street",
+      "footprint": [
+        {
+          "x": -204.99,
+          "y": 0,
+          "z": -266.91
+        },
+        {
+          "x": -176.99,
+          "y": 0,
+          "z": -266.91
+        },
+        {
+          "x": -176.99,
+          "y": 0,
+          "z": -238.91
+        },
+        {
+          "x": -204.99,
+          "y": 0,
+          "z": -238.91
+        }
+      ],
+      "height": 145,
+      "baseHeight": 0,
+      "floors": 41,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-29",
+      "name": "70 Pine Street",
+      "footprint": [
+        {
+          "x": -189.46,
+          "y": 0,
+          "z": -283.93
+        },
+        {
+          "x": -163.46,
+          "y": 0,
+          "z": -283.93
+        },
+        {
+          "x": -163.46,
+          "y": 0,
+          "z": -257.93
+        },
+        {
+          "x": -189.46,
+          "y": 0,
+          "z": -257.93
+        }
+      ],
+      "height": 150,
+      "baseHeight": 0,
+      "floors": 43,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "pyramidal",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-30",
+      "name": "120 Wall Street",
+      "footprint": [
+        {
+          "x": -176.72,
+          "y": 0,
+          "z": -291.93
+        },
+        {
+          "x": -146.72,
+          "y": 0,
+          "z": -291.93
+        },
+        {
+          "x": -146.72,
+          "y": 0,
+          "z": -267.93
+        },
+        {
+          "x": -176.72,
+          "y": 0,
+          "z": -267.93
+        }
+      ],
+      "height": 115,
+      "baseHeight": 0,
+      "floors": 33,
+      "style": "modern_office",
+      "facadeMaterial": "concrete",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-31",
+      "name": "American Copper Buildings",
+      "footprint": [
+        {
+          "x": -166.31,
+          "y": 0,
+          "z": -312.91
+        },
+        {
+          "x": -134.31,
+          "y": 0,
+          "z": -312.91
+        },
+        {
+          "x": -134.31,
+          "y": 0,
+          "z": -284.91
+        },
+        {
+          "x": -166.31,
+          "y": 0,
+          "z": -284.91
+        }
+      ],
+      "height": 140,
+      "baseHeight": 0,
+      "floors": 40,
+      "style": "modern_office",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    },
+    {
+      "id": "new-york-harbor-circuit-landmark-32",
+      "name": "The Spiral",
+      "footprint": [
+        {
+          "x": -151.6,
+          "y": 0,
+          "z": -331.85
+        },
+        {
+          "x": -117.6,
+          "y": 0,
+          "z": -331.85
+        },
+        {
+          "x": -117.6,
+          "y": 0,
+          "z": -297.85
+        },
+        {
+          "x": -151.6,
+          "y": 0,
+          "z": -297.85
+        }
+      ],
+      "height": 185,
+      "baseHeight": 0,
+      "floors": 53,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.95,
+      "source": "procedural-landmark"
+    }
+  ],
+  "sceneryObjects": [
+    {
+      "id": "new-york-harbor-circuit-light-0",
+      "type": "street_light",
+      "position": {
+        "x": -49.63,
+        "y": 0,
+        "z": -273.14
+      },
+      "rotation": 1.894,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-1",
+      "type": "street_light",
+      "position": {
+        "x": -40.04,
+        "y": 0,
+        "z": -296.8
+      },
+      "rotation": 1.9013,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-1",
+      "type": "tree",
+      "position": {
+        "x": -32.54,
+        "y": 0,
+        "z": -274.95
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-2",
+      "type": "street_light",
+      "position": {
+        "x": -21.5,
+        "y": 0,
+        "z": -282.72
+      },
+      "rotation": 1.875,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-3",
+      "type": "street_light",
+      "position": {
+        "x": -6.55,
+        "y": 0,
+        "z": -306.72
+      },
+      "rotation": 1.7897,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-3",
+      "type": "tree",
+      "position": {
+        "x": -1.53,
+        "y": 0,
+        "z": -284.17
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-4",
+      "type": "street_light",
+      "position": {
+        "x": 14.74,
+        "y": 0,
+        "z": -290.47
+      },
+      "rotation": 1.606,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-5",
+      "type": "street_light",
+      "position": {
+        "x": 32.38,
+        "y": 0,
+        "z": -308.14
+      },
+      "rotation": 1.3953,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-5",
+      "type": "tree",
+      "position": {
+        "x": 28.34,
+        "y": 0,
+        "z": -285.4
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-6",
+      "type": "street_light",
+      "position": {
+        "x": 48.29,
+        "y": 0,
+        "z": -283.79
+      },
+      "rotation": 1.2017,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-7",
+      "type": "street_light",
+      "position": {
+        "x": 71.47,
+        "y": 0,
+        "z": -294.15
+      },
+      "rotation": 1.0733,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-7",
+      "type": "tree",
+      "position": {
+        "x": 60.44,
+        "y": 0,
+        "z": -273.85
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-8",
+      "type": "street_light",
+      "position": {
+        "x": 75.58,
+        "y": 0,
+        "z": -268.99
+      },
+      "rotation": 0.9536,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-9",
+      "type": "street_light",
+      "position": {
+        "x": 100.78,
+        "y": 0,
+        "z": -273.38
+      },
+      "rotation": 0.8438,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-9",
+      "type": "tree",
+      "position": {
+        "x": 85.43,
+        "y": 0,
+        "z": -256.12
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "new-york-harbor-circuit-light-10",
+      "type": "street_light",
+      "position": {
+        "x": 101.38,
+        "y": 0,
+        "z": -246.04
+      },
+      "rotation": 0.7563,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-11",
+      "type": "street_light",
+      "position": {
+        "x": 124.94,
+        "y": 0,
+        "z": -248.4
+      },
+      "rotation": 0.6927,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-11",
+      "type": "tree",
+      "position": {
+        "x": 107.16,
+        "y": 0,
+        "z": -233.65
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-12",
+      "type": "street_light",
+      "position": {
+        "x": 121.49,
+        "y": 0,
+        "z": -220.77
+      },
+      "rotation": 0.5643,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-13",
+      "type": "street_light",
+      "position": {
+        "x": 146.8,
+        "y": 0,
+        "z": -213.04
+      },
+      "rotation": 0.3412,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-13",
+      "type": "tree",
+      "position": {
+        "x": 125.03,
+        "y": 0,
+        "z": -205.31
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-14",
+      "type": "street_light",
+      "position": {
+        "x": 129.41,
+        "y": 0,
+        "z": -194.91
+      },
+      "rotation": -0.4306,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-15",
+      "type": "street_light",
+      "position": {
+        "x": 135.14,
+        "y": 0,
+        "z": -171.14
+      },
+      "rotation": -0.7716,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-15",
+      "type": "tree",
+      "position": {
+        "x": 118.58,
+        "y": 0,
+        "z": -187.25
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-16",
+      "type": "street_light",
+      "position": {
+        "x": 108.25,
+        "y": 0,
+        "z": -172.14
+      },
+      "rotation": -0.8101,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-17",
+      "type": "street_light",
+      "position": {
+        "x": 110.08,
+        "y": 0,
+        "z": -144.72
+      },
+      "rotation": -0.4032,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-17",
+      "type": "tree",
+      "position": {
+        "x": 88.84,
+        "y": 0,
+        "z": -153.78
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-18",
+      "type": "street_light",
+      "position": {
+        "x": 95.6,
+        "y": 0,
+        "z": -126.28
+      },
+      "rotation": 0.5881,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-19",
+      "type": "street_light",
+      "position": {
+        "x": 121.49,
+        "y": 0,
+        "z": -126.71
+      },
+      "rotation": 0.8677,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-19",
+      "type": "tree",
+      "position": {
+        "x": 106.55,
+        "y": 0,
+        "z": -109.09
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "new-york-harbor-circuit-light-20",
+      "type": "street_light",
+      "position": {
+        "x": 119.83,
+        "y": 0,
+        "z": -103.6
+      },
+      "rotation": 0.9222,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-21",
+      "type": "street_light",
+      "position": {
+        "x": 148.22,
+        "y": 0,
+        "z": -106.02
+      },
+      "rotation": 0.8839,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-21",
+      "type": "tree",
+      "position": {
+        "x": 133.57,
+        "y": 0,
+        "z": -88.16
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-22",
+      "type": "street_light",
+      "position": {
+        "x": 148.97,
+        "y": 0,
+        "z": -78.82
+      },
+      "rotation": 0.6857,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-23",
+      "type": "street_light",
+      "position": {
+        "x": 174.5,
+        "y": 0,
+        "z": -74.24
+      },
+      "rotation": 0.4918,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-23",
+      "type": "tree",
+      "position": {
+        "x": 154.13,
+        "y": 0,
+        "z": -63.33
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-24",
+      "type": "street_light",
+      "position": {
+        "x": 164.88,
+        "y": 0,
+        "z": -49.64
+      },
+      "rotation": 0.393,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-25",
+      "type": "street_light",
+      "position": {
+        "x": 189.24,
+        "y": 0,
+        "z": -39.04
+      },
+      "rotation": 0.318,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-25",
+      "type": "tree",
+      "position": {
+        "x": 167.29,
+        "y": 0,
+        "z": -31.81
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-26",
+      "type": "street_light",
+      "position": {
+        "x": 176.17,
+        "y": 0,
+        "z": -15.65
+      },
+      "rotation": 0.2648,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-27",
+      "type": "street_light",
+      "position": {
+        "x": 197.87,
+        "y": 0,
+        "z": -8.36
+      },
+      "rotation": 0.2404,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-27",
+      "type": "tree",
+      "position": {
+        "x": 175.43,
+        "y": 0,
+        "z": -2.85
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-28",
+      "type": "street_light",
+      "position": {
+        "x": 183.29,
+        "y": 0,
+        "z": 14.23
+      },
+      "rotation": 0.1994,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-29",
+      "type": "street_light",
+      "position": {
+        "x": 205.56,
+        "y": 0,
+        "z": 29.97
+      },
+      "rotation": 0.1504,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-29",
+      "type": "tree",
+      "position": {
+        "x": 182.72,
+        "y": 0,
+        "z": 33.43
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "new-york-harbor-circuit-light-30",
+      "type": "street_light",
+      "position": {
+        "x": 188.96,
+        "y": 0,
+        "z": 51.84
+      },
+      "rotation": 0.0977,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-31",
+      "type": "street_light",
+      "position": {
+        "x": 209.46,
+        "y": 0,
+        "z": 70.16
+      },
+      "rotation": 0.039,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-31",
+      "type": "tree",
+      "position": {
+        "x": 186.38,
+        "y": 0,
+        "z": 71.06
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-32",
+      "type": "street_light",
+      "position": {
+        "x": 190.5,
+        "y": 0,
+        "z": 83.5
+      },
+      "rotation": -0.0045,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-33",
+      "type": "street_light",
+      "position": {
+        "x": 209.2,
+        "y": 0,
+        "z": 103.38
+      },
+      "rotation": -0.0361,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-33",
+      "type": "tree",
+      "position": {
+        "x": 186.12,
+        "y": 0,
+        "z": 102.54
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-34",
+      "type": "street_light",
+      "position": {
+        "x": 188.97,
+        "y": 0,
+        "z": 122.21
+      },
+      "rotation": -0.0786,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-35",
+      "type": "street_light",
+      "position": {
+        "x": 206.71,
+        "y": 0,
+        "z": 137.48
+      },
+      "rotation": -0.1284,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-35",
+      "type": "tree",
+      "position": {
+        "x": 183.8,
+        "y": 0,
+        "z": 134.52
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-36",
+      "type": "street_light",
+      "position": {
+        "x": 184.33,
+        "y": 0,
+        "z": 153.47
+      },
+      "rotation": -0.2393,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-37",
+      "type": "street_light",
+      "position": {
+        "x": 196.51,
+        "y": 0,
+        "z": 177.92
+      },
+      "rotation": -0.3995,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-37",
+      "type": "tree",
+      "position": {
+        "x": 175.23,
+        "y": 0,
+        "z": 168.94
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-38",
+      "type": "street_light",
+      "position": {
+        "x": 170.43,
+        "y": 0,
+        "z": 186.07
+      },
+      "rotation": -0.5775,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-39",
+      "type": "street_light",
+      "position": {
+        "x": 178.05,
+        "y": 0,
+        "z": 208.28
+      },
+      "rotation": -0.6683,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-39",
+      "type": "tree",
+      "position": {
+        "x": 159.91,
+        "y": 0,
+        "z": 193.97
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "new-york-harbor-circuit-light-40",
+      "type": "street_light",
+      "position": {
+        "x": 149.68,
+        "y": 0,
+        "z": 211.43
+      },
+      "rotation": -0.7716,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-41",
+      "type": "street_light",
+      "position": {
+        "x": 152.89,
+        "y": 0,
+        "z": 235.08
+      },
+      "rotation": -0.8247,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-41",
+      "type": "tree",
+      "position": {
+        "x": 137.21,
+        "y": 0,
+        "z": 218.12
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-42",
+      "type": "street_light",
+      "position": {
+        "x": 124.45,
+        "y": 0,
+        "z": 234.3
+      },
+      "rotation": -0.8877,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-43",
+      "type": "street_light",
+      "position": {
+        "x": 120.43,
+        "y": 0,
+        "z": 261.66
+      },
+      "rotation": -0.9375,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-43",
+      "type": "tree",
+      "position": {
+        "x": 106.76,
+        "y": 0,
+        "z": 243.04
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-44",
+      "type": "street_light",
+      "position": {
+        "x": 98.46,
+        "y": 0,
+        "z": 253.7
+      },
+      "rotation": -0.9744,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-45",
+      "type": "street_light",
+      "position": {
+        "x": 91.55,
+        "y": 0,
+        "z": 280.71
+      },
+      "rotation": -1.0492,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-45",
+      "type": "tree",
+      "position": {
+        "x": 80.04,
+        "y": 0,
+        "z": 260.69
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-46",
+      "type": "street_light",
+      "position": {
+        "x": 65.32,
+        "y": 0,
+        "z": 272.59
+      },
+      "rotation": -1.1558,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-47",
+      "type": "street_light",
+      "position": {
+        "x": 54.04,
+        "y": 0,
+        "z": 296.97
+      },
+      "rotation": -1.3092,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-47",
+      "type": "tree",
+      "position": {
+        "x": 48.07,
+        "y": 0,
+        "z": 274.66
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-48",
+      "type": "street_light",
+      "position": {
+        "x": 33.48,
+        "y": 0,
+        "z": 280.95
+      },
+      "rotation": -1.5116,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-49",
+      "type": "street_light",
+      "position": {
+        "x": 13.36,
+        "y": 0,
+        "z": 299.68
+      },
+      "rotation": -1.6616,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-49",
+      "type": "tree",
+      "position": {
+        "x": 15.45,
+        "y": 0,
+        "z": 276.67
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "new-york-harbor-circuit-light-50",
+      "type": "street_light",
+      "position": {
+        "x": 2.18,
+        "y": 0,
+        "z": 278.8
+      },
+      "rotation": -1.75,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-51",
+      "type": "street_light",
+      "position": {
+        "x": -21.99,
+        "y": 0,
+        "z": 292.35
+      },
+      "rotation": -1.9081,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-51",
+      "type": "tree",
+      "position": {
+        "x": -14.34,
+        "y": 0,
+        "z": 270.55
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-52",
+      "type": "street_light",
+      "position": {
+        "x": -28.29,
+        "y": 0,
+        "z": 268.16
+      },
+      "rotation": -2.1849,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-53",
+      "type": "street_light",
+      "position": {
+        "x": -51.18,
+        "y": 0,
+        "z": 261.03
+      },
+      "rotation": 3.067,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-53",
+      "type": "tree",
+      "position": {
+        "x": -28.14,
+        "y": 0,
+        "z": 262.76
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-54",
+      "type": "street_light",
+      "position": {
+        "x": -27.7,
+        "y": 0,
+        "z": 248.31
+      },
+      "rotation": 2.7435,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-55",
+      "type": "street_light",
+      "position": {
+        "x": -36.13,
+        "y": 0,
+        "z": 221.38
+      },
+      "rotation": 2.6831,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-55",
+      "type": "tree",
+      "position": {
+        "x": -15.42,
+        "y": 0,
+        "z": 231.6
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-56",
+      "type": "street_light",
+      "position": {
+        "x": -11.05,
+        "y": 0,
+        "z": 212.39
+      },
+      "rotation": 2.813,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-57",
+      "type": "street_light",
+      "position": {
+        "x": -25.55,
+        "y": 0,
+        "z": 209.76
+      },
+      "rotation": -1.1777,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-57",
+      "type": "tree",
+      "position": {
+        "x": -34.4,
+        "y": 0,
+        "z": 188.43
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-58",
+      "type": "street_light",
+      "position": {
+        "x": -49.15,
+        "y": 0,
+        "z": 200.77
+      },
+      "rotation": -1.0326,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-59",
+      "type": "street_light",
+      "position": {
+        "x": -51.1,
+        "y": 0,
+        "z": 224.36
+      },
+      "rotation": -1.0374,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-59",
+      "type": "tree",
+      "position": {
+        "x": -62.84,
+        "y": 0,
+        "z": 204.47
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "new-york-harbor-circuit-light-60",
+      "type": "street_light",
+      "position": {
+        "x": -77.89,
+        "y": 0,
+        "z": 216.94
+      },
+      "rotation": -1.1575,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-61",
+      "type": "street_light",
+      "position": {
+        "x": -89.67,
+        "y": 0,
+        "z": 239.59
+      },
+      "rotation": -1.5367,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-61",
+      "type": "tree",
+      "position": {
+        "x": -90.46,
+        "y": 0,
+        "z": 216.51
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-62",
+      "type": "street_light",
+      "position": {
+        "x": -107.98,
+        "y": 0,
+        "z": 217.7
+      },
+      "rotation": -1.8358,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-63",
+      "type": "street_light",
+      "position": {
+        "x": -130.3,
+        "y": 0,
+        "z": 229.96
+      },
+      "rotation": -2.006,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-63",
+      "type": "tree",
+      "position": {
+        "x": -120.56,
+        "y": 0,
+        "z": 209.01
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-64",
+      "type": "street_light",
+      "position": {
+        "x": -136.6,
+        "y": 0,
+        "z": 203.26
+      },
+      "rotation": -2.3403,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-65",
+      "type": "street_light",
+      "position": {
+        "x": -160.01,
+        "y": 0,
+        "z": 195.79
+      },
+      "rotation": 3.0978,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-65",
+      "type": "tree",
+      "position": {
+        "x": -136.93,
+        "y": 0,
+        "z": 196.8
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-66",
+      "type": "street_light",
+      "position": {
+        "x": -137.03,
+        "y": 0,
+        "z": 187.38
+      },
+      "rotation": 2.623,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-67",
+      "type": "street_light",
+      "position": {
+        "x": -142.93,
+        "y": 0,
+        "z": 161.46
+      },
+      "rotation": 2.5419,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-67",
+      "type": "tree",
+      "position": {
+        "x": -123.86,
+        "y": 0,
+        "z": 174.49
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-68",
+      "type": "street_light",
+      "position": {
+        "x": -116.13,
+        "y": 0,
+        "z": 154.88
+      },
+      "rotation": 2.6602,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-69",
+      "type": "street_light",
+      "position": {
+        "x": -129.39,
+        "y": 0,
+        "z": 132.01
+      },
+      "rotation": -2.9309,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-69",
+      "type": "tree",
+      "position": {
+        "x": -106.8,
+        "y": 0,
+        "z": 127.18
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "new-york-harbor-circuit-light-70",
+      "type": "street_light",
+      "position": {
+        "x": -120.16,
+        "y": 0,
+        "z": 110.41
+      },
+      "rotation": -2.433,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-71",
+      "type": "street_light",
+      "position": {
+        "x": -147.01,
+        "y": 0,
+        "z": 111.59
+      },
+      "rotation": -2.2489,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-71",
+      "type": "tree",
+      "position": {
+        "x": -132.52,
+        "y": 0,
+        "z": 93.6
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-72",
+      "type": "street_light",
+      "position": {
+        "x": -145.85,
+        "y": 0,
+        "z": 88.25
+      },
+      "rotation": -2.2207,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-73",
+      "type": "street_light",
+      "position": {
+        "x": -173.83,
+        "y": 0,
+        "z": 90.56
+      },
+      "rotation": -2.2896,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-73",
+      "type": "tree",
+      "position": {
+        "x": -158.61,
+        "y": 0,
+        "z": 73.18
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-74",
+      "type": "street_light",
+      "position": {
+        "x": -172.26,
+        "y": 0,
+        "z": 64.33
+      },
+      "rotation": -2.5094,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-75",
+      "type": "street_light",
+      "position": {
+        "x": -197.64,
+        "y": 0,
+        "z": 60.75
+      },
+      "rotation": -2.583,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-75",
+      "type": "tree",
+      "position": {
+        "x": -178.05,
+        "y": 0,
+        "z": 48.51
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-76",
+      "type": "street_light",
+      "position": {
+        "x": -191.95,
+        "y": 0,
+        "z": 31.52
+      },
+      "rotation": -2.7,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-77",
+      "type": "street_light",
+      "position": {
+        "x": -215.85,
+        "y": 0,
+        "z": 23.11
+      },
+      "rotation": -2.844,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-77",
+      "type": "tree",
+      "position": {
+        "x": -193.77,
+        "y": 0,
+        "z": 16.33
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-78",
+      "type": "street_light",
+      "position": {
+        "x": -200.21,
+        "y": 0,
+        "z": 4.19
+      },
+      "rotation": -3.0551,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-79",
+      "type": "street_light",
+      "position": {
+        "x": -215.53,
+        "y": 0,
+        "z": -18.63
+      },
+      "rotation": 2.7541,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-79",
+      "type": "tree",
+      "position": {
+        "x": -194.14,
+        "y": 0,
+        "z": -9.9
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "new-york-harbor-circuit-light-80",
+      "type": "street_light",
+      "position": {
+        "x": -190.5,
+        "y": 0,
+        "z": -25.04
+      },
+      "rotation": 2.5983,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-81",
+      "type": "street_light",
+      "position": {
+        "x": -197.78,
+        "y": 0,
+        "z": -49.84
+      },
+      "rotation": 2.6137,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-81",
+      "type": "tree",
+      "position": {
+        "x": -177.82,
+        "y": 0,
+        "z": -38.2
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-82",
+      "type": "street_light",
+      "position": {
+        "x": -173.11,
+        "y": 0,
+        "z": -56.86
+      },
+      "rotation": 2.8086,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-83",
+      "type": "street_light",
+      "position": {
+        "x": -190.23,
+        "y": 0,
+        "z": -78.07
+      },
+      "rotation": -2.9295,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-83",
+      "type": "tree",
+      "position": {
+        "x": -167.65,
+        "y": 0,
+        "z": -82.93
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-84",
+      "type": "street_light",
+      "position": {
+        "x": -177.58,
+        "y": 0,
+        "z": -99.37
+      },
+      "rotation": -2.7163,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-85",
+      "type": "street_light",
+      "position": {
+        "x": -202.4,
+        "y": 0,
+        "z": -106.64
+      },
+      "rotation": -2.7047,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-85",
+      "type": "tree",
+      "position": {
+        "x": -181.47,
+        "y": 0,
+        "z": -116.41
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-86",
+      "type": "street_light",
+      "position": {
+        "x": -190.85,
+        "y": 0,
+        "z": -131.68
+      },
+      "rotation": -3.0213,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-87",
+      "type": "street_light",
+      "position": {
+        "x": -205.07,
+        "y": 0,
+        "z": -153.57
+      },
+      "rotation": 2.6668,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-87",
+      "type": "tree",
+      "position": {
+        "x": -184.52,
+        "y": 0,
+        "z": -143.01
+      },
+      "rotation": 0,
+      "scale": 1.1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-88",
+      "type": "street_light",
+      "position": {
+        "x": -179.95,
+        "y": 0,
+        "z": -156.41
+      },
+      "rotation": 2.4446,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-89",
+      "type": "street_light",
+      "position": {
+        "x": -181.82,
+        "y": 0,
+        "z": -182.37
+      },
+      "rotation": 2.3458,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-89",
+      "type": "tree",
+      "position": {
+        "x": -165.66,
+        "y": 0,
+        "z": -165.87
+      },
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "new-york-harbor-circuit-light-90",
+      "type": "street_light",
+      "position": {
+        "x": -155.36,
+        "y": 0,
+        "z": -181.03
+      },
+      "rotation": 2.3318,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-91",
+      "type": "street_light",
+      "position": {
+        "x": -157.03,
+        "y": 0,
+        "z": -206.54
+      },
+      "rotation": 2.3922,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-91",
+      "type": "tree",
+      "position": {
+        "x": -140.12,
+        "y": 0,
+        "z": -190.8
+      },
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-92",
+      "type": "street_light",
+      "position": {
+        "x": -132.14,
+        "y": 0,
+        "z": -205.13
+      },
+      "rotation": 2.3832,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-93",
+      "type": "street_light",
+      "position": {
+        "x": -131.16,
+        "y": 0,
+        "z": -233.66
+      },
+      "rotation": 2.3562,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-93",
+      "type": "tree",
+      "position": {
+        "x": -114.83,
+        "y": 0,
+        "z": -217.33
+      },
+      "rotation": 0,
+      "scale": 1.2000000000000002
+    },
+    {
+      "id": "new-york-harbor-circuit-light-94",
+      "type": "street_light",
+      "position": {
+        "x": -106.92,
+        "y": 0,
+        "z": -230.53
+      },
+      "rotation": 2.3341,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-95",
+      "type": "street_light",
+      "position": {
+        "x": -106.36,
+        "y": 0,
+        "z": -257.2
+      },
+      "rotation": 2.2943,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-95",
+      "type": "tree",
+      "position": {
+        "x": -91.06,
+        "y": 0,
+        "z": -239.88
+      },
+      "rotation": 0,
+      "scale": 0.9
+    },
+    {
+      "id": "new-york-harbor-circuit-light-96",
+      "type": "street_light",
+      "position": {
+        "x": -77.6,
+        "y": 0,
+        "z": -255.72
+      },
+      "rotation": 2.2108,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-light-97",
+      "type": "street_light",
+      "position": {
+        "x": -73.7,
+        "y": 0,
+        "z": -282.08
+      },
+      "rotation": 2.1779,
+      "scale": 1
+    },
+    {
+      "id": "new-york-harbor-circuit-tree-97",
+      "type": "tree",
+      "position": {
+        "x": -60.52,
+        "y": 0,
+        "z": -263.11
+      },
+      "rotation": 0,
+      "scale": 1.1
+    }
+  ],
+  "spawnPoints": [
+    {
+      "x": -60,
+      "y": 0,
+      "z": -280
+    }
+  ],
+  "metadata": {
+    "version": 8,
+    "generatedBy": "seed-local-data",
+    "notes": "East +X reserved for Statue of Liberty and Brooklyn Bridge; Times Square boards + Central Park green in dressing"
+  },
+  "dataAttribution": "Stylised New York Midtown / harbor circuit — original procedural geometry"
+}

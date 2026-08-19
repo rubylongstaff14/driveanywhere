@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-label="Dubai Marina Circuit route preview">
+  <defs>
+    <linearGradient id="skyDubai" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a3040"/>
+      <stop offset="100%" stop-color="#0c1820"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#skyDubai)"/>
+  <rect y="560" width="1280" height="240" fill="#2a2418"/>
+  <ellipse cx="620" cy="580" rx="300" ry="100" fill="#1a4050" opacity="0.55"/>
+  <ellipse cx="620" cy="560" rx="280" ry="95" fill="none" stroke="#3f4a55" stroke-width="52"/>
+  <ellipse cx="620" cy="560" rx="280" ry="95" fill="none" stroke="#f0c878" stroke-width="4" stroke-dasharray="14 18"/>
+  <polygon points="900,560 920,200 940,560" fill="#c8d8e8"/>
+  <polygon points="880,560 900,320 920,560" fill="#a8c0d4"/>
+  <rect x="960" y="300" width="50" height="260" fill="#7ab0c8"/>
+  <path d="M1040 560 L1060 380 L1085 400 L1100 280 L1120 560" fill="#e8f0f8"/>
+  <text x="64" y="84" fill="#f0c878" font-family="monospace" font-size="28">DUBAI MARINA CIRCUIT</text>
+</svg>
