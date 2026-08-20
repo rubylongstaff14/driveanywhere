@@ -7,7 +7,6 @@ import {
   type CircuitLandmarkDef,
   type LandmarkKindId,
 } from "@/lib/game/circuit-landmarks";
-import { LandmarkNameTag } from "@/components/game/scene/landmarks";
 
 function Mat({
   color,
@@ -492,18 +491,18 @@ function PlacedLandmark({
 }) {
   return (
     <group position={[x, y, z]}>
-      <LandmarkMesh
-        kind={def.kind}
-        h={def.height}
-        paint={def.color}
-        accent={def.accent}
-      />
-      <LandmarkNameTag
-        label={def.name.length > 16 ? `${def.name.slice(0, 15)}…` : def.name}
-        accent={def.accent}
-        height={def.height}
-        lateral
-      />
+      <mesh position={[0, 0.4, 0]} receiveShadow>
+        <boxGeometry args={[Math.max(10, def.height * 0.22), 0.8, Math.max(10, def.height * 0.22)]} />
+        <meshStandardMaterial color="#3a4048" roughness={0.9} />
+      </mesh>
+      <group position={[0, 0.8, 0]}>
+        <LandmarkMesh
+          kind={def.kind}
+          h={def.height}
+          paint={def.color}
+          accent={def.accent}
+        />
+      </group>
     </group>
   );
 }
@@ -518,14 +517,14 @@ export function UniqueCircuitLandmarks({
   const placed = useMemo(() => {
     const defs = circuitLandmarksFor(slug);
     if (!samples.length || !defs.length) return [];
-    return defs.map((def, i) => {
-      const sample = samples[Math.floor((i + 0.5) * (samples.length / defs.length)) % samples.length];
+    return defs.slice(0, 12).map((def, i) => {
+      const sample = samples[Math.floor((i + 0.5) * (samples.length / 12)) % samples.length];
       const side = i % 2 === 0 ? 1 : -1;
-      const dist = 118 + (i % 6) * 14;
+      const dist = 78 + (i % 4) * 8;
       const nx = sample.normal.x;
       const nz = sample.normal.z;
       return {
-        def,
+        def: { ...def, height: Math.min(def.height, 72) },
         x: sample.position.x + nx * side * dist,
         y: sample.position.y,
         z: sample.position.z + nz * side * dist,

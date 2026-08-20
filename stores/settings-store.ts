@@ -41,14 +41,14 @@ export const QUALITY_PRESETS: Record<QualityPreset, QualityConfig> = {
     buildingColliderCap: 160,
   },
   high: {
-    dpr: [1, 1.5],
+    dpr: [1, 1.25],
     shadows: true,
-    shadowMapSize: 1536,
-    drawDistance: 480,
+    shadowMapSize: 1024,
+    drawDistance: 380,
     sceneryDensity: 1,
-    fogFar: 520,
+    fogFar: 420,
     antialias: true,
-    buildingColliderCap: 320,
+    buildingColliderCap: 240,
   },
 };
 

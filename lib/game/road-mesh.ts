@@ -217,9 +217,9 @@ export function createCentreLineGeometry(
 ): THREE.BufferGeometry {
   const positions: number[] = [];
   const indices: number[] = [];
-  const dashLen = 4.4;
-  const gapLen = 2.2;
-  const hw = 0.28;
+  const dashLen = 7.2;
+  const gapLen = 2.4;
+  const hw = 0.2;
   let arc = 0;
   let vertex = 0;
 
@@ -230,8 +230,8 @@ export function createCentreLineGeometry(
     const phase = arc % (dashLen + gapLen);
     if (phase > dashLen) continue;
 
-    const ay = a.position.y + 0.055;
-    const by = b.position.y + 0.055;
+    const ay = a.position.y + 0.07;
+    const by = b.position.y + 0.07;
     const al = a.position.clone().addScaledVector(a.normal, -hw);
     const ar = a.position.clone().addScaledVector(a.normal, hw);
     const bl = b.position.clone().addScaledVector(b.normal, -hw);
@@ -257,8 +257,8 @@ export function createEdgeLineGeometry(
 ): THREE.BufferGeometry {
   const positions: number[] = [];
   const indices: number[] = [];
-  const hw = 0.3;
-  const inset = 0.16;
+  const hw = 0.22;
+  const inset = 0.2;
   let v = 0;
 
   for (const side of [-1, 1] as const) {
@@ -296,14 +296,14 @@ export function createLaneLineGeometry(
 ): THREE.BufferGeometry {
   const positions: number[] = [];
   const indices: number[] = [];
-  const dashLen = 2.8;
-  const gapLen = 3.6;
-  const hw = 0.09;
+  const dashLen = 4.2;
+  const gapLen = 3.2;
+  const hw = 0.12;
   let v = 0;
 
   const laneOffsetsFor = (width: number): number[] => {
-    if (width < 14) return [];
-    if (width < 18) return [-0.3, 0.3];
+    if (width < 12) return [];
+    if (width < 16) return [-0.22, 0.22];
     return [-0.33, -0.11, 0.11, 0.33];
   };
 
@@ -317,7 +317,7 @@ export function createLaneLineGeometry(
     for (let i = 0; i < samples.length - 1; i += 1) {
       const a = samples[i];
       const b = samples[i + 1];
-      if (a.width < 14) continue;
+      if (a.width < 12) continue;
       const allowed = laneOffsetsFor(a.width);
       if (!allowed.includes(lane)) continue;
       arc += b.position.distanceTo(a.position);

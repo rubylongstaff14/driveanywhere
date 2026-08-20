@@ -92,7 +92,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
       }}
     >
       <Suspense fallback={null}>
-        <AdaptiveDpr pixelated />
+        <AdaptiveDpr />
         <SceneEnvironment
           quality={quality}
           dusk={Boolean(route.realWorld)}

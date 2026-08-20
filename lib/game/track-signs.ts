@@ -80,8 +80,8 @@ export function buildTurnSigns(samples: RoadSample[]): TrackSign[] {
   const out: TrackSign[] = [];
   if (samples.length < 30) return out;
 
-  const LOOKAHEAD = 18;
-  const MIN_GAP = 22;
+  const LOOKAHEAD = 16;
+  const MIN_GAP = 14;
   let lastApex = -999;
 
   for (let i = 10; i < samples.length - LOOKAHEAD - 2; i += 2) {
@@ -96,7 +96,7 @@ export function buildTurnSigns(samples: RoadSample[]): TrackSign[] {
         peakAt = j;
       }
     }
-    if (peak < 0.18) continue;
+    if (peak < 0.12) continue;
     if (peakAt - lastApex < MIN_GAP) continue;
 
     const cross = bendCross(samples, peakAt);
@@ -108,16 +108,14 @@ export function buildTurnSigns(samples: RoadSample[]): TrackSign[] {
     // Mild bends only get a 50 m board; sharper get the full countdown.
     const markers: Array<100 | 50 | 25> =
       severity === "mild"
-        ? [50]
-        : severity === "sharp"
-          ? [100, 50]
-          : [100, 50, 25];
+        ? [100, 50]
+        : [100, 50, 25];
 
     for (const metres of markers) {
       const warnAt = indexAtDistanceBack(samples, peakAt, metres);
       if (arcLengthTo(samples, warnAt, peakAt) < metres * 0.55) continue;
       const s = samples[warnAt];
-      const offset = s.width / 2 + 5.8;
+      const offset = s.width / 2 + 6.4;
       const yaw = Math.atan2(s.tangent.x, s.tangent.z);
       out.push({
         key: `sign-${peakAt}-${metres}-${turn}`,

@@ -835,7 +835,7 @@ export function TurnWarningSign({
   yaw: number;
   turn: -1 | 1;
   severity: "mild" | "sharp" | "hairpin";
-  metres?: 100 | 50 | 25;
+    metres?: 100 | 50 | 25;
 }) {
   const chevrons = severity === "hairpin" ? 3 : severity === "sharp" ? 2 : 1;
   const boardH = 1.35 + chevrons * 0.12;
@@ -843,7 +843,7 @@ export function TurnWarningSign({
     metres === 100 ? "100m" : metres === 25 ? "25m" : "50m";
 
   return (
-    <group position={position} rotation={[0, yaw, 0]}>
+    <group position={position} rotation={[0, yaw, 0]} scale={1.4}>
       <mesh position={[0, 1.45, 0]} castShadow>
         <cylinderGeometry args={[0.08, 0.1, 2.9, 6]} />
         <meshStandardMaterial color="#5a626a" metalness={0.55} roughness={0.4} />
@@ -1001,6 +1001,8 @@ function getLabelTexture(label: string, accent: string): THREE.CanvasTexture {
   return texture;
 }
 
+const _tagWorld = new THREE.Vector3();
+
 export function LandmarkNameTag({
   label,
   accent,
@@ -1026,10 +1028,9 @@ export function LandmarkNameTag({
   useFrame(({ camera }) => {
     const group = groupRef.current;
     if (!group) return;
-    const world = new THREE.Vector3();
-    group.getWorldPosition(world);
-    const d = camera.position.distanceTo(world);
-    group.visible = d > 52 && d < 210;
+    group.getWorldPosition(_tagWorld);
+    const d = camera.position.distanceTo(_tagWorld);
+    group.visible = d > 70 && d < 160;
   });
 
   if (quality === "low") return null;

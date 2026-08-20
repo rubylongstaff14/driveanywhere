@@ -21,8 +21,8 @@ export function CircuitBoot({
     }, 140);
     const finish = window.setTimeout(() => {
       setProgress(100);
-      window.setTimeout(() => setDone(true), 280);
-    }, 2100);
+      window.setTimeout(() => setDone(true), 180);
+    }, 780);
     return () => {
       window.clearInterval(tick);
       window.clearTimeout(finish);

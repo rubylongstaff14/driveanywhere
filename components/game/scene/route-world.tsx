@@ -52,6 +52,7 @@ import {
 } from "@/components/game/scene/landmarks";
 import { IconicTower, resolveIconicKind } from "@/components/game/scene/iconic-towers";
 import { UniqueCircuitLandmarks } from "@/components/game/scene/unique-landmarks";
+import { StreetFill } from "@/components/game/scene/street-fill";
 import { CityBlockDetail, cityRegionFromSlug } from "@/components/game/scene/city-block-detail";
 import { getLandmarkIdentity } from "@/lib/game/landmark-identity";
 import { buildTrackBarriers } from "@/lib/game/track-barriers";
@@ -520,6 +521,16 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       (b, i) => Boolean(b.landmark) || b.height >= 70 || i % 2 === 0,
     );
   }, [buildings, samples, quality.sceneryDensity]);
+
+  const streetOccupied = useMemo(
+    () =>
+      visibleBuildings.map((b) => ({
+        x: b.cx,
+        z: b.cz,
+        r: Math.max(b.width, b.depth) * 0.55,
+      })),
+    [visibleBuildings],
+  );
 
   useEffect(
     () => () => {
@@ -1803,6 +1814,12 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       )}
 
       <UniqueCircuitLandmarks slug={route.slug} samples={samples} />
+      <StreetFill
+        samples={samples}
+        region={cityRegionFromSlug(route.slug)}
+        density={quality.sceneryDensity}
+        occupied={streetOccupied}
+      />
 
       {/* ================================================================
           BUILDINGS (genuine footprint extrusion for OSM-backed routes)

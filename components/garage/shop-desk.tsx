@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   cosmeticsForVehicle,
   getCosmetic,
@@ -20,6 +20,7 @@ import { useAuthStore } from "@/stores/auth-store";
 import { Button } from "@/components/ui/button";
 
 const CELL = 148;
+const WIN_INDEX = 24;
 
 function reelStrip(items: CosmeticItem[], winnerId: string | null): CosmeticItem[] {
   const base = items.filter((c) => c.rarity !== "consumer");
@@ -30,7 +31,7 @@ function reelStrip(items: CosmeticItem[], winnerId: string | null): CosmeticItem
   }
   if (winnerId) {
     const win = items.find((c) => c.id === winnerId) ?? pool[0];
-    strip[24] = win;
+    strip[WIN_INDEX] = win;
   }
   return strip;
 }
@@ -44,46 +45,61 @@ export function ShopDesk() {
   const hydrated = useProgressionStore((s) => s.hydrated);
   const [vehicleId, setVehicleId] = useState<VehicleId>("sports");
   const [spinning, setSpinning] = useState(false);
-  const [offset, setOffset] = useState(0);
   const [result, setResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [strip, setStrip] = useState<CosmeticItem[]>([]);
+  const reelRef = useRef<HTMLDivElement>(null);
   const rank = rankForXp(xp);
   const user = useAuthStore((s) => s.user);
   const guestTest = !user || user.mode === "guest";
   const coinLabel = guestTest ? "Unlimited (guest test)" : `${coins.toLocaleString()} coins`;
+  const catalog = cosmeticsForVehicle(vehicleId);
+  const drop = useMemo(() => (result ? getCosmetic(result) : null), [result]);
 
   useEffect(() => {
     if (!hydrated) hydrate();
   }, [hydrate, hydrated]);
 
-  const catalog = cosmeticsForVehicle(vehicleId);
-  const drop = useMemo(() => (result ? getCosmetic(result) : null), [result]);
-  const strip = useMemo(
-    () => reelStrip(catalog, result),
-    [catalog, result],
-  );
+  useEffect(() => {
+    setStrip(reelStrip(catalog, null));
+    if (reelRef.current) {
+      reelRef.current.style.transition = "none";
+      reelRef.current.style.transform = "translateX(0px)";
+    }
+  }, [catalog]);
 
   function handleOpen(crateId: CrateId) {
     if (spinning) return;
     setError(null);
-    setResult(null);
-    setOffset(0);
     const outcome = openCrate(crateId, vehicleId);
     if (!outcome.ok) {
       setError(outcome.message);
       return;
     }
+    setStrip(reelStrip(catalog, outcome.itemId));
+    setResult(null);
     setSpinning(true);
-    setResult(outcome.itemId);
+    const el = reelRef.current;
+    if (el) {
+      el.style.transition = "none";
+      el.style.transform = "translateX(90px)";
+    }
+    const end = -(WIN_INDEX * CELL) + 220;
     window.requestAnimationFrame(() => {
-      setOffset(-(24 * CELL) + 86);
+      window.requestAnimationFrame(() => {
+        const node = reelRef.current;
+        if (!node) return;
+        node.style.transition = "transform 2.35s cubic-bezier(0.12, 0.82, 0.08, 1)";
+        node.style.transform = `translateX(${end}px)`;
+      });
     });
     window.setTimeout(() => {
       setSpinning(false);
+      setResult(outcome.itemId);
       if (outcome.duplicate) {
         setError(`Duplicate — ${outcome.coinsBack} coins returned.`);
       }
-    }, 2500);
+    }, 2450);
   }
 
   return (
@@ -106,7 +122,6 @@ export function ShopDesk() {
               if (spinning) return;
               setVehicleId(v.id);
               setResult(null);
-              setOffset(0);
             }}
             className={
               v.id === vehicleId
@@ -119,17 +134,11 @@ export function ShopDesk() {
         ))}
       </div>
 
-      <div
-        key={vehicleId}
-        className="relative mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(ellipse_at_center,#162033,#07090d_70%)] py-8 shadow-[0_24px_80px_rgba(0,0,0,0.4)] da-slide-swap"
-      >
+      <div className="relative mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(ellipse_at_center,#162033,#07090d_70%)] py-8 shadow-[0_24px_80px_rgba(0,0,0,0.4)]">
         <div className="pointer-events-none absolute inset-y-0 left-1/2 z-10 w-px -translate-x-1/2 bg-accent shadow-[0_0_18px_#f5a623]" />
         <div className="pointer-events-none absolute inset-y-6 left-1/2 z-10 h-[calc(100%-48px)] w-[148px] -translate-x-1/2 rounded-xl border border-accent/70" />
         <div className="overflow-hidden">
-          <div
-            className={`da-shop-reel ${spinning ? "is-spinning" : ""}`}
-            style={{ transform: `translateX(${offset}px)` }}
-          >
+          <div ref={reelRef} className="da-shop-reel">
             {strip.map((item, i) => (
               <div
                 key={`${item.id}-${i}`}
