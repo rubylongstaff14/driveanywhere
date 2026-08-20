@@ -1,48 +1,85 @@
 /**
- * Push building footprints away from the drivable ribbon when corners clip the road.
+ * Push whole buildings off the racing ribbon until their AABB colliders
+ * no longer intersect asphalt. Fixes "solid building on the track".
+ *
  * Run: npx tsx scripts/fix-building-clearance.ts [slug...]
  */
 import fs from "node:fs";
 import path from "node:path";
 import { sampleRoad } from "../lib/game/road-mesh";
-import { RoadTracker } from "../lib/game/road-tracker";
+import { aabbAsphaltClearance } from "../lib/game/building-road-clearance";
 import type { RouteData } from "../lib/validation/route-data";
 import { getRouteData, getRouteDataSlugs } from "../lib/routes/route-registry";
 
-function nearestClearance(
-  tracker: RoadTracker,
-  x: number,
-  z: number,
-  roadHalf: number,
-): number {
-  return tracker.nearest(x, z).distance - roadHalf;
+function footprintBox(footprint: { x: number; z: number }[]) {
+  let minX = Infinity,
+    maxX = -Infinity,
+    minZ = Infinity,
+    maxZ = -Infinity;
+  for (const p of footprint) {
+    minX = Math.min(minX, p.x);
+    maxX = Math.max(maxX, p.x);
+    minZ = Math.min(minZ, p.z);
+    maxZ = Math.max(maxZ, p.z);
+  }
+  return {
+    cx: (minX + maxX) / 2,
+    cz: (minZ + maxZ) / 2,
+    hw: Math.max(0.9, (maxX - minX) / 2),
+    hd: Math.max(0.9, (maxZ - minZ) / 2),
+  };
 }
 
-function pushBuilding(
-  building: RouteData["buildings"][number],
-  tracker: RoadTracker,
+function nearestSample(
   samples: ReturnType<typeof sampleRoad>,
-  roadHalf: number,
+  x: number,
+  z: number,
+) {
+  let best = samples[0];
+  let bestD = Infinity;
+  for (const s of samples) {
+    const d = Math.hypot(s.position.x - x, s.position.z - z);
+    if (d < bestD) {
+      bestD = d;
+      best = s;
+    }
+  }
+  return best;
+}
+
+function pushBuildingOffRoad(
+  building: RouteData["buildings"][number],
+  samples: ReturnType<typeof sampleRoad>,
   minClear: number,
 ): boolean {
   let moved = false;
-  const minDist = roadHalf + minClear;
-  for (const corner of building.footprint) {
-    const hit = tracker.nearest(corner.x, corner.z, 999);
-    if (hit.distance >= minDist) continue;
-    const sample = samples[hit.index];
-    let dx = corner.x - sample.position.x;
-    let dz = corner.z - sample.position.z;
+  for (let iter = 0; iter < 40; iter += 1) {
+    const box = footprintBox(building.footprint);
+    const clear = aabbAsphaltClearance(
+      samples,
+      box.cx,
+      box.cz,
+      box.hw,
+      box.hd,
+    );
+    if (clear >= minClear) break;
+
+    const nearest = nearestSample(samples, box.cx, box.cz);
+    let dx = box.cx - nearest.position.x;
+    let dz = box.cz - nearest.position.z;
     if (Math.hypot(dx, dz) < 0.05) {
-      dx = sample.normal.x;
-      dz = sample.normal.z;
+      dx = nearest.normal.x;
+      dz = nearest.normal.z;
     }
     const len = Math.hypot(dx, dz) || 1;
     dx /= len;
     dz /= len;
-    const push = minDist - hit.distance + 0.8;
-    corner.x += dx * push;
-    corner.z += dz * push;
+    // Push enough to clear this iteration; clamp so we don't teleport miles.
+    const push = Math.min(28, Math.max(2.5, minClear - clear + 2.5));
+    for (const corner of building.footprint) {
+      corner.x += dx * push;
+      corner.z += dz * push;
+    }
     moved = true;
   }
   return moved;
@@ -57,17 +94,15 @@ for (const slug of targets) {
   const file = path.join(process.cwd(), "public", "routes", `${slug}.json`);
   const raw = JSON.parse(fs.readFileSync(file, "utf8")) as RouteData;
   const samples = sampleRoad(raw.roadPoints, 10);
-  const tracker = new RoadTracker(samples);
-  const roadHalf = raw.roadWidth / 2;
   let fixes = 0;
 
   for (const building of raw.buildings) {
-    if (pushBuilding(building, tracker, samples, roadHalf, 1.5)) fixes += 1;
+    if (pushBuildingOffRoad(building, samples, 2.5)) fixes += 1;
   }
 
   if (fixes > 0) {
     fs.writeFileSync(file, `${JSON.stringify(raw, null, 2)}\n`);
-    console.log(`${slug}: moved ${fixes} building(s)`);
+    console.log(`${slug}: moved ${fixes} building(s) clear of asphalt AABB`);
   } else {
     console.log(`${slug}: ok`);
   }

@@ -60,6 +60,7 @@ import {
   buildAlpineCliffs,
   buildAlpineTerrainPads,
 } from "@/lib/game/alpine-terrain";
+import { aabbAsphaltClearance } from "@/lib/game/building-road-clearance";
 import type { RouteData } from "@/lib/validation/route-data";
 import type { QualityConfig } from "@/stores/settings-store";
 
@@ -498,16 +499,16 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
   }), [route.buildings, facades, samples, route.slug]);
 
   const visibleBuildings = useMemo(() => {
-    const roadClearance = 12;
-    const roadClearanceSq = roadClearance * roadClearance;
+    // Hide any building whose AABB still clips the racing line.
     const filtered = buildings.filter((b) => {
-      for (let i = 0; i < samples.length; i += 4) {
-        const s = samples[i];
-        const dx = b.cx - s.position.x;
-        const dz = b.cz - s.position.z;
-        if (dx * dx + dz * dz < roadClearanceSq) return false;
-      }
-      return true;
+      const clear = aabbAsphaltClearance(
+        samples,
+        b.cx,
+        b.cz,
+        Math.max(0.9, b.width / 2),
+        Math.max(0.9, b.depth / 2),
+      );
+      return clear >= 1.0;
     });
     if (quality.sceneryDensity >= 0.7) return filtered;
     return filtered.filter(
@@ -610,6 +611,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
   );
 
   // Solid building AABBs near the ribbon so you can't drive through them.
+  // Never place a collider whose box intersects asphalt — that creates
+  // "invisible wall / solid building on the track" bugs (e.g. Rio Museum).
   const buildingColliders = useMemo(() => {
     const corridor =
       route.roadWidth / 2 + (route.slug === "westminster-sprint" ? 96 : 72);
@@ -617,17 +620,20 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       let best = Infinity;
       for (let i = 0; i < samples.length; i += 3) {
         const s = samples[i];
-        // Distance from centreline to building centre (no optimistic shrink —
-        // that was skipping roadside blocks the car could hit).
         best = Math.min(
           best,
           Math.hypot(b.cx - s.position.x, b.cz - s.position.z),
         );
       }
+      const hw = Math.max(0.9, b.width / 2);
+      const hd = Math.max(0.9, b.depth / 2);
+      const asphaltClear = aabbAsphaltClearance(samples, b.cx, b.cz, hw, hd);
       const named = Boolean(b.name);
-      return { b, best, named };
+      return { b, best, named, asphaltClear };
     });
     const near = scored
+      // Keep at least ~1.2 m clear of asphalt edge (car half-width + margin).
+      .filter((x) => x.asphaltClear >= 1.2)
       .filter((x) => x.best < corridor || x.named)
       .sort((a, b) => {
         if (a.named !== b.named) return a.named ? -1 : 1;
