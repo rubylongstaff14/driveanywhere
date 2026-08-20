@@ -56,6 +56,10 @@ import { buildTrackBarriers } from "@/lib/game/track-barriers";
 import { buildTracksideFurniture } from "@/lib/game/track-furniture";
 import { findTrackOverpasses } from "@/lib/game/track-overpasses";
 import { buildTurnSigns } from "@/lib/game/track-signs";
+import {
+  buildAlpineCliffs,
+  buildAlpineTerrainPads,
+} from "@/lib/game/alpine-terrain";
 import type { RouteData } from "@/lib/validation/route-data";
 import type { QualityConfig } from "@/stores/settings-store";
 
@@ -607,7 +611,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
 
   // Solid building AABBs near the ribbon so you can't drive through them.
   const buildingColliders = useMemo(() => {
-    const corridor = route.roadWidth / 2 + 72;
+    const corridor =
+      route.roadWidth / 2 + (route.slug === "westminster-sprint" ? 96 : 72);
     const scored = buildings.map((b) => {
       let best = Infinity;
       for (let i = 0; i < samples.length; i += 3) {
@@ -643,6 +648,17 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
   const isTokyo       = route.slug === "tokyo-drift-circuit";
   const isAlps        = route.slug === "alps-mountain-pass";
   const isRio         = route.slug === "rio-coast-circuit";
+
+  const alpineTerrain = useMemo(
+    () =>
+      isAlps
+        ? [
+            ...buildAlpineTerrainPads(samples, route.roadWidth),
+            ...buildAlpineCliffs(samples, route.roadWidth),
+          ]
+        : [],
+    [isAlps, samples, route.roadWidth],
+  );
 
   // River sits east of the loop (high-x side) for Westminster and Embankment
   const riverCX = bounds.maxX + 60;
@@ -682,19 +698,19 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
     const abbeyWest = abbey.normal.x <= 0 ? 1 : -1;
     return {
       bigBen: [
-        hx + nx * 38,
+        hx + nx * 52,
         0,
-        hz + nz * 38 - 55,
+        hz + nz * 52 - 58,
       ] as [number, number, number],
       parliament: [
-        hx + nx * 55,
+        hx + nx * 108,
         0,
-        hz + nz * 55 + 35,
+        hz + nz * 108 + 42,
       ] as [number, number, number],
       abbey: [
-        abbey.position.x + abbey.normal.x * abbeyWest * 48,
+        abbey.position.x + abbey.normal.x * abbeyWest * 62,
         0,
-        abbey.position.z + abbey.normal.z * abbeyWest * 48,
+        abbey.position.z + abbey.normal.z * abbeyWest * 62,
       ] as [number, number, number],
       bridge: [
         hx + nx * 72,
@@ -1028,6 +1044,20 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
         })}
       </RigidBody>
 
+      {/* Alpine cliff + shoulder collision — blocks driving through mountains */}
+      {isAlps && alpineTerrain.length > 0 && (
+        <RigidBody type="fixed" colliders={false}>
+          {alpineTerrain.map((block) => (
+            <CuboidCollider
+              key={block.key}
+              args={block.halfExtents}
+              position={block.pos}
+              rotation={block.rot}
+            />
+          ))}
+        </RigidBody>
+      )}
+
       {/* F1 Tecpro soft-wall — stacked cushions + rubber plinth */}
       {([0, 1] as const).map((parity) => {
         const barriers = visualWalls.filter((wall) => wall.stripe === parity);
@@ -1230,43 +1260,75 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
         <>
           <ThamesRiver cx={riverCX} cz={riverCZ} length={riverLen} width={110} />
           {/* Big Ben on the east riverside viewing straight */}
-          <group position={westminsterLandmarks.bigBen}>
-            <ClockTowerLandmark position={[0, 0, 0]} scale={1.35} />
-            <LandmarkNameTag
-              label="Big Ben"
-              accent="#8f785a"
-              height={92}
-              scale={1.4}
+          <RigidBody
+            type="fixed"
+            colliders={false}
+            position={westminsterLandmarks.bigBen}
+          >
+            <CuboidCollider
+              args={[11, 42, 11]}
+              position={[0, 42, 0]}
             />
-          </group>
+            <group>
+              <ClockTowerLandmark position={[0, 0, 0]} scale={1.35} />
+              <LandmarkNameTag
+                label="Big Ben"
+                accent="#8f785a"
+                height={92}
+                scale={1.4}
+              />
+            </group>
+          </RigidBody>
           {/* Palace of Westminster along the harbour */}
-          <group position={westminsterLandmarks.parliament}>
-            <PalaceOfWestminsterLandmark
-              position={[0, 0, 0]}
-              rotation={westminsterLandmarks.yaw + Math.PI / 2}
-              scale={1.15}
+          <RigidBody
+            type="fixed"
+            colliders={false}
+            position={westminsterLandmarks.parliament}
+            rotation={[0, westminsterLandmarks.yaw + Math.PI / 2, 0]}
+          >
+            <CuboidCollider
+              args={[82, 34, 18]}
+              position={[0, 17, 0]}
             />
-            <LandmarkNameTag
-              label="Houses of Parliament"
-              accent="#8a7050"
-              height={78}
-              scale={1.35}
-            />
-          </group>
+            <group>
+              <PalaceOfWestminsterLandmark
+                position={[0, 0, 0]}
+                rotation={0}
+                scale={1.15}
+              />
+              <LandmarkNameTag
+                label="Houses of Parliament"
+                accent="#8a7050"
+                height={78}
+                scale={1.35}
+              />
+            </group>
+          </RigidBody>
           {/* Westminster Abbey outside the west return */}
-          <group position={westminsterLandmarks.abbey}>
-            <WestminsterAbbeyLandmark
-              position={[0, 0, 0]}
-              rotation={-Math.PI / 2}
-              scale={0.95}
+          <RigidBody
+            type="fixed"
+            colliders={false}
+            position={westminsterLandmarks.abbey}
+            rotation={[0, -Math.PI / 2, 0]}
+          >
+            <CuboidCollider
+              args={[38, 28, 22]}
+              position={[0, 14, 0]}
             />
-            <LandmarkNameTag
-              label="Westminster Abbey"
-              accent="#7a7060"
-              height={62}
-              scale={1.3}
-            />
-          </group>
+            <group>
+              <WestminsterAbbeyLandmark
+                position={[0, 0, 0]}
+                rotation={0}
+                scale={0.95}
+              />
+              <LandmarkNameTag
+                label="Westminster Abbey"
+                accent="#7a7060"
+                height={62}
+                scale={1.3}
+              />
+            </group>
+          </RigidBody>
           {/* Westminster Bridge spanning toward the Thames */}
           <ThamesArchBridge
             position={westminsterLandmarks.bridge}
@@ -1325,10 +1387,16 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               scale={1.25}
             />
           </group>
-          <group position={embankmentLandmarks.parliament}>
+          <RigidBody
+            type="fixed"
+            colliders={false}
+            position={embankmentLandmarks.parliament}
+            rotation={[0, -Math.PI / 2, 0]}
+          >
+            <CuboidCollider args={[32, 14, 8]} position={[0, 7, 0]} />
             <PalaceOfWestminsterLandmark
               position={[0, 0, 0]}
-              rotation={-Math.PI / 2}
+              rotation={0}
               scale={0.42}
             />
             <LandmarkNameTag
@@ -1337,7 +1405,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               height={40}
               scale={1.15}
             />
-          </group>
+          </RigidBody>
           <ThamesArchBridge
             position={embankmentLandmarks.bridge}
             rotation={0}
@@ -1531,15 +1599,52 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       {/* --- Alps Mountain Pass --- */}
       {isAlps && (
         <>
-          {/* Alps backdrop: high peaks generated from the centreline so the
-              road feels like it is climbing through a full mountain basin. */}
+          {/* Collidable rock faces hugging the climbing ribbon */}
+          {alpineTerrain.map((block) => {
+            const [hw, hh, hl] = block.halfExtents;
+            const color =
+              block.variant === "snow"
+                ? "#8a9498"
+                : block.variant === "grass"
+                  ? "#4a6b3a"
+                  : "#5c6a5e";
+            const snowCap = block.variant === "snow" && hh > 12;
+            return (
+              <group
+                key={`${block.key}-mesh`}
+                position={block.pos}
+                rotation={block.rot}
+              >
+                <mesh castShadow={quality.shadows}>
+                  <boxGeometry args={[hw * 2, hh * 2, hl * 2]} />
+                  <meshStandardMaterial
+                    color={color}
+                    roughness={0.96}
+                    flatShading
+                  />
+                </mesh>
+                {snowCap && (
+                  <mesh position={[0, hh * 0.72, 0]}>
+                    <boxGeometry args={[hw * 2.02, hh * 0.38, hl * 2.02]} />
+                    <meshStandardMaterial
+                      color="#eef3f7"
+                      roughness={0.88}
+                      flatShading
+                    />
+                  </mesh>
+                )}
+              </group>
+            );
+          })}
+
+          {/* Distant backdrop peaks — far from the drivable corridor only */}
           {samples.map((s, i) => {
-            if (i % Math.max(3, Math.floor(samples.length / 26)) !== 0) return null;
-            const sideOffset = 185 + (i % 4) * 55;
-            const peakH = 250 + (i % 3) * 60;
-            const peakR = 120 + (i % 4) * 18;
-            const baseY = Math.max(0, s.position.y - 18);
-            const peakMat = i % 2 === 0 ? "#5f6f62" : "#6e7f72";
+            if (i % Math.max(4, Math.floor(samples.length / 18)) !== 0) return null;
+            const sideOffset = 265 + (i % 3) * 45;
+            const peakH = 320 + (i % 4) * 80;
+            const peakR = 95 + (i % 3) * 15;
+            const baseY = Math.max(0, s.position.y - 24);
+            const peakMat = i % 2 === 0 ? "#556658" : "#667868";
             const snowMat = "#eef3f7";
 
             const makePeak = (side: number, tag: string) => (
@@ -1550,31 +1655,28 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                   baseY,
                   s.position.z + s.normal.z * side * sideOffset,
                 ]}
-                rotation={[0, i * 0.4 * side, 0]}
+                rotation={[0, i * 0.31 * side, 0]}
               >
                 <mesh position={[0, peakH / 2, 0]} castShadow={quality.shadows}>
-                  <coneGeometry args={[peakR, peakH, 7]} />
+                  <coneGeometry args={[peakR, peakH, 8]} />
                   <meshStandardMaterial color={peakMat} roughness={0.97} flatShading />
                 </mesh>
-                <mesh position={[0, peakH * 0.86, 0]}>
-                  <coneGeometry args={[peakR * 0.42, peakH * 0.18, 7]} />
+                <mesh position={[0, peakH * 0.88, 0]}>
+                  <coneGeometry args={[peakR * 0.38, peakH * 0.16, 8]} />
                   <meshStandardMaterial color={snowMat} roughness={0.84} flatShading />
                 </mesh>
               </group>
             );
 
-            const left = makePeak(-1, "L");
-            const right = makePeak(1, "R");
             return (
-              <>
-                {left}
-                {right}
-              </>
+              <group key={`alps-peaks-${i}`}>
+                {makePeak(-1, "L")}
+                {makePeak(1, "R")}
+              </group>
             );
           })}
 
-          {/* Small alpine chalet clusters placed on the nearest ribbon height
-              so they never float when the road climbs. */}
+          {/* Small alpine chalet clusters placed on the nearest ribbon height */}
           {[
             [bounds.minX - 110, gcz - 120],
             [bounds.minX - 70, gcz + 110],
@@ -1585,17 +1687,29 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           ].map(([x, z], i) => {
             const nearest = nearestRoadSample(samples, x, z);
             const y = Math.max(0, nearest?.position.y ?? 0) - 1.5;
+            const roadDist = nearest
+              ? Math.hypot(x - nearest.position.x, z - nearest.position.z)
+              : 999;
+            if (roadDist < route.roadWidth / 2 + 28) return null;
             return (
-              <group key={`chalet-${i}`} position={[x, y, z]}>
-                <mesh position={[0, 4, 0]} castShadow={quality.shadows}>
-                  <boxGeometry args={[11, 8, 8]} />
-                  <meshStandardMaterial color="#7a6451" roughness={0.96} />
-                </mesh>
-                <mesh position={[0, 9, 0]} castShadow={quality.shadows}>
-                  <coneGeometry args={[7.5, 6, 4]} />
-                  <meshStandardMaterial color="#564235" roughness={0.94} flatShading />
-                </mesh>
-              </group>
+              <RigidBody
+                key={`chalet-${i}`}
+                type="fixed"
+                colliders={false}
+                position={[x, y, z]}
+              >
+                <CuboidCollider args={[6.5, 7, 5.5]} position={[0, 7, 0]} />
+                <group>
+                  <mesh position={[0, 4, 0]} castShadow={quality.shadows}>
+                    <boxGeometry args={[11, 8, 8]} />
+                    <meshStandardMaterial color="#7a6451" roughness={0.96} />
+                  </mesh>
+                  <mesh position={[0, 9, 0]} castShadow={quality.shadows}>
+                    <coneGeometry args={[7.5, 6, 4]} />
+                    <meshStandardMaterial color="#564235" roughness={0.94} flatShading />
+                  </mesh>
+                </group>
+              </RigidBody>
             );
           })}
           {/* Pine trees along the roadside */}
@@ -1605,18 +1719,26 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               if (!s) return null;
               const side = i % 2 === 0 ? 1 : -1;
               const offset = 18 + (i % 5) * 4;
+              const tx = s.position.x + s.normal.x * side * offset;
+              const tz = s.position.z + s.normal.z * side * offset;
               return (
-                <mesh
+                <group
                   key={`pine-${i}`}
-                  position={[
-                    s.position.x + s.normal.x * side * offset,
-                    Math.max(0, s.position.y - 0.4),
-                    s.position.z + s.normal.z * side * offset,
-                  ]}
+                  position={[tx, Math.max(0, s.position.y - 0.4), tz]}
                 >
-                  <coneGeometry args={[2.5, 12, 5]} />
-                  <meshStandardMaterial color="#2d5a27" roughness={0.9} flatShading />
-                </mesh>
+                  <mesh position={[0, 4, 0]}>
+                    <coneGeometry args={[2.8, 8, 5]} />
+                    <meshStandardMaterial color="#2d5a27" roughness={0.9} flatShading />
+                  </mesh>
+                  <mesh position={[0, 9, 0]}>
+                    <coneGeometry args={[2.2, 7, 5]} />
+                    <meshStandardMaterial color="#3a6b32" roughness={0.9} flatShading />
+                  </mesh>
+                  <mesh position={[0, 1.2, 0]}>
+                    <cylinderGeometry args={[0.35, 0.45, 2.4, 5]} />
+                    <meshStandardMaterial color="#4a3828" roughness={0.95} />
+                  </mesh>
+                </group>
               );
             },
           )}
