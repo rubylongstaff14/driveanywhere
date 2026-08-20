@@ -18,7 +18,7 @@ export function RaceCountdown() {
 
   return (
     <div
-      className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center"
+      className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center da-fade-in"
       role="status"
       aria-live="assertive"
     >

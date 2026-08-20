@@ -128,7 +128,7 @@ export function GameHud({ routeName }: { routeName: string }) {
   const sectorIndex = useGameStore((s) => s.sectorIndex);
   const splitMs = useGameStore((s) => s.splitMs);
   const splitDeltaMs = useGameStore((s) => s.splitDeltaMs);
-  const splitTone = useGameStore((s) => s.splitTone);
+  const cameraMode = useGameStore((s) => s.cameraMode);
   const setHud = useGameStore((s) => s.setHud);
 
   useEffect(() => {
@@ -145,11 +145,13 @@ export function GameHud({ routeName }: { routeName: string }) {
     personalBestMs && started ? elapsedMs - personalBestMs * progress : null;
 
   const sessionLabel =
-    sessionConfirmed && raceMode === "ai"
+    sessionConfirmed && (raceMode === "ai" || raceMode === "online") && aiCount > 0
       ? ` · ${aiCount} AI`
       : ghostEnabled && raceMode === "solo"
         ? " · Ghost"
-        : " · Solo";
+        : raceMode === "online"
+          ? " · Online"
+          : " · Solo";
 
   const splitColor =
     splitTone === "purple"
@@ -205,6 +207,9 @@ export function GameHud({ routeName }: { routeName: string }) {
           />
           <p className="mt-0.5 text-center font-mono text-[9px] uppercase tracking-[0.18em] text-fog">
             Auto · {rpm > 0 ? `${Math.round(rpm)} rpm` : "idle"}
+          </p>
+          <p className="text-center font-mono text-[9px] uppercase tracking-[0.16em] text-fog/80">
+            Cam {cameraMode} · C to cycle
           </p>
         </div>
 

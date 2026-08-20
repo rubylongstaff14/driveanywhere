@@ -13,6 +13,8 @@ import { OnlineRaceSync } from "@/components/multiplayer/online-race-sync";
 import { OnlineResultsOverlay } from "@/components/multiplayer/online-results-overlay";
 import { RaceChat } from "@/components/multiplayer/race-chat";
 import { RacePositionsHud } from "@/components/multiplayer/race-positions-hud";
+import { CircuitBoot } from "@/components/game/circuit-boot";
+import { CinematicLoader } from "@/components/game/cinematic-loader";
 import { VehicleSelect } from "@/components/game/vehicle-select";
 import { getPersonalBest } from "@/lib/database/mock/attempts";
 import { resetTelemetry } from "@/lib/game/telemetry";
@@ -20,6 +22,7 @@ import type { RaceSetup } from "@/lib/game/race-setup";
 import type { RouteData } from "@/lib/validation/route-data";
 import { useAuthStore } from "@/stores/auth-store";
 import { useGameStore } from "@/stores/game-store";
+import { useProgressionStore } from "@/stores/progression-store";
 import { useSettingsStore } from "@/stores/settings-store";
 
 const GameCanvas = dynamic(
@@ -27,14 +30,10 @@ const GameCanvas = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-full items-center justify-center bg-ink-975">
-        <div className="flex flex-col items-center gap-3">
-          <span className="h-8 w-8 animate-spin rounded-full border-2 border-white/20 border-t-accent" />
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-mist">
-            Loading 3D engine
-          </p>
-        </div>
-      </div>
+      <CinematicLoader
+        title="Loading 3D engine"
+        subtitle="Warming the renderer and physics"
+      />
     ),
   },
 );
@@ -65,10 +64,12 @@ export function GameExperience({
   const user = useAuthStore((s) => s.user);
   const hydrateSettings = useSettingsStore((s) => s.hydrate);
   const settingsHydrated = useSettingsStore((s) => s.hydrated);
+  const hydrateProgression = useProgressionStore((s) => s.hydrate);
 
   useEffect(() => {
     hydrateSettings();
-  }, [hydrateSettings]);
+    hydrateProgression();
+  }, [hydrateSettings, hydrateProgression]);
 
   useEffect(() => {
     const onEscape = (event: KeyboardEvent) => {
@@ -100,10 +101,13 @@ export function GameExperience({
       finished: false,
       countdown: null,
       introActive: false,
-      garageConfirmed: false,
+      garageConfirmed: raceSetup.mode === "online",
       sessionConfirmed: false,
     });
     hydrateRaceSetup(raceSetup);
+    if (raceSetup.mode === "online") {
+      useGameStore.getState().confirmSession(raceSetup);
+    }
 
     return () => {
       resetRunState();
@@ -127,17 +131,17 @@ export function GameExperience({
   // Renderer settings are read once at mount, so wait for the stored preset.
   if (!settingsHydrated) {
     return (
-      <div className="flex h-[100dvh] items-center justify-center bg-ink-975 text-mist">
-        <span className="font-mono text-xs uppercase tracking-[0.3em]">
-          Preparing route
-        </span>
-      </div>
+      <CinematicLoader
+        title={routeName}
+        subtitle="Reading graphics preset"
+      />
     );
   }
 
   return (
     <div className="relative h-[100dvh] w-full overflow-hidden bg-ink-975">
       <GameCanvas paused={paused || finished} route={route} />
+      <CircuitBoot routeName={routeName} city={route.city} />
       <GameHud routeName={routeName} />
       <RouteIntroOverlay
         routeName={routeName}
@@ -160,14 +164,15 @@ export function GameExperience({
         routeId={route.id}
         requiredCheckpoints={route.checkpoints.length}
       />
-      {!garageConfirmed && !finished && countdown === null ? (
+      {!garageConfirmed && !finished && countdown === null && raceSetup.mode !== "online" ? (
         <VehicleSelect routeName={routeName} />
       ) : null}
       {garageConfirmed &&
       !sessionConfirmed &&
       !finished &&
       countdown === null &&
-      !introActive ? (
+      !introActive &&
+      raceSetup.mode !== "online" ? (
         <RaceSetupOverlay routeName={routeName} routeId={route.id} />
       ) : null}
       <MobileDriveWarning routeSlug={routeSlug} />

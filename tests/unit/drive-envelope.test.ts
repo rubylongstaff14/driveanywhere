@@ -12,7 +12,14 @@ describe("drive envelope parity", () => {
   it("matches the selected garage car for every AI rival", () => {
     for (const vehicleId of ["sports", "f1", "corsa", "gwagon"] as const) {
       const pack = resolveAiOpponents(
-        { mode: "ai", aiCount: 2, difficulty: 50, ghost: false, weather: "clear" },
+        {
+          mode: "ai",
+          aiCount: 2,
+          difficulty: 50,
+          ghost: false,
+          weather: "clear",
+          vehicleId,
+        },
         vehicleId,
       );
       expect(pack.every((car) => car.vehicleId === vehicleId)).toBe(true);

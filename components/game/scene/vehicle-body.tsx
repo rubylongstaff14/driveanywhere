@@ -2,6 +2,8 @@
 
 import { createContext, useContext } from "react";
 import { RoundedBox } from "@react-three/drei";
+import { CarAeroParts } from "@/components/game/scene/car-aero-parts";
+import type { BumperStyle, KitStyle, WingStyle } from "@/lib/game/cosmetics";
 import type { VehicleId } from "@/lib/game/vehicles";
 
 const SimpleCarCtx = createContext(false);
@@ -114,15 +116,19 @@ export function VehicleBody({
   id,
   paint,
   paintDark,
+  bumper = "stock",
+  wing = "none",
+  kit = "none",
   simple = false,
   ghost = false,
 }: {
   id: VehicleId;
   paint: string;
   paintDark: string;
-  /** Cheaper mesh for AI pack — same silhouette, fewer spokes/materials. */
+  bumper?: BumperStyle;
+  wing?: WingStyle;
+  kit?: KitStyle;
   simple?: boolean;
-  /** Translucent PB replay — solo only. */
   ghost?: boolean;
 }) {
   return (
@@ -133,6 +139,9 @@ export function VehicleBody({
           paint={paint}
           paintDark={paintDark}
           simple={simple}
+          bumper={bumper}
+          wing={wing}
+          kit={kit}
         />
       </GhostCarCtx.Provider>
     </SimpleCarCtx.Provider>
@@ -144,11 +153,17 @@ function VehicleMesh({
   paint,
   paintDark,
   simple,
+  bumper,
+  wing,
+  kit,
 }: {
   id: VehicleId;
   paint: string;
   paintDark: string;
   simple: boolean;
+  bumper: BumperStyle;
+  wing: WingStyle;
+  kit: KitStyle;
 }) {
   const carbon = "#12151a";
   const rimBright = "#d6dde6";
@@ -215,6 +230,7 @@ function VehicleMesh({
         <Wheel x={0.95} y={0.28} z={1.45} radius={0.3} width={0.32} rim={rimBright} simple={simple} />
         <Wheel x={-1.0} y={0.3} z={-1.35} radius={0.34} width={0.38} rim={rimBright} simple={simple} />
         <Wheel x={1.0} y={0.3} z={-1.35} radius={0.34} width={0.38} rim={rimBright} simple={simple} />
+        <CarAeroParts bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
       </group>
     );
   }
@@ -263,6 +279,7 @@ function VehicleMesh({
         <Wheel x={0.98} y={0.42} z={1.4} radius={0.42} width={0.34} rim={rimDark} simple={simple} />
         <Wheel x={-0.98} y={0.42} z={-1.4} radius={0.42} width={0.34} rim={rimDark} simple={simple} />
         <Wheel x={0.98} y={0.42} z={-1.4} radius={0.42} width={0.34} rim={rimDark} simple={simple} />
+        <CarAeroParts bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
       </group>
     );
   }
@@ -302,6 +319,7 @@ function VehicleMesh({
         <Wheel x={0.78} y={0.3} z={1.15} radius={0.29} width={0.22} rim={rimBright} simple={simple} />
         <Wheel x={-0.78} y={0.3} z={-1.15} radius={0.29} width={0.22} rim={rimBright} simple={simple} />
         <Wheel x={0.78} y={0.3} z={-1.15} radius={0.29} width={0.22} rim={rimBright} simple={simple} />
+        <CarAeroParts bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
       </group>
     );
   }
@@ -349,10 +367,25 @@ function VehicleMesh({
           <meshStandardMaterial color="#fff4d8" emissive="#ffe8a0" emissiveIntensity={0.4} />
         </mesh>
       ))}
+      {([-1, 1] as const).map((side) => (
+        <mesh key={`mir-${side}`} position={[side * 0.92, 0.72, 0.35]}>
+          <boxGeometry args={[0.14, 0.08, 0.08]} />
+          <meshStandardMaterial color="#1a1d22" metalness={0.4} roughness={0.35} />
+        </mesh>
+      ))}
+      <mesh position={[0.28, 0.28, -2.18]}>
+        <cylinderGeometry args={[0.07, 0.08, 0.16, 8]} />
+        <meshStandardMaterial color="#2a2e32" metalness={0.6} roughness={0.3} />
+      </mesh>
+      <mesh position={[-0.28, 0.28, -2.18]}>
+        <cylinderGeometry args={[0.07, 0.08, 0.16, 8]} />
+        <meshStandardMaterial color="#2a2e32" metalness={0.6} roughness={0.3} />
+      </mesh>
       <Wheel x={-0.88} y={0.32} z={1.35} radius={0.32} width={0.28} rim={rimBright} simple={simple} />
       <Wheel x={0.88} y={0.32} z={1.35} radius={0.32} width={0.28} rim={rimBright} simple={simple} />
       <Wheel x={-0.88} y={0.32} z={-1.35} radius={0.32} width={0.28} rim={rimBright} simple={simple} />
       <Wheel x={0.88} y={0.32} z={-1.35} radius={0.32} width={0.28} rim={rimBright} simple={simple} />
+      <CarAeroParts bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
     </group>
   );
 }

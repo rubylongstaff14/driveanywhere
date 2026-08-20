@@ -45,8 +45,8 @@ export function RaceSetupOverlay({ routeName, routeId }: RaceSetupOverlayProps) 
     difficulty < 34 ? "Easy" : difficulty < 67 ? "Medium" : "Hard";
 
   return (
-    <div className="absolute inset-0 z-30 flex items-center justify-center bg-ink-975/80 p-4 backdrop-blur-md">
-      <div className="max-h-[92dvh] w-full max-w-xl overflow-y-auto rounded-xl border border-line bg-panel p-6 shadow-2xl">
+    <div className="absolute inset-0 z-30 flex items-center justify-center bg-ink-975/80 p-4 backdrop-blur-md da-fade-in">
+      <div className="max-h-[92dvh] w-full max-w-xl overflow-y-auto rounded-xl border border-line bg-panel p-6 shadow-2xl da-fade-up">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
           Session
         </p>
@@ -207,6 +207,7 @@ export function RaceSetupOverlay({ routeName, routeId }: RaceSetupOverlayProps) 
                 difficulty,
                 ghost: mode === "solo" && ghost,
                 weather,
+                vehicleId: useGameStore.getState().selectedVehicleId,
               })
             }
           >

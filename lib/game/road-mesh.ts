@@ -36,11 +36,20 @@ function catmullRom(
   );
 }
 
+const roadSampleCache = new WeakMap<RoadPoint[], Map<number, RoadSample[]>>();
+
 export function sampleRoad(
   points: RoadPoint[],
   segmentsPerSpan = 16,
 ): RoadSample[] {
   if (points.length < 2) return [];
+  let bySpan = roadSampleCache.get(points);
+  if (!bySpan) {
+    bySpan = new Map();
+    roadSampleCache.set(points, bySpan);
+  }
+  const cached = bySpan.get(segmentsPerSpan);
+  if (cached) return cached;
 
   const vecs = points.map((p) => new THREE.Vector3(p.x, Math.max(0, p.y ?? 0), p.z));
   const widths = points.map((p) => p.width);
@@ -87,6 +96,7 @@ export function sampleRoad(
     width: points[points.length - 1].width,
   });
 
+  bySpan.set(segmentsPerSpan, samples);
   return samples;
 }
 

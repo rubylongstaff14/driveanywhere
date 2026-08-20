@@ -39,7 +39,14 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
     () =>
       sessionConfirmed
         ? resolveAiOpponents(
-            { mode: raceMode, aiCount, difficulty, ghost: false, weather },
+            {
+              mode: raceMode,
+              aiCount,
+              difficulty,
+              ghost: false,
+              weather,
+              vehicleId: selectedVehicleId,
+            },
             selectedVehicleId,
           )
         : [],
@@ -100,7 +107,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
           <RouteWorld route={route} samples={samples} quality={quality} desert={route.slug === "egypt-pyramids" || route.slug === "dubai-marina-circuit"} />
           <Vehicle route={route} samples={samples} />
         </Physics>
-        {opponents.length > 0 && raceMode === "ai" ? (
+        {opponents.length > 0 && (raceMode === "ai" || raceMode === "online") ? (
           <AiPack samples={samples} opponents={opponents} />
         ) : null}
         {ghostEnabled && raceMode === "solo" ? (

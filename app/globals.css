@@ -70,3 +70,59 @@
     color: white;
   }
 }
+
+@layer utilities {
+  .da-scanlines {
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0 2px,
+      rgba(0, 0, 0, 0.12) 2px 3px
+    );
+    mix-blend-mode: multiply;
+  }
+
+  .da-fade-up {
+    animation: daFadeUp 0.55s ease-out both;
+  }
+
+  .da-fade-in {
+    animation: daFadeIn 0.4s ease-out both;
+  }
+
+  .da-crate-reel {
+    animation: daCrateReel 1.55s cubic-bezier(0.12, 0.82, 0.18, 1) both;
+  }
+}
+
+@keyframes daFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes daFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes daCrateReel {
+  0% {
+    transform: translateX(18%);
+    filter: blur(2px);
+  }
+  70% {
+    filter: blur(0);
+  }
+  100% {
+    transform: translateX(-32%);
+  }
+}

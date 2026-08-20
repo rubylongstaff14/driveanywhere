@@ -25,10 +25,14 @@ import { sampleRoad } from "@/lib/game/road-mesh";
 describe("race setup", () => {
   it("defaults to solo with no opponents", () => {
     const setup = parseRaceSetup({});
-    expect(setup.mode).toBe("solo");
-    expect(setup.aiCount).toBe(0);
-    expect(setup.ghost).toBe(false);
-    expect(setup.weather).toBe("clear");
+    expect(setup).toEqual({
+      mode: "solo",
+      aiCount: 0,
+      difficulty: 50,
+      ghost: false,
+      weather: "clear",
+      vehicleId: "sports",
+    });
     expect(resolveAiOpponents(setup, "sports")).toEqual([]);
     expect(raceSetupSearchParams(setup)).toBe("");
   });
@@ -48,6 +52,7 @@ describe("race setup", () => {
       difficulty: 80,
       ghost: false,
       weather: "clear",
+      vehicleId: "sports",
     });
     const pack = resolveAiOpponents(setup, "sports");
     expect(pack).toHaveLength(4);
@@ -72,6 +77,7 @@ describe("race setup", () => {
       difficulty: 40,
       ghost: true,
       weather: "clear",
+      vehicleId: "sports",
     });
     expect(query).toBe("?mode=ai&ai=3&difficulty=40");
     expect(parseRaceSetup(Object.fromEntries(new URLSearchParams(query)))).toEqual({
@@ -80,6 +86,7 @@ describe("race setup", () => {
       difficulty: 40,
       ghost: false,
       weather: "clear",
+      vehicleId: "sports",
     });
   });
 
@@ -91,6 +98,7 @@ describe("race setup", () => {
       difficulty: 50,
       ghost: true,
       weather: "rain",
+      vehicleId: "sports",
     });
     expect(raceSetupSearchParams(soloGhost)).toBe("?ghost=1&weather=rain");
     const withAi = parseRaceSetup({
@@ -102,6 +110,21 @@ describe("race setup", () => {
     expect(withAi.ghost).toBe(false);
     expect(withAi.weather).toBe("night");
     expect(resolveAiOpponents(withAi, "sports")).toHaveLength(2);
+  });
+
+  it("uses host AI count online so every client gets the same pack", () => {
+    const setup = parseRaceSetup({
+      mode: "online",
+      ai: "3",
+      difficulty: "85",
+      vehicle: "f1",
+    });
+    expect(setup.mode).toBe("online");
+    expect(setup.aiCount).toBe(3);
+    expect(setup.vehicleId).toBe("f1");
+    const pack = resolveAiOpponents(setup, setup.vehicleId);
+    expect(pack).toHaveLength(3);
+    expect(pack.every((car) => car.vehicleId === "f1")).toBe(true);
   });
 });
 

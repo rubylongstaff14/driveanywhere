@@ -13,6 +13,8 @@ interface PlayPageProps {
     difficulty?: string | string[];
     ghost?: string | string[];
     weather?: string | string[];
+    vehicle?: string | string[];
+    roomId?: string | string[];
   }>;
 }
 
@@ -43,6 +45,7 @@ export default async function PlayPage({ params, searchParams }: PlayPageProps) 
     difficulty: first(query.difficulty),
     ghost: first(query.ghost),
     weather: first(query.weather),
+    vehicle: first(query.vehicle),
   });
 
   // Geometry is resolved on the server so the browser never has to fetch it.

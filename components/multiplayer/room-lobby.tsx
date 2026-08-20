@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
+import { VEHICLE_LIST } from "@/lib/game/vehicles";
+import { ONLINE_MAPS } from "@/lib/game/online-maps";
+import { lobbyDifficultyToSkill } from "@/lib/game/race-setup";
 
 interface RoomLobbyProps {
   roomId: string;
@@ -50,7 +53,10 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
   useEffect(() => {
     if (raceLoading && currentRoom) {
       const vehicle = raceVehicleId ?? currentRoom.vehicleId ?? "sports";
-      router.push(`/play/${currentRoom.map}?mode=online&roomId=${currentRoom.id}&vehicle=${vehicle}`);
+      const difficulty = lobbyDifficultyToSkill(currentRoom.difficulty);
+      router.push(
+        `/play/${currentRoom.map}?mode=online&roomId=${currentRoom.id}&vehicle=${vehicle}&ai=${currentRoom.aiCount}&difficulty=${difficulty}`,
+      );
     }
   }, [raceLoading, currentRoom, router, raceVehicleId]);
 
@@ -62,25 +68,8 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
     );
   }
 
-  const vehicles = [
-    { id: "sports", name: "Sports Car" },
-    { id: "supercar", name: "Supercar" },
-    { id: "muscle", name: "Muscle Car" },
-    { id: "rally", name: "Rally Car" },
-    { id: "f1", name: "Formula 1" },
-  ];
-
-  const maps = [
-    { slug: "westminster-sprint", name: "Westminster Sprint" },
-    { slug: "embankment-run", name: "Embankment Run" },
-    { slug: "canary-wharf-loop", name: "Canary Wharf Loop" },
-    { slug: "dubai-marina-circuit", name: "Dubai Marina Circuit" },
-    { slug: "egypt-pyramids", name: "Egypt Pyramids" },
-    { slug: "new-york-harbor-circuit", name: "New York Harbor Circuit" },
-    { slug: "tokyo-drift-circuit", name: "Tokyo Drift Circuit" },
-    { slug: "alps-mountain-pass", name: "Alps Mountain Pass" },
-    { slug: "rio-coast-circuit", name: "Rio Coast Circuit" },
-  ];
+  const vehicles = VEHICLE_LIST.map((v) => ({ id: v.id, name: v.name }));
+  const maps = ONLINE_MAPS;
 
   return (
     <div className="min-h-[100dvh] bg-ink-975 px-4 py-12 text-white">
@@ -181,7 +170,9 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                 </select>
               </div>
               <div>
-                <label className="mb-1 block text-[10px] text-mist">AI Fill ({currentRoom.aiCount})</label>
+                <label className="mb-1 block text-[10px] text-mist">
+                  AI fill — host only, same on every client
+                </label>
                 <input
                   type="range"
                   min={0}

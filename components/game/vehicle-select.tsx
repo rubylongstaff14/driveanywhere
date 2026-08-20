@@ -114,15 +114,15 @@ export function VehicleSelect({ routeName }: VehicleSelectProps) {
     VEHICLE_LIST.find((v) => v.id === selectedVehicleId) ?? VEHICLE_LIST[0];
 
   return (
-    <div className="absolute inset-0 z-20 flex items-center justify-center bg-ink-975/80 p-4 backdrop-blur-md">
-      <div className="w-full max-w-3xl rounded-xl border border-line bg-panel p-6 shadow-2xl">
+    <div className="absolute inset-0 z-20 flex items-center justify-center bg-ink-975/80 p-4 backdrop-blur-md da-fade-in">
+      <div className="w-full max-w-3xl rounded-xl border border-line bg-panel p-6 shadow-2xl da-fade-up">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
           Choose vehicle
         </p>
         <h2 className="mt-2 font-display text-3xl text-white">{routeName}</h2>
         <p className="mt-2 text-sm text-mist">
-          Pick a car — each has different pace, grip and weight. You can change
-          volume before you roll out.
+          Classes have different pace. In a race everyone drives the same class —
+          skins and aero are cosmetic only.
         </p>
 
         <div className="mt-5 grid gap-3 sm:grid-cols-2">

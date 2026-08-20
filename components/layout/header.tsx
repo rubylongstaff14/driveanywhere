@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils/cn";
 const navItems = [
   { href: "/play/online", label: "Play Online" },
   { href: "/routes", label: "Solo" },
+  { href: "/garage", label: "Garage" },
+  { href: "/shop", label: "Shop" },
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/profile", label: "Profile" },
 ];

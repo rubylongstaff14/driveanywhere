@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
-import { useAuthStore } from "@/stores/auth-store";
+import { ONLINE_MAPS } from "@/lib/game/online-maps";
 
 export function ServerBrowser() {
   const router = useRouter();
@@ -46,14 +46,7 @@ export function ServerBrowser() {
     }
   }, [currentRoom, router]);
 
-  const maps = [
-    { slug: "westminster-sprint", name: "Westminster Sprint" },
-    { slug: "embankment-run", name: "Embankment Run" },
-    { slug: "canary-wharf-loop", name: "Canary Wharf Loop" },
-    { slug: "dubai-marina-circuit", name: "Dubai Marina Circuit" },
-    { slug: "egypt-pyramids", name: "Egypt Pyramids" },
-    { slug: "new-york-harbor-circuit", name: "New York Harbor Circuit" },
-  ];
+  const maps = ONLINE_MAPS;
 
   function handleCreate() {
     if (!roomName.trim()) return;

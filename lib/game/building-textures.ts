@@ -166,6 +166,10 @@ function drawGlass(
   for (let c = 0; c <= cols; c++) {
     ctx.fillRect(c * colW, 0, frame, H);
   }
+  ctx.fillStyle = "rgba(180,200,214,0.35)";
+  for (let c = 0; c <= cols; c++) {
+    ctx.fillRect(c * colW + 1, 0, 1, H);
+  }
   // Floor spandrels
   for (let r = 0; r <= rows; r++) {
     ctx.fillStyle = "#2e3c4a";
@@ -347,8 +351,8 @@ function drawSandstone(canvas: HTMLCanvasElement): void {
 
 function makeFacadeCanvas(kind: FacadeKind): HTMLCanvasElement {
   const canvas = document.createElement("canvas");
-  canvas.width = 512;
-  canvas.height = 512;
+  canvas.width = 768;
+  canvas.height = 768;
   if (kind === "brick") drawBrick(canvas);
   if (kind === "glass") drawGlass(canvas);
   if (kind === "glass_vertical") drawGlass(canvas, "vertical");
@@ -373,7 +377,7 @@ function configureFacadeTexture(
   // ExtrudeGeometry side UVs are measured in local world units (~metres).
   // Target ≈ one floor band every 3.4 m with ~14 floors packed into the atlas.
   texture.repeat.set(0.12, 0.085);
-  texture.anisotropy = 4;
+  texture.anisotropy = 8;
   if (colorTexture) texture.colorSpace = THREE.SRGBColorSpace;
   return texture;
 }

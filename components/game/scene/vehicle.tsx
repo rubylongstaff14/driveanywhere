@@ -24,7 +24,8 @@ import type { RoadSample } from "@/lib/game/road-mesh";
 import { RoadTracker } from "@/lib/game/road-tracker";
 import { carTelemetry } from "@/lib/game/telemetry";
 import { applyArcadeDriving, resetVehicle } from "@/lib/game/vehicle-controller";
-import { getVehicle } from "@/lib/game/vehicles";
+import { defaultLoadout, resolveLoadoutVisual } from "@/lib/game/cosmetics";
+import { useProgressionStore } from "@/stores/progression-store";
 import { GhostRecorder, loadGhostTape, saveGhostTape } from "@/lib/game/ghost-tape";
 import {
   isSectorEnd,
@@ -68,6 +69,13 @@ export function Vehicle({ route, samples }: VehicleProps) {
   const vehicle = useMemo(
     () => getVehicle(selectedVehicleId),
     [selectedVehicleId],
+  );
+  const loadout = useProgressionStore(
+    (s) => s.loadouts[selectedVehicleId] ?? defaultLoadout(selectedVehicleId),
+  );
+  const visual = useMemo(
+    () => resolveLoadoutVisual(selectedVehicleId, loadout),
+    [loadout, selectedVehicleId],
   );
   const engineVolume = useSettingsStore((s) => s.engineVolume);
 
@@ -172,7 +180,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
   useEffect(() => {
     const canvas = glRef.current.domElement;
     const onPointerDown = (event: PointerEvent) => {
-      if (paused || cameraMode !== "chase" || event.button > 2) return;
+      if (paused || (cameraMode !== "chase" && cameraMode !== "far") || event.button > 2) return;
       mouseLook.current.dragging = true;
       mouseLook.current.lastInputAt = performance.now();
       canvas.setPointerCapture(event.pointerId);
@@ -197,7 +205,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
       canvas.style.cursor = "grab";
     };
     const onWheel = (event: WheelEvent) => {
-      if (paused || cameraMode !== "chase") return;
+      if (paused || (cameraMode !== "chase" && cameraMode !== "far")) return;
       event.preventDefault();
       mouseLook.current.zoom = THREE.MathUtils.clamp(
         mouseLook.current.zoom + event.deltaY * 0.008,
@@ -584,15 +592,19 @@ export function Vehicle({ route, samples }: VehicleProps) {
 
     const speedKph = carTelemetry.speedKph;
     const speedRatio = THREE.MathUtils.clamp(speedKph / (C.maxSpeedMs * 3.6), 0, 1);
+    const chaseLike = cameraMode === "chase" || cameraMode === "far";
+    const bumperCam = cameraMode === "bumper";
 
-    if (cameraMode === "chase") {
+    if (chaseLike) {
       const look = mouseLook.current;
       if (!look.dragging && performance.now() - look.lastInputAt > 2200) {
         const recenter = 1 - Math.exp(-2.6 * delta);
         look.yaw = THREE.MathUtils.lerp(look.yaw, 0, recenter);
         look.pitch = THREE.MathUtils.lerp(look.pitch, 0, recenter);
       }
-      const distance = C.cameraDistance + look.zoom;
+      const baseDist = cameraMode === "far" ? C.cameraDistance * 1.55 : C.cameraDistance;
+      const baseH = cameraMode === "far" ? C.cameraHeight * 1.25 : C.cameraHeight;
+      const distance = baseDist + look.zoom;
       const horizontalDistance = Math.cos(look.pitch) * distance;
       const rearX = -forward.x;
       const rearZ = -forward.z;
@@ -602,13 +614,11 @@ export function Vehicle({ route, samples }: VehicleProps) {
       const orbitZ = -rearX * sinYaw + rearZ * cosYaw;
       camTarget.set(
         pos.x + orbitX * horizontalDistance,
-        pos.y + C.cameraHeight + Math.sin(look.pitch) * distance,
+        pos.y + baseH + Math.sin(look.pitch) * distance,
         pos.z + orbitZ * horizontalDistance,
       );
-      // Keep the chase cam above the car / local road surface.
       camTarget.y = Math.max(pos.y + 0.85, camTarget.y);
 
-      // Look-ahead grows with speed so the view anticipates the road.
       const orbitAmount = Math.min(1, Math.abs(look.yaw) * 2);
       const lookAheadDist = THREE.MathUtils.lerp(
         C.cameraLookAhead + speedKph * 0.06,
@@ -618,6 +628,13 @@ export function Vehicle({ route, samples }: VehicleProps) {
       lookAt
         .set(pos.x, pos.y + 0.95, pos.z)
         .addScaledVector(forward, lookAheadDist);
+    } else if (bumperCam) {
+      camTarget
+        .set(pos.x, pos.y + 0.55, pos.z)
+        .addScaledVector(forward, 2.15);
+      lookAt
+        .set(pos.x, pos.y + 0.62, pos.z)
+        .addScaledVector(forward, 24);
     } else {
       // Cockpit / windscreen cam — sit in the cabin looking out, not inside
       // the hood mesh. Slightly above the tub, just behind the windscreen.
@@ -640,13 +657,16 @@ export function Vehicle({ route, samples }: VehicleProps) {
       lookAtSmooth.copy(lookAt);
       scratch.current.camReady = true;
     } else {
-      const followRate = cameraMode === "chase" ? 9.5 : 14;
-      const lookRate = cameraMode === "chase" ? 11 : 16;
+      const followRate = chaseLike ? 9.5 : 14;
+      const lookRate = chaseLike ? 11 : 16;
       camSmooth.lerp(camTarget, 1 - Math.exp(-followRate * delta));
       lookAtSmooth.lerp(lookAt, 1 - Math.exp(-lookRate * delta));
     }
     cam2.position.copy(camSmooth);
-    cam2.position.y = Math.max(cam2.position.y, pos.y + 0.9);
+    cam2.position.y = Math.max(
+      cam2.position.y,
+      pos.y + (bumperCam ? 0.35 : 0.9),
+    );
 
     if (shakeRef.current > 0.04) {
       const mag = shakeRef.current * 0.1;
@@ -735,8 +755,11 @@ export function Vehicle({ route, samples }: VehicleProps) {
       <group ref={meshRef} visible={cameraMode !== "hood"}>
         <VehicleBody
           id={vehicle.id}
-          paint={vehicle.paint}
-          paintDark={vehicle.paintDark}
+          paint={visual.paint}
+          paintDark={visual.paintDark}
+          bumper={visual.bumper}
+          wing={visual.wing}
+          kit={visual.kit}
         />
         <TyreSmoke input={visualInput} />
         <mesh ref={sparkMesh} position={[0, 0.35, 1.6]} visible={false}>

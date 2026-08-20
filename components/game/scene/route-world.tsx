@@ -51,6 +51,7 @@ import {
   WestminsterAbbeyLandmark,
 } from "@/components/game/scene/landmarks";
 import { IconicTower, resolveIconicKind } from "@/components/game/scene/iconic-towers";
+import { CityBlockDetail, cityRegionFromSlug } from "@/components/game/scene/city-block-detail";
 import { getLandmarkIdentity } from "@/lib/game/landmark-identity";
 import { buildTrackBarriers } from "@/lib/game/track-barriers";
 import { buildTracksideFurniture } from "@/lib/game/track-furniture";
@@ -170,7 +171,10 @@ function createExtrudedBuilding(
 
   const geometry = new THREE.ExtrudeGeometry(shape, {
     depth: height,
-    bevelEnabled: false,
+    bevelEnabled: true,
+    bevelThickness: 0.18,
+    bevelSize: 0.12,
+    bevelSegments: 1,
     curveSegments: 1,
     steps: 1,
   });
@@ -1845,7 +1849,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                 envMapIntensity={1.05}
                 emissive="#f0d8a0"
                 emissiveMap={b.emissiveTex}
-                emissiveIntensity={0.5}
+                emissiveIntensity={0.72}
               />
             ) : b.facadeMaterial === "concrete" ? (
               <meshStandardMaterial
@@ -1869,6 +1873,18 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               />
             )}
           </mesh>
+          {!useIconic ? (
+            <CityBlockDetail
+              id={b.id}
+              width={b.width}
+              depth={b.depth}
+              height={b.renderHeight}
+              color={b.facadeColour}
+              style={b.style}
+              dense={quality.sceneryDensity >= 0.45}
+              region={cityRegionFromSlug(route.slug)}
+            />
+          ) : null}
           {b.landmark ? (
             <CanaryTowerCrown
               name={b.name}

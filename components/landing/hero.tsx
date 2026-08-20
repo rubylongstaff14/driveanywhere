@@ -18,7 +18,7 @@ export function Hero() {
           <p className="text-accent font-mono text-xs tracking-[0.28em] uppercase">
             London prototype routes
           </p>
-          <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-4xl leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl da-fade-up">
             DriveAnywhere
             <span className="text-accent">.ai</span>
           </h1>

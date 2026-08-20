@@ -11,6 +11,8 @@ import {
 } from "@/stores/settings-store";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { raceReward } from "@/lib/progression/economy";
+import { useProgressionStore } from "@/stores/progression-store";
 
 const QUALITY_OPTIONS: { value: QualityPreset; label: string }[] = [
   { value: "low", label: "Low" },
@@ -87,9 +89,17 @@ export function PauseMenu({
     setSubmittedFor(restartToken);
     if (result.ok) {
       const pb = useGameStore.getState().personalBestMs;
-      if (pb === null || result.attempt.completionTimeMs < pb) {
+      const isPb =
+        pb === null || result.attempt.completionTimeMs < pb;
+      if (isPb) {
         setPersonalBest(result.attempt.completionTimeMs);
       }
+      const reward = raceReward({
+        finished: true,
+        valid: true,
+        personalBest: isPb && pb !== null ? true : pb === null,
+      });
+      useProgressionStore.getState().awardRace(reward.xp, reward.coins);
     }
   }, [finished, restartToken]);
 
@@ -150,7 +160,7 @@ export function PauseMenu({
   }
 
   return (
-    <div className="absolute inset-0 z-20 flex items-center justify-center bg-ink-975/75 p-4 backdrop-blur-sm">
+    <div className="absolute inset-0 z-20 flex items-center justify-center bg-ink-975/75 p-4 backdrop-blur-sm da-fade-in">
       <div className="w-full max-w-md rounded-xl border border-line bg-panel p-6 shadow-2xl">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
           {finished ? "Run complete" : started ? "Paused" : "Ready"}

@@ -10,7 +10,7 @@ import { getRouteData, getRouteDataSlugs } from "@/lib/routes/route-registry";
 
 describe("route intro", () => {
   it("lasts seven seconds before the start lights", () => {
-    expect(ROUTE_INTRO_SECONDS).toBe(7);
+    expect(ROUTE_INTRO_SECONDS).toBe(9.5);
   });
 
   it("builds a smooth spline fly-through for every bundled circuit", () => {

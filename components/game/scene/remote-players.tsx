@@ -3,16 +3,19 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { VehicleBody } from "@/components/game/scene/vehicle-body";
+import { getVehicle } from "@/lib/game/vehicles";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 
 interface RemoteCarProps {
   playerId: string;
   color: string;
+  vehicleId: string;
 }
 
 const COLORS = ["#38bdf8", "#f472b6", "#a78bfa", "#34d399", "#fbbf24"];
 
-function RemoteCar({ playerId, color }: RemoteCarProps) {
+function RemoteCar({ playerId, color, vehicleId }: RemoteCarProps) {
   const meshRef = useRef<THREE.Group>(null);
   const targetPos = useRef(new THREE.Vector3());
   const targetQuat = useRef(new THREE.Quaternion());
@@ -76,26 +79,15 @@ function RemoteCar({ playerId, color }: RemoteCarProps) {
     meshRef.current.quaternion.slerp(targetQuat.current, rate);
   });
 
+  const vehicle = getVehicle(vehicleId);
   return (
     <group ref={meshRef}>
-      {/* Simple car body */}
-      <mesh castShadow position={[0, 0.45, 0]}>
-        <boxGeometry args={[1.8, 0.7, 4.2]} />
-        <meshStandardMaterial color={color} metalness={0.6} roughness={0.3} />
-      </mesh>
-      {/* Cabin */}
-      <mesh castShadow position={[0, 0.95, -0.3]}>
-        <boxGeometry args={[1.5, 0.55, 2.0]} />
-        <meshStandardMaterial color={color} metalness={0.5} roughness={0.4} />
-      </mesh>
-      {/* Wheels */}
-      {[[-0.8, 0.3, 1.3], [0.8, 0.3, 1.3], [-0.8, 0.3, -1.3], [0.8, 0.3, -1.3]].map((pos, i) => (
-        <mesh key={i} position={pos as [number, number, number]} rotation={[0, 0, Math.PI / 2]}>
-          <cylinderGeometry args={[0.3, 0.3, 0.25, 12]} />
-          <meshStandardMaterial color="#1a1a1a" />
-        </mesh>
-      ))}
-      {/* Name tag */}
+      <VehicleBody
+        id={vehicle.id}
+        paint={color}
+        paintDark={vehicle.paintDark}
+        simple
+      />
     </group>
   );
 }
@@ -122,6 +114,7 @@ export function RemotePlayers() {
           key={p.id}
           playerId={p.id}
           color={COLORS[i % COLORS.length]}
+          vehicleId={currentRoom.vehicleId}
         />
       ))}
     </>

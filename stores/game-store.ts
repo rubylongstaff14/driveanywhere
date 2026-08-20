@@ -4,13 +4,16 @@ import { create } from "zustand";
 import {
   clampAiCount,
   clampDifficulty,
+  clampOnlineAiCount,
   type RaceMode,
   type RaceSetup,
 } from "@/lib/game/race-setup";
 import type { VehicleId } from "@/lib/game/vehicles";
 import { parseWeather, type WeatherId } from "@/lib/game/weather";
 
-export type CameraMode = "chase" | "hood";
+export type CameraMode = "chase" | "far" | "hood" | "bumper";
+
+const CAMERA_CYCLE: CameraMode[] = ["chase", "far", "hood", "bumper"];
 
 interface GameHudSnapshot {
   speedKph: number;
@@ -131,10 +134,11 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
     }),
   finishRun: () => set({ finished: true, paused: true }),
   markInvalid: (reason) => set({ invalid: true, invalidReason: reason }),
-  toggleCamera: () =>
-    set({
-      cameraMode: get().cameraMode === "chase" ? "hood" : "chase",
-    }),
+  toggleCamera: () => {
+    const current = get().cameraMode;
+    const idx = CAMERA_CYCLE.indexOf(current);
+    set({ cameraMode: CAMERA_CYCLE[(idx + 1) % CAMERA_CYCLE.length] });
+  },
   requestRestart: () =>
     set((state) => ({
       ...hudDefaults,
@@ -193,21 +197,29 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
   hydrateRaceSetup: (setup) =>
     set({
       raceMode: setup.mode,
-      aiCount: setup.mode === "ai" ? clampAiCount(setup.aiCount) : 2,
+      aiCount:
+        setup.mode === "ai" || setup.mode === "online"
+          ? setup.aiCount
+          : 2,
       difficulty: clampDifficulty(setup.difficulty),
       ghostEnabled: setup.mode === "solo" && setup.ghost,
       weather: parseWeather(setup.weather),
+      selectedVehicleId: setup.vehicleId,
     }),
   confirmSession: (setup) =>
     set({
       raceMode: setup.mode,
-      aiCount: clampAiCount(setup.aiCount || get().aiCount),
+      aiCount:
+        setup.mode === "online"
+          ? clampOnlineAiCount(setup.aiCount)
+          : clampAiCount(setup.aiCount || get().aiCount),
       difficulty: clampDifficulty(setup.difficulty),
       ghostEnabled: setup.mode === "solo" && setup.ghost,
       weather: parseWeather(setup.weather),
+      selectedVehicleId: setup.vehicleId,
       sessionConfirmed: true,
       paused: true,
-      introActive: true,
+      introActive: setup.mode !== "online",
       countdown: null,
     }),
 }));

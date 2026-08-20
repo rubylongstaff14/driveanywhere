@@ -61,6 +61,18 @@ export class RaceAudio {
     this.tone(base * 1.5, 0.12, t + 0.05, "sine", 0.12);
   }
 
+  async playLights(count: number) {
+    await this.ensure();
+    if (!this.ctx) return;
+    const t = this.ctx.currentTime;
+    if (count <= 1) {
+      this.tone(880, 0.18, t, "triangle", 0.22);
+      this.tone(1320, 0.22, t + 0.04, "sine", 0.16);
+      return;
+    }
+    this.tone(220 + count * 80, 0.08, t, "square", 0.08);
+  }
+
   async playFinish() {
     await this.ensure();
     if (!this.ctx) return;

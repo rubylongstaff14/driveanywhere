@@ -346,79 +346,69 @@ function solidMat(color: string, metalness = 0.18, roughness = 0.42) {
   return <SolidFace color={color} metalness={metalness} roughness={roughness} />;
 }
 
-/** Stepped Y-plan needle — Burj Khalifa silhouette. */
+/** Stepped Y-plan needle — Burj Khalifa tri-lobed silhouette. */
 function BurjKhalifaMesh({ h, paint }: { h: number; paint: string }) {
-  const tiers = [
-    [0.12, 0.2],
-    [0.26, 0.16],
-    [0.42, 0.13],
-    [0.56, 0.1],
-    [0.68, 0.08],
-    [0.8, 0.055],
-    [0.9, 0.035],
-  ] as const;
+  const wings = [0, (Math.PI * 2) / 3, (Math.PI * 4) / 3];
   return (
     <group>
-      {tiers.map(([t, r], i) => {
-        const prev = i === 0 ? 0 : tiers[i - 1][0];
-        const segH = (t - prev) * h;
-        return (
-          <mesh key={t} position={[0, prev * h + segH / 2, 0]} castShadow>
-            <cylinderGeometry args={[r * h * 0.2, r * h * 0.26, segH, 12]} />
-            {glassMat(paint, 0.38, 0.18)}
-          </mesh>
-        );
-      })}
-      {/* Floor spandrel rings for scale */}
-      {[0.15, 0.3, 0.45, 0.6, 0.75].map((t) => (
-        <mesh key={t} position={[0, h * t, 0]}>
-          <torusGeometry args={[h * (0.18 - t * 0.12), h * 0.004, 6, 24]} />
-          {solidMat("#9ab0c8", 0.45, 0.3)}
-        </mesh>
+      {wings.map((a) => (
+        <group key={a} rotation={[0, a, 0]}>
+          {[0.22, 0.4, 0.58, 0.74, 0.88].map((t, i) => {
+            const prev = i === 0 ? 0 : [0.22, 0.4, 0.58, 0.74, 0.88][i - 1];
+            const segH = (t - prev) * h;
+            const w = h * (0.12 - i * 0.018);
+            return (
+              <mesh
+                key={t}
+                position={[w * 0.55, prev * h + segH / 2, 0]}
+                castShadow
+              >
+                <boxGeometry args={[w, segH, w * 0.55]} />
+                {glassMat(paint, 0.42, 0.16)}
+              </mesh>
+            );
+          })}
+        </group>
       ))}
-      <mesh position={[0, h * 0.96, 0]} castShadow>
-        <coneGeometry args={[h * 0.016, h * 0.1, 8]} />
-        {solidMat("#c8d4e0", 0.7, 0.25)}
+      <mesh position={[0, h * 0.5, 0]} castShadow>
+        <cylinderGeometry args={[h * 0.028, h * 0.04, h, 10]} />
+        {glassMat("#c5d4e2", 0.5, 0.18)}
       </mesh>
-      {[0, (Math.PI * 2) / 3, (Math.PI * 4) / 3].map((a) => (
-        <mesh
-          key={a}
-          position={[Math.cos(a) * h * 0.055, h * 0.07, Math.sin(a) * h * 0.055]}
-          rotation={[0, a, 0]}
-          castShadow
-        >
-          <boxGeometry args={[h * 0.045, h * 0.14, h * 0.09]} />
-          {glassMat(paint, 0.35, 0.2)}
-        </mesh>
-      ))}
+      <mesh position={[0, h * 0.97, 0]} castShadow>
+        <coneGeometry args={[h * 0.012, h * 0.09, 8]} />
+        {solidMat("#e8eef4", 0.75, 0.22)}
+      </mesh>
     </group>
   );
 }
 
-/** Sail-shaped hotel — Burj Al Arab. */
+/** Sail-shaped hotel — Burj Al Arab mast, sail glass, helipad. */
 function BurjAlArabMesh({ h, paint, accent }: { h: number; paint: string; accent: string }) {
   return (
     <group>
-      <mesh position={[0, h * 0.48, 0]} castShadow>
-        <boxGeometry args={[h * 0.08, h * 0.92, h * 0.02]} />
+      <mesh position={[0, h * 0.5, 0]} castShadow>
+        <cylinderGeometry args={[h * 0.018, h * 0.022, h, 8]} />
         {solidMat("#e8eef4", 0.55, 0.25)}
       </mesh>
-      <mesh position={[h * 0.06, h * 0.45, 0]} rotation={[0, 0, -0.35]} castShadow>
-        <boxGeometry args={[h * 0.22, h * 0.85, h * 0.04]} />
-        {glassMat(paint, 0.25, 0.2)}
+      <mesh position={[h * 0.09, h * 0.48, 0]} rotation={[0, 0, -0.42]} castShadow>
+        <boxGeometry args={[h * 0.28, h * 0.9, h * 0.035]} />
+        {glassMat("#6eb4e8", 0.22, 0.16)}
       </mesh>
-      <mesh position={[-h * 0.02, h * 0.5, 0]} rotation={[0, 0, 0.15]} castShadow>
-        <boxGeometry args={[h * 0.14, h * 0.78, h * 0.035]} />
-        {glassMat(accent, 0.3, 0.18)}
+      <mesh position={[h * 0.04, h * 0.5, 0.02]} rotation={[0, 0, -0.22]} castShadow>
+        <boxGeometry args={[h * 0.16, h * 0.82, h * 0.03]} />
+        {glassMat(paint, 0.28, 0.18)}
       </mesh>
-      {/* Helipad cue */}
-      <mesh position={[0, h * 0.95, h * 0.04]} castShadow>
-        <boxGeometry args={[h * 0.12, h * 0.02, h * 0.1]} />
-        {solidMat("#f0f4f8", 0.4, 0.3)}
+      <mesh position={[-h * 0.015, h * 0.46, 0]} rotation={[0, 0, 0.08]} castShadow>
+        <boxGeometry args={[h * 0.05, h * 0.88, h * 0.04]} />
+        {solidMat(accent, 0.35, 0.28)}
       </mesh>
-      <mesh position={[0, h * 0.35, h * 0.03]}>
-        <boxGeometry args={[h * 0.06, h * 0.12, 0.4]} />
-        {solidMat("#c9a84a", 0.6, 0.3)}
+      <mesh position={[0, h * 0.97, h * 0.05]} castShadow>
+        <boxGeometry args={[h * 0.16, h * 0.018, h * 0.14]} />
+        {solidMat("#f4f7fa", 0.4, 0.3)}
+      </mesh>
+      <mesh position={[0, h * 0.28, h * 0.04]}>
+        <boxGeometry args={[h * 0.08, h * 0.1, 0.35]} />
+        {solidMat("#c9a227", 0.65, 0.28)}
       </mesh>
     </group>
   );

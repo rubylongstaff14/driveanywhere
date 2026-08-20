@@ -1,7 +1,11 @@
 export type VehicleId = "sports" | "f1" | "corsa" | "gwagon";
 
+/** Handling class. Every car in a class shares the same stats. */
+export type VehicleClassId = VehicleId;
+
 export interface VehicleDef {
   id: VehicleId;
+  classId: VehicleClassId;
   name: string;
   tagline: string;
   /** Body paint hex. */
@@ -14,7 +18,7 @@ export interface VehicleDef {
     grip: number;
     weight: number;
   };
-  /** Multipliers applied to arcade drive constants. */
+  /** Multipliers applied to arcade drive constants. Class-locked, never from cosmetics. */
   tuning: {
     maxSpeedMul: number;
     accelMul: number;
@@ -34,6 +38,7 @@ export interface VehicleDef {
 export const VEHICLES: Record<VehicleId, VehicleDef> = {
   sports: {
     id: "sports",
+    classId: "sports",
     name: "Sports GT",
     tagline: "Balanced street racer — quick, planted, forgiving.",
     paint: "#c8102e",
@@ -56,6 +61,7 @@ export const VEHICLES: Record<VehicleId, VehicleDef> = {
   },
   f1: {
     id: "f1",
+    classId: "f1",
     name: "Open-Wheel",
     tagline: "Peak pace and bite — rewards clean lines.",
     paint: "#e8eef4",
@@ -78,6 +84,7 @@ export const VEHICLES: Record<VehicleId, VehicleDef> = {
   },
   corsa: {
     id: "corsa",
+    classId: "corsa",
     name: "Vauxhall Corsa",
     tagline: "Silver hatch — modest pace, easy to place.",
     paint: "#c5cad0",
@@ -100,6 +107,7 @@ export const VEHICLES: Record<VehicleId, VehicleDef> = {
   },
   gwagon: {
     id: "gwagon",
+    classId: "gwagon",
     name: "G-Wagon",
     tagline: "Heavy box — stable, slower on top end.",
     paint: "#1a1c20",
@@ -132,4 +140,14 @@ export const VEHICLE_LIST: VehicleDef[] = [
 export function getVehicle(id: string | null | undefined): VehicleDef {
   if (id && id in VEHICLES) return VEHICLES[id as VehicleId];
   return VEHICLES.sports;
+}
+
+export function parseVehicleId(id: string | null | undefined): VehicleId {
+  if (id && id in VEHICLES) return id as VehicleId;
+  return "sports";
+}
+
+/** Skins and aero never change these — class identity is the only stat source. */
+export function classTuning(id: VehicleId) {
+  return VEHICLES[id].tuning;
 }
