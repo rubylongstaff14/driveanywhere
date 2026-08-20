@@ -1,4 +1,5 @@
 version: 1
+# Hosting: Amazon Amplify auto-builds main (redeploy 2026-08-20 guest-economy + city dressing)
 frontend:
   phases:
     preBuild:
