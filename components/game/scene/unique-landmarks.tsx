@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 import type { RoadSample } from "@/lib/game/road-mesh";
+import { aabbAsphaltClearance } from "@/lib/game/building-road-clearance";
 import {
   circuitLandmarksFor,
   type CircuitLandmarkDef,
@@ -491,18 +492,12 @@ function PlacedLandmark({
 }) {
   return (
     <group position={[x, y, z]}>
-      <mesh position={[0, 0.4, 0]} receiveShadow>
-        <boxGeometry args={[Math.max(10, def.height * 0.22), 0.8, Math.max(10, def.height * 0.22)]} />
-        <meshStandardMaterial color="#3a4048" roughness={0.9} />
-      </mesh>
-      <group position={[0, 0.8, 0]}>
-        <LandmarkMesh
-          kind={def.kind}
-          h={def.height}
-          paint={def.color}
-          accent={def.accent}
-        />
-      </group>
+      <LandmarkMesh
+        kind={def.kind}
+        h={def.height}
+        paint={def.color}
+        accent={def.accent}
+      />
     </group>
   );
 }
@@ -517,19 +512,32 @@ export function UniqueCircuitLandmarks({
   const placed = useMemo(() => {
     const defs = circuitLandmarksFor(slug);
     if (!samples.length || !defs.length) return [];
-    return defs.slice(0, 12).map((def, i) => {
-      const sample = samples[Math.floor((i + 0.5) * (samples.length / 12)) % samples.length];
+    const out: Array<{
+      def: CircuitLandmarkDef;
+      x: number;
+      y: number;
+      z: number;
+    }> = [];
+    for (let i = 0; i < Math.min(12, defs.length); i += 1) {
+      const def = defs[i];
+      const sample =
+        samples[Math.floor((i + 0.5) * (samples.length / 12)) % samples.length];
       const side = i % 2 === 0 ? 1 : -1;
-      const dist = 78 + (i % 4) * 8;
-      const nx = sample.normal.x;
-      const nz = sample.normal.z;
-      return {
-        def: { ...def, height: Math.min(def.height, 72) },
-        x: sample.position.x + nx * side * dist,
-        y: sample.position.y,
-        z: sample.position.z + nz * side * dist,
-      };
-    });
+      const height = Math.min(def.height, 64);
+      const half = Math.max(7, height * 0.14);
+      let placedPoint: { x: number; y: number; z: number } | null = null;
+      for (const dist of [110, 128, 148, 170]) {
+        const x = sample.position.x + sample.normal.x * side * dist;
+        const z = sample.position.z + sample.normal.z * side * dist;
+        if (aabbAsphaltClearance(samples, x, z, half, half) >= 10) {
+          placedPoint = { x, y: sample.position.y, z };
+          break;
+        }
+      }
+      if (!placedPoint) continue;
+      out.push({ def: { ...def, height }, ...placedPoint });
+    }
+    return out;
   }, [samples, slug]);
 
   return (

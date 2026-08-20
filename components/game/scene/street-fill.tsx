@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { Instance, Instances } from "@react-three/drei";
 import type { RoadSample } from "@/lib/game/road-mesh";
+import { aabbAsphaltClearance } from "@/lib/game/building-road-clearance";
 import type { CityRegion } from "@/components/game/scene/city-block-detail";
 
 const PALETTE: Record<CityRegion, [string, string, string]> = {
@@ -48,9 +49,12 @@ export function StreetFill({
     for (let i = 6; i < samples.length - 6; i += stride) {
       const s = samples[i];
       for (const side of [-1, 1] as const) {
-        const dist = 36 + ((i + side) % 5) * 4;
+        const dist = 58 + ((i + side) % 5) * 6;
         const x = s.position.x + s.normal.x * side * dist;
         const z = s.position.z + s.normal.z * side * dist;
+        const w = 10 + (i % 7);
+        const d = 9 + ((i + 3) % 6);
+        if (aabbAsphaltClearance(samples, x, z, w / 2, d / 2) < 8) continue;
         let blocked = false;
         for (const o of occupied) {
           const dx = x - o.x;
@@ -66,8 +70,8 @@ export function StreetFill({
           x,
           y: s.position.y,
           z,
-          w: 10 + (i % 7),
-          d: 9 + ((i + 3) % 6),
+          w,
+          d,
           h,
           color: pal[Math.abs(i + side) % pal.length],
         });

@@ -115,7 +115,7 @@ export function buildTurnSigns(samples: RoadSample[]): TrackSign[] {
       const warnAt = indexAtDistanceBack(samples, peakAt, metres);
       if (arcLengthTo(samples, warnAt, peakAt) < metres * 0.55) continue;
       const s = samples[warnAt];
-      const offset = s.width / 2 + 6.4;
+      const offset = s.width / 2 + 9.2;
       const yaw = Math.atan2(s.tangent.x, s.tangent.z);
       out.push({
         key: `sign-${peakAt}-${metres}-${turn}`,
