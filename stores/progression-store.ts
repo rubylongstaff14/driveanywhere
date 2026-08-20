@@ -21,7 +21,7 @@ import { getSession } from "@/lib/auth/auth-service";
 import type { VehicleId } from "@/lib/game/vehicles";
 import { VEHICLE_LIST } from "@/lib/game/vehicles";
 
-const STORAGE_KEY = "driveanywhere:progression:v1";
+const STORAGE_KEY = "driveanywhere:progression:v2";
 
 interface ProgressionPersist {
   coins: number;
@@ -55,7 +55,9 @@ function readPersist(): ProgressionPersist {
     };
   }
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
+    const raw =
+      window.localStorage.getItem(STORAGE_KEY) ??
+      window.localStorage.getItem("driveanywhere:progression:v1");
     if (!raw) throw new Error("empty");
     const parsed = JSON.parse(raw) as Partial<ProgressionPersist>;
     const loadouts = emptyLoadouts();
@@ -98,6 +100,7 @@ interface ProgressionState extends ProgressionPersist {
     | { ok: true; itemId: string; duplicate: boolean; coinsBack: number }
     | { ok: false; message: string };
   equip: (vehicleId: VehicleId, slot: keyof CarLoadout, itemId: string) => void;
+  saveLoadouts: () => void;
   isUnlocked: (itemId: string) => boolean;
 }
 
@@ -213,6 +216,16 @@ export const useProgressionStore = create<ProgressionState>((set, get) => ({
     });
   },
   isUnlocked: (itemId) => get().unlocked.includes(itemId),
+  saveLoadouts: () => {
+    const s = get();
+    persist({
+      coins: s.coins,
+      xp: s.xp,
+      unlocked: s.unlocked,
+      loadouts: s.loadouts,
+      lastDropId: s.lastDropId,
+    });
+  },
 }));
 
 export { CRATES };

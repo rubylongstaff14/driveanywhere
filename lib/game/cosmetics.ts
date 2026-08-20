@@ -102,13 +102,33 @@ function catalogFor(id: VehicleId): CosmeticItem[] {
       paint: "#0a0a0c",
       paintDark: "#c9a227",
     }),
+    item(id, "paint", "glacier", "Glacier Mirror", "milspec", {
+      paint: "#c8e8f8",
+      paintDark: "#4a7088",
+    }),
+    item(id, "paint", "amethyst", "Amethyst Night", "classified", {
+      paint: "#5a2a8a",
+      paintDark: "#1a0c28",
+    }),
+    item(id, "paint", "carbon", "Carbon Flare", "covert", {
+      paint: "#1c1e22",
+      paintDark: "#ff5c5c",
+    }),
     item(id, "bumper", "stock", "Stock Bumper", "consumer", { bumper: "stock" }),
     item(id, "bumper", "lip", "Split Lip", "milspec", { bumper: "lip" }),
+    item(id, "bumper", "aggressive", "Aero Chin", "restricted", {
+      bumper: "aggressive",
+    }),
     item(id, "bumper", "track", "Track Splitter", "classified", { bumper: "track" }),
     item(id, "wing", "none", "Clean Deck", "consumer", { wing: "none" }),
+    item(id, "wing", "lip", "Deck Lip", "industrial", { wing: "lip" }),
     item(id, "wing", "gt", "GT Wing", "restricted", { wing: "gt" }),
+    item(id, "wing", "swan", "Swan Neck", "classified", { wing: "swan" }),
     item(id, "kit", "none", "Factory Body", "consumer", { kit: "none" }),
     item(id, "kit", "skirts", "Aero Skirts", "industrial", { kit: "skirts" }),
+    item(id, "kit", "canards", "Dive Planes", "milspec", { kit: "canards" }),
+    item(id, "kit", "roof", "Roof Scoop", "restricted", { kit: "roof" }),
+    item(id, "kit", "lights", "Night Signature", "classified", { kit: "lights" }),
   ];
 }
 

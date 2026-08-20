@@ -171,7 +171,13 @@ wss.on("connection", (ws) => {
         const room = rooms.get(info.roomId);
         if (!room || room.status !== "racing") break;
         const player = room.players.find((p) => p.id === info.playerId);
-        if (player) player.carState = msg.state;
+        if (player) {
+          player.carState = msg.state;
+          room.broadcast(
+            { type: "car_update", playerId: info.playerId, state: msg.state },
+            info.playerId,
+          );
+        }
         break;
       }
 

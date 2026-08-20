@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
+import { useAuthStore } from "@/stores/auth-store";
 import { ONLINE_MAPS } from "@/lib/game/online-maps";
 
 export function ServerBrowser() {

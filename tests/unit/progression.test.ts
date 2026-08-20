@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { cosmeticsForVehicle, defaultLoadout } from "@/lib/game/cosmetics";
 import { raceReward, rankForXp, rollCrateDrop, CRATES } from "@/lib/progression/economy";
 import { cityRegionFromSlug } from "@/components/game/scene/city-block-detail";
+import { CIRCUIT_LANDMARKS, LANDMARK_KIND_IDS } from "@/lib/game/circuit-landmarks";
 import { VEHICLES } from "@/lib/game/vehicles";
 
 describe("class fairness", () => {
@@ -16,9 +17,9 @@ describe("class fairness", () => {
 });
 
 describe("cosmetics", () => {
-  it("ships 12 items per class", () => {
-    expect(cosmeticsForVehicle("sports")).toHaveLength(12);
-    expect(cosmeticsForVehicle("f1")).toHaveLength(12);
+  it("ships 21 items per class", () => {
+    expect(cosmeticsForVehicle("sports")).toHaveLength(21);
+    expect(cosmeticsForVehicle("f1")).toHaveLength(21);
   });
 
   it("defaults to factory parts", () => {
@@ -55,5 +56,15 @@ describe("city regions", () => {
     expect(cityRegionFromSlug("alps-mountain-pass")).toBe("alps");
     expect(cityRegionFromSlug("new-york-harbor-circuit")).toBe("nyc");
     expect(cityRegionFromSlug("westminster-sprint")).toBe("london");
+  });
+});
+
+describe("circuit landmarks", () => {
+  it("places 30 uniquely silhouetted landmarks on every map", () => {
+    for (const [slug, list] of Object.entries(CIRCUIT_LANDMARKS)) {
+      expect(list, slug).toHaveLength(30);
+      expect(new Set(list.map((l) => l.kind)).size).toBe(LANDMARK_KIND_IDS.length);
+      expect(new Set(list.map((l) => l.name)).size).toBe(30);
+    }
   });
 });

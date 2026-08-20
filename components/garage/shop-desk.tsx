@@ -1,7 +1,13 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { getCosmetic, RARITY_COLOR, RARITY_LABEL } from "@/lib/game/cosmetics";
+import {
+  cosmeticsForVehicle,
+  getCosmetic,
+  RARITY_COLOR,
+  RARITY_LABEL,
+  type CosmeticItem,
+} from "@/lib/game/cosmetics";
 import { VEHICLE_LIST, type VehicleId } from "@/lib/game/vehicles";
 import {
   COIN_PACKS,
@@ -13,6 +19,22 @@ import { useProgressionStore } from "@/stores/progression-store";
 import { useAuthStore } from "@/stores/auth-store";
 import { Button } from "@/components/ui/button";
 
+const CELL = 148;
+
+function reelStrip(items: CosmeticItem[], winnerId: string | null): CosmeticItem[] {
+  const base = items.filter((c) => c.rarity !== "consumer");
+  const pool = base.length ? base : items;
+  const strip: CosmeticItem[] = [];
+  for (let i = 0; i < 36; i += 1) {
+    strip.push(pool[i % pool.length]);
+  }
+  if (winnerId) {
+    const win = items.find((c) => c.id === winnerId) ?? pool[0];
+    strip[24] = win;
+  }
+  return strip;
+}
+
 export function ShopDesk() {
   const coins = useProgressionStore((s) => s.coins);
   const xp = useProgressionStore((s) => s.xp);
@@ -22,76 +44,117 @@ export function ShopDesk() {
   const hydrated = useProgressionStore((s) => s.hydrated);
   const [vehicleId, setVehicleId] = useState<VehicleId>("sports");
   const [spinning, setSpinning] = useState(false);
+  const [offset, setOffset] = useState(0);
   const [result, setResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const rank = rankForXp(xp);
   const user = useAuthStore((s) => s.user);
   const guestTest = !user || user.mode === "guest";
-  const coinLabel = guestTest ? "Unlimited (guest test)" : `${coins} coins`;
+  const coinLabel = guestTest ? "Unlimited (guest test)" : `${coins.toLocaleString()} coins`;
 
   useEffect(() => {
     if (!hydrated) hydrate();
   }, [hydrate, hydrated]);
 
+  const catalog = cosmeticsForVehicle(vehicleId);
   const drop = useMemo(() => (result ? getCosmetic(result) : null), [result]);
+  const strip = useMemo(
+    () => reelStrip(catalog, result),
+    [catalog, result],
+  );
 
   function handleOpen(crateId: CrateId) {
     if (spinning) return;
     setError(null);
-    setSpinning(true);
     setResult(null);
+    setOffset(0);
+    const outcome = openCrate(crateId, vehicleId);
+    if (!outcome.ok) {
+      setError(outcome.message);
+      return;
+    }
+    setSpinning(true);
+    setResult(outcome.itemId);
+    window.requestAnimationFrame(() => {
+      setOffset(-(24 * CELL) + 86);
+    });
     window.setTimeout(() => {
-      const outcome = openCrate(crateId, vehicleId);
       setSpinning(false);
-      if (!outcome.ok) {
-        setError(outcome.message);
-        return;
-      }
-      setResult(outcome.itemId);
       if (outcome.duplicate) {
         setError(`Duplicate — ${outcome.coinsBack} coins returned.`);
       }
-    }, 1600);
+    }, 2500);
   }
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 da-fade-up">
-      <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">Shop</p>
-      <h1 className="mt-2 font-display text-4xl text-white">Coins & crates</h1>
+      <p className="font-mono text-xs uppercase tracking-[0.28em] text-accent">
+        Exchange
+      </p>
+      <h1 className="mt-2 font-display text-4xl text-white">Shop</h1>
       <p className="mt-2 text-sm text-mist">
-        Rank {rank.name} · {xp} XP · {coinLabel}. Crates drop cosmetics for the
-        selected class only — never stats.
+        Rank {rank.name} · {xp.toLocaleString()} XP · {coinLabel}. Drops stay on
+        this class — never stats.
       </p>
 
-      <div className="mt-5 flex flex-wrap gap-2">
+      <div className="mt-6 flex flex-wrap gap-2">
         {VEHICLE_LIST.map((v) => (
           <button
             key={v.id}
             type="button"
-            onClick={() => setVehicleId(v.id)}
+            onClick={() => {
+              if (spinning) return;
+              setVehicleId(v.id);
+              setResult(null);
+              setOffset(0);
+            }}
             className={
               v.id === vehicleId
-                ? "rounded-md bg-accent px-3 py-2 text-sm font-medium text-ink-950"
-                : "rounded-md border border-line px-3 py-2 text-sm text-mist hover:text-white"
+                ? "rounded-full bg-accent px-4 py-2 text-sm font-medium text-ink-950 transition-all duration-300"
+                : "rounded-full border border-line px-4 py-2 text-sm text-mist transition-all duration-300 hover:border-accent/50 hover:text-white"
             }
           >
-            {v.name} crate
+            {v.name}
           </button>
         ))}
       </div>
 
-      <div className="relative mt-8 overflow-hidden rounded-xl border border-line bg-ink-975 py-10">
-        <div
-          className={`mx-auto h-16 w-[160%] border-y border-white/10 bg-[linear-gradient(90deg,#1a2744,#c8102e,#c8ff3a,#4aa3ff,#f5a623,#ff5c5c,#1a2744,#c8102e)] ${
-            spinning ? "da-crate-reel" : ""
-          }`}
-        />
-        <p className="mt-4 text-center font-mono text-xs uppercase tracking-[0.2em] text-mist">
-          {spinning ? "Opening..." : drop ? drop.name : "Pull a crate"}
+      <div
+        key={vehicleId}
+        className="relative mt-8 overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(ellipse_at_center,#162033,#07090d_70%)] py-8 shadow-[0_24px_80px_rgba(0,0,0,0.4)] da-slide-swap"
+      >
+        <div className="pointer-events-none absolute inset-y-0 left-1/2 z-10 w-px -translate-x-1/2 bg-accent shadow-[0_0_18px_#f5a623]" />
+        <div className="pointer-events-none absolute inset-y-6 left-1/2 z-10 h-[calc(100%-48px)] w-[148px] -translate-x-1/2 rounded-xl border border-accent/70" />
+        <div className="overflow-hidden">
+          <div
+            className={`da-shop-reel ${spinning ? "is-spinning" : ""}`}
+            style={{ transform: `translateX(${offset}px)` }}
+          >
+            {strip.map((item, i) => (
+              <div
+                key={`${item.id}-${i}`}
+                className="mx-1.5 flex h-[88px] w-[136px] shrink-0 flex-col justify-center rounded-xl border border-white/8 bg-ink-950/80 px-3"
+                style={{
+                  boxShadow: `inset 0 0 0 1px ${RARITY_COLOR[item.rarity]}33`,
+                }}
+              >
+                <p className="truncate text-sm text-white">{item.name}</p>
+                <p
+                  className="mt-1 font-mono text-[10px] uppercase tracking-widest"
+                  style={{ color: RARITY_COLOR[item.rarity] }}
+                >
+                  {RARITY_LABEL[item.rarity]}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <p className="mt-6 text-center font-mono text-xs uppercase tracking-[0.22em] text-mist">
+          {spinning ? "Rolling..." : drop ? drop.name : "Pull a crate"}
         </p>
-        {drop ? (
+        {drop && !spinning ? (
           <p
-            className="mt-1 text-center font-mono text-[11px] uppercase tracking-widest"
+            className="mt-1 text-center font-display text-xl"
             style={{ color: RARITY_COLOR[drop.rarity] }}
           >
             {RARITY_LABEL[drop.rarity]}
@@ -102,10 +165,15 @@ export function ShopDesk() {
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
         {CRATES.map((crate) => (
-          <div key={crate.id} className="rounded-xl border border-line bg-panel p-5">
+          <div
+            key={crate.id}
+            className="rounded-2xl border border-white/8 bg-panel p-5 transition-transform duration-300 hover:-translate-y-0.5 hover:border-accent/40"
+          >
             <h2 className="font-display text-xl text-white">{crate.name}</h2>
             <p className="mt-1 text-sm text-mist">{crate.tagline}</p>
-            <p className="mt-3 font-mono text-sm text-accent">{crate.cost} coins</p>
+            <p className="mt-3 font-mono text-sm text-accent">
+              {crate.cost.toLocaleString()} coins
+            </p>
             <Button
               className="mt-4 w-full"
               disabled={spinning || (!guestTest && coins < crate.cost)}
@@ -119,7 +187,7 @@ export function ShopDesk() {
 
       <h2 className="mt-12 font-display text-2xl text-white">Buy coins</h2>
       <p className="mt-1 text-sm text-mist">
-        Checkout is mocked locally for now — coins credit instantly.
+        Checkout is mocked locally — coins credit instantly and persist here.
       </p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {COIN_PACKS.map((pack) => (
@@ -127,7 +195,7 @@ export function ShopDesk() {
             key={pack.id}
             type="button"
             onClick={() => buyCoins(pack.id)}
-            className="rounded-xl border border-line bg-ink-950/50 p-4 text-left hover:border-accent"
+            className="rounded-2xl border border-line bg-ink-950/50 p-4 text-left transition-all duration-300 hover:border-accent"
           >
             <p className="font-medium text-white">{pack.name}</p>
             <p className="mt-1 text-sm text-mist">

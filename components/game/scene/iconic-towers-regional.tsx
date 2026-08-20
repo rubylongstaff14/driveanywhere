@@ -49,35 +49,52 @@ export function TokyoTowerMesh({
   paint: string;
   accent: string;
 }) {
-  const tiers = 8;
+  const spread = h * 0.16;
   return (
     <group>
-      {[...Array(tiers)].map((_, i) => {
-        const t = i / tiers;
-        const r = h * (0.09 - t * 0.055);
-        const y = t * h * 0.88 + h * 0.04;
-        const stripe = i % 2 === 0 ? paint : accent;
-        return (
-          <mesh key={i} position={[0, y, 0]} castShadow>
-            <cylinderGeometry args={[r * 1.08, r, h / tiers, 8]} />
-            <Solid color={stripe} roughness={0.55} />
-          </mesh>
-        );
-      })}
-      <mesh position={[0, h * 0.94, 0]}>
-        <coneGeometry args={[h * 0.018, h * 0.08, 8]} />
-        <Solid color="#f4f4f4" metalness={0.7} roughness={0.25} />
-      </mesh>
-      {[0, Math.PI / 2, Math.PI, Math.PI * 1.5].map((a) => (
+      {([0, Math.PI / 2, Math.PI, (Math.PI * 3) / 2] as const).map((a) => (
         <mesh
           key={a}
-          position={[Math.cos(a) * h * 0.04, h * 0.12, Math.sin(a) * h * 0.04]}
-          rotation={[0, a, 0.25]}
+          position={[Math.cos(a) * spread * 0.55, h * 0.28, Math.sin(a) * spread * 0.55]}
+          rotation={[0.22, a, 0]}
+          castShadow
         >
-          <boxGeometry args={[h * 0.002, h * 0.7, h * 0.015]} />
-          <Solid color="#5a4038" roughness={0.7} />
+          <boxGeometry args={[h * 0.018, h * 0.58, h * 0.018]} />
+          <Solid color={paint} roughness={0.5} />
         </mesh>
       ))}
+      {[0.12, 0.22, 0.34, 0.46, 0.58, 0.7, 0.82].map((t, i) => (
+        <mesh key={t} position={[0, h * t, 0]} castShadow>
+          <cylinderGeometry
+            args={[h * (0.09 - t * 0.07), h * (0.1 - t * 0.07), h * 0.045, 8]}
+          />
+          <Solid color={i % 2 === 0 ? paint : accent} roughness={0.48} />
+        </mesh>
+      ))}
+      <mesh position={[0, h * 0.34, 0]} castShadow>
+        <cylinderGeometry args={[h * 0.07, h * 0.085, h * 0.07, 12]} />
+        <Solid color="#f4f4f1" metalness={0.35} roughness={0.3} />
+      </mesh>
+      <mesh position={[0, h * 0.62, 0]} castShadow>
+        <cylinderGeometry args={[h * 0.045, h * 0.055, h * 0.05, 12]} />
+        <Solid color="#f4f4f1" metalness={0.35} roughness={0.3} />
+      </mesh>
+      <mesh position={[0, h * 0.92, 0]}>
+        <coneGeometry args={[h * 0.016, h * 0.16, 8]} />
+        <Solid color="#f4f4f4" metalness={0.7} roughness={0.22} />
+      </mesh>
+      {[0.2, 0.4, 0.55, 0.75].map((t) =>
+        [0, Math.PI / 2].map((a) => (
+          <mesh
+            key={`${t}-${a}`}
+            position={[0, h * t, 0]}
+            rotation={[0, a, 0]}
+          >
+            <boxGeometry args={[h * (0.16 - t * 0.12), h * 0.01, h * 0.01]} />
+            <Solid color="#4a3028" roughness={0.65} />
+          </mesh>
+        )),
+      )}
     </group>
   );
 }
@@ -86,17 +103,34 @@ export function Shibuya109Mesh({ h, w, paint, accent }: { h: number; w: number; 
   return (
     <group>
       <mesh position={[0, h * 0.42, 0]} castShadow>
-        <cylinderGeometry args={[w * 0.55, w * 0.62, h * 0.78, 16]} />
-        <Solid color={paint} roughness={0.35} />
+        <cylinderGeometry args={[w * 0.55, w * 0.64, h * 0.78, 20]} />
+        <Solid color={paint} roughness={0.32} />
       </mesh>
+      {[0.18, 0.32, 0.46, 0.6, 0.74].map((t, i) => (
+        <mesh key={t} position={[0, h * t, 0]}>
+          <cylinderGeometry args={[w * (0.57 - i * 0.01), w * (0.58 - i * 0.01), h * 0.035, 20]} />
+          <meshStandardMaterial
+            color={i % 2 === 0 ? accent : "#4df0ff"}
+            emissive={i % 2 === 0 ? accent : "#4df0ff"}
+            emissiveIntensity={1.5}
+            toneMapped={false}
+          />
+        </mesh>
+      ))}
       <mesh position={[0, h * 0.88, 0]} castShadow>
-        <sphereGeometry args={[w * 0.58, 12, 10, 0, Math.PI * 2, 0, Math.PI / 2]} />
-        <Solid color={accent} roughness={0.28} />
+        <sphereGeometry args={[w * 0.58, 14, 10, 0, Math.PI * 2, 0, Math.PI / 2]} />
+        <Solid color={accent} roughness={0.24} />
       </mesh>
-      <mesh position={[0, h * 0.18, w * 0.58]}>
-        <boxGeometry args={[w * 0.9, h * 0.08, 0.2]} />
-        <meshStandardMaterial color="#ff3388" emissive="#ff3388" emissiveIntensity={1.8} toneMapped={false} />
+      <mesh position={[0, h * 0.2, w * 0.62]}>
+        <boxGeometry args={[w * 0.95, h * 0.1, 0.18]} />
+        <meshStandardMaterial color="#ff3388" emissive="#ff3388" emissiveIntensity={2.1} toneMapped={false} />
       </mesh>
+      {[-0.35, 0.35].map((x) => (
+        <mesh key={x} position={[x * w, h * 0.52, w * 0.5]}>
+          <boxGeometry args={[w * 0.12, h * 0.42, 0.12]} />
+          <meshStandardMaterial color="#111" emissive="#ffd36a" emissiveIntensity={1.3} toneMapped={false} />
+        </mesh>
+      ))}
     </group>
   );
 }
@@ -164,17 +198,32 @@ export function TmgbTwinMesh({ h, w, paint, accent }: { h: number; w: number; pa
 export function ShibuyaScrambleMesh({ h, w, paint, accent }: { h: number; w: number; paint: string; accent: string }) {
   return (
     <group>
-      <mesh position={[0, h * 0.35, 0]} castShadow>
-        <boxGeometry args={[w * 0.95, h * 0.62, w * 0.82]} />
+      <mesh position={[0, h * 0.32, 0]} castShadow>
+        <boxGeometry args={[w * 1.02, h * 0.58, w * 0.88]} />
         <Glass color={paint} />
       </mesh>
+      {[0.18, 0.3, 0.42, 0.54].map((t) => (
+        <mesh key={t} position={[0, h * t, w * 0.45]}>
+          <boxGeometry args={[w * 1.08, h * 0.06, 0.16]} />
+          <meshStandardMaterial
+            color={accent}
+            emissive={accent}
+            emissiveIntensity={1.8}
+            toneMapped={false}
+          />
+        </mesh>
+      ))}
       <mesh position={[0, h * 0.72, 0]} castShadow>
-        <boxGeometry args={[w * 0.72, h * 0.22, w * 0.62]} />
-        <Glass color={paint} intensity={0.4} />
+        <boxGeometry args={[w * 0.78, h * 0.22, w * 0.66]} />
+        <Glass color={paint} intensity={0.45} />
       </mesh>
       <mesh position={[0, h * 0.9, 0]}>
-        <boxGeometry args={[w * 1.05, h * 0.08, w * 0.2]} />
-        <meshStandardMaterial color={accent} emissive={accent} emissiveIntensity={2.2} toneMapped={false} />
+        <boxGeometry args={[w * 1.12, h * 0.09, w * 0.22]} />
+        <meshStandardMaterial color={accent} emissive={accent} emissiveIntensity={2.4} toneMapped={false} />
+      </mesh>
+      <mesh position={[w * 0.52, h * 0.48, 0]}>
+        <boxGeometry args={[0.16, h * 0.28, w * 0.55]} />
+        <meshStandardMaterial color="#111" emissive="#4df0ff" emissiveIntensity={1.5} toneMapped={false} />
       </mesh>
     </group>
   );

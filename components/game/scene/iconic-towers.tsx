@@ -349,34 +349,41 @@ function solidMat(color: string, metalness = 0.18, roughness = 0.42) {
 /** Stepped Y-plan needle — Burj Khalifa tri-lobed silhouette. */
 function BurjKhalifaMesh({ h, paint }: { h: number; paint: string }) {
   const wings = [0, (Math.PI * 2) / 3, (Math.PI * 4) / 3];
+  const steps = [0.12, 0.22, 0.34, 0.46, 0.58, 0.7, 0.82, 0.92];
   return (
     <group>
       {wings.map((a) => (
         <group key={a} rotation={[0, a, 0]}>
-          {[0.22, 0.4, 0.58, 0.74, 0.88].map((t, i) => {
-            const prev = i === 0 ? 0 : [0.22, 0.4, 0.58, 0.74, 0.88][i - 1];
+          {steps.map((t, i) => {
+            const prev = i === 0 ? 0 : steps[i - 1];
             const segH = (t - prev) * h;
-            const w = h * (0.12 - i * 0.018);
+            const w = h * (0.13 - i * 0.013);
             return (
               <mesh
                 key={t}
-                position={[w * 0.55, prev * h + segH / 2, 0]}
+                position={[w * 0.52, prev * h + segH / 2, 0]}
                 castShadow
               >
-                <boxGeometry args={[w, segH, w * 0.55]} />
-                {glassMat(paint, 0.42, 0.16)}
+                <boxGeometry args={[w, segH, w * 0.48]} />
+                {glassMat(paint, 0.46, 0.14)}
               </mesh>
             );
           })}
         </group>
       ))}
       <mesh position={[0, h * 0.5, 0]} castShadow>
-        <cylinderGeometry args={[h * 0.028, h * 0.04, h, 10]} />
-        {glassMat("#c5d4e2", 0.5, 0.18)}
+        <cylinderGeometry args={[h * 0.024, h * 0.042, h, 12]} />
+        {glassMat("#c5d4e2", 0.52, 0.16)}
       </mesh>
+      {[0.2, 0.38, 0.56, 0.74].map((t) => (
+        <mesh key={t} position={[0, h * t, 0]}>
+          <cylinderGeometry args={[h * 0.05, h * 0.055, h * 0.012, 12]} />
+          {solidMat("#d8e4ee", 0.55, 0.25)}
+        </mesh>
+      ))}
       <mesh position={[0, h * 0.97, 0]} castShadow>
-        <coneGeometry args={[h * 0.012, h * 0.09, 8]} />
-        {solidMat("#e8eef4", 0.75, 0.22)}
+        <coneGeometry args={[h * 0.01, h * 0.12, 10]} />
+        {solidMat("#e8eef4", 0.78, 0.2)}
       </mesh>
     </group>
   );
@@ -442,39 +449,42 @@ function TwistTowerMesh({ h, w, paint }: { h: number; w: number; paint: string }
 function EmpireStateMesh({ h, w, paint, accent }: { h: number; w: number; paint: string; accent: string }) {
   return (
     <group>
-      <mesh position={[0, h * 0.16, 0]} castShadow>
-        <boxGeometry args={[w * 1.2, h * 0.32, w * 1.1]} />
+      <mesh position={[0, h * 0.1, 0]} castShadow>
+        <boxGeometry args={[w * 1.35, h * 0.2, w * 1.22]} />
+        {solidMat("#9a9084", 0.1, 0.55)}
+      </mesh>
+      <mesh position={[0, h * 0.28, 0]} castShadow>
+        <boxGeometry args={[w * 1.12, h * 0.22, w * 1.02]} />
         {solidMat(paint, 0.12, 0.48)}
       </mesh>
-      {/* Ledge bands */}
-      {[0.32, 0.55, 0.74, 0.88].map((t, i) => {
-        const s = 1.05 - i * 0.18;
+      {[0.18, 0.28, 0.4, 0.52, 0.64, 0.76, 0.86].map((t, i) => {
+        const s = 1.08 - i * 0.1;
         return (
           <mesh key={t} position={[0, h * t, 0]}>
-            <boxGeometry args={[w * s * 1.02, h * 0.012, w * s * 0.95]} />
-            {solidMat("#c4b8a4", 0.1, 0.55)}
+            <boxGeometry args={[w * s * 1.04, h * 0.01, w * s * 0.96]} />
+            {solidMat("#c4b8a4", 0.12, 0.5)}
           </mesh>
         );
       })}
-      <mesh position={[0, h * 0.46, 0]} castShadow>
-        <boxGeometry args={[w * 0.88, h * 0.26, w * 0.8]} />
-        {solidMat(paint, 0.14, 0.45)}
+      <mesh position={[0, h * 0.5, 0]} castShadow>
+        <boxGeometry args={[w * 0.82, h * 0.26, w * 0.74]} />
+        {solidMat(paint, 0.14, 0.44)}
       </mesh>
-      <mesh position={[0, h * 0.68, 0]} castShadow>
-        <boxGeometry args={[w * 0.58, h * 0.2, w * 0.52]} />
-        {solidMat(paint, 0.16, 0.42)}
+      <mesh position={[0, h * 0.7, 0]} castShadow>
+        <boxGeometry args={[w * 0.52, h * 0.18, w * 0.46]} />
+        {solidMat(paint, 0.16, 0.4)}
       </mesh>
       <mesh position={[0, h * 0.84, 0]} castShadow>
-        <boxGeometry args={[w * 0.36, h * 0.12, w * 0.32]} />
-        {solidMat(accent, 0.22, 0.38)}
+        <boxGeometry args={[w * 0.32, h * 0.1, w * 0.28]} />
+        {solidMat(accent, 0.22, 0.36)}
       </mesh>
-      <mesh position={[0, h * 0.94, 0]} castShadow>
-        <cylinderGeometry args={[1.1, 2.0, h * 0.08, 8]} />
-        {solidMat("#c8d0d8", 0.65, 0.28)}
+      <mesh position={[0, h * 0.93, 0]} castShadow>
+        <cylinderGeometry args={[1.05, 1.85, h * 0.08, 10]} />
+        {solidMat("#c8d0d8", 0.68, 0.26)}
       </mesh>
-      <mesh position={[0, h * 1.04, 0]}>
-        <cylinderGeometry args={[0.3, 0.5, h * 0.14, 6]} />
-        {solidMat("#a8b4c0", 0.8, 0.2)}
+      <mesh position={[0, h * 1.06, 0]}>
+        <cylinderGeometry args={[0.22, 0.42, h * 0.18, 8]} />
+        {solidMat("#a8b4c0", 0.82, 0.18)}
       </mesh>
     </group>
   );
@@ -483,22 +493,37 @@ function EmpireStateMesh({ h, w, paint, accent }: { h: number; w: number; paint:
 function ChryslerMesh({ h, w, paint, accent }: { h: number; w: number; paint: string; accent: string }) {
   return (
     <group>
-      <mesh position={[0, h * 0.35, 0]} castShadow>
-        <boxGeometry args={[w, h * 0.7, w * 0.9]} />
-        {solidMat(paint, 0.2, 0.4)}
+      <mesh position={[0, h * 0.32, 0]} castShadow>
+        <boxGeometry args={[w * 1.05, h * 0.64, w * 0.92]} />
+        {solidMat(paint, 0.22, 0.38)}
       </mesh>
-      {/* Terraced sunburst crown */}
-      {[0.72, 0.8, 0.88, 0.94].map((t, i) => (
-        <mesh key={t} position={[0, h * t, 0]} castShadow>
-          <cylinderGeometry
-            args={[w * (0.42 - i * 0.07), w * (0.48 - i * 0.07), h * 0.07, 8]}
-          />
-          {solidMat(accent, 0.55, 0.28)}
+      {[0.18, 0.3, 0.42, 0.54].map((t) => (
+        <mesh key={t} position={[0, h * t, w * 0.47]}>
+          <boxGeometry args={[w * 0.9, h * 0.018, 0.12]} />
+          {solidMat("#d4c080", 0.45, 0.32)}
         </mesh>
       ))}
-      <mesh position={[0, h * 1.02, 0]}>
-        <coneGeometry args={[w * 0.08, h * 0.1, 8]} />
-        {solidMat("#e8d090", 0.7, 0.25)}
+      {[0.7, 0.78, 0.85, 0.91, 0.96].map((t, i) => (
+        <mesh key={t} position={[0, h * t, 0]} castShadow>
+          <cylinderGeometry
+            args={[w * (0.46 - i * 0.065), w * (0.52 - i * 0.065), h * 0.055, 10]}
+          />
+          {solidMat(accent, 0.58, 0.24)}
+        </mesh>
+      ))}
+      {[-1, 1].map((side) => (
+        <mesh
+          key={side}
+          position={[side * w * 0.22, h * 0.78, 0]}
+          rotation={[0, 0, side * 0.4]}
+        >
+          <boxGeometry args={[w * 0.28, h * 0.012, w * 0.04]} />
+          {solidMat("#e8d090", 0.7, 0.22)}
+        </mesh>
+      ))}
+      <mesh position={[0, h * 1.04, 0]}>
+        <coneGeometry args={[w * 0.07, h * 0.12, 10]} />
+        {solidMat("#e8d090", 0.75, 0.2)}
       </mesh>
     </group>
   );
@@ -1220,7 +1245,8 @@ export function IconicTower({
           label={identity.label}
           accent={identity.accent}
           height={h}
-          scale={1.25}
+          scale={0.82}
+          lateral
         />
       </group>
     </TowerMapsCtx.Provider>

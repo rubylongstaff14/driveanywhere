@@ -51,6 +51,7 @@ import {
   WestminsterAbbeyLandmark,
 } from "@/components/game/scene/landmarks";
 import { IconicTower, resolveIconicKind } from "@/components/game/scene/iconic-towers";
+import { UniqueCircuitLandmarks } from "@/components/game/scene/unique-landmarks";
 import { CityBlockDetail, cityRegionFromSlug } from "@/components/game/scene/city-block-detail";
 import { getLandmarkIdentity } from "@/lib/game/landmark-identity";
 import { buildTrackBarriers } from "@/lib/game/track-barriers";
@@ -1285,7 +1286,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                 label="Big Ben"
                 accent="#8f785a"
                 height={92}
-                scale={1.4}
+                scale={0.7}
+                lateral
               />
             </group>
           </RigidBody>
@@ -1307,10 +1309,11 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                 scale={1.15}
               />
               <LandmarkNameTag
-                label="Houses of Parliament"
+                label="Parliament"
                 accent="#8a7050"
                 height={78}
-                scale={1.35}
+                scale={0.7}
+                lateral
               />
             </group>
           </RigidBody>
@@ -1332,10 +1335,11 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                 scale={0.95}
               />
               <LandmarkNameTag
-                label="Westminster Abbey"
+                label="Abbey"
                 accent="#7a7060"
                 height={62}
-                scale={1.3}
+                scale={0.7}
+                lateral
               />
             </group>
           </RigidBody>
@@ -1367,7 +1371,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               label="London Eye"
               accent="#5a8aaa"
               height={40}
-              scale={1.25}
+              scale={0.7}
+              lateral
             />
           </group>
           <group position={embankmentLandmarks.bigBen}>
@@ -1376,7 +1381,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               label="Big Ben"
               accent="#8f785a"
               height={48}
-              scale={1.2}
+              scale={0.7}
+              lateral
             />
           </group>
           <group position={embankmentLandmarks.countyHall}>
@@ -1385,7 +1391,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               label="County Hall"
               accent="#9a8870"
               height={48}
-              scale={1.2}
+              scale={0.7}
+              lateral
             />
           </group>
           <group position={embankmentLandmarks.stPauls}>
@@ -1394,7 +1401,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               label="St Paul's"
               accent="#8a8070"
               height={72}
-              scale={1.25}
+              scale={0.7}
+              lateral
             />
           </group>
           <RigidBody
@@ -1413,7 +1421,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               label="Parliament"
               accent="#8a7050"
               height={40}
-              scale={1.15}
+              scale={0.7}
+              lateral
             />
           </RigidBody>
           <ThamesArchBridge
@@ -1462,7 +1471,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               label="Great Pyramid"
               accent="#b88840"
               height={172}
-              scale={1.45}
+              scale={0.7}
+              lateral
             />
           </group>
           <group position={egyptLandmarks.khafre}>
@@ -1473,10 +1483,11 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               capped
             />
             <LandmarkNameTag
-              label="Pyramid of Khafre"
+              label="Khafre"
               accent="#a87838"
               height={158}
-              scale={1.4}
+              scale={0.7}
+              lateral
             />
           </group>
           <group position={egyptLandmarks.menkaure}>
@@ -1490,16 +1501,18 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               label="Menkaure"
               accent="#9a7030"
               height={82}
-              scale={1.3}
+              scale={0.7}
+              lateral
             />
           </group>
           <group position={egyptLandmarks.sphinx}>
             <SphinxLandmark position={[0, 0, 0]} rotation={Math.PI * 0.35} scale={1.25} />
             <LandmarkNameTag
-              label="Great Sphinx"
+              label="Sphinx"
               accent="#8a6840"
               height={40}
-              scale={1.35}
+              scale={0.7}
+              lateral
             />
           </group>
           <group position={egyptLandmarks.cairoTower}>
@@ -1508,17 +1521,19 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               label="Cairo Tower"
               accent="#c8b898"
               height={130}
-              scale={1.25}
+              scale={0.7}
+              lateral
             />
           </group>
           {/* Museum sits inland / south — not in the pyramid sightline */}
           <group position={egyptLandmarks.museum}>
             <EgyptianMuseumLandmark position={[0, 0, 0]} scale={1.05} />
             <LandmarkNameTag
-              label="Egyptian Museum"
+              label="Museum"
               accent="#8a5040"
               height={36}
-              scale={1.2}
+              scale={0.7}
+              lateral
             />
           </group>
         </>
@@ -1786,6 +1801,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           ))}
         </>
       )}
+
+      <UniqueCircuitLandmarks slug={route.slug} samples={samples} />
 
       {/* ================================================================
           BUILDINGS (genuine footprint extrusion for OSM-backed routes)

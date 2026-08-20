@@ -179,15 +179,75 @@ export function CityBlockDetail({
         : null}
 
       {region === "tokyo" && extra ? (
-        <mesh position={[w * 0.52, height * (0.45 + a * 0.2), 0]}>
-          <boxGeometry args={[0.18, Math.min(8, height * 0.22), Math.min(6.5, d * 0.55)]} />
-          <meshStandardMaterial
-            color="#111"
-            emissive={c > 0.5 ? "#4df0ff" : "#ff3d7a"}
-            emissiveIntensity={1.4}
-            toneMapped={false}
-          />
-        </mesh>
+        <>
+          <mesh position={[w * 0.52, height * (0.45 + a * 0.2), 0]}>
+            <boxGeometry args={[0.18, Math.min(8, height * 0.22), Math.min(6.5, d * 0.55)]} />
+            <meshStandardMaterial
+              color="#111"
+              emissive={c > 0.5 ? "#4df0ff" : "#ff3d7a"}
+              emissiveIntensity={1.6}
+              toneMapped={false}
+            />
+          </mesh>
+          {[0.22, 0.38, 0.54].map((t, i) => (
+            <mesh key={`neon-${t}`} position={[0, height * t, d * 0.52]}>
+              <boxGeometry args={[w * (0.7 - i * 0.08), 0.55, 0.22]} />
+              <meshStandardMaterial
+                color="#111"
+                emissive={i === 1 ? "#7cffb2" : "#ff4d8d"}
+                emissiveIntensity={1.7}
+                toneMapped={false}
+              />
+            </mesh>
+          ))}
+          <mesh position={[w * 0.08, height + 2.4, -d * 0.08]}>
+            <cylinderGeometry args={[0.08, 0.1, 5.4, 6]} />
+            <meshStandardMaterial color="#8898a8" metalness={0.55} roughness={0.3} />
+          </mesh>
+        </>
+      ) : null}
+
+      {region === "london" && extra ? (
+        <>
+          {[0.28, 0.44, 0.6].map((t) => (
+            <mesh key={`sash-${t}`} position={[0, height * t, d * 0.51]}>
+              <boxGeometry args={[w * 0.78, 0.14, 0.18]} />
+              <meshStandardMaterial color="#d8c8b0" roughness={0.5} />
+            </mesh>
+          ))}
+          {isBrick ? (
+            <mesh position={[0, height * 0.14, d * 0.54]}>
+              <boxGeometry args={[Math.min(w * 0.5, 7), 1.1, 0.4]} />
+              <meshStandardMaterial color="#1a2430" roughness={0.4} />
+            </mesh>
+          ) : null}
+        </>
+      ) : null}
+
+      {region === "nyc" && extra ? (
+        <>
+          {[0.25, 0.4, 0.55, 0.7].map((t) => (
+            <mesh key={`ledge-${t}`} position={[0, height * t, 0]}>
+              <boxGeometry args={[w * 1.06, 0.16, d * 1.06]} />
+              <meshStandardMaterial color="#c4ccd4" roughness={0.42} metalness={0.12} />
+            </mesh>
+          ))}
+        </>
+      ) : null}
+
+      {region === "dubai" && extra ? (
+        <>
+          {[0.2, 0.48, 0.76].map((t) => (
+            <mesh key={`gold-${t}`} position={[0, height * t, 0]}>
+              <boxGeometry args={[w * 1.04, 0.12, d * 1.04]} />
+              <meshStandardMaterial color="#c9a227" metalness={0.55} roughness={0.28} />
+            </mesh>
+          ))}
+          <mesh position={[0, height * 0.5, d * 0.52]}>
+            <boxGeometry args={[w * 0.08, height * 0.9, 0.08]} />
+            <meshStandardMaterial color="#e8f4ff" emissive="#9ad4ff" emissiveIntensity={0.5} />
+          </mesh>
+        </>
       ) : null}
 
       {region === "egypt" && height > 10 ? (

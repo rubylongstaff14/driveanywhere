@@ -107,8 +107,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         const history = get().remoteCarStateHistory;
         if (!history[msg.playerId]) history[msg.playerId] = [];
         history[msg.playerId].push({ state: msg.state, timestamp: Date.now() });
-        // Keep a tiny sliding window for interpolation.
-        while (history[msg.playerId].length > 3) history[msg.playerId].shift();
+        while (history[msg.playerId].length > 8) history[msg.playerId].shift();
         break;
       }
       case "chat":

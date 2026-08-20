@@ -145,70 +145,122 @@ export function ClockTowerLandmark({
 
   return (
     <group position={position}>
-      {/* Sand-coloured Anston stone shaft */}
-      <mesh position={[0, 10 * s, 0]} castShadow={castShadow} material={stoneDark}>
-        <boxGeometry args={[14 * s, 20 * s, 14 * s]} />
+      <mesh position={[0, 3 * s, 0]} material={stoneDark} castShadow={castShadow}>
+        <boxGeometry args={[16.5 * s, 6 * s, 16.5 * s]} />
       </mesh>
-      {[8, 14, 20].map((y) => (
-        <mesh key={y} position={[0, y * s, 0]} material={stone}>
-          <boxGeometry args={[14.6 * s, 1.4 * s, 14.6 * s]} />
+      <mesh position={[0, 14 * s, 0]} castShadow={castShadow} material={stone}>
+        <boxGeometry args={[14.2 * s, 16 * s, 14.2 * s]} />
+      </mesh>
+      {[0, Math.PI / 2, Math.PI, -Math.PI / 2].map((yaw) =>
+        [8, 12, 16, 20].map((y) => (
+          <mesh
+            key={`${yaw}-${y}`}
+            position={[Math.sin(yaw) * 7.15 * s, y * s, Math.cos(yaw) * 7.15 * s]}
+            rotation={[0, yaw, 0]}
+            material={stoneDark}
+          >
+            <boxGeometry args={[1.6 * s, 2.4 * s, 0.35 * s]} />
+          </mesh>
+        )),
+      )}
+      {[7, 11, 15, 19, 24, 29].map((y) => (
+        <mesh key={`band-${y}`} position={[0, y * s, 0]} material={stoneDark}>
+          <boxGeometry args={[14.8 * s, 0.55 * s, 14.8 * s]} />
         </mesh>
       ))}
-      <mesh position={[0, 34 * s, 0]} castShadow={castShadow} material={stone}>
-        <boxGeometry args={[11.5 * s, 28 * s, 11.5 * s]} />
+      <mesh position={[0, 36 * s, 0]} castShadow={castShadow} material={stone}>
+        <boxGeometry args={[12.2 * s, 26 * s, 12.2 * s]} />
       </mesh>
-      {/* Clock stage */}
-      <mesh position={[0, 52 * s, 0]} castShadow={castShadow} material={stone}>
-        <boxGeometry args={[12 * s, 12 * s, 12 * s]} />
+      {[0, Math.PI / 2, Math.PI, -Math.PI / 2].map((yaw) =>
+        [28, 32, 36, 40, 44].map((y) => (
+          <mesh
+            key={`upper-${yaw}-${y}`}
+            position={[Math.sin(yaw) * 6.2 * s, y * s, Math.cos(yaw) * 6.2 * s]}
+            rotation={[0, yaw, 0]}
+            material={stoneDark}
+          >
+            <boxGeometry args={[1.15 * s, 2.1 * s, 0.28 * s]} />
+          </mesh>
+        )),
+      )}
+      <mesh position={[0, 51 * s, 0]} castShadow={castShadow} material={stone}>
+        <boxGeometry args={[13.2 * s, 5.2 * s, 13.2 * s]} />
       </mesh>
-      {/* Gilded clock surround rings */}
+      <mesh position={[0, 58 * s, 0]} castShadow={castShadow} material={stone}>
+        <boxGeometry args={[12.4 * s, 10.5 * s, 12.4 * s]} />
+      </mesh>
       {([0, Math.PI / 2, Math.PI, -Math.PI / 2] as const).map((yaw, i) => (
         <group
           key={i}
           position={[
-            Math.sin(yaw) * 6.1 * s,
-            52 * s,
-            Math.cos(yaw) * 6.1 * s,
+            Math.sin(yaw) * 6.28 * s,
+            58 * s,
+            Math.cos(yaw) * 6.28 * s,
           ]}
           rotation={[0, yaw, 0]}
         >
           <mesh material={gold}>
-            <ringGeometry args={[3.5 * s, 4.1 * s, 24]} />
+            <ringGeometry args={[3.55 * s, 4.35 * s, 32]} />
           </mesh>
-          {/* Prussian blue dial */}
-          <mesh position={[0, 0, 0.05 * s]} material={clock}>
-            <circleGeometry args={[3.4 * s, 24]} />
+          <mesh position={[0, 0, 0.04 * s]} material={clock}>
+            <circleGeometry args={[3.5 * s, 32]} />
           </mesh>
-          {/* Gold hands */}
-          <mesh position={[0, 0, 0.1 * s]} rotation={[0, 0, -0.7]} material={gold}>
-            <boxGeometry args={[0.18 * s, 2.6 * s, 0.08 * s]} />
+          {Array.from({ length: 12 }, (_, n) => {
+            const a = (n / 12) * Math.PI * 2;
+            return (
+              <mesh
+                key={n}
+                position={[Math.sin(a) * 3.05 * s, Math.cos(a) * 3.05 * s, 0.08 * s]}
+                material={gold}
+              >
+                <boxGeometry args={[0.12 * s, 0.38 * s, 0.06 * s]} />
+              </mesh>
+            );
+          })}
+          <mesh position={[0, 0, 0.12 * s]} rotation={[0, 0, -0.55]} material={gold}>
+            <boxGeometry args={[0.16 * s, 2.7 * s, 0.07 * s]} />
           </mesh>
-          <mesh position={[0, 0, 0.12 * s]} rotation={[0, 0, 0.35]} material={gold}>
-            <boxGeometry args={[0.14 * s, 1.9 * s, 0.08 * s]} />
+          <mesh position={[0, 0, 0.14 * s]} rotation={[0, 0, 0.4]} material={gold}>
+            <boxGeometry args={[0.12 * s, 1.95 * s, 0.07 * s]} />
+          </mesh>
+          <mesh position={[0, 0, 0.16 * s]} material={gold}>
+            <sphereGeometry args={[0.16 * s, 8, 8]} />
           </mesh>
         </group>
       ))}
       {([-1, 1] as const).flatMap((x) =>
         ([-1, 1] as const).map((z) => (
-          <group
-            key={`${x}-${z}`}
-            position={[x * 5.8 * s, 52 * s, z * 5.8 * s]}
-          >
+          <group key={`${x}-${z}`} position={[x * 6.1 * s, 58 * s, z * 6.1 * s]}>
             <mesh castShadow={castShadow} material={stoneDark}>
-              <cylinderGeometry args={[0.75 * s, 1.0 * s, 18 * s, 6]} />
+              <boxGeometry args={[1.6 * s, 16 * s, 1.6 * s]} />
             </mesh>
-            <mesh position={[0, 11 * s, 0]} material={copper}>
-              <coneGeometry args={[1.2 * s, 5 * s, 6]} />
+            <mesh position={[0, 9.2 * s, 0]} material={copper}>
+              <coneGeometry args={[1.15 * s, 5.4 * s, 4]} />
             </mesh>
           </group>
         )),
       )}
-      {/* Iron / copper spire with gold tip */}
-      <mesh position={[0, 66 * s, 0]} castShadow={castShadow} material={copper}>
-        <coneGeometry args={[4.4 * s, 18 * s, 8]} />
+      <mesh position={[0, 68 * s, 0]} castShadow={castShadow} material={stoneDark}>
+        <boxGeometry args={[7.2 * s, 8 * s, 7.2 * s]} />
       </mesh>
-      <mesh position={[0, 76 * s, 0]} material={gold}>
-        <cylinderGeometry args={[0.15 * s, 0.22 * s, 5 * s, 6]} />
+      {[0, Math.PI / 2, Math.PI, -Math.PI / 2].map((yaw) => (
+        <mesh
+          key={`louvre-${yaw}`}
+          position={[Math.sin(yaw) * 3.7 * s, 68 * s, Math.cos(yaw) * 3.7 * s]}
+          rotation={[0, yaw, 0]}
+          material={stone}
+        >
+          <boxGeometry args={[2.4 * s, 5.2 * s, 0.2 * s]} />
+        </mesh>
+      ))}
+      <mesh position={[0, 74 * s, 0]} material={copper}>
+        <coneGeometry args={[4.6 * s, 14 * s, 8]} />
+      </mesh>
+      <mesh position={[0, 82.5 * s, 0]} material={gold}>
+        <cylinderGeometry args={[0.18 * s, 0.28 * s, 6 * s, 8]} />
+      </mesh>
+      <mesh position={[0, 86 * s, 0]} material={gold}>
+        <sphereGeometry args={[0.35 * s, 8, 8]} />
       </mesh>
     </group>
   );
@@ -357,8 +409,8 @@ export function PalaceOfWestminsterLandmark({
         <boxGeometry args={[152 * s, 2.4 * s, 8 * s]} />
       </mesh>
       {/* Buttress / bay rhythm along river face */}
-      {Array.from({ length: 14 }, (_, i) => {
-        const x = -66 * s + i * 10 * s;
+      {Array.from({ length: 16 }, (_, i) => {
+        const x = -72 * s + i * 9.4 * s;
         return (
           <group key={i} position={[x, 0, 14.2 * s]}>
             <mesh position={[0, 12 * s, 0]} castShadow={castShadow} material={dark}>
@@ -367,9 +419,23 @@ export function PalaceOfWestminsterLandmark({
             <mesh position={[0, 22 * s, 0]} material={copper}>
               <coneGeometry args={[1.4 * s, 4.5 * s, 4]} />
             </mesh>
+            {[7, 11, 15].map((y) => (
+              <mesh key={y} position={[0, y * s, 1.4 * s]} material={stone}>
+                <boxGeometry args={[1.1 * s, 2.2 * s, 0.2 * s]} />
+              </mesh>
+            ))}
           </group>
         );
       })}
+      {Array.from({ length: 10 }, (_, i) => (
+        <mesh
+          key={`ridge-${i}`}
+          position={[-60 * s + i * 13 * s, 23.2 * s, 0]}
+          material={lead}
+        >
+          <boxGeometry args={[4 * s, 1.2 * s, 8 * s]} />
+        </mesh>
+      ))}
       {/* Victoria Tower — tall square SW corner with corner pinnacles */}
       <group position={[-62 * s, 0, -2 * s]}>
         <mesh position={[0, 28 * s, 0]} castShadow={castShadow} material={dark}>
@@ -940,37 +1006,54 @@ export function LandmarkNameTag({
   accent,
   height,
   scale = 1,
+  lateral = false,
 }: {
   label: string;
   accent: string;
   height: number;
   /** Extra multiplier for skyline-readable tags. */
   scale?: number;
+  /** Sit beside the mesh so the plate never covers the silhouette. */
+  lateral?: boolean;
 }) {
   const quality = useSettingsStore((s) => s.quality);
+  const groupRef = useRef<THREE.Group>(null);
   const texture = useMemo(
     () => getLabelTexture(label, accent),
     [accent, label],
   );
-  if (quality !== "high") return null;
 
-  // Scale with tower height so distant skyline tags stay readable.
-  const width =
-    THREE.MathUtils.clamp(28 + height * 0.085, 34, 64) * scale;
-  const plateHeight = width * 0.28;
+  useFrame(({ camera }) => {
+    const group = groupRef.current;
+    if (!group) return;
+    const world = new THREE.Vector3();
+    group.getWorldPosition(world);
+    const d = camera.position.distanceTo(world);
+    group.visible = d > 52 && d < 210;
+  });
+
+  if (quality === "low") return null;
+
+  const width = THREE.MathUtils.clamp(6.5 + height * 0.014, 6.5, 12) * scale * 0.72;
+  const plateHeight = width * 0.3;
+  const y = Math.min(height * 0.38, 22);
+  const x = lateral ? Math.max(7.5, height * 0.12) : Math.max(6, height * 0.08);
   return (
-    <Billboard position={[0, height + plateHeight * 2.2, 0]} follow>
-      <mesh renderOrder={10}>
-        <planeGeometry args={[width, plateHeight]} />
-        <meshBasicMaterial
-          map={texture}
-          transparent
-          depthWrite={false}
-          depthTest={false}
-          toneMapped={false}
-        />
-      </mesh>
-    </Billboard>
+    <group ref={groupRef}>
+      <Billboard position={[x, y, 0]} follow>
+        <mesh>
+          <planeGeometry args={[width, plateHeight]} />
+          <meshBasicMaterial
+            map={texture}
+            transparent
+            opacity={0.92}
+            depthWrite={false}
+            depthTest
+            toneMapped={false}
+          />
+        </mesh>
+      </Billboard>
+    </group>
   );
 }
 
@@ -1001,7 +1084,8 @@ export function CanaryTowerCrown({
         label={identity.label}
         accent={identity.accent}
         height={renderHeight}
-        scale={1.2}
+        scale={0.85}
+        lateral
       />
 
       {/* One Canada Square — stainless prism + large steel pyramid + beacon */}
@@ -1726,7 +1810,8 @@ export function DistantLondonSkyline({ route }: { route: RouteData }) {
           label="The Shard"
           accent="#003b70"
           height={280}
-          scale={1.2}
+          scale={0.7}
+          lateral
         />
       </group>
       <group position={[landmarks.eye.x, 48, landmarks.eye.z]}>
@@ -1740,7 +1825,8 @@ export function DistantLondonSkyline({ route }: { route: RouteData }) {
           label="London Eye"
           accent="#5a8aaa"
           height={40}
-          scale={1.15}
+          scale={0.75}
+          lateral
         />
       </group>
       <group position={[landmarks.bigBen.x, 0, landmarks.bigBen.z]}>
@@ -1754,7 +1840,8 @@ export function DistantLondonSkyline({ route }: { route: RouteData }) {
           label="Big Ben"
           accent="#8f785a"
           height={85}
-          scale={1.2}
+          scale={0.75}
+          lateral
         />
       </group>
       <group position={[landmarks.stPauls.x, 0, landmarks.stPauls.z]}>
@@ -1768,7 +1855,8 @@ export function DistantLondonSkyline({ route }: { route: RouteData }) {
           label="St Paul's"
           accent="#8a8070"
           height={95}
-          scale={1.15}
+          scale={0.75}
+          lateral
         />
       </group>
     </group>

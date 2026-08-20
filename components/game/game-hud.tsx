@@ -128,6 +128,7 @@ export function GameHud({ routeName }: { routeName: string }) {
   const sectorIndex = useGameStore((s) => s.sectorIndex);
   const splitMs = useGameStore((s) => s.splitMs);
   const splitDeltaMs = useGameStore((s) => s.splitDeltaMs);
+  const splitTone = useGameStore((s) => s.splitTone);
   const cameraMode = useGameStore((s) => s.cameraMode);
   const setHud = useGameStore((s) => s.setHud);
 
@@ -137,7 +138,7 @@ export function GameHud({ routeName }: { routeName: string }) {
       setHud({ splitMs: null, splitDeltaMs: null, splitTone: null });
     }, 3200);
     return () => window.clearTimeout(id);
-  }, [setHud, splitMs, splitTone]);
+  }, [setHud, splitMs]);
 
   const progressPct = Math.round(progress * 100);
 

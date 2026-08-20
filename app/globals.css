@@ -92,6 +92,21 @@
   .da-crate-reel {
     animation: daCrateReel 1.55s cubic-bezier(0.12, 0.82, 0.18, 1) both;
   }
+
+  .da-slide-swap {
+    animation: daSlideSwap 0.42s cubic-bezier(0.22, 1, 0.32, 1) both;
+  }
+
+  .da-shop-reel {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    transition: transform 2.35s cubic-bezier(0.12, 0.82, 0.08, 1);
+  }
+
+  .da-shop-reel.is-spinning {
+    transition-duration: 2.45s;
+  }
 }
 
 @keyframes daFadeUp {
@@ -124,5 +139,16 @@
   }
   100% {
     transform: translateX(-32%);
+  }
+}
+
+@keyframes daSlideSwap {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

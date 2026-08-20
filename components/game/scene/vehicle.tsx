@@ -25,6 +25,7 @@ import { RoadTracker } from "@/lib/game/road-tracker";
 import { carTelemetry } from "@/lib/game/telemetry";
 import { applyArcadeDriving, resetVehicle } from "@/lib/game/vehicle-controller";
 import { defaultLoadout, resolveLoadoutVisual } from "@/lib/game/cosmetics";
+import { getVehicle } from "@/lib/game/vehicles";
 import { useProgressionStore } from "@/stores/progression-store";
 import { GhostRecorder, loadGhostTape, saveGhostTape } from "@/lib/game/ghost-tape";
 import {

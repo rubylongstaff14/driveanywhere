@@ -3,6 +3,8 @@
  * Colours and labels track the real buildings' distinctive skyline cues.
  */
 
+import { circuitLandmarkByName } from "@/lib/game/circuit-landmarks";
+
 export interface LandmarkIdentity {
   /** Short player-facing label (shown on billboard). */
   label: string;
@@ -466,6 +468,10 @@ export function getLandmarkIdentity(
   height = 0,
 ): LandmarkIdentity | null {
   if (name && IDENTITIES[name]) return IDENTITIES[name];
+  const catalog = circuitLandmarkByName(name);
+  if (catalog) {
+    return { label: catalog.name, color: catalog.color, accent: catalog.accent };
+  }
   if (!name) {
     if (height >= 200) {
       return {
