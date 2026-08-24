@@ -1,7 +1,6 @@
 import type { WebSocket } from "ws";
 import type {
   CarState,
-  PlayerSlot,
   RacePosition,
   RaceResult,
   RoomInfo,
@@ -9,6 +8,9 @@ import type {
 } from "../lib/multiplayer/protocol";
 
 let nextRoomId = 1;
+
+const LOAD_TIMEOUT_MS = 45_000;
+const RACE_TIMEOUT_MS = 12 * 60_000;
 
 export interface ConnectedPlayer {
   ws: WebSocket;
@@ -24,6 +26,12 @@ export interface ConnectedPlayer {
   loaded: boolean;
 }
 
+function broadcastIntervalMs(playerCount: number): number {
+  if (playerCount >= 6) return 66;
+  if (playerCount >= 4) return 50;
+  return 40;
+}
+
 export class Room {
   id: string;
   name: string;
@@ -31,7 +39,7 @@ export class Room {
   difficulty: "easy" | "medium" | "hard";
   aiCount: number;
   vehicleId = "sports";
-  maxPlayers = 6;
+  maxPlayers = 8;
   persistent = false;
   players: ConnectedPlayer[] = [];
   status: "waiting" | "countdown" | "racing" | "results" = "waiting";
@@ -39,6 +47,9 @@ export class Room {
   private countdownTimer: ReturnType<typeof setInterval> | null = null;
   private broadcastTimer: ReturnType<typeof setInterval> | null = null;
   private positionsTimer: ReturnType<typeof setInterval> | null = null;
+  private loadTimeout: ReturnType<typeof setTimeout> | null = null;
+  private raceTimeout: ReturnType<typeof setTimeout> | null = null;
+  private countdownStarted = false;
 
   constructor(name: string, map: string, difficulty: "easy" | "medium" | "hard", aiCount: number) {
     this.id = `room_${nextRoomId++}`;
@@ -106,11 +117,31 @@ export class Room {
   removePlayer(id: string): boolean {
     const idx = this.players.findIndex((p) => p.id === id);
     if (idx === -1) return false;
+    const wasRacing = this.status === "racing";
+    const wasCountdown = this.status === "countdown";
     this.players.splice(idx, 1);
+
     if (this.players.length > 0 && !this.players.some((p) => p.isHost)) {
       this.players[0].isHost = true;
       this.players[0].ready = true;
     }
+
+    if (wasCountdown && this.players.length > 0) {
+      this.syncLoadProgress();
+      const loadedCount = this.players.filter((p) => p.loaded).length;
+      if (loadedCount === this.players.length) {
+        this.beginCountdown();
+      }
+    }
+
+    if (wasRacing) {
+      if (this.players.length === 0) {
+        this.endRace();
+      } else if (this.players.every((p) => p.finishTimeMs !== null)) {
+        this.endRace();
+      }
+    }
+
     return true;
   }
 
@@ -118,13 +149,24 @@ export class Room {
     const data = JSON.stringify(msg);
     for (const p of this.players) {
       if (p.id === exclude) continue;
-      try { p.ws.send(data); } catch { /* disconnected */ }
+      if (p.ws.readyState !== 1) continue;
+      try {
+        if (p.ws.bufferedAmount > 512_000) continue;
+        p.ws.send(data);
+      } catch {
+        /* disconnected */
+      }
     }
   }
 
   send(playerId: string, msg: ServerMessage): void {
     const p = this.players.find((pl) => pl.id === playerId);
-    if (p) try { p.ws.send(JSON.stringify(msg)); } catch { /* */ }
+    if (!p || p.ws.readyState !== 1) return;
+    try {
+      p.ws.send(JSON.stringify(msg));
+    } catch {
+      /* */
+    }
   }
 
   allReady(): boolean {
@@ -135,23 +177,44 @@ export class Room {
 
   startCountdown(): void {
     this.status = "countdown";
+    this.countdownStarted = false;
     for (const p of this.players) p.loaded = false;
     this.broadcast({ type: "race_loading", map: this.map, vehicleId: this.vehicleId });
-    this.broadcast({ type: "waiting_for_players", loaded: 0, total: this.players.length });
+    this.syncLoadProgress();
+    if (this.loadTimeout) clearTimeout(this.loadTimeout);
+    this.loadTimeout = setTimeout(() => {
+      if (this.status === "countdown" && !this.countdownStarted && this.players.length > 0) {
+        this.beginCountdown();
+      }
+    }, LOAD_TIMEOUT_MS);
+  }
+
+  private syncLoadProgress(): void {
+    const loadedCount = this.players.filter((p) => p.loaded).length;
+    this.broadcast({
+      type: "waiting_for_players",
+      loaded: loadedCount,
+      total: this.players.length,
+    });
   }
 
   playerLoaded(playerId: string): void {
     const p = this.players.find((pl) => pl.id === playerId);
-    if (!p) return;
+    if (!p || this.status !== "countdown") return;
     p.loaded = true;
-    const loadedCount = this.players.filter((pl) => pl.loaded).length;
-    this.broadcast({ type: "waiting_for_players", loaded: loadedCount, total: this.players.length });
-    if (loadedCount === this.players.length) {
+    this.syncLoadProgress();
+    if (this.players.every((pl) => pl.loaded)) {
       this.beginCountdown();
     }
   }
 
   private beginCountdown(): void {
+    if (this.countdownStarted || this.status !== "countdown") return;
+    this.countdownStarted = true;
+    if (this.loadTimeout) {
+      clearTimeout(this.loadTimeout);
+      this.loadTimeout = null;
+    }
     let count = 5;
     this.broadcast({ type: "countdown", value: count });
     this.countdownTimer = setInterval(() => {
@@ -172,24 +235,39 @@ export class Room {
     for (const p of this.players) {
       p.carState = null;
       p.finishTimeMs = null;
+      p.splits = [];
     }
     this.broadcast({ type: "race_go", startTimestamp: this.raceStartTimestamp, vehicleId: this.vehicleId });
     this.startBroadcastLoop();
     this.startPositionsLoop();
+    if (this.raceTimeout) clearTimeout(this.raceTimeout);
+    this.raceTimeout = setTimeout(() => {
+      if (this.status === "racing") this.endRace();
+    }, RACE_TIMEOUT_MS);
   }
 
   private startBroadcastLoop(): void {
+    if (this.broadcastTimer) clearInterval(this.broadcastTimer);
+    const interval = broadcastIntervalMs(this.players.length);
     this.broadcastTimer = setInterval(() => {
+      const updates: Array<{ playerId: string; state: CarState }> = [];
       for (const p of this.players) {
-        if (!p.carState) continue;
-        this.broadcast({ type: "car_update", playerId: p.id, state: p.carState }, p.id);
+        if (p.carState) updates.push({ playerId: p.id, state: p.carState });
       }
-    }, 33); // 30Hz
+      if (updates.length === 0) return;
+      this.broadcast({ type: "cars_batch", updates });
+    }, interval);
+  }
+
+  updateCarState(playerId: string, state: CarState): void {
+    const player = this.players.find((p) => p.id === playerId);
+    if (!player || this.status !== "racing") return;
+    player.carState = state;
   }
 
   playerFinished(playerId: string, timeMs: number, splits: number[]): void {
     const p = this.players.find((pl) => pl.id === playerId);
-    if (!p) return;
+    if (!p || p.finishTimeMs !== null) return;
     p.finishTimeMs = timeMs;
     p.splits = splits;
     if (this.players.every((pl) => pl.finishTimeMs !== null)) {
@@ -198,14 +276,15 @@ export class Room {
   }
 
   private startPositionsLoop(): void {
+    if (this.positionsTimer) clearInterval(this.positionsTimer);
     this.positionsTimer = setInterval(() => {
-      const sorted = [...this.players]
-        .sort((a, b) => {
-          const aCp = a.carState?.checkpointIndex ?? 0;
-          const bCp = b.carState?.checkpointIndex ?? 0;
-          if (aCp !== bCp) return bCp - aCp;
-          return (a.carState?.raceTimeMs ?? Infinity) - (b.carState?.raceTimeMs ?? Infinity);
-        });
+      if (this.status !== "racing") return;
+      const sorted = [...this.players].sort((a, b) => {
+        const aCp = a.carState?.checkpointIndex ?? 0;
+        const bCp = b.carState?.checkpointIndex ?? 0;
+        if (aCp !== bCp) return bCp - aCp;
+        return (a.carState?.raceTimeMs ?? Infinity) - (b.carState?.raceTimeMs ?? Infinity);
+      });
       const leaderTime = sorted[0]?.carState?.raceTimeMs ?? 0;
       const positions: RacePosition[] = sorted.map((p, i) => ({
         playerId: p.id,
@@ -216,22 +295,25 @@ export class Room {
         delta: i === 0 ? null : (p.carState?.raceTimeMs ?? 0) - leaderTime,
       }));
       this.broadcast({ type: "race_positions", positions });
-    }, 500);
+    }, 750);
   }
 
   endRace(): void {
+    if (this.status === "results") return;
     if (this.broadcastTimer) clearInterval(this.broadcastTimer);
     if (this.positionsTimer) clearInterval(this.positionsTimer);
+    if (this.raceTimeout) clearTimeout(this.raceTimeout);
     this.broadcastTimer = null;
     this.positionsTimer = null;
+    this.raceTimeout = null;
     this.status = "results";
 
     const results: RaceResult[] = this.players
-      .map((p, i) => ({
+      .map((p) => ({
         playerId: p.id,
         playerName: p.name,
         timeMs: p.finishTimeMs,
-        position: i + 1,
+        position: 0,
         finished: p.finishTimeMs !== null,
         splits: p.splits,
       }))
@@ -245,12 +327,15 @@ export class Room {
     this.broadcast({ type: "race_results", results });
 
     setTimeout(() => {
+      if (this.status !== "results") return;
       this.status = "waiting";
+      this.countdownStarted = false;
       for (const p of this.players) {
         p.ready = p.isHost;
         p.carState = null;
         p.finishTimeMs = null;
         p.splits = [];
+        p.loaded = false;
       }
       this.broadcast({ type: "room_updated", room: this.toInfo() });
     }, 8000);
@@ -260,9 +345,14 @@ export class Room {
     if (this.countdownTimer) clearInterval(this.countdownTimer);
     if (this.broadcastTimer) clearInterval(this.broadcastTimer);
     if (this.positionsTimer) clearInterval(this.positionsTimer);
+    if (this.loadTimeout) clearTimeout(this.loadTimeout);
+    if (this.raceTimeout) clearTimeout(this.raceTimeout);
     this.countdownTimer = null;
     this.broadcastTimer = null;
     this.positionsTimer = null;
+    this.loadTimeout = null;
+    this.raceTimeout = null;
+    this.countdownStarted = false;
     this.status = "waiting";
   }
 

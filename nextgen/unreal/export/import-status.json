@@ -1,0 +1,14 @@
+{
+  "state": "ok",
+  "maps": [
+    "/Game/DriveAnywhere/Maps/MAP_WestminsterSprint",
+    "/Game/DriveAnywhere/Maps/MAP_AlpsMountainPass",
+    "/Game/DriveAnywhere/Maps/MAP_CanaryWharfLoop",
+    "/Game/DriveAnywhere/Maps/MAP_DubaiMarinaCircuit",
+    "/Game/DriveAnywhere/Maps/MAP_EgyptPyramids",
+    "/Game/DriveAnywhere/Maps/MAP_EmbankmentRun",
+    "/Game/DriveAnywhere/Maps/MAP_NewYorkHarborCircuit",
+    "/Game/DriveAnywhere/Maps/MAP_RioCoastCircuit",
+    "/Game/DriveAnywhere/Maps/MAP_TokyoDriftCircuit"
+  ]
+}

@@ -1,0 +1,25 @@
+﻿DriveAnywhere — how to open other maps in Unreal
+================================================
+
+Content Browser → DriveAnywhere → Maps
+
+Double-click any of:
+  MAP_WestminsterSprint
+  MAP_EmbankmentRun
+  MAP_CanaryWharfLoop
+  MAP_DubaiMarinaCircuit
+  MAP_EgyptPyramids
+  MAP_NewYorkHarborCircuit
+  MAP_TokyoDriftCircuit
+  MAP_AlpsMountainPass
+  MAP_RioCoastCircuit
+
+Then Alt+P to play.
+
+Each map now has:
+  - up to 30 unique labelled silhouettes (Eye, Burj, Empire kinds, etc.)
+  - all named building labels from the web routes
+  - city heroes (Big Ben / Burj / Empire / Cristo / …)
+  - Tecpro barriers, trees, signs, correct spawn
+
+Host-only car/track/AI is already on the web lobby (room-lobby.tsx).

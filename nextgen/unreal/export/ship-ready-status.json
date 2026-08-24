@@ -1,0 +1,187 @@
+{
+  "state": "ok",
+  "failed": [],
+  "results": [
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_WestminsterSprint",
+      "slug": "westminster-sprint",
+      "ok": true,
+      "road": {
+        "segments": 293,
+        "sourcePoints": 273,
+        "gaps": 0,
+        "maxGap": 1337.2,
+        "avgGap": 929.9
+      },
+      "checkpoints": {
+        "count": 12,
+        "aligned": 12
+      },
+      "playerStart": true,
+      "hdCityActors": 238,
+      "loopGapCm": 0.0,
+      "distanceMetres": 2541
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_AlpsMountainPass",
+      "slug": "alps-mountain-pass",
+      "ok": true,
+      "road": {
+        "segments": 397,
+        "sourcePoints": 281,
+        "gaps": 1,
+        "maxGap": 47927.1,
+        "avgGap": 1320.4
+      },
+      "checkpoints": {
+        "count": 14,
+        "aligned": 14
+      },
+      "playerStart": true,
+      "hdCityActors": 186,
+      "loopGapCm": 47927.1,
+      "distanceMetres": 3202
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_CanaryWharfLoop",
+      "slug": "canary-wharf-loop",
+      "ok": true,
+      "road": {
+        "segments": 221,
+        "sourcePoints": 217,
+        "gaps": 0,
+        "maxGap": 1224.2,
+        "avgGap": 902.8
+      },
+      "checkpoints": {
+        "count": 12,
+        "aligned": 12
+      },
+      "playerStart": true,
+      "hdCityActors": 238,
+      "loopGapCm": 0.0,
+      "distanceMetres": 1960
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_DubaiMarinaCircuit",
+      "slug": "dubai-marina-circuit",
+      "ok": true,
+      "road": {
+        "segments": 219,
+        "sourcePoints": 193,
+        "gaps": 0,
+        "maxGap": 1320.6,
+        "avgGap": 1066.9
+      },
+      "checkpoints": {
+        "count": 14,
+        "aligned": 14
+      },
+      "playerStart": true,
+      "hdCityActors": 342,
+      "loopGapCm": 0.0,
+      "distanceMetres": 2060
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EgyptPyramids",
+      "slug": "egypt-pyramids",
+      "ok": true,
+      "road": {
+        "segments": 301,
+        "sourcePoints": 281,
+        "gaps": 0,
+        "maxGap": 1282.9,
+        "avgGap": 936.8
+      },
+      "checkpoints": {
+        "count": 14,
+        "aligned": 14
+      },
+      "playerStart": true,
+      "hdCityActors": 183,
+      "loopGapCm": 0.0,
+      "distanceMetres": 2634
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EmbankmentRun",
+      "slug": "embankment-run",
+      "ok": true,
+      "road": {
+        "segments": 277,
+        "sourcePoints": 201,
+        "gaps": 0,
+        "maxGap": 1602.6,
+        "avgGap": 1082.1
+      },
+      "checkpoints": {
+        "count": 12,
+        "aligned": 12
+      },
+      "playerStart": true,
+      "hdCityActors": 231,
+      "loopGapCm": 0.0,
+      "distanceMetres": 2176
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_NewYorkHarborCircuit",
+      "slug": "new-york-harbor-circuit",
+      "ok": true,
+      "road": {
+        "segments": 190,
+        "sourcePoints": 177,
+        "gaps": 0,
+        "maxGap": 1244.1,
+        "avgGap": 995.9
+      },
+      "checkpoints": {
+        "count": 14,
+        "aligned": 14
+      },
+      "playerStart": true,
+      "hdCityActors": 337,
+      "loopGapCm": 0.0,
+      "distanceMetres": 1764
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_RioCoastCircuit",
+      "slug": "rio-coast-circuit",
+      "ok": true,
+      "road": {
+        "segments": 416,
+        "sourcePoints": 225,
+        "gaps": 0,
+        "maxGap": 1517.8,
+        "avgGap": 1336.6
+      },
+      "checkpoints": {
+        "count": 14,
+        "aligned": 14
+      },
+      "playerStart": true,
+      "hdCityActors": 162,
+      "loopGapCm": 0.0,
+      "distanceMetres": 3001
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_TokyoDriftCircuit",
+      "slug": "tokyo-drift-circuit",
+      "ok": true,
+      "road": {
+        "segments": 340,
+        "sourcePoints": 305,
+        "gaps": 0,
+        "maxGap": 1686.5,
+        "avgGap": 824.7
+      },
+      "checkpoints": {
+        "count": 14,
+        "aligned": 14
+      },
+      "playerStart": true,
+      "hdCityActors": 232,
+      "loopGapCm": 0.0,
+      "distanceMetres": 2500
+    }
+  ],
+  "play": "Alt+P \u2014 WASD drive, mouse look. All tracks match web splines."
+}

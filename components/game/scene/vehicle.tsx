@@ -690,10 +690,13 @@ export function Vehicle({ route, samples }: VehicleProps) {
 
     cam2.lookAt(lookAtSmooth);
 
-    // Broadcast position to multiplayer server at ~20Hz
+    // Broadcast position to multiplayer server — throttle more with bigger grids
     if (useMultiplayerStore.getState().racing) {
       const now = performance.now();
-      if (!scratch.current.lastNetSend || now - scratch.current.lastNetSend > 33) {
+      const room = useMultiplayerStore.getState().currentRoom;
+      const grid = room?.players.length ?? 2;
+      const sendEveryMs = grid >= 6 ? 80 : grid >= 4 ? 55 : 45;
+      if (!scratch.current.lastNetSend || now - scratch.current.lastNetSend > sendEveryMs) {
         scratch.current.lastNetSend = now;
         const rot = body.rotation();
         const gs = useGameStore.getState();

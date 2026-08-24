@@ -1,0 +1,109 @@
+{
+  "classes": [
+    {
+      "id": "sports",
+      "name": "Sports GT",
+      "tagline": "Balanced street racer — quick, planted, forgiving.",
+      "massKg": 320,
+      "stats": {
+        "speed": 82,
+        "accel": 78,
+        "grip": 74,
+        "weight": 55
+      },
+      "tuning": {
+        "maxSpeedMul": 1.04,
+        "accelMul": 1.06,
+        "brakeMul": 1,
+        "gripMul": 1,
+        "steerMul": 1
+      },
+      "colliderCm": {
+        "halfWidth": 88,
+        "halfHeight": 32,
+        "halfLength": 204.99999999999997,
+        "offsetZ": 38
+      },
+      "paint": "#c8102e"
+    },
+    {
+      "id": "f1",
+      "name": "Open-Wheel",
+      "tagline": "Peak pace and bite — rewards clean lines.",
+      "massKg": 180,
+      "stats": {
+        "speed": 98,
+        "accel": 96,
+        "grip": 92,
+        "weight": 28
+      },
+      "tuning": {
+        "maxSpeedMul": 1.22,
+        "accelMul": 1.32,
+        "brakeMul": 1.25,
+        "gripMul": 1.2,
+        "steerMul": 1.15
+      },
+      "colliderCm": {
+        "halfWidth": 72,
+        "halfHeight": 24,
+        "halfLength": 204.99999999999997,
+        "offsetZ": 30
+      },
+      "paint": "#e8eef4"
+    },
+    {
+      "id": "corsa",
+      "name": "Vauxhall Corsa",
+      "tagline": "Silver hatch — modest pace, easy to place.",
+      "massKg": 280,
+      "stats": {
+        "speed": 52,
+        "accel": 48,
+        "grip": 58,
+        "weight": 48
+      },
+      "tuning": {
+        "maxSpeedMul": 0.74,
+        "accelMul": 0.75,
+        "brakeMul": 0.85,
+        "gripMul": 0.88,
+        "steerMul": 1.05
+      },
+      "colliderCm": {
+        "halfWidth": 82,
+        "halfHeight": 34,
+        "halfLength": 172,
+        "offsetZ": 36
+      },
+      "paint": "#c5cad0"
+    },
+    {
+      "id": "gwagon",
+      "name": "G-Wagon",
+      "tagline": "Heavy box — stable, slower on top end.",
+      "massKg": 520,
+      "stats": {
+        "speed": 58,
+        "accel": 42,
+        "grip": 62,
+        "weight": 92
+      },
+      "tuning": {
+        "maxSpeedMul": 0.8,
+        "accelMul": 0.68,
+        "brakeMul": 0.9,
+        "gripMul": 0.82,
+        "steerMul": 0.85
+      },
+      "colliderCm": {
+        "halfWidth": 100,
+        "halfHeight": 50,
+        "halfLength": 204.99999999999997,
+        "offsetZ": 57.99999999999999
+      },
+      "paint": "#1a1c20"
+    }
+  ],
+  "cosmeticsCount": 84
+}

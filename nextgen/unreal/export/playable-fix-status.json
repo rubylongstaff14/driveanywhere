@@ -1,0 +1,59 @@
+{
+  "state": "ok",
+  "results": [
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_WestminsterSprint",
+      "roads": 272,
+      "movable": 2278,
+      "painted": 1296
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_AlpsMountainPass",
+      "roads": 281,
+      "movable": 1903,
+      "painted": 811
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_CanaryWharfLoop",
+      "roads": 216,
+      "movable": 2259,
+      "painted": 1431
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_DubaiMarinaCircuit",
+      "roads": 192,
+      "movable": 2433,
+      "painted": 1663
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EgyptPyramids",
+      "roads": 280,
+      "movable": 1877,
+      "painted": 862
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EmbankmentRun",
+      "roads": 200,
+      "movable": 1846,
+      "painted": 1100
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_NewYorkHarborCircuit",
+      "roads": 176,
+      "movable": 2563,
+      "painted": 1837
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_RioCoastCircuit",
+      "roads": 224,
+      "movable": 2001,
+      "painted": 1159
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_TokyoDriftCircuit",
+      "roads": 304,
+      "movable": 3344,
+      "painted": 2208
+    }
+  ]
+}

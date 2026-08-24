@@ -187,14 +187,7 @@ wss.on("connection", (ws) => {
         if (!info) break;
         const room = rooms.get(info.roomId);
         if (!room || room.status !== "racing") break;
-        const player = room.players.find((p) => p.id === info.playerId);
-        if (player) {
-          player.carState = msg.state;
-          room.broadcast(
-            { type: "car_update", playerId: info.playerId, state: msg.state },
-            info.playerId,
-          );
-        }
+        room.updateCarState(info.playerId, msg.state);
         break;
       }
 
@@ -242,7 +235,7 @@ const defaultServers = [
 
 for (const cfg of defaultServers) {
   const room = new Room(cfg.name, cfg.map, cfg.difficulty, 2);
-  room.maxPlayers = 6;
+  room.maxPlayers = 8;
   room.persistent = true;
   rooms.set(room.id, room);
 }

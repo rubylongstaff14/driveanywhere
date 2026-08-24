@@ -89,6 +89,7 @@ export type ServerMessage =
   | { type: "countdown"; value: number }
   | { type: "race_go"; startTimestamp: number; vehicleId: string }
   | { type: "car_update"; playerId: string; state: CarState }
+  | { type: "cars_batch"; updates: Array<{ playerId: string; state: CarState }> }
   | { type: "race_results"; results: RaceResult[] }
   | { type: "chat"; playerId: string; playerName: string; text: string }
   | { type: "race_positions"; positions: RacePosition[] }

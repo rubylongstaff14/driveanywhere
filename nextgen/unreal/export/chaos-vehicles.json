@@ -1,0 +1,89 @@
+{
+  "note": "Apply to Chaos Vehicle Movement only. Never bind cosmetics to torque/grip.",
+  "classes": [
+    {
+      "id": "sports",
+      "name": "Sports GT",
+      "fairness": "class-locked; cosmetics must not edit these numbers",
+      "massKg": 320,
+      "maxSpeedKmh": 161,
+      "maxEngineTorqueNm": 1211.4,
+      "brakeTorqueNm": 2654.2,
+      "maxSteerAngleDeg": 32,
+      "highSpeedSteerAngleDeg": 10,
+      "lateralFriction": 3.2,
+      "dragCoefficient": 0.269,
+      "downforceKg": 18,
+      "wheelRadiusCm": 23,
+      "chassisCm": {
+        "width": 176,
+        "height": 64,
+        "length": 410
+      },
+      "defaultPaint": "#c8102e"
+    },
+    {
+      "id": "f1",
+      "name": "Open-Wheel",
+      "fairness": "class-locked; cosmetics must not edit these numbers",
+      "massKg": 180,
+      "maxSpeedKmh": 188.9,
+      "maxEngineTorqueNm": 810.2,
+      "brakeTorqueNm": 1782,
+      "maxSteerAngleDeg": 36.8,
+      "highSpeedSteerAngleDeg": 11.5,
+      "lateralFriction": 3.84,
+      "dragCoefficient": 0.23,
+      "downforceKg": 21.6,
+      "wheelRadiusCm": 22,
+      "chassisCm": {
+        "width": 144,
+        "height": 48,
+        "length": 410
+      },
+      "defaultPaint": "#e8eef4"
+    },
+    {
+      "id": "corsa",
+      "name": "Vauxhall Corsa",
+      "fairness": "class-locked; cosmetics must not edit these numbers",
+      "massKg": 280,
+      "maxSpeedKmh": 114.6,
+      "maxEngineTorqueNm": 796.8,
+      "brakeTorqueNm": 2097.4,
+      "maxSteerAngleDeg": 33.6,
+      "highSpeedSteerAngleDeg": 10.5,
+      "lateralFriction": 2.816,
+      "dragCoefficient": 0.378,
+      "downforceKg": 15.8,
+      "wheelRadiusCm": 24.5,
+      "chassisCm": {
+        "width": 164,
+        "height": 68,
+        "length": 344
+      },
+      "defaultPaint": "#c5cad0"
+    },
+    {
+      "id": "gwagon",
+      "name": "G-Wagon",
+      "fairness": "class-locked; cosmetics must not edit these numbers",
+      "massKg": 520,
+      "maxSpeedKmh": 123.8,
+      "maxEngineTorqueNm": 1973.1,
+      "brakeTorqueNm": 6065.3,
+      "maxSteerAngleDeg": 27.2,
+      "highSpeedSteerAngleDeg": 8.5,
+      "lateralFriction": 2.624,
+      "dragCoefficient": 0.35,
+      "downforceKg": 14.8,
+      "wheelRadiusCm": 36,
+      "chassisCm": {
+        "width": 200,
+        "height": 100,
+        "length": 410
+      },
+      "defaultPaint": "#1a1c20"
+    }
+  ]
+}

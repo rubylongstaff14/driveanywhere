@@ -101,14 +101,25 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
           remoteCarStateHistory: {},
         });
         break;
-      case "car_update": {
-        const states = get().remoteCarStates;
-        states[msg.playerId] = msg.state;
-
-        const history = get().remoteCarStateHistory;
-        if (!history[msg.playerId]) history[msg.playerId] = [];
-        history[msg.playerId].push({ state: msg.state, timestamp: Date.now() });
-        while (history[msg.playerId].length > 8) history[msg.playerId].shift();
+      case "car_update":
+      case "cars_batch": {
+        const myId = get().myId;
+        const states = { ...get().remoteCarStates };
+        const history = { ...get().remoteCarStateHistory };
+        const now = Date.now();
+        const updates =
+          msg.type === "cars_batch"
+            ? msg.updates
+            : [{ playerId: msg.playerId, state: msg.state }];
+        for (const u of updates) {
+          if (u.playerId === myId) continue;
+          states[u.playerId] = u.state;
+          const prev = history[u.playerId] ?? [];
+          const next = [...prev, { state: u.state, timestamp: now }];
+          while (next.length > 6) next.shift();
+          history[u.playerId] = next;
+        }
+        set({ remoteCarStates: states, remoteCarStateHistory: history });
         break;
       }
       case "chat":

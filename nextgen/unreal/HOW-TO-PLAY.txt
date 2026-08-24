@@ -1,0 +1,24 @@
+﻿DriveAnywhere — how to play
+===========================
+
+UNREAL (city showcase / photoreal path):
+1. Editor should already be open. If not, run:
+   nextgen\unreal\Open-DriveAnywhere.bat
+2. Content Browser → DriveAnywhere → Maps → double-click a MAP_*
+3. Press Alt+P (Play). WASD to drive. Viewport must be Lit.
+4. Outliner search:
+   - Hero_     = grand landmarks (Westminster has 13)
+   - Unique_   = city-specific buildings
+   - Skyline_  = far city ring (showcase backdrop)
+   - Tecpro_   = track barriers
+5. Each map has its own colour mood (London stone/gold, Dubai glass/sand,
+   Tokyo night red, Egypt sand, Rio coastal, Alps alpine, NYC steel…).
+
+WEB (live arcade / multiplayer):
+1. From repo root: npm run dev
+2. Open http://localhost:3000
+
+Maps:
+  MAP_WestminsterSprint, MAP_EmbankmentRun, MAP_CanaryWharfLoop,
+  MAP_DubaiMarinaCircuit, MAP_EgyptPyramids, MAP_NewYorkHarborCircuit,
+  MAP_TokyoDriftCircuit, MAP_AlpsMountainPass, MAP_RioCoastCircuit

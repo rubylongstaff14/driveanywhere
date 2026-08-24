@@ -1,0 +1,61 @@
+{
+  "state": "ok",
+  "results": [
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_WestminsterSprint",
+      "roads": 272,
+      "painted": 272,
+      "radius": 42503.175
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_AlpsMountainPass",
+      "roads": 281,
+      "painted": 281,
+      "radius": 50024.79749999999
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_CanaryWharfLoop",
+      "roads": 216,
+      "painted": 216,
+      "radius": 39754.03
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_DubaiMarinaCircuit",
+      "roads": 192,
+      "painted": 192,
+      "radius": 42986.085
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EgyptPyramids",
+      "roads": 280,
+      "painted": 280,
+      "radius": 35184.08
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EmbankmentRun",
+      "roads": 200,
+      "painted": 200,
+      "radius": 52945.19
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_NewYorkHarborCircuit",
+      "roads": 176,
+      "painted": 176,
+      "radius": 37521.485
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_RioCoastCircuit",
+      "roads": 224,
+      "painted": 224,
+      "radius": 61783.95
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_TokyoDriftCircuit",
+      "roads": 304,
+      "painted": 304,
+      "radius": 47083.655
+    }
+  ],
+  "racer": "/Game/DriveAnywhere/BP_DARacer.BP_DARacer_C",
+  "gameMode": "/Game/DriveAnywhere/BP_DAGameMode.BP_DAGameMode_C"
+}

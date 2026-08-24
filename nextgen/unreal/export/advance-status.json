@@ -1,0 +1,80 @@
+{
+  "state": "ok",
+  "results": [
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_WestminsterSprint",
+      "roads": 272,
+      "sidewalks": 272,
+      "lamps": 78,
+      "dense": 343,
+      "windows": 590
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_AlpsMountainPass",
+      "roads": 281,
+      "sidewalks": 282,
+      "lamps": 94,
+      "dense": 349,
+      "windows": 30
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_CanaryWharfLoop",
+      "roads": 216,
+      "sidewalks": 216,
+      "lamps": 73,
+      "dense": 280,
+      "windows": 850
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_DubaiMarinaCircuit",
+      "roads": 192,
+      "sidewalks": 192,
+      "lamps": 54,
+      "dense": 245,
+      "windows": 1148
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EgyptPyramids",
+      "roads": 280,
+      "sidewalks": 280,
+      "lamps": 88,
+      "dense": 365,
+      "windows": 131
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EmbankmentRun",
+      "roads": 200,
+      "sidewalks": 200,
+      "lamps": 62,
+      "dense": 262,
+      "windows": 572
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_NewYorkHarborCircuit",
+      "roads": 176,
+      "sidewalks": 176,
+      "lamps": 54,
+      "dense": 237,
+      "windows": 1353
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_RioCoastCircuit",
+      "roads": 224,
+      "sidewalks": 224,
+      "lamps": 64,
+      "dense": 291,
+      "windows": 572
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_TokyoDriftCircuit",
+      "roads": 304,
+      "sidewalks": 304,
+      "lamps": 91,
+      "dense": 388,
+      "windows": 1396
+    }
+  ],
+  "racer": "/Game/DriveAnywhere/BP_DARacer.BP_DARacer_C",
+  "gameMode": "/Game/DriveAnywhere/BP_DAGameMode.BP_DAGameMode_C",
+  "howToPlay": "Alt+P \u2014 WASD drive, mouse look (chase cam). Sports GT pace."
+}

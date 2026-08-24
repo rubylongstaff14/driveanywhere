@@ -1,0 +1,59 @@
+{
+  "state": "ok",
+  "results": [
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_WestminsterSprint",
+      "roads": 272,
+      "buildings": 214,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_AlpsMountainPass",
+      "roads": 281,
+      "buildings": 331,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_CanaryWharfLoop",
+      "roads": 216,
+      "buildings": 197,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_DubaiMarinaCircuit",
+      "roads": 192,
+      "buildings": 233,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EgyptPyramids",
+      "roads": 280,
+      "buildings": 188,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EmbankmentRun",
+      "roads": 200,
+      "buildings": 156,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_NewYorkHarborCircuit",
+      "roads": 176,
+      "buildings": 210,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_RioCoastCircuit",
+      "roads": 224,
+      "buildings": 193,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_TokyoDriftCircuit",
+      "roads": 304,
+      "buildings": 284,
+      "ok": true
+    }
+  ]
+}

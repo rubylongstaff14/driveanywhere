@@ -1,0 +1,71 @@
+{
+  "state": "ok",
+  "results": [
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_WestminsterSprint",
+      "roads": 272,
+      "painted": 272,
+      "lines": 68,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_AlpsMountainPass",
+      "roads": 281,
+      "painted": 281,
+      "lines": 71,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_CanaryWharfLoop",
+      "roads": 216,
+      "painted": 216,
+      "lines": 54,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_DubaiMarinaCircuit",
+      "roads": 192,
+      "painted": 192,
+      "lines": 48,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EgyptPyramids",
+      "roads": 280,
+      "painted": 280,
+      "lines": 70,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EmbankmentRun",
+      "roads": 200,
+      "painted": 200,
+      "lines": 50,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_NewYorkHarborCircuit",
+      "roads": 176,
+      "painted": 176,
+      "lines": 44,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_RioCoastCircuit",
+      "roads": 224,
+      "painted": 224,
+      "lines": 56,
+      "ok": true
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_TokyoDriftCircuit",
+      "roads": 304,
+      "painted": 304,
+      "lines": 76,
+      "ok": true
+    }
+  ],
+  "racer": "/Game/DriveAnywhere/BP_DARacer.BP_DARacer_C",
+  "gameMode": "/Game/DriveAnywhere/BP_DAGameMode.BP_DAGameMode_C",
+  "howToPlay": "Alt+P then WASD move, mouse look, E/C up/down"
+}

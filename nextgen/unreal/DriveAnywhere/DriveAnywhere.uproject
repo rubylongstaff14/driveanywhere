@@ -1,0 +1,15 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.8",
+  "Category": "Games",
+  "Description": "DriveAnywhere.ai photoreal racing - nine circuits and four classes.",
+  "Plugins": [
+    { "Name": "PythonScriptPlugin", "Enabled": true },
+    { "Name": "EditorScriptingUtilities", "Enabled": true },
+    { "Name": "ChaosVehiclesPlugin", "Enabled": true },
+    { "Name": "ProceduralMeshComponent", "Enabled": true },
+    { "Name": "CesiumForUnreal", "Enabled": false },
+    { "Name": "Fab", "Enabled": true },
+    { "Name": "Bridge", "Enabled": true }
+  ]
+}

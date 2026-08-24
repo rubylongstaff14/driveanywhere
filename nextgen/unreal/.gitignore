@@ -1,0 +1,12 @@
+# Unreal engine churn — never commit
+Saved/
+Intermediate/
+DerivedDataCache/
+Binaries/
+Build/
+*.sln
+*.suo
+.vs/
+
+# Optional Megascans cache (import locally)
+Megascans/

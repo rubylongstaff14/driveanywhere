@@ -1,0 +1,59 @@
+{
+  "state": "ok",
+  "results": [
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_WestminsterSprint",
+      "slug": "westminster-sprint",
+      "named": 15,
+      "fill": 169
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_AlpsMountainPass",
+      "slug": "alps-mountain-pass",
+      "named": 52,
+      "fill": 175
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_CanaryWharfLoop",
+      "slug": "canary-wharf-loop",
+      "named": 21,
+      "fill": 134
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_DubaiMarinaCircuit",
+      "slug": "dubai-marina-circuit",
+      "named": 32,
+      "fill": 133
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EgyptPyramids",
+      "slug": "egypt-pyramids",
+      "named": 12,
+      "fill": 152
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_EmbankmentRun",
+      "slug": "embankment-run",
+      "named": 15,
+      "fill": 111
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_NewYorkHarborCircuit",
+      "slug": "new-york-harbor-circuit",
+      "named": 33,
+      "fill": 111
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_RioCoastCircuit",
+      "slug": "rio-coast-circuit",
+      "named": 18,
+      "fill": 139
+    },
+    {
+      "map": "/Game/DriveAnywhere/Maps/MAP_TokyoDriftCircuit",
+      "slug": "tokyo-drift-circuit",
+      "named": 37,
+      "fill": 172
+    }
+  ]
+}
