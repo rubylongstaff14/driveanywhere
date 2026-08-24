@@ -48,8 +48,9 @@ wss.on("connection", (ws) => {
       case "create_room": {
         const room = new Room(msg.name, msg.map, msg.difficulty, msg.aiCount);
         const playerId = genPlayerId();
-        room.vehicleId = parseVehicleId(msg.vehicleId);
-        room.addPlayer(ws, playerId, msg.playerName, room.vehicleId, true);
+        const vehicleId = parseVehicleId(msg.vehicleId);
+        room.vehicleId = vehicleId;
+        room.addPlayer(ws, playerId, msg.playerName, vehicleId, true, msg.paint);
         rooms.set(room.id, room);
         playerRooms.set(ws, { roomId: room.id, playerId });
         sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
@@ -64,7 +65,8 @@ wss.on("connection", (ws) => {
         }
         const playerId = genPlayerId();
         const becomeHost = room.humanCount === 0;
-        room.addPlayer(ws, playerId, msg.playerName, room.vehicleId, becomeHost);
+        const vehicleId = parseVehicleId(msg.vehicleId);
+        room.addPlayer(ws, playerId, msg.playerName, vehicleId, becomeHost, msg.paint);
         playerRooms.set(ws, { roomId: room.id, playerId });
         sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
         room.broadcast({ type: "room_updated", room: room.toInfo() }, playerId);
@@ -104,8 +106,23 @@ wss.on("connection", (ws) => {
         if (msg.type === "host_set_difficulty") room.difficulty = msg.difficulty;
         if (msg.type === "host_set_ai") room.aiCount = Math.min(4, Math.max(0, msg.aiCount));
         if (msg.type === "host_set_vehicle") {
+          // Default class for AI / room listing — do not overwrite player picks
           room.vehicleId = parseVehicleId(msg.vehicleId);
-          for (const p of room.players) p.vehicleId = room.vehicleId;
+        }
+        room.broadcast({ type: "room_updated", room: room.toInfo() });
+        break;
+      }
+
+      case "set_loadout": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room || room.status !== "waiting") break;
+        const player = room.players.find((p) => p.id === info.playerId);
+        if (!player) break;
+        player.vehicleId = parseVehicleId(msg.vehicleId);
+        if (typeof msg.paint === "string" && msg.paint.length >= 4) {
+          player.paint = msg.paint.slice(0, 16);
         }
         room.broadcast({ type: "room_updated", room: room.toInfo() });
         break;

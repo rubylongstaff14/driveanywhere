@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo } from "react";
 import type { RoadSample } from "@/lib/game/road-mesh";
@@ -518,18 +518,21 @@ export function UniqueCircuitLandmarks({
       y: number;
       z: number;
     }> = [];
-    for (let i = 0; i < Math.min(12, defs.length); i += 1) {
-      const def = defs[i];
+    const heroSkip = /big ben|elizabeth tower|palace of westminster|westminster abbey|london eye|parliament|^abbey$/i;
+    const filtered = defs.filter((d) => !heroSkip.test(d.name));
+    const count = Math.min(90, filtered.length);
+    for (let i = 0; i < count; i += 1) {
+      const def = filtered[i];
       const sample =
-        samples[Math.floor((i + 0.5) * (samples.length / 12)) % samples.length];
+        samples[Math.floor((i + 0.5) * (samples.length / count)) % samples.length];
       const side = i % 2 === 0 ? 1 : -1;
-      const height = Math.min(def.height, 64);
+      const height = Math.min(def.height, 120);
       const half = Math.max(7, height * 0.14);
       let placedPoint: { x: number; y: number; z: number } | null = null;
-      for (const dist of [110, 128, 148, 170]) {
+      for (const dist of [110, 128, 148, 170, 195, 220]) {
         const x = sample.position.x + sample.normal.x * side * dist;
         const z = sample.position.z + sample.normal.z * side * dist;
-        if (aabbAsphaltClearance(samples, x, z, half, half) >= 10) {
+        if (aabbAsphaltClearance(samples, x, z, half, half) >= 14) {
           placedPoint = { x, y: sample.position.y, z };
           break;
         }

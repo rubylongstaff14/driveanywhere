@@ -123,8 +123,8 @@ export function RemotePlayers() {
         <RemoteCar
           key={p.id}
           playerId={p.id}
-          color={COLORS[i % COLORS.length]}
-          vehicleId={currentRoom.vehicleId}
+          color={p.paint || COLORS[i % COLORS.length]}
+          vehicleId={p.vehicleId || currentRoom.vehicleId}
         />
       ))}
     </>

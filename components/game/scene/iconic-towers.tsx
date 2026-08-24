@@ -164,7 +164,6 @@ const NAME_TO_KIND: Record<string, IconicKind> = {
   "Banqueting House": "classical-palace",
   "Admiralty Arch": "classical-palace",
   "County Hall": "classical-palace",
-  "London Eye": "glass-needle",
   "St Paul's Cathedral": "portland-stone",
   "The Shard": "glass-needle",
   "Tower Bridge": "brooklyn-bridge-tower",

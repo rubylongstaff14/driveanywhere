@@ -185,25 +185,37 @@ function VehicleMesh({
           <boxGeometry args={[0.35, 0.14, 0.9]} />
           <BodyPaint color={paint} />
         </mesh>
-        {/* Front wing */}
-        <RoundedBox args={[1.85, 0.06, 0.38]} radius={0.02} position={[0, 0.18, 2.15]} castShadow>
-          <BodyPaint color={paint} />
-        </RoundedBox>
-        <mesh position={[0, 0.14, 2.15]}>
-          <boxGeometry args={[1.7, 0.04, 0.12]} />
-          <meshStandardMaterial color={paintDark} />
-        </mesh>
-        {/* Rear wing */}
-        <mesh position={[0, 0.55, -1.85]} castShadow>
-          <boxGeometry args={[0.08, 0.55, 0.08]} />
-          <meshStandardMaterial color="#bbb" metalness={0.6} roughness={0.3} />
-        </mesh>
-        <RoundedBox args={[0.95, 0.06, 0.32]} radius={0.02} position={[0, 0.82, -1.85]} castShadow>
-          <meshStandardMaterial color={paintDark} />
-        </RoundedBox>
-        <RoundedBox args={[1.75, 0.05, 0.28]} radius={0.02} position={[0, 0.22, -1.95]} castShadow>
-          <meshStandardMaterial color={paintDark} metalness={0.3} roughness={0.35} />
-        </RoundedBox>
+        {/* Factory front wing — replaced by bumper cosmetics when not stock */}
+        {bumper === "stock" ? (
+          <group>
+            <RoundedBox args={[1.85, 0.06, 0.38]} radius={0.02} position={[0, 0.18, 2.15]} castShadow>
+              <BodyPaint color={paint} />
+            </RoundedBox>
+            <mesh position={[0, 0.14, 2.15]}>
+              <boxGeometry args={[1.7, 0.04, 0.12]} />
+              <meshStandardMaterial color={paintDark} />
+            </mesh>
+          </group>
+        ) : null}
+        {/* Factory rear wing — replaced by cosmetic wing when not "none" */}
+        {wing === "none" ? (
+          <group>
+            <mesh position={[0, 0.55, -1.85]} castShadow>
+              <boxGeometry args={[0.08, 0.55, 0.08]} />
+              <meshStandardMaterial color="#bbb" metalness={0.6} roughness={0.3} />
+            </mesh>
+            <RoundedBox args={[0.95, 0.06, 0.32]} radius={0.02} position={[0, 0.82, -1.85]} castShadow>
+              <meshStandardMaterial color={paintDark} />
+            </RoundedBox>
+            <RoundedBox args={[1.75, 0.05, 0.28]} radius={0.02} position={[0, 0.22, -1.95]} castShadow>
+              <meshStandardMaterial color={paintDark} metalness={0.3} roughness={0.35} />
+            </RoundedBox>
+          </group>
+        ) : (
+          <RoundedBox args={[1.75, 0.05, 0.28]} radius={0.02} position={[0, 0.22, -1.95]} castShadow>
+            <meshStandardMaterial color={paintDark} metalness={0.3} roughness={0.35} />
+          </RoundedBox>
+        )}
         {/* Halo / cockpit */}
         <mesh position={[0, 0.58, -0.15]} castShadow>
           <boxGeometry args={[0.5, 0.32, 0.85]} />
@@ -230,7 +242,7 @@ function VehicleMesh({
         <Wheel x={0.95} y={0.28} z={1.45} radius={0.3} width={0.32} rim={rimBright} simple={simple} />
         <Wheel x={-1.0} y={0.3} z={-1.35} radius={0.34} width={0.38} rim={rimBright} simple={simple} />
         <Wheel x={1.0} y={0.3} z={-1.35} radius={0.34} width={0.38} rim={rimBright} simple={simple} />
-        <CarAeroParts bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
+        <CarAeroParts vehicleId={id} bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
       </group>
     );
   }
@@ -279,7 +291,7 @@ function VehicleMesh({
         <Wheel x={0.98} y={0.42} z={1.4} radius={0.42} width={0.34} rim={rimDark} simple={simple} />
         <Wheel x={-0.98} y={0.42} z={-1.4} radius={0.42} width={0.34} rim={rimDark} simple={simple} />
         <Wheel x={0.98} y={0.42} z={-1.4} radius={0.42} width={0.34} rim={rimDark} simple={simple} />
-        <CarAeroParts bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
+        <CarAeroParts vehicleId={id} bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
       </group>
     );
   }
@@ -319,73 +331,99 @@ function VehicleMesh({
         <Wheel x={0.78} y={0.3} z={1.15} radius={0.29} width={0.22} rim={rimBright} simple={simple} />
         <Wheel x={-0.78} y={0.3} z={-1.15} radius={0.29} width={0.22} rim={rimBright} simple={simple} />
         <Wheel x={0.78} y={0.3} z={-1.15} radius={0.29} width={0.22} rim={rimBright} simple={simple} />
-        <CarAeroParts bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
+        <CarAeroParts vehicleId={id} bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
       </group>
     );
   }
 
-  // Sports GT
+  // Sports GT — lower, wider, clear windshield / side glass / rear deck
   return (
     <group>
       <RoundedBox
-        args={[1.88, 0.38, 4.45]}
-        radius={0.14}
+        args={[1.92, 0.36, 4.5]}
+        radius={0.12}
         smoothness={4}
-        position={[0, 0.4, 0.05]}
+        position={[0, 0.38, 0.05]}
         castShadow
       >
         <BodyPaint color={paint} />
       </RoundedBox>
+      {/* Hood scoop plane */}
       <RoundedBox
-        args={[1.55, 0.12, 1.55]}
-        radius={0.08}
+        args={[1.58, 0.1, 1.65]}
+        radius={0.06}
         smoothness={3}
-        position={[0, 0.62, 1.15]}
+        position={[0, 0.58, 1.2]}
         castShadow
       >
         <BodyPaint color={paint} />
       </RoundedBox>
+      {/* Cabin */}
       <RoundedBox
-        args={[1.5, 0.42, 1.6]}
-        radius={0.1}
-        position={[0, 0.72, -0.35]}
+        args={[1.52, 0.4, 1.55]}
+        radius={0.08}
+        position={[0, 0.7, -0.32]}
         castShadow
       >
         <BodyPaint color={paint} />
       </RoundedBox>
-      <mesh position={[0, 0.82, -0.35]}>
-        <boxGeometry args={[1.35, 0.32, 1.35]} />
-        <Glass opacity={0.5} />
+      <mesh position={[0, 0.8, -0.32]}>
+        <boxGeometry args={[1.38, 0.3, 1.3]} />
+        <Glass opacity={0.48} />
       </mesh>
-      <mesh position={[0, 0.55, -2.15]}>
-        <boxGeometry args={[1.6, 0.12, 0.35]} />
-        <meshStandardMaterial color={carbon} />
+      {/* Side windows */}
+      {([-1, 1] as const).map((side) => (
+        <mesh key={`sw-${side}`} position={[side * 0.76, 0.78, -0.28]} rotation={[0, side * 0.02, 0]}>
+          <boxGeometry args={[0.06, 0.26, 1.15]} />
+          <Glass opacity={0.4} />
+        </mesh>
+      ))}
+      {/* Rear deck + diffuser cue */}
+      <mesh position={[0, 0.52, -2.05]} castShadow>
+        <boxGeometry args={[1.7, 0.14, 0.55]} />
+        <BodyPaint color={paint} />
+      </mesh>
+      <mesh position={[0, 0.32, -2.28]}>
+        <boxGeometry args={[1.55, 0.1, 0.28]} />
+        <meshStandardMaterial color={carbon} roughness={0.5} />
+      </mesh>
+      {/* Front splitter stock */}
+      <mesh position={[0, 0.18, 2.28]}>
+        <boxGeometry args={[1.7, 0.06, 0.22]} />
+        <meshStandardMaterial color={carbon} roughness={0.55} />
       </mesh>
       {([-1, 1] as const).map((side) => (
-        <mesh key={`hl-${side}`} position={[side * 0.62, 0.38, 2.22]}>
-          <boxGeometry args={[0.36, 0.1, 0.08]} />
-          <meshStandardMaterial color="#fff4d8" emissive="#ffe8a0" emissiveIntensity={0.4} />
+        <mesh key={`hl-${side}`} position={[side * 0.64, 0.36, 2.24]}>
+          <boxGeometry args={[0.38, 0.1, 0.08]} />
+          <meshStandardMaterial color="#fff4d8" emissive="#ffe8a0" emissiveIntensity={0.45} />
         </mesh>
       ))}
       {([-1, 1] as const).map((side) => (
-        <mesh key={`mir-${side}`} position={[side * 0.92, 0.72, 0.35]}>
-          <boxGeometry args={[0.14, 0.08, 0.08]} />
-          <meshStandardMaterial color="#1a1d22" metalness={0.4} roughness={0.35} />
+        <mesh key={`tl-${side}`} position={[side * 0.7, 0.48, -2.3]}>
+          <boxGeometry args={[0.28, 0.08, 0.05]} />
+          <meshStandardMaterial color="#ff3030" emissive="#ff2020" emissiveIntensity={0.35} />
         </mesh>
       ))}
-      <mesh position={[0.28, 0.28, -2.18]}>
-        <cylinderGeometry args={[0.07, 0.08, 0.16, 8]} />
-        <meshStandardMaterial color="#2a2e32" metalness={0.6} roughness={0.3} />
+      {([-1, 1] as const).map((side) => (
+        <mesh key={`mir-${side}`} position={[side * 0.94, 0.7, 0.4]}>
+          <boxGeometry args={[0.14, 0.08, 0.1]} />
+          <meshStandardMaterial color="#1a1d22" metalness={0.45} roughness={0.32} />
+        </mesh>
+      ))}
+      {/* Dual exhaust */}
+      <mesh position={[0.32, 0.26, -2.32]} rotation={[Math.PI / 2, 0, 0]}>
+        <cylinderGeometry args={[0.07, 0.08, 0.14, 8]} />
+        <meshStandardMaterial color="#2a2e32" metalness={0.65} roughness={0.28} />
       </mesh>
-      <mesh position={[-0.28, 0.28, -2.18]}>
-        <cylinderGeometry args={[0.07, 0.08, 0.16, 8]} />
-        <meshStandardMaterial color="#2a2e32" metalness={0.6} roughness={0.3} />
+      <mesh position={[-0.32, 0.26, -2.32]} rotation={[Math.PI / 2, 0, 0]}>
+        <cylinderGeometry args={[0.07, 0.08, 0.14, 8]} />
+        <meshStandardMaterial color="#2a2e32" metalness={0.65} roughness={0.28} />
       </mesh>
-      <Wheel x={-0.88} y={0.32} z={1.35} radius={0.32} width={0.28} rim={rimBright} simple={simple} />
-      <Wheel x={0.88} y={0.32} z={1.35} radius={0.32} width={0.28} rim={rimBright} simple={simple} />
-      <Wheel x={-0.88} y={0.32} z={-1.35} radius={0.32} width={0.28} rim={rimBright} simple={simple} />
-      <Wheel x={0.88} y={0.32} z={-1.35} radius={0.32} width={0.28} rim={rimBright} simple={simple} />
-      <CarAeroParts bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
+      <Wheel x={-0.9} y={0.3} z={1.38} radius={0.33} width={0.3} rim={rimBright} simple={simple} />
+      <Wheel x={0.9} y={0.3} z={1.38} radius={0.33} width={0.3} rim={rimBright} simple={simple} />
+      <Wheel x={-0.9} y={0.3} z={-1.38} radius={0.33} width={0.3} rim={rimBright} simple={simple} />
+      <Wheel x={0.9} y={0.3} z={-1.38} radius={0.33} width={0.3} rim={rimBright} simple={simple} />
+      <CarAeroParts vehicleId={id} bumper={bumper} wing={wing} kit={kit} paint={paint} paintDark={paintDark} />
     </group>
   );
 }

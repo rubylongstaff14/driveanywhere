@@ -41,14 +41,15 @@ interface MultiplayerState {
   connect: () => void;
   disconnect: () => void;
   listRooms: () => void;
-  createRoom: (name: string, map: string, difficulty: "easy" | "medium" | "hard", aiCount: number, playerName: string, vehicleId: string) => void;
-  joinRoom: (roomId: string, playerName: string, vehicleId: string) => void;
+  createRoom: (name: string, map: string, difficulty: "easy" | "medium" | "hard", aiCount: number, playerName: string, vehicleId: string, paint?: string) => void;
+  joinRoom: (roomId: string, playerName: string, vehicleId: string, paint?: string) => void;
   leaveRoom: () => void;
   setReady: (ready: boolean) => void;
   hostSetMap: (map: string) => void;
   hostSetDifficulty: (d: "easy" | "medium" | "hard") => void;
   hostSetAi: (count: number) => void;
   hostSetVehicle: (vehicleId: string) => void;
+  setLoadout: (vehicleId: string, paint?: string) => void;
   hostKick: (playerId: string) => void;
   hostStart: () => void;
   reportFinish: (timeMs: number, splits?: number[]) => void;
@@ -179,10 +180,11 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
       });
     },
     listRooms: () => sendMsg({ type: "list_rooms" }),
-    createRoom: (name, map, difficulty, aiCount, playerName, vehicleId) =>
-      sendMsg({ type: "create_room", name, map, difficulty, aiCount, playerName, vehicleId }),
-    joinRoom: (roomId, playerName, vehicleId) =>
-      sendMsg({ type: "join_room", roomId, playerName, vehicleId }),
+    createRoom: (name, map, difficulty, aiCount, playerName, vehicleId, paint) =>
+      sendMsg({ type: "create_room", name, map, difficulty, aiCount, playerName, vehicleId, paint }),
+    joinRoom: (roomId, playerName, vehicleId, paint) =>
+      sendMsg({ type: "join_room", roomId, playerName, vehicleId, paint }),
+    setLoadout: (vehicleId, paint) => sendMsg({ type: "set_loadout", vehicleId, paint }),
     leaveRoom: () => {
       sendMsg({ type: "leave_room" });
       set({

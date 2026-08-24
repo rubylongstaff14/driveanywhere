@@ -79,7 +79,7 @@ function item(
   };
 }
 
-function catalogFor(id: VehicleId): CosmeticItem[] {
+function paintCatalog(id: VehicleId): CosmeticItem[] {
   const stock = VEHICLES[id];
   return [
     item(id, "paint", "stock", `${stock.name} Factory`, "consumer", {
@@ -114,6 +114,83 @@ function catalogFor(id: VehicleId): CosmeticItem[] {
       paint: "#1c1e22",
       paintDark: "#ff5c5c",
     }),
+    item(id, "paint", "british", "British Racing", "restricted", {
+      paint: "#0c4a2c",
+      paintDark: "#062418",
+    }),
+    item(id, "paint", "gulf", "Gulf Heritage", "classified", {
+      paint: "#74c4e8",
+      paintDark: "#f0a010",
+    }),
+    item(id, "paint", "sakura", "Sakura Mist", "milspec", {
+      paint: "#f0b8c8",
+      paintDark: "#884058",
+    }),
+  ];
+}
+
+/** Per-class aero — F1 already has wings; SUV gets racks/guards, not swan GT. */
+function aeroCatalog(id: VehicleId): CosmeticItem[] {
+  if (id === "f1") {
+    return [
+      item(id, "bumper", "stock", "Spec Front Wing", "consumer", { bumper: "stock" }),
+      item(id, "bumper", "lip", "Low Cascade", "milspec", { bumper: "lip" }),
+      item(id, "bumper", "aggressive", "High Downforce Nose", "restricted", {
+        bumper: "aggressive",
+      }),
+      item(id, "bumper", "track", "Endplate Splitter", "classified", { bumper: "track" }),
+      // "none" = keep factory rear wing; other styles REPLACE it (not stack)
+      item(id, "wing", "none", "Factory Rear Wing", "consumer", { wing: "none" }),
+      item(id, "wing", "lip", "Low Beam Wing", "industrial", { wing: "lip" }),
+      item(id, "wing", "gt", "High-Drag Beam", "restricted", { wing: "gt" }),
+      item(id, "wing", "swan", "Swan-Neck Beam", "classified", { wing: "swan" }),
+      item(id, "kit", "none", "Bare Sidepods", "consumer", { kit: "none" }),
+      item(id, "kit", "skirts", "Floor Edge", "industrial", { kit: "skirts" }),
+      item(id, "kit", "canards", "Turning Vanes", "milspec", { kit: "canards" }),
+      item(id, "kit", "roof", "Halo Camera Fairing", "restricted", { kit: "roof" }),
+      item(id, "kit", "lights", "Rain Light Pack", "classified", { kit: "lights" }),
+    ];
+  }
+  if (id === "gwagon") {
+    return [
+      item(id, "bumper", "stock", "Stock Guard", "consumer", { bumper: "stock" }),
+      item(id, "bumper", "lip", "Steel Bash Plate", "milspec", { bumper: "lip" }),
+      item(id, "bumper", "aggressive", "Winch Bumper", "restricted", {
+        bumper: "aggressive",
+      }),
+      item(id, "bumper", "track", "Expedition Guard", "classified", { bumper: "track" }),
+      item(id, "wing", "none", "Clean Roof", "consumer", { wing: "none" }),
+      item(id, "wing", "lip", "Roof Spoiler", "industrial", { wing: "lip" }),
+      item(id, "wing", "gt", "Roof Rack Crossbars", "restricted", { wing: "gt" }),
+      item(id, "wing", "swan", "Safari Snorkel Pack", "classified", { wing: "swan" }),
+      item(id, "kit", "none", "Factory Body", "consumer", { kit: "none" }),
+      item(id, "kit", "skirts", "Rock Sliders", "industrial", { kit: "skirts" }),
+      item(id, "kit", "canards", "Ditch Lights Mount", "milspec", { kit: "canards" }),
+      item(id, "kit", "roof", "Roof Tent Rails", "restricted", { kit: "roof" }),
+      item(id, "kit", "lights", "Light Bar", "classified", { kit: "lights" }),
+    ];
+  }
+  if (id === "corsa") {
+    return [
+      item(id, "bumper", "stock", "Stock Bumper", "consumer", { bumper: "stock" }),
+      item(id, "bumper", "lip", "Front Lip", "milspec", { bumper: "lip" }),
+      item(id, "bumper", "aggressive", "Rally Chin", "restricted", {
+        bumper: "aggressive",
+      }),
+      item(id, "bumper", "track", "Track Splitter", "classified", { bumper: "track" }),
+      item(id, "wing", "none", "Clean Hatch", "consumer", { wing: "none" }),
+      item(id, "wing", "lip", "Hatch Ducktail", "industrial", { wing: "lip" }),
+      item(id, "wing", "gt", "Compact GT", "restricted", { wing: "gt" }),
+      item(id, "wing", "swan", "Tall Hatch Wing", "classified", { wing: "swan" }),
+      item(id, "kit", "none", "Factory Body", "consumer", { kit: "none" }),
+      item(id, "kit", "skirts", "Side Skirts", "industrial", { kit: "skirts" }),
+      item(id, "kit", "canards", "Canards", "milspec", { kit: "canards" }),
+      item(id, "kit", "roof", "Roof Antenna Pack", "restricted", { kit: "roof" }),
+      item(id, "kit", "lights", "Fog Signature", "classified", { kit: "lights" }),
+    ];
+  }
+  // sports GT
+  return [
     item(id, "bumper", "stock", "Stock Bumper", "consumer", { bumper: "stock" }),
     item(id, "bumper", "lip", "Split Lip", "milspec", { bumper: "lip" }),
     item(id, "bumper", "aggressive", "Aero Chin", "restricted", {
@@ -130,6 +207,10 @@ function catalogFor(id: VehicleId): CosmeticItem[] {
     item(id, "kit", "roof", "Roof Scoop", "restricted", { kit: "roof" }),
     item(id, "kit", "lights", "Night Signature", "classified", { kit: "lights" }),
   ];
+}
+
+function catalogFor(id: VehicleId): CosmeticItem[] {
+  return [...paintCatalog(id), ...aeroCatalog(id)];
 }
 
 export const COSMETICS: CosmeticItem[] = (

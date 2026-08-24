@@ -31,6 +31,7 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
     hostSetVehicle,
     hostKick,
     hostStart,
+    setLoadout,
   } = useMultiplayerStore();
 
   const isHost = currentRoom?.players.find((p) => p.id === myId)?.isHost ?? false;
@@ -51,14 +52,15 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
   const raceLoading = useMultiplayerStore((s) => s.raceLoading);
 
   useEffect(() => {
-    if (raceLoading && currentRoom) {
-      const vehicle = raceVehicleId ?? currentRoom.vehicleId ?? "sports";
+    if (raceLoading && currentRoom && myId) {
+      const me = currentRoom.players.find((p) => p.id === myId);
+      const vehicle = me?.vehicleId ?? raceVehicleId ?? currentRoom.vehicleId ?? "sports";
       const difficulty = lobbyDifficultyToSkill(currentRoom.difficulty);
       router.push(
         `/play/${currentRoom.map}?mode=online&roomId=${currentRoom.id}&vehicle=${vehicle}&ai=${currentRoom.aiCount}&difficulty=${difficulty}`,
       );
     }
-  }, [raceLoading, currentRoom, router, raceVehicleId]);
+  }, [raceLoading, currentRoom, router, raceVehicleId, myId]);
 
   if (!currentRoom) {
     return (
@@ -211,6 +213,9 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                     {p.isHost && <span className="ml-1.5 text-[10px] text-accent">(Host)</span>}
                     {p.id === myId && <span className="ml-1.5 text-[10px] text-mist">(You)</span>}
                   </span>
+                  <span className="text-[10px] text-mist/80">
+                    {VEHICLE_LIST.find((v) => v.id === p.vehicleId)?.name ?? p.vehicleId}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] text-mist">{p.ready ? "Ready" : "Not ready"}</span>
@@ -229,7 +234,21 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
 
           {/* Ready button for non-hosts */}
           {currentRoom.status === "waiting" && (
-            <div className="mt-4 text-center">
+            <div className="mt-4 flex flex-col items-center gap-3">
+              {me && (
+                <div className="flex items-center gap-2">
+                  <label className="text-[10px] text-mist">Your car</label>
+                  <select
+                    className="rounded-lg border border-white/10 bg-ink-975 px-2 py-1.5 text-xs text-white"
+                    value={me.vehicleId}
+                    onChange={(e) => setLoadout(e.target.value)}
+                  >
+                    {VEHICLE_LIST.map((v) => (
+                      <option key={v.id} value={v.id}>{v.name}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
               {me && !me.isHost && (
                 <button
                   onClick={() => setReady(!me.ready)}

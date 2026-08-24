@@ -5,11 +5,22 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import { useAuthStore } from "@/stores/auth-store";
+import { useGameStore } from "@/stores/game-store";
+import { useProgressionStore } from "@/stores/progression-store";
 import { ONLINE_MAPS } from "@/lib/game/online-maps";
+import { resolveLoadoutVisual } from "@/lib/game/cosmetics";
+import { VEHICLE_LIST, type VehicleId } from "@/lib/game/vehicles";
+
+function currentPaint(vehicleId: VehicleId): string | undefined {
+  const loadout = useProgressionStore.getState().loadouts[vehicleId];
+  if (!loadout) return undefined;
+  return resolveLoadoutVisual(vehicleId, loadout).paint;
+}
 
 export function ServerBrowser() {
   const router = useRouter();
   const user = useAuthStore((s) => s.user);
+  const selectedVehicleId = useGameStore((s) => s.selectedVehicleId);
   const {
     connected,
     connect,
@@ -28,6 +39,7 @@ export function ServerBrowser() {
   const [map, setMap] = useState("westminster-sprint");
   const [difficulty, setDifficulty] = useState<"easy" | "medium" | "hard">("medium");
   const [aiCount, setAiCount] = useState(2);
+  const [vehicleId, setVehicleId] = useState<VehicleId>(selectedVehicleId);
 
   useEffect(() => {
     if (!connected) connect();
@@ -51,11 +63,15 @@ export function ServerBrowser() {
 
   function handleCreate() {
     if (!roomName.trim()) return;
-    createRoom(roomName.trim(), map, difficulty, aiCount, playerName, "sports");
+    createRoom(roomName.trim(), map, difficulty, aiCount, playerName, vehicleId, currentPaint(vehicleId));
   }
 
   function handleJoin(roomId: string) {
-    useMultiplayerStore.getState().joinRoom(roomId, playerName, "sports");
+    useMultiplayerStore.getState().joinRoom(roomId, playerName, vehicleId, currentPaint(vehicleId));
+  }
+
+  function handleQuickPlay() {
+    createRoom(`${playerName}'s Race`, "westminster-sprint", "medium", 2, playerName, vehicleId, currentPaint(vehicleId));
   }
 
   return (
@@ -75,9 +91,7 @@ export function ServerBrowser() {
           </div>
           <div className="flex gap-2">
             <button
-              onClick={() => {
-                createRoom(`${playerName}'s Race`, "westminster-sprint", "medium", 2, playerName, "sports");
-              }}
+              onClick={handleQuickPlay}
               className="rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent/80"
             >
               Quick Play
@@ -91,8 +105,8 @@ export function ServerBrowser() {
           </div>
         </div>
 
-        {/* Guest name */}
-        <div className="mb-6 flex items-center gap-3 rounded-xl border border-white/10 bg-ink-950 px-4 py-3">
+        {/* Guest name + car class */}
+        <div className="mb-6 flex flex-col gap-3 rounded-xl border border-white/10 bg-ink-950 px-4 py-3 sm:flex-row sm:items-center">
           <label className="text-xs text-mist whitespace-nowrap">Your Name</label>
           <input
             className="flex-1 rounded-lg border border-white/10 bg-ink-975 px-3 py-1.5 text-sm text-white outline-none focus:border-accent"
@@ -100,6 +114,16 @@ export function ServerBrowser() {
             onChange={(e) => setPlayerName(e.target.value)}
             maxLength={20}
           />
+          <label className="text-xs text-mist whitespace-nowrap">Your Car</label>
+          <select
+            className="rounded-lg border border-white/10 bg-ink-975 px-3 py-1.5 text-sm text-white outline-none focus:border-accent"
+            value={vehicleId}
+            onChange={(e) => setVehicleId(e.target.value as VehicleId)}
+          >
+            {VEHICLE_LIST.map((v) => (
+              <option key={v.id} value={v.id}>{v.name}</option>
+            ))}
+          </select>
         </div>
 
         {error && (

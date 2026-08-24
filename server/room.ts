@@ -17,6 +17,7 @@ export interface ConnectedPlayer {
   ready: boolean;
   isHost: boolean;
   vehicleId: string;
+  paint?: string;
   carState: CarState | null;
   finishTimeMs: number | null;
   splits: number[];
@@ -71,12 +72,20 @@ export class Room {
         ready: p.ready,
         isHost: p.isHost,
         vehicleId: p.vehicleId,
+        paint: p.paint,
       })),
       status: this.status,
     };
   }
 
-  addPlayer(ws: WebSocket, id: string, name: string, vehicleId: string, isHost: boolean): ConnectedPlayer {
+  addPlayer(
+    ws: WebSocket,
+    id: string,
+    name: string,
+    vehicleId: string,
+    isHost: boolean,
+    paint?: string,
+  ): ConnectedPlayer {
     const player: ConnectedPlayer = {
       ws,
       id,
@@ -84,6 +93,7 @@ export class Room {
       ready: isHost,
       isHost,
       vehicleId,
+      paint,
       carState: null,
       finishTimeMs: null,
       splits: [],

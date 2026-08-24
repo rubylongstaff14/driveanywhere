@@ -19,6 +19,8 @@ export interface PlayerSlot {
   ready: boolean;
   isHost: boolean;
   vehicleId: string;
+  /** Visual-only paint hex — never affects pace */
+  paint?: string;
 }
 
 export interface CarState {
@@ -58,8 +60,8 @@ export interface RaceResult {
 
 export type ClientMessage =
   | { type: "list_rooms" }
-  | { type: "create_room"; name: string; map: string; difficulty: "easy" | "medium" | "hard"; aiCount: number; playerName: string; vehicleId: string }
-  | { type: "join_room"; roomId: string; playerName: string; vehicleId: string }
+  | { type: "create_room"; name: string; map: string; difficulty: "easy" | "medium" | "hard"; aiCount: number; playerName: string; vehicleId: string; paint?: string }
+  | { type: "join_room"; roomId: string; playerName: string; vehicleId: string; paint?: string }
   | { type: "leave_room" }
   | { type: "ready" }
   | { type: "unready" }
@@ -67,6 +69,7 @@ export type ClientMessage =
   | { type: "host_set_difficulty"; difficulty: "easy" | "medium" | "hard" }
   | { type: "host_set_ai"; aiCount: number }
   | { type: "host_set_vehicle"; vehicleId: string }
+  | { type: "set_loadout"; vehicleId: string; paint?: string }
   | { type: "host_kick"; playerId: string }
   | { type: "host_start" }
   | { type: "loaded" }

@@ -278,8 +278,9 @@ export function LondonEyeLandmark({
   detail?: boolean;
   fog?: boolean;
 }) {
+  // Real Eye ~135m Ø — scale for trackside readability (~64m diameter here)
   const radius = 32;
-  const capsules = detail ? 24 : 12;
+  const capsules = detail ? 32 : 16;
   const white = fog ? mats.white : distantMats.white;
   const steel = fog ? mats.steel : distantMats.steel;
   const glass = fog ? mats.glass : distantMats.glass;
@@ -287,40 +288,73 @@ export function LondonEyeLandmark({
 
   return (
     <group position={position} rotation={[0, Math.PI / 2, 0]}>
-      <mesh castShadow={castShadow} material={white}>
-        <torusGeometry args={[radius, 0.55, 8, detail ? 64 : 32]} />
+      {/* Outer + inner rim rails */}
+      <mesh castShadow={castShadow} material={steel} rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[radius, 0.72, 10, detail ? 72 : 36]} />
       </mesh>
-      <mesh material={steel}>
-        <torusGeometry args={[radius * 0.72, 0.22, 6, detail ? 48 : 24]} />
+      <mesh material={white} rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[radius * 0.96, 0.28, 8, detail ? 64 : 32]} />
+      </mesh>
+      <mesh material={steel} rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[radius * 0.55, 0.18, 6, detail ? 48 : 24]} />
+      </mesh>
+      {/* Hub */}
+      <mesh material={steel} rotation={[0, 0, Math.PI / 2]}>
+        <cylinderGeometry args={[2.2, 2.2, 8, 16]} />
+      </mesh>
+      <mesh material={white}>
+        <sphereGeometry args={[3.4, 16, 12]} />
       </mesh>
       {Array.from({ length: capsules }, (_, index) => {
         const angle = (index / capsules) * Math.PI * 2;
+        const cx = Math.cos(angle) * radius;
+        const cy = Math.sin(angle) * radius;
         return (
-          <group key={index} rotation={[0, 0, angle]}>
-            <mesh position={[radius / 2, 0, 0]} material={steel}>
-              <boxGeometry args={[radius, 0.08, 0.08]} />
+          <group key={index}>
+            {/* Spoke */}
+            <mesh
+              position={[cx * 0.5, cy * 0.5, 0]}
+              rotation={[0, 0, angle]}
+              material={index % 2 === 0 ? steel : white}
+            >
+              <boxGeometry args={[radius * 0.96, 0.12, 0.12]} />
             </mesh>
-            <mesh position={[radius, 0, 0]} material={glass}>
-              <capsuleGeometry args={[0.85, 1.4, 4, 8]} />
-            </mesh>
+            {/* Capsule hangs upright (does not tip with spoke angle) */}
+            <group position={[cx, cy, -2.4]}>
+              <mesh material={glass} castShadow={castShadow}>
+                <boxGeometry args={[2.4, 2.1, 3.4]} />
+              </mesh>
+              <mesh material={white} position={[0, 0, 0.05]}>
+                <boxGeometry args={[1.9, 1.65, 2.7]} />
+              </mesh>
+              <mesh position={[0, 1.3, 0]} material={steel}>
+                <boxGeometry args={[0.2, 0.9, 0.2]} />
+              </mesh>
+            </group>
           </group>
         );
       })}
-      <mesh material={steel}>
-        <cylinderGeometry args={[1.6, 1.6, 4, 12]} />
-      </mesh>
+      {/* A-frame legs (land side) */}
       {([-1, 1] as const).map((side) => (
         <mesh
           key={side}
-          position={[side * 11, -33, 0]}
-          rotation={[0, 0, side * -0.3]}
+          position={[side * 9, -18, 14]}
+          rotation={[0.35, 0, side * -0.28]}
           material={steel}
+          castShadow={castShadow}
         >
-          <boxGeometry args={[1.2, 36, 1.2]} />
+          <boxGeometry args={[1.4, 42, 1.4]} />
         </mesh>
       ))}
-      <mesh position={[0, -48, 0]} material={stoneDark}>
-        <boxGeometry args={[18, 3, 10]} />
+      <mesh position={[0, -8, 12]} material={steel}>
+        <boxGeometry args={[22, 1.2, 1.6]} />
+      </mesh>
+      {/* Boarding plaza */}
+      <mesh position={[0, -radius - 4, 6]} material={stoneDark} castShadow={castShadow}>
+        <boxGeometry args={[28, 2.2, 16]} />
+      </mesh>
+      <mesh position={[0, -radius + 2, 10]} material={steel}>
+        <boxGeometry args={[10, 4, 6]} />
       </mesh>
     </group>
   );

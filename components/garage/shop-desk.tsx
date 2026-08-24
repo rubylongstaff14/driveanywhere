@@ -112,6 +112,10 @@ export function ShopDesk() {
         Rank {rank.name} · {xp.toLocaleString()} XP · {coinLabel}. Drops stay on
         this class — never stats.
       </p>
+      <p className="mt-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs text-mist">
+        Cosmetics are visual-only. Coin packs are <span className="text-white">test grants</span> until
+        Stripe/IAP is wired for launch — no real charges yet.
+      </p>
 
       <div className="mt-6 flex flex-wrap gap-2">
         {VEHICLE_LIST.map((v) => (
