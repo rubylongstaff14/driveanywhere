@@ -17,6 +17,7 @@ import { resolveAiOpponents } from "@/lib/game/race-setup";
 import { sampleRoad } from "@/lib/game/road-mesh";
 import type { RouteData } from "@/lib/validation/route-data";
 import { useGameStore } from "@/stores/game-store";
+import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import { useQualityConfig } from "@/stores/settings-store";
 
 interface GameCanvasProps {
@@ -31,6 +32,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
   const selectedVehicleId = useGameStore((s) => s.selectedVehicleId);
   const sessionConfirmed = useGameStore((s) => s.sessionConfirmed);
   const raceMode = useGameStore((s) => s.raceMode);
+  const spectating = useMultiplayerStore((s) => s.spectating);
   const aiCount = useGameStore((s) => s.aiCount);
   const difficulty = useGameStore((s) => s.difficulty);
   const ghostEnabled = useGameStore((s) => s.ghostEnabled);
@@ -105,7 +107,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
         <RouteIntroCamera route={route} samples={samples} />
         <Physics gravity={[0, -20, 0]} paused={paused} timeStep={1 / 60}>
           <RouteWorld route={route} samples={samples} quality={quality} desert={route.slug === "egypt-pyramids" || route.slug === "dubai-marina-circuit"} />
-          <Vehicle route={route} samples={samples} />
+          {!spectating ? <Vehicle route={route} samples={samples} /> : null}
         </Physics>
         {opponents.length > 0 && (raceMode === "ai" || raceMode === "online") ? (
           <AiPack samples={samples} opponents={opponents} />

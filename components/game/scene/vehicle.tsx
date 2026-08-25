@@ -34,6 +34,7 @@ import {
   splitToneForSector,
 } from "@/lib/game/sectors";
 import { weatherGripMul } from "@/lib/game/weather";
+import { progressAlongRoad } from "@/lib/game/route-progress";
 import { sendCarState } from "@/lib/multiplayer/ws-client";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import type { RouteData } from "@/lib/validation/route-data";
@@ -129,23 +130,16 @@ export function Vehicle({ route, samples }: VehicleProps) {
   const toggleCamera = useGameStore((s) => s.toggleCamera);
   const setHud     = useGameStore((s) => s.setHud);
   const weather    = useGameStore((s) => s.weather);
-  const racingOnline = useMultiplayerStore((s) => s.racing);
-  const myRacePosition = useMultiplayerStore((s) => {
-    if (!s.myId) return 1;
-    return s.racePositions.find((p) => p.playerId === s.myId)?.position ?? 1;
-  });
-  /** Catch-up assist: anyone not leading gets +2% speed & cornering. */
-  const turboActive = racingOnline && myRacePosition > 1;
-  const driveTuning = useMemo(() => {
-    const catchUp = turboActive ? 1.02 : 1;
-    return {
+  /** Catch-up + slipstream applied in physics via boostRef (stable, no flicker). */
+  const boostRef = useRef({ turbo: 1, draft: 1, turboUi: false, draftUi: false });
+  const turboLatch = useRef({ on: false, since: 0 });
+  const driveTuning = useMemo(
+    () => ({
       ...vehicle.tuning,
-      maxSpeedMul: vehicle.tuning.maxSpeedMul * catchUp,
-      accelMul: vehicle.tuning.accelMul * catchUp,
-      gripMul: vehicle.tuning.gripMul * weatherGripMul(weather) * catchUp,
-      steerMul: vehicle.tuning.steerMul * catchUp,
-    };
-  }, [turboActive, vehicle.tuning, weather]);
+      gripMul: vehicle.tuning.gripMul * weatherGripMul(weather),
+    }),
+    [vehicle.tuning, weather],
+  );
 
   const { camera, gl } = useThree();
   // Store camera in a ref so we can mutate .fov without triggering React
@@ -356,12 +350,73 @@ export function Vehicle({ route, samples }: VehicleProps) {
       1 / 60,
     );
 
+    // Stable turbo (hysteresis) + slipstream draft — no P1 flicker
+    const mp = useMultiplayerStore.getState();
+    const nowBoost = performance.now();
+    if (mp.racing && mp.myId) {
+      const me = mp.racePositions.find((p) => p.playerId === mp.myId);
+      const behind =
+        !!me &&
+        me.position > 1 &&
+        (me.delta == null || me.delta > 80);
+      const latch = turboLatch.current;
+      if (behind) {
+        if (!latch.on) {
+          if (latch.since === 0) latch.since = nowBoost;
+          if (nowBoost - latch.since > 450) latch.on = true;
+        } else {
+          latch.since = nowBoost;
+        }
+      } else if (latch.on) {
+        if (nowBoost - latch.since > 550) {
+          latch.on = false;
+          latch.since = 0;
+        }
+      } else {
+        latch.since = 0;
+      }
+
+      // Draft: rival within ~14m ahead in forward cone
+      let draft = 1;
+      const rot = body.rotation();
+      const yaw = Math.atan2(2 * rot.w * rot.y, 1 - 2 * rot.y * rot.y);
+      const fx = Math.sin(yaw);
+      const fz = Math.cos(yaw);
+      for (const state of Object.values(mp.remoteCarStates)) {
+        const dx = state.x - position.x;
+        const dz = state.z - position.z;
+        const dist = Math.hypot(dx, dz);
+        if (dist < 3 || dist > 14) continue;
+        const along = (dx * fx + dz * fz) / dist;
+        if (along > 0.72) {
+          draft = 1.045;
+          break;
+        }
+      }
+      boostRef.current.turbo = latch.on ? 1.02 : 1;
+      boostRef.current.draft = draft;
+      boostRef.current.turboUi = latch.on;
+      boostRef.current.draftUi = draft > 1.01;
+    } else {
+      turboLatch.current = { on: false, since: 0 };
+      boostRef.current = { turbo: 1, draft: 1, turboUi: false, draftUi: false };
+    }
+
+    const b = boostRef.current;
+    const liveTuning = {
+      ...driveTuning,
+      maxSpeedMul: driveTuning.maxSpeedMul * b.turbo * (b.draft > 1 ? 1.015 : 1),
+      accelMul: driveTuning.accelMul * b.turbo * b.draft,
+      gripMul: driveTuning.gripMul * b.turbo,
+      steerMul: driveTuning.steerMul * b.turbo,
+    };
+
     const drive = applyArcadeDriving(
       body,
       controls,
       onRoad,
       1 / 60,
-      driveTuning,
+      liveTuning,
       gearState.torqueMul,
       vehicle.mass,
     );
@@ -426,6 +481,8 @@ export function Vehicle({ route, samples }: VehicleProps) {
     carTelemetry.rpmNorm = gearState.rpmNorm;
     const yaw = Math.atan2(2 * rot.w * rot.y, 1 - 2 * rot.y * rot.y);
     carTelemetry.yaw = yaw;
+    carTelemetry.turbo = boostRef.current.turboUi;
+    carTelemetry.drafting = boostRef.current.draftUi;
     const elapsedNow = runStartAt.current ? performance.now() - runStartAt.current : 0;
     carTelemetry.elapsedMs = elapsedNow;
     if (runStartAt.current) {
@@ -710,13 +767,17 @@ export function Vehicle({ route, samples }: VehicleProps) {
     // Broadcast position to multiplayer server — throttle more with bigger grids
     if (useMultiplayerStore.getState().racing) {
       const now = performance.now();
-      const room = useMultiplayerStore.getState().currentRoom;
+      const mp = useMultiplayerStore.getState();
+      const room = mp.currentRoom;
       const grid = room?.players.length ?? 2;
-      const sendEveryMs = grid >= 6 ? 80 : grid >= 4 ? 55 : 45;
+      const sendEveryMs = grid >= 6 ? 28 : grid >= 4 ? 18 : 14;
       if (!scratch.current.lastNetSend || now - scratch.current.lastNetSend > sendEveryMs) {
         scratch.current.lastNetSend = now;
         const rot = body.rotation();
+        const lv = body.linvel();
         const gs = useGameStore.getState();
+        const mePaint =
+          room?.players.find((p) => p.id === mp.myId)?.paint ?? undefined;
         sendCarState({
           x: pos.x, y: pos.y, z: pos.z,
           qx: rot.x, qy: rot.y, qz: rot.z, qw: rot.w,
@@ -725,6 +786,10 @@ export function Vehicle({ route, samples }: VehicleProps) {
           steer: scratch.current.steer ?? 0,
           checkpointIndex: gs.checkpointIndex ?? 0,
           raceTimeMs: gs.elapsedMs ?? 0,
+          trackProgress: progressAlongRoad(route.roadPoints, pos.x, pos.z),
+          vx: lv.x,
+          vz: lv.z,
+          paint: mePaint,
         });
       }
     }

@@ -11,6 +11,8 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
   const results = useMultiplayerStore((s) => s.results);
   const myId = useMultiplayerStore((s) => s.myId);
   const currentRoom = useMultiplayerStore((s) => s.currentRoom);
+  const spectating = useMultiplayerStore((s) => s.spectating);
+  const joinNextRace = useMultiplayerStore((s) => s.joinNextRace);
 
   if (!results) return null;
 
@@ -19,6 +21,7 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
 
   function handlePlayAgain() {
     useMultiplayerStore.setState({ results: null, racing: false });
+    if (spectating) joinNextRace();
     if (currentRoom) {
       router.push(`/play/online/${currentRoom.id}`);
     } else {
@@ -34,7 +37,11 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
             Race Complete
           </p>
           <h2 className="mt-2 font-display text-3xl text-white">
-            {me?.position === 1 ? "Victory!" : `P${me?.position ?? "?"}`}
+            {spectating
+              ? "Race over"
+              : me?.position === 1
+                ? "Victory!"
+                : `P${me?.position ?? "?"}`}
           </h2>
           {me?.timeMs && (
             <p className="mt-1 font-mono text-lg text-white/80">
@@ -148,7 +155,7 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
             onClick={handlePlayAgain}
             className="rounded-lg bg-accent px-6 py-2.5 text-sm font-medium text-white hover:bg-accent/80"
           >
-            Play Again
+            {spectating ? "Join next race" : "Play Again"}
           </button>
           <button
             onClick={() => router.push("/play/online")}

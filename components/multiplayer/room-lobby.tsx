@@ -85,7 +85,10 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
   const isHost = currentRoom.players.find((p) => p.id === myId)?.isHost ?? false;
   const me = currentRoom.players.find((p) => p.id === myId);
   const allReady =
-    currentRoom.players.every((p) => p.ready) && currentRoom.players.length >= 2;
+    currentRoom.players
+      .filter((p) => p.role !== "spectator")
+      .every((p) => p.ready) &&
+    currentRoom.players.filter((p) => p.role !== "spectator").length >= 2;
   const myVehicleId = parseVehicleId(me?.vehicleId);
   const unlockedSet = new Set(unlocked);
   const lobbyPaints = cosmeticsForSlot(myVehicleId, "paint").map((c) => {
@@ -247,7 +250,13 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] text-mist">{p.ready ? "Ready" : "Not ready"}</span>
+                  <span className="text-[10px] text-mist">
+                    {p.role === "spectator"
+                      ? "Watching"
+                      : p.ready
+                        ? "Ready"
+                        : "Not ready"}
+                  </span>
                   {isHost && !p.isHost && (
                     <button
                       onClick={() => hostKick(p.id)}
@@ -348,6 +357,16 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                       <p className="mt-2 text-center text-[10px] text-signal">
                         {error}
                       </p>
+                    ) : me.paint ? (
+                      <p className="mt-2 text-center text-[9px] text-mist/70">
+                        Your colour:{" "}
+                        <span
+                          className="inline-block h-2.5 w-2.5 align-middle rounded-full ring-1 ring-white/30"
+                          style={{ backgroundColor: me.paint }}
+                        />{" "}
+                        <span className="font-mono text-white/60">{me.paint}</span>
+                        {" · "}Tap a swatch to equip. Locked = Shop. ✕ = taken.
+                      </p>
                     ) : (
                       <p className="mt-2 text-center text-[9px] text-mist/70">
                         Tap a swatch to equip. Locked = unlock in Shop. ✕ = taken by another player.
@@ -356,7 +375,15 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                   </div>
                 </div>
               )}
-              {me && !me.isHost && (
+              {me && me.role === "spectator" && currentRoom.status === "waiting" && (
+                <button
+                  onClick={() => useMultiplayerStore.getState().joinNextRace()}
+                  className="rounded-lg bg-accent px-6 py-2 text-sm font-medium text-white hover:bg-accent/80"
+                >
+                  Join next race
+                </button>
+              )}
+              {me && !me.isHost && me.role !== "spectator" && (
                 <button
                   onClick={() => setReady(!me.ready)}
                   className={`rounded-lg px-6 py-2 text-sm font-medium ${

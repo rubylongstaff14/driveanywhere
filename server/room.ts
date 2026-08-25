@@ -20,17 +20,21 @@ export interface ConnectedPlayer {
   isHost: boolean;
   vehicleId: string;
   paint?: string;
+  role: "racer" | "spectator";
   carState: CarState | null;
   finishTimeMs: number | null;
   splits: number[];
   path: Array<{ p: number; t: number }>;
+  /** Live progress samples for accurate gap-to-leader */
+  progressHistory: Array<{ p: number; t: number }>;
   loaded: boolean;
+  lastTauntAt: number;
 }
 
 function broadcastIntervalMs(playerCount: number): number {
-  if (playerCount >= 6) return 66;
-  if (playerCount >= 4) return 50;
-  return 40;
+  if (playerCount >= 6) return 28;
+  if (playerCount >= 4) return 20;
+  return 16;
 }
 
 export class Room {
@@ -85,6 +89,7 @@ export class Room {
         isHost: p.isHost,
         vehicleId: p.vehicleId,
         paint: p.paint,
+        role: p.role,
       })),
       status: this.status,
     };
@@ -97,20 +102,24 @@ export class Room {
     vehicleId: string,
     isHost: boolean,
     paint?: string,
+    role: "racer" | "spectator" = "racer",
   ): ConnectedPlayer {
     const player: ConnectedPlayer = {
       ws,
       id,
       name,
-      ready: isHost,
+      ready: isHost || role === "spectator",
       isHost,
       vehicleId,
       paint,
+      role,
       carState: null,
       finishTimeMs: null,
       splits: [],
       path: [],
-      loaded: false,
+      progressHistory: [],
+      loaded: role === "spectator",
+      lastTauntAt: 0,
     };
     this.players.push(player);
     return player;
@@ -130,16 +139,17 @@ export class Room {
 
     if (wasCountdown && this.players.length > 0) {
       this.syncLoadProgress();
-      const loadedCount = this.players.filter((p) => p.loaded).length;
-      if (loadedCount === this.players.length) {
+      const racers = this.players.filter((p) => p.role !== "spectator");
+      if (racers.length > 0 && racers.every((p) => p.loaded)) {
         this.beginCountdown();
       }
     }
 
     if (wasRacing) {
-      if (this.players.length === 0) {
+      const racers = this.players.filter((p) => p.role !== "spectator");
+      if (racers.length === 0) {
         this.endRace();
-      } else if (this.players.every((p) => p.finishTimeMs !== null)) {
+      } else if (racers.every((p) => p.finishTimeMs !== null)) {
         this.endRace();
       }
     }
@@ -153,7 +163,7 @@ export class Room {
       if (p.id === exclude) continue;
       if (p.ws.readyState !== 1) continue;
       try {
-        if (p.ws.bufferedAmount > 512_000) continue;
+        if (p.ws.bufferedAmount > 256_000) continue;
         p.ws.send(data);
       } catch {
         /* disconnected */
@@ -172,9 +182,10 @@ export class Room {
   }
 
   allReady(): boolean {
-    if (this.players.length === 0) return false;
-    if (this.players.length === 1 && this.aiCount === 0) return false;
-    return this.players.every((p) => p.ready);
+    const racers = this.players.filter((p) => p.role !== "spectator");
+    if (racers.length === 0) return false;
+    if (racers.length === 1 && this.aiCount === 0) return false;
+    return racers.every((p) => p.ready);
   }
 
   startCountdown(): void {
@@ -192,11 +203,12 @@ export class Room {
   }
 
   private syncLoadProgress(): void {
-    const loadedCount = this.players.filter((p) => p.loaded).length;
+    const racers = this.players.filter((p) => p.role !== "spectator");
+    const loadedCount = racers.filter((p) => p.loaded).length;
     this.broadcast({
       type: "waiting_for_players",
       loaded: loadedCount,
-      total: this.players.length,
+      total: Math.max(1, racers.length),
     });
   }
 
@@ -205,7 +217,8 @@ export class Room {
     if (!p || this.status !== "countdown") return;
     p.loaded = true;
     this.syncLoadProgress();
-    if (this.players.every((pl) => pl.loaded)) {
+    const racers = this.players.filter((pl) => pl.role !== "spectator");
+    if (racers.length > 0 && racers.every((pl) => pl.loaded)) {
       this.beginCountdown();
     }
   }
@@ -238,6 +251,8 @@ export class Room {
       p.carState = null;
       p.finishTimeMs = null;
       p.splits = [];
+      p.path = [];
+      p.progressHistory = [];
     }
     this.broadcast({ type: "race_go", startTimestamp: this.raceStartTimestamp, vehicleId: this.vehicleId });
     this.startBroadcastLoop();
@@ -253,18 +268,57 @@ export class Room {
     const interval = broadcastIntervalMs(this.players.length);
     this.broadcastTimer = setInterval(() => {
       const updates: Array<{ playerId: string; state: CarState }> = [];
+      const serverTime = Date.now();
       for (const p of this.players) {
-        if (p.carState) updates.push({ playerId: p.id, state: p.carState });
+        if (!p.carState) continue;
+        updates.push({
+          playerId: p.id,
+          state: {
+            ...p.carState,
+            paint: p.paint ?? p.carState.paint,
+            t: p.carState.t ?? serverTime,
+          },
+        });
       }
       if (updates.length === 0) return;
-      this.broadcast({ type: "cars_batch", updates });
+      this.broadcast({ type: "cars_batch", serverTime, updates });
     }, interval);
   }
 
   updateCarState(playerId: string, state: CarState): void {
     const player = this.players.find((p) => p.id === playerId);
     if (!player || this.status !== "racing") return;
-    player.carState = state;
+    if (player.role === "spectator") return;
+    player.carState = {
+      ...state,
+      paint: player.paint ?? state.paint,
+      t: Date.now(),
+    };
+    const p = Math.max(0, Math.min(1, state.trackProgress ?? 0));
+    const t = Math.max(0, state.raceTimeMs ?? 0);
+    const hist = player.progressHistory;
+    const last = hist[hist.length - 1];
+    if (!last || p > last.p + 0.002 || t > last.t + 200) {
+      hist.push({ p, t });
+      if (hist.length > 140) hist.splice(0, hist.length - 120);
+    }
+  }
+
+  private timeAtProgress(
+    hist: Array<{ p: number; t: number }>,
+    progress: number,
+  ): number | null {
+    if (hist.length === 0) return null;
+    if (progress <= hist[0].p) return hist[0].t;
+    for (let i = 0; i < hist.length - 1; i += 1) {
+      const a = hist[i];
+      const b = hist[i + 1];
+      if (progress >= a.p && progress <= b.p) {
+        const u = (progress - a.p) / Math.max(1e-6, b.p - a.p);
+        return a.t + (b.t - a.t) * u;
+      }
+    }
+    return hist[hist.length - 1].t;
   }
 
   playerFinished(
@@ -275,7 +329,7 @@ export class Room {
     paint?: string,
   ): void {
     const p = this.players.find((pl) => pl.id === playerId);
-    if (!p || p.finishTimeMs !== null) return;
+    if (!p || p.role === "spectator" || p.finishTimeMs !== null) return;
     p.finishTimeMs = timeMs;
     p.splits = splits;
     if (path && path.length > 0) {
@@ -290,7 +344,8 @@ export class Room {
     if (typeof paint === "string" && paint.length >= 4) {
       p.paint = paint.slice(0, 16);
     }
-    if (this.players.every((pl) => pl.finishTimeMs !== null)) {
+    const racers = this.players.filter((pl) => pl.role !== "spectator");
+    if (racers.length > 0 && racers.every((pl) => pl.finishTimeMs !== null)) {
       this.endRace();
     }
   }
@@ -299,23 +354,62 @@ export class Room {
     if (this.positionsTimer) clearInterval(this.positionsTimer);
     this.positionsTimer = setInterval(() => {
       if (this.status !== "racing") return;
-      const sorted = [...this.players].sort((a, b) => {
-        const aCp = a.carState?.checkpointIndex ?? 0;
-        const bCp = b.carState?.checkpointIndex ?? 0;
-        if (aCp !== bCp) return bCp - aCp;
-        return (a.carState?.raceTimeMs ?? Infinity) - (b.carState?.raceTimeMs ?? Infinity);
+      const sorted = [...this.players]
+        .filter((p) => p.role !== "spectator")
+        .sort((a, b) => {
+        const aFin = a.finishTimeMs !== null;
+        const bFin = b.finishTimeMs !== null;
+        if (aFin && !bFin) return -1;
+        if (!aFin && bFin) return 1;
+        if (aFin && bFin) {
+          return (a.finishTimeMs ?? 0) - (b.finishTimeMs ?? 0);
+        }
+        const aP =
+          a.carState?.trackProgress ??
+          (a.carState?.checkpointIndex ?? 0) / 100;
+        const bP =
+          b.carState?.trackProgress ??
+          (b.carState?.checkpointIndex ?? 0) / 100;
+        if (Math.abs(aP - bP) > 0.0005) return bP - aP;
+        return (
+          (a.carState?.raceTimeMs ?? Infinity) -
+          (b.carState?.raceTimeMs ?? Infinity)
+        );
       });
-      const leaderTime = sorted[0]?.carState?.raceTimeMs ?? 0;
-      const positions: RacePosition[] = sorted.map((p, i) => ({
-        playerId: p.id,
-        playerName: p.name,
-        position: i + 1,
-        checkpointIndex: p.carState?.checkpointIndex ?? 0,
-        raceTimeMs: p.carState?.raceTimeMs ?? 0,
-        delta: i === 0 ? null : (p.carState?.raceTimeMs ?? 0) - leaderTime,
-      }));
+      const leader = sorted[0];
+      const leaderHist = leader?.progressHistory ?? [];
+      const positions: RacePosition[] = sorted.map((p, i) => {
+        const progress =
+          p.carState?.trackProgress ??
+          (p.carState?.checkpointIndex ?? 0) / 100;
+        let delta: number | null = null;
+        if (i > 0 && leader) {
+          const leaderT = this.timeAtProgress(leaderHist, progress);
+          const myT = p.carState?.raceTimeMs ?? 0;
+          if (leaderT != null) {
+            // Positive = behind leader at this same progress
+            delta = Math.max(0, Math.round(myT - leaderT));
+          } else {
+            const leadP =
+              leader.carState?.trackProgress ??
+              (leader.carState?.checkpointIndex ?? 0) / 100;
+            const gapP = Math.max(0, leadP - progress);
+            const spd = Math.max(8, (p.carState?.speed ?? 40) / 3.6);
+            delta = Math.round((gapP * 2500) / spd * 1000);
+          }
+        }
+        return {
+          playerId: p.id,
+          playerName: p.name,
+          position: i + 1,
+          checkpointIndex: p.carState?.checkpointIndex ?? 0,
+          raceTimeMs: p.carState?.raceTimeMs ?? 0,
+          delta,
+          trackProgress: progress,
+        };
+      });
       this.broadcast({ type: "race_positions", positions });
-    }, 750);
+    }, 400);
   }
 
   endRace(): void {
@@ -329,6 +423,7 @@ export class Room {
     this.status = "results";
 
     const results: RaceResult[] = this.players
+      .filter((p) => p.role !== "spectator")
       .map((p) => ({
         playerId: p.id,
         playerName: p.name,
@@ -358,6 +453,9 @@ export class Room {
         p.finishTimeMs = null;
         p.splits = [];
         p.loaded = false;
+        p.path = [];
+        p.progressHistory = [];
+        // Spectators stay spectators until they opt into next race
       }
       this.broadcast({ type: "room_updated", room: this.toInfo() });
     }, 8000);

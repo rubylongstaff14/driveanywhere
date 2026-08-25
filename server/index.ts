@@ -3,10 +3,15 @@ import { Room } from "./room";
 import type { ClientMessage, ServerMessage } from "../lib/multiplayer/protocol";
 import { parseVehicleId } from "../lib/game/vehicles";
 import {
+  paintHexesForVehicle,
+  stockIdsFor,
+} from "../lib/game/cosmetics";
+import {
   claimPaintHex,
   isPaintHexTaken,
   normalizePaintHex,
 } from "../lib/multiplayer/race-colors";
+import { isTauntId } from "../lib/multiplayer/taunts";
 
 const PORT = Number(process.env.WS_PORT) || 8080;
 
@@ -26,9 +31,12 @@ function sendTo(ws: WebSocket, msg: ServerMessage): void {
 function claimPaint(
   room: Room,
   requested: string | undefined,
+  vehicleId: string,
   exceptPlayerId?: string,
 ): string {
-  return claimPaintHex(room.players, requested, [], exceptPlayerId);
+  const vid = parseVehicleId(vehicleId);
+  const candidates = paintHexesForVehicle(vid, stockIdsFor(vid));
+  return claimPaintHex(room.players, requested, candidates, exceptPlayerId);
 }
 
 function cleanupEmptyRooms(): void {
@@ -63,7 +71,7 @@ wss.on("connection", (ws) => {
         const playerId = genPlayerId();
         const vehicleId = parseVehicleId(msg.vehicleId);
         room.vehicleId = vehicleId;
-        const paint = claimPaint(room, msg.paint);
+        const paint = claimPaint(room, msg.paint, vehicleId);
         room.addPlayer(ws, playerId, msg.playerName, vehicleId, true, paint);
         rooms.set(room.id, room);
         playerRooms.set(ws, { roomId: room.id, playerId });
@@ -73,18 +81,55 @@ wss.on("connection", (ws) => {
 
       case "join_room": {
         const room = rooms.get(msg.roomId);
-        if (!room || room.humanCount >= room.maxPlayers || room.status !== "waiting") {
+        if (!room || room.humanCount >= room.maxPlayers) {
+          sendTo(ws, { type: "room_error", message: "Cannot join this room" });
+          break;
+        }
+        const live =
+          room.status === "racing" ||
+          room.status === "countdown" ||
+          room.status === "results";
+        const wantSpec = Boolean(msg.asSpectator) || live;
+        if (!live && room.status !== "waiting") {
           sendTo(ws, { type: "room_error", message: "Cannot join this room" });
           break;
         }
         const playerId = genPlayerId();
-        const becomeHost = room.humanCount === 0;
+        const becomeHost = room.humanCount === 0 && !wantSpec;
         const vehicleId = parseVehicleId(msg.vehicleId);
-        const paint = claimPaint(room, msg.paint);
-        room.addPlayer(ws, playerId, msg.playerName, vehicleId, becomeHost, paint);
+        const paint = claimPaint(room, msg.paint, vehicleId);
+        const role = wantSpec ? "spectator" : "racer";
+        room.addPlayer(
+          ws,
+          playerId,
+          msg.playerName,
+          vehicleId,
+          becomeHost,
+          paint,
+          role,
+        );
         playerRooms.set(ws, { roomId: room.id, playerId });
         sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
         room.broadcast({ type: "room_updated", room: room.toInfo() }, playerId);
+        // Late join mid-race — drop them into the live session as a ghost
+        if (room.status === "racing" && room.raceStartTimestamp) {
+          sendTo(ws, {
+            type: "race_loading",
+            map: room.map,
+            vehicleId: room.vehicleId,
+          });
+          sendTo(ws, {
+            type: "race_go",
+            startTimestamp: room.raceStartTimestamp,
+            vehicleId: room.vehicleId,
+          });
+        } else if (room.status === "countdown") {
+          sendTo(ws, {
+            type: "race_loading",
+            map: room.map,
+            vehicleId: room.vehicleId,
+          });
+        }
         break;
       }
 
@@ -102,6 +147,10 @@ wss.on("connection", (ws) => {
         const player = room.players.find((p) => p.id === info.playerId);
         if (player) {
           player.ready = msg.type === "ready";
+          // Never let ready wipe a missing paint — re-claim if needed
+          if (!normalizePaintHex(player.paint)) {
+            player.paint = claimPaint(room, undefined, player.vehicleId, player.id);
+          }
           room.broadcast({ type: "room_updated", room: room.toInfo() });
         }
         break;
@@ -156,6 +205,8 @@ wss.on("connection", (ws) => {
             break;
           }
           player.paint = normalized;
+        } else if (!normalizePaintHex(player.paint)) {
+          player.paint = claimPaint(room, undefined, player.vehicleId, player.id);
         }
         room.broadcast({ type: "room_updated", room: room.toInfo() });
         break;
@@ -212,6 +263,40 @@ wss.on("connection", (ws) => {
         const text = (msg.text || "").slice(0, 150).trim();
         if (!text) break;
         room.broadcast({ type: "chat", playerId: info.playerId, playerName: player.name, text });
+        break;
+      }
+
+      case "taunt": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room) break;
+        const player = room.players.find((p) => p.id === info.playerId);
+        if (!player) break;
+        const now = Date.now();
+        if (now - player.lastTauntAt < 2800) break;
+        if (!isTauntId(msg.tauntId)) break;
+        player.lastTauntAt = now;
+        room.broadcast({
+          type: "taunt",
+          playerId: info.playerId,
+          playerName: player.name,
+          tauntId: msg.tauntId,
+        });
+        break;
+      }
+
+      case "join_next_race": {
+        const info = playerRooms.get(ws);
+        if (!info) break;
+        const room = rooms.get(info.roomId);
+        if (!room || (room.status !== "waiting" && room.status !== "results")) break;
+        const player = room.players.find((p) => p.id === info.playerId);
+        if (!player || player.role !== "spectator") break;
+        player.role = "racer";
+        player.ready = room.status === "results" ? false : false;
+        player.loaded = false;
+        room.broadcast({ type: "room_updated", room: room.toInfo() });
         break;
       }
 

@@ -3,18 +3,31 @@
 import { create } from "zustand";
 import type {
   CarState,
-  PlayerSlot,
   RacePosition,
   RaceResult,
   RoomInfo,
   ServerMessage,
 } from "@/lib/multiplayer/protocol";
+import type { TauntId } from "@/lib/multiplayer/taunts";
+import {
+  clearRemoteCarBuffer,
+  ingestCarBatch,
+  remoteCarBuffer,
+} from "@/lib/multiplayer/remote-car-buffer";
 import {
   connectWs,
   disconnectWs,
   sendMsg,
   setConnectionCallbacks,
 } from "@/lib/multiplayer/ws-client";
+
+export interface TauntEvent {
+  id: number;
+  playerId: string;
+  playerName: string;
+  tauntId: TauntId;
+  at: number;
+}
 
 interface MultiplayerState {
   connected: boolean;
@@ -24,25 +37,25 @@ interface MultiplayerState {
   error: string | null;
   countdownValue: number | null;
   racing: boolean;
+  spectating: boolean;
   raceStartTimestamp: number | null;
   results: RaceResult[] | null;
+  /** @deprecated prefer remoteCarBuffer — kept for id membership only */
   remoteCarStates: Record<string, CarState>;
-  /**
-   * Timestamped car-state history used for client-side interpolation to hide
-   * network jitter/latency.
-   */
   remoteCarStateHistory: Record<string, { state: CarState; timestamp: number }[]>;
+  remotePlayerIdKey: string;
   raceVehicleId: string | null;
   raceLoading: boolean;
   loadingProgress: { loaded: number; total: number } | null;
   chatMessages: { playerId: string; playerName: string; text: string; timestamp: number }[];
   racePositions: RacePosition[];
+  tauntFeed: TauntEvent[];
 
   connect: () => void;
   disconnect: () => void;
   listRooms: () => void;
   createRoom: (name: string, map: string, difficulty: "easy" | "medium" | "hard", aiCount: number, playerName: string, vehicleId: string, paint?: string) => void;
-  joinRoom: (roomId: string, playerName: string, vehicleId: string, paint?: string) => void;
+  joinRoom: (roomId: string, playerName: string, vehicleId: string, paint?: string, asSpectator?: boolean) => void;
   leaveRoom: () => void;
   setReady: (ready: boolean) => void;
   hostSetMap: (map: string) => void;
@@ -59,8 +72,12 @@ interface MultiplayerState {
     paint?: string,
   ) => void;
   sendChat: (text: string) => void;
+  sendTaunt: (tauntId: TauntId) => void;
+  joinNextRace: () => void;
   clearError: () => void;
 }
+
+let tauntSeq = 0;
 
 export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
   function handleMessage(msg: ServerMessage): void {
@@ -68,21 +85,39 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
       case "rooms_list":
         set({ rooms: msg.rooms });
         break;
-      case "room_joined":
+      case "room_joined": {
+        const me = msg.room.players.find((p) => p.id === msg.yourId);
+        const spectating = me?.role === "spectator";
+        clearRemoteCarBuffer();
         set({
           currentRoom: msg.room,
           myId: msg.yourId,
           error: null,
           results: null,
           racing: false,
+          spectating,
           countdownValue: null,
           remoteCarStates: {},
           remoteCarStateHistory: {},
+          remotePlayerIdKey: "",
+          tauntFeed: [],
         });
         break;
-      case "room_updated":
-        set({ currentRoom: msg.room });
+      }
+      case "room_updated": {
+        const prev = get().currentRoom;
+        const players = msg.room.players.map((p) => {
+          if (p.paint) return p;
+          const old = prev?.players.find((o) => o.id === p.id);
+          return old?.paint ? { ...p, paint: old.paint } : p;
+        });
+        const me = players.find((p) => p.id === get().myId);
+        set({
+          currentRoom: { ...msg.room, players },
+          spectating: me?.role === "spectator",
+        });
         break;
+      }
       case "room_error":
         set({ error: msg.message });
         break;
@@ -96,6 +131,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         set({ countdownValue: msg.value, loadingProgress: null });
         break;
       case "race_go":
+        clearRemoteCarBuffer();
         set({
           racing: true,
           raceLoading: false,
@@ -104,51 +140,92 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
           raceVehicleId: msg.vehicleId,
           remoteCarStates: {},
           remoteCarStateHistory: {},
+          remotePlayerIdKey: "",
         });
         break;
       case "car_update":
       case "cars_batch": {
         const myId = get().myId;
-        const states = { ...get().remoteCarStates };
-        const history = { ...get().remoteCarStateHistory };
+        const room = get().currentRoom;
         const now = Date.now();
+        const serverTime =
+          msg.type === "cars_batch" ? (msg.serverTime ?? now) : now;
         const updates =
           msg.type === "cars_batch"
             ? msg.updates
             : [{ playerId: msg.playerId, state: msg.state }];
-        for (const u of updates) {
-          if (u.playerId === myId) continue;
-          states[u.playerId] = u.state;
-          const prev = history[u.playerId] ?? [];
-          const next = [...prev, { state: u.state, timestamp: now }];
-          while (next.length > 6) next.shift();
-          history[u.playerId] = next;
+        const { idsChanged } = ingestCarBatch(
+          updates,
+          myId,
+          serverTime,
+          (pid) => room?.players.find((p) => p.id === pid)?.paint,
+        );
+        if (idsChanged) {
+          set({
+            remotePlayerIdKey: remoteCarBuffer.playerIds.join(","),
+            remoteCarStates: { ...remoteCarBuffer.states },
+          });
         }
-        set({ remoteCarStates: states, remoteCarStateHistory: history });
         break;
       }
       case "chat":
         set((s) => ({
-          chatMessages: [...s.chatMessages.slice(-49), { playerId: msg.playerId, playerName: msg.playerName, text: msg.text, timestamp: Date.now() }],
+          chatMessages: [
+            ...s.chatMessages.slice(-49),
+            {
+              playerId: msg.playerId,
+              playerName: msg.playerName,
+              text: msg.text,
+              timestamp: Date.now(),
+            },
+          ],
+        }));
+        break;
+      case "taunt":
+        set((s) => ({
+          tauntFeed: [
+            ...s.tauntFeed.slice(-11),
+            {
+              id: ++tauntSeq,
+              playerId: msg.playerId,
+              playerName: msg.playerName,
+              tauntId: msg.tauntId,
+              at: Date.now(),
+            },
+          ],
         }));
         break;
       case "race_positions":
         set({ racePositions: msg.positions });
         break;
       case "race_results":
+        clearRemoteCarBuffer();
         set({
           racing: false,
           results: msg.results,
           racePositions: [],
           remoteCarStates: {},
           remoteCarStateHistory: {},
+          remotePlayerIdKey: "",
         });
         break;
       case "kicked":
-        set({ currentRoom: null, myId: null, error: "You were kicked from the room" });
+        clearRemoteCarBuffer();
+        set({
+          currentRoom: null,
+          myId: null,
+          error: "You were kicked from the room",
+          spectating: false,
+        });
         break;
       case "room_closed":
-        set({ currentRoom: null, myId: null, error: "Room was closed" });
+        clearRemoteCarBuffer();
+        set({
+          currentRoom: null,
+          myId: null,
+          error: "Room was closed",
+          spectating: false,
+        });
         break;
     }
   }
@@ -161,15 +238,18 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     error: null,
     countdownValue: null,
     racing: false,
+    spectating: false,
     raceStartTimestamp: null,
     results: null,
     remoteCarStates: {},
     remoteCarStateHistory: {},
+    remotePlayerIdKey: "",
     raceVehicleId: null,
     raceLoading: false,
     loadingProgress: null,
     chatMessages: [],
     racePositions: [],
+    tauntFeed: [],
 
     connect: () => {
       setConnectionCallbacks(
@@ -183,30 +263,48 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     },
     disconnect: () => {
       disconnectWs();
+      clearRemoteCarBuffer();
       set({
         connected: false,
         currentRoom: null,
         myId: null,
         rooms: [],
         racing: false,
+        spectating: false,
         remoteCarStates: {},
         remoteCarStateHistory: {},
+        remotePlayerIdKey: "",
         results: null,
         error: null,
       });
     },
     listRooms: () => sendMsg({ type: "list_rooms" }),
     createRoom: (name, map, difficulty, aiCount, playerName, vehicleId, paint) =>
-      sendMsg({ type: "create_room", name, map, difficulty, aiCount, playerName, vehicleId, paint }),
-    joinRoom: (roomId, playerName, vehicleId, paint) =>
-      sendMsg({ type: "join_room", roomId, playerName, vehicleId, paint }),
+      sendMsg({
+        type: "create_room",
+        name,
+        map,
+        difficulty,
+        aiCount,
+        playerName,
+        vehicleId,
+        paint,
+      }),
+    joinRoom: (roomId, playerName, vehicleId, paint, asSpectator) =>
+      sendMsg({
+        type: "join_room",
+        roomId,
+        playerName,
+        vehicleId,
+        paint,
+        asSpectator,
+      }),
     setLoadout: (vehicleId, paint) => {
       const { currentRoom, myId, connected } = get();
       if (!connected) {
         set({ error: "Not connected to multiplayer server — can't change paint" });
         return;
       }
-      // Optimistic UI so swatches respond even if the room broadcast is slow.
       if (currentRoom && myId) {
         const players = currentRoom.players.map((p) =>
           p.id === myId
@@ -226,20 +324,46 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     },
     leaveRoom: () => {
       sendMsg({ type: "leave_room" });
+      clearRemoteCarBuffer();
       set({
         currentRoom: null,
         myId: null,
         results: null,
         racing: false,
+        spectating: false,
         remoteCarStates: {},
         remoteCarStateHistory: {},
+        remotePlayerIdKey: "",
       });
     },
-    setReady: (ready) => sendMsg({ type: ready ? "ready" : "unready" }),
+    setReady: (ready) => {
+      const { currentRoom, myId } = get();
+      const me = currentRoom?.players.find((p) => p.id === myId);
+      if (me?.paint) {
+        sendMsg({
+          type: "set_loadout",
+          vehicleId: me.vehicleId,
+          paint: me.paint,
+        });
+      }
+      if (currentRoom && myId) {
+        set({
+          currentRoom: {
+            ...currentRoom,
+            players: currentRoom.players.map((p) =>
+              p.id === myId ? { ...p, ready } : p,
+            ),
+          },
+        });
+      }
+      sendMsg({ type: ready ? "ready" : "unready" });
+    },
     hostSetMap: (map) => sendMsg({ type: "host_set_map", map }),
-    hostSetDifficulty: (d) => sendMsg({ type: "host_set_difficulty", difficulty: d }),
+    hostSetDifficulty: (d) =>
+      sendMsg({ type: "host_set_difficulty", difficulty: d }),
     hostSetAi: (count) => sendMsg({ type: "host_set_ai", aiCount: count }),
-    hostSetVehicle: (vehicleId) => sendMsg({ type: "host_set_vehicle", vehicleId }),
+    hostSetVehicle: (vehicleId) =>
+      sendMsg({ type: "host_set_vehicle", vehicleId }),
     hostKick: (playerId) => sendMsg({ type: "host_kick", playerId }),
     hostStart: () => sendMsg({ type: "host_start" }),
     reportFinish: (timeMs, splits, path, paint) =>
@@ -251,6 +375,8 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         paint,
       }),
     sendChat: (text) => sendMsg({ type: "chat", text }),
+    sendTaunt: (tauntId) => sendMsg({ type: "taunt", tauntId }),
+    joinNextRace: () => sendMsg({ type: "join_next_race" }),
     clearError: () => set({ error: null }),
   };
 });

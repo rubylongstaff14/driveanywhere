@@ -15,6 +15,10 @@ export interface CarTelemetry {
   rpmNorm: number;
   /** Physics-clock lap time — ghost playback reads this, not React HUD. */
   elapsedMs: number;
+  /** Online catch-up assist active */
+  turbo: boolean;
+  /** Slipstream behind a rival */
+  drafting: boolean;
 }
 
 export const carTelemetry: CarTelemetry = {
@@ -27,6 +31,8 @@ export const carTelemetry: CarTelemetry = {
   rpm: 0,
   rpmNorm: 0,
   elapsedMs: 0,
+  turbo: false,
+  drafting: false,
 };
 
 export function resetTelemetry(): void {
@@ -39,4 +45,6 @@ export function resetTelemetry(): void {
   carTelemetry.rpm = 0;
   carTelemetry.rpmNorm = 0;
   carTelemetry.elapsedMs = 0;
+  carTelemetry.turbo = false;
+  carTelemetry.drafting = false;
 }

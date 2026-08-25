@@ -2,7 +2,11 @@
 
 import { useEffect, useMemo, useRef } from "react";
 import type { RaceResult } from "@/lib/multiplayer/protocol";
-import { timeAtProgress } from "@/lib/game/route-progress";
+import {
+  biggestGainSector,
+  smoothDeltaSeries,
+  timeAtProgress,
+} from "@/lib/game/route-progress";
 import type { RouteData } from "@/lib/validation/route-data";
 
 interface TrackDeltaOverviewProps {
@@ -14,15 +18,15 @@ interface TrackDeltaOverviewProps {
 }
 
 /**
- * Post-race track map: each segment coloured by who was fastest there
- * (universal race hex), plus per-player trails and a delta legend.
+ * Post-race angled track map with a rise/fall delta ribbon (vs leader)
+ * and hysteresis-stable sector colours for who was fastest.
  */
 export function TrackDeltaOverview({
   route,
   results,
   myId,
-  width = 420,
-  height = 280,
+  width = 440,
+  height = 300,
 }: TrackDeltaOverviewProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -33,6 +37,13 @@ export function TrackDeltaOverview({
       ),
     [results],
   );
+
+  const me = finished.find((r) => r.playerId === myId) ?? null;
+  const leader = finished[0] ?? null;
+  const gain = useMemo(() => {
+    if (!me?.path || !leader?.path || me.playerId === leader.playerId) return null;
+    return biggestGainSector(me.path, leader.path);
+  }, [leader, me]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -51,24 +62,45 @@ export function TrackDeltaOverview({
     const maxX = Math.max(...xs);
     const minZ = Math.min(...zs);
     const maxZ = Math.max(...zs);
-    const padding = 22;
+    const padding = 28;
     const span = Math.max(maxX - minX, maxZ - minZ) || 1;
     const scale = (Math.min(width, height) - padding * 2) / span;
     const centreX = (minX + maxX) / 2;
     const centreZ = (minZ + maxZ) / 2;
 
-    const toScreen = (x: number, z: number): [number, number] => [
-      width / 2 + (x - centreX) * scale,
-      height / 2 + (z - centreZ) * scale,
-    ];
+    // Slight isometric tilt so the track reads with depth
+    const tilt = 0.52;
+    const skew = 0.28;
+    const toScreen = (x: number, z: number, lift = 0): [number, number] => {
+      const dx = (x - centreX) * scale;
+      const dz = (z - centreZ) * scale;
+      const sx = width / 2 + dx + dz * skew;
+      const sy = height * 0.58 + dz * tilt - lift;
+      return [sx, sy];
+    };
 
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = "rgba(8, 12, 18, 0.92)";
+    const bg = ctx.createLinearGradient(0, 0, 0, height);
+    bg.addColorStop(0, "rgba(10, 16, 26, 0.96)");
+    bg.addColorStop(1, "rgba(6, 10, 16, 0.98)");
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, width, height);
 
-    // Base track (dim)
-    ctx.strokeStyle = "rgba(100, 120, 140, 0.35)";
-    ctx.lineWidth = 10;
+    // Soft ground plane shadow
+    ctx.fillStyle = "rgba(0,0,0,0.22)";
+    ctx.beginPath();
+    route.roadPoints.forEach((pt, i) => {
+      const [sx, sy] = toScreen(pt.x, pt.z, -6);
+      if (i === 0) ctx.moveTo(sx, sy);
+      else ctx.lineTo(sx, sy);
+    });
+    ctx.lineWidth = 18;
+    ctx.strokeStyle = "rgba(0,0,0,0.25)";
+    ctx.stroke();
+
+    // Base track
+    ctx.strokeStyle = "rgba(90, 110, 130, 0.4)";
+    ctx.lineWidth = 12;
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
     ctx.beginPath();
@@ -79,13 +111,29 @@ export function TrackDeltaOverview({
     });
     ctx.stroke();
 
-    const segs = 48;
-    if (finished.length > 0) {
-      for (let i = 0; i < segs; i += 1) {
-        const p0 = i / segs;
-        const p1 = (i + 1) / segs;
-        const mid = (p0 + p1) / 2;
+    const segs = 72;
+    const roadAt = (p: number) => {
+      const idx = Math.min(
+        route.roadPoints.length - 1,
+        Math.max(0, p * (route.roadPoints.length - 1)),
+      );
+      const i0 = Math.floor(idx);
+      const i1 = Math.min(route.roadPoints.length - 1, i0 + 1);
+      const u = idx - i0;
+      const a = route.roadPoints[i0];
+      const b = route.roadPoints[i1];
+      return {
+        x: a.x + (b.x - a.x) * u,
+        z: a.z + (b.z - a.z) * u,
+      };
+    };
 
+    // Sector colour with hysteresis — avoids flicker when times are close
+    if (finished.length > 0) {
+      let lastPaint = finished[0].paint!;
+      let lastBest = Infinity;
+      for (let i = 0; i < segs; i += 1) {
+        const mid = (i + 0.5) / segs;
         let best: RaceResult | null = null;
         let bestT = Infinity;
         for (const r of finished) {
@@ -96,23 +144,19 @@ export function TrackDeltaOverview({
           }
         }
         if (!best?.paint) continue;
+        // Only switch colour if clearly faster (>90ms) or first segment
+        if (i === 0 || bestT < lastBest - 90 || best.paint === lastPaint) {
+          lastPaint = best.paint;
+          lastBest = bestT;
+        }
 
-        const i0 = Math.min(
-          route.roadPoints.length - 1,
-          Math.floor(p0 * (route.roadPoints.length - 1)),
-        );
-        const i1 = Math.min(
-          route.roadPoints.length - 1,
-          Math.ceil(p1 * (route.roadPoints.length - 1)),
-        );
-        const a = route.roadPoints[i0];
-        const b = route.roadPoints[Math.max(i0, i1)];
+        const a = roadAt(i / segs);
+        const b = roadAt((i + 1) / segs);
         const [sx0, sy0] = toScreen(a.x, a.z);
         const [sx1, sy1] = toScreen(b.x, b.z);
-
-        ctx.strokeStyle = best.paint;
-        ctx.lineWidth = 7;
-        ctx.globalAlpha = 0.92;
+        ctx.strokeStyle = lastPaint;
+        ctx.lineWidth = 8;
+        ctx.globalAlpha = 0.9;
         ctx.beginPath();
         ctx.moveTo(sx0, sy0);
         ctx.lineTo(sx1, sy1);
@@ -121,84 +165,92 @@ export function TrackDeltaOverview({
       }
     }
 
-    // Per-player thin trails (same universal colour)
-    for (const r of finished) {
-      ctx.strokeStyle = r.paint!;
-      ctx.lineWidth = r.playerId === myId ? 2.4 : 1.4;
-      ctx.globalAlpha = r.playerId === myId ? 0.95 : 0.55;
+    // Rise / fall delta ribbon vs leader (smooth, cumulative)
+    if (me?.path && leader?.path && me.playerId !== leader.playerId) {
+      const series = smoothDeltaSeries(me.path, leader.path, 80);
+      const peak = Math.max(
+        120,
+        ...series.map((s) => Math.abs(s.deltaMs)),
+      );
+      const maxLift = 28;
+
+      // Filled ribbon polygon
       ctx.beginPath();
-      let started = false;
-      for (const s of r.path!) {
-        const idx = Math.min(
-          route.roadPoints.length - 1,
-          Math.round(s.p * (route.roadPoints.length - 1)),
-        );
-        const pt = route.roadPoints[idx];
-        const [sx, sy] = toScreen(pt.x, pt.z);
-        if (!started) {
-          ctx.moveTo(sx, sy);
-          started = true;
-        } else ctx.lineTo(sx, sy);
+      for (let i = 0; i < series.length; i += 1) {
+        const s = series[i];
+        const pt = roadAt(s.p);
+        // Negative delta (ahead) rises; positive (behind) falls
+        const lift = (-s.deltaMs / peak) * maxLift;
+        const [sx, sy] = toScreen(pt.x, pt.z, lift);
+        if (i === 0) ctx.moveTo(sx, sy);
+        else ctx.lineTo(sx, sy);
+      }
+      for (let i = series.length - 1; i >= 0; i -= 1) {
+        const s = series[i];
+        const pt = roadAt(s.p);
+        const [sx, sy] = toScreen(pt.x, pt.z, 0);
+        ctx.lineTo(sx, sy);
+      }
+      ctx.closePath();
+      const fill = ctx.createLinearGradient(0, 40, 0, height - 20);
+      fill.addColorStop(0, "rgba(16,185,129,0.35)");
+      fill.addColorStop(0.5, "rgba(148,163,184,0.12)");
+      fill.addColorStop(1, "rgba(244,63,94,0.32)");
+      ctx.fillStyle = fill;
+      ctx.fill();
+
+      // Stroke the delta crest
+      ctx.lineWidth = 2.4;
+      ctx.beginPath();
+      for (let i = 0; i < series.length; i += 1) {
+        const s = series[i];
+        const pt = roadAt(s.p);
+        const lift = (-s.deltaMs / peak) * maxLift;
+        const [sx, sy] = toScreen(pt.x, pt.z, lift);
+        const ahead = s.deltaMs <= 0;
+        ctx.strokeStyle = ahead
+          ? "rgba(52,211,153,0.95)"
+          : "rgba(251,113,133,0.9)";
+        if (i === 0) ctx.moveTo(sx, sy);
+        else {
+          ctx.lineTo(sx, sy);
+          // Stroke in chunks so colour follows gain/loss
+          if (i % 4 === 0) {
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(sx, sy);
+            ctx.strokeStyle = ahead
+              ? "rgba(52,211,153,0.95)"
+              : "rgba(251,113,133,0.9)";
+          }
+        }
       }
       ctx.stroke();
-      ctx.globalAlpha = 1;
     }
 
-    // Start / finish markers
+    // Start / finish
     const start = route.roadPoints[0];
-    const finish = route.roadPoints[route.roadPoints.length - 1];
+    const finishPt = route.roadPoints[route.roadPoints.length - 1];
     if (start) {
-      const [sx, sy] = toScreen(start.x, start.z);
+      const [sx, sy] = toScreen(start.x, start.z, 4);
       ctx.fillStyle = "#e8eef7";
       ctx.beginPath();
       ctx.arc(sx, sy, 4, 0, Math.PI * 2);
       ctx.fill();
     }
-    if (finish) {
-      const [sx, sy] = toScreen(finish.x, finish.z);
+    if (finishPt) {
+      const [sx, sy] = toScreen(finishPt.x, finishPt.z, 4);
       ctx.fillStyle = "#34d399";
       ctx.beginPath();
       ctx.arc(sx, sy, 4.5, 0, Math.PI * 2);
       ctx.fill();
     }
-
-    // Your delta vs leader ribbon (green = you faster, red = slower)
-    const me = finished.find((r) => r.playerId === myId);
-    const leader = finished[0];
-    if (me && leader && me.playerId !== leader.playerId && me.path && leader.path) {
-      ctx.lineWidth = 3;
-      for (let i = 0; i < segs; i += 1) {
-        const mid = (i + 0.5) / segs;
-        const myT = timeAtProgress(me.path, mid);
-        const leadT = timeAtProgress(leader.path, mid);
-        if (myT == null || leadT == null) continue;
-        const d = myT - leadT;
-        const i0 = Math.min(
-          route.roadPoints.length - 1,
-          Math.floor((i / segs) * (route.roadPoints.length - 1)),
-        );
-        const i1 = Math.min(
-          route.roadPoints.length - 1,
-          Math.ceil(((i + 1) / segs) * (route.roadPoints.length - 1)),
-        );
-        const a = route.roadPoints[i0];
-        const b = route.roadPoints[Math.max(i0, i1)];
-        const [sx0, sy0] = toScreen(a.x, a.z);
-        const [sx1, sy1] = toScreen(b.x, b.z);
-        // Outer glow ribbon offset slightly — green gain / red loss
-        ctx.strokeStyle = d <= 0 ? "rgba(16,185,129,0.85)" : "rgba(244,63,94,0.75)";
-        ctx.beginPath();
-        ctx.moveTo(sx0, sy0);
-        ctx.lineTo(sx1, sy1);
-        ctx.stroke();
-      }
-    }
-  }, [finished, height, myId, route.roadPoints, width]);
+  }, [finished, height, leader, me, route.roadPoints, width]);
 
   return (
     <div className="rounded-xl border border-white/5 bg-ink-975 p-3">
       <p className="mb-2 text-[10px] uppercase tracking-widest text-mist">
-        Track overview — colour = who was fastest on that sector
+        Delta track — ribbon rises when you&apos;re ahead, falls when behind
       </p>
       <canvas
         ref={canvasRef}
@@ -225,11 +277,16 @@ export function TrackDeltaOverview({
           );
         })}
       </div>
+      {gain && (
+        <p className="mt-2 text-[10px] text-emerald-400/90">
+          Biggest gain: sector {gain.band} (−{(gain.gainMs / 1000).toFixed(2)}s
+          vs leader)
+        </p>
+      )}
       {finished.length >= 2 && (
-        <p className="mt-2 text-[9px] text-mist/80">
-          Outer ribbon: <span className="text-emerald-400">green</span> = you
-          gaining vs leader · <span className="text-rose-400">red</span> = losing
-          time. Colours match every screen.
+        <p className="mt-1 text-[9px] text-mist/80">
+          Track colour = who was fastest on that stretch (stable). Ribbon = your
+          live time gap vs P1 along the lap.
         </p>
       )}
       {finished.length === 0 && (

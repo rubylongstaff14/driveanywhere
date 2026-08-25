@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { carTelemetry } from "@/lib/game/telemetry";
+import { remoteCarBuffer } from "@/lib/multiplayer/remote-car-buffer";
+import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import type { RouteData } from "@/lib/validation/route-data";
 
 interface MinimapProps {
@@ -79,12 +81,38 @@ export function Minimap({ route, size = 168 }: MinimapProps) {
         ctx.fill();
       });
 
-      // Car
+      // Online rivals
+      const mp = useMultiplayerStore.getState();
+      if (mp.racing) {
+        const room = mp.currentRoom;
+        for (const [id, state] of Object.entries(remoteCarBuffer.states)) {
+          const paint =
+            state.paint ??
+            room?.players.find((p) => p.id === id)?.paint ??
+            "#94a3b8";
+          const [rx, ry] = toScreen(state.x, state.z);
+          ctx.fillStyle = paint;
+          ctx.beginPath();
+          ctx.arc(rx, ry, 3.2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.strokeStyle = "rgba(0,0,0,0.45)";
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+
+      // Local car
       const [cx, cy] = toScreen(carTelemetry.x, carTelemetry.z);
       ctx.save();
       ctx.translate(cx, cy);
       ctx.rotate(-carTelemetry.yaw);
-      ctx.fillStyle = carTelemetry.offRoad ? "#f97316" : "#f43f5e";
+      ctx.fillStyle = carTelemetry.offRoad
+        ? "#f97316"
+        : carTelemetry.turbo
+          ? "#fbbf24"
+          : carTelemetry.drafting
+            ? "#38bdf8"
+            : "#f43f5e";
       ctx.beginPath();
       ctx.moveTo(0, -6);
       ctx.lineTo(4.2, 5);

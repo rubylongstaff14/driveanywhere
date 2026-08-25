@@ -95,3 +95,69 @@ export function timeAtProgress(path: RacePathSample[], p: number): number | null
   }
   return null;
 }
+
+/**
+ * Smooth cumulative delta (me − rival) along the circuit.
+ * Positive = slower / behind at that progress; negative = ahead / faster.
+ * Uses a short moving average so the heatmap ribbon does not flicker.
+ */
+export function smoothDeltaSeries(
+  mePath: RacePathSample[],
+  rivalPath: RacePathSample[],
+  samples = 64,
+): Array<{ p: number; deltaMs: number }> {
+  const n = Math.max(8, samples);
+  const raw: number[] = [];
+  for (let i = 0; i <= n; i += 1) {
+    const p = i / n;
+    const myT = timeAtProgress(mePath, p);
+    const rivalT = timeAtProgress(rivalPath, p);
+    if (myT == null || rivalT == null) {
+      raw.push(raw.length ? raw[raw.length - 1] : 0);
+    } else {
+      raw.push(myT - rivalT);
+    }
+  }
+  const out: Array<{ p: number; deltaMs: number }> = [];
+  for (let i = 0; i < raw.length; i += 1) {
+    let sum = 0;
+    let count = 0;
+    for (let j = Math.max(0, i - 2); j <= Math.min(raw.length - 1, i + 2); j += 1) {
+      sum += raw[j];
+      count += 1;
+    }
+    out.push({ p: i / n, deltaMs: sum / count });
+  }
+  return out;
+}
+
+/** Best progress band where `me` gained the most time vs rival (most negative dΔ). */
+export function biggestGainSector(
+  mePath: RacePathSample[],
+  rivalPath: RacePathSample[],
+  bands = 8,
+): { band: number; gainMs: number; fromP: number; toP: number } | null {
+  if (mePath.length < 2 || rivalPath.length < 2) return null;
+  let bestBand = 0;
+  let bestGain = 0;
+  for (let b = 0; b < bands; b += 1) {
+    const fromP = b / bands;
+    const toP = (b + 1) / bands;
+    const d0 =
+      (timeAtProgress(mePath, fromP) ?? 0) - (timeAtProgress(rivalPath, fromP) ?? 0);
+    const d1 =
+      (timeAtProgress(mePath, toP) ?? 0) - (timeAtProgress(rivalPath, toP) ?? 0);
+    const gain = d0 - d1; // positive = closed the gap across this band
+    if (gain > bestGain) {
+      bestGain = gain;
+      bestBand = b;
+    }
+  }
+  if (bestGain < 40) return null;
+  return {
+    band: bestBand + 1,
+    gainMs: Math.round(bestGain),
+    fromP: bestBand / bands,
+    toP: (bestBand + 1) / bands,
+  };
+}

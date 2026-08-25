@@ -16,8 +16,8 @@ const PALETTE: Record<CityRegion, [string, string, string]> = {
   nyc: ["#6b7d94", "#b8b4a8", "#4a5858"],
 };
 
-const FILL_CAP = 160;
-const SKYLINE_CAP = 72;
+const FILL_CAP = 220;
+const SKYLINE_CAP = 96;
 
 interface Occupied {
   x: number;
@@ -60,12 +60,12 @@ export function StreetFill({
       const s = samples[i];
       for (const side of [-1, 1] as const) {
         if (out.length >= FILL_CAP) break;
-        const dist = 48 + ((i + side) % 6) * 5;
+        const dist = 36 + ((i + side) % 5) * 4;
         const x = s.position.x + s.normal.x * side * dist;
         const z = s.position.z + s.normal.z * side * dist;
-        const w = 9 + (i % 7);
-        const d = 8 + ((i + 3) % 6);
-        if (aabbAsphaltClearance(samples, x, z, w / 2, d / 2) < 8) continue;
+        const w = 10 + (i % 8);
+        const d = 9 + ((i + 3) % 7);
+        if (aabbAsphaltClearance(samples, x, z, w / 2, d / 2) < 7) continue;
         let blocked = false;
         for (const o of occupied) {
           const dx = x - o.x;

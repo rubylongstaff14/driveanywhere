@@ -109,7 +109,13 @@ function SpeedoDial({
   );
 }
 
-export function GameHud({ routeName }: { routeName: string }) {
+export function GameHud({
+  routeName,
+  cityVersion,
+}: {
+  routeName: string;
+  cityVersion?: number;
+}) {
   const speedKph = useGameStore((s) => s.speedKph);
   const elapsedMs = useGameStore((s) => s.elapsedMs);
   const checkpointIndex = useGameStore((s) => s.checkpointIndex);
@@ -172,6 +178,11 @@ export function GameHud({ routeName }: { routeName: string }) {
             {routeName}
             {sessionLabel}
           </p>
+          {cityVersion != null && cityVersion >= 9 && (
+            <p className="mt-0.5 font-mono text-[9px] uppercase tracking-widest text-emerald-400/90">
+              City densify v{cityVersion} · Unreal import
+            </p>
+          )}
           <p className="mt-0.5 font-mono text-3xl font-semibold tabular-nums text-white drop-shadow">
             {started ? formatLapTime(elapsedMs) : "—:——.———"}
           </p>

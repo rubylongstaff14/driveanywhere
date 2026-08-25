@@ -70,7 +70,13 @@ function BodyPaint({ color }: { color: string }) {
   }
   if (simple) {
     return (
-      <meshStandardMaterial color={color} metalness={0.38} roughness={0.36} />
+      <meshStandardMaterial
+        color={color}
+        metalness={0.28}
+        roughness={0.42}
+        emissive={color}
+        emissiveIntensity={0.18}
+      />
     );
   }
   return (

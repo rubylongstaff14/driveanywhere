@@ -13,6 +13,8 @@ import { OnlineRaceSync } from "@/components/multiplayer/online-race-sync";
 import { OnlineResultsOverlay } from "@/components/multiplayer/online-results-overlay";
 import { RaceChat } from "@/components/multiplayer/race-chat";
 import { RacePositionsHud } from "@/components/multiplayer/race-positions-hud";
+import { SpectatorHud } from "@/components/multiplayer/spectator-hud";
+import { TauntWheel } from "@/components/multiplayer/taunt-wheel";
 import { CircuitBoot } from "@/components/game/circuit-boot";
 import { CinematicLoader } from "@/components/game/cinematic-loader";
 import { VehicleSelect } from "@/components/game/vehicle-select";
@@ -142,7 +144,7 @@ export function GameExperience({
     <div className="relative h-[100dvh] w-full overflow-hidden bg-ink-975">
       <GameCanvas paused={paused || finished} route={route} />
       <CircuitBoot routeName={routeName} city={route.city} />
-      <GameHud routeName={routeName} />
+      <GameHud routeName={routeName} cityVersion={route.metadata?.version} />
       <RouteIntroOverlay
         routeName={routeName}
         city={route.city}
@@ -153,6 +155,8 @@ export function GameExperience({
       {raceSetup.mode === "online" && <OnlineResultsOverlay route={route} />}
       {raceSetup.mode === "online" && <RaceChat />}
       {raceSetup.mode === "online" && <RacePositionsHud />}
+      {raceSetup.mode === "online" && <TauntWheel />}
+      {raceSetup.mode === "online" && <SpectatorHud />}
 
       <div className="pointer-events-none absolute bottom-4 right-4 z-10 hidden md:block">
         <Minimap route={route} />

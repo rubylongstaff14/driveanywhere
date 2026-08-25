@@ -23,6 +23,7 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
   const myId = useMultiplayerStore((s) => s.myId);
   const currentRoom = useMultiplayerStore((s) => s.currentRoom);
   const reportFinish = useMultiplayerStore((s) => s.reportFinish);
+  const spectating = useMultiplayerStore((s) => s.spectating);
   const finished = useGameStore((s) => s.finished);
   const elapsedMs = useGameStore((s) => s.elapsedMs);
   const splitMs = useGameStore((s) => s.splitMs);
@@ -105,7 +106,7 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
   }, [splitMs, racing]);
 
   useEffect(() => {
-    if (finished && !reportedFinish.current && racing) {
+    if (finished && !reportedFinish.current && racing && !spectating) {
       reportedFinish.current = true;
       const me = currentRoom?.players.find((p) => p.id === myId);
       const path = compactPathSamples([
@@ -117,6 +118,7 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
   }, [
     finished,
     racing,
+    spectating,
     elapsedMs,
     reportFinish,
     currentRoom,

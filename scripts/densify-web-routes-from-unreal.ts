@@ -176,7 +176,14 @@ function densify(slug: string) {
   };
 
   const samples = roadSamples(web.roadPoints);
-  const existing = [...web.buildings];
+  // Replace previous densify layers so re-runs don't stack forever.
+  const existing = web.buildings.filter(
+    (b) =>
+      b.source !== "unreal-named" &&
+      b.source !== "unreal-massing" &&
+      b.source !== "web-street-fill" &&
+      b.source !== "web-skyline",
+  );
   const byKey = new Set(
     existing.map(
       (b) =>
@@ -249,9 +256,9 @@ function densify(slug: string) {
     );
   }
 
-  // Procedural street + skyline rings (Unreal Python caps: 160 fill / 72 skyline).
-  const streetMax = ue.caps?.streetFillMax ?? 160;
-  const skyMax = ue.caps?.skylineMax ?? 72;
+  // Procedural street + skyline rings (match Unreal da_driveable caps).
+  const streetMax = Math.max(ue.caps?.streetFillMax ?? 160, 180);
+  const skyMax = Math.max(ue.caps?.skylineMax ?? 72, 90);
   const cityBoost =
     /dubai|canary|york|tokyo|westminster|embankment/.test(slug) ? 1.35 : 1;
   const alpineCut = /egypt|alps|rio/.test(slug) ? 0.65 : 1;
@@ -262,12 +269,12 @@ function densify(slug: string) {
     const s = samples[i];
     for (const side of [-1, 1] as const) {
       if (streetN >= streetMax) break;
-      const dist = 42 + ((i + side + 3) % 7) * 5;
+      const dist = 34 + ((i + side + 3) % 6) * 4;
       const x = s.x + s.nx * side * dist;
       const z = s.z + s.nz * side * dist;
-      const hw = 5 + (i % 6);
-      const hd = 4.5 + ((i + 2) % 5);
-      const height = (12 + ((i * 11 + side) % 36)) * alpineCut;
+      const hw = 5.5 + (i % 7);
+      const hd = 5 + ((i + 2) % 6);
+      const height = (14 + ((i * 11 + side) % 42)) * alpineCut;
       pushBuilding(
         {
           id: `${slug}-street-fill-${streetN}`,
@@ -281,7 +288,7 @@ function densify(slug: string) {
           confidence: 0.6,
           source: "web-street-fill",
         },
-        9,
+        7,
       );
       streetN += 1;
     }
@@ -293,7 +300,7 @@ function densify(slug: string) {
     const s = samples[i];
     const side = skyN % 2 === 0 ? 1 : -1;
     const ring = skyN % 3 === 0 ? 0 : 1;
-    const dist = (ring === 0 ? 180 : 260) + (skyN % 9) * 12;
+    const dist = (ring === 0 ? 150 : 230) + (skyN % 9) * 10;
     const x = s.x + s.nx * side * dist;
     const z = s.z + s.nz * side * dist;
     const hw = 8 + (skyN % 10);

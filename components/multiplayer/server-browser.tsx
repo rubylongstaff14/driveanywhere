@@ -70,6 +70,12 @@ export function ServerBrowser() {
     useMultiplayerStore.getState().joinRoom(roomId, playerName, vehicleId, preferredPaint(vehicleId));
   }
 
+  function handleWatch(roomId: string) {
+    useMultiplayerStore
+      .getState()
+      .joinRoom(roomId, playerName, vehicleId, preferredPaint(vehicleId), true);
+  }
+
   function handleQuickPlay() {
     createRoom(`${playerName}'s Race`, "westminster-sprint", "medium", 2, playerName, vehicleId, preferredPaint(vehicleId));
   }
@@ -217,6 +223,7 @@ export function ServerBrowser() {
                   {" · "}
                   {room.players.length}/{room.maxPlayers} players
                   {room.aiCount > 0 && ` + ${room.aiCount} AI`}
+                  {room.status === "racing" && " · live"}
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -233,6 +240,14 @@ export function ServerBrowser() {
                     className="rounded-lg bg-white/10 px-4 py-1.5 text-xs font-medium hover:bg-white/20"
                   >
                     Join
+                  </button>
+                )}
+                {(room.status === "racing" || room.status === "countdown") && (
+                  <button
+                    onClick={() => handleWatch(room.id)}
+                    className="rounded-lg border border-sky-400/30 bg-sky-500/15 px-4 py-1.5 text-xs font-medium text-sky-200 hover:bg-sky-500/25"
+                  >
+                    Watch
                   </button>
                 )}
               </div>

@@ -21,55 +21,52 @@ export interface QualityConfig {
 
 export const QUALITY_PRESETS: Record<QualityPreset, QualityConfig> = {
   low: {
-    dpr: [0.65, 1],
+    dpr: [0.7, 1],
     shadows: false,
     shadowMapSize: 512,
-    drawDistance: 200,
-    sceneryDensity: 0.5,
-    fogFar: 240,
+    drawDistance: 280,
+    sceneryDensity: 0.75,
+    fogFar: 320,
     antialias: false,
-    buildingColliderCap: 160,
+    buildingColliderCap: 200,
   },
   medium: {
-    dpr: [0.75, 1],
+    dpr: [0.85, 1.1],
     shadows: false,
     shadowMapSize: 512,
-    drawDistance: 320,
-    sceneryDensity: 0.85,
-    fogFar: 380,
+    drawDistance: 420,
+    sceneryDensity: 1,
+    fogFar: 480,
     antialias: false,
-    buildingColliderCap: 220,
+    buildingColliderCap: 280,
   },
   high: {
-    dpr: [1, 1.25],
+    dpr: [1, 1.35],
     shadows: true,
     shadowMapSize: 1024,
-    drawDistance: 480,
+    drawDistance: 620,
     sceneryDensity: 1,
-    fogFar: 560,
+    fogFar: 700,
     antialias: true,
-    buildingColliderCap: 320,
+    buildingColliderCap: 400,
   },
 };
 
-const STORAGE_KEY = "driveanywhere:quality";
+const STORAGE_KEY = "driveanywhere:quality:v2";
 const VOLUME_KEY = "driveanywhere:engineVolume";
 
 function isPreset(value: unknown): value is QualityPreset {
   return value === "low" || value === "medium" || value === "high";
 }
 
-/** Weak hardware gets a conservative default on first visit. */
+/** Prefer dense city view so Unreal-parity densify is visible by default. */
 function detectDefaultPreset(): QualityPreset {
-  if (typeof navigator === "undefined") return "medium";
-
+  if (typeof navigator === "undefined") return "high";
   const cores = navigator.hardwareConcurrency ?? 4;
   const memory = (navigator as Navigator & { deviceMemory?: number })
     .deviceMemory;
-
-  if (cores <= 8 || (memory !== undefined && memory <= 8)) return "low";
-  if (cores >= 12 && memory !== undefined && memory >= 12) return "high";
-  return "medium";
+  if (cores <= 4 || (memory !== undefined && memory <= 4)) return "medium";
+  return "high";
 }
 
 interface SettingsState {

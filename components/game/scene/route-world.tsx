@@ -516,9 +516,10 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       );
       return clear >= 1.0;
     });
-    if (quality.sceneryDensity >= 0.7) return filtered;
+    // Keep densified Unreal massing visible — only thin on very low presets.
+    if (quality.sceneryDensity >= 0.6) return filtered;
     return filtered.filter(
-      (b, i) => Boolean(b.landmark) || b.height >= 70 || i % 2 === 0,
+      (b, i) => Boolean(b.landmark) || b.height >= 55 || i % 2 === 0,
     );
   }, [buildings, samples, quality.sceneryDensity]);
 
@@ -738,6 +739,11 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
         hx + nx * 72,
         0,
         hz + nz * 72 + 90,
+      ] as [number, number, number],
+      eye: [
+        hx + nx * 95,
+        0,
+        hz + nz * 95 - 120,
       ] as [number, number, number],
       wall: [
         hx + nx * 22,
@@ -1362,6 +1368,20 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             span={110}
             arches={3}
           />
+          {/* London Eye — south bank cue so densify/Unreal parity is obvious */}
+          <group position={westminsterLandmarks.eye}>
+            <LondonEyeLandmark
+              position={[0, 0, 0]}
+              detail={quality.drawDistance >= 280}
+            />
+            <LandmarkNameTag
+              label="London Eye"
+              accent="#5a8aaa"
+              height={48}
+              scale={0.75}
+              lateral
+            />
+          </group>
           {/* Embankment retaining wall — well clear of asphalt */}
           <mesh position={westminsterLandmarks.wall}>
             <boxGeometry args={[2.5, 2.4, Math.min(220, riverLen * 0.45)]} />

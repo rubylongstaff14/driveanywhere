@@ -9,8 +9,10 @@ import {
   stockIdsFor,
 } from "@/lib/game/cosmetics";
 import {
+  biggestGainSector,
   compactPathSamples,
   progressAlongRoad,
+  smoothDeltaSeries,
   timeAtProgress,
 } from "@/lib/game/route-progress";
 
@@ -72,5 +74,26 @@ describe("route progress", () => {
     expect(mid).not.toBeNull();
     expect(mid!).toBeGreaterThan(1000);
     expect(mid!).toBeLessThan(3000);
+  });
+
+  it("builds a smooth delta series without wild jumps", () => {
+    const leader = Array.from({ length: 20 }, (_, i) => ({
+      p: i / 19,
+      t: i * 200,
+    }));
+    const me = Array.from({ length: 20 }, (_, i) => ({
+      p: i / 19,
+      t: i * 200 + 400 + Math.sin(i) * 30,
+    }));
+    const series = smoothDeltaSeries(me, leader, 32);
+    expect(series.length).toBeGreaterThan(10);
+    for (let i = 1; i < series.length; i += 1) {
+      expect(Math.abs(series[i].deltaMs - series[i - 1].deltaMs)).toBeLessThan(
+        200,
+      );
+    }
+    const gain = biggestGainSector(me, leader, 4);
+    // me is always behind by ~400ms — gain sector may be null or small
+    if (gain) expect(gain.gainMs).toBeGreaterThan(0);
   });
 });
