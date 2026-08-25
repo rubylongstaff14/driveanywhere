@@ -3,10 +3,10 @@ const LOAD_TIMEOUT_MS = 45_000;
 const RACE_TIMEOUT_MS = 12 * 60_000;
 function broadcastIntervalMs(playerCount) {
     if (playerCount >= 6)
-        return 28;
-    if (playerCount >= 4)
         return 20;
-    return 16;
+    if (playerCount >= 4)
+        return 14;
+    return 10;
 }
 export class Room {
     id;
@@ -126,7 +126,7 @@ export class Room {
             if (p.ws.readyState !== 1)
                 continue;
             try {
-                if (p.ws.bufferedAmount > 256_000)
+                if (p.ws.bufferedAmount > 400_000)
                     continue;
                 p.ws.send(data);
             }
@@ -468,7 +468,7 @@ export class Room {
                 };
             });
             this.broadcast({ type: "race_positions", positions });
-        }, 400);
+        }, 200);
     }
     reset() {
         if (this.countdownTimer)

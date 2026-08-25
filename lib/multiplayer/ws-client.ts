@@ -87,7 +87,7 @@ export function sendMsg(msg: ClientMessage): void {
 
 export function sendCarState(state: CarState): void {
   if (!socket || socket.readyState !== WebSocket.OPEN) return;
-  if (socket.bufferedAmount > 48_000) return;
+  if (socket.bufferedAmount > 120_000) return;
   sendMsg({ type: "car_state", state });
 }
 

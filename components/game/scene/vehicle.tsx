@@ -35,6 +35,7 @@ import {
 } from "@/lib/game/sectors";
 import { weatherGripMul } from "@/lib/game/weather";
 import { progressAlongRoad } from "@/lib/game/route-progress";
+import { remoteCarBuffer } from "@/lib/multiplayer/remote-car-buffer";
 import { sendCarState } from "@/lib/multiplayer/ws-client";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import type { RouteData } from "@/lib/validation/route-data";
@@ -350,39 +351,44 @@ export function Vehicle({ route, samples }: VehicleProps) {
       1 / 60,
     );
 
-    // Stable turbo (hysteresis) + slipstream draft — no P1 flicker
+    // Turbo when behind anyone — tiny soft-off only (no long latch)
     const mp = useMultiplayerStore.getState();
-    const nowBoost = performance.now();
     if (mp.racing && mp.myId) {
       const me = mp.racePositions.find((p) => p.playerId === mp.myId);
-      const behind =
-        !!me &&
-        me.position > 1 &&
-        (me.delta == null || me.delta > 80);
+      const myProgress = progressAlongRoad(
+        route.roadPoints,
+        position.x,
+        position.z,
+      );
+      let someoneAhead = false;
+      for (const s of Object.values(remoteCarBuffer.states)) {
+        const theirP = s.trackProgress;
+        if (theirP != null && theirP > myProgress + 0.003) {
+          someoneAhead = true;
+          break;
+        }
+      }
+      const behind = (me != null && me.position > 1) || someoneAhead;
+
       const latch = turboLatch.current;
       if (behind) {
-        if (!latch.on) {
-          if (latch.since === 0) latch.since = nowBoost;
-          if (nowBoost - latch.since > 450) latch.on = true;
-        } else {
-          latch.since = nowBoost;
-        }
+        latch.on = true;
+        latch.since = performance.now();
       } else if (latch.on) {
-        if (nowBoost - latch.since > 550) {
+        // Only drop turbo after ~120ms clearly in the lead
+        if (performance.now() - latch.since > 120) {
           latch.on = false;
           latch.since = 0;
         }
-      } else {
-        latch.since = 0;
       }
 
-      // Draft: rival within ~14m ahead in forward cone
+      // Draft: rival within ~14m ahead in forward cone (live buffer, not React)
       let draft = 1;
       const rot = body.rotation();
       const yaw = Math.atan2(2 * rot.w * rot.y, 1 - 2 * rot.y * rot.y);
       const fx = Math.sin(yaw);
       const fz = Math.cos(yaw);
-      for (const state of Object.values(mp.remoteCarStates)) {
+      for (const state of Object.values(remoteCarBuffer.states)) {
         const dx = state.x - position.x;
         const dz = state.z - position.z;
         const dist = Math.hypot(dx, dz);
@@ -393,7 +399,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
           break;
         }
       }
-      boostRef.current.turbo = latch.on ? 1.02 : 1;
+      boostRef.current.turbo = latch.on ? 1.025 : 1;
       boostRef.current.draft = draft;
       boostRef.current.turboUi = latch.on;
       boostRef.current.draftUi = draft > 1.01;
@@ -770,7 +776,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
       const mp = useMultiplayerStore.getState();
       const room = mp.currentRoom;
       const grid = room?.players.length ?? 2;
-      const sendEveryMs = grid >= 6 ? 28 : grid >= 4 ? 18 : 14;
+      const sendEveryMs = grid >= 6 ? 20 : grid >= 4 ? 12 : 10;
       if (!scratch.current.lastNetSend || now - scratch.current.lastNetSend > sendEveryMs) {
         scratch.current.lastNetSend = now;
         const rot = body.rotation();

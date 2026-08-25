@@ -34,6 +34,7 @@ const FALLBACK_COLORS = [
   "#f59e0b",
 ];
 
+/** Linear blend between samples — Hermite overshoots when packets jitter. */
 function sampleAt(
   history: RemoteSample[],
   renderTime: number,
@@ -48,11 +49,12 @@ function sampleAt(
 
   if (renderTime >= newest.timestamp) {
     const prev = history[history.length - 2] ?? newest;
-    const dtSec = Math.max(0.012, (newest.timestamp - prev.timestamp) / 1000);
+    const dtSec = Math.max(0.01, (newest.timestamp - prev.timestamp) / 1000);
     const vx = newest.state.vx ?? (newest.state.x - prev.state.x) / dtSec;
     const vz = newest.state.vz ?? (newest.state.z - prev.state.z) / dtSec;
     const vy = (newest.state.y - prev.state.y) / dtSec;
-    const extraSec = Math.min(0.18, (renderTime - newest.timestamp) / 1000);
+    // Very short dead-reckon only — long extrapolate = rubber-banding
+    const extraSec = Math.min(0.06, (renderTime - newest.timestamp) / 1000);
     outPos.set(
       newest.state.x + vx * extraSec,
       newest.state.y + vy * extraSec,
@@ -74,32 +76,12 @@ function sampleAt(
     }
   }
   const denom = b.timestamp - a.timestamp;
-  const u = denom > 0 ? (renderTime - a.timestamp) / denom : 1;
-  const vx0 = a.state.vx;
-  const vz0 = a.state.vz;
-  const vx1 = b.state.vx;
-  const vz1 = b.state.vz;
-  if (vx0 != null && vz0 != null && vx1 != null && vz1 != null && denom > 0) {
-    const t = u;
-    const t2 = t * t;
-    const t3 = t2 * t;
-    const h00 = 2 * t3 - 3 * t2 + 1;
-    const h10 = t3 - 2 * t2 + t;
-    const h01 = -2 * t3 + 3 * t2;
-    const h11 = t3 - t2;
-    const dt = denom / 1000;
-    outPos.set(
-      h00 * a.state.x + h10 * vx0 * dt + h01 * b.state.x + h11 * vx1 * dt,
-      a.state.y + (b.state.y - a.state.y) * u,
-      h00 * a.state.z + h10 * vz0 * dt + h01 * b.state.z + h11 * vz1 * dt,
-    );
-  } else {
-    outPos.set(
-      a.state.x + (b.state.x - a.state.x) * u,
-      a.state.y + (b.state.y - a.state.y) * u,
-      a.state.z + (b.state.z - a.state.z) * u,
-    );
-  }
+  const u = denom > 0 ? THREE.MathUtils.clamp((renderTime - a.timestamp) / denom, 0, 1) : 1;
+  outPos.set(
+    a.state.x + (b.state.x - a.state.x) * u,
+    a.state.y + (b.state.y - a.state.y) * u,
+    a.state.z + (b.state.z - a.state.z) * u,
+  );
   qA.set(a.state.qx, a.state.qy, a.state.qz, a.state.qw);
   qB.set(b.state.qx, b.state.qy, b.state.qz, b.state.qw);
   qTmp.slerpQuaternions(qA, qB, u);
@@ -137,7 +119,7 @@ function RemoteCar({
     if (!meshRef.current) return;
     const history = remoteCarBuffer.history[playerId];
     const delay = remoteInterpDelayMs();
-    const renderTime = Date.now() - delay;
+    const renderTime = performance.now() - delay;
 
     const applyPaint = (hex?: string) => {
       if (!hex || hex === paintRef.current) return;
@@ -165,14 +147,14 @@ function RemoteCar({
     }
 
     const err = meshRef.current.position.distanceToSquared(targetPos.current);
-    if (!ready.current || err > 324) {
+    // Hard snap only on teleports; otherwise stick close to the interp sample
+    if (!ready.current || err > 225) {
       meshRef.current.position.copy(targetPos.current);
       meshRef.current.quaternion.copy(targetQuat.current);
       ready.current = true;
       return;
     }
-    // Light smoothing only — most motion comes from the interpolated target
-    const rate = 1 - Math.exp(-(err > 16 ? 48 : 28) * delta);
+    const rate = 1 - Math.exp(-(err > 4 ? 70 : 55) * delta);
     meshRef.current.position.lerp(targetPos.current, rate);
     meshRef.current.quaternion.slerp(targetQuat.current, rate);
   });
@@ -256,7 +238,7 @@ export function SpectatorCamera() {
       state.z - Math.cos(yaw) * back,
     );
     look.current.set(state.x, state.y + 1.1, state.z);
-    const rate = 1 - Math.exp(-6 * delta);
+    const rate = 1 - Math.exp(-8 * delta);
     camera.position.lerp(cam.current, rate);
     camera.lookAt(look.current);
   });

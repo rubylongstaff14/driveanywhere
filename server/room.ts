@@ -35,9 +35,9 @@ export interface ConnectedPlayer {
 }
 
 function broadcastIntervalMs(playerCount: number): number {
-  if (playerCount >= 6) return 28;
-  if (playerCount >= 4) return 20;
-  return 16;
+  if (playerCount >= 6) return 20;
+  if (playerCount >= 4) return 14;
+  return 10;
 }
 
 export class Room {
@@ -174,7 +174,7 @@ export class Room {
       if (p.id === exclude) continue;
       if (p.ws.readyState !== 1) continue;
       try {
-        if (p.ws.bufferedAmount > 256_000) continue;
+        if (p.ws.bufferedAmount > 400_000) continue;
         p.ws.send(data);
       } catch {
         /* disconnected */
@@ -513,7 +513,7 @@ export class Room {
         };
       });
       this.broadcast({ type: "race_positions", positions });
-    }, 400);
+    }, 200);
   }
 
   reset(): void {
