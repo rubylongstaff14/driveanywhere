@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useRef } from "react";
 import type { RaceResult } from "@/lib/multiplayer/protocol";
-import { raceColorByHex, RACE_COLORS } from "@/lib/multiplayer/race-colors";
 import { timeAtProgress } from "@/lib/game/route-progress";
 import type { RouteData } from "@/lib/validation/route-data";
 
@@ -208,10 +207,7 @@ export function TrackDeltaOverview({
       />
       <div className="mt-3 flex flex-wrap gap-2">
         {results.map((r) => {
-          const color =
-            raceColorByHex(r.paint)?.hex ??
-            r.paint ??
-            RACE_COLORS[(r.position - 1) % RACE_COLORS.length].hex;
+          const color = r.paint ?? "#94a3b8";
           return (
             <div
               key={r.playerId}

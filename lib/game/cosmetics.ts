@@ -264,7 +264,35 @@ export function resolveLoadoutVisual(vehicleId: VehicleId, loadout: CarLoadout) 
 }
 
 export function stockIdsFor(vehicleId: VehicleId): string[] {
+  // Base paints + stock aero are always unlocked; shop crates add rarer paints/kits.
   return cosmeticsForVehicle(vehicleId)
-    .filter((c) => c.rarity === "consumer")
+    .filter(
+      (c) =>
+        c.rarity === "consumer" ||
+        (c.slot === "paint" && c.rarity === "industrial"),
+    )
     .map((c) => c.id);
+}
+
+/** Paints shown in lobby: base (consumer/industrial) + any shop unlocks. */
+export function availablePaints(
+  vehicleId: VehicleId,
+  unlockedIds: string[],
+): CosmeticItem[] {
+  const unlocked = new Set(unlockedIds);
+  return cosmeticsForSlot(vehicleId, "paint").filter(
+    (c) =>
+      c.rarity === "consumer" ||
+      c.rarity === "industrial" ||
+      unlocked.has(c.id),
+  );
+}
+
+export function paintHexesForVehicle(
+  vehicleId: VehicleId,
+  unlockedIds: string[],
+): string[] {
+  return availablePaints(vehicleId, unlockedIds)
+    .map((c) => c.paint)
+    .filter((p): p is string => Boolean(p));
 }

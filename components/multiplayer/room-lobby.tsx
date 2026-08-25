@@ -7,10 +7,11 @@ import { VEHICLE_LIST } from "@/lib/game/vehicles";
 import { ONLINE_MAPS } from "@/lib/game/online-maps";
 import { lobbyDifficultyToSkill } from "@/lib/game/race-setup";
 import {
-  isRaceHexTaken,
-  RACE_COLORS,
-  raceColorByHex,
-} from "@/lib/multiplayer/race-colors";
+  availablePaints,
+} from "@/lib/game/cosmetics";
+import { isPaintHexTaken } from "@/lib/multiplayer/race-colors";
+import { useProgressionStore } from "@/stores/progression-store";
+import type { VehicleId } from "@/lib/game/vehicles";
 
 interface RoomLobbyProps {
   roomId: string;
@@ -39,9 +40,13 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
     setLoadout,
   } = useMultiplayerStore();
 
-  const isHost = currentRoom?.players.find((p) => p.id === myId)?.isHost ?? false;
-  const me = currentRoom?.players.find((p) => p.id === myId);
-  const allReady = currentRoom?.players.every((p) => p.ready) && (currentRoom?.players.length ?? 0) >= 2;
+  const unlocked = useProgressionStore((s) => s.unlocked);
+  const hydrateProgression = useProgressionStore((s) => s.hydrate);
+  const progressionHydrated = useProgressionStore((s) => s.hydrated);
+
+  useEffect(() => {
+    if (!progressionHydrated) hydrateProgression();
+  }, [hydrateProgression, progressionHydrated]);
 
   useEffect(() => {
     if (!connected) connect();
@@ -74,6 +79,14 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
       </div>
     );
   }
+
+  const isHost = currentRoom.players.find((p) => p.id === myId)?.isHost ?? false;
+  const me = currentRoom.players.find((p) => p.id === myId);
+  const allReady =
+    currentRoom.players.every((p) => p.ready) && currentRoom.players.length >= 2;
+  const lobbyPaints = me
+    ? availablePaints(me.vehicleId as VehicleId, unlocked)
+    : [];
 
   const vehicles = VEHICLE_LIST.map((v) => ({ id: v.id, name: v.name }));
   const maps = ONLINE_MAPS;
@@ -214,11 +227,8 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                 <div className="flex items-center gap-2">
                   <span
                     className="h-3 w-3 rounded-full ring-1 ring-white/20"
-                    style={{
-                      backgroundColor:
-                        raceColorByHex(p.paint)?.hex ?? p.paint ?? "#64748b",
-                    }}
-                    title={raceColorByHex(p.paint)?.label ?? "Race colour"}
+                    style={{ backgroundColor: p.paint ?? "#64748b" }}
+                    title="Paint"
                   />
                   <span className={`h-2 w-2 rounded-full ${p.ready ? "bg-green-400" : "bg-white/20"}`} />
                   <span className="text-sm">
@@ -255,7 +265,20 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                     <select
                       className="rounded-lg border border-white/10 bg-ink-975 px-2 py-1.5 text-xs text-white"
                       value={me.vehicleId}
-                      onChange={(e) => setLoadout(e.target.value, me.paint)}
+                      onChange={(e) => {
+                        const nextId = e.target.value as VehicleId;
+                        const paints = availablePaints(nextId, unlocked);
+                        const keep =
+                          me.paint &&
+                          paints.some(
+                            (p) =>
+                              (p.paint ?? "").toLowerCase() ===
+                              me.paint!.toLowerCase(),
+                          )
+                            ? me.paint
+                            : paints[0]?.paint;
+                        setLoadout(nextId, keep);
+                      }}
                     >
                       {VEHICLE_LIST.map((v) => (
                         <option key={v.id} value={v.id}>{v.name}</option>
@@ -264,17 +287,20 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                   </div>
                   <div className="w-full max-w-sm">
                     <p className="mb-1.5 text-center text-[10px] uppercase tracking-widest text-mist">
-                      Race colour (same on every screen)
+                      Paint — base + unlocked shop colours
                     </p>
                     <div className="flex flex-wrap justify-center gap-2">
-                      {RACE_COLORS.map((c) => {
-                        const taken = isRaceHexTaken(
+                      {lobbyPaints.map((c) => {
+                        const hex = c.paint ?? "#888888";
+                        const taken = isPaintHexTaken(
                           currentRoom.players,
-                          c.hex,
+                          hex,
                           me.id,
                         );
                         const selected =
-                          (me.paint ?? "").toLowerCase() === c.hex.toLowerCase();
+                          (me.paint ?? "").toLowerCase() === hex.toLowerCase();
+                        const isBase =
+                          c.rarity === "consumer" || c.rarity === "industrial";
                         return (
                           <button
                             key={c.id}
@@ -282,19 +308,19 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                             disabled={taken}
                             title={
                               taken
-                                ? `Can't pick — ${c.label} is already taken`
-                                : c.label
+                                ? `Can't pick — ${c.name} is already taken`
+                                : `${c.name}${isBase ? " (base)" : " (unlocked)"}`
                             }
                             onClick={() => {
                               if (taken) return;
-                              setLoadout(me.vehicleId, c.hex);
+                              setLoadout(me.vehicleId, hex);
                             }}
                             className={`relative h-8 w-8 rounded-full border-2 transition ${
                               selected
-                                ? "border-white scale-110"
+                                ? "scale-110 border-white"
                                 : "border-white/20"
                             } ${taken ? "cursor-not-allowed opacity-35" : "hover:scale-105"}`}
-                            style={{ backgroundColor: c.hex }}
+                            style={{ backgroundColor: hex }}
                           >
                             {taken && (
                               <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-ink-975">
@@ -307,13 +333,14 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                     </div>
                     {error?.toLowerCase().includes("colour") ||
                     error?.toLowerCase().includes("color") ||
-                    error?.toLowerCase().includes("can't pick") ? (
+                    error?.toLowerCase().includes("can't pick") ||
+                    error?.toLowerCase().includes("paint") ? (
                       <p className="mt-2 text-center text-[10px] text-signal">
                         {error}
                       </p>
                     ) : (
                       <p className="mt-2 text-center text-[9px] text-mist/70">
-                        Taken colours show ✕ — emerald is emerald for everyone.
+                        Unlock more in Shop/Garage. Taken paints show ✕.
                       </p>
                     )}
                   </div>

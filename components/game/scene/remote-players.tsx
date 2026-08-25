@@ -6,13 +6,14 @@ import * as THREE from "three";
 import { VehicleBody } from "@/components/game/scene/vehicle-body";
 import { getVehicle } from "@/lib/game/vehicles";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
-import { raceColorByHex, RACE_COLORS } from "@/lib/multiplayer/race-colors";
 
 interface RemoteCarProps {
   playerId: string;
   color: string;
   vehicleId: string;
 }
+
+const FALLBACK_COLORS = ["#38bdf8", "#f472b6", "#a78bfa", "#34d399", "#fbbf24", "#f59e0b"];
 
 function RemoteCar({ playerId, color, vehicleId }: RemoteCarProps) {
   const meshRef = useRef<THREE.Group>(null);
@@ -89,13 +90,12 @@ function RemoteCar({ playerId, color, vehicleId }: RemoteCarProps) {
   });
 
   const vehicle = getVehicle(vehicleId);
-  const dark = raceColorByHex(color)?.hexDark ?? vehicle.paintDark;
   return (
     <group ref={meshRef}>
       <VehicleBody
         id={vehicle.id}
         paint={color}
-        paintDark={dark}
+        paintDark={vehicle.paintDark}
         simple
       />
     </group>
@@ -123,7 +123,7 @@ export function RemotePlayers() {
         <RemoteCar
           key={p.id}
           playerId={p.id}
-          color={p.paint || RACE_COLORS[i % RACE_COLORS.length].hex}
+          color={p.paint || FALLBACK_COLORS[i % FALLBACK_COLORS.length]}
           vehicleId={p.vehicleId || currentRoom.vehicleId}
         />
       ))}

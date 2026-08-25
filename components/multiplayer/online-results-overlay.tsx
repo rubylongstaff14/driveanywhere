@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import { formatLapTime } from "@/lib/utils/format";
 import { TrackDeltaOverview } from "@/components/multiplayer/track-delta-overview";
-import { raceColorByHex } from "@/lib/multiplayer/race-colors";
 import type { RouteData } from "@/lib/validation/route-data";
 
 export function OnlineResultsOverlay({ route }: { route: RouteData }) {
@@ -59,8 +58,7 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
             const delta =
               winner?.timeMs && r.timeMs ? r.timeMs - winner.timeMs : null;
             const isMe = r.playerId === myId;
-            const swatch =
-              raceColorByHex(r.paint)?.hex ?? r.paint ?? "#94a3b8";
+            const swatch = r.paint ?? "#94a3b8";
             return (
               <div
                 key={r.playerId}

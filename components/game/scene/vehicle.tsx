@@ -129,13 +129,23 @@ export function Vehicle({ route, samples }: VehicleProps) {
   const toggleCamera = useGameStore((s) => s.toggleCamera);
   const setHud     = useGameStore((s) => s.setHud);
   const weather    = useGameStore((s) => s.weather);
-  const driveTuning = useMemo(
-    () => ({
+  const racingOnline = useMultiplayerStore((s) => s.racing);
+  const myRacePosition = useMultiplayerStore((s) => {
+    if (!s.myId) return 1;
+    return s.racePositions.find((p) => p.playerId === s.myId)?.position ?? 1;
+  });
+  /** Catch-up assist: anyone not leading gets +2% speed & cornering. */
+  const turboActive = racingOnline && myRacePosition > 1;
+  const driveTuning = useMemo(() => {
+    const catchUp = turboActive ? 1.02 : 1;
+    return {
       ...vehicle.tuning,
-      gripMul: vehicle.tuning.gripMul * weatherGripMul(weather),
-    }),
-    [vehicle.tuning, weather],
-  );
+      maxSpeedMul: vehicle.tuning.maxSpeedMul * catchUp,
+      accelMul: vehicle.tuning.accelMul * catchUp,
+      gripMul: vehicle.tuning.gripMul * weatherGripMul(weather) * catchUp,
+      steerMul: vehicle.tuning.steerMul * catchUp,
+    };
+  }, [turboActive, vehicle.tuning, weather]);
 
   const { camera, gl } = useThree();
   // Store camera in a ref so we can mutate .fov without triggering React

@@ -1,7 +1,7 @@
 import { WebSocketServer } from "ws";
 import { Room } from "./room";
 import { parseVehicleId } from "../lib/game/vehicles";
-import { isRaceHexTaken, nextFreeRaceHex, normalizeRaceHex, } from "../lib/multiplayer/race-colors";
+import { claimPaintHex, isPaintHexTaken, normalizePaintHex, } from "../lib/multiplayer/race-colors";
 const PORT = Number(process.env.WS_PORT) || 8080;
 const wss = new WebSocketServer({ port: PORT });
 const rooms = new Map();
@@ -17,11 +17,7 @@ function sendTo(ws, msg) {
     catch { /* disconnected */ }
 }
 function claimPaint(room, requested, exceptPlayerId) {
-    const normalized = normalizeRaceHex(requested);
-    if (normalized && !isRaceHexTaken(room.players, normalized, exceptPlayerId)) {
-        return normalized;
-    }
-    return nextFreeRaceHex(room.players, exceptPlayerId) ?? "#e11d48";
+    return claimPaintHex(room.players, requested, [], exceptPlayerId);
 }
 function cleanupEmptyRooms() {
     for (const [id, room] of rooms) {
@@ -133,15 +129,15 @@ wss.on("connection", (ws) => {
                     break;
                 player.vehicleId = parseVehicleId(msg.vehicleId);
                 if (typeof msg.paint === "string" && msg.paint.length >= 4) {
-                    const normalized = normalizeRaceHex(msg.paint);
+                    const normalized = normalizePaintHex(msg.paint);
                     if (!normalized) {
                         sendTo(ws, {
                             type: "room_error",
-                            message: "Pick a race colour from the lobby swatches",
+                            message: "Pick a valid paint colour from your unlocked garage paints",
                         });
                         break;
                     }
-                    if (isRaceHexTaken(room.players, normalized, player.id)) {
+                    if (isPaintHexTaken(room.players, normalized, player.id)) {
                         sendTo(ws, {
                             type: "room_error",
                             message: "Can't pick — that colour is already taken",

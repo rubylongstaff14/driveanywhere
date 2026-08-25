@@ -1,32 +1,49 @@
 import { describe, expect, it } from "vitest";
 import {
-  isRaceHexTaken,
-  nextFreeRaceHex,
-  normalizeRaceHex,
-  RACE_COLORS,
+  claimPaintHex,
+  isPaintHexTaken,
+  normalizePaintHex,
 } from "@/lib/multiplayer/race-colors";
+import {
+  availablePaints,
+  stockIdsFor,
+} from "@/lib/game/cosmetics";
 import {
   compactPathSamples,
   progressAlongRoad,
   timeAtProgress,
 } from "@/lib/game/route-progress";
 
-describe("race colours", () => {
-  it("normalises only the universal palette", () => {
-    expect(normalizeRaceHex(RACE_COLORS[1].hex)).toBe(
-      RACE_COLORS[1].hex.toLowerCase(),
-    );
-    expect(normalizeRaceHex("#abcdef")).toBeNull();
+describe("paint claims", () => {
+  it("normalises hex paints", () => {
+    expect(normalizePaintHex("#AbCdEf")).toBe("#abcdef");
+    expect(normalizePaintHex("red")).toBeNull();
   });
 
-  it("blocks taken colours for other players", () => {
+  it("blocks taken paints for other players", () => {
     const players = [
-      { id: "a", paint: RACE_COLORS[0].hex },
-      { id: "b", paint: RACE_COLORS[1].hex },
+      { id: "a", paint: "#c8102e" },
+      { id: "b", paint: "#1a2744" },
     ];
-    expect(isRaceHexTaken(players, RACE_COLORS[0].hex, "c")).toBe(true);
-    expect(isRaceHexTaken(players, RACE_COLORS[0].hex, "a")).toBe(false);
-    expect(nextFreeRaceHex(players)).toBe(RACE_COLORS[2].hex);
+    expect(isPaintHexTaken(players, "#c8102e", "c")).toBe(true);
+    expect(isPaintHexTaken(players, "#c8102e", "a")).toBe(false);
+    expect(claimPaintHex(players, "#c8102e", ["#c8102e", "#10b981"])).toBe(
+      "#10b981",
+    );
+  });
+});
+
+describe("available paints", () => {
+  it("includes base paints without unlocks", () => {
+    const base = availablePaints("sports", stockIdsFor("sports"));
+    expect(base.length).toBeGreaterThanOrEqual(2);
+    expect(base.every((p) => p.slot === "paint")).toBe(true);
+  });
+
+  it("adds unlocked legendary paints to the picker", () => {
+    const unlocked = [...stockIdsFor("sports"), "sports-paint-obsidian"];
+    const paints = availablePaints("sports", unlocked);
+    expect(paints.some((p) => p.id === "sports-paint-obsidian")).toBe(true);
   });
 });
 
