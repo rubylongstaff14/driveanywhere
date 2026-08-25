@@ -110,6 +110,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
             route.slug === "egypt-pyramids" ||
             route.slug === "dubai-marina-circuit"
           }
+          alpine={route.slug === "alps-mountain-pass"}
           weather={weather}
         />
         <RouteIntroCamera route={route} samples={samples} />

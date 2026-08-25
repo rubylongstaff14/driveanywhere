@@ -479,6 +479,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
     const after = body.translation();
     const rot = body.rotation();
     carTelemetry.x = after.x;
+    carTelemetry.y = after.y;
     carTelemetry.z = after.z;
     carTelemetry.speedKph = Math.abs(drive.forwardSpeed) * 3.6;
     carTelemetry.offRoad = !onRoad;

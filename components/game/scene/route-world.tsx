@@ -60,6 +60,7 @@ import { buildTracksideFurniture } from "@/lib/game/track-furniture";
 import { findTrackOverpasses } from "@/lib/game/track-overpasses";
 import { buildTurnSigns } from "@/lib/game/track-signs";
 import {
+  buildAlpineBackdropPeaks,
   buildAlpineCliffs,
   buildAlpineTerrainPads,
 } from "@/lib/game/alpine-terrain";
@@ -682,6 +683,10 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
         : [],
     [isAlps, samples, route.roadWidth],
   );
+  const alpinePeaks = useMemo(
+    () => (isAlps ? buildAlpineBackdropPeaks(samples) : []),
+    [isAlps, samples],
+  );
 
   // River sits east of the loop (high-x side) for Westminster and Embankment
   const riverCX = bounds.maxX + 60;
@@ -1087,7 +1092,9 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
         </RigidBody>
       )}
 
-      {/* F1 Tecpro soft-wall — stacked cushions + rubber plinth */}
+      {/* F1 Tecpro — city circuits only (Alps uses stone walls) */}
+      {!isAlps && (
+        <>
       {([0, 1] as const).map((parity) => {
         const barriers = visualWalls.filter((wall) => wall.stripe === parity);
         return (
@@ -1188,6 +1195,38 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             />
           ))}
       </Instances>
+        </>
+      )}
+
+      {/* Alpine stone / timber guardrail */}
+      {isAlps && (
+        <>
+          <Instances limit={visualWalls.length + 1}>
+            <boxGeometry args={[0.55, 0.95, 1.85]} />
+            <meshStandardMaterial color="#6a6e72" roughness={0.94} flatShading />
+            {visualWalls.map((wall) => (
+              <Instance
+                key={`alps-stone-${wall.key}`}
+                position={[wall.pos[0], wall.pos[1] + 0.05, wall.pos[2]]}
+                rotation={wall.rot}
+                scale={[1, 1, (wall.hl * 2) / 1.85]}
+              />
+            ))}
+          </Instances>
+          <Instances limit={visualWalls.length + 1}>
+            <boxGeometry args={[0.22, 0.18, 1.85]} />
+            <meshStandardMaterial color="#5c4332" roughness={0.88} />
+            {visualWalls.map((wall) => (
+              <Instance
+                key={`alps-rail-${wall.key}`}
+                position={[wall.pos[0], wall.pos[1] + 0.72, wall.pos[2]]}
+                rotation={wall.rot}
+                scale={[1, 1, (wall.hl * 2) / 1.85]}
+              />
+            ))}
+          </Instances>
+        </>
+      )}
 
       <Instances limit={Math.max(1, tyreStacks.length)}>
               <torusGeometry args={[0.32, 0.11, 6, 10]} />
@@ -1656,36 +1695,72 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       {/* --- Alps Mountain Pass --- */}
       {isAlps && (
         <>
-          {/* Collidable rock faces hugging the climbing ribbon */}
+          {/* Shoulder pads + cliff faces (colliders elsewhere) */}
           {alpineTerrain.map((block) => {
             const [hw, hh, hl] = block.halfExtents;
             const color =
               block.variant === "snow"
-                ? "#8a9498"
+                ? "#9aa4a8"
                 : block.variant === "grass"
-                  ? "#4a6b3a"
-                  : "#5c6a5e";
-            const snowCap = block.variant === "snow" && hh > 12;
+                  ? "#4f6e3f"
+                  : block.variant === "scree"
+                    ? "#7a7468"
+                    : "#5a655c";
+            const snowCap = block.variant === "snow" && hh > 10;
             return (
               <group
                 key={`${block.key}-mesh`}
                 position={block.pos}
                 rotation={block.rot}
               >
-                <mesh castShadow={quality.shadows}>
-                  <boxGeometry args={[hw * 2, hh * 2, hl * 2]} />
-                  <meshStandardMaterial
-                    color={color}
-                    roughness={0.96}
-                    flatShading
-                  />
-                </mesh>
+                {block.shape === "boulder" ? (
+                  <mesh castShadow={quality.shadows} rotation={[0.2, 0.4, 0.1]}>
+                    <dodecahedronGeometry args={[Math.max(hw, hh, hl) * 1.05, 0]} />
+                    <meshStandardMaterial
+                      color={color}
+                      roughness={0.97}
+                      flatShading
+                    />
+                  </mesh>
+                ) : block.shape === "wedge" ? (
+                  <>
+                    <mesh castShadow={quality.shadows} position={[hw * 0.15, 0, 0]}>
+                      <boxGeometry args={[hw * 1.6, hh * 2, hl * 2]} />
+                      <meshStandardMaterial
+                        color={color}
+                        roughness={0.96}
+                        flatShading
+                      />
+                    </mesh>
+                    <mesh
+                      castShadow={quality.shadows}
+                      position={[-hw * 0.35, hh * 0.15, 0]}
+                      rotation={[0, 0, -0.35]}
+                    >
+                      <boxGeometry args={[hw * 1.1, hh * 1.5, hl * 1.6]} />
+                      <meshStandardMaterial
+                        color="#4e584f"
+                        roughness={0.97}
+                        flatShading
+                      />
+                    </mesh>
+                  </>
+                ) : (
+                  <mesh castShadow={quality.shadows}>
+                    <boxGeometry args={[hw * 2, hh * 2, hl * 2]} />
+                    <meshStandardMaterial
+                      color={color}
+                      roughness={0.96}
+                      flatShading
+                    />
+                  </mesh>
+                )}
                 {snowCap && (
-                  <mesh position={[0, hh * 0.72, 0]}>
-                    <boxGeometry args={[hw * 2.02, hh * 0.38, hl * 2.02]} />
+                  <mesh position={[0, hh * 0.78, 0]}>
+                    <boxGeometry args={[hw * 2.05, hh * 0.32, hl * 2.05]} />
                     <meshStandardMaterial
                       color="#eef3f7"
-                      roughness={0.88}
+                      roughness={0.86}
                       flatShading
                     />
                   </mesh>
@@ -1694,60 +1769,88 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             );
           })}
 
-          {/* Distant backdrop peaks — far from the drivable corridor only */}
-          {samples.map((s, i) => {
-            if (i % Math.max(4, Math.floor(samples.length / 18)) !== 0) return null;
-            const sideOffset = 265 + (i % 3) * 45;
-            const peakH = 320 + (i % 4) * 80;
-            const peakR = 95 + (i % 3) * 15;
-            const baseY = Math.max(0, s.position.y - 24);
-            const peakMat = i % 2 === 0 ? "#556658" : "#667868";
-            const snowMat = "#eef3f7";
-
-            const makePeak = (side: number, tag: string) => (
-              <group
-                key={`alps-${tag}-${i}`}
-                position={[
-                  s.position.x + s.normal.x * side * sideOffset,
-                  baseY,
-                  s.position.z + s.normal.z * side * sideOffset,
-                ]}
-                rotation={[0, i * 0.31 * side, 0]}
+          {/* Distant ridge + Matterhorn hero peak */}
+          {alpinePeaks.map((peak) => (
+            <group key={peak.key} position={peak.pos}>
+              <mesh
+                position={[0, peak.height / 2, 0]}
+                castShadow={quality.shadows}
               >
-                <mesh position={[0, peakH / 2, 0]} castShadow={quality.shadows}>
-                  <coneGeometry args={[peakR, peakH, 8]} />
-                  <meshStandardMaterial color={peakMat} roughness={0.97} flatShading />
+                <coneGeometry args={[peak.radius, peak.height, peak.key === "matterhorn" ? 6 : 7]} />
+                <meshStandardMaterial
+                  color={peak.key === "matterhorn" ? "#5a6460" : "#556658"}
+                  roughness={0.97}
+                  flatShading
+                />
+              </mesh>
+              {peak.snow && (
+                <mesh position={[0, peak.height * 0.86, 0]}>
+                  <coneGeometry
+                    args={[
+                      peak.radius * (peak.key === "matterhorn" ? 0.42 : 0.36),
+                      peak.height * (peak.key === "matterhorn" ? 0.22 : 0.16),
+                      6,
+                    ]}
+                  />
+                  <meshStandardMaterial
+                    color="#eef3f7"
+                    roughness={0.82}
+                    flatShading
+                  />
                 </mesh>
-                <mesh position={[0, peakH * 0.88, 0]}>
-                  <coneGeometry args={[peakR * 0.38, peakH * 0.16, 8]} />
-                  <meshStandardMaterial color={snowMat} roughness={0.84} flatShading />
+              )}
+              {peak.key === "matterhorn" && (
+                <mesh
+                  position={[peak.radius * 0.55, peak.height * 0.42, peak.radius * 0.2]}
+                  castShadow={quality.shadows}
+                >
+                  <coneGeometry args={[peak.radius * 0.55, peak.height * 0.62, 5]} />
+                  <meshStandardMaterial
+                    color="#4e5854"
+                    roughness={0.97}
+                    flatShading
+                  />
                 </mesh>
-              </group>
-            );
+              )}
+            </group>
+          ))}
 
+          {/* High-elevation snow banks along the ribbon */}
+          {samples.map((s, i) => {
+            if (s.position.y < 40 || i % 7 !== 0) return null;
+            const side = i % 2 === 0 ? 1 : -1;
+            const offset = route.roadWidth / 2 + 4.5;
             return (
-              <group key={`alps-peaks-${i}`}>
-                {makePeak(-1, "L")}
-                {makePeak(1, "R")}
-              </group>
+              <mesh
+                key={`snowbank-${i}`}
+                position={[
+                  s.position.x + s.normal.x * side * offset,
+                  s.position.y + 0.35,
+                  s.position.z + s.normal.z * side * offset,
+                ]}
+                rotation={[0, Math.atan2(s.tangent.x, s.tangent.z), 0.08 * side]}
+              >
+                <boxGeometry args={[3.2, 0.9, 8]} />
+                <meshStandardMaterial color="#e8eef4" roughness={0.9} flatShading />
+              </mesh>
             );
           })}
 
-          {/* Small alpine chalet clusters placed on the nearest ribbon height */}
+          {/* Alpine chalet clusters — clear of the racing line */}
           {[
-            [bounds.minX - 110, gcz - 120],
-            [bounds.minX - 70, gcz + 110],
-            [gcx + 210, bounds.minZ - 120],
-            [gcx + 260, bounds.maxZ + 90],
-            [bounds.maxX + 110, gcz - 160],
-            [bounds.maxX + 90, gcz + 150],
+            [bounds.minX - 130, gcz - 140],
+            [bounds.minX - 90, gcz + 130],
+            [gcx + 230, bounds.minZ - 140],
+            [gcx + 280, bounds.maxZ + 110],
+            [bounds.maxX + 130, gcz - 180],
+            [bounds.maxX + 110, gcz + 170],
           ].map(([x, z], i) => {
             const nearest = nearestRoadSample(samples, x, z);
-            const y = Math.max(0, nearest?.position.y ?? 0) - 1.5;
+            const y = Math.max(0, nearest?.position.y ?? 0) - 1.2;
             const roadDist = nearest
               ? Math.hypot(x - nearest.position.x, z - nearest.position.z)
               : 999;
-            if (roadDist < route.roadWidth / 2 + 28) return null;
+            if (roadDist < route.roadWidth / 2 + 36) return null;
             return (
               <RigidBody
                 key={`chalet-${i}`}
@@ -1761,44 +1864,86 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                     <boxGeometry args={[11, 8, 8]} />
                     <meshStandardMaterial color="#7a6451" roughness={0.96} />
                   </mesh>
-                  <mesh position={[0, 9, 0]} castShadow={quality.shadows}>
-                    <coneGeometry args={[7.5, 6, 4]} />
-                    <meshStandardMaterial color="#564235" roughness={0.94} flatShading />
+                  <mesh position={[0, 9.2, 0]} castShadow={quality.shadows}>
+                    <coneGeometry args={[7.8, 6.2, 4]} />
+                    <meshStandardMaterial
+                      color="#4a3428"
+                      roughness={0.94}
+                      flatShading
+                    />
+                  </mesh>
+                  <mesh position={[0, 3.2, 4.2]}>
+                    <boxGeometry args={[2.2, 2.8, 0.2]} />
+                    <meshStandardMaterial
+                      color="#1a2838"
+                      emissive="#ffaa44"
+                      emissiveIntensity={0.35}
+                    />
                   </mesh>
                 </group>
               </RigidBody>
             );
           })}
-          {/* Pine trees along the roadside */}
-          {Array.from({ length: quality.sceneryDensity >= 0.8 ? 64 : 36 }).map(
-            (_, i, items) => {
-              const s = samples[Math.floor((i / items.length) * samples.length)];
-              if (!s) return null;
-              const side = i % 2 === 0 ? 1 : -1;
-              const offset = 18 + (i % 5) * 4;
-              const tx = s.position.x + s.normal.x * side * offset;
-              const tz = s.position.z + s.normal.z * side * offset;
-              return (
-                <group
-                  key={`pine-${i}`}
-                  position={[tx, Math.max(0, s.position.y - 0.4), tz]}
-                >
-                  <mesh position={[0, 4, 0]}>
-                    <coneGeometry args={[2.8, 8, 5]} />
-                    <meshStandardMaterial color="#2d5a27" roughness={0.9} flatShading />
-                  </mesh>
-                  <mesh position={[0, 9, 0]}>
-                    <coneGeometry args={[2.2, 7, 5]} />
-                    <meshStandardMaterial color="#3a6b32" roughness={0.9} flatShading />
-                  </mesh>
-                  <mesh position={[0, 1.2, 0]}>
-                    <cylinderGeometry args={[0.35, 0.45, 2.4, 5]} />
-                    <meshStandardMaterial color="#4a3828" roughness={0.95} />
-                  </mesh>
-                </group>
-              );
-            },
-          )}
+
+          {/* Dense pine belts — pushed clear of asphalt */}
+          {Array.from({
+            length: quality.sceneryDensity >= 0.8 ? 96 : 52,
+          }).map((_, i, items) => {
+            const s = samples[Math.floor((i / items.length) * samples.length)];
+            if (!s) return null;
+            const side = i % 2 === 0 ? 1 : -1;
+            const offset = 26 + (i % 7) * 5.5;
+            const tx = s.position.x + s.normal.x * side * offset;
+            const tz = s.position.z + s.normal.z * side * offset;
+            const scale = 0.85 + (i % 5) * 0.12;
+            const trunkH = 2.6 * scale;
+            return (
+              <group
+                key={`pine-${i}`}
+                position={[tx, Math.max(0, s.position.y - 0.35), tz]}
+                scale={scale}
+              >
+                <mesh position={[0, trunkH / 2, 0]}>
+                  <cylinderGeometry args={[0.32, 0.48, trunkH, 5]} />
+                  <meshStandardMaterial color="#3d2c1e" roughness={0.95} />
+                </mesh>
+                <mesh position={[0, trunkH + 2.8, 0]} castShadow={quality.shadows}>
+                  <coneGeometry args={[3.2, 7.5, 6]} />
+                  <meshStandardMaterial
+                    color="#1f4a22"
+                    roughness={0.92}
+                    flatShading
+                  />
+                </mesh>
+                <mesh position={[0, trunkH + 6.2, 0]} castShadow={quality.shadows}>
+                  <coneGeometry args={[2.4, 6.2, 6]} />
+                  <meshStandardMaterial
+                    color="#2d5e2c"
+                    roughness={0.9}
+                    flatShading
+                  />
+                </mesh>
+                <mesh position={[0, trunkH + 9.2, 0]}>
+                  <coneGeometry args={[1.5, 4.2, 5]} />
+                  <meshStandardMaterial
+                    color="#3a6f35"
+                    roughness={0.88}
+                    flatShading
+                  />
+                </mesh>
+              </group>
+            );
+          })}
+
+          {/* Valley meadow floor under the lower circuit */}
+          <mesh
+            position={[gcx, -0.8, gcz]}
+            rotation={[-Math.PI / 2, 0, 0]}
+            receiveShadow={quality.shadows}
+          >
+            <planeGeometry args={[Math.max(900, spanX + 500), Math.max(900, spanZ + 500)]} />
+            <meshStandardMaterial color="#3d5a38" roughness={1} />
+          </mesh>
         </>
       )}
 

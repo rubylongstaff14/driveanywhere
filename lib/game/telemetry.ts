@@ -6,6 +6,7 @@
  */
 export interface CarTelemetry {
   x: number;
+  y: number;
   z: number;
   yaw: number;
   speedKph: number;
@@ -23,6 +24,7 @@ export interface CarTelemetry {
 
 export const carTelemetry: CarTelemetry = {
   x: 0,
+  y: 0,
   z: 0,
   yaw: 0,
   speedKph: 0,
@@ -37,6 +39,7 @@ export const carTelemetry: CarTelemetry = {
 
 export function resetTelemetry(): void {
   carTelemetry.x = 0;
+  carTelemetry.y = 0;
   carTelemetry.z = 0;
   carTelemetry.yaw = 0;
   carTelemetry.speedKph = 0;
