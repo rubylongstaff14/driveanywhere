@@ -8,10 +8,11 @@ import { ONLINE_MAPS } from "@/lib/game/online-maps";
 import { lobbyDifficultyToSkill } from "@/lib/game/race-setup";
 import {
   availablePaints,
+  cosmeticsForSlot,
 } from "@/lib/game/cosmetics";
 import { isPaintHexTaken } from "@/lib/multiplayer/race-colors";
 import { useProgressionStore } from "@/stores/progression-store";
-import type { VehicleId } from "@/lib/game/vehicles";
+import { parseVehicleId } from "@/lib/game/vehicles";
 
 interface RoomLobbyProps {
   roomId: string;
@@ -41,6 +42,7 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
   } = useMultiplayerStore();
 
   const unlocked = useProgressionStore((s) => s.unlocked);
+  const equip = useProgressionStore((s) => s.equip);
   const hydrateProgression = useProgressionStore((s) => s.hydrate);
   const progressionHydrated = useProgressionStore((s) => s.hydrated);
 
@@ -84,9 +86,13 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
   const me = currentRoom.players.find((p) => p.id === myId);
   const allReady =
     currentRoom.players.every((p) => p.ready) && currentRoom.players.length >= 2;
-  const lobbyPaints = me
-    ? availablePaints(me.vehicleId as VehicleId, unlocked)
-    : [];
+  const myVehicleId = parseVehicleId(me?.vehicleId);
+  const unlockedSet = new Set(unlocked);
+  const lobbyPaints = cosmeticsForSlot(myVehicleId, "paint").map((c) => {
+    const isBase = c.rarity === "consumer" || c.rarity === "industrial";
+    const owned = isBase || unlockedSet.has(c.id);
+    return { ...c, owned, isBase };
+  });
 
   const vehicles = VEHICLE_LIST.map((v) => ({ id: v.id, name: v.name }));
   const maps = ONLINE_MAPS;
@@ -266,7 +272,7 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                       className="rounded-lg border border-white/10 bg-ink-975 px-2 py-1.5 text-xs text-white"
                       value={me.vehicleId}
                       onChange={(e) => {
-                        const nextId = e.target.value as VehicleId;
+                        const nextId = parseVehicleId(e.target.value);
                         const paints = availablePaints(nextId, unlocked);
                         const keep =
                           me.paint &&
@@ -285,9 +291,9 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                       ))}
                     </select>
                   </div>
-                  <div className="w-full max-w-sm">
+                  <div className="w-full max-w-md">
                     <p className="mb-1.5 text-center text-[10px] uppercase tracking-widest text-mist">
-                      Paint — base + unlocked shop colours
+                      Pick paint (base colours free · shop unlocks extra)
                     </p>
                     <div className="flex flex-wrap justify-center gap-2">
                       {lobbyPaints.map((c) => {
@@ -299,48 +305,52 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                         );
                         const selected =
                           (me.paint ?? "").toLowerCase() === hex.toLowerCase();
-                        const isBase =
-                          c.rarity === "consumer" || c.rarity === "industrial";
+                        const blocked = !c.owned || taken;
                         return (
                           <button
                             key={c.id}
                             type="button"
-                            disabled={taken}
+                            disabled={blocked}
                             title={
-                              taken
-                                ? `Can't pick — ${c.name} is already taken`
-                                : `${c.name}${isBase ? " (base)" : " (unlocked)"}`
+                              !c.owned
+                                ? `Unlock ${c.name} in the Shop`
+                                : taken
+                                  ? `Can't pick — ${c.name} is already taken`
+                                  : c.name
                             }
                             onClick={() => {
-                              if (taken) return;
+                              if (blocked) return;
                               setLoadout(me.vehicleId, hex);
+                              if (c.owned) equip(myVehicleId, "paintId", c.id);
                             }}
-                            className={`relative h-8 w-8 rounded-full border-2 transition ${
+                            className={`relative h-9 w-9 rounded-full border-2 transition ${
                               selected
-                                ? "scale-110 border-white"
-                                : "border-white/20"
-                            } ${taken ? "cursor-not-allowed opacity-35" : "hover:scale-105"}`}
+                                ? "scale-110 border-white ring-2 ring-accent/50"
+                                : "border-white/25"
+                            } ${blocked ? "cursor-not-allowed opacity-40" : "hover:scale-105"}`}
                             style={{ backgroundColor: hex }}
                           >
                             {taken && (
-                              <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-ink-975">
+                              <span className="absolute inset-0 flex items-center justify-center text-[10px] font-bold text-black">
                                 ✕
+                              </span>
+                            )}
+                            {!c.owned && !taken && (
+                              <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-black/80">
+                                🔒
                               </span>
                             )}
                           </button>
                         );
                       })}
                     </div>
-                    {error?.toLowerCase().includes("colour") ||
-                    error?.toLowerCase().includes("color") ||
-                    error?.toLowerCase().includes("can't pick") ||
-                    error?.toLowerCase().includes("paint") ? (
+                    {error ? (
                       <p className="mt-2 text-center text-[10px] text-signal">
                         {error}
                       </p>
                     ) : (
                       <p className="mt-2 text-center text-[9px] text-mist/70">
-                        Unlock more in Shop/Garage. Taken paints show ✕.
+                        Tap a swatch to equip. Locked = unlock in Shop. ✕ = taken by another player.
                       </p>
                     )}
                   </div>

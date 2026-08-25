@@ -17,9 +17,9 @@ describe("class fairness", () => {
 });
 
 describe("cosmetics", () => {
-  it("ships 24 items per class", () => {
-    expect(cosmeticsForVehicle("sports")).toHaveLength(24);
-    expect(cosmeticsForVehicle("f1")).toHaveLength(24);
+  it("ships 28 items per class", () => {
+    expect(cosmeticsForVehicle("sports")).toHaveLength(28);
+    expect(cosmeticsForVehicle("f1")).toHaveLength(28);
   });
 
   it("defaults to factory parts", () => {

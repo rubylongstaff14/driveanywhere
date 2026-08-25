@@ -200,7 +200,30 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
       sendMsg({ type: "create_room", name, map, difficulty, aiCount, playerName, vehicleId, paint }),
     joinRoom: (roomId, playerName, vehicleId, paint) =>
       sendMsg({ type: "join_room", roomId, playerName, vehicleId, paint }),
-    setLoadout: (vehicleId, paint) => sendMsg({ type: "set_loadout", vehicleId, paint }),
+    setLoadout: (vehicleId, paint) => {
+      const { currentRoom, myId, connected } = get();
+      if (!connected) {
+        set({ error: "Not connected to multiplayer server — can't change paint" });
+        return;
+      }
+      // Optimistic UI so swatches respond even if the room broadcast is slow.
+      if (currentRoom && myId) {
+        const players = currentRoom.players.map((p) =>
+          p.id === myId
+            ? {
+                ...p,
+                vehicleId,
+                paint: paint ?? p.paint,
+              }
+            : p,
+        );
+        set({
+          currentRoom: { ...currentRoom, players },
+          error: null,
+        });
+      }
+      sendMsg({ type: "set_loadout", vehicleId, paint });
+    },
     leaveRoom: () => {
       sendMsg({ type: "leave_room" });
       set({

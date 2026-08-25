@@ -86,6 +86,22 @@ function paintCatalog(id: VehicleId): CosmeticItem[] {
       paint: stock.paint,
       paintDark: stock.paintDark,
     }),
+    item(id, "paint", "blue", "Racing Blue", "consumer", {
+      paint: "#1d6bff",
+      paintDark: "#0c3a9a",
+    }),
+    item(id, "paint", "green", "Track Green", "consumer", {
+      paint: "#14b86a",
+      paintDark: "#0a6b3c",
+    }),
+    item(id, "paint", "amber", "Grid Amber", "consumer", {
+      paint: "#f0b429",
+      paintDark: "#a06a10",
+    }),
+    item(id, "paint", "white", "Clean White", "consumer", {
+      paint: "#f4f4f5",
+      paintDark: "#a1a1aa",
+    }),
     item(id, "paint", "midnight", "Midnight Pearl", "industrial", {
       paint: "#1a2744",
       paintDark: "#0c1220",

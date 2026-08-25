@@ -143,6 +143,8 @@ wss.on("connection", (ws) => {
               type: "room_error",
               message: "Pick a valid paint colour from your unlocked garage paints",
             });
+            // Re-sync so optimistic client UI rolls back
+            sendTo(ws, { type: "room_updated", room: room.toInfo() });
             break;
           }
           if (isPaintHexTaken(room.players, normalized, player.id)) {
@@ -150,6 +152,7 @@ wss.on("connection", (ws) => {
               type: "room_error",
               message: "Can't pick — that colour is already taken",
             });
+            sendTo(ws, { type: "room_updated", room: room.toInfo() });
             break;
           }
           player.paint = normalized;
