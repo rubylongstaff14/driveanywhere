@@ -74,10 +74,17 @@ export function Vehicle({ route, samples }: VehicleProps) {
   const loadout = useProgressionStore(
     (s) => s.loadouts[selectedVehicleId] ?? defaultLoadout(selectedVehicleId),
   );
-  const visual = useMemo(
-    () => resolveLoadoutVisual(selectedVehicleId, loadout),
-    [loadout, selectedVehicleId],
-  );
+  const onlinePaint = useMultiplayerStore((s) => {
+    const me = s.currentRoom?.players.find((p) => p.id === s.myId);
+    return me?.paint ?? null;
+  });
+  const visual = useMemo(() => {
+    const base = resolveLoadoutVisual(selectedVehicleId, loadout);
+    if (onlinePaint && /^#[0-9a-fA-F]{6}$/.test(onlinePaint)) {
+      return { ...base, paint: onlinePaint, paintDark: onlinePaint };
+    }
+    return base;
+  }, [loadout, onlinePaint, selectedVehicleId]);
   const engineVolume = useSettingsStore((s) => s.engineVolume);
 
   const lastHudAt   = useRef(0);

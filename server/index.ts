@@ -2,6 +2,11 @@ import { WebSocketServer, WebSocket } from "ws";
 import { Room } from "./room";
 import type { ClientMessage, ServerMessage } from "../lib/multiplayer/protocol";
 import { parseVehicleId } from "../lib/game/vehicles";
+import {
+  isRaceHexTaken,
+  nextFreeRaceHex,
+  normalizeRaceHex,
+} from "../lib/multiplayer/race-colors";
 
 const PORT = Number(process.env.WS_PORT) || 8080;
 
@@ -16,6 +21,18 @@ function genPlayerId(): string {
 
 function sendTo(ws: WebSocket, msg: ServerMessage): void {
   try { ws.send(JSON.stringify(msg)); } catch { /* disconnected */ }
+}
+
+function claimPaint(
+  room: Room,
+  requested: string | undefined,
+  exceptPlayerId?: string,
+): string {
+  const normalized = normalizeRaceHex(requested);
+  if (normalized && !isRaceHexTaken(room.players, normalized, exceptPlayerId)) {
+    return normalized;
+  }
+  return nextFreeRaceHex(room.players, exceptPlayerId) ?? "#e11d48";
 }
 
 function cleanupEmptyRooms(): void {
@@ -50,7 +67,8 @@ wss.on("connection", (ws) => {
         const playerId = genPlayerId();
         const vehicleId = parseVehicleId(msg.vehicleId);
         room.vehicleId = vehicleId;
-        room.addPlayer(ws, playerId, msg.playerName, vehicleId, true, msg.paint);
+        const paint = claimPaint(room, msg.paint);
+        room.addPlayer(ws, playerId, msg.playerName, vehicleId, true, paint);
         rooms.set(room.id, room);
         playerRooms.set(ws, { roomId: room.id, playerId });
         sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
@@ -66,7 +84,8 @@ wss.on("connection", (ws) => {
         const playerId = genPlayerId();
         const becomeHost = room.humanCount === 0;
         const vehicleId = parseVehicleId(msg.vehicleId);
-        room.addPlayer(ws, playerId, msg.playerName, vehicleId, becomeHost, msg.paint);
+        const paint = claimPaint(room, msg.paint);
+        room.addPlayer(ws, playerId, msg.playerName, vehicleId, becomeHost, paint);
         playerRooms.set(ws, { roomId: room.id, playerId });
         sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
         room.broadcast({ type: "room_updated", room: room.toInfo() }, playerId);
@@ -122,7 +141,22 @@ wss.on("connection", (ws) => {
         if (!player) break;
         player.vehicleId = parseVehicleId(msg.vehicleId);
         if (typeof msg.paint === "string" && msg.paint.length >= 4) {
-          player.paint = msg.paint.slice(0, 16);
+          const normalized = normalizeRaceHex(msg.paint);
+          if (!normalized) {
+            sendTo(ws, {
+              type: "room_error",
+              message: "Pick a race colour from the lobby swatches",
+            });
+            break;
+          }
+          if (isRaceHexTaken(room.players, normalized, player.id)) {
+            sendTo(ws, {
+              type: "room_error",
+              message: "Can't pick — that colour is already taken",
+            });
+            break;
+          }
+          player.paint = normalized;
         }
         room.broadcast({ type: "room_updated", room: room.toInfo() });
         break;
@@ -196,7 +230,13 @@ wss.on("connection", (ws) => {
         if (!info) break;
         const room = rooms.get(info.roomId);
         if (!room || room.status !== "racing") break;
-        room.playerFinished(info.playerId, msg.timeMs, msg.splits);
+        room.playerFinished(
+          info.playerId,
+          msg.timeMs,
+          msg.splits,
+          msg.path,
+          msg.paint,
+        );
         break;
       }
     }

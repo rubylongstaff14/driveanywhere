@@ -47,6 +47,14 @@ export interface RacePosition {
   delta: number | null;
 }
 
+/** Compact progress sample for post-race track delta heatmap. */
+export interface RacePathSample {
+  /** 0–1 along circuit centreline */
+  p: number;
+  /** Race elapsed ms at that progress */
+  t: number;
+}
+
 export interface RaceResult {
   playerId: string;
   playerName: string;
@@ -54,6 +62,10 @@ export interface RaceResult {
   position: number;
   finished: boolean;
   splits?: number[];
+  /** Universal race colour hex — same on every client */
+  paint?: string;
+  /** Spatial timing for track overview heatmap */
+  path?: RacePathSample[];
 }
 
 // --- Client -> Server messages ---
@@ -75,7 +87,13 @@ export type ClientMessage =
   | { type: "loaded" }
   | { type: "chat"; text: string }
   | { type: "car_state"; state: CarState }
-  | { type: "race_finish"; timeMs: number; splits: number[] };
+  | {
+      type: "race_finish";
+      timeMs: number;
+      splits: number[];
+      paint?: string;
+      path?: RacePathSample[];
+    };
 
 // --- Server -> Client messages ---
 

@@ -52,7 +52,12 @@ interface MultiplayerState {
   setLoadout: (vehicleId: string, paint?: string) => void;
   hostKick: (playerId: string) => void;
   hostStart: () => void;
-  reportFinish: (timeMs: number, splits?: number[]) => void;
+  reportFinish: (
+    timeMs: number,
+    splits?: number[],
+    path?: Array<{ p: number; t: number }>,
+    paint?: string,
+  ) => void;
   sendChat: (text: string) => void;
   clearError: () => void;
 }
@@ -214,7 +219,14 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     hostSetVehicle: (vehicleId) => sendMsg({ type: "host_set_vehicle", vehicleId }),
     hostKick: (playerId) => sendMsg({ type: "host_kick", playerId }),
     hostStart: () => sendMsg({ type: "host_start" }),
-    reportFinish: (timeMs, splits?: number[]) => sendMsg({ type: "race_finish", timeMs, splits: splits ?? [] }),
+    reportFinish: (timeMs, splits, path, paint) =>
+      sendMsg({
+        type: "race_finish",
+        timeMs,
+        splits: splits ?? [],
+        path,
+        paint,
+      }),
     sendChat: (text) => sendMsg({ type: "chat", text }),
     clearError: () => set({ error: null }),
   };

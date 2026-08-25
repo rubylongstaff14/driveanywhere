@@ -6,6 +6,11 @@ import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import { VEHICLE_LIST } from "@/lib/game/vehicles";
 import { ONLINE_MAPS } from "@/lib/game/online-maps";
 import { lobbyDifficultyToSkill } from "@/lib/game/race-setup";
+import {
+  isRaceHexTaken,
+  RACE_COLORS,
+  raceColorByHex,
+} from "@/lib/multiplayer/race-colors";
 
 interface RoomLobbyProps {
   roomId: string;
@@ -207,6 +212,14 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
             {currentRoom.players.map((p) => (
               <div key={p.id} className="flex items-center justify-between rounded-lg bg-ink-975 px-4 py-2.5">
                 <div className="flex items-center gap-2">
+                  <span
+                    className="h-3 w-3 rounded-full ring-1 ring-white/20"
+                    style={{
+                      backgroundColor:
+                        raceColorByHex(p.paint)?.hex ?? p.paint ?? "#64748b",
+                    }}
+                    title={raceColorByHex(p.paint)?.label ?? "Race colour"}
+                  />
                   <span className={`h-2 w-2 rounded-full ${p.ready ? "bg-green-400" : "bg-white/20"}`} />
                   <span className="text-sm">
                     {p.name}
@@ -236,17 +249,74 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
           {currentRoom.status === "waiting" && (
             <div className="mt-4 flex flex-col items-center gap-3">
               {me && (
-                <div className="flex items-center gap-2">
-                  <label className="text-[10px] text-mist">Your car</label>
-                  <select
-                    className="rounded-lg border border-white/10 bg-ink-975 px-2 py-1.5 text-xs text-white"
-                    value={me.vehicleId}
-                    onChange={(e) => setLoadout(e.target.value)}
-                  >
-                    {VEHICLE_LIST.map((v) => (
-                      <option key={v.id} value={v.id}>{v.name}</option>
-                    ))}
-                  </select>
+                <div className="flex flex-col items-center gap-2">
+                  <div className="flex items-center gap-2">
+                    <label className="text-[10px] text-mist">Your car</label>
+                    <select
+                      className="rounded-lg border border-white/10 bg-ink-975 px-2 py-1.5 text-xs text-white"
+                      value={me.vehicleId}
+                      onChange={(e) => setLoadout(e.target.value, me.paint)}
+                    >
+                      {VEHICLE_LIST.map((v) => (
+                        <option key={v.id} value={v.id}>{v.name}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="w-full max-w-sm">
+                    <p className="mb-1.5 text-center text-[10px] uppercase tracking-widest text-mist">
+                      Race colour (same on every screen)
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {RACE_COLORS.map((c) => {
+                        const taken = isRaceHexTaken(
+                          currentRoom.players,
+                          c.hex,
+                          me.id,
+                        );
+                        const selected =
+                          (me.paint ?? "").toLowerCase() === c.hex.toLowerCase();
+                        return (
+                          <button
+                            key={c.id}
+                            type="button"
+                            disabled={taken}
+                            title={
+                              taken
+                                ? `Can't pick — ${c.label} is already taken`
+                                : c.label
+                            }
+                            onClick={() => {
+                              if (taken) return;
+                              setLoadout(me.vehicleId, c.hex);
+                            }}
+                            className={`relative h-8 w-8 rounded-full border-2 transition ${
+                              selected
+                                ? "border-white scale-110"
+                                : "border-white/20"
+                            } ${taken ? "cursor-not-allowed opacity-35" : "hover:scale-105"}`}
+                            style={{ backgroundColor: c.hex }}
+                          >
+                            {taken && (
+                              <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-ink-975">
+                                ✕
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    {error?.toLowerCase().includes("colour") ||
+                    error?.toLowerCase().includes("color") ||
+                    error?.toLowerCase().includes("can't pick") ? (
+                      <p className="mt-2 text-center text-[10px] text-signal">
+                        {error}
+                      </p>
+                    ) : (
+                      <p className="mt-2 text-center text-[9px] text-mist/70">
+                        Taken colours show ✕ — emerald is emerald for everyone.
+                      </p>
+                    )}
+                  </div>
                 </div>
               )}
               {me && !me.isHost && (

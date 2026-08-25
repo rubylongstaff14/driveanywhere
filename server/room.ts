@@ -23,6 +23,7 @@ export interface ConnectedPlayer {
   carState: CarState | null;
   finishTimeMs: number | null;
   splits: number[];
+  path: Array<{ p: number; t: number }>;
   loaded: boolean;
 }
 
@@ -108,6 +109,7 @@ export class Room {
       carState: null,
       finishTimeMs: null,
       splits: [],
+      path: [],
       loaded: false,
     };
     this.players.push(player);
@@ -265,11 +267,29 @@ export class Room {
     player.carState = state;
   }
 
-  playerFinished(playerId: string, timeMs: number, splits: number[]): void {
+  playerFinished(
+    playerId: string,
+    timeMs: number,
+    splits: number[],
+    path?: Array<{ p: number; t: number }>,
+    paint?: string,
+  ): void {
     const p = this.players.find((pl) => pl.id === playerId);
     if (!p || p.finishTimeMs !== null) return;
     p.finishTimeMs = timeMs;
     p.splits = splits;
+    if (path && path.length > 0) {
+      p.path = path
+        .filter((s) => Number.isFinite(s.p) && Number.isFinite(s.t))
+        .slice(0, 80)
+        .map((s) => ({
+          p: Math.max(0, Math.min(1, s.p)),
+          t: Math.max(0, Math.round(s.t)),
+        }));
+    }
+    if (typeof paint === "string" && paint.length >= 4) {
+      p.paint = paint.slice(0, 16);
+    }
     if (this.players.every((pl) => pl.finishTimeMs !== null)) {
       this.endRace();
     }
@@ -316,6 +336,8 @@ export class Room {
         position: 0,
         finished: p.finishTimeMs !== null,
         splits: p.splits,
+        paint: p.paint,
+        path: p.path.length > 0 ? p.path : undefined,
       }))
       .sort((a, b) => {
         if (a.finished && !b.finished) return -1;

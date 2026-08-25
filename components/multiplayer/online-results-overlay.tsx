@@ -3,8 +3,11 @@
 import { useRouter } from "next/navigation";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import { formatLapTime } from "@/lib/utils/format";
+import { TrackDeltaOverview } from "@/components/multiplayer/track-delta-overview";
+import { raceColorByHex } from "@/lib/multiplayer/race-colors";
+import type { RouteData } from "@/lib/validation/route-data";
 
-export function OnlineResultsOverlay() {
+export function OnlineResultsOverlay({ route }: { route: RouteData }) {
   const router = useRouter();
   const results = useMultiplayerStore((s) => s.results);
   const myId = useMultiplayerStore((s) => s.myId);
@@ -25,8 +28,8 @@ export function OnlineResultsOverlay() {
   }
 
   return (
-    <div className="absolute inset-0 z-40 flex items-center justify-center bg-ink-975/85 backdrop-blur-sm">
-      <div className="mx-4 w-full max-w-lg rounded-2xl border border-white/10 bg-ink-950 p-6 shadow-2xl">
+    <div className="absolute inset-0 z-40 flex items-center justify-center overflow-y-auto bg-ink-975/85 py-6 backdrop-blur-sm">
+      <div className="mx-4 w-full max-w-xl rounded-2xl border border-white/10 bg-ink-950 p-6 shadow-2xl">
         <div className="mb-5 text-center">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
             Race Complete
@@ -41,7 +44,10 @@ export function OnlineResultsOverlay() {
           )}
         </div>
 
-        {/* Leaderboard */}
+        <div className="mb-5">
+          <TrackDeltaOverview route={route} results={results} myId={myId} />
+        </div>
+
         <div className="mb-5 rounded-xl border border-white/5 bg-ink-975 p-4">
           <div className="mb-2 flex justify-between text-[10px] uppercase tracking-widest text-mist">
             <span>Pos</span>
@@ -50,23 +56,30 @@ export function OnlineResultsOverlay() {
             <span>Delta</span>
           </div>
           {results.map((r) => {
-            const delta = winner?.timeMs && r.timeMs
-              ? r.timeMs - winner.timeMs
-              : null;
+            const delta =
+              winner?.timeMs && r.timeMs ? r.timeMs - winner.timeMs : null;
             const isMe = r.playerId === myId;
+            const swatch =
+              raceColorByHex(r.paint)?.hex ?? r.paint ?? "#94a3b8";
             return (
               <div
                 key={r.playerId}
                 className={`flex items-center justify-between rounded-lg px-3 py-2 text-sm ${
-                  isMe ? "bg-accent/10 border border-accent/20" : ""
+                  isMe ? "border border-accent/20 bg-accent/10" : ""
                 }`}
               >
-                <span className="w-8 font-mono font-bold text-accent">
+                <span className="flex w-10 items-center gap-1.5 font-mono font-bold text-accent">
+                  <span
+                    className="inline-block h-2.5 w-2.5 rounded-full"
+                    style={{ backgroundColor: swatch }}
+                  />
                   P{r.position}
                 </span>
                 <span className="flex-1 text-white">
                   {r.playerName}
-                  {isMe && <span className="ml-1 text-[10px] text-mist">(you)</span>}
+                  {isMe && (
+                    <span className="ml-1 text-[10px] text-mist">(you)</span>
+                  )}
                 </span>
                 <span className="w-20 text-right font-mono text-xs text-white/70">
                   {r.finished && r.timeMs ? formatLapTime(r.timeMs) : "DNF"}
@@ -79,7 +92,6 @@ export function OnlineResultsOverlay() {
           })}
         </div>
 
-        {/* Sector splits for the winner */}
         {winner?.splits && winner.splits.length > 0 && (
           <div className="mb-5 rounded-xl border border-white/5 bg-ink-975 p-4">
             <p className="mb-2 text-[10px] uppercase tracking-widest text-mist">
@@ -87,32 +99,49 @@ export function OnlineResultsOverlay() {
             </p>
             <div className="flex gap-2">
               {winner.splits.map((split, i) => (
-                <div key={i} className="flex-1 rounded-lg bg-ink-950 p-2 text-center">
+                <div
+                  key={i}
+                  className="flex-1 rounded-lg bg-ink-950 p-2 text-center"
+                >
                   <p className="text-[9px] text-mist">S{i + 1}</p>
-                  <p className="font-mono text-xs text-white">{formatLapTime(split)}</p>
+                  <p className="font-mono text-xs text-white">
+                    {formatLapTime(split)}
+                  </p>
                 </div>
               ))}
             </div>
-            {/* Show my splits and delta per sector vs winner */}
-            {me && me.playerId !== winner.playerId && me.splits && me.splits.length > 0 && (
-              <div className="mt-2 flex gap-2">
-                {me.splits.map((split, i) => {
-                  const winnerSplit = winner.splits?.[i];
-                  const d = winnerSplit ? split - winnerSplit : null;
-                  return (
-                    <div key={i} className="flex-1 rounded-lg bg-ink-950 p-2 text-center">
-                      <p className="text-[9px] text-mist">You</p>
-                      <p className="font-mono text-xs text-white">{formatLapTime(split)}</p>
-                      {d !== null && (
-                        <p className={`font-mono text-[9px] ${d > 0 ? "text-signal" : "text-green-400"}`}>
-                          {d > 0 ? "+" : ""}{(d / 1000).toFixed(3)}
+            {me &&
+              me.playerId !== winner.playerId &&
+              me.splits &&
+              me.splits.length > 0 && (
+                <div className="mt-2 flex gap-2">
+                  {me.splits.map((split, i) => {
+                    const winnerSplit = winner.splits?.[i];
+                    const d = winnerSplit ? split - winnerSplit : null;
+                    return (
+                      <div
+                        key={i}
+                        className="flex-1 rounded-lg bg-ink-950 p-2 text-center"
+                      >
+                        <p className="text-[9px] text-mist">You</p>
+                        <p className="font-mono text-xs text-white">
+                          {formatLapTime(split)}
                         </p>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+                        {d !== null && (
+                          <p
+                            className={`font-mono text-[9px] ${
+                              d > 0 ? "text-signal" : "text-green-400"
+                            }`}
+                          >
+                            {d > 0 ? "+" : ""}
+                            {(d / 1000).toFixed(3)}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
           </div>
         )}
 

@@ -149,8 +149,8 @@ export function GameExperience({
         country={route.country}
       />
       <RaceCountdown />
-      {raceSetup.mode === "online" && <OnlineRaceSync />}
-      {raceSetup.mode === "online" && <OnlineResultsOverlay />}
+      {raceSetup.mode === "online" && <OnlineRaceSync route={route} />}
+      {raceSetup.mode === "online" && <OnlineResultsOverlay route={route} />}
       {raceSetup.mode === "online" && <RaceChat />}
       {raceSetup.mode === "online" && <RacePositionsHud />}
 

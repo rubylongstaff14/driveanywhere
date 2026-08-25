@@ -6,15 +6,12 @@ import { useRouter } from "next/navigation";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import { useAuthStore } from "@/stores/auth-store";
 import { useGameStore } from "@/stores/game-store";
-import { useProgressionStore } from "@/stores/progression-store";
 import { ONLINE_MAPS } from "@/lib/game/online-maps";
-import { resolveLoadoutVisual } from "@/lib/game/cosmetics";
+import { RACE_COLORS } from "@/lib/multiplayer/race-colors";
 import { VEHICLE_LIST, type VehicleId } from "@/lib/game/vehicles";
 
-function currentPaint(vehicleId: VehicleId): string | undefined {
-  const loadout = useProgressionStore.getState().loadouts[vehicleId];
-  if (!loadout) return undefined;
-  return resolveLoadoutVisual(vehicleId, loadout).paint;
+function preferredRacePaint(): string {
+  return RACE_COLORS[0].hex;
 }
 
 export function ServerBrowser() {
@@ -63,15 +60,15 @@ export function ServerBrowser() {
 
   function handleCreate() {
     if (!roomName.trim()) return;
-    createRoom(roomName.trim(), map, difficulty, aiCount, playerName, vehicleId, currentPaint(vehicleId));
+    createRoom(roomName.trim(), map, difficulty, aiCount, playerName, vehicleId, preferredRacePaint());
   }
 
   function handleJoin(roomId: string) {
-    useMultiplayerStore.getState().joinRoom(roomId, playerName, vehicleId, currentPaint(vehicleId));
+    useMultiplayerStore.getState().joinRoom(roomId, playerName, vehicleId, preferredRacePaint());
   }
 
   function handleQuickPlay() {
-    createRoom(`${playerName}'s Race`, "westminster-sprint", "medium", 2, playerName, vehicleId, currentPaint(vehicleId));
+    createRoom(`${playerName}'s Race`, "westminster-sprint", "medium", 2, playerName, vehicleId, preferredRacePaint());
   }
 
   return (
