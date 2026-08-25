@@ -3534,6 +3534,2355 @@
       "roofType": "round",
       "confidence": 0.95,
       "source": "procedural-landmark"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-0",
+      "footprint": [
+        {
+          "x": -112.29411764705883,
+          "y": 0,
+          "z": -137.6764705882353
+        },
+        {
+          "x": -98.29411764705883,
+          "y": 0,
+          "z": -137.6764705882353
+        },
+        {
+          "x": -98.29411764705883,
+          "y": 0,
+          "z": -120.6764705882353
+        },
+        {
+          "x": -112.29411764705883,
+          "y": 0,
+          "z": -120.6764705882353
+        }
+      ],
+      "height": 21.45,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-1",
+      "footprint": [
+        {
+          "x": -230.52941176470588,
+          "y": 0,
+          "z": -74.61764705882354
+        },
+        {
+          "x": -216.52941176470588,
+          "y": 0,
+          "z": -74.61764705882354
+        },
+        {
+          "x": -216.52941176470588,
+          "y": 0,
+          "z": -57.617647058823536
+        },
+        {
+          "x": -230.52941176470588,
+          "y": 0,
+          "z": -57.617647058823536
+        }
+      ],
+      "height": 22.75,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-2",
+      "footprint": [
+        {
+          "x": -72.91312315986683,
+          "y": 0,
+          "z": 8.637068581630658
+        },
+        {
+          "x": -56.91312315986683,
+          "y": 0,
+          "z": 8.637068581630658
+        },
+        {
+          "x": -56.91312315986683,
+          "y": 0,
+          "z": 17.637068581630658
+        },
+        {
+          "x": -72.91312315986683,
+          "y": 0,
+          "z": 17.637068581630658
+        }
+      ],
+      "height": 28.6,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-3",
+      "footprint": [
+        {
+          "x": -162.5320720490387,
+          "y": 0,
+          "z": -53.406819110872945
+        },
+        {
+          "x": -146.5320720490387,
+          "y": 0,
+          "z": -53.406819110872945
+        },
+        {
+          "x": -146.5320720490387,
+          "y": 0,
+          "z": -44.406819110872945
+        },
+        {
+          "x": -162.5320720490387,
+          "y": 0,
+          "z": -44.406819110872945
+        }
+      ],
+      "height": 29.900000000000002,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-5",
+      "footprint": [
+        {
+          "x": -207.23401871576772,
+          "y": 0,
+          "z": 67.73401871576773
+        },
+        {
+          "x": -189.23401871576772,
+          "y": 0,
+          "z": 67.73401871576773
+        },
+        {
+          "x": -189.23401871576772,
+          "y": 0,
+          "z": 78.73401871576773
+        },
+        {
+          "x": -207.23401871576772,
+          "y": 0,
+          "z": 78.73401871576773
+        }
+      ],
+      "height": 13.65,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-6",
+      "footprint": [
+        {
+          "x": -78.7212861622658,
+          "y": 0,
+          "z": 114.66258307201161
+        },
+        {
+          "x": -58.7212861622658,
+          "y": 0,
+          "z": 114.66258307201161
+        },
+        {
+          "x": -58.7212861622658,
+          "y": 0,
+          "z": 127.66258307201161
+        },
+        {
+          "x": -78.7212861622658,
+          "y": 0,
+          "z": 127.66258307201161
+        }
+      ],
+      "height": 19.5,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-7",
+      "footprint": [
+        {
+          "x": -159.91650284671854,
+          "y": 0,
+          "z": 67.29870667274753
+        },
+        {
+          "x": -139.91650284671854,
+          "y": 0,
+          "z": 67.29870667274753
+        },
+        {
+          "x": -139.91650284671854,
+          "y": 0,
+          "z": 80.29870667274753
+        },
+        {
+          "x": -159.91650284671854,
+          "y": 0,
+          "z": 80.29870667274753
+        }
+      ],
+      "height": 20.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-8",
+      "footprint": [
+        {
+          "x": -111.76598128423227,
+          "y": 0,
+          "z": 119.26598128423227
+        },
+        {
+          "x": -101.76598128423227,
+          "y": 0,
+          "z": 119.26598128423227
+        },
+        {
+          "x": -101.76598128423227,
+          "y": 0,
+          "z": 134.26598128423228
+        },
+        {
+          "x": -111.76598128423227,
+          "y": 0,
+          "z": 134.26598128423228
+        }
+      ],
+      "height": 26.650000000000002,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-9",
+      "footprint": [
+        {
+          "x": -185.3050865276332,
+          "y": 0,
+          "z": 192.8050865276332
+        },
+        {
+          "x": -175.3050865276332,
+          "y": 0,
+          "z": 192.8050865276332
+        },
+        {
+          "x": -175.3050865276332,
+          "y": 0,
+          "z": 207.8050865276332
+        },
+        {
+          "x": -185.3050865276332,
+          "y": 0,
+          "z": 207.8050865276332
+        }
+      ],
+      "height": 27.95,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-10",
+      "footprint": [
+        {
+          "x": -51.05249346093646,
+          "y": 0,
+          "z": 173.21041121744705
+        },
+        {
+          "x": -39.05249346093646,
+          "y": 0,
+          "z": 173.21041121744705
+        },
+        {
+          "x": -39.05249346093646,
+          "y": 0,
+          "z": 190.21041121744705
+        },
+        {
+          "x": -51.05249346093646,
+          "y": 0,
+          "z": 190.21041121744705
+        }
+      ],
+      "height": 10.4,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-11",
+      "footprint": [
+        {
+          "x": -138.6297193350373,
+          "y": 0,
+          "z": 246.19143277919775
+        },
+        {
+          "x": -126.6297193350373,
+          "y": 0,
+          "z": 246.19143277919775
+        },
+        {
+          "x": -126.6297193350373,
+          "y": 0,
+          "z": 263.1914327791977
+        },
+        {
+          "x": -138.6297193350373,
+          "y": 0,
+          "z": 263.1914327791977
+        }
+      ],
+      "height": 11.700000000000001,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-12",
+      "footprint": [
+        {
+          "x": -17.729568929196862,
+          "y": 0,
+          "z": 218.92533397454332
+        },
+        {
+          "x": -3.729568929196862,
+          "y": 0,
+          "z": 218.92533397454332
+        },
+        {
+          "x": -3.729568929196862,
+          "y": 0,
+          "z": 227.92533397454332
+        },
+        {
+          "x": -17.729568929196862,
+          "y": 0,
+          "z": 227.92533397454332
+        }
+      ],
+      "height": 17.55,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-13",
+      "footprint": [
+        {
+          "x": -70.52840143410194,
+          "y": 0,
+          "z": 331.1228530474666
+        },
+        {
+          "x": -56.52840143410194,
+          "y": 0,
+          "z": 331.1228530474666
+        },
+        {
+          "x": -56.52840143410194,
+          "y": 0,
+          "z": 340.1228530474666
+        },
+        {
+          "x": -70.52840143410194,
+          "y": 0,
+          "z": 340.1228530474666
+        }
+      ],
+      "height": 18.85,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-14",
+      "footprint": [
+        {
+          "x": 55.44968838475668,
+          "y": 0,
+          "z": 248.97640226859494
+        },
+        {
+          "x": 71.44968838475668,
+          "y": 0,
+          "z": 248.97640226859494
+        },
+        {
+          "x": 71.44968838475668,
+          "y": 0,
+          "z": 259.97640226859494
+        },
+        {
+          "x": 55.44968838475668,
+          "y": 0,
+          "z": 259.97640226859494
+        }
+      ],
+      "height": 24.7,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-15",
+      "footprint": [
+        {
+          "x": 26.381007037056754,
+          "y": 0,
+          "z": 379.7854683332446
+        },
+        {
+          "x": 42.381007037056754,
+          "y": 0,
+          "z": 379.7854683332446
+        },
+        {
+          "x": 42.381007037056754,
+          "y": 0,
+          "z": 390.7854683332446
+        },
+        {
+          "x": 26.381007037056754,
+          "y": 0,
+          "z": 390.7854683332446
+        }
+      ],
+      "height": 26,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-16",
+      "footprint": [
+        {
+          "x": 113.06786112633166,
+          "y": 0,
+          "z": 263.944300054794
+        },
+        {
+          "x": 131.06786112633165,
+          "y": 0,
+          "z": 263.944300054794
+        },
+        {
+          "x": 131.06786112633165,
+          "y": 0,
+          "z": 276.944300054794
+        },
+        {
+          "x": 113.06786112633166,
+          "y": 0,
+          "z": 276.944300054794
+        }
+      ],
+      "height": 8.450000000000001,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-17",
+      "footprint": [
+        {
+          "x": 142.24104227901597,
+          "y": 0,
+          "z": 368.9677522044575
+        },
+        {
+          "x": 160.24104227901597,
+          "y": 0,
+          "z": 368.9677522044575
+        },
+        {
+          "x": 160.24104227901597,
+          "y": 0,
+          "z": 381.9677522044575
+        },
+        {
+          "x": 142.24104227901597,
+          "y": 0,
+          "z": 381.9677522044575
+        }
+      ],
+      "height": 9.75,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-18",
+      "footprint": [
+        {
+          "x": 173.49215861443548,
+          "y": 0,
+          "z": 247.53618745342376
+        },
+        {
+          "x": 193.49215861443548,
+          "y": 0,
+          "z": 247.53618745342376
+        },
+        {
+          "x": 193.49215861443548,
+          "y": 0,
+          "z": 262.53618745342374
+        },
+        {
+          "x": 173.49215861443548,
+          "y": 0,
+          "z": 262.53618745342374
+        }
+      ],
+      "height": 15.600000000000001,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-19",
+      "footprint": [
+        {
+          "x": 250.3592853489102,
+          "y": 0,
+          "z": 338.3791554123484
+        },
+        {
+          "x": 270.3592853489102,
+          "y": 0,
+          "z": 338.3791554123484
+        },
+        {
+          "x": 270.3592853489102,
+          "y": 0,
+          "z": 353.3791554123484
+        },
+        {
+          "x": 250.3592853489102,
+          "y": 0,
+          "z": 353.3791554123484
+        }
+      ],
+      "height": 16.900000000000002,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-20",
+      "footprint": [
+        {
+          "x": 256.0330844592661,
+          "y": 0,
+          "z": 271.2032113023519
+        },
+        {
+          "x": 266.0330844592661,
+          "y": 0,
+          "z": 271.2032113023519
+        },
+        {
+          "x": 266.0330844592661,
+          "y": 0,
+          "z": 288.2032113023519
+        },
+        {
+          "x": 256.0330844592661,
+          "y": 0,
+          "z": 288.2032113023519
+        }
+      ],
+      "height": 22.75,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-21",
+      "footprint": [
+        {
+          "x": 332.0542763837658,
+          "y": 0,
+          "z": 215.9150717208976
+        },
+        {
+          "x": 342.0542763837658,
+          "y": 0,
+          "z": 215.9150717208976
+        },
+        {
+          "x": 342.0542763837658,
+          "y": 0,
+          "z": 232.9150717208976
+        },
+        {
+          "x": 332.0542763837658,
+          "y": 0,
+          "z": 232.9150717208976
+        }
+      ],
+      "height": 24.05,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-22",
+      "footprint": [
+        {
+          "x": 212.6240069374439,
+          "y": 0,
+          "z": 165.73782385790867
+        },
+        {
+          "x": 224.6240069374439,
+          "y": 0,
+          "z": 165.73782385790867
+        },
+        {
+          "x": 224.6240069374439,
+          "y": 0,
+          "z": 174.73782385790867
+        },
+        {
+          "x": 212.6240069374439,
+          "y": 0,
+          "z": 174.73782385790867
+        }
+      ],
+      "height": 29.900000000000002,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-24",
+      "footprint": [
+        {
+          "x": 242.7557831407352,
+          "y": 0,
+          "z": 152.89845782913727
+        },
+        {
+          "x": 256.75578314073516,
+          "y": 0,
+          "z": 152.89845782913727
+        },
+        {
+          "x": 256.75578314073516,
+          "y": 0,
+          "z": 163.89845782913727
+        },
+        {
+          "x": 242.7557831407352,
+          "y": 0,
+          "z": 163.89845782913727
+        }
+      ],
+      "height": 13.65,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-25",
+      "footprint": [
+        {
+          "x": 352.90656625527726,
+          "y": 0,
+          "z": 123.52491566525939
+        },
+        {
+          "x": 366.90656625527726,
+          "y": 0,
+          "z": 123.52491566525939
+        },
+        {
+          "x": 366.90656625527726,
+          "y": 0,
+          "z": 134.52491566525939
+        },
+        {
+          "x": 352.90656625527726,
+          "y": 0,
+          "z": 134.52491566525939
+        }
+      ],
+      "height": 14.950000000000001,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-26",
+      "footprint": [
+        {
+          "x": 224.05282690353647,
+          "y": 0,
+          "z": 94.32318270486942
+        },
+        {
+          "x": 240.05282690353647,
+          "y": 0,
+          "z": 94.32318270486942
+        },
+        {
+          "x": 240.05282690353647,
+          "y": 0,
+          "z": 107.32318270486942
+        },
+        {
+          "x": 224.05282690353647,
+          "y": 0,
+          "z": 107.32318270486942
+        }
+      ],
+      "height": 20.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-27",
+      "footprint": [
+        {
+          "x": 328.3589578502291,
+          "y": 0,
+          "z": 27.26924138199559
+        },
+        {
+          "x": 344.3589578502291,
+          "y": 0,
+          "z": 27.26924138199559
+        },
+        {
+          "x": 344.3589578502291,
+          "y": 0,
+          "z": 40.26924138199559
+        },
+        {
+          "x": 328.3589578502291,
+          "y": 0,
+          "z": 40.26924138199559
+        }
+      ],
+      "height": 22.1,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-28",
+      "footprint": [
+        {
+          "x": 167.61200148112007,
+          "y": 0,
+          "z": -28.352856613885688
+        },
+        {
+          "x": 185.61200148112007,
+          "y": 0,
+          "z": -28.352856613885688
+        },
+        {
+          "x": 185.61200148112007,
+          "y": 0,
+          "z": -13.352856613885688
+        },
+        {
+          "x": 167.61200148112007,
+          "y": 0,
+          "z": -13.352856613885688
+        }
+      ],
+      "height": 27.95,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-29",
+      "footprint": [
+        {
+          "x": 293.8054176348283,
+          "y": 0,
+          "z": 16.71622058386725
+        },
+        {
+          "x": 311.8054176348283,
+          "y": 0,
+          "z": 16.71622058386725
+        },
+        {
+          "x": 311.8054176348283,
+          "y": 0,
+          "z": 31.71622058386725
+        },
+        {
+          "x": 293.8054176348283,
+          "y": 0,
+          "z": 31.71622058386725
+        }
+      ],
+      "height": 29.25,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-30",
+      "footprint": [
+        {
+          "x": 193.64104214977093,
+          "y": 0,
+          "z": -42.26924138199559
+        },
+        {
+          "x": 213.64104214977093,
+          "y": 0,
+          "z": -42.26924138199559
+        },
+        {
+          "x": 213.64104214977093,
+          "y": 0,
+          "z": -25.26924138199559
+        },
+        {
+          "x": 193.64104214977093,
+          "y": 0,
+          "z": -25.26924138199559
+        }
+      ],
+      "height": 11.700000000000001,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-31",
+      "footprint": [
+        {
+          "x": 285.3294959658152,
+          "y": 0,
+          "z": -101.21181883516695
+        },
+        {
+          "x": 305.3294959658152,
+          "y": 0,
+          "z": -101.21181883516695
+        },
+        {
+          "x": 305.3294959658152,
+          "y": 0,
+          "z": -84.21181883516695
+        },
+        {
+          "x": 285.3294959658152,
+          "y": 0,
+          "z": -84.21181883516695
+        }
+      ],
+      "height": 13,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-32",
+      "footprint": [
+        {
+          "x": 174.27799643830795,
+          "y": 0,
+          "z": -81.98649376703892
+        },
+        {
+          "x": 184.27799643830795,
+          "y": 0,
+          "z": -81.98649376703892
+        },
+        {
+          "x": 184.27799643830795,
+          "y": 0,
+          "z": -72.98649376703892
+        },
+        {
+          "x": 174.27799643830795,
+          "y": 0,
+          "z": -72.98649376703892
+        }
+      ],
+      "height": 18.85,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-33",
+      "footprint": [
+        {
+          "x": 233.3185301027712,
+          "y": 0,
+          "z": -185.30742767984958
+        },
+        {
+          "x": 243.3185301027712,
+          "y": 0,
+          "z": -185.30742767984958
+        },
+        {
+          "x": 243.3185301027712,
+          "y": 0,
+          "z": -176.30742767984958
+        },
+        {
+          "x": 233.3185301027712,
+          "y": 0,
+          "z": -176.30742767984958
+        }
+      ],
+      "height": 20.150000000000002,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-34",
+      "footprint": [
+        {
+          "x": 160.1625830720116,
+          "y": 0,
+          "z": -149.2212861622658
+        },
+        {
+          "x": 172.1625830720116,
+          "y": 0,
+          "z": -149.2212861622658
+        },
+        {
+          "x": 172.1625830720116,
+          "y": 0,
+          "z": -138.2212861622658
+        },
+        {
+          "x": 160.1625830720116,
+          "y": 0,
+          "z": -138.2212861622658
+        }
+      ],
+      "height": 26,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-35",
+      "footprint": [
+        {
+          "x": 112.79870667274753,
+          "y": 0,
+          "z": -230.41650284671854
+        },
+        {
+          "x": 124.79870667274753,
+          "y": 0,
+          "z": -230.41650284671854
+        },
+        {
+          "x": 124.79870667274753,
+          "y": 0,
+          "z": -219.41650284671854
+        },
+        {
+          "x": 112.79870667274753,
+          "y": 0,
+          "z": -219.41650284671854
+        }
+      ],
+      "height": 27.3,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-36",
+      "footprint": [
+        {
+          "x": 48.639332764942054,
+          "y": 0,
+          "z": -114.79916595617757
+        },
+        {
+          "x": 62.639332764942054,
+          "y": 0,
+          "z": -114.79916595617757
+        },
+        {
+          "x": 62.639332764942054,
+          "y": 0,
+          "z": -101.79916595617757
+        },
+        {
+          "x": 48.639332764942054,
+          "y": 0,
+          "z": -101.79916595617757
+        }
+      ],
+      "height": 9.75,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-37",
+      "footprint": [
+        {
+          "x": 113.60761771060218,
+          "y": 0,
+          "z": -196.00952213825275
+        },
+        {
+          "x": 127.60761771060218,
+          "y": 0,
+          "z": -196.00952213825275
+        },
+        {
+          "x": 127.60761771060218,
+          "y": 0,
+          "z": -183.00952213825275
+        },
+        {
+          "x": 113.60761771060218,
+          "y": 0,
+          "z": -183.00952213825275
+        }
+      ],
+      "height": 11.05,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-39",
+      "footprint": [
+        {
+          "x": -8.554665350526356,
+          "y": 0,
+          "z": -243.2923790721805
+        },
+        {
+          "x": 7.445334649473644,
+          "y": 0,
+          "z": -243.2923790721805
+        },
+        {
+          "x": 7.445334649473644,
+          "y": 0,
+          "z": -228.2923790721805
+        },
+        {
+          "x": -8.554665350526356,
+          "y": 0,
+          "z": -228.2923790721805
+        }
+      ],
+      "height": 18.2,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-41",
+      "footprint": [
+        {
+          "x": -78.18531764831363,
+          "y": 0,
+          "z": -119.0924962557719
+        },
+        {
+          "x": -60.18531764831363,
+          "y": 0,
+          "z": -119.0924962557719
+        },
+        {
+          "x": -60.18531764831363,
+          "y": 0,
+          "z": -102.0924962557719
+        },
+        {
+          "x": -78.18531764831363,
+          "y": 0,
+          "z": -102.0924962557719
+        }
+      ],
+      "height": 25.35,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-43",
+      "footprint": [
+        {
+          "x": -43.22899806982957,
+          "y": 0,
+          "z": -57.15163776739668
+        },
+        {
+          "x": -23.228998069829572,
+          "y": 0,
+          "z": -57.15163776739668
+        },
+        {
+          "x": -23.228998069829572,
+          "y": 0,
+          "z": -48.15163776739668
+        },
+        {
+          "x": -43.22899806982957,
+          "y": 0,
+          "z": -48.15163776739668
+        }
+      ],
+      "height": 9.1,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-44",
+      "footprint": [
+        {
+          "x": 123.56178096938442,
+          "y": 0,
+          "z": -24.31273967687186
+        },
+        {
+          "x": 133.56178096938442,
+          "y": 0,
+          "z": -24.31273967687186
+        },
+        {
+          "x": 133.56178096938442,
+          "y": 0,
+          "z": -13.31273967687186
+        },
+        {
+          "x": 123.56178096938442,
+          "y": 0,
+          "z": -13.31273967687186
+        }
+      ],
+      "height": 14.950000000000001,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-45",
+      "footprint": [
+        {
+          "x": 20.155301481878425,
+          "y": 0,
+          "z": -58.78156617270719
+        },
+        {
+          "x": 30.155301481878425,
+          "y": 0,
+          "z": -58.78156617270719
+        },
+        {
+          "x": 30.155301481878425,
+          "y": 0,
+          "z": -47.78156617270719
+        },
+        {
+          "x": 20.155301481878425,
+          "y": 0,
+          "z": -47.78156617270719
+        }
+      ],
+      "height": 16.25,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-46",
+      "footprint": [
+        {
+          "x": 95.22255427989819,
+          "y": 0,
+          "z": -31.47804342391855
+        },
+        {
+          "x": 107.22255427989819,
+          "y": 0,
+          "z": -31.47804342391855
+        },
+        {
+          "x": 107.22255427989819,
+          "y": 0,
+          "z": -18.47804342391855
+        },
+        {
+          "x": 95.22255427989819,
+          "y": 0,
+          "z": -18.47804342391855
+        }
+      ],
+      "height": 22.1,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-48",
+      "footprint": [
+        {
+          "x": 101.29740824145962,
+          "y": 0,
+          "z": 97.44611236218944
+        },
+        {
+          "x": 115.29740824145962,
+          "y": 0,
+          "z": 97.44611236218944
+        },
+        {
+          "x": 115.29740824145962,
+          "y": 0,
+          "z": 112.44611236218944
+        },
+        {
+          "x": 101.29740824145962,
+          "y": 0,
+          "z": 112.44611236218944
+        }
+      ],
+      "height": 29.25,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-52",
+      "footprint": [
+        {
+          "x": 90.90031079538981,
+          "y": 0,
+          "z": 181.15056979154798
+        },
+        {
+          "x": 108.90031079538981,
+          "y": 0,
+          "z": 181.15056979154798
+        },
+        {
+          "x": 108.90031079538981,
+          "y": 0,
+          "z": 190.15056979154798
+        },
+        {
+          "x": 90.90031079538981,
+          "y": 0,
+          "z": 190.15056979154798
+        }
+      ],
+      "height": 20.150000000000002,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-54",
+      "footprint": [
+        {
+          "x": -30.305086527633208,
+          "y": 0,
+          "z": 204.8050865276332
+        },
+        {
+          "x": -10.305086527633208,
+          "y": 0,
+          "z": 204.8050865276332
+        },
+        {
+          "x": -10.305086527633208,
+          "y": 0,
+          "z": 215.8050865276332
+        },
+        {
+          "x": -30.305086527633208,
+          "y": 0,
+          "z": 215.8050865276332
+        }
+      ],
+      "height": 27.3,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-56",
+      "footprint": [
+        {
+          "x": -91.45612984232335,
+          "y": 0,
+          "z": 110.30584935435688
+        },
+        {
+          "x": -81.45612984232335,
+          "y": 0,
+          "z": 110.30584935435688
+        },
+        {
+          "x": -81.45612984232335,
+          "y": 0,
+          "z": 123.30584935435688
+        },
+        {
+          "x": -91.45612984232335,
+          "y": 0,
+          "z": 123.30584935435688
+        }
+      ],
+      "height": 11.05,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-57",
+      "footprint": [
+        {
+          "x": 41.3684088491497,
+          "y": 0,
+          "z": 128.01578784655328
+        },
+        {
+          "x": 51.3684088491497,
+          "y": 0,
+          "z": 128.01578784655328
+        },
+        {
+          "x": 51.3684088491497,
+          "y": 0,
+          "z": 141.01578784655328
+        },
+        {
+          "x": 41.3684088491497,
+          "y": 0,
+          "z": 141.01578784655328
+        }
+      ],
+      "height": 12.35,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-58",
+      "footprint": [
+        {
+          "x": -85.03719358437064,
+          "y": 0,
+          "z": 62.20375187211404
+        },
+        {
+          "x": -73.03719358437064,
+          "y": 0,
+          "z": 62.20375187211404
+        },
+        {
+          "x": -73.03719358437064,
+          "y": 0,
+          "z": 77.20375187211404
+        },
+        {
+          "x": -85.03719358437064,
+          "y": 0,
+          "z": 77.20375187211404
+        }
+      ],
+      "height": 18.2,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-59",
+      "footprint": [
+        {
+          "x": 19.142718366321894,
+          "y": 0,
+          "z": 30.148394348824034
+        },
+        {
+          "x": 31.142718366321894,
+          "y": 0,
+          "z": 30.148394348824034
+        },
+        {
+          "x": 31.142718366321894,
+          "y": 0,
+          "z": 45.148394348824034
+        },
+        {
+          "x": 19.142718366321894,
+          "y": 0,
+          "z": 45.148394348824034
+        }
+      ],
+      "height": 19.5,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-61",
+      "footprint": [
+        {
+          "x": 4.637060205542383,
+          "y": 0,
+          "z": -17.670367474307202
+        },
+        {
+          "x": 18.637060205542383,
+          "y": 0,
+          "z": -17.670367474307202
+        },
+        {
+          "x": 18.637060205542383,
+          "y": 0,
+          "z": -0.6703674743072021
+        },
+        {
+          "x": 4.637060205542383,
+          "y": 0,
+          "z": -0.6703674743072021
+        }
+      ],
+      "height": 26.650000000000002,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-street-fill-62",
+      "footprint": [
+        {
+          "x": -73.74598500610394,
+          "y": 0,
+          "z": -89.31350374847402
+        },
+        {
+          "x": -57.745985006103936,
+          "y": 0,
+          "z": -89.31350374847402
+        },
+        {
+          "x": -57.745985006103936,
+          "y": 0,
+          "z": -80.31350374847402
+        },
+        {
+          "x": -73.74598500610394,
+          "y": 0,
+          "z": -80.31350374847402
+        }
+      ],
+      "height": 9.1,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "egypt-pyramids-skyline-0",
+      "name": "Skyline 1",
+      "footprint": [
+        {
+          "x": -110.14739012354741,
+          "y": 0,
+          "z": -384.908320282394
+        },
+        {
+          "x": -94.14739012354741,
+          "y": 0,
+          "z": -384.908320282394
+        },
+        {
+          "x": -94.14739012354741,
+          "y": 0,
+          "z": -364.908320282394
+        },
+        {
+          "x": -110.14739012354741,
+          "y": 0,
+          "z": -364.908320282394
+        }
+      ],
+      "height": 35.75,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-2",
+      "footprint": [
+        {
+          "x": -420.5882352941177,
+          "y": 0,
+          "z": 21.64705882352942
+        },
+        {
+          "x": -400.5882352941177,
+          "y": 0,
+          "z": 21.64705882352942
+        },
+        {
+          "x": -400.5882352941177,
+          "y": 0,
+          "z": 45.64705882352942
+        },
+        {
+          "x": -420.5882352941177,
+          "y": 0,
+          "z": 45.64705882352942
+        }
+      ],
+      "height": 46.15,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-4",
+      "footprint": [
+        {
+          "x": -394.7888886054566,
+          "y": 0,
+          "z": 243.78888860545658
+        },
+        {
+          "x": -370.7888886054566,
+          "y": 0,
+          "z": 243.78888860545658
+        },
+        {
+          "x": -370.7888886054566,
+          "y": 0,
+          "z": 271.7888886054566
+        },
+        {
+          "x": -394.7888886054566,
+          "y": 0,
+          "z": 271.7888886054566
+        }
+      ],
+      "height": 56.550000000000004,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-5",
+      "name": "Skyline 6",
+      "footprint": [
+        {
+          "x": 158.4092482874987,
+          "y": 0,
+          "z": 254.23872816770756
+        },
+        {
+          "x": 184.4092482874987,
+          "y": 0,
+          "z": 254.23872816770756
+        },
+        {
+          "x": 184.4092482874987,
+          "y": 0,
+          "z": 268.23872816770756
+        },
+        {
+          "x": 158.4092482874987,
+          "y": 0,
+          "z": 268.23872816770756
+        }
+      ],
+      "height": 61.75,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-6",
+      "footprint": [
+        {
+          "x": -332.19090885900994,
+          "y": 0,
+          "z": 330.19090885900994
+        },
+        {
+          "x": -304.19090885900994,
+          "y": 0,
+          "z": 330.19090885900994
+        },
+        {
+          "x": -304.19090885900994,
+          "y": 0,
+          "z": 346.19090885900994
+        },
+        {
+          "x": -332.19090885900994,
+          "y": 0,
+          "z": 346.19090885900994
+        }
+      ],
+      "height": 66.95,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-8",
+      "footprint": [
+        {
+          "x": -202.58374493343715,
+          "y": 0,
+          "z": 587.1154579835539
+        },
+        {
+          "x": -170.58374493343715,
+          "y": 0,
+          "z": 587.1154579835539
+        },
+        {
+          "x": -170.58374493343715,
+          "y": 0,
+          "z": 607.1154579835539
+        },
+        {
+          "x": -202.58374493343715,
+          "y": 0,
+          "z": 607.1154579835539
+        }
+      ],
+      "height": 77.35000000000001,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-10",
+      "name": "Skyline 11",
+      "footprint": [
+        {
+          "x": 204.79913094981774,
+          "y": 0,
+          "z": 585.0768714193439
+        },
+        {
+          "x": 220.79913094981774,
+          "y": 0,
+          "z": 585.0768714193439
+        },
+        {
+          "x": 220.79913094981774,
+          "y": 0,
+          "z": 609.0768714193439
+        },
+        {
+          "x": 204.79913094981774,
+          "y": 0,
+          "z": 609.0768714193439
+        }
+      ],
+      "height": 87.75,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-12",
+      "footprint": [
+        {
+          "x": 459.6869942094887,
+          "y": 0,
+          "z": 113.95491330219002
+        },
+        {
+          "x": 479.6869942094887,
+          "y": 0,
+          "z": 113.95491330219002
+        },
+        {
+          "x": 479.6869942094887,
+          "y": 0,
+          "z": 141.95491330219002
+        },
+        {
+          "x": 459.6869942094887,
+          "y": 0,
+          "z": 141.95491330219002
+        }
+      ],
+      "height": 98.15,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-14",
+      "footprint": [
+        {
+          "x": 597.1951806723988,
+          "y": 0,
+          "z": 54.547951820693655
+        },
+        {
+          "x": 621.1951806723988,
+          "y": 0,
+          "z": 54.547951820693655
+        },
+        {
+          "x": 621.1951806723988,
+          "y": 0,
+          "z": 70.54795182069365
+        },
+        {
+          "x": 597.1951806723988,
+          "y": 0,
+          "z": 70.54795182069365
+        }
+      ],
+      "height": 108.55,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-16",
+      "footprint": [
+        {
+          "x": 544.9592175886241,
+          "y": 0,
+          "z": 105.69972056736576
+        },
+        {
+          "x": 572.9592175886241,
+          "y": 0,
+          "z": 105.69972056736576
+        },
+        {
+          "x": 572.9592175886241,
+          "y": 0,
+          "z": 125.69972056736576
+        },
+        {
+          "x": 544.9592175886241,
+          "y": 0,
+          "z": 125.69972056736576
+        }
+      ],
+      "height": 118.95,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-18",
+      "footprint": [
+        {
+          "x": 288.3050089042301,
+          "y": 0,
+          "z": -308.2837655824027
+        },
+        {
+          "x": 320.3050089042301,
+          "y": 0,
+          "z": -308.2837655824027
+        },
+        {
+          "x": 320.3050089042301,
+          "y": 0,
+          "z": -284.2837655824027
+        },
+        {
+          "x": 288.3050089042301,
+          "y": 0,
+          "z": -284.2837655824027
+        }
+      ],
+      "height": 40.95,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-20",
+      "name": "Skyline 21",
+      "footprint": [
+        {
+          "x": 254.4133935054565,
+          "y": 0,
+          "z": -380.7667418818206
+        },
+        {
+          "x": 270.4133935054565,
+          "y": 0,
+          "z": -380.7667418818206
+        },
+        {
+          "x": 270.4133935054565,
+          "y": 0,
+          "z": -352.7667418818206
+        },
+        {
+          "x": 254.4133935054565,
+          "y": 0,
+          "z": -352.7667418818206
+        }
+      ],
+      "height": 51.35,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-21",
+      "footprint": [
+        {
+          "x": 149.86786638247892,
+          "y": 0,
+          "z": -15.04590516788727
+        },
+        {
+          "x": 167.86786638247892,
+          "y": 0,
+          "z": -15.04590516788727
+        },
+        {
+          "x": 167.86786638247892,
+          "y": 0,
+          "z": -1.0459051678872697
+        },
+        {
+          "x": 149.86786638247892,
+          "y": 0,
+          "z": -1.0459051678872697
+        }
+      ],
+      "height": 56.550000000000004,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-22",
+      "footprint": [
+        {
+          "x": -274.09071396538206,
+          "y": 0,
+          "z": 23.15688288391422
+        },
+        {
+          "x": -254.09071396538206,
+          "y": 0,
+          "z": 23.15688288391422
+        },
+        {
+          "x": -254.09071396538206,
+          "y": 0,
+          "z": 39.15688288391422
+        },
+        {
+          "x": -274.09071396538206,
+          "y": 0,
+          "z": 39.15688288391422
+        }
+      ],
+      "height": 61.75,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-23",
+      "footprint": [
+        {
+          "x": 272.7955469770203,
+          "y": 0,
+          "z": -292.21494325601475
+        },
+        {
+          "x": 294.7955469770203,
+          "y": 0,
+          "z": -292.21494325601475
+        },
+        {
+          "x": 294.7955469770203,
+          "y": 0,
+          "z": -274.21494325601475
+        },
+        {
+          "x": 272.7955469770203,
+          "y": 0,
+          "z": -274.21494325601475
+        }
+      ],
+      "height": 66.95,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-25",
+      "name": "Skyline 26",
+      "footprint": [
+        {
+          "x": 300.61887044840245,
+          "y": 0,
+          "z": -205.89509635872196
+        },
+        {
+          "x": 326.61887044840245,
+          "y": 0,
+          "z": -205.89509635872196
+        },
+        {
+          "x": 326.61887044840245,
+          "y": 0,
+          "z": -183.89509635872196
+        },
+        {
+          "x": 300.61887044840245,
+          "y": 0,
+          "z": -183.89509635872196
+        }
+      ],
+      "height": 77.35000000000001,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-29",
+      "footprint": [
+        {
+          "x": -197.81832585697947,
+          "y": 0,
+          "z": 363.81832585697947
+        },
+        {
+          "x": -163.81832585697947,
+          "y": 0,
+          "z": 363.81832585697947
+        },
+        {
+          "x": -163.81832585697947,
+          "y": 0,
+          "z": 377.81832585697947
+        },
+        {
+          "x": -197.81832585697947,
+          "y": 0,
+          "z": 377.81832585697947
+        }
+      ],
+      "height": 98.15,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-30",
+      "name": "Skyline 31",
+      "footprint": [
+        {
+          "x": 181.10522654744912,
+          "y": 0,
+          "z": 145.5473635396599
+        },
+        {
+          "x": 197.10522654744912,
+          "y": 0,
+          "z": 145.5473635396599
+        },
+        {
+          "x": 197.10522654744912,
+          "y": 0,
+          "z": 161.5473635396599
+        },
+        {
+          "x": 181.10522654744912,
+          "y": 0,
+          "z": 161.5473635396599
+        }
+      ],
+      "height": 103.35000000000001,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-31",
+      "footprint": [
+        {
+          "x": -318.37993468636057,
+          "y": 0,
+          "z": 131.5784414419571
+        },
+        {
+          "x": -300.37993468636057,
+          "y": 0,
+          "z": 131.5784414419571
+        },
+        {
+          "x": -300.37993468636057,
+          "y": 0,
+          "z": 149.5784414419571
+        },
+        {
+          "x": -318.37993468636057,
+          "y": 0,
+          "z": 149.5784414419571
+        }
+      ],
+      "height": 108.55,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "egypt-pyramids-skyline-33",
+      "footprint": [
+        {
+          "x": -280.47591003662365,
+          "y": 0,
+          "z": -44.88102249084409
+        },
+        {
+          "x": -258.47591003662365,
+          "y": 0,
+          "z": -44.88102249084409
+        },
+        {
+          "x": -258.47591003662365,
+          "y": 0,
+          "z": -22.88102249084409
+        },
+        {
+          "x": -280.47591003662365,
+          "y": 0,
+          "z": -22.88102249084409
+        }
+      ],
+      "height": 118.95,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
     }
   ],
   "sceneryObjects": [
@@ -5152,9 +7501,9 @@
     }
   ],
   "metadata": {
-    "version": 8,
-    "generatedBy": "seed-local-data",
-    "notes": "Spa-inspired desert circuit with open east vista to the pyramids on Kemmel Straight"
+    "version": 9,
+    "generatedBy": "densify-web-routes-from-unreal",
+    "notes": "Merged Unreal named/massing + street/skyline fill (+71). Racing line unchanged."
   },
   "dataAttribution": "Stylised Giza circuit — original procedural geometry"
 }

@@ -2706,6 +2706,3413 @@
       "roofType": "flat",
       "confidence": 0.8,
       "source": "procedural"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-0",
+      "footprint": [
+        {
+          "x": 163.50560627056453,
+          "y": 0,
+          "z": -70.5
+        },
+        {
+          "x": 177.50560627056453,
+          "y": 0,
+          "z": -70.5
+        },
+        {
+          "x": 177.50560627056453,
+          "y": 0,
+          "z": -53.5
+        },
+        {
+          "x": 163.50560627056453,
+          "y": 0,
+          "z": -53.5
+        }
+      ],
+      "height": 33,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-1",
+      "footprint": [
+        {
+          "x": 163.50560627056453,
+          "y": 0,
+          "z": 63.5
+        },
+        {
+          "x": 177.50560627056453,
+          "y": 0,
+          "z": 63.5
+        },
+        {
+          "x": 177.50560627056453,
+          "y": 0,
+          "z": 80.5
+        },
+        {
+          "x": 163.50560627056453,
+          "y": 0,
+          "z": 80.5
+        }
+      ],
+      "height": 35,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-2",
+      "footprint": [
+        {
+          "x": 247.75840940584678,
+          "y": 0,
+          "z": -71.5
+        },
+        {
+          "x": 263.7584094058468,
+          "y": 0,
+          "z": -71.5
+        },
+        {
+          "x": 263.7584094058468,
+          "y": 0,
+          "z": -62.5
+        },
+        {
+          "x": 247.75840940584678,
+          "y": 0,
+          "z": -62.5
+        }
+      ],
+      "height": 44,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-3",
+      "footprint": [
+        {
+          "x": 247.75840940584678,
+          "y": 0,
+          "z": 37.5
+        },
+        {
+          "x": 263.7584094058468,
+          "y": 0,
+          "z": 37.5
+        },
+        {
+          "x": 263.7584094058468,
+          "y": 0,
+          "z": 46.5
+        },
+        {
+          "x": 247.75840940584678,
+          "y": 0,
+          "z": 46.5
+        }
+      ],
+      "height": 46,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-4",
+      "footprint": [
+        {
+          "x": 332.01121254112905,
+          "y": 0,
+          "z": -77.5
+        },
+        {
+          "x": 350.01121254112905,
+          "y": 0,
+          "z": -77.5
+        },
+        {
+          "x": 350.01121254112905,
+          "y": 0,
+          "z": -66.5
+        },
+        {
+          "x": 332.01121254112905,
+          "y": 0,
+          "z": -66.5
+        }
+      ],
+      "height": 19,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-5",
+      "footprint": [
+        {
+          "x": 332.01121254112905,
+          "y": 0,
+          "z": 41.5
+        },
+        {
+          "x": 350.01121254112905,
+          "y": 0,
+          "z": 41.5
+        },
+        {
+          "x": 350.01121254112905,
+          "y": 0,
+          "z": 52.5
+        },
+        {
+          "x": 332.01121254112905,
+          "y": 0,
+          "z": 52.5
+        }
+      ],
+      "height": 21,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-6",
+      "footprint": [
+        {
+          "x": 451.2101280386007,
+          "y": 0,
+          "z": -29.79740824145961
+        },
+        {
+          "x": 471.2101280386007,
+          "y": 0,
+          "z": -29.79740824145961
+        },
+        {
+          "x": 471.2101280386007,
+          "y": 0,
+          "z": -16.79740824145961
+        },
+        {
+          "x": 451.2101280386007,
+          "y": 0,
+          "z": -16.79740824145961
+        }
+      ],
+      "height": 30,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-7",
+      "footprint": [
+        {
+          "x": 372.9974003708434,
+          "y": 0,
+          "z": 22.3444102037119
+        },
+        {
+          "x": 392.9974003708434,
+          "y": 0,
+          "z": 22.3444102037119
+        },
+        {
+          "x": 392.9974003708434,
+          "y": 0,
+          "z": 35.3444102037119
+        },
+        {
+          "x": 372.9974003708434,
+          "y": 0,
+          "z": 35.3444102037119
+        }
+      ],
+      "height": 32,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-8",
+      "footprint": [
+        {
+          "x": 486.21562093183906,
+          "y": 0,
+          "z": 41.92516296437371
+        },
+        {
+          "x": 496.21562093183906,
+          "y": 0,
+          "z": 41.92516296437371
+        },
+        {
+          "x": 496.21562093183906,
+          "y": 0,
+          "z": 56.92516296437371
+        },
+        {
+          "x": 486.21562093183906,
+          "y": 0,
+          "z": 56.92516296437371
+        }
+      ],
+      "height": 41,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-9",
+      "footprint": [
+        {
+          "x": 389.65404507977206,
+          "y": 0,
+          "z": 3.3005326235469497
+        },
+        {
+          "x": 399.65404507977206,
+          "y": 0,
+          "z": 3.3005326235469497
+        },
+        {
+          "x": 399.65404507977206,
+          "y": 0,
+          "z": 18.30053262354695
+        },
+        {
+          "x": 389.65404507977206,
+          "y": 0,
+          "z": 18.30053262354695
+        }
+      ],
+      "height": 43,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-10",
+      "footprint": [
+        {
+          "x": 472.2640156764113,
+          "y": 0,
+          "z": 76.75280313528226
+        },
+        {
+          "x": 484.2640156764113,
+          "y": 0,
+          "z": 76.75280313528226
+        },
+        {
+          "x": 484.2640156764113,
+          "y": 0,
+          "z": 93.75280313528226
+        },
+        {
+          "x": 472.2640156764113,
+          "y": 0,
+          "z": 93.75280313528226
+        }
+      ],
+      "height": 16,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-11",
+      "footprint": [
+        {
+          "x": 358.2640156764113,
+          "y": 0,
+          "z": 76.75280313528226
+        },
+        {
+          "x": 370.2640156764113,
+          "y": 0,
+          "z": 76.75280313528226
+        },
+        {
+          "x": 370.2640156764113,
+          "y": 0,
+          "z": 93.75280313528226
+        },
+        {
+          "x": 358.2640156764113,
+          "y": 0,
+          "z": 93.75280313528226
+        }
+      ],
+      "height": 18,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-12",
+      "footprint": [
+        {
+          "x": 476.2640156764113,
+          "y": 0,
+          "z": 144.69240548674395
+        },
+        {
+          "x": 490.2640156764113,
+          "y": 0,
+          "z": 144.69240548674395
+        },
+        {
+          "x": 490.2640156764113,
+          "y": 0,
+          "z": 153.69240548674395
+        },
+        {
+          "x": 476.2640156764113,
+          "y": 0,
+          "z": 153.69240548674395
+        }
+      ],
+      "height": 27,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-13",
+      "footprint": [
+        {
+          "x": 352.2640156764113,
+          "y": 0,
+          "z": 144.69240548674395
+        },
+        {
+          "x": 366.2640156764113,
+          "y": 0,
+          "z": 144.69240548674395
+        },
+        {
+          "x": 366.2640156764113,
+          "y": 0,
+          "z": 153.69240548674395
+        },
+        {
+          "x": 352.2640156764113,
+          "y": 0,
+          "z": 153.69240548674395
+        }
+      ],
+      "height": 29,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-14",
+      "footprint": [
+        {
+          "x": 473.7185015184061,
+          "y": 0,
+          "z": 179.9047649172083
+        },
+        {
+          "x": 489.7185015184061,
+          "y": 0,
+          "z": 179.9047649172083
+        },
+        {
+          "x": 489.7185015184061,
+          "y": 0,
+          "z": 190.9047649172083
+        },
+        {
+          "x": 473.7185015184061,
+          "y": 0,
+          "z": 190.9047649172083
+        }
+      ],
+      "height": 38,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-15",
+      "footprint": [
+        {
+          "x": 353.86525792441734,
+          "y": 0,
+          "z": 239.8313867142026
+        },
+        {
+          "x": 369.86525792441734,
+          "y": 0,
+          "z": 239.8313867142026
+        },
+        {
+          "x": 369.86525792441734,
+          "y": 0,
+          "z": 250.8313867142026
+        },
+        {
+          "x": 353.86525792441734,
+          "y": 0,
+          "z": 250.8313867142026
+        }
+      ],
+      "height": 40,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-16",
+      "footprint": [
+        {
+          "x": 515.3222097488957,
+          "y": 0,
+          "z": 281.5863423391263
+        },
+        {
+          "x": 533.3222097488957,
+          "y": 0,
+          "z": 281.5863423391263
+        },
+        {
+          "x": 533.3222097488957,
+          "y": 0,
+          "z": 294.5863423391263
+        },
+        {
+          "x": 515.3222097488957,
+          "y": 0,
+          "z": 294.5863423391263
+        }
+      ],
+      "height": 13,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-17",
+      "footprint": [
+        {
+          "x": 407.8052720511921,
+          "y": 0,
+          "z": 263.66685272284235
+        },
+        {
+          "x": 425.8052720511921,
+          "y": 0,
+          "z": 263.66685272284235
+        },
+        {
+          "x": 425.8052720511921,
+          "y": 0,
+          "z": 276.66685272284235
+        },
+        {
+          "x": 407.8052720511921,
+          "y": 0,
+          "z": 276.66685272284235
+        }
+      ],
+      "height": 15,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-18",
+      "footprint": [
+        {
+          "x": 507.42747647069575,
+          "y": 0,
+          "z": 350.97377754374503
+        },
+        {
+          "x": 527.4274764706958,
+          "y": 0,
+          "z": 350.97377754374503
+        },
+        {
+          "x": 527.4274764706958,
+          "y": 0,
+          "z": 365.97377754374503
+        },
+        {
+          "x": 507.42747647069575,
+          "y": 0,
+          "z": 365.97377754374503
+        }
+      ],
+      "height": 24,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-19",
+      "footprint": [
+        {
+          "x": 391.98051895340126,
+          "y": 0,
+          "z": 322.1120381644214
+        },
+        {
+          "x": 411.98051895340126,
+          "y": 0,
+          "z": 322.1120381644214
+        },
+        {
+          "x": 411.98051895340126,
+          "y": 0,
+          "z": 337.1120381644214
+        },
+        {
+          "x": 391.98051895340126,
+          "y": 0,
+          "z": 337.1120381644214
+        }
+      ],
+      "height": 26,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-20",
+      "footprint": [
+        {
+          "x": 457.27871855633816,
+          "y": 0,
+          "z": 439.37283740436743
+        },
+        {
+          "x": 467.27871855633816,
+          "y": 0,
+          "z": 439.37283740436743
+        },
+        {
+          "x": 467.27871855633816,
+          "y": 0,
+          "z": 456.37283740436743
+        },
+        {
+          "x": 457.27871855633816,
+          "y": 0,
+          "z": 456.37283740436743
+        }
+      ],
+      "height": 35,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-21",
+      "footprint": [
+        {
+          "x": 376.67438353935904,
+          "y": 0,
+          "z": 391.0102363941799
+        },
+        {
+          "x": 386.67438353935904,
+          "y": 0,
+          "z": 391.0102363941799
+        },
+        {
+          "x": 386.67438353935904,
+          "y": 0,
+          "z": 408.0102363941799
+        },
+        {
+          "x": 376.67438353935904,
+          "y": 0,
+          "z": 408.0102363941799
+        }
+      ],
+      "height": 37,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-22",
+      "footprint": [
+        {
+          "x": 412.4755150057742,
+          "y": 0,
+          "z": 515.3491851444523
+        },
+        {
+          "x": 424.4755150057742,
+          "y": 0,
+          "z": 515.3491851444523
+        },
+        {
+          "x": 424.4755150057742,
+          "y": 0,
+          "z": 524.3491851444523
+        },
+        {
+          "x": 412.4755150057742,
+          "y": 0,
+          "z": 524.3491851444523
+        }
+      ],
+      "height": 46,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-23",
+      "footprint": [
+        {
+          "x": 358.9679564413114,
+          "y": 0,
+          "z": 426.1699208703477
+        },
+        {
+          "x": 370.9679564413114,
+          "y": 0,
+          "z": 426.1699208703477
+        },
+        {
+          "x": 370.9679564413114,
+          "y": 0,
+          "z": 435.1699208703477
+        },
+        {
+          "x": 358.9679564413114,
+          "y": 0,
+          "z": 435.1699208703477
+        }
+      ],
+      "height": 12,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-24",
+      "footprint": [
+        {
+          "x": 346.6230650430184,
+          "y": 0,
+          "z": 556.4642288192508
+        },
+        {
+          "x": 360.6230650430184,
+          "y": 0,
+          "z": 556.4642288192508
+        },
+        {
+          "x": 360.6230650430184,
+          "y": 0,
+          "z": 567.4642288192508
+        },
+        {
+          "x": 346.6230650430184,
+          "y": 0,
+          "z": 567.4642288192508
+        }
+      ],
+      "height": 21,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-25",
+      "footprint": [
+        {
+          "x": 318.97400378887636,
+          "y": 0,
+          "z": 445.867983802683
+        },
+        {
+          "x": 332.97400378887636,
+          "y": 0,
+          "z": 445.867983802683
+        },
+        {
+          "x": 332.97400378887636,
+          "y": 0,
+          "z": 456.867983802683
+        },
+        {
+          "x": 318.97400378887636,
+          "y": 0,
+          "z": 456.867983802683
+        }
+      ],
+      "height": 23,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-26",
+      "footprint": [
+        {
+          "x": 247.75840940584678,
+          "y": 0,
+          "z": 583.3300195955142
+        },
+        {
+          "x": 263.7584094058468,
+          "y": 0,
+          "z": 583.3300195955142
+        },
+        {
+          "x": 263.7584094058468,
+          "y": 0,
+          "z": 596.3300195955142
+        },
+        {
+          "x": 247.75840940584678,
+          "y": 0,
+          "z": 596.3300195955142
+        }
+      ],
+      "height": 32,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-27",
+      "footprint": [
+        {
+          "x": 247.75840940584678,
+          "y": 0,
+          "z": 459.33001959551416
+        },
+        {
+          "x": 263.7584094058468,
+          "y": 0,
+          "z": 459.33001959551416
+        },
+        {
+          "x": 263.7584094058468,
+          "y": 0,
+          "z": 472.33001959551416
+        },
+        {
+          "x": 247.75840940584678,
+          "y": 0,
+          "z": 472.33001959551416
+        }
+      ],
+      "height": 34,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-28",
+      "footprint": [
+        {
+          "x": 118.87920470292339,
+          "y": 0,
+          "z": 587.3300195955142
+        },
+        {
+          "x": 136.8792047029234,
+          "y": 0,
+          "z": 587.3300195955142
+        },
+        {
+          "x": 136.8792047029234,
+          "y": 0,
+          "z": 602.3300195955142
+        },
+        {
+          "x": 118.87920470292339,
+          "y": 0,
+          "z": 602.3300195955142
+        }
+      ],
+      "height": 43,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-29",
+      "footprint": [
+        {
+          "x": 118.87920470292339,
+          "y": 0,
+          "z": 453.33001959551416
+        },
+        {
+          "x": 136.8792047029234,
+          "y": 0,
+          "z": 453.33001959551416
+        },
+        {
+          "x": 136.8792047029234,
+          "y": 0,
+          "z": 468.33001959551416
+        },
+        {
+          "x": 118.87920470292339,
+          "y": 0,
+          "z": 468.33001959551416
+        }
+      ],
+      "height": 45,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-30",
+      "footprint": [
+        {
+          "x": -10,
+          "y": 0,
+          "z": 591.3300195955142
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "z": 591.3300195955142
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "z": 608.3300195955142
+        },
+        {
+          "x": -10,
+          "y": 0,
+          "z": 608.3300195955142
+        }
+      ],
+      "height": 18,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-31",
+      "footprint": [
+        {
+          "x": -10,
+          "y": 0,
+          "z": 482.33001959551416
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "z": 482.33001959551416
+        },
+        {
+          "x": 10,
+          "y": 0,
+          "z": 499.33001959551416
+        },
+        {
+          "x": -10,
+          "y": 0,
+          "z": 499.33001959551416
+        }
+      ],
+      "height": 20,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-32",
+      "footprint": [
+        {
+          "x": -111.56600391910283,
+          "y": 0,
+          "z": 600.3300195955142
+        },
+        {
+          "x": -101.56600391910283,
+          "y": 0,
+          "z": 600.3300195955142
+        },
+        {
+          "x": -101.56600391910283,
+          "y": 0,
+          "z": 609.3300195955142
+        },
+        {
+          "x": -111.56600391910283,
+          "y": 0,
+          "z": 609.3300195955142
+        }
+      ],
+      "height": 29,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-33",
+      "footprint": [
+        {
+          "x": -111.56600391910283,
+          "y": 0,
+          "z": 481.33001959551416
+        },
+        {
+          "x": -101.56600391910283,
+          "y": 0,
+          "z": 481.33001959551416
+        },
+        {
+          "x": -101.56600391910283,
+          "y": 0,
+          "z": 490.33001959551416
+        },
+        {
+          "x": -111.56600391910283,
+          "y": 0,
+          "z": 490.33001959551416
+        }
+      ],
+      "height": 31,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-34",
+      "footprint": [
+        {
+          "x": -232.41357401091287,
+          "y": 0,
+          "z": 567.1747181136358
+        },
+        {
+          "x": -220.41357401091287,
+          "y": 0,
+          "z": 567.1747181136358
+        },
+        {
+          "x": -220.41357401091287,
+          "y": 0,
+          "z": 578.1747181136358
+        },
+        {
+          "x": -232.41357401091287,
+          "y": 0,
+          "z": 578.1747181136358
+        }
+      ],
+      "height": 40,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-35",
+      "footprint": [
+        {
+          "x": -202.68816400533007,
+          "y": 0,
+          "z": 477.99848809688746
+        },
+        {
+          "x": -190.68816400533007,
+          "y": 0,
+          "z": 477.99848809688746
+        },
+        {
+          "x": -190.68816400533007,
+          "y": 0,
+          "z": 488.99848809688746
+        },
+        {
+          "x": -202.68816400533007,
+          "y": 0,
+          "z": 488.99848809688746
+        }
+      ],
+      "height": 42,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-36",
+      "footprint": [
+        {
+          "x": -317.30562890543507,
+          "y": 0,
+          "z": 538.2508375274613
+        },
+        {
+          "x": -303.30562890543507,
+          "y": 0,
+          "z": 538.2508375274613
+        },
+        {
+          "x": -303.30562890543507,
+          "y": 0,
+          "z": 551.2508375274613
+        },
+        {
+          "x": -317.30562890543507,
+          "y": 0,
+          "z": 551.2508375274613
+        }
+      ],
+      "height": 15,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-37",
+      "footprint": [
+        {
+          "x": -243.76652366203416,
+          "y": 0,
+          "z": 464.71173228406036
+        },
+        {
+          "x": -229.76652366203416,
+          "y": 0,
+          "z": 464.71173228406036
+        },
+        {
+          "x": -229.76652366203416,
+          "y": 0,
+          "z": 477.71173228406036
+        },
+        {
+          "x": -243.76652366203416,
+          "y": 0,
+          "z": 477.71173228406036
+        }
+      ],
+      "height": 17,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-38",
+      "footprint": [
+        {
+          "x": -379.69801175730845,
+          "y": 0,
+          "z": 461.39041724405246
+        },
+        {
+          "x": -363.69801175730845,
+          "y": 0,
+          "z": 461.39041724405246
+        },
+        {
+          "x": -363.69801175730845,
+          "y": 0,
+          "z": 476.39041724405246
+        },
+        {
+          "x": -379.69801175730845,
+          "y": 0,
+          "z": 476.39041724405246
+        }
+      ],
+      "height": 26,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-39",
+      "footprint": [
+        {
+          "x": -265.69801175730845,
+          "y": 0,
+          "z": 461.39041724405246
+        },
+        {
+          "x": -249.69801175730845,
+          "y": 0,
+          "z": 461.39041724405246
+        },
+        {
+          "x": -249.69801175730845,
+          "y": 0,
+          "z": 476.39041724405246
+        },
+        {
+          "x": -265.69801175730845,
+          "y": 0,
+          "z": 476.39041724405246
+        }
+      ],
+      "height": 28,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-40",
+      "footprint": [
+        {
+          "x": -385.69801175730845,
+          "y": 0,
+          "z": 417.7640156764113
+        },
+        {
+          "x": -367.69801175730845,
+          "y": 0,
+          "z": 417.7640156764113
+        },
+        {
+          "x": -367.69801175730845,
+          "y": 0,
+          "z": 434.7640156764113
+        },
+        {
+          "x": -385.69801175730845,
+          "y": 0,
+          "z": 434.7640156764113
+        }
+      ],
+      "height": 37,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-41",
+      "footprint": [
+        {
+          "x": -261.69801175730845,
+          "y": 0,
+          "z": 417.7640156764113
+        },
+        {
+          "x": -243.69801175730845,
+          "y": 0,
+          "z": 417.7640156764113
+        },
+        {
+          "x": -243.69801175730845,
+          "y": 0,
+          "z": 434.7640156764113
+        },
+        {
+          "x": -261.69801175730845,
+          "y": 0,
+          "z": 434.7640156764113
+        }
+      ],
+      "height": 39,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-42",
+      "footprint": [
+        {
+          "x": -391.69801175730845,
+          "y": 0,
+          "z": 357.8244133249496
+        },
+        {
+          "x": -371.69801175730845,
+          "y": 0,
+          "z": 357.8244133249496
+        },
+        {
+          "x": -371.69801175730845,
+          "y": 0,
+          "z": 366.8244133249496
+        },
+        {
+          "x": -391.69801175730845,
+          "y": 0,
+          "z": 366.8244133249496
+        }
+      ],
+      "height": 12,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-43",
+      "footprint": [
+        {
+          "x": -257.69801175730845,
+          "y": 0,
+          "z": 357.8244133249496
+        },
+        {
+          "x": -237.69801175730845,
+          "y": 0,
+          "z": 357.8244133249496
+        },
+        {
+          "x": -237.69801175730845,
+          "y": 0,
+          "z": 366.8244133249496
+        },
+        {
+          "x": -257.69801175730845,
+          "y": 0,
+          "z": 366.8244133249496
+        }
+      ],
+      "height": 14,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-44",
+      "footprint": [
+        {
+          "x": -391.69801175730845,
+          "y": 0,
+          "z": 292.8848109734879
+        },
+        {
+          "x": -381.69801175730845,
+          "y": 0,
+          "z": 292.8848109734879
+        },
+        {
+          "x": -381.69801175730845,
+          "y": 0,
+          "z": 303.8848109734879
+        },
+        {
+          "x": -391.69801175730845,
+          "y": 0,
+          "z": 303.8848109734879
+        }
+      ],
+      "height": 23,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-45",
+      "footprint": [
+        {
+          "x": -282.69801175730845,
+          "y": 0,
+          "z": 292.8848109734879
+        },
+        {
+          "x": -272.69801175730845,
+          "y": 0,
+          "z": 292.8848109734879
+        },
+        {
+          "x": -272.69801175730845,
+          "y": 0,
+          "z": 303.8848109734879
+        },
+        {
+          "x": -282.69801175730845,
+          "y": 0,
+          "z": 303.8848109734879
+        }
+      ],
+      "height": 25,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-46",
+      "footprint": [
+        {
+          "x": -390.0967695093024,
+          "y": 0,
+          "z": 174.4326289622087
+        },
+        {
+          "x": -378.0967695093024,
+          "y": 0,
+          "z": 174.4326289622087
+        },
+        {
+          "x": -378.0967695093024,
+          "y": 0,
+          "z": 187.4326289622087
+        },
+        {
+          "x": -390.0967695093024,
+          "y": 0,
+          "z": 187.4326289622087
+        }
+      ],
+      "height": 34,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-47",
+      "footprint": [
+        {
+          "x": -283.6599337803124,
+          "y": 0,
+          "z": 227.65104682670366
+        },
+        {
+          "x": -271.6599337803124,
+          "y": 0,
+          "z": 227.65104682670366
+        },
+        {
+          "x": -271.6599337803124,
+          "y": 0,
+          "z": 240.65104682670366
+        },
+        {
+          "x": -283.6599337803124,
+          "y": 0,
+          "z": 240.65104682670366
+        }
+      ],
+      "height": 36,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-48",
+      "footprint": [
+        {
+          "x": -335.0832957833229,
+          "y": 0,
+          "z": 133.30712146072955
+        },
+        {
+          "x": -321.0832957833229,
+          "y": 0,
+          "z": 133.30712146072955
+        },
+        {
+          "x": -321.0832957833229,
+          "y": 0,
+          "z": 148.30712146072955
+        },
+        {
+          "x": -335.0832957833229,
+          "y": 0,
+          "z": 148.30712146072955
+        }
+      ],
+      "height": 45,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-49",
+      "footprint": [
+        {
+          "x": -268.6152583517874,
+          "y": 0,
+          "z": 199.77515889226498
+        },
+        {
+          "x": -254.61525835178742,
+          "y": 0,
+          "z": 199.77515889226498
+        },
+        {
+          "x": -254.61525835178742,
+          "y": 0,
+          "z": 214.77515889226498
+        },
+        {
+          "x": -268.6152583517874,
+          "y": 0,
+          "z": 214.77515889226498
+        }
+      ],
+      "height": 47,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-50",
+      "footprint": [
+        {
+          "x": -284.7774483943448,
+          "y": 0,
+          "z": 77.34112672592735
+        },
+        {
+          "x": -268.7774483943448,
+          "y": 0,
+          "z": 77.34112672592735
+        },
+        {
+          "x": -268.7774483943448,
+          "y": 0,
+          "z": 94.34112672592735
+        },
+        {
+          "x": -284.7774483943448,
+          "y": 0,
+          "z": 94.34112672592735
+        }
+      ],
+      "height": 20,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-51",
+      "footprint": [
+        {
+          "x": -238.26723446234917,
+          "y": 0,
+          "z": 170.3615545899186
+        },
+        {
+          "x": -222.26723446234917,
+          "y": 0,
+          "z": 170.3615545899186
+        },
+        {
+          "x": -222.26723446234917,
+          "y": 0,
+          "z": 187.3615545899186
+        },
+        {
+          "x": -238.26723446234917,
+          "y": 0,
+          "z": 187.3615545899186
+        }
+      ],
+      "height": 22,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-52",
+      "footprint": [
+        {
+          "x": -209.52015533631632,
+          "y": 0,
+          "z": 51.61859391154557
+        },
+        {
+          "x": -191.52015533631632,
+          "y": 0,
+          "z": 51.61859391154557
+        },
+        {
+          "x": -191.52015533631632,
+          "y": 0,
+          "z": 60.61859391154557
+        },
+        {
+          "x": -209.52015533631632,
+          "y": 0,
+          "z": 60.61859391154557
+        }
+      ],
+      "height": 31,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-53",
+      "footprint": [
+        {
+          "x": -237.16921659045832,
+          "y": 0,
+          "z": 162.2148389281134
+        },
+        {
+          "x": -219.16921659045832,
+          "y": 0,
+          "z": 162.2148389281134
+        },
+        {
+          "x": -219.16921659045832,
+          "y": 0,
+          "z": 171.2148389281134
+        },
+        {
+          "x": -237.16921659045832,
+          "y": 0,
+          "z": 171.2148389281134
+        }
+      ],
+      "height": 33,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-54",
+      "footprint": [
+        {
+          "x": -205.99678121406214,
+          "y": 0,
+          "z": 60.740254424017905
+        },
+        {
+          "x": -185.99678121406214,
+          "y": 0,
+          "z": 60.740254424017905
+        },
+        {
+          "x": -185.99678121406214,
+          "y": 0,
+          "z": 71.7402544240179
+        },
+        {
+          "x": -205.99678121406214,
+          "y": 0,
+          "z": 71.7402544240179
+        }
+      ],
+      "height": 42,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-55",
+      "footprint": [
+        {
+          "x": -150.54229537206734,
+          "y": 0,
+          "z": 171.64922610800747
+        },
+        {
+          "x": -130.54229537206734,
+          "y": 0,
+          "z": 171.64922610800747
+        },
+        {
+          "x": -130.54229537206734,
+          "y": 0,
+          "z": 182.64922610800747
+        },
+        {
+          "x": -150.54229537206734,
+          "y": 0,
+          "z": 182.64922610800747
+        }
+      ],
+      "height": 44,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-57",
+      "footprint": [
+        {
+          "x": -165.07858357892036,
+          "y": 0,
+          "z": 153.80816127918646
+        },
+        {
+          "x": -155.07858357892036,
+          "y": 0,
+          "z": 153.80816127918646
+        },
+        {
+          "x": -155.07858357892036,
+          "y": 0,
+          "z": 166.80816127918646
+        },
+        {
+          "x": -165.07858357892036,
+          "y": 0,
+          "z": 166.80816127918646
+        }
+      ],
+      "height": 19,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-59",
+      "footprint": [
+        {
+          "x": -70.56600391910283,
+          "y": 0,
+          "z": 99.06600391910283
+        },
+        {
+          "x": -58.566003919102826,
+          "y": 0,
+          "z": 99.06600391910283
+        },
+        {
+          "x": -58.566003919102826,
+          "y": 0,
+          "z": 114.06600391910283
+        },
+        {
+          "x": -70.56600391910283,
+          "y": 0,
+          "z": 114.06600391910283
+        }
+      ],
+      "height": 30,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-60",
+      "footprint": [
+        {
+          "x": -185.56600391910283,
+          "y": 0,
+          "z": 55.439602351461694
+        },
+        {
+          "x": -171.56600391910283,
+          "y": 0,
+          "z": 55.439602351461694
+        },
+        {
+          "x": -171.56600391910283,
+          "y": 0,
+          "z": 72.4396023514617
+        },
+        {
+          "x": -185.56600391910283,
+          "y": 0,
+          "z": 72.4396023514617
+        }
+      ],
+      "height": 39,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-61",
+      "footprint": [
+        {
+          "x": -66.56600391910283,
+          "y": 0,
+          "z": 55.439602351461694
+        },
+        {
+          "x": -52.566003919102826,
+          "y": 0,
+          "z": 55.439602351461694
+        },
+        {
+          "x": -52.566003919102826,
+          "y": 0,
+          "z": 72.4396023514617
+        },
+        {
+          "x": -66.56600391910283,
+          "y": 0,
+          "z": 72.4396023514617
+        }
+      ],
+      "height": 41,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-62",
+      "footprint": [
+        {
+          "x": -156.56600391910283,
+          "y": 0,
+          "z": 16.813200783820566
+        },
+        {
+          "x": -140.56600391910283,
+          "y": 0,
+          "z": 16.813200783820566
+        },
+        {
+          "x": -140.56600391910283,
+          "y": 0,
+          "z": 25.813200783820566
+        },
+        {
+          "x": -156.56600391910283,
+          "y": 0,
+          "z": 25.813200783820566
+        }
+      ],
+      "height": 14,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-63",
+      "footprint": [
+        {
+          "x": -62.566003919102826,
+          "y": 0,
+          "z": 16.813200783820566
+        },
+        {
+          "x": -46.566003919102826,
+          "y": 0,
+          "z": 16.813200783820566
+        },
+        {
+          "x": -46.566003919102826,
+          "y": 0,
+          "z": 25.813200783820566
+        },
+        {
+          "x": -62.566003919102826,
+          "y": 0,
+          "z": 25.813200783820566
+        }
+      ],
+      "height": 16,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-64",
+      "footprint": [
+        {
+          "x": -157.60408189609888,
+          "y": 0,
+          "z": -69.14544055613916
+        },
+        {
+          "x": -139.60408189609888,
+          "y": 0,
+          "z": -69.14544055613916
+        },
+        {
+          "x": -139.60408189609888,
+          "y": 0,
+          "z": -58.145440556139164
+        },
+        {
+          "x": -157.60408189609888,
+          "y": 0,
+          "z": -58.145440556139164
+        }
+      ],
+      "height": 25,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-65",
+      "footprint": [
+        {
+          "x": -64.58365403210763,
+          "y": 0,
+          "z": -22.635226624143517
+        },
+        {
+          "x": -46.58365403210764,
+          "y": 0,
+          "z": -22.635226624143517
+        },
+        {
+          "x": -46.58365403210764,
+          "y": 0,
+          "z": -11.635226624143517
+        },
+        {
+          "x": -64.58365403210763,
+          "y": 0,
+          "z": -11.635226624143517
+        }
+      ],
+      "height": 27,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-66",
+      "footprint": [
+        {
+          "x": -89.46555969431697,
+          "y": 0,
+          "z": -119.7711338500884
+        },
+        {
+          "x": -69.46555969431697,
+          "y": 0,
+          "z": -119.7711338500884
+        },
+        {
+          "x": -69.46555969431697,
+          "y": 0,
+          "z": -106.7711338500884
+        },
+        {
+          "x": -89.46555969431697,
+          "y": 0,
+          "z": -106.7711338500884
+        }
+      ],
+      "height": 36,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-67",
+      "footprint": [
+        {
+          "x": -125.5155250202365,
+          "y": 0,
+          "z": -11.621237872329843
+        },
+        {
+          "x": -105.5155250202365,
+          "y": 0,
+          "z": -11.621237872329843
+        },
+        {
+          "x": -105.5155250202365,
+          "y": 0,
+          "z": 1.3787621276701572
+        },
+        {
+          "x": -125.5155250202365,
+          "y": 0,
+          "z": 1.3787621276701572
+        }
+      ],
+      "height": 38,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-street-fill-68",
+      "footprint": [
+        {
+          "x": -37.32169116662364,
+          "y": 0,
+          "z": -108.2098687368085
+        },
+        {
+          "x": -27.321691166623637,
+          "y": 0,
+          "z": -108.2098687368085
+        },
+        {
+          "x": -27.321691166623637,
+          "y": 0,
+          "z": -93.2098687368085
+        },
+        {
+          "x": -37.32169116662364,
+          "y": 0,
+          "z": -93.2098687368085
+        }
+      ],
+      "height": 47,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-0",
+      "name": "Skyline 1",
+      "footprint": [
+        {
+          "x": -8,
+          "y": 0,
+          "z": 170
+        },
+        {
+          "x": 8,
+          "y": 0,
+          "z": 170
+        },
+        {
+          "x": 8,
+          "y": 0,
+          "z": 190
+        },
+        {
+          "x": -8,
+          "y": 0,
+          "z": 190
+        }
+      ],
+      "height": 74.25,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-1",
+      "footprint": [
+        {
+          "x": 76.25280313528226,
+          "y": 0,
+          "z": -283
+        },
+        {
+          "x": 94.25280313528226,
+          "y": 0,
+          "z": -283
+        },
+        {
+          "x": 94.25280313528226,
+          "y": 0,
+          "z": -261
+        },
+        {
+          "x": 76.25280313528226,
+          "y": 0,
+          "z": -261
+        }
+      ],
+      "height": 85.05000000000001,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-2",
+      "footprint": [
+        {
+          "x": 160.50560627056453,
+          "y": 0,
+          "z": 272
+        },
+        {
+          "x": 180.50560627056453,
+          "y": 0,
+          "z": 272
+        },
+        {
+          "x": 180.50560627056453,
+          "y": 0,
+          "z": 296
+        },
+        {
+          "x": 160.50560627056453,
+          "y": 0,
+          "z": 296
+        }
+      ],
+      "height": 95.85000000000001,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-3",
+      "footprint": [
+        {
+          "x": 244.75840940584678,
+          "y": 0,
+          "z": -229
+        },
+        {
+          "x": 266.7584094058468,
+          "y": 0,
+          "z": -229
+        },
+        {
+          "x": 266.7584094058468,
+          "y": 0,
+          "z": -203
+        },
+        {
+          "x": 244.75840940584678,
+          "y": 0,
+          "z": -203
+        }
+      ],
+      "height": 106.65,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-4",
+      "footprint": [
+        {
+          "x": 329.01121254112905,
+          "y": 0,
+          "z": 294
+        },
+        {
+          "x": 353.01121254112905,
+          "y": 0,
+          "z": 294
+        },
+        {
+          "x": 353.01121254112905,
+          "y": 0,
+          "z": 322
+        },
+        {
+          "x": 329.01121254112905,
+          "y": 0,
+          "z": 322
+        }
+      ],
+      "height": 117.45,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-5",
+      "name": "Skyline 6",
+      "footprint": [
+        {
+          "x": 679.5201098645214,
+          "y": 0,
+          "z": -184.50406279207323
+        },
+        {
+          "x": 705.5201098645214,
+          "y": 0,
+          "z": -184.50406279207323
+        },
+        {
+          "x": 705.5201098645214,
+          "y": 0,
+          "z": -170.50406279207323
+        },
+        {
+          "x": 679.5201098645214,
+          "y": 0,
+          "z": -170.50406279207323
+        }
+      ],
+      "height": 128.25,
+      "baseHeight": 0,
+      "floors": 34,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-6",
+      "footprint": [
+        {
+          "x": 199.6010903571465,
+          "y": 0,
+          "z": -69.62064926550322
+        },
+        {
+          "x": 227.6010903571465,
+          "y": 0,
+          "z": -69.62064926550322
+        },
+        {
+          "x": 227.6010903571465,
+          "y": 0,
+          "z": -53.62064926550322
+        },
+        {
+          "x": 199.6010903571465,
+          "y": 0,
+          "z": -53.62064926550322
+        }
+      ],
+      "height": 139.05,
+      "baseHeight": 0,
+      "floors": 37,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-7",
+      "footprint": [
+        {
+          "x": 755.2640156764113,
+          "y": 0,
+          "z": 76.25280313528226
+        },
+        {
+          "x": 785.2640156764113,
+          "y": 0,
+          "z": 76.25280313528226
+        },
+        {
+          "x": 785.2640156764113,
+          "y": 0,
+          "z": 94.25280313528226
+        },
+        {
+          "x": 755.2640156764113,
+          "y": 0,
+          "z": 94.25280313528226
+        }
+      ],
+      "height": 149.85000000000002,
+      "baseHeight": 0,
+      "floors": 39,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-8",
+      "footprint": [
+        {
+          "x": 54.264015676411304,
+          "y": 0,
+          "z": 139.19240548674395
+        },
+        {
+          "x": 86.2640156764113,
+          "y": 0,
+          "z": 139.19240548674395
+        },
+        {
+          "x": 86.2640156764113,
+          "y": 0,
+          "z": 159.19240548674395
+        },
+        {
+          "x": 54.264015676411304,
+          "y": 0,
+          "z": 159.19240548674395
+        }
+      ],
+      "height": 160.65,
+      "baseHeight": 0,
+      "floors": 42,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-9",
+      "footprint": [
+        {
+          "x": 570.2609100563961,
+          "y": 0,
+          "z": 121.63356064821329
+        },
+        {
+          "x": 604.2609100563961,
+          "y": 0,
+          "z": 121.63356064821329
+        },
+        {
+          "x": 604.2609100563961,
+          "y": 0,
+          "z": 143.6335606482133
+        },
+        {
+          "x": 570.2609100563961,
+          "y": 0,
+          "z": 143.6335606482133
+        }
+      ],
+      "height": 171.45000000000002,
+      "baseHeight": 0,
+      "floors": 45,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-10",
+      "name": "Skyline 11",
+      "footprint": [
+        {
+          "x": 181.93466956979898,
+          "y": 0,
+          "z": 220.35508564261022
+        },
+        {
+          "x": 197.93466956979898,
+          "y": 0,
+          "z": 220.35508564261022
+        },
+        {
+          "x": 197.93466956979898,
+          "y": 0,
+          "z": 244.35508564261022
+        },
+        {
+          "x": 181.93466956979898,
+          "y": 0,
+          "z": 244.35508564261022
+        }
+      ],
+      "height": 182.25,
+      "baseHeight": 0,
+      "floors": 48,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-11",
+      "footprint": [
+        {
+          "x": 714.0976865015061,
+          "y": 0,
+          "z": 396.89133005144754
+        },
+        {
+          "x": 732.0976865015061,
+          "y": 0,
+          "z": 396.89133005144754
+        },
+        {
+          "x": 732.0976865015061,
+          "y": 0,
+          "z": 422.89133005144754
+        },
+        {
+          "x": 714.0976865015061,
+          "y": 0,
+          "z": 422.89133005144754
+        }
+      ],
+      "height": 193.05,
+      "baseHeight": 0,
+      "floors": 51,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-12",
+      "footprint": [
+        {
+          "x": 231.0455437225018,
+          "y": 0,
+          "z": 301.13293250406554
+        },
+        {
+          "x": 251.0455437225018,
+          "y": 0,
+          "z": 301.13293250406554
+        },
+        {
+          "x": 251.0455437225018,
+          "y": 0,
+          "z": 329.13293250406554
+        },
+        {
+          "x": 231.0455437225018,
+          "y": 0,
+          "z": 329.13293250406554
+        }
+      ],
+      "height": 203.85000000000002,
+      "baseHeight": 0,
+      "floors": 54,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-13",
+      "footprint": [
+        {
+          "x": 541.7589071723586,
+          "y": 0,
+          "z": 736.6548387554265
+        },
+        {
+          "x": 563.7589071723586,
+          "y": 0,
+          "z": 736.6548387554265
+        },
+        {
+          "x": 563.7589071723586,
+          "y": 0,
+          "z": 750.6548387554265
+        },
+        {
+          "x": 541.7589071723586,
+          "y": 0,
+          "z": 750.6548387554265
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-14",
+      "footprint": [
+        {
+          "x": 251.39981252950236,
+          "y": 0,
+          "z": 193.07121876518733
+        },
+        {
+          "x": 275.39981252950236,
+          "y": 0,
+          "z": 193.07121876518733
+        },
+        {
+          "x": 275.39981252950236,
+          "y": 0,
+          "z": 209.07121876518733
+        },
+        {
+          "x": 251.39981252950236,
+          "y": 0,
+          "z": 209.07121876518733
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-15",
+      "name": "Skyline 16",
+      "footprint": [
+        {
+          "x": 242.75840940584678,
+          "y": 0,
+          "z": 775.8300195955142
+        },
+        {
+          "x": 268.7584094058468,
+          "y": 0,
+          "z": 775.8300195955142
+        },
+        {
+          "x": 268.7584094058468,
+          "y": 0,
+          "z": 793.8300195955142
+        },
+        {
+          "x": 242.75840940584678,
+          "y": 0,
+          "z": 793.8300195955142
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-16",
+      "footprint": [
+        {
+          "x": 113.87920470292339,
+          "y": 0,
+          "z": 178.83001959551416
+        },
+        {
+          "x": 141.8792047029234,
+          "y": 0,
+          "z": 178.83001959551416
+        },
+        {
+          "x": 141.8792047029234,
+          "y": 0,
+          "z": 198.83001959551416
+        },
+        {
+          "x": 113.87920470292339,
+          "y": 0,
+          "z": 198.83001959551416
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-17",
+      "footprint": [
+        {
+          "x": -15,
+          "y": 0,
+          "z": 877.8300195955142
+        },
+        {
+          "x": 15,
+          "y": 0,
+          "z": 877.8300195955142
+        },
+        {
+          "x": 15,
+          "y": 0,
+          "z": 899.8300195955142
+        },
+        {
+          "x": -15,
+          "y": 0,
+          "z": 899.8300195955142
+        }
+      ],
+      "height": 74.25,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-18",
+      "footprint": [
+        {
+          "x": -122.56600391910283,
+          "y": 0,
+          "z": 340.83001959551416
+        },
+        {
+          "x": -90.56600391910283,
+          "y": 0,
+          "z": 340.83001959551416
+        },
+        {
+          "x": -90.56600391910283,
+          "y": 0,
+          "z": 364.83001959551416
+        },
+        {
+          "x": -122.56600391910283,
+          "y": 0,
+          "z": 364.83001959551416
+        }
+      ],
+      "height": 85.05000000000001,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-19",
+      "footprint": [
+        {
+          "x": -316.14596019478574,
+          "y": 0,
+          "z": 777.8718766652539
+        },
+        {
+          "x": -282.14596019478574,
+          "y": 0,
+          "z": 777.8718766652539
+        },
+        {
+          "x": -282.14596019478574,
+          "y": 0,
+          "z": 803.8718766652539
+        },
+        {
+          "x": -316.14596019478574,
+          "y": 0,
+          "z": 803.8718766652539
+        }
+      ],
+      "height": 95.85000000000001,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-20",
+      "name": "Skyline 21",
+      "footprint": [
+        {
+          "x": -84.25328433268788,
+          "y": 0,
+          "z": 296.6984929547141
+        },
+        {
+          "x": -68.25328433268788,
+          "y": 0,
+          "z": 296.6984929547141
+        },
+        {
+          "x": -68.25328433268788,
+          "y": 0,
+          "z": 324.6984929547141
+        },
+        {
+          "x": -84.25328433268788,
+          "y": 0,
+          "z": 324.6984929547141
+        }
+      ],
+      "height": 106.65,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-21",
+      "footprint": [
+        {
+          "x": -544.6980117573084,
+          "y": 0,
+          "z": 461.89041724405246
+        },
+        {
+          "x": -526.6980117573084,
+          "y": 0,
+          "z": 461.89041724405246
+        },
+        {
+          "x": -526.6980117573084,
+          "y": 0,
+          "z": 475.89041724405246
+        },
+        {
+          "x": -544.6980117573084,
+          "y": 0,
+          "z": 475.89041724405246
+        }
+      ],
+      "height": 117.45,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-22",
+      "footprint": [
+        {
+          "x": -21.69801175730845,
+          "y": 0,
+          "z": 418.2640156764113
+        },
+        {
+          "x": -1.6980117573084499,
+          "y": 0,
+          "z": 418.2640156764113
+        },
+        {
+          "x": -1.6980117573084499,
+          "y": 0,
+          "z": 434.2640156764113
+        },
+        {
+          "x": -21.69801175730845,
+          "y": 0,
+          "z": 434.2640156764113
+        }
+      ],
+      "height": 128.25,
+      "baseHeight": 0,
+      "floors": 34,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-23",
+      "footprint": [
+        {
+          "x": -650.6980117573084,
+          "y": 0,
+          "z": 353.3244133249496
+        },
+        {
+          "x": -628.6980117573084,
+          "y": 0,
+          "z": 353.3244133249496
+        },
+        {
+          "x": -628.6980117573084,
+          "y": 0,
+          "z": 371.3244133249496
+        },
+        {
+          "x": -650.6980117573084,
+          "y": 0,
+          "z": 371.3244133249496
+        }
+      ],
+      "height": 139.05,
+      "baseHeight": 0,
+      "floors": 37,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-24",
+      "footprint": [
+        {
+          "x": -79.69801175730845,
+          "y": 0,
+          "z": 288.3848109734879
+        },
+        {
+          "x": -55.69801175730845,
+          "y": 0,
+          "z": 288.3848109734879
+        },
+        {
+          "x": -55.69801175730845,
+          "y": 0,
+          "z": 308.3848109734879
+        },
+        {
+          "x": -79.69801175730845,
+          "y": 0,
+          "z": 308.3848109734879
+        }
+      ],
+      "height": 149.85000000000002,
+      "baseHeight": 0,
+      "floors": 39,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-25",
+      "name": "Skyline 26",
+      "footprint": [
+        {
+          "x": -640.3809654612795,
+          "y": 0,
+          "z": 48.290530986220205
+        },
+        {
+          "x": -614.3809654612795,
+          "y": 0,
+          "z": 48.290530986220205
+        },
+        {
+          "x": -614.3809654612795,
+          "y": 0,
+          "z": 70.2905309862202
+        },
+        {
+          "x": -640.3809654612795,
+          "y": 0,
+          "z": 70.2905309862202
+        }
+      ],
+      "height": 160.65,
+      "baseHeight": 0,
+      "floors": 42,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-26",
+      "footprint": [
+        {
+          "x": -60.65479687107697,
+          "y": 0,
+          "z": 410.2356203729754
+        },
+        {
+          "x": -32.65479687107697,
+          "y": 0,
+          "z": 410.2356203729754
+        },
+        {
+          "x": -32.65479687107697,
+          "y": 0,
+          "z": 434.2356203729754
+        },
+        {
+          "x": -60.65479687107697,
+          "y": 0,
+          "z": 434.2356203729754
+        }
+      ],
+      "height": 171.45000000000002,
+      "baseHeight": 0,
+      "floors": 45,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-27",
+      "footprint": [
+        {
+          "x": -351.2568565958392,
+          "y": 0,
+          "z": -46.11768967706148
+        },
+        {
+          "x": -321.2568565958392,
+          "y": 0,
+          "z": -46.11768967706148
+        },
+        {
+          "x": -321.2568565958392,
+          "y": 0,
+          "z": -20.117689677061477
+        },
+        {
+          "x": -351.2568565958392,
+          "y": 0,
+          "z": -20.117689677061477
+        }
+      ],
+      "height": 182.25,
+      "baseHeight": 0,
+      "floors": 48,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-29",
+      "footprint": [
+        {
+          "x": -314.5142673925526,
+          "y": 0,
+          "z": -143.794717932963
+        },
+        {
+          "x": -280.5142673925526,
+          "y": 0,
+          "z": -143.794717932963
+        },
+        {
+          "x": -280.5142673925526,
+          "y": 0,
+          "z": -129.794717932963
+        },
+        {
+          "x": -314.5142673925526,
+          "y": 0,
+          "z": -129.794717932963
+        }
+      ],
+      "height": 203.85000000000002,
+      "baseHeight": 0,
+      "floors": 54,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-30",
+      "name": "Skyline 31",
+      "footprint": [
+        {
+          "x": -232.47734133091433,
+          "y": 0,
+          "z": 281.1056767831743
+        },
+        {
+          "x": -216.47734133091433,
+          "y": 0,
+          "z": 281.1056767831743
+        },
+        {
+          "x": -216.47734133091433,
+          "y": 0,
+          "z": 297.1056767831743
+        },
+        {
+          "x": -232.47734133091433,
+          "y": 0,
+          "z": 297.1056767831743
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-31",
+      "footprint": [
+        {
+          "x": -423.56600391910285,
+          "y": 0,
+          "z": 97.56600391910283
+        },
+        {
+          "x": -405.56600391910285,
+          "y": 0,
+          "z": 97.56600391910283
+        },
+        {
+          "x": -405.56600391910285,
+          "y": 0,
+          "z": 115.56600391910283
+        },
+        {
+          "x": -423.56600391910285,
+          "y": 0,
+          "z": 115.56600391910283
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-32",
+      "footprint": [
+        {
+          "x": 203.43399608089717,
+          "y": 0,
+          "z": 53.939602351461694
+        },
+        {
+          "x": 223.43399608089717,
+          "y": 0,
+          "z": 53.939602351461694
+        },
+        {
+          "x": 223.43399608089717,
+          "y": 0,
+          "z": 73.9396023514617
+        },
+        {
+          "x": 203.43399608089717,
+          "y": 0,
+          "z": 73.9396023514617
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-33",
+      "footprint": [
+        {
+          "x": -369.56600391910285,
+          "y": 0,
+          "z": 10.313200783820566
+        },
+        {
+          "x": -347.56600391910285,
+          "y": 0,
+          "z": 10.313200783820566
+        },
+        {
+          "x": -347.56600391910285,
+          "y": 0,
+          "z": 32.31320078382056
+        },
+        {
+          "x": -369.56600391910285,
+          "y": 0,
+          "z": 32.31320078382056
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-34",
+      "footprint": [
+        {
+          "x": 189.11694978486813,
+          "y": 0,
+          "z": 99.21507528434446
+        },
+        {
+          "x": 213.11694978486813,
+          "y": 0,
+          "z": 99.21507528434446
+        },
+        {
+          "x": 213.11694978486813,
+          "y": 0,
+          "z": 123.21507528434446
+        },
+        {
+          "x": 189.11694978486813,
+          "y": 0,
+          "z": 123.21507528434446
+        }
+      ],
+      "height": 74.25,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-35",
+      "name": "Skyline 36",
+      "footprint": [
+        {
+          "x": 3.6676811748017712,
+          "y": 0,
+          "z": -414.6708564574446
+        },
+        {
+          "x": 29.66768117480177,
+          "y": 0,
+          "z": -414.6708564574446
+        },
+        {
+          "x": 29.66768117480177,
+          "y": 0,
+          "z": -388.6708564574446
+        },
+        {
+          "x": 3.6676811748017712,
+          "y": 0,
+          "z": -388.6708564574446
+        }
+      ],
+      "height": 85.05000000000001,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "tokyo-drift-circuit-skyline-37",
+      "footprint": [
+        {
+          "x": 145.3632433070101,
+          "y": 0,
+          "z": -231.3028456584718
+        },
+        {
+          "x": 175.3632433070101,
+          "y": 0,
+          "z": -231.3028456584718
+        },
+        {
+          "x": 175.3632433070101,
+          "y": 0,
+          "z": -217.3028456584718
+        },
+        {
+          "x": 145.3632433070101,
+          "y": 0,
+          "z": -217.3028456584718
+        }
+      ],
+      "height": 106.65,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
     }
   ],
   "sceneryObjects": [
@@ -3283,9 +6690,9 @@
     }
   ],
   "metadata": {
-    "version": 1,
-    "generatedBy": "manual",
-    "notes": "Neon-lit Tokyo street circuit; tight 90-degree turns for drift-style racing; default weather: night"
+    "version": 9,
+    "generatedBy": "densify-web-routes-from-unreal",
+    "notes": "Merged Unreal named/massing + street/skyline fill (+103). Racing line unchanged."
   },
   "dataAttribution": "Stylised Shibuya / Shinjuku circuit — original procedural geometry"
 }

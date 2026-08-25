@@ -526,13 +526,13 @@ export function UniqueCircuitLandmarks({
       const sample =
         samples[Math.floor((i + 0.5) * (samples.length / count)) % samples.length];
       const side = i % 2 === 0 ? 1 : -1;
-      const height = Math.min(def.height, 120);
+      const height = Math.min(def.height, 160);
       const half = Math.max(7, height * 0.14);
       let placedPoint: { x: number; y: number; z: number } | null = null;
-      for (const dist of [110, 128, 148, 170, 195, 220]) {
+      for (const dist of [95, 115, 135, 155, 180, 210, 245]) {
         const x = sample.position.x + sample.normal.x * side * dist;
         const z = sample.position.z + sample.normal.z * side * dist;
-        if (aabbAsphaltClearance(samples, x, z, half, half) >= 14) {
+        if (aabbAsphaltClearance(samples, x, z, half, half) >= 12) {
           placedPoint = { x, y: sample.position.y, z };
           break;
         }

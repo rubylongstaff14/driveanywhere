@@ -2133,6 +2133,2586 @@
       "roofType": "flat",
       "confidence": 0.7,
       "source": "procedural"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-0",
+      "footprint": [
+        {
+          "x": 217.19125165639318,
+          "y": 0,
+          "z": -634.0581795800377
+        },
+        {
+          "x": 231.19125165639318,
+          "y": 0,
+          "z": -634.0581795800377
+        },
+        {
+          "x": 231.19125165639318,
+          "y": 0,
+          "z": -617.0581795800377
+        },
+        {
+          "x": 217.19125165639318,
+          "y": 0,
+          "z": -617.0581795800377
+        }
+      ],
+      "height": 21.45,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-1",
+      "footprint": [
+        {
+          "x": 164.40606564678467,
+          "y": 0,
+          "z": -510.892745557618
+        },
+        {
+          "x": 178.40606564678467,
+          "y": 0,
+          "z": -510.892745557618
+        },
+        {
+          "x": 178.40606564678467,
+          "y": 0,
+          "z": -493.892745557618
+        },
+        {
+          "x": 164.40606564678467,
+          "y": 0,
+          "z": -493.892745557618
+        }
+      ],
+      "height": 22.75,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-2",
+      "footprint": [
+        {
+          "x": 342.22813192288135,
+          "y": 0,
+          "z": -578.4416468801381
+        },
+        {
+          "x": 358.22813192288135,
+          "y": 0,
+          "z": -578.4416468801381
+        },
+        {
+          "x": 358.22813192288135,
+          "y": 0,
+          "z": -569.4416468801381
+        },
+        {
+          "x": 342.22813192288135,
+          "y": 0,
+          "z": -569.4416468801381
+        }
+      ],
+      "height": 28.6,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-3",
+      "footprint": [
+        {
+          "x": 272.44803235945307,
+          "y": 0,
+          "z": -494.70552740402417
+        },
+        {
+          "x": 288.44803235945307,
+          "y": 0,
+          "z": -494.70552740402417
+        },
+        {
+          "x": 288.44803235945307,
+          "y": 0,
+          "z": -485.70552740402417
+        },
+        {
+          "x": 272.44803235945307,
+          "y": 0,
+          "z": -485.70552740402417
+        }
+      ],
+      "height": 29.900000000000002,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-4",
+      "footprint": [
+        {
+          "x": 445.8484424199806,
+          "y": 0,
+          "z": -497.2301536366163
+        },
+        {
+          "x": 463.8484424199806,
+          "y": 0,
+          "z": -497.2301536366163
+        },
+        {
+          "x": 463.8484424199806,
+          "y": 0,
+          "z": -486.2301536366163
+        },
+        {
+          "x": 445.8484424199806,
+          "y": 0,
+          "z": -486.2301536366163
+        }
+      ],
+      "height": 12.35,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-5",
+      "footprint": [
+        {
+          "x": 354.43011014789283,
+          "y": 0,
+          "z": -421.04821007654317
+        },
+        {
+          "x": 372.43011014789283,
+          "y": 0,
+          "z": -421.04821007654317
+        },
+        {
+          "x": 372.43011014789283,
+          "y": 0,
+          "z": -410.04821007654317
+        },
+        {
+          "x": 354.43011014789283,
+          "y": 0,
+          "z": -410.04821007654317
+        }
+      ],
+      "height": 13.65,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-6",
+      "footprint": [
+        {
+          "x": 504.9745458360683,
+          "y": 0,
+          "z": -376.4807542574904
+        },
+        {
+          "x": 524.9745458360683,
+          "y": 0,
+          "z": -376.4807542574904
+        },
+        {
+          "x": 524.9745458360683,
+          "y": 0,
+          "z": -363.4807542574904
+        },
+        {
+          "x": 504.9745458360683,
+          "y": 0,
+          "z": -363.4807542574904
+        }
+      ],
+      "height": 19.5,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-7",
+      "footprint": [
+        {
+          "x": 418.57491301437085,
+          "y": 0,
+          "z": -339.4523401910487
+        },
+        {
+          "x": 438.57491301437085,
+          "y": 0,
+          "z": -339.4523401910487
+        },
+        {
+          "x": 438.57491301437085,
+          "y": 0,
+          "z": -326.4523401910487
+        },
+        {
+          "x": 418.57491301437085,
+          "y": 0,
+          "z": -326.4523401910487
+        }
+      ],
+      "height": 20.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-8",
+      "footprint": [
+        {
+          "x": 562.6624466862327,
+          "y": 0,
+          "z": -266.28051472746574
+        },
+        {
+          "x": 572.6624466862327,
+          "y": 0,
+          "z": -266.28051472746574
+        },
+        {
+          "x": 572.6624466862327,
+          "y": 0,
+          "z": -251.28051472746574
+        },
+        {
+          "x": 562.6624466862327,
+          "y": 0,
+          "z": -251.28051472746574
+        }
+      ],
+      "height": 26.650000000000002,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-9",
+      "footprint": [
+        {
+          "x": 462.66395613158704,
+          "y": 0,
+          "z": -237.70951742613838
+        },
+        {
+          "x": 472.66395613158704,
+          "y": 0,
+          "z": -237.70951742613838
+        },
+        {
+          "x": 472.66395613158704,
+          "y": 0,
+          "z": -222.70951742613838
+        },
+        {
+          "x": 462.66395613158704,
+          "y": 0,
+          "z": -222.70951742613838
+        }
+      ],
+      "height": 27.95,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-10",
+      "footprint": [
+        {
+          "x": 599.0722512528483,
+          "y": 0,
+          "z": -143.0962531160412
+        },
+        {
+          "x": 611.0722512528483,
+          "y": 0,
+          "z": -143.0962531160412
+        },
+        {
+          "x": 611.0722512528483,
+          "y": 0,
+          "z": -126.0962531160412
+        },
+        {
+          "x": 599.0722512528483,
+          "y": 0,
+          "z": -126.0962531160412
+        }
+      ],
+      "height": 10.4,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-11",
+      "footprint": [
+        {
+          "x": 485.3619594721446,
+          "y": 0,
+          "z": -151.21841681466296
+        },
+        {
+          "x": 497.3619594721446,
+          "y": 0,
+          "z": -151.21841681466296
+        },
+        {
+          "x": 497.3619594721446,
+          "y": 0,
+          "z": -134.21841681466296
+        },
+        {
+          "x": 485.3619594721446,
+          "y": 0,
+          "z": -134.21841681466296
+        }
+      ],
+      "height": 11.700000000000001,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-12",
+      "footprint": [
+        {
+          "x": 594.2557420354284,
+          "y": 0,
+          "z": -23.290419656876317
+        },
+        {
+          "x": 608.2557420354284,
+          "y": 0,
+          "z": -23.290419656876317
+        },
+        {
+          "x": 608.2557420354284,
+          "y": 0,
+          "z": -14.290419656876317
+        },
+        {
+          "x": 594.2557420354284,
+          "y": 0,
+          "z": -14.290419656876317
+        }
+      ],
+      "height": 17.55,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-13",
+      "footprint": [
+        {
+          "x": 473.0082426898296,
+          "y": 0,
+          "z": -49.272026659504654
+        },
+        {
+          "x": 487.0082426898296,
+          "y": 0,
+          "z": -49.272026659504654
+        },
+        {
+          "x": 487.0082426898296,
+          "y": 0,
+          "z": -40.272026659504654
+        },
+        {
+          "x": 473.0082426898296,
+          "y": 0,
+          "z": -40.272026659504654
+        }
+      ],
+      "height": 18.85,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-14",
+      "footprint": [
+        {
+          "x": 571.4578130082335,
+          "y": 0,
+          "z": 95.75694079824866
+        },
+        {
+          "x": 587.4578130082335,
+          "y": 0,
+          "z": 95.75694079824866
+        },
+        {
+          "x": 587.4578130082335,
+          "y": 0,
+          "z": 106.75694079824866
+        },
+        {
+          "x": 571.4578130082335,
+          "y": 0,
+          "z": 106.75694079824866
+        }
+      ],
+      "height": 24.7,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-15",
+      "footprint": [
+        {
+          "x": 448.2923789858138,
+          "y": 0,
+          "z": 42.97175478864026
+        },
+        {
+          "x": 464.2923789858138,
+          "y": 0,
+          "z": 42.97175478864026
+        },
+        {
+          "x": 464.2923789858138,
+          "y": 0,
+          "z": 53.97175478864026
+        },
+        {
+          "x": 448.2923789858138,
+          "y": 0,
+          "z": 53.97175478864026
+        }
+      ],
+      "height": 26,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-16",
+      "footprint": [
+        {
+          "x": 523.1178242959454,
+          "y": 0,
+          "z": 215.06637943430704
+        },
+        {
+          "x": 541.1178242959454,
+          "y": 0,
+          "z": 215.06637943430704
+        },
+        {
+          "x": 541.1178242959454,
+          "y": 0,
+          "z": 228.06637943430704
+        },
+        {
+          "x": 523.1178242959454,
+          "y": 0,
+          "z": 228.06637943430704
+        }
+      ],
+      "height": 8.450000000000001,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-17",
+      "footprint": [
+        {
+          "x": 432.42434221312044,
+          "y": 0,
+          "z": 154.60405804575706
+        },
+        {
+          "x": 450.42434221312044,
+          "y": 0,
+          "z": 154.60405804575706
+        },
+        {
+          "x": 450.42434221312044,
+          "y": 0,
+          "z": 167.60405804575706
+        },
+        {
+          "x": 432.42434221312044,
+          "y": 0,
+          "z": 167.60405804575706
+        }
+      ],
+      "height": 9.75,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-18",
+      "footprint": [
+        {
+          "x": 455.81498739166904,
+          "y": 0,
+          "z": 320.0138876762565
+        },
+        {
+          "x": 475.81498739166904,
+          "y": 0,
+          "z": 320.0138876762565
+        },
+        {
+          "x": 475.81498739166904,
+          "y": 0,
+          "z": 335.0138876762565
+        },
+        {
+          "x": 455.81498739166904,
+          "y": 0,
+          "z": 335.0138876762565
+        }
+      ],
+      "height": 15.600000000000001,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-19",
+      "footprint": [
+        {
+          "x": 371.6692804304699,
+          "y": 0,
+          "z": 235.86818071505735
+        },
+        {
+          "x": 391.6692804304699,
+          "y": 0,
+          "z": 235.86818071505735
+        },
+        {
+          "x": 391.6692804304699,
+          "y": 0,
+          "z": 250.86818071505735
+        },
+        {
+          "x": 371.6692804304699,
+          "y": 0,
+          "z": 250.86818071505735
+        }
+      ],
+      "height": 16.900000000000002,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-20",
+      "footprint": [
+        {
+          "x": 356.3667631013569,
+          "y": 0,
+          "z": 379.88225607935476
+        },
+        {
+          "x": 366.3667631013569,
+          "y": 0,
+          "z": 379.88225607935476
+        },
+        {
+          "x": 366.3667631013569,
+          "y": 0,
+          "z": 396.88225607935476
+        },
+        {
+          "x": 356.3667631013569,
+          "y": 0,
+          "z": 396.88225607935476
+        }
+      ],
+      "height": 22.75,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-21",
+      "footprint": [
+        {
+          "x": 304.2249446561854,
+          "y": 0,
+          "z": 301.66952841159747
+        },
+        {
+          "x": 314.2249446561854,
+          "y": 0,
+          "z": 301.66952841159747
+        },
+        {
+          "x": 314.2249446561854,
+          "y": 0,
+          "z": 318.66952841159747
+        },
+        {
+          "x": 304.2249446561854,
+          "y": 0,
+          "z": 318.66952841159747
+        }
+      ],
+      "height": 24.05,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-22",
+      "footprint": [
+        {
+          "x": 252.78051472746574,
+          "y": 0,
+          "z": 455.5949246853563
+        },
+        {
+          "x": 264.78051472746574,
+          "y": 0,
+          "z": 455.5949246853563
+        },
+        {
+          "x": 264.78051472746574,
+          "y": 0,
+          "z": 464.5949246853563
+        },
+        {
+          "x": 252.78051472746574,
+          "y": 0,
+          "z": 464.5949246853563
+        }
+      ],
+      "height": 29.900000000000002,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-23",
+      "footprint": [
+        {
+          "x": 224.20951742613838,
+          "y": 0,
+          "z": 355.5964341307107
+        },
+        {
+          "x": 236.20951742613838,
+          "y": 0,
+          "z": 355.5964341307107
+        },
+        {
+          "x": 236.20951742613838,
+          "y": 0,
+          "z": 364.5964341307107
+        },
+        {
+          "x": 224.20951742613838,
+          "y": 0,
+          "z": 364.5964341307107
+        }
+      ],
+      "height": 7.800000000000001,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-24",
+      "footprint": [
+        {
+          "x": 139.8498470552911,
+          "y": 0,
+          "z": 491.4293609000452
+        },
+        {
+          "x": 153.8498470552911,
+          "y": 0,
+          "z": 491.4293609000452
+        },
+        {
+          "x": 153.8498470552911,
+          "y": 0,
+          "z": 502.4293609000452
+        },
+        {
+          "x": 139.8498470552911,
+          "y": 0,
+          "z": 502.4293609000452
+        }
+      ],
+      "height": 13.65,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-25",
+      "footprint": [
+        {
+          "x": 121.10836250248039,
+          "y": 0,
+          "z": 378.9804535831808
+        },
+        {
+          "x": 135.1083625024804,
+          "y": 0,
+          "z": 378.9804535831808
+        },
+        {
+          "x": 135.1083625024804,
+          "y": 0,
+          "z": 389.9804535831808
+        },
+        {
+          "x": 121.10836250248039,
+          "y": 0,
+          "z": 389.9804535831808
+        }
+      ],
+      "height": 14.950000000000001,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-26",
+      "footprint": [
+        {
+          "x": 22.44126228165362,
+          "y": 0,
+          "z": 509.3105307335687
+        },
+        {
+          "x": 38.44126228165362,
+          "y": 0,
+          "z": 509.3105307335687
+        },
+        {
+          "x": 38.44126228165362,
+          "y": 0,
+          "z": 522.3105307335687
+        },
+        {
+          "x": 22.44126228165362,
+          "y": 0,
+          "z": 522.3105307335687
+        }
+      ],
+      "height": 20.8,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-27",
+      "footprint": [
+        {
+          "x": 56.506682140928504,
+          "y": 0,
+          "z": 390.0815612261066
+        },
+        {
+          "x": 72.5066821409285,
+          "y": 0,
+          "z": 390.0815612261066
+        },
+        {
+          "x": 72.5066821409285,
+          "y": 0,
+          "z": 403.0815612261066
+        },
+        {
+          "x": 56.506682140928504,
+          "y": 0,
+          "z": 403.0815612261066
+        }
+      ],
+      "height": 22.1,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-28",
+      "footprint": [
+        {
+          "x": -102.36589226557886,
+          "y": 0,
+          "z": 475.93464939768336
+        },
+        {
+          "x": -84.36589226557886,
+          "y": 0,
+          "z": 475.93464939768336
+        },
+        {
+          "x": -84.36589226557886,
+          "y": 0,
+          "z": 490.93464939768336
+        },
+        {
+          "x": -102.36589226557886,
+          "y": 0,
+          "z": 490.93464939768336
+        }
+      ],
+      "height": 27.95,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-29",
+      "footprint": [
+        {
+          "x": -33.42346103829034,
+          "y": 0,
+          "z": 361.03059735220245
+        },
+        {
+          "x": -15.423461038290341,
+          "y": 0,
+          "z": 361.03059735220245
+        },
+        {
+          "x": -15.423461038290341,
+          "y": 0,
+          "z": 376.03059735220245
+        },
+        {
+          "x": -33.42346103829034,
+          "y": 0,
+          "z": 376.03059735220245
+        }
+      ],
+      "height": 29.25,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-30",
+      "footprint": [
+        {
+          "x": -200.61930994809558,
+          "y": 0,
+          "z": 417.5242896178479
+        },
+        {
+          "x": -180.61930994809558,
+          "y": 0,
+          "z": 417.5242896178479
+        },
+        {
+          "x": -180.61930994809558,
+          "y": 0,
+          "z": 434.5242896178479
+        },
+        {
+          "x": -200.61930994809558,
+          "y": 0,
+          "z": 434.5242896178479
+        }
+      ],
+      "height": 11.700000000000001,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-31",
+      "footprint": [
+        {
+          "x": -115.50460971880526,
+          "y": 0,
+          "z": 349.43252943441564
+        },
+        {
+          "x": -95.50460971880526,
+          "y": 0,
+          "z": 349.43252943441564
+        },
+        {
+          "x": -95.50460971880526,
+          "y": 0,
+          "z": 366.43252943441564
+        },
+        {
+          "x": -115.50460971880526,
+          "y": 0,
+          "z": 366.43252943441564
+        }
+      ],
+      "height": 13,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-32",
+      "footprint": [
+        {
+          "x": -269.1670128964787,
+          "y": 0,
+          "z": 335.03515602135815
+        },
+        {
+          "x": -259.1670128964787,
+          "y": 0,
+          "z": 335.03515602135815
+        },
+        {
+          "x": -259.1670128964787,
+          "y": 0,
+          "z": 344.03515602135815
+        },
+        {
+          "x": -269.1670128964787,
+          "y": 0,
+          "z": 344.03515602135815
+        }
+      ],
+      "height": 18.85,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-33",
+      "footprint": [
+        {
+          "x": -162.7301771674887,
+          "y": 0,
+          "z": 281.81673815686315
+        },
+        {
+          "x": -152.7301771674887,
+          "y": 0,
+          "z": 281.81673815686315
+        },
+        {
+          "x": -152.7301771674887,
+          "y": 0,
+          "z": 290.81673815686315
+        },
+        {
+          "x": -162.7301771674887,
+          "y": 0,
+          "z": 290.81673815686315
+        }
+      ],
+      "height": 20.150000000000002,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-34",
+      "footprint": [
+        {
+          "x": -289.4345637382854,
+          "y": 0,
+          "z": 228.41801501275106
+        },
+        {
+          "x": -277.4345637382854,
+          "y": 0,
+          "z": 228.41801501275106
+        },
+        {
+          "x": -277.4345637382854,
+          "y": 0,
+          "z": 239.41801501275106
+        },
+        {
+          "x": -289.4345637382854,
+          "y": 0,
+          "z": 239.41801501275106
+        }
+      ],
+      "height": 26,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-35",
+      "footprint": [
+        {
+          "x": -205.35840778429332,
+          "y": 0,
+          "z": 186.379937035755
+        },
+        {
+          "x": -193.35840778429332,
+          "y": 0,
+          "z": 186.379937035755
+        },
+        {
+          "x": -193.35840778429332,
+          "y": 0,
+          "z": 197.379937035755
+        },
+        {
+          "x": -205.35840778429332,
+          "y": 0,
+          "z": 197.379937035755
+        }
+      ],
+      "height": 27.3,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-36",
+      "footprint": [
+        {
+          "x": -345.32950270820385,
+          "y": 0,
+          "z": 124.16106326149628
+        },
+        {
+          "x": -331.32950270820385,
+          "y": 0,
+          "z": 124.16106326149628
+        },
+        {
+          "x": -331.32950270820385,
+          "y": 0,
+          "z": 137.16106326149628
+        },
+        {
+          "x": -345.32950270820385,
+          "y": 0,
+          "z": 137.16106326149628
+        }
+      ],
+      "height": 9.75,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-37",
+      "footprint": [
+        {
+          "x": -242.7445346296609,
+          "y": 0,
+          "z": 107.06356858173909
+        },
+        {
+          "x": -228.7445346296609,
+          "y": 0,
+          "z": 107.06356858173909
+        },
+        {
+          "x": -228.7445346296609,
+          "y": 0,
+          "z": 120.06356858173909
+        },
+        {
+          "x": -242.7445346296609,
+          "y": 0,
+          "z": 120.06356858173909
+        }
+      ],
+      "height": 11.05,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-38",
+      "footprint": [
+        {
+          "x": -367.2036295365594,
+          "y": 0,
+          "z": 19.528731115164824
+        },
+        {
+          "x": -351.2036295365594,
+          "y": 0,
+          "z": 19.528731115164824
+        },
+        {
+          "x": -351.2036295365594,
+          "y": 0,
+          "z": 34.528731115164824
+        },
+        {
+          "x": -367.2036295365594,
+          "y": 0,
+          "z": 34.528731115164824
+        }
+      ],
+      "height": 16.900000000000002,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-39",
+      "footprint": [
+        {
+          "x": -253.49333775585563,
+          "y": 0,
+          "z": 27.650894813786508
+        },
+        {
+          "x": -237.49333775585563,
+          "y": 0,
+          "z": 27.650894813786508
+        },
+        {
+          "x": -237.49333775585563,
+          "y": 0,
+          "z": 42.65089481378651
+        },
+        {
+          "x": -253.49333775585563,
+          "y": 0,
+          "z": 42.65089481378651
+        }
+      ],
+      "height": 18.2,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-40",
+      "footprint": [
+        {
+          "x": -364.3871203191395,
+          "y": 0,
+          "z": -97.2771023440001
+        },
+        {
+          "x": -346.3871203191395,
+          "y": 0,
+          "z": -97.2771023440001
+        },
+        {
+          "x": -346.3871203191395,
+          "y": 0,
+          "z": -80.2771023440001
+        },
+        {
+          "x": -364.3871203191395,
+          "y": 0,
+          "z": -80.2771023440001
+        }
+      ],
+      "height": 24.05,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-41",
+      "footprint": [
+        {
+          "x": -243.13962097354073,
+          "y": 0,
+          "z": -71.29549534137176
+        },
+        {
+          "x": -225.13962097354073,
+          "y": 0,
+          "z": -71.29549534137176
+        },
+        {
+          "x": -225.13962097354073,
+          "y": 0,
+          "z": -54.29549534137176
+        },
+        {
+          "x": -243.13962097354073,
+          "y": 0,
+          "z": -54.29549534137176
+        }
+      ],
+      "height": 25.35,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-42",
+      "footprint": [
+        {
+          "x": -344.99019794970496,
+          "y": 0,
+          "z": -209.75432290110237
+        },
+        {
+          "x": -324.99019794970496,
+          "y": 0,
+          "z": -209.75432290110237
+        },
+        {
+          "x": -324.99019794970496,
+          "y": 0,
+          "z": -200.75432290110237
+        },
+        {
+          "x": -344.99019794970496,
+          "y": 0,
+          "z": -200.75432290110237
+        }
+      ],
+      "height": 7.800000000000001,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-43",
+      "footprint": [
+        {
+          "x": -218.79678179599676,
+          "y": 0,
+          "z": -164.68524570334944
+        },
+        {
+          "x": -198.79678179599676,
+          "y": 0,
+          "z": -164.68524570334944
+        },
+        {
+          "x": -198.79678179599676,
+          "y": 0,
+          "z": -155.68524570334944
+        },
+        {
+          "x": -218.79678179599676,
+          "y": 0,
+          "z": -155.68524570334944
+        }
+      ],
+      "height": 9.1,
+      "baseHeight": 0,
+      "floors": 3,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-44",
+      "footprint": [
+        {
+          "x": -301.05841364785,
+          "y": 0,
+          "z": -331.22834699820686
+        },
+        {
+          "x": -291.05841364785,
+          "y": 0,
+          "z": -331.22834699820686
+        },
+        {
+          "x": -291.05841364785,
+          "y": 0,
+          "z": -320.22834699820686
+        },
+        {
+          "x": -301.05841364785,
+          "y": 0,
+          "z": -320.22834699820686
+        }
+      ],
+      "height": 14.950000000000001,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-45",
+      "footprint": [
+        {
+          "x": -206.90651344992074,
+          "y": 0,
+          "z": -276.3064052160815
+        },
+        {
+          "x": -196.90651344992074,
+          "y": 0,
+          "z": -276.3064052160815
+        },
+        {
+          "x": -196.90651344992074,
+          "y": 0,
+          "z": -265.3064052160815
+        },
+        {
+          "x": -206.90651344992074,
+          "y": 0,
+          "z": -265.3064052160815
+        }
+      ],
+      "height": 16.25,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-46",
+      "footprint": [
+        {
+          "x": -250.30908747954146,
+          "y": 0,
+          "z": -430.60813555991797
+        },
+        {
+          "x": -238.30908747954146,
+          "y": 0,
+          "z": -430.60813555991797
+        },
+        {
+          "x": -238.30908747954146,
+          "y": 0,
+          "z": -417.60813555991797
+        },
+        {
+          "x": -250.30908747954146,
+          "y": 0,
+          "z": -417.60813555991797
+        }
+      ],
+      "height": 22.1,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-47",
+      "footprint": [
+        {
+          "x": -151.29510245333802,
+          "y": 0,
+          "z": -364.5988122091157
+        },
+        {
+          "x": -139.29510245333802,
+          "y": 0,
+          "z": -364.5988122091157
+        },
+        {
+          "x": -139.29510245333802,
+          "y": 0,
+          "z": -351.5988122091157
+        },
+        {
+          "x": -151.29510245333802,
+          "y": 0,
+          "z": -351.5988122091157
+        }
+      ],
+      "height": 23.400000000000002,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-48",
+      "footprint": [
+        {
+          "x": -164.8804232203339,
+          "y": 0,
+          "z": -507.16786281676946
+        },
+        {
+          "x": -150.8804232203339,
+          "y": 0,
+          "z": -507.16786281676946
+        },
+        {
+          "x": -150.8804232203339,
+          "y": 0,
+          "z": -492.16786281676946
+        },
+        {
+          "x": -164.8804232203339,
+          "y": 0,
+          "z": -492.16786281676946
+        }
+      ],
+      "height": 29.25,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-street-fill-49",
+      "footprint": [
+        {
+          "x": -86.66769555257662,
+          "y": 0,
+          "z": -455.02604437159795
+        },
+        {
+          "x": -72.66769555257662,
+          "y": 0,
+          "z": -455.02604437159795
+        },
+        {
+          "x": -72.66769555257662,
+          "y": 0,
+          "z": -440.02604437159795
+        },
+        {
+          "x": -86.66769555257662,
+          "y": 0,
+          "z": -440.02604437159795
+        }
+      ],
+      "height": 30.55,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-0",
+      "name": "Skyline 1",
+      "footprint": [
+        {
+          "x": -22.94818637367328,
+          "y": 0,
+          "z": -445.29331780664404
+        },
+        {
+          "x": -6.948186373673282,
+          "y": 0,
+          "z": -445.29331780664404
+        },
+        {
+          "x": -6.948186373673282,
+          "y": 0,
+          "z": -425.29331780664404
+        },
+        {
+          "x": -22.94818637367328,
+          "y": 0,
+          "z": -425.29331780664404
+        }
+      ],
+      "height": 35.75,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-1",
+      "footprint": [
+        {
+          "x": 174.68423312710684,
+          "y": 0,
+          "z": -874.1419598158841
+        },
+        {
+          "x": 192.68423312710684,
+          "y": 0,
+          "z": -874.1419598158841
+        },
+        {
+          "x": 192.68423312710684,
+          "y": 0,
+          "z": -852.1419598158841
+        },
+        {
+          "x": 174.68423312710684,
+          "y": 0,
+          "z": -852.1419598158841
+        }
+      ],
+      "height": 40.95,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-2",
+      "footprint": [
+        {
+          "x": 77.89517434800106,
+          "y": 0,
+          "z": -319.5339991937897
+        },
+        {
+          "x": 97.89517434800106,
+          "y": 0,
+          "z": -319.5339991937897
+        },
+        {
+          "x": 97.89517434800106,
+          "y": 0,
+          "z": -295.5339991937897
+        },
+        {
+          "x": 77.89517434800106,
+          "y": 0,
+          "z": -295.5339991937897
+        }
+      ],
+      "height": 46.15,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-3",
+      "footprint": [
+        {
+          "x": 434.61560747288877,
+          "y": 0,
+          "z": -701.4066175401472
+        },
+        {
+          "x": 456.61560747288877,
+          "y": 0,
+          "z": -701.4066175401472
+        },
+        {
+          "x": 456.61560747288877,
+          "y": 0,
+          "z": -675.4066175401472
+        },
+        {
+          "x": 434.61560747288877,
+          "y": 0,
+          "z": -675.4066175401472
+        }
+      ],
+      "height": 51.35,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-4",
+      "footprint": [
+        {
+          "x": 150.92435617297778,
+          "y": 0,
+          "z": -262.46008176411385
+        },
+        {
+          "x": 174.92435617297778,
+          "y": 0,
+          "z": -262.46008176411385
+        },
+        {
+          "x": 174.92435617297778,
+          "y": 0,
+          "z": -234.46008176411388
+        },
+        {
+          "x": 150.92435617297778,
+          "y": 0,
+          "z": -234.46008176411388
+        }
+      ],
+      "height": 56.550000000000004,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-5",
+      "name": "Skyline 6",
+      "footprint": [
+        {
+          "x": 757.4968641810884,
+          "y": 0,
+          "z": -486.4903192624988
+        },
+        {
+          "x": 783.4968641810884,
+          "y": 0,
+          "z": -486.4903192624988
+        },
+        {
+          "x": 783.4968641810884,
+          "y": 0,
+          "z": -472.4903192624988
+        },
+        {
+          "x": 757.4968641810884,
+          "y": 0,
+          "z": -472.4903192624988
+        }
+      ],
+      "height": 61.75,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-6",
+      "footprint": [
+        {
+          "x": 266.16678634162656,
+          "y": 0,
+          "z": -184.63889748614955
+        },
+        {
+          "x": 294.16678634162656,
+          "y": 0,
+          "z": -184.63889748614955
+        },
+        {
+          "x": 294.16678634162656,
+          "y": 0,
+          "z": -168.63889748614955
+        },
+        {
+          "x": 266.16678634162656,
+          "y": 0,
+          "z": -168.63889748614955
+        }
+      ],
+      "height": 66.95,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-7",
+      "footprint": [
+        {
+          "x": 881.3301916034229,
+          "y": 0,
+          "z": -122.79211451957147
+        },
+        {
+          "x": 911.3301916034229,
+          "y": 0,
+          "z": -122.79211451957147
+        },
+        {
+          "x": 911.3301916034229,
+          "y": 0,
+          "z": -104.79211451957147
+        },
+        {
+          "x": 881.3301916034229,
+          "y": 0,
+          "z": -104.79211451957147
+        }
+      ],
+      "height": 72.15,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-8",
+      "footprint": [
+        {
+          "x": 181.42334502145826,
+          "y": 0,
+          "z": -115.32593330272715
+        },
+        {
+          "x": 213.42334502145826,
+          "y": 0,
+          "z": -115.32593330272715
+        },
+        {
+          "x": 213.42334502145826,
+          "y": 0,
+          "z": -95.32593330272715
+        },
+        {
+          "x": 181.42334502145826,
+          "y": 0,
+          "z": -95.32593330272715
+        }
+      ],
+      "height": 77.35000000000001,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-9",
+      "footprint": [
+        {
+          "x": 670.9169265503645,
+          "y": 0,
+          "z": 136.7394180305904
+        },
+        {
+          "x": 704.9169265503645,
+          "y": 0,
+          "z": 136.7394180305904
+        },
+        {
+          "x": 704.9169265503645,
+          "y": 0,
+          "z": 158.7394180305904
+        },
+        {
+          "x": 670.9169265503645,
+          "y": 0,
+          "z": 158.7394180305904
+        }
+      ],
+      "height": 82.55,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-10",
+      "name": "Skyline 11",
+      "footprint": [
+        {
+          "x": 242.05277451541636,
+          "y": 0,
+          "z": 21.523012913954375
+        },
+        {
+          "x": 258.05277451541633,
+          "y": 0,
+          "z": 21.523012913954375
+        },
+        {
+          "x": 258.05277451541633,
+          "y": 0,
+          "z": 45.523012913954375
+        },
+        {
+          "x": 242.05277451541636,
+          "y": 0,
+          "z": 45.523012913954375
+        }
+      ],
+      "height": 87.75,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-11",
+      "footprint": [
+        {
+          "x": 606.721625003217,
+          "y": 0,
+          "z": 464.42052528780454
+        },
+        {
+          "x": 624.721625003217,
+          "y": 0,
+          "z": 464.42052528780454
+        },
+        {
+          "x": 624.721625003217,
+          "y": 0,
+          "z": 490.42052528780454
+        },
+        {
+          "x": 606.721625003217,
+          "y": 0,
+          "z": 490.42052528780454
+        }
+      ],
+      "height": 92.95,
+      "baseHeight": 0,
+      "floors": 24,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-12",
+      "footprint": [
+        {
+          "x": 208.25411247524784,
+          "y": 0,
+          "z": 159.7132801401911
+        },
+        {
+          "x": 228.25411247524784,
+          "y": 0,
+          "z": 159.7132801401911
+        },
+        {
+          "x": 228.25411247524784,
+          "y": 0,
+          "z": 187.7132801401911
+        },
+        {
+          "x": 208.25411247524784,
+          "y": 0,
+          "z": 187.7132801401911
+        }
+      ],
+      "height": 98.15,
+      "baseHeight": 0,
+      "floors": 26,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-13",
+      "footprint": [
+        {
+          "x": 319.4827291086814,
+          "y": 0,
+          "z": 704.0526750196111
+        },
+        {
+          "x": 341.4827291086814,
+          "y": 0,
+          "z": 704.0526750196111
+        },
+        {
+          "x": 341.4827291086814,
+          "y": 0,
+          "z": 718.0526750196111
+        },
+        {
+          "x": 319.4827291086814,
+          "y": 0,
+          "z": 718.0526750196111
+        }
+      ],
+      "height": 103.35000000000001,
+      "baseHeight": 0,
+      "floors": 27,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-14",
+      "footprint": [
+        {
+          "x": 73.69342377769829,
+          "y": 0,
+          "z": 121.99082123448767
+        },
+        {
+          "x": 97.69342377769829,
+          "y": 0,
+          "z": 121.99082123448767
+        },
+        {
+          "x": 97.69342377769829,
+          "y": 0,
+          "z": 137.99082123448767
+        },
+        {
+          "x": 73.69342377769829,
+          "y": 0,
+          "z": 137.99082123448767
+        }
+      ],
+      "height": 108.55,
+      "baseHeight": 0,
+      "floors": 29,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-15",
+      "name": "Skyline 16",
+      "footprint": [
+        {
+          "x": -36.12935765833511,
+          "y": 0,
+          "z": 694.3077005235292
+        },
+        {
+          "x": -10.12935765833511,
+          "y": 0,
+          "z": 694.3077005235292
+        },
+        {
+          "x": -10.12935765833511,
+          "y": 0,
+          "z": 712.3077005235292
+        },
+        {
+          "x": -36.12935765833511,
+          "y": 0,
+          "z": 712.3077005235292
+        }
+      ],
+      "height": 113.75,
+      "baseHeight": 0,
+      "floors": 30,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-16",
+      "footprint": [
+        {
+          "x": 101.51938443799683,
+          "y": 0,
+          "z": 125.29252155839043
+        },
+        {
+          "x": 129.51938443799685,
+          "y": 0,
+          "z": 125.29252155839043
+        },
+        {
+          "x": 129.51938443799685,
+          "y": 0,
+          "z": 145.29252155839043
+        },
+        {
+          "x": 101.51938443799683,
+          "y": 0,
+          "z": 145.29252155839043
+        }
+      ],
+      "height": 118.95,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-17",
+      "footprint": [
+        {
+          "x": -431.2903958771313,
+          "y": 0,
+          "z": 595.5611583610764
+        },
+        {
+          "x": -401.2903958771313,
+          "y": 0,
+          "z": 595.5611583610764
+        },
+        {
+          "x": -401.2903958771313,
+          "y": 0,
+          "z": 617.5611583610764
+        },
+        {
+          "x": -431.2903958771313,
+          "y": 0,
+          "z": 617.5611583610764
+        }
+      ],
+      "height": 35.75,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-18",
+      "footprint": [
+        {
+          "x": -54.77136076449989,
+          "y": 0,
+          "z": 214.83732995536877
+        },
+        {
+          "x": -22.77136076449989,
+          "y": 0,
+          "z": 214.83732995536877
+        },
+        {
+          "x": -22.77136076449989,
+          "y": 0,
+          "z": 238.83732995536877
+        },
+        {
+          "x": -54.77136076449989,
+          "y": 0,
+          "z": 238.83732995536877
+        }
+      ],
+      "height": 40.95,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-19",
+      "footprint": [
+        {
+          "x": -506.1528176682661,
+          "y": 0,
+          "z": 323.7771419777414
+        },
+        {
+          "x": -472.1528176682661,
+          "y": 0,
+          "z": 323.7771419777414
+        },
+        {
+          "x": -472.1528176682661,
+          "y": 0,
+          "z": 349.7771419777414
+        },
+        {
+          "x": -506.1528176682661,
+          "y": 0,
+          "z": 349.7771419777414
+        }
+      ],
+      "height": 46.15,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-20",
+      "name": "Skyline 21",
+      "footprint": [
+        {
+          "x": -19.833113919764287,
+          "y": 0,
+          "z": 62.24499846342289
+        },
+        {
+          "x": -3.833113919764287,
+          "y": 0,
+          "z": 62.24499846342289
+        },
+        {
+          "x": -3.833113919764287,
+          "y": 0,
+          "z": 90.24499846342289
+        },
+        {
+          "x": -19.833113919764287,
+          "y": 0,
+          "z": 90.24499846342289
+        }
+      ],
+      "height": 51.35,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-21",
+      "footprint": [
+        {
+          "x": -531.7868563087999,
+          "y": 0,
+          "z": 8.34421491714766
+        },
+        {
+          "x": -513.7868563087999,
+          "y": 0,
+          "z": 8.34421491714766
+        },
+        {
+          "x": -513.7868563087999,
+          "y": 0,
+          "z": 22.34421491714766
+        },
+        {
+          "x": -531.7868563087999,
+          "y": 0,
+          "z": 22.34421491714766
+        }
+      ],
+      "height": 56.550000000000004,
+      "baseHeight": 0,
+      "floors": 15,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-22",
+      "footprint": [
+        {
+          "x": -8.489239180885022,
+          "y": 0,
+          "z": -20.298984957231198
+        },
+        {
+          "x": 11.510760819114978,
+          "y": 0,
+          "z": -20.298984957231198
+        },
+        {
+          "x": 11.510760819114978,
+          "y": 0,
+          "z": -4.298984957231198
+        },
+        {
+          "x": -8.489239180885022,
+          "y": 0,
+          "z": -4.298984957231198
+        }
+      ],
+      "height": 61.75,
+      "baseHeight": 0,
+      "floors": 16,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-23",
+      "footprint": [
+        {
+          "x": -588.9596111411731,
+          "y": 0,
+          "z": -301.02911332662666
+        },
+        {
+          "x": -566.9596111411731,
+          "y": 0,
+          "z": -301.02911332662666
+        },
+        {
+          "x": -566.9596111411731,
+          "y": 0,
+          "z": -283.02911332662666
+        },
+        {
+          "x": -588.9596111411731,
+          "y": 0,
+          "z": -283.02911332662666
+        }
+      ],
+      "height": 66.95,
+      "baseHeight": 0,
+      "floors": 18,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-24",
+      "footprint": [
+        {
+          "x": -32.512944261249686,
+          "y": 0,
+          "z": -174.99348985602336
+        },
+        {
+          "x": -8.512944261249686,
+          "y": 0,
+          "z": -174.99348985602336
+        },
+        {
+          "x": -8.512944261249686,
+          "y": 0,
+          "z": -154.99348985602336
+        },
+        {
+          "x": -32.512944261249686,
+          "y": 0,
+          "z": -154.99348985602336
+        }
+      ],
+      "height": 72.15,
+      "baseHeight": 0,
+      "floors": 19,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-25",
+      "name": "Skyline 26",
+      "footprint": [
+        {
+          "x": -483.626767539435,
+          "y": 0,
+          "z": -585.9865889331802
+        },
+        {
+          "x": -457.626767539435,
+          "y": 0,
+          "z": -585.9865889331802
+        },
+        {
+          "x": -457.626767539435,
+          "y": 0,
+          "z": -563.9865889331802
+        },
+        {
+          "x": -483.626767539435,
+          "y": 0,
+          "z": -563.9865889331802
+        }
+      ],
+      "height": 77.35000000000001,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-26",
+      "footprint": [
+        {
+          "x": 159.2755939261278,
+          "y": 0,
+          "z": -290.89718471912823
+        },
+        {
+          "x": 187.2755939261278,
+          "y": 0,
+          "z": -290.89718471912823
+        },
+        {
+          "x": 187.2755939261278,
+          "y": 0,
+          "z": -266.89718471912823
+        },
+        {
+          "x": 159.2755939261278,
+          "y": 0,
+          "z": -266.89718471912823
+        }
+      ],
+      "height": 82.55,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "rio-coast-circuit-skyline-27",
+      "footprint": [
+        {
+          "x": -184.4671554290723,
+          "y": 0,
+          "z": -725.571187718918
+        },
+        {
+          "x": -154.4671554290723,
+          "y": 0,
+          "z": -725.571187718918
+        },
+        {
+          "x": -154.4671554290723,
+          "y": 0,
+          "z": -699.571187718918
+        },
+        {
+          "x": -184.4671554290723,
+          "y": 0,
+          "z": -699.571187718918
+        }
+      ],
+      "height": 87.75,
+      "baseHeight": 0,
+      "floors": 23,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
     }
   ],
   "barriers": [
@@ -2665,9 +5245,9 @@
     }
   ],
   "metadata": {
-    "version": 8,
-    "generatedBy": "seed-local-data",
-    "notes": "Coastal circuit along Copacabana with climb around Sugarloaf; city streets through Lapa and Centro"
+    "version": 9,
+    "generatedBy": "densify-web-routes-from-unreal",
+    "notes": "Merged Unreal named/massing + street/skyline fill (+78). Racing line unchanged."
   },
   "dataAttribution": "Stylised Rio de Janeiro / Copacabana coast circuit — original procedural geometry"
 }

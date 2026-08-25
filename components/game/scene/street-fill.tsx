@@ -16,6 +16,9 @@ const PALETTE: Record<CityRegion, [string, string, string]> = {
   nyc: ["#6b7d94", "#b8b4a8", "#4a5858"],
 };
 
+const FILL_CAP = 160;
+const SKYLINE_CAP = 72;
+
 interface Occupied {
   x: number;
   z: number;
@@ -45,27 +48,37 @@ export function StreetFill({
       color: string;
     }> = [];
     const pal = PALETTE[region];
-    const stride = Math.max(10, Math.round(14 / Math.max(0.4, density)));
-    for (let i = 6; i < samples.length - 6; i += stride) {
+    const stride = Math.max(4, Math.round(10 / Math.max(0.45, density)));
+    const cityTall =
+      region === "dubai" ||
+      region === "nyc" ||
+      region === "tokyo" ||
+      region === "london";
+    const alpine = region === "egypt" || region === "alps" || region === "rio";
+
+    for (let i = 4; i < samples.length - 4; i += stride) {
       const s = samples[i];
       for (const side of [-1, 1] as const) {
-        const dist = 58 + ((i + side) % 5) * 6;
+        if (out.length >= FILL_CAP) break;
+        const dist = 48 + ((i + side) % 6) * 5;
         const x = s.position.x + s.normal.x * side * dist;
         const z = s.position.z + s.normal.z * side * dist;
-        const w = 10 + (i % 7);
-        const d = 9 + ((i + 3) % 6);
+        const w = 9 + (i % 7);
+        const d = 8 + ((i + 3) % 6);
         if (aabbAsphaltClearance(samples, x, z, w / 2, d / 2) < 8) continue;
         let blocked = false;
         for (const o of occupied) {
           const dx = x - o.x;
           const dz = z - o.z;
-          if (dx * dx + dz * dz < (o.r + 16) * (o.r + 16)) {
+          if (dx * dx + dz * dz < (o.r + 14) * (o.r + 14)) {
             blocked = true;
             break;
           }
         }
         if (blocked) continue;
-        const h = 14 + ((i * 13 + side) % 28);
+        const base = alpine ? 10 : 16;
+        const span = alpine ? 22 : 38;
+        const h = base + ((i * 13 + side) % span);
         out.push({
           x,
           y: s.position.y,
@@ -77,13 +90,48 @@ export function StreetFill({
         });
       }
     }
-    return out.slice(0, 96);
+
+    // Far skyline ring — matches Unreal da_driveable._place_skyline distances.
+    let sky = 0;
+    const skyStride = Math.max(1, Math.floor(samples.length / Math.max(20, SKYLINE_CAP)));
+    for (let i = 0; i < samples.length && sky < SKYLINE_CAP; i += skyStride) {
+      const s = samples[i];
+      const side = sky % 2 === 0 ? 1 : -1;
+      const ring = sky % 3 === 0 ? 0 : 1;
+      const dist = (ring === 0 ? 180 : 265) + (sky % 8) * 14;
+      const x = s.position.x + s.normal.x * side * dist;
+      const z = s.position.z + s.normal.z * side * dist;
+      const w = 10 + (sky % 9);
+      const d = 9 + ((sky + 2) % 7);
+      if (aabbAsphaltClearance(samples, x, z, w / 2, d / 2) < 50) {
+        sky += 1;
+        continue;
+      }
+      let h = 55 + (sky % 16) * 9;
+      if (cityTall) h *= 1.35;
+      if (alpine) h *= 0.55;
+      h = Math.min(210, h);
+      out.push({
+        x,
+        y: s.position.y,
+        z,
+        w,
+        d,
+        h,
+        color: pal[sky % pal.length],
+      });
+      sky += 1;
+    }
+
+    return out;
   }, [density, occupied, region, samples]);
 
   if (!fills.length) return null;
 
+  const limit = FILL_CAP + SKYLINE_CAP;
+
   return (
-    <Instances limit={96} range={fills.length} castShadow={false} receiveShadow>
+    <Instances limit={limit} range={fills.length} castShadow={false} receiveShadow>
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial roughness={0.62} metalness={0.12} />
       {fills.map((b, i) => (

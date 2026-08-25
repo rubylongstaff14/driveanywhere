@@ -4842,6 +4842,1890 @@
       "roofType": "flat",
       "confidence": 0.95,
       "source": "procedural-landmark"
+    },
+    {
+      "id": "embankment-run-street-fill-0",
+      "footprint": [
+        {
+          "x": 179.9462505317258,
+          "y": 0,
+          "z": -251.08109377215524
+        },
+        {
+          "x": 193.9462505317258,
+          "y": 0,
+          "z": -251.08109377215524
+        },
+        {
+          "x": 193.9462505317258,
+          "y": 0,
+          "z": -234.08109377215524
+        },
+        {
+          "x": 179.9462505317258,
+          "y": 0,
+          "z": -234.08109377215524
+        }
+      ],
+      "height": 33,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-1",
+      "footprint": [
+        {
+          "x": 46.06241873735067,
+          "y": 0,
+          "z": -245.50260078072296
+        },
+        {
+          "x": 60.06241873735067,
+          "y": 0,
+          "z": -245.50260078072296
+        },
+        {
+          "x": 60.06241873735067,
+          "y": 0,
+          "z": -228.50260078072296
+        },
+        {
+          "x": 46.06241873735067,
+          "y": 0,
+          "z": -228.50260078072296
+        }
+      ],
+      "height": 35,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-2",
+      "footprint": [
+        {
+          "x": 189,
+          "y": 0,
+          "z": -124.5
+        },
+        {
+          "x": 205,
+          "y": 0,
+          "z": -124.5
+        },
+        {
+          "x": 205,
+          "y": 0,
+          "z": -115.5
+        },
+        {
+          "x": 189,
+          "y": 0,
+          "z": -115.5
+        }
+      ],
+      "height": 44,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-3",
+      "footprint": [
+        {
+          "x": 80,
+          "y": 0,
+          "z": -124.5
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "z": -124.5
+        },
+        {
+          "x": 96,
+          "y": 0,
+          "z": -115.5
+        },
+        {
+          "x": 80,
+          "y": 0,
+          "z": -115.5
+        }
+      ],
+      "height": 46,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-4",
+      "footprint": [
+        {
+          "x": 192.93758126264933,
+          "y": 0,
+          "z": -2.5026007807229442
+        },
+        {
+          "x": 210.93758126264933,
+          "y": 0,
+          "z": -2.5026007807229442
+        },
+        {
+          "x": 210.93758126264933,
+          "y": 0,
+          "z": 8.497399219277057
+        },
+        {
+          "x": 192.93758126264933,
+          "y": 0,
+          "z": 8.497399219277057
+        }
+      ],
+      "height": 19,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-5",
+      "footprint": [
+        {
+          "x": 74.04074556465946,
+          "y": 0,
+          "z": -7.456635601472523
+        },
+        {
+          "x": 92.04074556465946,
+          "y": 0,
+          "z": -7.456635601472523
+        },
+        {
+          "x": 92.04074556465946,
+          "y": 0,
+          "z": 3.543364398527477
+        },
+        {
+          "x": 74.04074556465946,
+          "y": 0,
+          "z": 3.543364398527477
+        }
+      ],
+      "height": 21,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-6",
+      "footprint": [
+        {
+          "x": 154.60559401048135,
+          "y": 0,
+          "z": 127.47844494487578
+        },
+        {
+          "x": 174.60559401048135,
+          "y": 0,
+          "z": 127.47844494487578
+        },
+        {
+          "x": 174.60559401048135,
+          "y": 0,
+          "z": 140.47844494487578
+        },
+        {
+          "x": 154.60559401048135,
+          "y": 0,
+          "z": 140.47844494487578
+        }
+      ],
+      "height": 30,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-7",
+      "footprint": [
+        {
+          "x": 65.96450265368975,
+          "y": 0,
+          "z": 96.19335387777285
+        },
+        {
+          "x": 85.96450265368975,
+          "y": 0,
+          "z": 96.19335387777285
+        },
+        {
+          "x": 85.96450265368975,
+          "y": 0,
+          "z": 109.19335387777285
+        },
+        {
+          "x": 65.96450265368975,
+          "y": 0,
+          "z": 109.19335387777285
+        }
+      ],
+      "height": 32,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-8",
+      "footprint": [
+        {
+          "x": 117.64406979072717,
+          "y": 0,
+          "z": 159.48940403775015
+        },
+        {
+          "x": 127.64406979072717,
+          "y": 0,
+          "z": 159.48940403775015
+        },
+        {
+          "x": 127.64406979072717,
+          "y": 0,
+          "z": 174.48940403775015
+        },
+        {
+          "x": 117.64406979072717,
+          "y": 0,
+          "z": 174.48940403775015
+        }
+      ],
+      "height": 41,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-9",
+      "footprint": [
+        {
+          "x": 56.47421323252237,
+          "y": 0,
+          "z": 243.59795680528174
+        },
+        {
+          "x": 66.47421323252237,
+          "y": 0,
+          "z": 243.59795680528174
+        },
+        {
+          "x": 66.47421323252237,
+          "y": 0,
+          "z": 258.59795680528174
+        },
+        {
+          "x": 56.47421323252237,
+          "y": 0,
+          "z": 258.59795680528174
+        }
+      ],
+      "height": 43,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-10",
+      "footprint": [
+        {
+          "x": 176.48414247283006,
+          "y": 0,
+          "z": 277.1051780910376
+        },
+        {
+          "x": 188.48414247283006,
+          "y": 0,
+          "z": 277.1051780910376
+        },
+        {
+          "x": 188.48414247283006,
+          "y": 0,
+          "z": 294.1051780910376
+        },
+        {
+          "x": 176.48414247283006,
+          "y": 0,
+          "z": 294.1051780910376
+        }
+      ],
+      "height": 16,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-13",
+      "footprint": [
+        {
+          "x": 41.85311888026933,
+          "y": 0,
+          "z": 323.77813017823365
+        },
+        {
+          "x": 55.85311888026933,
+          "y": 0,
+          "z": 323.77813017823365
+        },
+        {
+          "x": 55.85311888026933,
+          "y": 0,
+          "z": 332.77813017823365
+        },
+        {
+          "x": 41.85311888026933,
+          "y": 0,
+          "z": 332.77813017823365
+        }
+      ],
+      "height": 29,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-14",
+      "footprint": [
+        {
+          "x": 200.55429185570287,
+          "y": 0,
+          "z": 375.74000358249333
+        },
+        {
+          "x": 216.55429185570287,
+          "y": 0,
+          "z": 375.74000358249333
+        },
+        {
+          "x": 216.55429185570287,
+          "y": 0,
+          "z": 386.74000358249333
+        },
+        {
+          "x": 200.55429185570287,
+          "y": 0,
+          "z": 386.74000358249333
+        }
+      ],
+      "height": 38,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-15",
+      "footprint": [
+        {
+          "x": 84.8079191353128,
+          "y": 0,
+          "z": 308.2212861622658
+        },
+        {
+          "x": 100.8079191353128,
+          "y": 0,
+          "z": 308.2212861622658
+        },
+        {
+          "x": 100.8079191353128,
+          "y": 0,
+          "z": 319.2212861622658
+        },
+        {
+          "x": 84.8079191353128,
+          "y": 0,
+          "z": 319.2212861622658
+        }
+      ],
+      "height": 40,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-16",
+      "footprint": [
+        {
+          "x": 139.07689788993704,
+          "y": 0,
+          "z": 464.33327876153027
+        },
+        {
+          "x": 157.07689788993704,
+          "y": 0,
+          "z": 464.33327876153027
+        },
+        {
+          "x": 157.07689788993704,
+          "y": 0,
+          "z": 477.33327876153027
+        },
+        {
+          "x": 139.07689788993704,
+          "y": 0,
+          "z": 477.33327876153027
+        }
+      ],
+      "height": 13,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-17",
+      "footprint": [
+        {
+          "x": 93.39955654660663,
+          "y": 0,
+          "z": 365.36570585098104
+        },
+        {
+          "x": 111.39955654660663,
+          "y": 0,
+          "z": 365.36570585098104
+        },
+        {
+          "x": 111.39955654660663,
+          "y": 0,
+          "z": 378.36570585098104
+        },
+        {
+          "x": 93.39955654660663,
+          "y": 0,
+          "z": 378.36570585098104
+        }
+      ],
+      "height": 15,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-18",
+      "footprint": [
+        {
+          "x": 3.7107112058403615,
+          "y": 0,
+          "z": 491.4846982773709
+        },
+        {
+          "x": 23.71071120584036,
+          "y": 0,
+          "z": 491.4846982773709
+        },
+        {
+          "x": 23.71071120584036,
+          "y": 0,
+          "z": 506.4846982773709
+        },
+        {
+          "x": 3.7107112058403615,
+          "y": 0,
+          "z": 506.4846982773709
+        }
+      ],
+      "height": 24,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-19",
+      "footprint": [
+        {
+          "x": 71.95273018507643,
+          "y": 0,
+          "z": 393.99609973560507
+        },
+        {
+          "x": 91.95273018507643,
+          "y": 0,
+          "z": 393.99609973560507
+        },
+        {
+          "x": 91.95273018507643,
+          "y": 0,
+          "z": 408.99609973560507
+        },
+        {
+          "x": 71.95273018507643,
+          "y": 0,
+          "z": 408.99609973560507
+        }
+      ],
+      "height": 26,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-20",
+      "footprint": [
+        {
+          "x": -28.096518728142883,
+          "y": 0,
+          "z": 427.718354142381
+        },
+        {
+          "x": -18.096518728142883,
+          "y": 0,
+          "z": 427.718354142381
+        },
+        {
+          "x": -18.096518728142883,
+          "y": 0,
+          "z": 444.718354142381
+        },
+        {
+          "x": -28.096518728142883,
+          "y": 0,
+          "z": 444.718354142381
+        }
+      ],
+      "height": 35,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-21",
+      "footprint": [
+        {
+          "x": 34.78616604436738,
+          "y": 0,
+          "z": 357.84870439514737
+        },
+        {
+          "x": 44.78616604436738,
+          "y": 0,
+          "z": 357.84870439514737
+        },
+        {
+          "x": 44.78616604436738,
+          "y": 0,
+          "z": 374.84870439514737
+        },
+        {
+          "x": 34.78616604436738,
+          "y": 0,
+          "z": 374.84870439514737
+        }
+      ],
+      "height": 37,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "landmark_placeholder",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-22",
+      "footprint": [
+        {
+          "x": -93.03807797699605,
+          "y": 0,
+          "z": 376.51903898849804
+        },
+        {
+          "x": -81.03807797699605,
+          "y": 0,
+          "z": 376.51903898849804
+        },
+        {
+          "x": -81.03807797699605,
+          "y": 0,
+          "z": 385.51903898849804
+        },
+        {
+          "x": -93.03807797699605,
+          "y": 0,
+          "z": 385.51903898849804
+        }
+      ],
+      "height": 46,
+      "baseHeight": 0,
+      "floors": 14,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-23",
+      "footprint": [
+        {
+          "x": -0.017650113004805235,
+          "y": 0,
+          "z": 330.0088250565024
+        },
+        {
+          "x": 11.982349886995195,
+          "y": 0,
+          "z": 330.0088250565024
+        },
+        {
+          "x": 11.982349886995195,
+          "y": 0,
+          "z": 339.0088250565024
+        },
+        {
+          "x": -0.017650113004805235,
+          "y": 0,
+          "z": 339.0088250565024
+        }
+      ],
+      "height": 12,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-24",
+      "footprint": [
+        {
+          "x": -126.91650284671854,
+          "y": 0,
+          "z": 268.2987066727475
+        },
+        {
+          "x": -112.91650284671854,
+          "y": 0,
+          "z": 268.2987066727475
+        },
+        {
+          "x": -112.91650284671854,
+          "y": 0,
+          "z": 279.2987066727475
+        },
+        {
+          "x": -126.91650284671854,
+          "y": 0,
+          "z": 279.2987066727475
+        }
+      ],
+      "height": 21,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-25",
+      "footprint": [
+        {
+          "x": -28.44570814429713,
+          "y": 0,
+          "z": 325.74000358249333
+        },
+        {
+          "x": -14.445708144297129,
+          "y": 0,
+          "z": 325.74000358249333
+        },
+        {
+          "x": -14.445708144297129,
+          "y": 0,
+          "z": 336.74000358249333
+        },
+        {
+          "x": -28.44570814429713,
+          "y": 0,
+          "z": 336.74000358249333
+        }
+      ],
+      "height": 23,
+      "baseHeight": 0,
+      "floors": 7,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-27",
+      "footprint": [
+        {
+          "x": -5.573068052763411,
+          "y": 0,
+          "z": 181.64486095337747
+        },
+        {
+          "x": 10.42693194723659,
+          "y": 0,
+          "z": 181.64486095337747
+        },
+        {
+          "x": 10.42693194723659,
+          "y": 0,
+          "z": 194.64486095337747
+        },
+        {
+          "x": -5.573068052763411,
+          "y": 0,
+          "z": 194.64486095337747
+        }
+      ],
+      "height": 34,
+      "baseHeight": 0,
+      "floors": 11,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-28",
+      "footprint": [
+        {
+          "x": -145.19055800745502,
+          "y": 0,
+          "z": 141.16062224161308
+        },
+        {
+          "x": -127.19055800745502,
+          "y": 0,
+          "z": 141.16062224161308
+        },
+        {
+          "x": -127.19055800745502,
+          "y": 0,
+          "z": 156.16062224161308
+        },
+        {
+          "x": -145.19055800745502,
+          "y": 0,
+          "z": 156.16062224161308
+        }
+      ],
+      "height": 43,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "apartment_block",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-31",
+      "footprint": [
+        {
+          "x": -30.301515190165006,
+          "y": 0,
+          "z": 116.801515190165
+        },
+        {
+          "x": -10.301515190165006,
+          "y": 0,
+          "z": 116.801515190165
+        },
+        {
+          "x": -10.301515190165006,
+          "y": 0,
+          "z": 133.801515190165
+        },
+        {
+          "x": -30.301515190165006,
+          "y": 0,
+          "z": 133.801515190165
+        }
+      ],
+      "height": 20,
+      "baseHeight": 0,
+      "floors": 6,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-32",
+      "footprint": [
+        {
+          "x": -172.8054176348283,
+          "y": 0,
+          "z": 124.71622058386725
+        },
+        {
+          "x": -162.8054176348283,
+          "y": 0,
+          "z": 124.71622058386725
+        },
+        {
+          "x": -162.8054176348283,
+          "y": 0,
+          "z": 133.71622058386725
+        },
+        {
+          "x": -172.8054176348283,
+          "y": 0,
+          "z": 133.71622058386725
+        }
+      ],
+      "height": 29,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "modern_office_podium",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-33",
+      "footprint": [
+        {
+          "x": -60.73813015504264,
+          "y": 0,
+          "z": 84.69218934108666
+        },
+        {
+          "x": -50.73813015504264,
+          "y": 0,
+          "z": 84.69218934108666
+        },
+        {
+          "x": -50.73813015504264,
+          "y": 0,
+          "z": 93.69218934108666
+        },
+        {
+          "x": -60.73813015504264,
+          "y": 0,
+          "z": 93.69218934108666
+        }
+      ],
+      "height": 31,
+      "baseHeight": 0,
+      "floors": 10,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-34",
+      "footprint": [
+        {
+          "x": -172.96358906987876,
+          "y": 0,
+          "z": 31.248482877911613
+        },
+        {
+          "x": -160.96358906987876,
+          "y": 0,
+          "z": 31.248482877911613
+        },
+        {
+          "x": -160.96358906987876,
+          "y": 0,
+          "z": 42.24848287791161
+        },
+        {
+          "x": -172.96358906987876,
+          "y": 0,
+          "z": 42.24848287791161
+        }
+      ],
+      "height": 40,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "brick_commercial",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-35",
+      "footprint": [
+        {
+          "x": -79.0450801991977,
+          "y": 0,
+          "z": 27.335211674966573
+        },
+        {
+          "x": -67.0450801991977,
+          "y": 0,
+          "z": 27.335211674966573
+        },
+        {
+          "x": -67.0450801991977,
+          "y": 0,
+          "z": 38.33521167496657
+        },
+        {
+          "x": -79.0450801991977,
+          "y": 0,
+          "z": 38.33521167496657
+        }
+      ],
+      "height": 42,
+      "baseHeight": 0,
+      "floors": 13,
+      "style": "dockside_warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "flat",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-36",
+      "footprint": [
+        {
+          "x": -183.95925443534054,
+          "y": 0,
+          "z": -93.45663560147253
+        },
+        {
+          "x": -169.95925443534054,
+          "y": 0,
+          "z": -93.45663560147253
+        },
+        {
+          "x": -169.95925443534054,
+          "y": 0,
+          "z": -80.45663560147253
+        },
+        {
+          "x": -183.95925443534054,
+          "y": 0,
+          "z": -80.45663560147253
+        }
+      ],
+      "height": 15,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "london_terrace",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-37",
+      "footprint": [
+        {
+          "x": -80.04941483373594,
+          "y": 0,
+          "z": -89.12705895140566
+        },
+        {
+          "x": -66.04941483373594,
+          "y": 0,
+          "z": -89.12705895140566
+        },
+        {
+          "x": -66.04941483373594,
+          "y": 0,
+          "z": -76.12705895140566
+        },
+        {
+          "x": -80.04941483373594,
+          "y": 0,
+          "z": -76.12705895140566
+        }
+      ],
+      "height": 17,
+      "baseHeight": 0,
+      "floors": 5,
+      "style": "modern_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-38",
+      "footprint": [
+        {
+          "x": -182.0806345310329,
+          "y": 0,
+          "z": -229.6782220858615
+        },
+        {
+          "x": -166.0806345310329,
+          "y": 0,
+          "z": -229.6782220858615
+        },
+        {
+          "x": -166.0806345310329,
+          "y": 0,
+          "z": -214.6782220858615
+        },
+        {
+          "x": -182.0806345310329,
+          "y": 0,
+          "z": -214.6782220858615
+        }
+      ],
+      "height": 26,
+      "baseHeight": 0,
+      "floors": 8,
+      "style": "retail_ground_floor",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-39",
+      "footprint": [
+        {
+          "x": -74.48078190530691,
+          "y": 0,
+          "z": -192.01827366685743
+        },
+        {
+          "x": -58.48078190530691,
+          "y": 0,
+          "z": -192.01827366685743
+        },
+        {
+          "x": -58.48078190530691,
+          "y": 0,
+          "z": -177.01827366685743
+        },
+        {
+          "x": -74.48078190530691,
+          "y": 0,
+          "z": -177.01827366685743
+        }
+      ],
+      "height": 28,
+      "baseHeight": 0,
+      "floors": 9,
+      "style": "warehouse",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-40",
+      "footprint": [
+        {
+          "x": -143.23849800662714,
+          "y": 0,
+          "z": -349.44377963038454
+        },
+        {
+          "x": -125.23849800662714,
+          "y": 0,
+          "z": -349.44377963038454
+        },
+        {
+          "x": -125.23849800662714,
+          "y": 0,
+          "z": -332.44377963038454
+        },
+        {
+          "x": -143.23849800662714,
+          "y": 0,
+          "z": -332.44377963038454
+        }
+      ],
+      "height": 37,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "glass_curtain_wall",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-41",
+      "footprint": [
+        {
+          "x": -47.00036199221021,
+          "y": 0,
+          "z": -271.2502941186708
+        },
+        {
+          "x": -29.00036199221021,
+          "y": 0,
+          "z": -271.2502941186708
+        },
+        {
+          "x": -29.00036199221021,
+          "y": 0,
+          "z": -254.2502941186708
+        },
+        {
+          "x": -47.00036199221021,
+          "y": 0,
+          "z": -254.2502941186708
+        }
+      ],
+      "height": 39,
+      "baseHeight": 0,
+      "floors": 12,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-42",
+      "footprint": [
+        {
+          "x": -71.03676801058398,
+          "y": 0,
+          "z": -439.95147521481755
+        },
+        {
+          "x": -51.03676801058398,
+          "y": 0,
+          "z": -439.95147521481755
+        },
+        {
+          "x": -51.03676801058398,
+          "y": 0,
+          "z": -430.95147521481755
+        },
+        {
+          "x": -71.03676801058398,
+          "y": 0,
+          "z": -430.95147521481755
+        }
+      ],
+      "height": 12,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "contemporary_apartment",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-street-fill-43",
+      "footprint": [
+        {
+          "x": 6.84914994777494,
+          "y": 0,
+          "z": -330.9111900731151
+        },
+        {
+          "x": 26.84914994777494,
+          "y": 0,
+          "z": -330.9111900731151
+        },
+        {
+          "x": 26.84914994777494,
+          "y": 0,
+          "z": -321.9111900731151
+        },
+        {
+          "x": 6.84914994777494,
+          "y": 0,
+          "z": -321.9111900731151
+        }
+      ],
+      "height": 14,
+      "baseHeight": 0,
+      "floors": 4,
+      "style": "concrete_office",
+      "facadeMaterial": "brick",
+      "roofType": "pitched",
+      "confidence": 0.6,
+      "source": "web-street-fill"
+    },
+    {
+      "id": "embankment-run-skyline-0",
+      "name": "Skyline 1",
+      "footprint": [
+        {
+          "x": -100.40873133980725,
+          "y": 0,
+          "z": -418.27738059805785
+        },
+        {
+          "x": -84.40873133980725,
+          "y": 0,
+          "z": -418.27738059805785
+        },
+        {
+          "x": -84.40873133980725,
+          "y": 0,
+          "z": -398.27738059805785
+        },
+        {
+          "x": -100.40873133980725,
+          "y": 0,
+          "z": -398.27738059805785
+        }
+      ],
+      "height": 74.25,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-1",
+      "footprint": [
+        {
+          "x": 370.89958246611764,
+          "y": 0,
+          "z": -404.73744780826473
+        },
+        {
+          "x": 388.89958246611764,
+          "y": 0,
+          "z": -404.73744780826473
+        },
+        {
+          "x": 388.89958246611764,
+          "y": 0,
+          "z": -382.73744780826473
+        },
+        {
+          "x": 370.89958246611764,
+          "y": 0,
+          "z": -382.73744780826473
+        }
+      ],
+      "height": 85.05000000000001,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-3",
+      "footprint": [
+        {
+          "x": 335,
+          "y": 0,
+          "z": -133
+        },
+        {
+          "x": 357,
+          "y": 0,
+          "z": -133
+        },
+        {
+          "x": 357,
+          "y": 0,
+          "z": -107
+        },
+        {
+          "x": 335,
+          "y": 0,
+          "z": -107
+        }
+      ],
+      "height": 106.65,
+      "baseHeight": 0,
+      "floors": 28,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-4",
+      "footprint": [
+        {
+          "x": -189.73298651244437,
+          "y": 0,
+          "z": -26.82220777135185
+        },
+        {
+          "x": -165.73298651244437,
+          "y": 0,
+          "z": -26.82220777135185
+        },
+        {
+          "x": -165.73298651244437,
+          "y": 0,
+          "z": 1.1777922286481495
+        },
+        {
+          "x": -189.73298651244437,
+          "y": 0,
+          "z": 1.1777922286481495
+        }
+      ],
+      "height": 117.45,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-5",
+      "name": "Skyline 6",
+      "footprint": [
+        {
+          "x": 413.75690674652463,
+          "y": 0,
+          "z": 219.50243767524398
+        },
+        {
+          "x": 439.75690674652463,
+          "y": 0,
+          "z": 219.50243767524398
+        },
+        {
+          "x": 439.75690674652463,
+          "y": 0,
+          "z": 233.50243767524398
+        },
+        {
+          "x": 413.75690674652463,
+          "y": 0,
+          "z": 233.50243767524398
+        }
+      ],
+      "height": 128.25,
+      "baseHeight": 0,
+      "floors": 34,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-7",
+      "footprint": [
+        {
+          "x": 349.89509635872196,
+          "y": 0,
+          "z": 504.6188704484025
+        },
+        {
+          "x": 379.89509635872196,
+          "y": 0,
+          "z": 504.6188704484025
+        },
+        {
+          "x": 379.89509635872196,
+          "y": 0,
+          "z": 522.6188704484025
+        },
+        {
+          "x": 349.89509635872196,
+          "y": 0,
+          "z": 522.6188704484025
+        }
+      ],
+      "height": 149.85000000000002,
+      "baseHeight": 0,
+      "floors": 39,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-8",
+      "footprint": [
+        {
+          "x": -187.76551759140477,
+          "y": 0,
+          "z": 504.95543796195784
+        },
+        {
+          "x": -155.76551759140477,
+          "y": 0,
+          "z": 504.95543796195784
+        },
+        {
+          "x": -155.76551759140477,
+          "y": 0,
+          "z": 524.9554379619578
+        },
+        {
+          "x": -187.76551759140477,
+          "y": 0,
+          "z": 524.9554379619578
+        }
+      ],
+      "height": 160.65,
+      "baseHeight": 0,
+      "floors": 42,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-9",
+      "footprint": [
+        {
+          "x": 293.480202161718,
+          "y": 0,
+          "z": 429.6967845943355
+        },
+        {
+          "x": 327.480202161718,
+          "y": 0,
+          "z": 429.6967845943355
+        },
+        {
+          "x": 327.480202161718,
+          "y": 0,
+          "z": 451.6967845943355
+        },
+        {
+          "x": 293.480202161718,
+          "y": 0,
+          "z": 451.6967845943355
+        }
+      ],
+      "height": 171.45000000000002,
+      "baseHeight": 0,
+      "floors": 45,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-11",
+      "footprint": [
+        {
+          "x": -116.86330579918524,
+          "y": 0,
+          "z": 659.6618654274075
+        },
+        {
+          "x": -98.86330579918524,
+          "y": 0,
+          "z": 659.6618654274075
+        },
+        {
+          "x": -98.86330579918524,
+          "y": 0,
+          "z": 685.6618654274075
+        },
+        {
+          "x": -116.86330579918524,
+          "y": 0,
+          "z": 685.6618654274075
+        }
+      ],
+      "height": 193.05,
+      "baseHeight": 0,
+      "floors": 51,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-13",
+      "footprint": [
+        {
+          "x": -331.48357482797405,
+          "y": 0,
+          "z": 490.741787413987
+        },
+        {
+          "x": -309.48357482797405,
+          "y": 0,
+          "z": 490.741787413987
+        },
+        {
+          "x": -309.48357482797405,
+          "y": 0,
+          "z": 504.741787413987
+        },
+        {
+          "x": -331.48357482797405,
+          "y": 0,
+          "z": 504.741787413987
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-14",
+      "footprint": [
+        {
+          "x": 189.4092482874987,
+          "y": 0,
+          "z": 453.23872816770756
+        },
+        {
+          "x": 213.4092482874987,
+          "y": 0,
+          "z": 453.23872816770756
+        },
+        {
+          "x": 213.4092482874987,
+          "y": 0,
+          "z": 469.23872816770756
+        },
+        {
+          "x": 189.4092482874987,
+          "y": 0,
+          "z": 469.23872816770756
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-15",
+      "name": "Skyline 16",
+      "footprint": [
+        {
+          "x": -212.57592314483017,
+          "y": 0,
+          "z": 426.0372393992369
+        },
+        {
+          "x": -186.57592314483017,
+          "y": 0,
+          "z": 426.0372393992369
+        },
+        {
+          "x": -186.57592314483017,
+          "y": 0,
+          "z": 444.0372393992369
+        },
+        {
+          "x": -212.57592314483017,
+          "y": 0,
+          "z": 444.0372393992369
+        }
+      ],
+      "height": 210,
+      "baseHeight": 0,
+      "floors": 55,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-17",
+      "footprint": [
+        {
+          "x": -316.7300141024109,
+          "y": 0,
+          "z": 395.7300141024109
+        },
+        {
+          "x": -286.7300141024109,
+          "y": 0,
+          "z": 395.7300141024109
+        },
+        {
+          "x": -286.7300141024109,
+          "y": 0,
+          "z": 417.7300141024109
+        },
+        {
+          "x": -316.7300141024109,
+          "y": 0,
+          "z": 417.7300141024109
+        }
+      ],
+      "height": 74.25,
+      "baseHeight": 0,
+      "floors": 20,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-18",
+      "footprint": [
+        {
+          "x": 53.51354408707073,
+          "y": 0,
+          "z": 32.45944854033187
+        },
+        {
+          "x": 85.51354408707073,
+          "y": 0,
+          "z": 32.45944854033187
+        },
+        {
+          "x": 85.51354408707073,
+          "y": 0,
+          "z": 56.45944854033187
+        },
+        {
+          "x": 53.51354408707073,
+          "y": 0,
+          "z": 56.45944854033187
+        }
+      ],
+      "height": 85.05000000000001,
+      "baseHeight": 0,
+      "floors": 22,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-19",
+      "footprint": [
+        {
+          "x": -413.7641958811197,
+          "y": 0,
+          "z": 33.32350816171332
+        },
+        {
+          "x": -379.7641958811197,
+          "y": 0,
+          "z": 33.32350816171332
+        },
+        {
+          "x": -379.7641958811197,
+          "y": 0,
+          "z": 59.32350816171332
+        },
+        {
+          "x": -413.7641958811197,
+          "y": 0,
+          "z": 59.32350816171332
+        }
+      ],
+      "height": 95.85000000000001,
+      "baseHeight": 0,
+      "floors": 25,
+      "style": "generic_distant_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-21",
+      "footprint": [
+        {
+          "x": -337.87340497505977,
+          "y": 0,
+          "z": -283.3556917412709
+        },
+        {
+          "x": -319.87340497505977,
+          "y": 0,
+          "z": -283.3556917412709
+        },
+        {
+          "x": -319.87340497505977,
+          "y": 0,
+          "z": -269.3556917412709
+        },
+        {
+          "x": -337.87340497505977,
+          "y": 0,
+          "z": -269.3556917412709
+        }
+      ],
+      "height": 117.45,
+      "baseHeight": 0,
+      "floors": 31,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-23",
+      "footprint": [
+        {
+          "x": -221.99622199011083,
+          "y": 0,
+          "z": -654.3947107861552
+        },
+        {
+          "x": -199.99622199011083,
+          "y": 0,
+          "z": -654.3947107861552
+        },
+        {
+          "x": -199.99622199011083,
+          "y": 0,
+          "z": -636.3947107861552
+        },
+        {
+          "x": -221.99622199011083,
+          "y": 0,
+          "z": -636.3947107861552
+        }
+      ],
+      "height": 139.05,
+      "baseHeight": 0,
+      "floors": 37,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
+    },
+    {
+      "id": "embankment-run-skyline-24",
+      "footprint": [
+        {
+          "x": 179.4720248172123,
+          "y": 0,
+          "z": -239.9391652559028
+        },
+        {
+          "x": 203.4720248172123,
+          "y": 0,
+          "z": -239.9391652559028
+        },
+        {
+          "x": 203.4720248172123,
+          "y": 0,
+          "z": -219.9391652559028
+        },
+        {
+          "x": 179.4720248172123,
+          "y": 0,
+          "z": -219.9391652559028
+        }
+      ],
+      "height": 149.85000000000002,
+      "baseHeight": 0,
+      "floors": 39,
+      "style": "steel_and_glass_tower",
+      "facadeMaterial": "glass",
+      "roofType": "flat",
+      "confidence": 0.55,
+      "source": "web-skyline"
     }
   ],
   "sceneryObjects": [
@@ -6845,9 +8729,9 @@
     }
   ],
   "metadata": {
-    "version": 8,
-    "generatedBy": "seed-local-data",
-    "notes": "Procedural stylised circuit — not a digital twin of any real location"
+    "version": 9,
+    "generatedBy": "densify-web-routes-from-unreal",
+    "notes": "Merged Unreal named/massing + street/skyline fill (+57). Racing line unchanged."
   },
   "dataAttribution": "© OpenStreetMap contributors"
 }

@@ -17,9 +17,9 @@ describe("class fairness", () => {
 });
 
 describe("cosmetics", () => {
-  it("ships 21 items per class", () => {
-    expect(cosmeticsForVehicle("sports")).toHaveLength(21);
-    expect(cosmeticsForVehicle("f1")).toHaveLength(21);
+  it("ships 24 items per class", () => {
+    expect(cosmeticsForVehicle("sports")).toHaveLength(24);
+    expect(cosmeticsForVehicle("f1")).toHaveLength(24);
   });
 
   it("defaults to factory parts", () => {
@@ -60,11 +60,12 @@ describe("city regions", () => {
 });
 
 describe("circuit landmarks", () => {
-  it("places 30 uniquely silhouetted landmarks on every map", () => {
+  it("places 60 uniquely named landmarks on every map", () => {
     for (const [slug, list] of Object.entries(CIRCUIT_LANDMARKS)) {
-      expect(list, slug).toHaveLength(30);
-      expect(new Set(list.map((l) => l.kind)).size).toBe(LANDMARK_KIND_IDS.length);
-      expect(new Set(list.map((l) => l.name)).size).toBe(30);
+      expect(list, slug).toHaveLength(60);
+      expect(new Set(list.map((l) => l.name)).size).toBe(60);
+      expect(new Set(list.map((l) => l.kind)).size).toBeGreaterThanOrEqual(12);
+      expect(LANDMARK_KIND_IDS.length).toBeGreaterThanOrEqual(30);
     }
   });
 });

@@ -13,6 +13,7 @@
     "test:watch": "vitest",
     "seed:routes": "tsx scripts/seed-local-data.ts",
     "export:unreal": "tsx scripts/export-unreal-handoff.ts",
+    "densify:web": "tsx scripts/densify-web-routes-from-unreal.ts",
     "geo:fetch:canary-wharf": "tsx scripts/geo/fetch-canary-wharf-osm.ts",
     "geo:generate:canary-wharf": "tsx scripts/geo/generate-canary-wharf-route.ts",
     "geo:list-roads": "tsx scripts/geo/list-osm-roads.ts",

@@ -850,7 +850,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
     <group>
       <RouteDebug route={route} />
       <RealWorldContext route={route} />
-      {isCanary && quality.drawDistance >= 400 ? (
+      {(isCanary || isWestminster || isEmbankment) &&
+      quality.drawDistance >= 280 ? (
         <DistantLondonSkyline route={route} />
       ) : null}
       {/* ---- Ground plane (primary car collision surface) ---- */}
