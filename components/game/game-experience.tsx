@@ -21,6 +21,7 @@ import { VehicleSelect } from "@/components/game/vehicle-select";
 import { AchievementToast } from "@/components/game/achievement-toast";
 import { ChallengesHud } from "@/components/game/challenges-hud";
 import { LagHud } from "@/components/game/lag-hud";
+import { PhotoMode } from "@/components/game/photo-mode";
 import { getPersonalBest } from "@/lib/database/mock/attempts";
 import { resetTelemetry } from "@/lib/game/telemetry";
 import type { RaceSetup } from "@/lib/game/race-setup";
@@ -31,6 +32,7 @@ import { useProgressionStore } from "@/stores/progression-store";
 import { useAchievementStore } from "@/stores/achievement-store";
 import { useChallengesStore } from "@/stores/challenges-store";
 import { useSettingsStore } from "@/stores/settings-store";
+import { useTournamentStore } from "@/stores/tournament-store";
 
 const GameCanvas = dynamic(
   () => import("@/components/game/game-canvas").then((mod) => mod.GameCanvas),
@@ -51,6 +53,7 @@ interface GameExperienceProps {
   routeName: string;
   routeSlug: string;
   raceSetup: RaceSetup;
+  isTournamentRace?: boolean;
 }
 
 export function GameExperience({
@@ -58,6 +61,7 @@ export function GameExperience({
   routeName,
   routeSlug,
   raceSetup,
+  isTournamentRace = false,
 }: GameExperienceProps) {
   const paused = useGameStore((s) => s.paused);
   const finished = useGameStore((s) => s.finished);
@@ -74,13 +78,15 @@ export function GameExperience({
   const hydrateProgression = useProgressionStore((s) => s.hydrate);
   const hydrateAchievements = useAchievementStore((s) => s.hydrate);
   const hydrateChallenges = useChallengesStore((s) => s.hydrate);
+  const hydrateTournament = useTournamentStore((s) => s.hydrate);
 
   useEffect(() => {
     hydrateSettings();
     hydrateProgression();
     hydrateAchievements();
     hydrateChallenges();
-  }, [hydrateSettings, hydrateProgression, hydrateAchievements, hydrateChallenges]);
+    hydrateTournament();
+  }, [hydrateSettings, hydrateProgression, hydrateAchievements, hydrateChallenges, hydrateTournament]);
 
   useEffect(() => {
     const onEscape = (event: KeyboardEvent) => {
@@ -96,10 +102,24 @@ export function GameExperience({
         return;
       }
       event.preventDefault();
+      if (state.photoMode) {
+        state.setPhotoMode(false);
+        return;
+      }
       state.togglePause();
     };
+    const onKeyP = (event: KeyboardEvent) => {
+      if (event.code !== "KeyP" || event.repeat) return;
+      const state = useGameStore.getState();
+      if (!state.started || state.countdown !== null) return;
+      state.setPhotoMode(!state.photoMode);
+    };
     window.addEventListener("keydown", onEscape);
-    return () => window.removeEventListener("keydown", onEscape);
+    window.addEventListener("keydown", onKeyP);
+    return () => {
+      window.removeEventListener("keydown", onEscape);
+      window.removeEventListener("keydown", onKeyP);
+    };
   }, []);
 
   useEffect(() => {
@@ -153,7 +173,7 @@ export function GameExperience({
     <div className="relative h-[100dvh] w-full overflow-hidden bg-ink-975">
       <GameCanvas paused={paused || finished} route={route} />
       <CircuitBoot routeName={routeName} city={route.city} />
-      <GameHud routeName={routeName} cityVersion={route.metadata?.version} />
+      <GameHud routeName={routeName} cityVersion={route.metadata?.version} isTournamentRace={isTournamentRace} />
       <RouteIntroOverlay
         routeName={routeName}
         city={route.city}
@@ -176,6 +196,7 @@ export function GameExperience({
         routeName={routeName}
         routeId={route.id}
         requiredCheckpoints={route.checkpoints.length}
+        isTournamentRace={isTournamentRace}
       />
       <AchievementToast />
       <ChallengesHud />

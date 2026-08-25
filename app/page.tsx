@@ -1,5 +1,6 @@
 import { EarlyAccess } from "@/components/landing/early-access";
 import { FeaturedRoutes } from "@/components/landing/featured-routes";
+import { FeaturesStrip } from "@/components/landing/features-strip";
 import { Hero } from "@/components/landing/hero";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { LeaderboardPreview } from "@/components/landing/leaderboard-preview";
@@ -20,6 +21,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <FeaturesStrip />
       <FeaturedRoutes routes={featured} />
       <HowItWorks />
       <LeaderboardPreview entries={leaderboard} routes={routes} />

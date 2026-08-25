@@ -15,6 +15,8 @@ import { raceReward } from "@/lib/progression/economy";
 import { useProgressionStore } from "@/stores/progression-store";
 import { useAchievementStore } from "@/stores/achievement-store";
 import { useChallengesStore } from "@/stores/challenges-store";
+import { submitHotLapTime, getHotLapState } from "@/lib/progression/hot-lap";
+import { useTournamentStore } from "@/stores/tournament-store";
 
 const QUALITY_OPTIONS: { value: QualityPreset; label: string }[] = [
   { value: "low", label: "Low" },
@@ -27,6 +29,7 @@ interface PauseMenuProps {
   routeName: string;
   routeId: string;
   requiredCheckpoints: number;
+  isTournamentRace?: boolean;
 }
 
 export function PauseMenu({
@@ -34,6 +37,7 @@ export function PauseMenu({
   routeName,
   routeId,
   requiredCheckpoints,
+  isTournamentRace = false,
 }: PauseMenuProps) {
   const paused = useGameStore((s) => s.paused);
   const finished = useGameStore((s) => s.finished);
@@ -64,6 +68,28 @@ export function PauseMenu({
   const [submitMessage, setSubmitMessage] = useState<string | null>(null);
   const [submittedFor, setSubmittedFor] = useState<number | null>(null);
   const submitted = finished && submittedFor === restartToken;
+
+  const isHotLap =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("hotlap") === "1";
+
+  const [hotLapResult, setHotLapResult] = useState<{
+    rank: number;
+    totalEntrants: number;
+    coinsAwarded: number;
+  } | null>(null);
+  const [hotLapSubmitted, setHotLapSubmitted] = useState(false);
+
+  const tournamentActive = useTournamentStore((s) => s.active);
+  const submitRoundTime = useTournamentStore((s) => s.submitRoundTime);
+  const [tournamentSubmitted, setTournamentSubmitted] = useState(false);
+  const [tournamentMsg, setTournamentMsg] = useState<string | null>(null);
+
+  const currentTournamentRound = tournamentActive?.rounds.find((r) => !r.completed);
+  const isCurrentTournamentMap =
+    isTournamentRace &&
+    tournamentActive?.status === "active" &&
+    currentTournamentRound?.mapSlug === routeSlug;
 
   // Auto-submit time on race finish for leaderboard
   useEffect(() => {
@@ -135,11 +161,47 @@ export function PauseMenu({
     return null;
   }
 
+  function handleHotLapSubmit() {
+    const state = getHotLapState();
+    if (state.locked) {
+      setHotLapSubmitted(true);
+      return;
+    }
+    const result = submitHotLapTime(elapsedMs);
+    setHotLapResult(result);
+    setHotLapSubmitted(true);
+    useProgressionStore.getState().awardRace(0, result.coinsAwarded);
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("driveanywhere-hotlap-submitted", { detail: result }),
+      );
+    }
+  }
+
   function ensureUser() {
     if (user) return user;
     const result = continueAsGuest();
     if (!result.ok) return null;
     return useAuthStore.getState().user;
+  }
+
+  function handleTournamentSubmit() {
+    if (!isCurrentTournamentMap || tournamentSubmitted) return;
+    const result = submitRoundTime(elapsedMs);
+    if (result.ok) {
+      setTournamentSubmitted(true);
+      if (result.tournamentComplete) {
+        setTournamentMsg(
+          result.coinsWon > 0
+            ? `Tournament complete! You won ${result.coinsWon.toLocaleString()} coins.`
+            : "Tournament complete! Go to Tournament Hub to see your result.",
+        );
+      } else {
+        setTournamentMsg(`Round ${currentTournamentRound?.roundNumber ?? "?"} submitted! Return to the Tournament Hub for next round.`);
+      }
+    } else {
+      setTournamentMsg(`Error: ${result.reason}`);
+    }
   }
 
   function handleSubmit() {
@@ -265,6 +327,42 @@ export function PauseMenu({
           </p>
         ) : null}
 
+        {isHotLap && finished && hotLapResult && (
+          <div className="mt-4 rounded-lg border border-accent/30 bg-ink-950/50 p-4" role="status">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-accent">
+              ⚡ Hot Lap Result
+            </p>
+            <p className="mt-1 font-display text-2xl text-white">
+              Rank #{hotLapResult.rank}{" "}
+              <span className="font-mono text-sm text-mist">of {hotLapResult.totalEntrants}</span>
+            </p>
+            <p className="mt-1 font-mono text-sm text-accent-bright">
+              +{hotLapResult.coinsAwarded} coins awarded
+            </p>
+          </div>
+        )}
+
+        {isHotLap && finished && hotLapSubmitted && !hotLapResult && (
+          <p className="mt-4 text-sm text-fog" role="status">
+            Hot lap already submitted today — no retry allowed.
+          </p>
+        )}
+
+        {isCurrentTournamentMap && finished && (
+          <div className="mt-4 rounded-lg border border-amber-400/30 bg-amber-400/10 p-3">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-amber-400">
+              🏆 Tournament · Round {currentTournamentRound?.roundNumber ?? "?"} of 3
+            </p>
+            {tournamentMsg ? (
+              <p className="mt-1 text-sm text-emerald-300">{tournamentMsg}</p>
+            ) : (
+              <p className="mt-1 text-xs text-amber-400/70">
+                Submit your time to the tournament
+              </p>
+            )}
+          </div>
+        )}
+
         <div className="mt-6 flex flex-wrap gap-3">
           {!finished ? (
             <Button
@@ -273,6 +371,14 @@ export function PauseMenu({
             >
               {started ? "Resume" : "Start driving"}
             </Button>
+          ) : isHotLap ? (
+            <Button
+              type="button"
+              onClick={handleHotLapSubmit}
+              disabled={hotLapSubmitted}
+            >
+              {hotLapSubmitted ? "Submitted" : "⚡ Submit Hot Lap Time"}
+            </Button>
           ) : (
             <Button
               type="button"
@@ -280,6 +386,14 @@ export function PauseMenu({
               disabled={submitted && !invalid}
             >
               {submitted ? "Submitted" : "Submit time"}
+            </Button>
+          )}
+          {isCurrentTournamentMap && finished && !tournamentSubmitted && (
+            <Button
+              type="button"
+              onClick={handleTournamentSubmit}
+            >
+              🏆 Submit to Tournament (Round {currentTournamentRound?.roundNumber ?? "?"})
             </Button>
           )}
           {started && !finished ? (
@@ -307,6 +421,14 @@ export function PauseMenu({
           >
             Exit
           </Link>
+          {tournamentSubmitted && (
+            <Link
+              href="/tournament"
+              className="inline-flex h-11 items-center justify-center rounded-md border border-amber-400/40 bg-amber-400/10 px-5 text-sm text-amber-400 hover:bg-amber-400/20"
+            >
+              🏆 Tournament Hub
+            </Link>
+          )}
         </div>
       </div>
     </div>

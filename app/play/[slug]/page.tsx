@@ -15,6 +15,7 @@ interface PlayPageProps {
     weather?: string | string[];
     vehicle?: string | string[];
     roomId?: string | string[];
+    tournament?: string | string[];
   }>;
 }
 
@@ -48,6 +49,8 @@ export default async function PlayPage({ params, searchParams }: PlayPageProps) 
     vehicle: first(query.vehicle),
   });
 
+  const isTournamentRace = first(query.tournament) === "1";
+
   // Geometry is resolved on the server so the browser never has to fetch it.
   const routeData = route ? getRouteData(route.slug) : null;
 
@@ -61,6 +64,7 @@ export default async function PlayPage({ params, searchParams }: PlayPageProps) 
       routeName={route.name}
       routeSlug={route.slug}
       raceSetup={raceSetup}
+      isTournamentRace={isTournamentRace}
     />
   );
 }

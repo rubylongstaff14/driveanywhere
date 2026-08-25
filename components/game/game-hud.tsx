@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import { formatLapTime } from "@/lib/utils/format";
 import { useGameStore } from "@/stores/game-store";
+import { useAchievementStore } from "@/stores/achievement-store";
+import { useTournamentStore } from "@/stores/tournament-store";
 
 function speedColor(kph: number): string {
   if (kph >= 150) return "#fb7185"; // rose-400
@@ -126,9 +128,11 @@ function SpeedoDial({
 export function GameHud({
   routeName,
   cityVersion,
+  isTournamentRace = false,
 }: {
   routeName: string;
   cityVersion?: number;
+  isTournamentRace?: boolean;
 }) {
   const speedKph = useGameStore((s) => s.speedKph);
   const elapsedMs = useGameStore((s) => s.elapsedMs);
@@ -151,6 +155,9 @@ export function GameHud({
   const splitTone = useGameStore((s) => s.splitTone);
   const cameraMode = useGameStore((s) => s.cameraMode);
   const setHud = useGameStore((s) => s.setHud);
+  const tournamentActive = useTournamentStore((s) => s.active);
+  const tournamentCurrentRound = tournamentActive?.rounds.find((r) => !r.completed);
+  const streak = useAchievementStore((s) => s.stats.currentStreak);
 
   useEffect(() => {
     if (splitMs == null) return;
@@ -187,6 +194,15 @@ export function GameHud({
 
   return (
     <div className="pointer-events-none absolute inset-x-0 top-0 z-10 select-none p-3 sm:p-4">
+      {/* ---- Streak pill ---- */}
+      {streak >= 2 && (
+        <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10">
+          <div className="flex items-center gap-1.5 rounded-full bg-ink-950/80 border border-amber-400/30 px-3 py-1 backdrop-blur-sm">
+            <span className="text-amber-400 text-sm">🔥</span>
+            <span className="font-mono text-xs text-amber-400">{streak} day streak</span>
+          </div>
+        </div>
+      )}
       <div className="mx-auto flex max-w-7xl items-start justify-between gap-2">
         {/* ---- Timer block ---- */}
         <div
@@ -289,6 +305,16 @@ export function GameHud({
           )}
         </div>
       </div>
+
+      {isTournamentRace && tournamentCurrentRound && (
+        <div className="mt-2 flex justify-start">
+          <div className="rounded-lg border border-amber-400/40 bg-amber-400/10 px-3 py-1.5 backdrop-blur-sm">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-amber-400">
+              🏆 Round {tournamentCurrentRound.roundNumber}/3 · {tournamentCurrentRound.mapName}
+            </p>
+          </div>
+        </div>
+      )}
 
       <style>{`
         @keyframes slideInRight {

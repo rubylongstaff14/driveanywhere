@@ -54,6 +54,8 @@ interface GameStoreState extends GameHudSnapshot {
   difficulty: number;
   ghostEnabled: boolean;
   weather: WeatherId;
+  photoMode: boolean;
+  setPhotoMode: (v: boolean) => void;
   setHud: (partial: Partial<GameHudSnapshot>) => void;
   setPaused: (paused: boolean) => void;
   togglePause: () => void;
@@ -110,6 +112,8 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
   difficulty: 50,
   ghostEnabled: false,
   weather: "clear",
+  photoMode: false,
+  setPhotoMode: (v) => set({ photoMode: v }),
   setHud: (partial) => set(partial),
   setPaused: (paused) => set({ paused }),
   togglePause: () => set({ paused: !get().paused }),

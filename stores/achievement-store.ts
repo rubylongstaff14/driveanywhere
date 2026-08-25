@@ -330,3 +330,20 @@ export const useAchievementStore = create<AchievementState>((set, get) => ({
 }));
 
 export { ACHIEVEMENTS };
+
+/**
+ * Returns a crate reward when a streak milestone is newly crossed.
+ * Call this after `recordRace` with the previous and new streak values.
+ */
+export function checkStreakRewards(
+  prevStreak: number,
+  newStreak: number,
+): { crateId: string; message: string } | null {
+  if (prevStreak < 30 && newStreak >= 30) {
+    return { crateId: "apex", message: "30-Day Streak — Apex crate rewarded!" };
+  }
+  if (prevStreak < 7 && newStreak >= 7) {
+    return { crateId: "street", message: "7-Day Streak — Free crate rewarded!" };
+  }
+  return null;
+}
