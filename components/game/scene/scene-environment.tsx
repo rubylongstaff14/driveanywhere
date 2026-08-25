@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Sky, Environment } from "@react-three/drei";
-import type { DirectionalLight } from "three";
+import type { DirectionalLight, PointLight } from "three";
 import { carTelemetry } from "@/lib/game/telemetry";
 import type { WeatherId } from "@/lib/game/weather";
 import type { QualityConfig } from "@/stores/settings-store";
@@ -22,6 +22,8 @@ export function SceneEnvironment({
   weather = "clear",
 }: SceneEnvironmentProps) {
   const sunRef = useRef<DirectionalLight>(null);
+  const fillLightRef = useRef<PointLight>(null);
+  const streetLampRef = useRef<PointLight>(null);
   const night = weather === "night";
   const rain = weather === "rain";
   const duskLook = weather === "dusk" || (weather === "clear" && dusk);
@@ -38,14 +40,25 @@ export function SceneEnvironment({
 
   useFrame(() => {
     const light = sunRef.current;
-    if (!light || !quality.shadows) return;
-    light.position.set(
-      carTelemetry.x + sunOffset[0],
-      sunOffset[1],
-      carTelemetry.z + sunOffset[2],
-    );
-    light.target.position.set(carTelemetry.x, 0, carTelemetry.z);
-    light.target.updateMatrixWorld();
+    if (light && quality.shadows) {
+      light.position.set(
+        carTelemetry.x + sunOffset[0],
+        sunOffset[1],
+        carTelemetry.z + sunOffset[2],
+      );
+      light.target.position.set(carTelemetry.x, 0, carTelemetry.z);
+      light.target.updateMatrixWorld();
+    }
+
+    const fill = fillLightRef.current;
+    if (fill) {
+      fill.position.set(carTelemetry.x, 3, carTelemetry.z + 2);
+    }
+
+    const lamp = streetLampRef.current;
+    if (lamp) {
+      lamp.position.set(carTelemetry.x, 8, carTelemetry.z);
+    }
   });
 
   const fogNear = rain
@@ -53,8 +66,8 @@ export function SceneEnvironment({
     : night
       ? quality.fogFar * 0.35
       : desert
-        ? quality.fogFar * 0.55
-        : quality.fogFar * 0.55;
+        ? quality.fogFar * 0.60
+        : quality.fogFar * 0.60;
   const fogFar = rain
     ? Math.max(quality.fogFar * 0.85, 220)
     : night
@@ -104,7 +117,7 @@ export function SceneEnvironment({
           night ? 0.28 : rain ? 0.5 : desert ? 0.85 : duskLook ? 0.42 : 0.7,
         ]}
       />
-      <ambientLight intensity={night ? 0.04 : rain ? 0.12 : desert ? 0.22 : duskLook ? 0.06 : 0.1} />
+      <ambientLight intensity={night ? 0.04 : rain ? 0.12 : desert ? 0.22 : duskLook ? 0.10 : 0.1} />
 
       <directionalLight
         ref={sunRef}
@@ -116,12 +129,13 @@ export function SceneEnvironment({
         shadow-mapSize-height={quality.shadowMapSize}
         shadow-bias={-0.0005}
         shadow-normalBias={0.04}
+        shadow-radius={4}
         shadow-camera-near={1}
         shadow-camera-far={220}
-        shadow-camera-left={-55}
-        shadow-camera-right={55}
-        shadow-camera-top={55}
-        shadow-camera-bottom={-55}
+        shadow-camera-left={-80}
+        shadow-camera-right={80}
+        shadow-camera-top={80}
+        shadow-camera-bottom={-80}
       />
 
       <directionalLight
@@ -133,6 +147,26 @@ export function SceneEnvironment({
       {useEnvironmentMap ? (
         <Environment preset="city" background={false} />
       ) : null}
+
+      {/* Warm fill light tracking the player car */}
+      <pointLight
+        ref={fillLightRef}
+        color="#fff8ee"
+        intensity={0.15}
+        distance={25}
+        decay={2}
+      />
+
+      {/* Night street-lamp glow near the car */}
+      {night && (
+        <pointLight
+          ref={streetLampRef}
+          color="#ff9944"
+          intensity={0.6}
+          distance={30}
+          decay={2}
+        />
+      )}
     </>
   );
 }

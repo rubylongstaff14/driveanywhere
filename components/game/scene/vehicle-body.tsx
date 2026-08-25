@@ -82,11 +82,11 @@ function BodyPaint({ color }: { color: string }) {
   return (
     <meshPhysicalMaterial
       color={color}
-      metalness={0.42}
-      roughness={0.28}
-      clearcoat={0.85}
-      clearcoatRoughness={0.12}
-      envMapIntensity={1.1}
+      metalness={0.7}
+      roughness={0.25}
+      clearcoat={0.8}
+      clearcoatRoughness={0.1}
+      envMapIntensity={1.4}
     />
   );
 }

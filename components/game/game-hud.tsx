@@ -4,6 +4,12 @@ import { useEffect } from "react";
 import { formatLapTime } from "@/lib/utils/format";
 import { useGameStore } from "@/stores/game-store";
 
+function speedColor(kph: number): string {
+  if (kph >= 150) return "#fb7185"; // rose-400
+  if (kph >= 80) return "#fbbf24";  // amber-400
+  return "#f4f6f8";
+}
+
 function SpeedoDial({
   speedKph,
   rpmNorm,
@@ -19,9 +25,14 @@ function SpeedoDial({
   const speedAngle = -120 + (Math.min(speedKph, maxDisplay) / maxDisplay) * 240;
   const rpmAngle = -120 + Math.min(1, Math.max(0, rpmNorm)) * 240;
   const gearLabel = gear <= 0 ? "N" : String(gear);
+  const redline = rpmNorm > 0.92;
 
   return (
     <div className="relative mx-auto h-[7.5rem] w-[7.5rem]">
+      {/* RPM redline glow ring */}
+      {redline && (
+        <div className="pointer-events-none absolute inset-0 animate-pulse rounded-full border-2 border-red-500 shadow-[0_0_14px_rgba(239,68,68,0.7)]" />
+      )}
       <svg viewBox="0 0 120 120" className="h-full w-full drop-shadow">
         <circle
           cx="60"
@@ -93,7 +104,10 @@ function SpeedoDial({
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-fog">
           km/h
         </p>
-        <p className="font-mono text-2xl font-semibold tabular-nums text-white leading-none">
+        <p
+          className="font-mono text-2xl font-semibold tabular-nums leading-none"
+          style={{ color: speedColor(speedKph), transition: "color 0.3s" }}
+        >
           {Math.round(speedKph)}
         </p>
         <div className="mt-1 flex items-center gap-2">
@@ -151,6 +165,8 @@ export function GameHud({
   const deltaPb =
     personalBestMs && started ? elapsedMs - personalBestMs * progress : null;
 
+  const beatingPb = deltaPb !== null && deltaPb < 0;
+
   const sessionLabel =
     sessionConfirmed && (raceMode === "ai" || raceMode === "online") && aiCount > 0
       ? ` · ${aiCount} AI`
@@ -173,7 +189,9 @@ export function GameHud({
     <div className="pointer-events-none absolute inset-x-0 top-0 z-10 select-none p-3 sm:p-4">
       <div className="mx-auto flex max-w-7xl items-start justify-between gap-2">
         {/* ---- Timer block ---- */}
-        <div className="rounded-xl border border-white/12 bg-ink-950/78 px-4 py-2.5 backdrop-blur-sm">
+        <div
+          className={`rounded-xl border border-white/16 bg-ink-950/78 px-4 py-2.5 shadow-inner backdrop-blur-sm${beatingPb ? " shadow-[0_0_12px_rgba(52,211,153,0.3)]" : ""}`}
+        >
           <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-fog">
             {routeName}
             {sessionLabel}
@@ -183,15 +201,15 @@ export function GameHud({
               City densify v{cityVersion} · Unreal import
             </p>
           )}
-          <p className="mt-0.5 font-mono text-3xl font-semibold tabular-nums text-white drop-shadow">
+          <p className="mt-0.5 font-mono text-4xl font-semibold tabular-nums text-white drop-shadow">
             {started ? formatLapTime(elapsedMs) : "—:——.———"}
           </p>
 
           {personalBestMs ? (
             <p
-              className={`mt-0.5 font-mono text-xs ${deltaPb !== null && deltaPb < 0 ? "text-emerald-400" : "text-amber-400"}`}
+              className={`mt-0.5 font-mono text-xs ${beatingPb ? "text-emerald-400" : "text-amber-400"}`}
             >
-              PB {formatLapTime(personalBestMs)}
+              {beatingPb ? "★ " : ""}PB {formatLapTime(personalBestMs)}
               {deltaPb !== null && (
                 <span className="ml-2">
                   {deltaPb < 0
@@ -210,7 +228,7 @@ export function GameHud({
         </div>
 
         {/* ---- Speedometer + auto gearbox ---- */}
-        <div className="rounded-xl border border-white/12 bg-ink-950/78 px-3 py-2 backdrop-blur-sm">
+        <div className="rounded-xl border border-white/16 bg-ink-950/78 px-3 py-2 shadow-inner backdrop-blur-sm">
           <SpeedoDial
             speedKph={speedKph}
             rpmNorm={rpmNorm}
@@ -226,7 +244,7 @@ export function GameHud({
         </div>
 
         {/* ---- Checkpoint + progress ---- */}
-        <div className="min-w-[200px] rounded-xl border border-white/12 bg-ink-950/78 px-4 py-2.5 backdrop-blur-sm">
+        <div className="min-w-[200px] rounded-xl border border-white/16 bg-ink-950/78 px-4 py-2.5 shadow-inner backdrop-blur-sm">
           <div className="flex items-baseline justify-between">
             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-fog">
               Checkpoint
@@ -238,13 +256,18 @@ export function GameHud({
           </div>
           <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/10">
             <div
-              className="h-full rounded-full bg-accent transition-all duration-200"
+              className="h-full rounded-full bg-gradient-to-r from-blue-500 via-violet-500 to-fuchsia-500 transition-all duration-200"
               style={{ width: `${progressPct}%` }}
             />
           </div>
           <p className="mt-1 font-mono text-[10px] text-fog">{progressPct}%</p>
           {splitMs != null ? (
-            <p className={`mt-1 font-mono text-xs tabular-nums ${splitColor}`}>
+            <p
+              className={`mt-1 font-mono text-xs tabular-nums ${splitColor}`}
+              style={{
+                animation: "slideInRight 0.25s ease-out",
+              }}
+            >
               S{Math.max(1, sectorIndex)} {formatLapTime(splitMs)}
               {splitDeltaMs != null ? (
                 <span className="ml-1.5">
@@ -260,12 +283,19 @@ export function GameHud({
             </p>
           )}
           {finished && (
-            <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-400">
+            <p className="mt-1 animate-pulse font-bold font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-400">
               Lap complete ✓
             </p>
           )}
         </div>
       </div>
+
+      <style>{`
+        @keyframes slideInRight {
+          from { opacity: 0; transform: translateX(18px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+      `}</style>
     </div>
   );
 }

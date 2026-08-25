@@ -1,0 +1,22 @@
+{
+  "id": "sports",
+  "displayName": "Sports GT",
+  "fairness": "class-locked; cosmetics must not edit these numbers",
+  "massKg": 320,
+  "maxSpeedKmh": 161,
+  "maxEngineTorqueNm": 1211.4,
+  "brakeTorqueNm": 2654.2,
+  "maxSteerAngleDeg": 32,
+  "highSpeedSteerAngleDeg": 10,
+  "lateralFriction": 3.2,
+  "dragCoefficient": 0.269,
+  "downforceKg": 18,
+  "wheelRadiusCm": 23,
+  "chassisCm": {
+    "width": 176,
+    "height": 64,
+    "length": 410
+  },
+  "defaultPaint": "#c8102e",
+  "cosmeticsNeverChangePace": true
+}

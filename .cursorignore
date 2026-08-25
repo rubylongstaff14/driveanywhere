@@ -1,0 +1,10 @@
+﻿nextgen/unreal/DriveAnywhere/Binaries/
+nextgen/unreal/DriveAnywhere/DerivedDataCache/
+nextgen/unreal/DriveAnywhere/Intermediate/
+nextgen/unreal/DriveAnywhere/Saved/
+nextgen/unreal/DriveAnywhere/.vs/
+nextgen/unreal/DriveAnywhere/**/Intermediate/**
+nextgen/unreal/DriveAnywhere/**/DerivedDataCache/**
+nextgen/unreal/DriveAnywhere/**/Saved/**
+.next/
+node_modules/

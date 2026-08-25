@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { raceReward } from "@/lib/progression/economy";
 import { useProgressionStore } from "@/stores/progression-store";
+import { useAchievementStore } from "@/stores/achievement-store";
+import { useChallengesStore } from "@/stores/challenges-store";
 
 const QUALITY_OPTIONS: { value: QualityPreset; label: string }[] = [
   { value: "low", label: "Low" },
@@ -100,6 +102,22 @@ export function PauseMenu({
         personalBest: isPb && pb !== null ? true : pb === null,
       });
       useProgressionStore.getState().awardRace(reward.xp, reward.coins);
+      const newAchievements = useAchievementStore.getState().recordRace({
+        finished: true,
+        valid: true,
+        position: 1,
+        mapSlug: routeSlug,
+        online: false,
+        personalBest: isPb,
+        driftSeconds: 0,
+        topSpeed: 0,
+        cleanLap: !useGameStore.getState().invalid,
+      });
+      for (const a of newAchievements) {
+        useProgressionStore.getState().awardAchievement(a.coinReward, a.xpReward);
+      }
+      useChallengesStore.getState().progressChallenge("racesCompleted", 1);
+      useChallengesStore.getState().progressChallenge("races_today", 1);
     }
   }, [finished, restartToken]);
 

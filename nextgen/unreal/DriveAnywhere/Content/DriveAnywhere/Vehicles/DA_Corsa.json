@@ -1,0 +1,22 @@
+{
+  "id": "corsa",
+  "displayName": "Vauxhall Corsa",
+  "fairness": "class-locked; cosmetics must not edit these numbers",
+  "massKg": 280,
+  "maxSpeedKmh": 114.6,
+  "maxEngineTorqueNm": 796.8,
+  "brakeTorqueNm": 2097.4,
+  "maxSteerAngleDeg": 33.6,
+  "highSpeedSteerAngleDeg": 10.5,
+  "lateralFriction": 2.816,
+  "dragCoefficient": 0.378,
+  "downforceKg": 15.8,
+  "wheelRadiusCm": 24.5,
+  "chassisCm": {
+    "width": 164,
+    "height": 68,
+    "length": 344
+  },
+  "defaultPaint": "#c5cad0",
+  "cosmeticsNeverChangePace": true
+}

@@ -2,7 +2,15 @@
 
 import { AdaptiveDpr } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import {
+  EffectComposer,
+  Bloom,
+  Vignette,
+  ChromaticAberration,
+  ToneMapping,
+} from "@react-three/postprocessing";
 import { Physics } from "@react-three/rapier";
+import { ToneMappingMode } from "postprocessing";
 import { Suspense, useEffect, useMemo } from "react";
 import * as THREE from "three";
 import { AiPack } from "@/components/game/scene/ai-pack";
@@ -74,7 +82,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
       dpr={quality.dpr}
       performance={{ min: 0.5, debounce: 200 }}
       camera={{
-        fov: 62,
+        fov: 65,
         near: 0.12,
         far: quality.fogFar + 180,
         position: [0, 6, -12],
@@ -82,8 +90,8 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
       gl={{
         antialias: quality.antialias,
         powerPreference: "high-performance",
-        toneMapping: THREE.ACESFilmicToneMapping,
-        toneMappingExposure: 0.96,
+        toneMapping: THREE.NoToneMapping,
+        toneMappingExposure: 1.0,
         stencil: false,
       }}
       onCreated={({ gl }) => {
@@ -117,6 +125,23 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
         ) : null}
         <RemotePlayers />
         <RainField wet={weather === "rain"} />
+        {quality.drawDistance >= 300 && (
+          <EffectComposer>
+            <Bloom
+              intensity={0.4}
+              luminanceThreshold={0.7}
+              luminanceSmoothing={0.4}
+              mipmapBlur
+            />
+            <Vignette offset={0.4} darkness={0.55} />
+            <ChromaticAberration
+              offset={[0.0005, 0.0005]}
+              radialModulation={false}
+              modulationOffset={0}
+            />
+            <ToneMapping mode={ToneMappingMode.ACES_FILMIC} />
+          </EffectComposer>
+        )}
       </Suspense>
     </Canvas>
   );

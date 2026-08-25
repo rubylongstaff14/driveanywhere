@@ -1,0 +1,17 @@
+﻿# Unreal / Cursor — do not index engine junk
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vs/
+Build/
+
+*.sln
+*.VC.db
+*.VC.opendb
+*.suo
+
+**/Intermediate/**
+**/DerivedDataCache/**
+**/Saved/**
+**/Binaries/**

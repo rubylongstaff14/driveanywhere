@@ -26,26 +26,27 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "DriveAnywhere.ai — Race simplified London routes",
-    template: "%s · DriveAnywhere.ai",
+    default: "DriveAnywhere — Race Real City Streets Online",
+    template: "%s · DriveAnywhere",
   },
   description:
-    "Race simplified versions of real London routes and challenge your friends for the fastest time.",
+    "Arcade racing on 9 real-world city tracks. Race London, Dubai, Tokyo and more in your browser — live online multiplayer, achievements, cosmetics. No download.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
   ),
+  keywords: ["racing game", "online multiplayer", "browser game", "arcade racing", "London", "Dubai", "Tokyo"],
   openGraph: {
-    title: "DriveAnywhere.ai",
+    title: "DriveAnywhere — Race Real City Streets Online",
     description:
-      "Race simplified versions of real London routes and challenge your friends for the fastest time.",
+      "Arcade racing on 9 real-world city tracks. Race in your browser — live multiplayer, achievements, cosmetics. Free to play.",
     type: "website",
-    siteName: "DriveAnywhere.ai",
+    siteName: "DriveAnywhere",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DriveAnywhere.ai",
+    title: "DriveAnywhere — Race Real City Streets Online",
     description:
-      "Race simplified versions of real London routes and challenge your friends for the fastest time.",
+      "Arcade racing on 9 real-world city tracks. Race in your browser — live multiplayer, achievements, cosmetics. Free to play.",
   },
 };
 

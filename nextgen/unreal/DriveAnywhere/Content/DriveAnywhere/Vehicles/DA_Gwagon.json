@@ -1,0 +1,22 @@
+{
+  "id": "gwagon",
+  "displayName": "G-Wagon",
+  "fairness": "class-locked; cosmetics must not edit these numbers",
+  "massKg": 520,
+  "maxSpeedKmh": 123.8,
+  "maxEngineTorqueNm": 1973.1,
+  "brakeTorqueNm": 6065.3,
+  "maxSteerAngleDeg": 27.2,
+  "highSpeedSteerAngleDeg": 8.5,
+  "lateralFriction": 2.624,
+  "dragCoefficient": 0.35,
+  "downforceKg": 14.8,
+  "wheelRadiusCm": 36,
+  "chassisCm": {
+    "width": 200,
+    "height": 100,
+    "length": 410
+  },
+  "defaultPaint": "#1a1c20",
+  "cosmeticsNeverChangePace": true
+}

@@ -18,6 +18,9 @@ import { TauntWheel } from "@/components/multiplayer/taunt-wheel";
 import { CircuitBoot } from "@/components/game/circuit-boot";
 import { CinematicLoader } from "@/components/game/cinematic-loader";
 import { VehicleSelect } from "@/components/game/vehicle-select";
+import { AchievementToast } from "@/components/game/achievement-toast";
+import { ChallengesHud } from "@/components/game/challenges-hud";
+import { LagHud } from "@/components/game/lag-hud";
 import { getPersonalBest } from "@/lib/database/mock/attempts";
 import { resetTelemetry } from "@/lib/game/telemetry";
 import type { RaceSetup } from "@/lib/game/race-setup";
@@ -25,6 +28,8 @@ import type { RouteData } from "@/lib/validation/route-data";
 import { useAuthStore } from "@/stores/auth-store";
 import { useGameStore } from "@/stores/game-store";
 import { useProgressionStore } from "@/stores/progression-store";
+import { useAchievementStore } from "@/stores/achievement-store";
+import { useChallengesStore } from "@/stores/challenges-store";
 import { useSettingsStore } from "@/stores/settings-store";
 
 const GameCanvas = dynamic(
@@ -67,11 +72,15 @@ export function GameExperience({
   const hydrateSettings = useSettingsStore((s) => s.hydrate);
   const settingsHydrated = useSettingsStore((s) => s.hydrated);
   const hydrateProgression = useProgressionStore((s) => s.hydrate);
+  const hydrateAchievements = useAchievementStore((s) => s.hydrate);
+  const hydrateChallenges = useChallengesStore((s) => s.hydrate);
 
   useEffect(() => {
     hydrateSettings();
     hydrateProgression();
-  }, [hydrateSettings, hydrateProgression]);
+    hydrateAchievements();
+    hydrateChallenges();
+  }, [hydrateSettings, hydrateProgression, hydrateAchievements, hydrateChallenges]);
 
   useEffect(() => {
     const onEscape = (event: KeyboardEvent) => {
@@ -168,6 +177,9 @@ export function GameExperience({
         routeId={route.id}
         requiredCheckpoints={route.checkpoints.length}
       />
+      <AchievementToast />
+      <ChallengesHud />
+      {raceSetup.mode === "online" && <LagHud />}
       {!garageConfirmed && !finished && countdown === null && raceSetup.mode !== "online" ? (
         <VehicleSelect routeName={routeName} />
       ) : null}

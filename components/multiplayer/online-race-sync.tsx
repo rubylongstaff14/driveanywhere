@@ -3,6 +3,10 @@
 import { useEffect, useRef } from "react";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
 import { useGameStore } from "@/stores/game-store";
+import { useAchievementStore } from "@/stores/achievement-store";
+import { useProgressionStore } from "@/stores/progression-store";
+import { useChallengesStore } from "@/stores/challenges-store";
+import { raceReward } from "@/lib/progression/economy";
 import { sendMsg } from "@/lib/multiplayer/ws-client";
 import { carTelemetry } from "@/lib/game/telemetry";
 import {
@@ -117,6 +121,28 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
         96,
       );
       reportFinish(elapsedMs, sectorSplits.current, path, me?.paint);
+
+      // Award XP/coins and record achievement progress for online finish
+      const personalBest = useGameStore.getState().personalBestMs === null ||
+        elapsedMs < (useGameStore.getState().personalBestMs ?? Infinity);
+      const reward = raceReward({ finished: true, valid: true, personalBest });
+      useProgressionStore.getState().awardRace(reward.xp, reward.coins);
+      const newAchievements = useAchievementStore.getState().recordRace({
+        finished: true,
+        valid: true,
+        position: null,
+        mapSlug: route.slug,
+        online: true,
+        personalBest,
+        driftSeconds: 0,
+        topSpeed: 0,
+        cleanLap: !useGameStore.getState().invalid,
+      });
+      for (const a of newAchievements) {
+        useProgressionStore.getState().awardAchievement(a.coinReward, a.xpReward);
+      }
+      useChallengesStore.getState().progressChallenge("onlineRaces", 1);
+      useChallengesStore.getState().progressChallenge("races_today", 1);
     }
   }, [
     finished,

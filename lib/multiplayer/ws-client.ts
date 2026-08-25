@@ -45,15 +45,21 @@ export function connectWs(onMessage: MessageHandler): void {
       clearTimeout(reconnectTimer);
       reconnectTimer = null;
     }
+    startPingLoop();
     onOpenCallback?.();
   };
   socket.onmessage = (ev) => {
     try {
-      const msg: ServerMessage = JSON.parse(ev.data as string);
-      handler?.(msg);
+      const raw = JSON.parse(ev.data as string) as { type?: string };
+      if (raw.type === "pong") {
+        currentPingMs = Math.round(performance.now() - lastPingTime);
+        return;
+      }
+      handler?.(raw as ServerMessage);
     } catch { /* ignore parse errors */ }
   };
   socket.onclose = () => {
+    stopPingLoop();
     socket = null;
     onCloseCallback?.();
     scheduleReconnect(onMessage);
@@ -70,6 +76,7 @@ function scheduleReconnect(onMessage: MessageHandler): void {
 }
 
 export function disconnectWs(): void {
+  stopPingLoop();
   if (reconnectTimer) {
     clearTimeout(reconnectTimer);
     reconnectTimer = null;
@@ -93,4 +100,33 @@ export function sendCarState(state: CarState): void {
 
 export function isConnected(): boolean {
   return socket?.readyState === WebSocket.OPEN;
+}
+
+// Ping tracking
+let lastPingTime = 0;
+let currentPingMs = 0;
+let pingInterval: ReturnType<typeof setInterval> | null = null;
+
+export function getPingMs(): number { return currentPingMs; }
+
+function startPingLoop(): void {
+  stopPingLoop();
+  pingInterval = setInterval(() => {
+    if (socket?.readyState === WebSocket.OPEN) {
+      lastPingTime = performance.now();
+      try { socket.send(JSON.stringify({ type: "ping" })); } catch { /* ignore */ }
+    }
+  }, 2000);
+}
+
+function stopPingLoop(): void {
+  if (pingInterval) { clearInterval(pingInterval); pingInterval = null; }
+}
+
+export function getConnectionQuality(): "excellent" | "good" | "fair" | "poor" | "offline" {
+  if (!isConnected()) return "offline";
+  if (currentPingMs < 50) return "excellent";
+  if (currentPingMs < 100) return "good";
+  if (currentPingMs < 180) return "fair";
+  return "poor";
 }

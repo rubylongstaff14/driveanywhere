@@ -92,6 +92,7 @@ interface ProgressionState extends ProgressionPersist {
   hydrated: boolean;
   hydrate: () => void;
   awardRace: (xp: number, coins: number) => void;
+  awardAchievement: (coins: number, xp: number) => void;
   buyCoins: (packId: string) => { ok: true } | { ok: false; message: string };
   openCrate: (
     crateId: CrateId,
@@ -129,6 +130,19 @@ export const useProgressionStore = create<ProgressionState>((set, get) => ({
     set({ ...data, hydrated: true });
   },
   awardRace: (xp, coins) => {
+    set((s) => {
+      const next = {
+        coins: s.coins + coins,
+        xp: s.xp + xp,
+        unlocked: s.unlocked,
+        loadouts: s.loadouts,
+        lastDropId: s.lastDropId,
+      };
+      persist(next);
+      return next;
+    });
+  },
+  awardAchievement: (coins, xp) => {
     set((s) => {
       const next = {
         coins: s.coins + coins,

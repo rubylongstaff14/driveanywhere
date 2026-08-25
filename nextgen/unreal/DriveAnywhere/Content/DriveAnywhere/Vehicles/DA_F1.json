@@ -1,0 +1,22 @@
+{
+  "id": "f1",
+  "displayName": "Open-Wheel",
+  "fairness": "class-locked; cosmetics must not edit these numbers",
+  "massKg": 180,
+  "maxSpeedKmh": 188.9,
+  "maxEngineTorqueNm": 810.2,
+  "brakeTorqueNm": 1782,
+  "maxSteerAngleDeg": 36.8,
+  "highSpeedSteerAngleDeg": 11.5,
+  "lateralFriction": 3.84,
+  "dragCoefficient": 0.23,
+  "downforceKg": 21.6,
+  "wheelRadiusCm": 22,
+  "chassisCm": {
+    "width": 144,
+    "height": 48,
+    "length": 410
+  },
+  "defaultPaint": "#e8eef4",
+  "cosmeticsNeverChangePace": true
+}
