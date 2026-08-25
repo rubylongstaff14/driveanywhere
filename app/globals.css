@@ -49,7 +49,8 @@
       scroll-behavior: auto;
     }
 
-    *:not(.da-shop-reel):not(.da-shop-reel *) {
+    /* Keep crate reel + toast motion — they are intentional game feedback */
+    *:not(.da-shop-reel):not(.da-shop-reel *):not(.da-slide-up):not(.da-crate-reel) {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
@@ -98,12 +99,12 @@
   .da-shop-reel {
     display: flex;
     width: max-content;
-    will-change: transform;
-    transition: transform 2.35s cubic-bezier(0.12, 0.82, 0.08, 1);
+    will-change: transform, filter;
+    transform: translateX(0);
   }
 
   .da-shop-reel.is-spinning {
-    transition-duration: 2.45s;
+    /* Transition is applied imperatively so start→end always animates */
   }
 }
 
