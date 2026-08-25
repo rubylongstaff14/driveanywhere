@@ -40,6 +40,7 @@ interface MultiplayerState {
   spectating: boolean;
   raceStartTimestamp: number | null;
   results: RaceResult[] | null;
+  resultsProvisional: boolean;
   /** @deprecated prefer remoteCarBuffer — kept for id membership only */
   remoteCarStates: Record<string, CarState>;
   remoteCarStateHistory: Record<string, { state: CarState; timestamp: number }[]>;
@@ -54,15 +55,35 @@ interface MultiplayerState {
   connect: () => void;
   disconnect: () => void;
   listRooms: () => void;
-  createRoom: (name: string, map: string, difficulty: "easy" | "medium" | "hard", aiCount: number, playerName: string, vehicleId: string, paint?: string) => void;
-  joinRoom: (roomId: string, playerName: string, vehicleId: string, paint?: string, asSpectator?: boolean) => void;
+  createRoom: (
+    name: string,
+    map: string,
+    difficulty: "easy" | "medium" | "hard",
+    aiCount: number,
+    playerName: string,
+    vehicleId: string,
+    paint?: string,
+    aero?: { bumper?: string; wing?: string; kit?: string },
+  ) => void;
+  joinRoom: (
+    roomId: string,
+    playerName: string,
+    vehicleId: string,
+    paint?: string,
+    asSpectator?: boolean,
+    aero?: { bumper?: string; wing?: string; kit?: string },
+  ) => void;
   leaveRoom: () => void;
   setReady: (ready: boolean) => void;
   hostSetMap: (map: string) => void;
   hostSetDifficulty: (d: "easy" | "medium" | "hard") => void;
   hostSetAi: (count: number) => void;
   hostSetVehicle: (vehicleId: string) => void;
-  setLoadout: (vehicleId: string, paint?: string) => void;
+  setLoadout: (
+    vehicleId: string,
+    paint?: string,
+    aero?: { bumper?: string; wing?: string; kit?: string },
+  ) => void;
   hostKick: (playerId: string) => void;
   hostStart: () => void;
   reportFinish: (
@@ -199,14 +220,20 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         set({ racePositions: msg.positions });
         break;
       case "race_results":
-        clearRemoteCarBuffer();
+        if (!msg.provisional) clearRemoteCarBuffer();
         set({
-          racing: false,
+          // Keep racing true while waiting for late finishers so remotes still update
+          racing: Boolean(msg.provisional),
           results: msg.results,
-          racePositions: [],
-          remoteCarStates: {},
-          remoteCarStateHistory: {},
-          remotePlayerIdKey: "",
+          resultsProvisional: Boolean(msg.provisional),
+          racePositions: msg.provisional ? get().racePositions : [],
+          remoteCarStates: msg.provisional
+            ? get().remoteCarStates
+            : {},
+          remoteCarStateHistory: msg.provisional
+            ? get().remoteCarStateHistory
+            : {},
+          remotePlayerIdKey: msg.provisional ? get().remotePlayerIdKey : "",
         });
         break;
       case "kicked":
@@ -241,6 +268,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     spectating: false,
     raceStartTimestamp: null,
     results: null,
+    resultsProvisional: false,
     remoteCarStates: {},
     remoteCarStateHistory: {},
     remotePlayerIdKey: "",
@@ -279,7 +307,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
       });
     },
     listRooms: () => sendMsg({ type: "list_rooms" }),
-    createRoom: (name, map, difficulty, aiCount, playerName, vehicleId, paint) =>
+    createRoom: (name, map, difficulty, aiCount, playerName, vehicleId, paint, aero) =>
       sendMsg({
         type: "create_room",
         name,
@@ -289,8 +317,11 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         playerName,
         vehicleId,
         paint,
+        bumper: aero?.bumper,
+        wing: aero?.wing,
+        kit: aero?.kit,
       }),
-    joinRoom: (roomId, playerName, vehicleId, paint, asSpectator) =>
+    joinRoom: (roomId, playerName, vehicleId, paint, asSpectator, aero) =>
       sendMsg({
         type: "join_room",
         roomId,
@@ -298,8 +329,11 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         vehicleId,
         paint,
         asSpectator,
+        bumper: aero?.bumper,
+        wing: aero?.wing,
+        kit: aero?.kit,
       }),
-    setLoadout: (vehicleId, paint) => {
+    setLoadout: (vehicleId, paint, aero) => {
       const { currentRoom, myId, connected } = get();
       if (!connected) {
         set({ error: "Not connected to multiplayer server — can't change paint" });
@@ -312,6 +346,9 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
                 ...p,
                 vehicleId,
                 paint: paint ?? p.paint,
+                bumper: aero?.bumper ?? p.bumper,
+                wing: aero?.wing ?? p.wing,
+                kit: aero?.kit ?? p.kit,
               }
             : p,
         );
@@ -320,7 +357,14 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
           error: null,
         });
       }
-      sendMsg({ type: "set_loadout", vehicleId, paint });
+      sendMsg({
+        type: "set_loadout",
+        vehicleId,
+        paint,
+        bumper: aero?.bumper,
+        wing: aero?.wing,
+        kit: aero?.kit,
+      });
     },
     leaveRoom: () => {
       sendMsg({ type: "leave_room" });
@@ -339,11 +383,14 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     setReady: (ready) => {
       const { currentRoom, myId } = get();
       const me = currentRoom?.players.find((p) => p.id === myId);
-      if (me?.paint) {
+      if (me) {
         sendMsg({
           type: "set_loadout",
           vehicleId: me.vehicleId,
           paint: me.paint,
+          bumper: me.bumper,
+          wing: me.wing,
+          kit: me.kit,
         });
       }
       if (currentRoom && myId) {

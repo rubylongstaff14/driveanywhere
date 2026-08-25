@@ -9,6 +9,8 @@ import { lobbyDifficultyToSkill } from "@/lib/game/race-setup";
 import {
   availablePaints,
   cosmeticsForSlot,
+  defaultLoadout,
+  resolveLoadoutVisual,
 } from "@/lib/game/cosmetics";
 import { isPaintHexTaken } from "@/lib/multiplayer/race-colors";
 import { useProgressionStore } from "@/stores/progression-store";
@@ -62,11 +64,34 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
 
   const raceVehicleId = useMultiplayerStore((s) => s.raceVehicleId);
   const raceLoading = useMultiplayerStore((s) => s.raceLoading);
+  const myLobbyVehicleId = currentRoom?.players.find((p) => p.id === myId)?.vehicleId;
+
+  useEffect(() => {
+    if (!currentRoom || !myId || currentRoom.status !== "waiting") return;
+    const slot = currentRoom.players.find((p) => p.id === myId);
+    if (!slot) return;
+    const vid = parseVehicleId(slot.vehicleId);
+    const loadout =
+      useProgressionStore.getState().loadouts[vid] ?? defaultLoadout(vid);
+    const visual = resolveLoadoutVisual(vid, loadout);
+    if (
+      slot.bumper !== visual.bumper ||
+      slot.wing !== visual.wing ||
+      slot.kit !== visual.kit
+    ) {
+      setLoadout(slot.vehicleId, slot.paint ?? visual.paint, {
+        bumper: visual.bumper,
+        wing: visual.wing,
+        kit: visual.kit,
+      });
+    }
+  }, [currentRoom?.id, currentRoom?.status, myId, myLobbyVehicleId, setLoadout]);
 
   useEffect(() => {
     if (raceLoading && currentRoom && myId) {
-      const me = currentRoom.players.find((p) => p.id === myId);
-      const vehicle = me?.vehicleId ?? raceVehicleId ?? currentRoom.vehicleId ?? "sports";
+      const slot = currentRoom.players.find((p) => p.id === myId);
+      const vehicle =
+        slot?.vehicleId ?? raceVehicleId ?? currentRoom.vehicleId ?? "sports";
       const difficulty = lobbyDifficultyToSkill(currentRoom.difficulty);
       router.push(
         `/play/${currentRoom.map}?mode=online&roomId=${currentRoom.id}&vehicle=${vehicle}&ai=${currentRoom.aiCount}&difficulty=${difficulty}`,
@@ -292,7 +317,15 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                           )
                             ? me.paint
                             : paints[0]?.paint;
-                        setLoadout(nextId, keep);
+                        const loadout =
+                          useProgressionStore.getState().loadouts[nextId] ??
+                          defaultLoadout(nextId);
+                        const visual = resolveLoadoutVisual(nextId, loadout);
+                        setLoadout(nextId, keep, {
+                          bumper: visual.bumper,
+                          wing: visual.wing,
+                          kit: visual.kit,
+                        });
                       }}
                     >
                       {VEHICLE_LIST.map((v) => (
@@ -329,7 +362,16 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                             }
                             onClick={() => {
                               if (blocked) return;
-                              setLoadout(me.vehicleId, hex);
+                              const vid = parseVehicleId(me.vehicleId);
+                              const loadout =
+                                useProgressionStore.getState().loadouts[vid] ??
+                                defaultLoadout(vid);
+                              const visual = resolveLoadoutVisual(vid, loadout);
+                              setLoadout(me.vehicleId, hex, {
+                                bumper: visual.bumper,
+                                wing: visual.wing,
+                                kit: visual.kit,
+                              });
                               if (c.owned) equip(myVehicleId, "paintId", c.id);
                             }}
                             className={`relative h-9 w-9 rounded-full border-2 transition ${

@@ -78,17 +78,20 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
         lastSampleAt.current = now;
         const gs = useGameStore.getState();
         if (!gs.paused && !gs.finished) {
-          const p = progressAlongRoad(
+          const roadP = progressAlongRoad(
             route.roadPoints,
             carTelemetry.x,
             carTelemetry.z,
           );
+          const cpTotal = Math.max(1, route.checkpoints.length);
+          const cpP = (gs.checkpointIndex ?? 0) / cpTotal;
+          const p = Math.max(roadP, cpP * 0.98);
           const t = gs.elapsedMs;
           const prev = pathSamples.current[pathSamples.current.length - 1];
-          if (!prev || p > prev.p + 0.004 || t > prev.t + 400) {
+          if (!prev || p > prev.p + 0.002 || t > prev.t + 250) {
             pathSamples.current.push({ p, t });
-            if (pathSamples.current.length > 400) {
-              pathSamples.current.splice(0, pathSamples.current.length - 300);
+            if (pathSamples.current.length > 500) {
+              pathSamples.current.splice(0, pathSamples.current.length - 400);
             }
           }
         }
@@ -109,10 +112,10 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
     if (finished && !reportedFinish.current && racing && !spectating) {
       reportedFinish.current = true;
       const me = currentRoom?.players.find((p) => p.id === myId);
-      const path = compactPathSamples([
-        ...pathSamples.current,
-        { p: 1, t: elapsedMs },
-      ]);
+      const path = compactPathSamples(
+        [...pathSamples.current, { p: 1, t: elapsedMs }],
+        96,
+      );
       reportFinish(elapsedMs, sectorSplits.current, path, me?.paint);
     }
   }, [
@@ -126,10 +129,16 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
   ]);
 
   useEffect(() => {
-    if (results) {
+    if (!results) return;
+    const provisional = useMultiplayerStore.getState().resultsProvisional;
+    const localFinished = useGameStore.getState().finished;
+    if (!provisional) {
       useGameStore.setState({ paused: true, finished: true });
+    } else if (localFinished || spectating) {
+      // First finishers / spectators see the live board; others keep racing
+      useGameStore.setState({ paused: true });
     }
-  }, [results]);
+  }, [results, spectating]);
 
   return null;
 }

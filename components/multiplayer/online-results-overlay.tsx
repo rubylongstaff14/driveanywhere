@@ -1,26 +1,36 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useMultiplayerStore } from "@/stores/multiplayer-store";
-import { formatLapTime } from "@/lib/utils/format";
 import { TrackDeltaOverview } from "@/components/multiplayer/track-delta-overview";
+import { formatLapTime } from "@/lib/utils/format";
 import type { RouteData } from "@/lib/validation/route-data";
+import { useGameStore } from "@/stores/game-store";
+import { useMultiplayerStore } from "@/stores/multiplayer-store";
 
 export function OnlineResultsOverlay({ route }: { route: RouteData }) {
   const router = useRouter();
   const results = useMultiplayerStore((s) => s.results);
+  const resultsProvisional = useMultiplayerStore((s) => s.resultsProvisional);
   const myId = useMultiplayerStore((s) => s.myId);
   const currentRoom = useMultiplayerStore((s) => s.currentRoom);
   const spectating = useMultiplayerStore((s) => s.spectating);
   const joinNextRace = useMultiplayerStore((s) => s.joinNextRace);
+  const localFinished = useGameStore((s) => s.finished);
 
+  // Still-racing players must not be blocked by the live standings board
   if (!results) return null;
+  if (resultsProvisional && !localFinished && !spectating) return null;
 
-  const winner = results[0];
+  const winner = results.find((r) => r.finished) ?? results[0];
   const me = results.find((r) => r.playerId === myId);
+  const waitingCount = results.filter((r) => !r.finished).length;
 
   function handlePlayAgain() {
-    useMultiplayerStore.setState({ results: null, racing: false });
+    useMultiplayerStore.setState({
+      results: null,
+      racing: false,
+      resultsProvisional: false,
+    });
     if (spectating) joinNextRace();
     if (currentRoom) {
       router.push(`/play/online/${currentRoom.id}`);
@@ -34,15 +44,23 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
       <div className="mx-4 w-full max-w-xl rounded-2xl border border-white/10 bg-ink-950 p-6 shadow-2xl">
         <div className="mb-5 text-center">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
-            Race Complete
+            {resultsProvisional ? "Live standings" : "Race Complete"}
           </p>
           <h2 className="mt-2 font-display text-3xl text-white">
             {spectating
-              ? "Race over"
-              : me?.position === 1
-                ? "Victory!"
-                : `P${me?.position ?? "?"}`}
+              ? "Spectating"
+              : resultsProvisional
+                ? `P${me?.position ?? "—"} · waiting`
+                : me?.position === 1
+                  ? "Victory!"
+                  : `P${me?.position ?? "?"}`}
           </h2>
+          {resultsProvisional && waitingCount > 0 && (
+            <p className="mt-1 text-sm text-amber-200/80">
+              Waiting for {waitingCount} rival
+              {waitingCount === 1 ? "" : "s"} to finish…
+            </p>
+          )}
           {me?.timeMs && (
             <p className="mt-1 font-mono text-lg text-white/80">
               {formatLapTime(me.timeMs)}
@@ -87,7 +105,11 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
                   )}
                 </span>
                 <span className="w-20 text-right font-mono text-xs text-white/70">
-                  {r.finished && r.timeMs ? formatLapTime(r.timeMs) : "DNF"}
+                  {r.finished && r.timeMs
+                    ? formatLapTime(r.timeMs)
+                    : resultsProvisional
+                      ? "…"
+                      : "DNF"}
                 </span>
                 <span className="w-20 text-right font-mono text-xs text-signal/80">
                   {delta && delta > 0 ? `+${(delta / 1000).toFixed(3)}` : "—"}
@@ -97,7 +119,7 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
           })}
         </div>
 
-        {winner?.splits && winner.splits.length > 0 && (
+        {!resultsProvisional && winner?.splits && winner.splits.length > 0 && (
           <div className="mb-5 rounded-xl border border-white/5 bg-ink-975 p-4">
             <p className="mb-2 text-[10px] uppercase tracking-widest text-mist">
               Winner splits ({winner.playerName})
@@ -115,48 +137,18 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
                 </div>
               ))}
             </div>
-            {me &&
-              me.playerId !== winner.playerId &&
-              me.splits &&
-              me.splits.length > 0 && (
-                <div className="mt-2 flex gap-2">
-                  {me.splits.map((split, i) => {
-                    const winnerSplit = winner.splits?.[i];
-                    const d = winnerSplit ? split - winnerSplit : null;
-                    return (
-                      <div
-                        key={i}
-                        className="flex-1 rounded-lg bg-ink-950 p-2 text-center"
-                      >
-                        <p className="text-[9px] text-mist">You</p>
-                        <p className="font-mono text-xs text-white">
-                          {formatLapTime(split)}
-                        </p>
-                        {d !== null && (
-                          <p
-                            className={`font-mono text-[9px] ${
-                              d > 0 ? "text-signal" : "text-green-400"
-                            }`}
-                          >
-                            {d > 0 ? "+" : ""}
-                            {(d / 1000).toFixed(3)}
-                          </p>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
           </div>
         )}
 
         <div className="flex justify-center gap-3">
-          <button
-            onClick={handlePlayAgain}
-            className="rounded-lg bg-accent px-6 py-2.5 text-sm font-medium text-white hover:bg-accent/80"
-          >
-            {spectating ? "Join next race" : "Play Again"}
-          </button>
+          {!resultsProvisional && (
+            <button
+              onClick={handlePlayAgain}
+              className="rounded-lg bg-accent px-6 py-2.5 text-sm font-medium text-white hover:bg-accent/80"
+            >
+              {spectating ? "Join next race" : "Play Again"}
+            </button>
+          )}
           <button
             onClick={() => router.push("/play/online")}
             className="rounded-lg border border-white/10 px-6 py-2.5 text-sm text-mist hover:bg-white/5"

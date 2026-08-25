@@ -32,9 +32,11 @@ export function TrackDeltaOverview({
 
   const finished = useMemo(
     () =>
-      results.filter(
-        (r) => r.finished && r.path && r.path.length >= 2 && r.paint,
-      ),
+      results.filter((r) => {
+        if (!r.finished) return false;
+        const path = r.path;
+        return Boolean(path && path.length >= 2);
+      }),
     [results],
   );
 
@@ -128,25 +130,40 @@ export function TrackDeltaOverview({
       };
     };
 
+    const palette = [
+      "#e11d48",
+      "#10b981",
+      "#3b82f6",
+      "#f59e0b",
+      "#a855f7",
+      "#06b6d4",
+    ];
+    const paintFor = (r: RaceResult, idx: number) =>
+      r.paint && /^#[0-9a-fA-F]{6}$/.test(r.paint)
+        ? r.paint
+        : palette[idx % palette.length];
+
     // Sector colour with hysteresis — avoids flicker when times are close
     if (finished.length > 0) {
-      let lastPaint = finished[0].paint!;
+      let lastPaint = paintFor(finished[0], 0);
       let lastBest = Infinity;
       for (let i = 0; i < segs; i += 1) {
         const mid = (i + 0.5) / segs;
         let best: RaceResult | null = null;
+        let bestIdx = 0;
         let bestT = Infinity;
-        for (const r of finished) {
+        finished.forEach((r, idx) => {
           const t = timeAtProgress(r.path!, mid);
           if (t != null && t < bestT) {
             bestT = t;
             best = r;
+            bestIdx = idx;
           }
-        }
-        if (!best?.paint) continue;
-        // Only switch colour if clearly faster (>90ms) or first segment
-        if (i === 0 || bestT < lastBest - 90 || best.paint === lastPaint) {
-          lastPaint = best.paint;
+        });
+        if (!best) continue;
+        const candidate = paintFor(best, bestIdx);
+        if (i === 0 || bestT < lastBest - 90 || candidate === lastPaint) {
+          lastPaint = candidate;
           lastBest = bestT;
         }
 

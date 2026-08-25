@@ -5,6 +5,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import * as THREE from "three";
 import { VehicleBody } from "@/components/game/scene/vehicle-body";
+import type { BumperStyle, KitStyle, WingStyle } from "@/lib/game/cosmetics";
 import { getVehicle } from "@/lib/game/vehicles";
 import {
   remoteCarBuffer,
@@ -18,6 +19,9 @@ interface RemoteCarProps {
   playerName: string;
   color: string;
   vehicleId: string;
+  bumper: BumperStyle;
+  wing: WingStyle;
+  kit: KitStyle;
   ghost?: boolean;
 }
 
@@ -107,6 +111,9 @@ function RemoteCar({
   playerName,
   color,
   vehicleId,
+  bumper,
+  wing,
+  kit,
   ghost = false,
 }: RemoteCarProps) {
   const meshRef = useRef<THREE.Group>(null);
@@ -178,6 +185,9 @@ function RemoteCar({
         id={vehicle.id}
         paint={paint}
         paintDark={paint}
+        bumper={bumper}
+        wing={wing}
+        kit={kit}
         simple
         ghost={ghost}
       />
@@ -280,6 +290,9 @@ export function RemotePlayers() {
           live?.paint ||
           p.paint ||
           FALLBACK_COLORS[i % FALLBACK_COLORS.length];
+        const bumper = (p.bumper as BumperStyle | undefined) ?? "stock";
+        const wing = (p.wing as WingStyle | undefined) ?? "none";
+        const kit = (p.kit as KitStyle | undefined) ?? "none";
         return (
           <RemoteCar
             key={p.id}
@@ -287,6 +300,9 @@ export function RemotePlayers() {
             playerName={p.name}
             color={color}
             vehicleId={p.vehicleId || currentRoom.vehicleId}
+            bumper={bumper}
+            wing={wing}
+            kit={kit}
             ghost={spectating}
           />
         );

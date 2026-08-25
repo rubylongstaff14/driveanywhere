@@ -23,6 +23,9 @@ export interface PlayerSlot {
   vehicleId: string;
   /** Visual-only paint hex — never affects pace */
   paint?: string;
+  bumper?: string;
+  wing?: string;
+  kit?: string;
   /** Late joiners watch as ghost until next race */
   role?: "racer" | "spectator";
 }
@@ -87,8 +90,8 @@ export interface RaceResult {
 
 export type ClientMessage =
   | { type: "list_rooms" }
-  | { type: "create_room"; name: string; map: string; difficulty: "easy" | "medium" | "hard"; aiCount: number; playerName: string; vehicleId: string; paint?: string }
-  | { type: "join_room"; roomId: string; playerName: string; vehicleId: string; paint?: string; asSpectator?: boolean }
+  | { type: "create_room"; name: string; map: string; difficulty: "easy" | "medium" | "hard"; aiCount: number; playerName: string; vehicleId: string; paint?: string; bumper?: string; wing?: string; kit?: string }
+  | { type: "join_room"; roomId: string; playerName: string; vehicleId: string; paint?: string; asSpectator?: boolean; bumper?: string; wing?: string; kit?: string }
   | { type: "leave_room" }
   | { type: "ready" }
   | { type: "unready" }
@@ -96,7 +99,7 @@ export type ClientMessage =
   | { type: "host_set_difficulty"; difficulty: "easy" | "medium" | "hard" }
   | { type: "host_set_ai"; aiCount: number }
   | { type: "host_set_vehicle"; vehicleId: string }
-  | { type: "set_loadout"; vehicleId: string; paint?: string }
+  | { type: "set_loadout"; vehicleId: string; paint?: string; bumper?: string; wing?: string; kit?: string }
   | { type: "host_kick"; playerId: string }
   | { type: "host_start" }
   | { type: "loaded" }
@@ -125,7 +128,7 @@ export type ServerMessage =
   | { type: "race_go"; startTimestamp: number; vehicleId: string }
   | { type: "car_update"; playerId: string; state: CarState }
   | { type: "cars_batch"; serverTime?: number; updates: Array<{ playerId: string; state: CarState }> }
-  | { type: "race_results"; results: RaceResult[] }
+  | { type: "race_results"; results: RaceResult[]; provisional?: boolean }
   | { type: "chat"; playerId: string; playerName: string; text: string }
   | { type: "taunt"; playerId: string; playerName: string; tauntId: TauntId }
   | { type: "race_positions"; positions: RacePosition[] }

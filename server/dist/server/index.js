@@ -18,6 +18,16 @@ function sendTo(ws, msg) {
     }
     catch { /* disconnected */ }
 }
+function parseAero(msg) {
+    const bumpers = new Set(["stock", "lip", "aggressive", "track"]);
+    const wings = new Set(["none", "lip", "gt", "swan"]);
+    const kits = new Set(["none", "skirts", "canards", "roof", "lights"]);
+    return {
+        bumper: msg.bumper && bumpers.has(msg.bumper) ? msg.bumper : "stock",
+        wing: msg.wing && wings.has(msg.wing) ? msg.wing : "none",
+        kit: msg.kit && kits.has(msg.kit) ? msg.kit : "none",
+    };
+}
 function claimPaint(room, requested, vehicleId, exceptPlayerId) {
     const vid = parseVehicleId(vehicleId);
     const candidates = paintHexesForVehicle(vid, stockIdsFor(vid));
@@ -54,7 +64,8 @@ wss.on("connection", (ws) => {
                 const vehicleId = parseVehicleId(msg.vehicleId);
                 room.vehicleId = vehicleId;
                 const paint = claimPaint(room, msg.paint, vehicleId);
-                room.addPlayer(ws, playerId, msg.playerName, vehicleId, true, paint);
+                const aero = parseAero(msg);
+                room.addPlayer(ws, playerId, msg.playerName, vehicleId, true, paint, "racer", aero);
                 rooms.set(room.id, room);
                 playerRooms.set(ws, { roomId: room.id, playerId });
                 sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
@@ -79,7 +90,8 @@ wss.on("connection", (ws) => {
                 const vehicleId = parseVehicleId(msg.vehicleId);
                 const paint = claimPaint(room, msg.paint, vehicleId);
                 const role = wantSpec ? "spectator" : "racer";
-                room.addPlayer(ws, playerId, msg.playerName, vehicleId, becomeHost, paint, role);
+                const aero = parseAero(msg);
+                room.addPlayer(ws, playerId, msg.playerName, vehicleId, becomeHost, paint, role, aero);
                 playerRooms.set(ws, { roomId: room.id, playerId });
                 sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
                 room.broadcast({ type: "room_updated", room: room.toInfo() }, playerId);
@@ -165,6 +177,10 @@ wss.on("connection", (ws) => {
                 if (!player)
                     break;
                 player.vehicleId = parseVehicleId(msg.vehicleId);
+                const aero = parseAero(msg);
+                player.bumper = aero.bumper;
+                player.wing = aero.wing;
+                player.kit = aero.kit;
                 if (typeof msg.paint === "string" && msg.paint.length >= 4) {
                     const normalized = normalizePaintHex(msg.paint);
                     if (!normalized) {

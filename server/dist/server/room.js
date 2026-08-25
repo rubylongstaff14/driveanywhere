@@ -25,6 +25,7 @@ export class Room {
     positionsTimer = null;
     loadTimeout = null;
     raceTimeout = null;
+    finishGraceTimer = null;
     countdownStarted = false;
     constructor(name, map, difficulty, aiCount) {
         this.id = `room_${nextRoomId++}`;
@@ -56,12 +57,15 @@ export class Room {
                 isHost: p.isHost,
                 vehicleId: p.vehicleId,
                 paint: p.paint,
+                bumper: p.bumper,
+                wing: p.wing,
+                kit: p.kit,
                 role: p.role,
             })),
             status: this.status,
         };
     }
-    addPlayer(ws, id, name, vehicleId, isHost, paint, role = "racer") {
+    addPlayer(ws, id, name, vehicleId, isHost, paint, role = "racer", aero) {
         const player = {
             ws,
             id,
@@ -70,6 +74,9 @@ export class Room {
             isHost,
             vehicleId,
             paint,
+            bumper: aero?.bumper ?? "stock",
+            wing: aero?.wing ?? "none",
+            kit: aero?.kit ?? "none",
             role,
             carState: null,
             finishTimeMs: null,
@@ -208,6 +215,10 @@ export class Room {
     startRace() {
         this.status = "racing";
         this.raceStartTimestamp = Date.now();
+        if (this.finishGraceTimer) {
+            clearTimeout(this.finishGraceTimer);
+            this.finishGraceTimer = null;
+        }
         for (const p of this.players) {
             p.carState = null;
             p.finishTimeMs = null;
@@ -285,6 +296,47 @@ export class Room {
         }
         return hist[hist.length - 1].t;
     }
+    buildResults() {
+        return this.players
+            .filter((p) => p.role !== "spectator")
+            .map((p) => {
+            let path = p.path.length > 0 ? p.path : undefined;
+            if (!path && p.progressHistory.length >= 2) {
+                path = p.progressHistory
+                    .filter((s) => Number.isFinite(s.p) && Number.isFinite(s.t))
+                    .slice(0, 96)
+                    .map((s) => ({
+                    p: Math.max(0, Math.min(1, s.p)),
+                    t: Math.max(0, Math.round(s.t)),
+                }));
+            }
+            return {
+                playerId: p.id,
+                playerName: p.name,
+                timeMs: p.finishTimeMs,
+                position: 0,
+                finished: p.finishTimeMs !== null,
+                splits: p.splits,
+                paint: p.paint,
+                path,
+            };
+        })
+            .sort((a, b) => {
+            if (a.finished && !b.finished)
+                return -1;
+            if (!a.finished && b.finished)
+                return 1;
+            return (a.timeMs ?? Infinity) - (b.timeMs ?? Infinity);
+        })
+            .map((r, i) => ({ ...r, position: i + 1 }));
+    }
+    broadcastStandings(provisional) {
+        this.broadcast({
+            type: "race_results",
+            results: this.buildResults(),
+            provisional,
+        });
+    }
     playerFinished(playerId, timeMs, splits, path, paint) {
         const p = this.players.find((pl) => pl.id === playerId);
         if (!p || p.role === "spectator" || p.finishTimeMs !== null)
@@ -294,19 +346,68 @@ export class Room {
         if (path && path.length > 0) {
             p.path = path
                 .filter((s) => Number.isFinite(s.p) && Number.isFinite(s.t))
-                .slice(0, 80)
+                .slice(0, 96)
                 .map((s) => ({
                 p: Math.max(0, Math.min(1, s.p)),
                 t: Math.max(0, Math.round(s.t)),
             }));
         }
+        else if (p.progressHistory.length >= 2) {
+            p.path = p.progressHistory.slice(0, 96);
+        }
         if (typeof paint === "string" && paint.length >= 4) {
             p.paint = paint.slice(0, 16);
         }
         const racers = this.players.filter((pl) => pl.role !== "spectator");
-        if (racers.length > 0 && racers.every((pl) => pl.finishTimeMs !== null)) {
+        const finishedCount = racers.filter((pl) => pl.finishTimeMs !== null).length;
+        // Live board so P1 can watch later finishers roll in
+        this.broadcastStandings(true);
+        if (racers.length > 0 && finishedCount === racers.length) {
             this.endRace();
+            return;
         }
+        // After first finisher, give others a grace window then close the board
+        if (finishedCount === 1 && !this.finishGraceTimer) {
+            this.finishGraceTimer = setTimeout(() => {
+                this.finishGraceTimer = null;
+                if (this.status === "racing")
+                    this.endRace();
+            }, 90_000);
+        }
+    }
+    endRace() {
+        if (this.status === "results")
+            return;
+        if (this.broadcastTimer)
+            clearInterval(this.broadcastTimer);
+        if (this.positionsTimer)
+            clearInterval(this.positionsTimer);
+        if (this.raceTimeout)
+            clearTimeout(this.raceTimeout);
+        if (this.finishGraceTimer)
+            clearTimeout(this.finishGraceTimer);
+        this.broadcastTimer = null;
+        this.positionsTimer = null;
+        this.raceTimeout = null;
+        this.finishGraceTimer = null;
+        this.status = "results";
+        this.broadcastStandings(false);
+        setTimeout(() => {
+            if (this.status !== "results")
+                return;
+            this.status = "waiting";
+            this.countdownStarted = false;
+            for (const p of this.players) {
+                p.ready = p.isHost;
+                p.carState = null;
+                p.finishTimeMs = null;
+                p.splits = [];
+                p.loaded = false;
+                p.path = [];
+                p.progressHistory = [];
+            }
+            this.broadcast({ type: "room_updated", room: this.toInfo() });
+        }, 20_000);
     }
     startPositionsLoop() {
         if (this.positionsTimer)
@@ -369,58 +470,6 @@ export class Room {
             this.broadcast({ type: "race_positions", positions });
         }, 400);
     }
-    endRace() {
-        if (this.status === "results")
-            return;
-        if (this.broadcastTimer)
-            clearInterval(this.broadcastTimer);
-        if (this.positionsTimer)
-            clearInterval(this.positionsTimer);
-        if (this.raceTimeout)
-            clearTimeout(this.raceTimeout);
-        this.broadcastTimer = null;
-        this.positionsTimer = null;
-        this.raceTimeout = null;
-        this.status = "results";
-        const results = this.players
-            .filter((p) => p.role !== "spectator")
-            .map((p) => ({
-            playerId: p.id,
-            playerName: p.name,
-            timeMs: p.finishTimeMs,
-            position: 0,
-            finished: p.finishTimeMs !== null,
-            splits: p.splits,
-            paint: p.paint,
-            path: p.path.length > 0 ? p.path : undefined,
-        }))
-            .sort((a, b) => {
-            if (a.finished && !b.finished)
-                return -1;
-            if (!a.finished && b.finished)
-                return 1;
-            return (a.timeMs ?? Infinity) - (b.timeMs ?? Infinity);
-        })
-            .map((r, i) => ({ ...r, position: i + 1 }));
-        this.broadcast({ type: "race_results", results });
-        setTimeout(() => {
-            if (this.status !== "results")
-                return;
-            this.status = "waiting";
-            this.countdownStarted = false;
-            for (const p of this.players) {
-                p.ready = p.isHost;
-                p.carState = null;
-                p.finishTimeMs = null;
-                p.splits = [];
-                p.loaded = false;
-                p.path = [];
-                p.progressHistory = [];
-                // Spectators stay spectators until they opt into next race
-            }
-            this.broadcast({ type: "room_updated", room: this.toInfo() });
-        }, 8000);
-    }
     reset() {
         if (this.countdownTimer)
             clearInterval(this.countdownTimer);
@@ -432,11 +481,14 @@ export class Room {
             clearTimeout(this.loadTimeout);
         if (this.raceTimeout)
             clearTimeout(this.raceTimeout);
+        if (this.finishGraceTimer)
+            clearTimeout(this.finishGraceTimer);
         this.countdownTimer = null;
         this.broadcastTimer = null;
         this.positionsTimer = null;
         this.loadTimeout = null;
         this.raceTimeout = null;
+        this.finishGraceTimer = null;
         this.countdownStarted = false;
         this.status = "waiting";
     }

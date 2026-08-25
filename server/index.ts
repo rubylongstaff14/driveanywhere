@@ -28,6 +28,21 @@ function sendTo(ws: WebSocket, msg: ServerMessage): void {
   try { ws.send(JSON.stringify(msg)); } catch { /* disconnected */ }
 }
 
+function parseAero(msg: {
+  bumper?: string;
+  wing?: string;
+  kit?: string;
+}): { bumper: string; wing: string; kit: string } {
+  const bumpers = new Set(["stock", "lip", "aggressive", "track"]);
+  const wings = new Set(["none", "lip", "gt", "swan"]);
+  const kits = new Set(["none", "skirts", "canards", "roof", "lights"]);
+  return {
+    bumper: msg.bumper && bumpers.has(msg.bumper) ? msg.bumper : "stock",
+    wing: msg.wing && wings.has(msg.wing) ? msg.wing : "none",
+    kit: msg.kit && kits.has(msg.kit) ? msg.kit : "none",
+  };
+}
+
 function claimPaint(
   room: Room,
   requested: string | undefined,
@@ -72,7 +87,8 @@ wss.on("connection", (ws) => {
         const vehicleId = parseVehicleId(msg.vehicleId);
         room.vehicleId = vehicleId;
         const paint = claimPaint(room, msg.paint, vehicleId);
-        room.addPlayer(ws, playerId, msg.playerName, vehicleId, true, paint);
+        const aero = parseAero(msg);
+        room.addPlayer(ws, playerId, msg.playerName, vehicleId, true, paint, "racer", aero);
         rooms.set(room.id, room);
         playerRooms.set(ws, { roomId: room.id, playerId });
         sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
@@ -99,6 +115,7 @@ wss.on("connection", (ws) => {
         const vehicleId = parseVehicleId(msg.vehicleId);
         const paint = claimPaint(room, msg.paint, vehicleId);
         const role = wantSpec ? "spectator" : "racer";
+        const aero = parseAero(msg);
         room.addPlayer(
           ws,
           playerId,
@@ -107,6 +124,7 @@ wss.on("connection", (ws) => {
           becomeHost,
           paint,
           role,
+          aero,
         );
         playerRooms.set(ws, { roomId: room.id, playerId });
         sendTo(ws, { type: "room_joined", room: room.toInfo(), yourId: playerId });
@@ -185,6 +203,10 @@ wss.on("connection", (ws) => {
         const player = room.players.find((p) => p.id === info.playerId);
         if (!player) break;
         player.vehicleId = parseVehicleId(msg.vehicleId);
+        const aero = parseAero(msg);
+        player.bumper = aero.bumper;
+        player.wing = aero.wing;
+        player.kit = aero.kit;
         if (typeof msg.paint === "string" && msg.paint.length >= 4) {
           const normalized = normalizePaintHex(msg.paint);
           if (!normalized) {

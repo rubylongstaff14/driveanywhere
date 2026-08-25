@@ -11,10 +11,16 @@ import { resolveLoadoutVisual, defaultLoadout } from "@/lib/game/cosmetics";
 import { VEHICLE_LIST, type VehicleId } from "@/lib/game/vehicles";
 import { useProgressionStore } from "@/stores/progression-store";
 
-function preferredPaint(vehicleId: VehicleId): string {
+function preferredLoadout(vehicleId: VehicleId) {
   const state = useProgressionStore.getState();
   const loadout = state.loadouts[vehicleId] ?? defaultLoadout(vehicleId);
-  return resolveLoadoutVisual(vehicleId, loadout).paint;
+  const visual = resolveLoadoutVisual(vehicleId, loadout);
+  return {
+    paint: visual.paint,
+    bumper: visual.bumper,
+    wing: visual.wing,
+    kit: visual.kit,
+  };
 }
 
 export function ServerBrowser() {
@@ -63,21 +69,48 @@ export function ServerBrowser() {
 
   function handleCreate() {
     if (!roomName.trim()) return;
-    createRoom(roomName.trim(), map, difficulty, aiCount, playerName, vehicleId, preferredPaint(vehicleId));
+    const L = preferredLoadout(vehicleId);
+    createRoom(roomName.trim(), map, difficulty, aiCount, playerName, vehicleId, L.paint, {
+      bumper: L.bumper,
+      wing: L.wing,
+      kit: L.kit,
+    });
   }
 
   function handleJoin(roomId: string) {
-    useMultiplayerStore.getState().joinRoom(roomId, playerName, vehicleId, preferredPaint(vehicleId));
+    const L = preferredLoadout(vehicleId);
+    useMultiplayerStore
+      .getState()
+      .joinRoom(roomId, playerName, vehicleId, L.paint, false, {
+        bumper: L.bumper,
+        wing: L.wing,
+        kit: L.kit,
+      });
   }
 
   function handleWatch(roomId: string) {
+    const L = preferredLoadout(vehicleId);
     useMultiplayerStore
       .getState()
-      .joinRoom(roomId, playerName, vehicleId, preferredPaint(vehicleId), true);
+      .joinRoom(roomId, playerName, vehicleId, L.paint, true, {
+        bumper: L.bumper,
+        wing: L.wing,
+        kit: L.kit,
+      });
   }
 
   function handleQuickPlay() {
-    createRoom(`${playerName}'s Race`, "westminster-sprint", "medium", 2, playerName, vehicleId, preferredPaint(vehicleId));
+    const L = preferredLoadout(vehicleId);
+    createRoom(
+      `${playerName}'s Race`,
+      "westminster-sprint",
+      "medium",
+      2,
+      playerName,
+      vehicleId,
+      L.paint,
+      { bumper: L.bumper, wing: L.wing, kit: L.kit },
+    );
   }
 
   return (
