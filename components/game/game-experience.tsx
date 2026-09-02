@@ -224,7 +224,11 @@ export function GameExperience({
         <RaceSetupOverlay routeName={routeName} routeId={route.id} />
       ) : null}
       <MobileDriveWarning routeSlug={routeSlug} />
-      <MobileControls />
+      <MobileControls
+        active={
+          garageConfirmed && sessionConfirmed && !finished && !introActive
+        }
+      />
       <p className="pointer-events-none absolute bottom-3 left-4 z-10 font-mono text-[10px] text-white/40">
         {route.dataAttribution}
       </p>

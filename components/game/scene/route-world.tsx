@@ -668,16 +668,17 @@ export function RouteWorld({
       takeFraction(
         route.sceneryObjects.filter((o) => o.type === "street_light"),
         quality.sceneryDensity,
-      ).map((o) => {
+      ).flatMap((o) => {
         const nearest = nearestRoadSample(samples, o.position.x, o.position.z);
-        const nearTrack =
-          nearest &&
-          Math.hypot(
+        if (!nearest) return [];
+        const roadDistance = Math.hypot(
             nearest.position.x - o.position.x,
             nearest.position.z - o.position.z,
-          ) <=
-            route.roadWidth + 18;
-        return {
+          );
+        // Keep poles entirely beyond the asphalt edge.
+        if (roadDistance < nearest.width / 2 + 1.4) return [];
+        const nearTrack = roadDistance <= route.roadWidth + 18;
+        return [{
           ...o,
           position: {
             ...o.position,
@@ -685,7 +686,7 @@ export function RouteWorld({
             // back to the world floor so they never hover over empty space.
             y: nearTrack ? nearest.position.y : 0,
           },
-        };
+        }];
       }),
     [quality.sceneryDensity, route.sceneryObjects, route.roadWidth, samples],
   );
@@ -694,22 +695,24 @@ export function RouteWorld({
       takeFraction(
         route.sceneryObjects.filter((o) => o.type === "tree"),
         quality.sceneryDensity,
-      ).map((o) => {
+      ).flatMap((o) => {
         const nearest = nearestRoadSample(samples, o.position.x, o.position.z);
-        const nearTrack =
-          nearest &&
-          Math.hypot(
+        if (!nearest) return [];
+        const roadDistance = Math.hypot(
             nearest.position.x - o.position.x,
             nearest.position.z - o.position.z,
-          ) <=
-            route.roadWidth + 24;
-        return {
+          );
+        // A trunk or canopy on the racing line is both a visual and collision
+        // hazard. Leave a generous verge around every road sample.
+        if (roadDistance < nearest.width / 2 + 3.2) return [];
+        const nearTrack = roadDistance <= route.roadWidth + 30;
+        return [{
           ...o,
           position: {
             ...o.position,
-            y: nearTrack ? Math.max(0, nearest.position.y - 0.2) : 0,
+            y: nearTrack ? Math.max(0, nearest.position.y - 0.55) : 0,
           },
-        };
+        }];
       }),
     [quality.sceneryDensity, route.sceneryObjects, route.roadWidth, samples],
   );
@@ -794,16 +797,28 @@ export function RouteWorld({
   const isAlps = route.slug === "alps-mountain-pass";
   const isRio = route.slug === "rio-coast-circuit";
 
-  const alpineTerrain = useMemo(
-    () =>
-      isAlps
-        ? [
+  const alpineTerrain = useMemo(() => {
+    if (!isAlps) return [];
+    const generated = [
             ...buildAlpineTerrainPads(samples, route.roadWidth),
             ...buildAlpineCliffs(samples, route.roadWidth),
-          ]
-        : [],
-    [isAlps, samples, route.roadWidth],
-  );
+          ];
+    // Terrain blocks use rotated boxes. A conservative footprint circle keeps
+    // every green shoulder/cliff mesh away from the full width of the track.
+    return generated.filter((block) => {
+      const [hw, , hl] = block.halfExtents;
+      const footprint = Math.hypot(hw, hl);
+      for (let i = 0; i < samples.length; i += 2) {
+        const sample = samples[i];
+        const distance = Math.hypot(
+          block.pos[0] - sample.position.x,
+          block.pos[2] - sample.position.z,
+        );
+        if (distance < footprint + sample.width / 2 + 2.5) return false;
+      }
+      return true;
+    });
+  }, [isAlps, samples, route.roadWidth]);
   const alpinePeaks = useMemo(
     () => (isAlps ? buildAlpineBackdropPeaks(samples) : []),
     [isAlps, samples],

@@ -9,7 +9,6 @@ import type {
 
 let nextRoomId = 1;
 
-const LOAD_TIMEOUT_MS = 45_000;
 const RACE_TIMEOUT_MS = 12 * 60_000;
 
 export interface ConnectedPlayer {
@@ -57,7 +56,6 @@ export class Room {
   private countdownTimer: ReturnType<typeof setInterval> | null = null;
   private broadcastTimer: ReturnType<typeof setInterval> | null = null;
   private positionsTimer: ReturnType<typeof setInterval> | null = null;
-  private loadTimeout: ReturnType<typeof setTimeout> | null = null;
   private raceTimeout: ReturnType<typeof setTimeout> | null = null;
   private finishGraceTimer: ReturnType<typeof setTimeout> | null = null;
   private countdownStarted = false;
@@ -216,16 +214,6 @@ export class Room {
       vehicleId: this.vehicleId,
     });
     this.syncLoadProgress();
-    if (this.loadTimeout) clearTimeout(this.loadTimeout);
-    this.loadTimeout = setTimeout(() => {
-      if (
-        this.status === "countdown" &&
-        !this.countdownStarted &&
-        this.players.length > 0
-      ) {
-        this.beginCountdown();
-      }
-    }, LOAD_TIMEOUT_MS);
   }
 
   private syncLoadProgress(): void {
@@ -235,6 +223,7 @@ export class Room {
       type: "waiting_for_players",
       loaded: loadedCount,
       total: Math.max(1, racers.length),
+      waitingFor: racers.filter((p) => !p.loaded).map((p) => p.name),
     });
   }
 
@@ -252,10 +241,6 @@ export class Room {
   private beginCountdown(): void {
     if (this.countdownStarted || this.status !== "countdown") return;
     this.countdownStarted = true;
-    if (this.loadTimeout) {
-      clearTimeout(this.loadTimeout);
-      this.loadTimeout = null;
-    }
     let count = 5;
     this.broadcast({ type: "countdown", value: count });
     this.countdownTimer = setInterval(() => {
@@ -540,13 +525,11 @@ export class Room {
     if (this.countdownTimer) clearInterval(this.countdownTimer);
     if (this.broadcastTimer) clearInterval(this.broadcastTimer);
     if (this.positionsTimer) clearInterval(this.positionsTimer);
-    if (this.loadTimeout) clearTimeout(this.loadTimeout);
     if (this.raceTimeout) clearTimeout(this.raceTimeout);
     if (this.finishGraceTimer) clearTimeout(this.finishGraceTimer);
     this.countdownTimer = null;
     this.broadcastTimer = null;
     this.positionsTimer = null;
-    this.loadTimeout = null;
     this.raceTimeout = null;
     this.finishGraceTimer = null;
     this.countdownStarted = false;

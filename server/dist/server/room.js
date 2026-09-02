@@ -1,5 +1,4 @@
 let nextRoomId = 1;
-const LOAD_TIMEOUT_MS = 45_000;
 const RACE_TIMEOUT_MS = 12 * 60_000;
 function broadcastIntervalMs(playerCount) {
     // Physics stays client-side at 60 Hz. Sending whole-grid snapshots faster
@@ -25,7 +24,6 @@ export class Room {
     countdownTimer = null;
     broadcastTimer = null;
     positionsTimer = null;
-    loadTimeout = null;
     raceTimeout = null;
     finishGraceTimer = null;
     countdownStarted = false;
@@ -167,15 +165,6 @@ export class Room {
             vehicleId: this.vehicleId,
         });
         this.syncLoadProgress();
-        if (this.loadTimeout)
-            clearTimeout(this.loadTimeout);
-        this.loadTimeout = setTimeout(() => {
-            if (this.status === "countdown" &&
-                !this.countdownStarted &&
-                this.players.length > 0) {
-                this.beginCountdown();
-            }
-        }, LOAD_TIMEOUT_MS);
     }
     syncLoadProgress() {
         const racers = this.players.filter((p) => p.role !== "spectator");
@@ -184,6 +173,7 @@ export class Room {
             type: "waiting_for_players",
             loaded: loadedCount,
             total: Math.max(1, racers.length),
+            waitingFor: racers.filter((p) => !p.loaded).map((p) => p.name),
         });
     }
     playerLoaded(playerId) {
@@ -201,10 +191,6 @@ export class Room {
         if (this.countdownStarted || this.status !== "countdown")
             return;
         this.countdownStarted = true;
-        if (this.loadTimeout) {
-            clearTimeout(this.loadTimeout);
-            this.loadTimeout = null;
-        }
         let count = 5;
         this.broadcast({ type: "countdown", value: count });
         this.countdownTimer = setInterval(() => {
@@ -488,8 +474,6 @@ export class Room {
             clearInterval(this.broadcastTimer);
         if (this.positionsTimer)
             clearInterval(this.positionsTimer);
-        if (this.loadTimeout)
-            clearTimeout(this.loadTimeout);
         if (this.raceTimeout)
             clearTimeout(this.raceTimeout);
         if (this.finishGraceTimer)
@@ -497,7 +481,6 @@ export class Room {
         this.countdownTimer = null;
         this.broadcastTimer = null;
         this.positionsTimer = null;
-        this.loadTimeout = null;
         this.raceTimeout = null;
         this.finishGraceTimer = null;
         this.countdownStarted = false;

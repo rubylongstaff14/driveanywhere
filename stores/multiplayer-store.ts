@@ -47,7 +47,11 @@ interface MultiplayerState {
   remotePlayerIdKey: string;
   raceVehicleId: string | null;
   raceLoading: boolean;
-  loadingProgress: { loaded: number; total: number } | null;
+  loadingProgress: {
+    loaded: number;
+    total: number;
+    waitingFor: string[];
+  } | null;
   chatMessages: { playerId: string; playerName: string; text: string; timestamp: number }[];
   racePositions: RacePosition[];
   tauntFeed: TauntEvent[];
@@ -146,7 +150,13 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
         set({ raceLoading: true, raceVehicleId: msg.vehicleId });
         break;
       case "waiting_for_players":
-        set({ loadingProgress: { loaded: msg.loaded, total: msg.total } });
+        set({
+          loadingProgress: {
+            loaded: msg.loaded,
+            total: msg.total,
+            waitingFor: msg.waitingFor ?? [],
+          },
+        });
         break;
       case "countdown":
         set({ countdownValue: msg.value, loadingProgress: null });

@@ -123,7 +123,12 @@ export type ServerMessage =
   | { type: "room_updated"; room: RoomInfo }
   | { type: "room_error"; message: string }
   | { type: "race_loading"; map: string; vehicleId: string }
-  | { type: "waiting_for_players"; loaded: number; total: number }
+  | {
+      type: "waiting_for_players";
+      loaded: number;
+      total: number;
+      waitingFor?: string[];
+    }
   | { type: "countdown"; value: number }
   | { type: "race_go"; startTimestamp: number; vehicleId: string }
   | { type: "car_update"; playerId: string; state: CarState }

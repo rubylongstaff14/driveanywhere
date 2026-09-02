@@ -28,6 +28,8 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
   const currentRoom = useMultiplayerStore((s) => s.currentRoom);
   const reportFinish = useMultiplayerStore((s) => s.reportFinish);
   const spectating = useMultiplayerStore((s) => s.spectating);
+  const raceLoading = useMultiplayerStore((s) => s.raceLoading);
+  const loadingProgress = useMultiplayerStore((s) => s.loadingProgress);
   const finished = useGameStore((s) => s.finished);
   const elapsedMs = useGameStore((s) => s.elapsedMs);
   const splitMs = useGameStore((s) => s.splitMs);
@@ -166,5 +168,25 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
     }
   }, [results, spectating]);
 
-  return null;
+  if (!raceLoading || racing || countdownValue !== null) return null;
+
+  const waitingNames = loadingProgress?.waitingFor ?? [];
+  return (
+    <div className="pointer-events-none absolute inset-0 z-50 flex items-center justify-center bg-black/65 backdrop-blur-sm">
+      <div className="mx-5 max-w-md rounded-2xl border border-white/15 bg-black/80 px-8 py-7 text-center shadow-2xl">
+        <div className="mx-auto mb-4 h-9 w-9 animate-spin rounded-full border-2 border-white/20 border-t-accent" />
+        <p className="font-display text-2xl text-white">Waiting for players</p>
+        <p className="mt-2 font-mono text-xs uppercase tracking-wider text-mist">
+          {loadingProgress
+            ? `${loadingProgress.loaded} of ${loadingProgress.total} loaded`
+            : "Preparing race"}
+        </p>
+        {waitingNames.length > 0 ? (
+          <p className="mt-3 text-sm text-white/75">
+            Waiting for {waitingNames.join(", ")}
+          </p>
+        ) : null}
+      </div>
+    </div>
+  );
 }

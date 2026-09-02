@@ -7,12 +7,15 @@ import { useGameStore } from "@/stores/game-store";
 export function RaceCountdown() {
   const countdown = useGameStore((s) => s.countdown);
   const tickCountdown = useGameStore((s) => s.tickCountdown);
+  const raceMode = useGameStore((s) => s.raceMode);
 
   useEffect(() => {
-    if (countdown === null) return;
+    // The multiplayer server is the single countdown clock. Letting every
+    // browser tick as well caused devices to show different numbers.
+    if (countdown === null || raceMode === "online") return;
     const timer = window.setTimeout(() => tickCountdown(), 800);
     return () => window.clearTimeout(timer);
-  }, [countdown, tickCountdown]);
+  }, [countdown, raceMode, tickCountdown]);
 
   if (countdown === null) return null;
 

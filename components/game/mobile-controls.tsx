@@ -36,8 +36,9 @@ function HoldButton({
   );
 }
 
-export function MobileControls() {
+export function MobileControls({ active = true }: { active?: boolean }) {
   const [enabled, setEnabled] = useState(false);
+  const [autoThrottle, setAutoThrottle] = useState(false);
   useEffect(() => {
     const query = window.matchMedia("(pointer: coarse)");
     const update = () =>
@@ -47,7 +48,23 @@ export function MobileControls() {
     return () => query.removeEventListener("change", update);
   }, []);
 
-  if (!enabled) return null;
+  useEffect(() => {
+    if (active) return;
+    setAutoThrottle(false);
+    setTouchDrive("accelerate", false);
+  }, [active]);
+
+  useEffect(() => {
+    const stopOnHide = () => {
+      if (document.visibilityState === "visible") return;
+      setAutoThrottle(false);
+      setTouchDrive("accelerate", false);
+    };
+    document.addEventListener("visibilitychange", stopOnHide);
+    return () => document.removeEventListener("visibilitychange", stopOnHide);
+  }, []);
+
+  if (!enabled || !active) return null;
 
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-3 z-40 flex items-end justify-between px-3 pb-[env(safe-area-inset-bottom)]">
@@ -78,11 +95,24 @@ export function MobileControls() {
       </div>
       <div className="pointer-events-auto flex gap-3">
         <HoldButton control="brake" label="BRAKE" className="text-[11px]" />
-        <HoldButton
-          control="accelerate"
-          label="GO"
-          className="border-accent/60 bg-accent/25 h-20 w-20"
-        />
+        <button
+          type="button"
+          aria-pressed={autoThrottle}
+          className={`h-20 w-20 rounded-full border text-sm font-black shadow-lg backdrop-blur-sm select-none active:scale-95 ${
+            autoThrottle
+              ? "border-accent bg-accent text-black shadow-[0_0_24px_rgba(255,215,0,0.45)]"
+              : "border-accent/60 bg-accent/25 text-white"
+          }`}
+          style={{ touchAction: "none" }}
+          onPointerDown={(event) => {
+            event.preventDefault();
+            const next = !autoThrottle;
+            setAutoThrottle(next);
+            setTouchDrive("accelerate", next);
+          }}
+        >
+          {autoThrottle ? "GOING" : "GO"}
+        </button>
       </div>
     </div>
   );
