@@ -51,14 +51,14 @@ export function RacePositionsHud() {
   return (
     <>
       {(boost.turbo || boost.draft) && (
-        <div className="pointer-events-none fixed left-4 top-36 z-50 sm:top-40">
+        <div className="multiplayer-boost-hud pointer-events-none fixed left-4 top-36 z-50 sm:top-40">
           <div className="flex flex-col items-start gap-1">
             {boost.turbo && (
               <div className="rounded-full border border-amber-400/40 bg-amber-500/20 px-3 py-1 text-left shadow-[0_0_20px_rgba(245,158,11,0.28)] backdrop-blur-md">
                 <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-200">
                   Turbo
                 </p>
-                <p className="text-[9px] text-amber-100/70">+2% catch-up</p>
+                <p className="text-[9px] text-amber-100/70">+4% catch-up</p>
               </div>
             )}
             {boost.draft && (
@@ -72,7 +72,7 @@ export function RacePositionsHud() {
         </div>
       )}
       {racePositions.length > 0 && (
-        <div className="fixed right-4 top-4 z-50 w-60 rounded-xl border border-white/10 bg-black/60 p-3 backdrop-blur-md">
+        <div className="race-positions-panel fixed right-4 top-4 z-50 w-60 rounded-xl border border-white/10 bg-black/60 p-3 backdrop-blur-md">
           <div className="mb-2 flex items-center justify-between">
             <h3 className="text-[10px] font-medium uppercase tracking-widest text-white/50">
               Positions

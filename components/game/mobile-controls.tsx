@@ -72,25 +72,27 @@ export function MobileControls({ active = true }: { active?: boolean }) {
         <HoldButton control="steerLeft" label="◀" />
         <HoldButton control="steerRight" label="▶" />
       </div>
-      <div className="pointer-events-auto mb-1 flex gap-2">
+      <div className="mobile-utility-controls pointer-events-auto mb-1 flex gap-1.5">
         <button
           type="button"
-          className="h-10 rounded-full border border-white/20 bg-black/55 px-3 text-xs font-bold text-white backdrop-blur-sm"
+          aria-label="Change camera"
+          className="h-9 w-9 rounded-full border border-white/20 bg-black/55 text-sm font-bold text-white backdrop-blur-sm"
           onPointerDown={() => pulseTouchDrive("camera")}
         >
-          CAMERA
+          ◉
         </button>
         <HoldButton
           control="handbrake"
           label="DRIFT"
-          className="h-12 w-12 text-[10px]"
+          className="h-11 w-11 text-[9px]"
         />
         <button
           type="button"
-          className="h-10 rounded-full border border-white/20 bg-black/55 px-3 text-xs font-bold text-white backdrop-blur-sm"
+          aria-label="Reset car"
+          className="h-9 w-9 rounded-full border border-white/20 bg-black/55 text-sm font-bold text-white backdrop-blur-sm"
           onPointerDown={() => pulseTouchDrive("reset")}
         >
-          RESET
+          ↺
         </button>
       </div>
       <div className="pointer-events-auto flex gap-3">

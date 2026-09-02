@@ -40,7 +40,7 @@ export function DrivingSkillHud() {
         : "Balanced";
 
   return (
-    <div className="pointer-events-none absolute top-36 left-1/2 z-20 -translate-x-1/2 sm:top-40">
+    <div className="racecraft-hud pointer-events-none absolute top-36 left-1/2 z-20 -translate-x-1/2 sm:top-40">
       <div className="flex items-center gap-1.5 rounded-full border border-white/12 bg-black/60 px-2.5 py-1.5 shadow-lg backdrop-blur-md">
         <span className="rounded-full bg-white/8 px-2 py-1 font-mono text-[9px] uppercase tracking-wider text-white/75">
           {balanceLabel}

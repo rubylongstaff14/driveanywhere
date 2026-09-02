@@ -195,3 +195,42 @@
 .da-pulse-glow {
   animation: daPulseGlow 1.6s ease-in-out infinite;
 }
+
+.mobile-race-hud {
+  display: none;
+}
+
+/* Landscape phones get one slim information strip and clear control zones.
+   Width alone is unreliable because modern phones exceed tablet breakpoints. */
+@media (pointer: coarse) and (max-height: 600px) {
+  .desktop-race-hud {
+    display: none !important;
+  }
+
+  .mobile-race-hud {
+    display: flex;
+    max-width: min(72vw, 540px);
+  }
+
+  .racecraft-hud {
+    top: 3.75rem !important;
+  }
+
+  .race-positions-panel {
+    top: 3.75rem !important;
+    right: 0.5rem !important;
+    width: 10.5rem !important;
+    padding: 0.5rem !important;
+  }
+
+  .multiplayer-boost-hud {
+    top: 3.75rem !important;
+    left: 0.5rem !important;
+  }
+
+  .lag-indicator {
+    top: 0.65rem !important;
+    right: 0.65rem !important;
+    padding: 0.3rem 0.45rem !important;
+  }
+}

@@ -43,7 +43,7 @@ export function LagHud() {
   const color = QUALITY_COLOR[quality];
 
   return (
-    <div className="absolute top-3 right-3 z-20 flex items-center gap-2 rounded-lg border border-white/10 bg-ink-950/70 px-2.5 py-1.5 backdrop-blur-sm">
+    <div className="lag-indicator absolute top-3 right-3 z-20 flex items-center gap-2 rounded-lg border border-white/10 bg-ink-950/70 px-2.5 py-1.5 backdrop-blur-sm">
       {/* Signal bars */}
       <div className="flex items-end gap-[2px]">
         {BAR_HEIGHTS.map((h, i) => (
