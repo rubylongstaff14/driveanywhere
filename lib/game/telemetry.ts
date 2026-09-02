@@ -20,6 +20,12 @@ export interface CarTelemetry {
   turbo: boolean;
   /** Slipstream behind a rival */
   drafting: boolean;
+  /** 0–1 quality of current slipstream positioning. */
+  draftStrength: number;
+  /** Car is using the narrow kerb band rather than leaving the circuit. */
+  onKerb: boolean;
+  /** Simple longitudinal weight-transfer cue for learning racecraft. */
+  balance: "braking" | "balanced" | "power";
 }
 
 export const carTelemetry: CarTelemetry = {
@@ -35,6 +41,9 @@ export const carTelemetry: CarTelemetry = {
   elapsedMs: 0,
   turbo: false,
   drafting: false,
+  draftStrength: 0,
+  onKerb: false,
+  balance: "balanced",
 };
 
 export function resetTelemetry(): void {
@@ -50,4 +59,7 @@ export function resetTelemetry(): void {
   carTelemetry.elapsedMs = 0;
   carTelemetry.turbo = false;
   carTelemetry.drafting = false;
+  carTelemetry.draftStrength = 0;
+  carTelemetry.onKerb = false;
+  carTelemetry.balance = "balanced";
 }

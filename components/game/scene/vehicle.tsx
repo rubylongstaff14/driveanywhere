@@ -42,6 +42,11 @@ import {
 } from "@/lib/game/sectors";
 import { weatherGripMul } from "@/lib/game/weather";
 import { progressAlongRoad } from "@/lib/game/route-progress";
+import {
+  balanceState,
+  kerbUse,
+  slipstreamStrength,
+} from "@/lib/game/racecraft";
 import { remoteCarBuffer } from "@/lib/multiplayer/remote-car-buffer";
 import { sendCarState } from "@/lib/multiplayer/ws-client";
 import { useMultiplayerStore } from "@/stores/multiplayer-store";
@@ -408,8 +413,9 @@ export function Vehicle({ route, samples }: VehicleProps) {
         }
       }
 
-      // Draft: rival within ~14m ahead in forward cone (live buffer, not React)
-      let draft = 1;
+      // Draft rewards holding a close, centred line behind a rival. It ramps
+      // continuously so crossing the cone edge never causes a sudden kick.
+      let targetDraftStrength = 0;
       const rot = body.rotation();
       const yaw = Math.atan2(2 * rot.w * rot.y, 1 - 2 * rot.y * rot.y);
       const fx = Math.sin(yaw);
@@ -418,29 +424,38 @@ export function Vehicle({ route, samples }: VehicleProps) {
         const dx = state.x - position.x;
         const dz = state.z - position.z;
         const dist = Math.hypot(dx, dz);
-        if (dist < 3 || dist > 14) continue;
+        if (dist < 0.01) continue;
         const along = (dx * fx + dz * fz) / dist;
-        if (along > 0.72) {
-          draft = 1.06;
-          break;
-        }
+        targetDraftStrength = Math.max(
+          targetDraftStrength,
+          slipstreamStrength(dist, along),
+        );
       }
+      const previousStrength = (boostRef.current.draft - 1) / 0.075;
+      const smoothStrength = THREE.MathUtils.lerp(
+        previousStrength,
+        targetDraftStrength,
+        targetDraftStrength > previousStrength ? 0.12 : 0.06,
+      );
+      const draft = 1 + Math.max(0, smoothStrength) * 0.075;
       boostRef.current.turbo = latch.on ? 1.04 : 1;
       boostRef.current.draft = draft;
       boostRef.current.turboUi = latch.on;
-      boostRef.current.draftUi = draft > 1.01;
+      boostRef.current.draftUi = smoothStrength > 0.16;
     } else {
       turboLatch.current = { on: false, since: 0 };
       boostRef.current = { turbo: 1, draft: 1, turboUi: false, draftUi: false };
     }
 
     const b = boostRef.current;
+    const kerb = kerbUse(hit.distance, hit.width);
+    const kerbGrip = kerb.excessive ? 0.9 : kerb.onKerb ? 0.985 : 1;
     const liveTuning = {
       ...driveTuning,
       maxSpeedMul:
-        driveTuning.maxSpeedMul * b.turbo * (b.draft > 1 ? 1.025 : 1),
+        driveTuning.maxSpeedMul * b.turbo * (1 + (b.draft - 1) * 0.47),
       accelMul: driveTuning.accelMul * b.turbo * b.draft,
-      gripMul: driveTuning.gripMul * b.turbo,
+      gripMul: driveTuning.gripMul * b.turbo * kerbGrip,
       steerMul: driveTuning.steerMul * b.turbo,
     };
 
@@ -517,6 +532,12 @@ export function Vehicle({ route, samples }: VehicleProps) {
     carTelemetry.yaw = yaw;
     carTelemetry.turbo = boostRef.current.turboUi;
     carTelemetry.drafting = boostRef.current.draftUi;
+    carTelemetry.draftStrength = Math.max(
+      0,
+      Math.min(1, (boostRef.current.draft - 1) / 0.075),
+    );
+    carTelemetry.onKerb = kerb.onKerb;
+    carTelemetry.balance = balanceState(controls.accelerate, controls.brake);
     const elapsedNow = runStartAt.current
       ? performance.now() - runStartAt.current
       : 0;
