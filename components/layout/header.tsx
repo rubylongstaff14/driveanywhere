@@ -2,7 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Zap, Trophy, Flame, Users, Car, ChevronDown } from "lucide-react";
+import {
+  Menu,
+  X,
+  Zap,
+  Trophy,
+  Flame,
+  Users,
+  Car,
+  ChevronDown,
+} from "lucide-react";
 import { useState } from "react";
 import { AuthNav, AuthNavMobile } from "@/components/auth/auth-nav";
 import { Logo } from "@/components/layout/logo";
@@ -15,9 +24,22 @@ const navGroups = [
     color: "text-accent",
     hot: true,
     items: [
-      { href: "/play/online", label: "Online Multiplayer", desc: "Race friends in live rooms", hot: true },
-      { href: "/routes", label: "Solo Time Trial", desc: "Chase your personal best" },
-      { href: "/hot-lap", label: "Daily Hot Lap", desc: "One attempt. No retries." },
+      {
+        href: "/play/online",
+        label: "Online Multiplayer",
+        desc: "Race friends in live rooms",
+        hot: true,
+      },
+      {
+        href: "/routes",
+        label: "Solo Time Trial",
+        desc: "Chase your personal best",
+      },
+      {
+        href: "/hot-lap",
+        label: "Daily Hot Lap",
+        desc: "One attempt. No retries.",
+      },
     ],
   },
   {
@@ -25,8 +47,16 @@ const navGroups = [
     icon: Trophy,
     color: "text-amber-400",
     items: [
-      { href: "/tournament", label: "Tournament", desc: "Coin buy-in, 3 maps, winner takes pot" },
-      { href: "/leaderboard", label: "Leaderboard", desc: "Weekly prizes + Hall of Fame" },
+      {
+        href: "/tournament",
+        label: "Tournament",
+        desc: "Coin buy-in, 3 maps, winner takes pot",
+      },
+      {
+        href: "/leaderboard",
+        label: "Leaderboard",
+        desc: "Weekly prizes + Hall of Fame",
+      },
     ],
   },
   {
@@ -43,8 +73,16 @@ const navGroups = [
     icon: Users,
     color: "text-violet-300",
     items: [
-      { href: "/profile", label: "My Profile", desc: "Stats, achievements, PBs" },
-      { href: "/leaderboard", label: "Rankings", desc: "Where you stand globally" },
+      {
+        href: "/profile",
+        label: "My Profile",
+        desc: "Stats, achievements, PBs",
+      },
+      {
+        href: "/leaderboard",
+        label: "Rankings",
+        desc: "Where you stand globally",
+      },
     ],
   },
 ];
@@ -69,23 +107,36 @@ export function Header() {
   return (
     <header className="border-line/60 bg-ink-950/92 sticky top-0 z-40 border-b backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6">
-        <Logo />
+        <div className="flex items-center gap-2">
+          <Logo />
+          <span className="border-accent/30 bg-accent/10 text-accent rounded border px-1.5 py-0.5 font-mono text-[9px] tracking-wider">
+            V1.0.0
+          </span>
+        </div>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
+        <nav
+          className="hidden items-center gap-0.5 lg:flex"
+          aria-label="Primary"
+        >
           {quickLinks.map((item) => {
-            const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+            const active =
+              pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
                   "relative flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium tracking-wide transition-colors",
-                  active ? "bg-white/8 text-white" : "text-fog hover:bg-white/5 hover:text-white",
+                  active
+                    ? "bg-white/8 text-white"
+                    : "text-fog hover:bg-white/5 hover:text-white",
                   "focus-visible:ring-accent focus-visible:ring-offset-ink-950 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none",
                 )}
               >
-                {item.hot && <Zap className="text-accent h-3 w-3" aria-hidden />}
+                {item.hot && (
+                  <Zap className="text-accent h-3 w-3" aria-hidden />
+                )}
                 {item.label}
                 {item.hot && (
                   <span className="absolute -top-0.5 -right-0.5 h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
@@ -122,7 +173,9 @@ export function Header() {
                 <button
                   type="button"
                   className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-white"
-                  onClick={() => setDropdown(dropdown === group.label ? null : group.label)}
+                  onClick={() =>
+                    setDropdown(dropdown === group.label ? null : group.label)
+                  }
                 >
                   <span className="flex items-center gap-2">
                     <group.icon className={`h-4 w-4 ${group.color}`} />
@@ -132,7 +185,10 @@ export function Header() {
                     )}
                   </span>
                   <ChevronDown
-                    className={cn("text-fog h-4 w-4 transition-transform", dropdown === group.label && "rotate-180")}
+                    className={cn(
+                      "text-fog h-4 w-4 transition-transform",
+                      dropdown === group.label && "rotate-180",
+                    )}
                   />
                 </button>
                 {dropdown === group.label && (
@@ -144,7 +200,9 @@ export function Header() {
                         onClick={() => setOpen(false)}
                         className={cn(
                           "rounded-lg px-3 py-2 text-sm transition-colors",
-                          pathname === item.href ? "bg-white/8 text-white" : "text-fog hover:text-white",
+                          pathname === item.href
+                            ? "bg-white/8 text-white"
+                            : "text-fog hover:text-white",
                         )}
                       >
                         <p className="font-medium">{item.label}</p>

@@ -60,7 +60,12 @@ function sampleAt(
       newest.state.y + vy * extraSec,
       newest.state.z + vz * extraSec,
     );
-    outQuat.set(newest.state.qx, newest.state.qy, newest.state.qz, newest.state.qw);
+    outQuat.set(
+      newest.state.qx,
+      newest.state.qy,
+      newest.state.qz,
+      newest.state.qw,
+    );
     return;
   }
 
@@ -76,7 +81,10 @@ function sampleAt(
     }
   }
   const denom = b.timestamp - a.timestamp;
-  const u = denom > 0 ? THREE.MathUtils.clamp((renderTime - a.timestamp) / denom, 0, 1) : 1;
+  const u =
+    denom > 0
+      ? THREE.MathUtils.clamp((renderTime - a.timestamp) / denom, 0, 1)
+      : 1;
   outPos.set(
     a.state.x + (b.state.x - a.state.x) * u,
     a.state.y + (b.state.y - a.state.y) * u,
@@ -154,7 +162,9 @@ function RemoteCar({
       ready.current = true;
       return;
     }
-    const rate = 1 - Math.exp(-(err > 4 ? 70 : 55) * delta);
+    // Follow the buffered timeline without snapping to every packet. Larger
+    // errors converge faster, while normal packet noise is visually damped.
+    const rate = 1 - Math.exp(-(err > 9 ? 34 : 20) * delta);
     meshRef.current.position.lerp(targetPos.current, rate);
     meshRef.current.quaternion.slerp(targetQuat.current, rate);
   });
@@ -184,7 +194,7 @@ function RemoteCar({
             className="h-2.5 w-2.5 rounded-full border border-white/70 shadow"
             style={{ backgroundColor: paint }}
           />
-          <span className="whitespace-nowrap rounded bg-black/65 px-1.5 py-0.5 text-[10px] font-medium text-white/95">
+          <span className="rounded bg-black/65 px-1.5 py-0.5 text-[10px] font-medium whitespace-nowrap text-white/95">
             {playerName}
           </span>
         </div>
@@ -269,9 +279,7 @@ export function RemotePlayers() {
       {remotePlayers.map((p, i) => {
         const live = remoteCarBuffer.states[p.id];
         const color =
-          live?.paint ||
-          p.paint ||
-          FALLBACK_COLORS[i % FALLBACK_COLORS.length];
+          live?.paint || p.paint || FALLBACK_COLORS[i % FALLBACK_COLORS.length];
         const bumper = (p.bumper as BumperStyle | undefined) ?? "stock";
         const wing = (p.wing as WingStyle | undefined) ?? "none";
         const kit = (p.kit as KitStyle | undefined) ?? "none";

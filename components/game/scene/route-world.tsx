@@ -50,10 +50,16 @@ import {
   TurnWarningSign,
   WestminsterAbbeyLandmark,
 } from "@/components/game/scene/landmarks";
-import { IconicTower, resolveIconicKind } from "@/components/game/scene/iconic-towers";
+import {
+  IconicTower,
+  resolveIconicKind,
+} from "@/components/game/scene/iconic-towers";
 import { UniqueCircuitLandmarks } from "@/components/game/scene/unique-landmarks";
 import { StreetFill } from "@/components/game/scene/street-fill";
-import { CityBlockDetail, cityRegionFromSlug } from "@/components/game/scene/city-block-detail";
+import {
+  CityBlockDetail,
+  cityRegionFromSlug,
+} from "@/components/game/scene/city-block-detail";
 import { getLandmarkIdentity } from "@/lib/game/landmark-identity";
 import { buildTrackBarriers } from "@/lib/game/track-barriers";
 import { buildTracksideFurniture } from "@/lib/game/track-furniture";
@@ -114,8 +120,8 @@ function variedFacadeColour(
   }
   const candidates = [base, ...alternatives];
   const colour = new THREE.Color(candidates[(hash >>> 2) % candidates.length]);
-  const lightnessShift = ((hash >>> 8) % 23 - 11) / 100;
-  const saturationShift = ((hash >>> 16) % 15 - 7) / 100;
+  const lightnessShift = (((hash >>> 8) % 23) - 11) / 100;
+  const saturationShift = (((hash >>> 16) % 15) - 7) / 100;
   colour.offsetHSL(0, saturationShift, lightnessShift);
   return `#${colour.getHexString()}`;
 }
@@ -232,13 +238,7 @@ function PalmTree({
 }
 
 /** Neon-ish Times Square advertising boards. */
-function TimesSquareBoards({
-  cx,
-  cz,
-}: {
-  cx: number;
-  cz: number;
-}) {
+function TimesSquareBoards({ cx, cz }: { cx: number; cz: number }) {
   const boards: Array<{
     pos: [number, number, number];
     rot: number;
@@ -290,11 +290,18 @@ function CentralParkGreen({
 }) {
   return (
     <group position={[cx, 0, cz]}>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.05, 0]} receiveShadow>
+      <mesh
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, 0.05, 0]}
+        receiveShadow
+      >
         <planeGeometry args={[width, depth]} />
         <meshStandardMaterial color="#3d6a3a" roughness={0.95} />
       </mesh>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[width * 0.12, 0.07, -depth * 0.1]}>
+      <mesh
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[width * 0.12, 0.07, -depth * 0.1]}
+      >
         <planeGeometry args={[width * 0.35, depth * 0.28]} />
         <meshStandardMaterial color="#2f5a48" roughness={0.92} />
       </mesh>
@@ -321,17 +328,20 @@ function CentralParkGreen({
 
 /** Thames river plane. */
 function ThamesRiver({
-  cx, cz, length, width,
+  cx,
+  cz,
+  length,
+  width,
 }: {
-  cx: number; cz: number; length: number; width: number;
+  cx: number;
+  cz: number;
+  length: number;
+  width: number;
 }) {
   return (
     <group>
       {/* Main water body */}
-      <mesh
-        position={[cx, -0.8, cz]}
-        rotation={[-Math.PI / 2, 0, 0]}
-      >
+      <mesh position={[cx, -0.8, cz]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[width, length, 4, 4]} />
         <meshStandardMaterial
           color="#2a4a6a"
@@ -355,9 +365,17 @@ function ThamesRiver({
 // ---------------------------------------------------------------------------
 
 function CheckpointGate({
-  x, z, rotation, width, color,
+  x,
+  z,
+  rotation,
+  width,
+  color,
 }: {
-  x: number; z: number; rotation: number; width: number; color: string;
+  x: number;
+  z: number;
+  rotation: number;
+  width: number;
+  color: string;
 }) {
   const halfW = width / 2 + 0.8;
   return (
@@ -410,100 +428,183 @@ interface RouteWorldProps {
   desert?: boolean;
 }
 
-export function RouteWorld({ route, samples, quality, desert = false }: RouteWorldProps) {
+export function RouteWorld({
+  route,
+  samples,
+  quality,
+  desert = false,
+}: RouteWorldProps) {
   const buildingRefs = useRef<Array<THREE.Group | null>>([]);
   const cullFrame = useRef(0);
   // ---- geometry (memo to avoid recomputing every render) ----
-  const roadGeo     = useMemo(() => createRoadGeometry(samples),                    [samples]);
-  const shoulderApronGeo = useMemo(() => createRoadShoulderApronGeometry(samples), [samples]);
-  const centreGeo   = useMemo(() => createCentreLineGeometry(samples),              [samples]);
-  const edgeGeo     = useMemo(() => createEdgeLineGeometry(samples),                [samples]);
-  const laneGeo    = useMemo(() => createLaneLineGeometry(samples),                 [samples]);
-  const shoulderGeo = useMemo(() => createShoulderStripeGeometry(samples),          [samples]);
-  const paintUnderlayGeo = useMemo(() => createPaintUnderlayGeometry(samples),      [samples]);
-  const wheelPathGeo = useMemo(() => createWheelPathGeometry(samples),              [samples]);
-  const rumbleGeo = useMemo(() => createRumbleHatchGeometry(samples),               [samples]);
-  const arrowGeo = useMemo(() => createDirectionArrowGeometry(samples),             [samples]);
-  const startChevronGeo = useMemo(() => createStartChevronGeometry(samples),        [samples]);
-  const startFinishGeo = useMemo(() => createStartFinishLineGeometry(samples),      [samples]);
-  const kerbGeo     = useMemo(() => createKerbGeometry(samples),                    [samples]);
-  const racingKerbGeo = useMemo(() => createRacingKerbGeometry(samples),            [samples]);
-  const leftPave    = useMemo(() => createPavementGeometry(samples, "left",  3.5),  [samples]);
-  const rightPave   = useMemo(() => createPavementGeometry(samples, "right", 3.5),  [samples]);
-  const bounds      = useMemo(() => getRouteBounds(route),                          [route]);
-  const overpasses  = useMemo(() => findTrackOverpasses(samples),                   [samples]);
-  const turnSigns   = useMemo(() => buildTurnSigns(samples),                        [samples]);
-  const facades     = useMemo(() => ({
-    glass: createFacadeMaps("glass"),
-    glassVertical: createFacadeMaps("glass_vertical"),
-    glassDiagrid: createFacadeMaps("glass_diagrid"),
-    brick: createFacadeMaps("brick"),
-    concrete: createFacadeMaps("concrete"),
-    sandstone: createFacadeMaps("sandstone"),
-  }), []);
+  const roadGeo = useMemo(() => createRoadGeometry(samples), [samples]);
+  const shoulderApronGeo = useMemo(
+    () => createRoadShoulderApronGeometry(samples),
+    [samples],
+  );
+  const centreGeo = useMemo(() => createCentreLineGeometry(samples), [samples]);
+  const edgeGeo = useMemo(() => createEdgeLineGeometry(samples), [samples]);
+  const laneGeo = useMemo(() => createLaneLineGeometry(samples), [samples]);
+  const shoulderGeo = useMemo(
+    () => createShoulderStripeGeometry(samples),
+    [samples],
+  );
+  const paintUnderlayGeo = useMemo(
+    () => createPaintUnderlayGeometry(samples),
+    [samples],
+  );
+  const wheelPathGeo = useMemo(
+    () => createWheelPathGeometry(samples),
+    [samples],
+  );
+  const rumbleGeo = useMemo(
+    () => createRumbleHatchGeometry(samples),
+    [samples],
+  );
+  const arrowGeo = useMemo(
+    () => createDirectionArrowGeometry(samples),
+    [samples],
+  );
+  const startChevronGeo = useMemo(
+    () => createStartChevronGeometry(samples),
+    [samples],
+  );
+  const startFinishGeo = useMemo(
+    () => createStartFinishLineGeometry(samples),
+    [samples],
+  );
+  const kerbGeo = useMemo(() => createKerbGeometry(samples), [samples]);
+  const racingKerbGeo = useMemo(
+    () => createRacingKerbGeometry(samples),
+    [samples],
+  );
+  const leftPave = useMemo(
+    () => createPavementGeometry(samples, "left", 3.5),
+    [samples],
+  );
+  const rightPave = useMemo(
+    () => createPavementGeometry(samples, "right", 3.5),
+    [samples],
+  );
+  const bounds = useMemo(() => getRouteBounds(route), [route]);
+  const overpasses = useMemo(() => findTrackOverpasses(samples), [samples]);
+  const turnSigns = useMemo(() => buildTurnSigns(samples), [samples]);
+  const facades = useMemo(
+    () => ({
+      glass: createFacadeMaps("glass"),
+      glassVertical: createFacadeMaps("glass_vertical"),
+      glassDiagrid: createFacadeMaps("glass_diagrid"),
+      brick: createFacadeMaps("brick"),
+      concrete: createFacadeMaps("concrete"),
+      sandstone: createFacadeMaps("sandstone"),
+    }),
+    [],
+  );
   const asphalt = useMemo(() => createAsphaltTextures(), []);
   const sidewalk = useMemo(() => createSidewalkTextures(), []);
 
-  useEffect(() => () => {
-    roadGeo.dispose(); shoulderApronGeo.dispose(); centreGeo.dispose(); edgeGeo.dispose(); laneGeo.dispose();
-    shoulderGeo.dispose(); paintUnderlayGeo.dispose(); wheelPathGeo.dispose();
-    rumbleGeo.dispose(); arrowGeo.dispose(); startChevronGeo.dispose();
-    startFinishGeo.dispose();
-    kerbGeo.dispose(); racingKerbGeo.dispose(); leftPave.dispose(); rightPave.dispose();
-    for (const facade of Object.values(facades)) {
-      facade.color.dispose();
-      facade.normal.dispose();
-      facade.emissive.dispose();
-    }
-    asphalt.color.dispose(); asphalt.roughness.dispose(); asphalt.normal.dispose();
-    sidewalk.color.dispose(); sidewalk.roughness.dispose(); sidewalk.normal.dispose();
-  }, [roadGeo, shoulderApronGeo, centreGeo, edgeGeo, laneGeo, shoulderGeo, paintUnderlayGeo, wheelPathGeo, rumbleGeo, arrowGeo, startChevronGeo, startFinishGeo, kerbGeo, racingKerbGeo, leftPave, rightPave, facades, asphalt, sidewalk]);
+  useEffect(
+    () => () => {
+      roadGeo.dispose();
+      shoulderApronGeo.dispose();
+      centreGeo.dispose();
+      edgeGeo.dispose();
+      laneGeo.dispose();
+      shoulderGeo.dispose();
+      paintUnderlayGeo.dispose();
+      wheelPathGeo.dispose();
+      rumbleGeo.dispose();
+      arrowGeo.dispose();
+      startChevronGeo.dispose();
+      startFinishGeo.dispose();
+      kerbGeo.dispose();
+      racingKerbGeo.dispose();
+      leftPave.dispose();
+      rightPave.dispose();
+      for (const facade of Object.values(facades)) {
+        facade.color.dispose();
+        facade.normal.dispose();
+        facade.emissive.dispose();
+      }
+      asphalt.color.dispose();
+      asphalt.roughness.dispose();
+      asphalt.normal.dispose();
+      sidewalk.color.dispose();
+      sidewalk.roughness.dispose();
+      sidewalk.normal.dispose();
+    },
+    [
+      roadGeo,
+      shoulderApronGeo,
+      centreGeo,
+      edgeGeo,
+      laneGeo,
+      shoulderGeo,
+      paintUnderlayGeo,
+      wheelPathGeo,
+      rumbleGeo,
+      arrowGeo,
+      startChevronGeo,
+      startFinishGeo,
+      kerbGeo,
+      racingKerbGeo,
+      leftPave,
+      rightPave,
+      facades,
+      asphalt,
+      sidewalk,
+    ],
+  );
 
   // ---- building memos ----
-  const buildings = useMemo(() => route.buildings.map((b) => {
-    const renderHeight = Math.max(1, b.height - b.baseHeight);
-    const extruded = createExtrudedBuilding(b.footprint, renderHeight);
-    const isAlpsRoute = route.slug === "alps-mountain-pass";
-    const nearest = isAlpsRoute
-      ? nearestRoadSample(samples, extruded.cx, extruded.cz)
-      : null;
-    const groundY = isAlpsRoute
-      ? Math.max(0, (nearest?.position.y ?? 0) + b.baseHeight)
-      : b.baseHeight;
-    const facade =
-      b.name === "Newfoundland Quay"
-        ? facades.glassDiagrid
-        : b.style === "steel_and_glass_tower"
-          ? facades.glassVertical
-          : b.facadeMaterial === "glass"
-            ? facades.glass
-            : b.facadeMaterial === "sandstone"
-              ? facades.sandstone
-              : b.facadeMaterial === "concrete"
-                ? facades.concrete
-                : facades.brick;
-    return {
-      ...b,
-      ...extruded,
-      renderHeight,
-      groundY,
-      // Facade maps are shared by material family. Cloning one texture for
-      // every building uploaded hundreds of duplicate GPU textures.
-      tex: facade.color,
-      normalTex: facade.normal,
-      emissiveTex: facade.emissive,
-      facadeColour: (() => {
-        const identity = getLandmarkIdentity(b.name, b.height);
-        if (identity) return identity.color;
-        return variedFacadeColour(
-          b.id,
-          b.facadeColor ?? STYLE_COLORS[b.style],
-          b.facadeColor ? [] : (STYLE_PALETTES[b.style] ?? []),
-        );
-      })(),
-      landmark: getLandmarkIdentity(b.name, b.height),
-    };
-  }), [route.buildings, facades, samples, route.slug]);
+  const buildings = useMemo(
+    () =>
+      route.buildings.map((b) => {
+        const renderHeight = Math.max(1, b.height - b.baseHeight);
+        const extruded = createExtrudedBuilding(b.footprint, renderHeight);
+        const isAlpsRoute = route.slug === "alps-mountain-pass";
+        const nearest = isAlpsRoute
+          ? nearestRoadSample(samples, extruded.cx, extruded.cz)
+          : null;
+        const groundY = isAlpsRoute
+          ? Math.max(0, (nearest?.position.y ?? 0) + b.baseHeight)
+          : b.baseHeight;
+        const facade =
+          b.name === "Newfoundland Quay"
+            ? facades.glassDiagrid
+            : b.style === "steel_and_glass_tower"
+              ? facades.glassVertical
+              : b.facadeMaterial === "glass"
+                ? facades.glass
+                : b.facadeMaterial === "sandstone"
+                  ? facades.sandstone
+                  : b.facadeMaterial === "concrete"
+                    ? facades.concrete
+                    : facades.brick;
+        return {
+          ...b,
+          ...extruded,
+          renderHeight,
+          groundY,
+          // Facade maps are shared by material family. Cloning one texture for
+          // every building uploaded hundreds of duplicate GPU textures.
+          tex: facade.color,
+          normalTex: facade.normal,
+          emissiveTex: facade.emissive,
+          facadeColour: (() => {
+            const identity = getLandmarkIdentity(b.name, b.height);
+            if (identity) return identity.color;
+            return variedFacadeColour(
+              b.id,
+              b.facadeColor ?? STYLE_COLORS[b.style],
+              b.facadeColor ? [] : (STYLE_PALETTES[b.style] ?? []),
+            );
+          })(),
+          landmark: getLandmarkIdentity(b.name, b.height),
+        };
+      }),
+    [route.buildings, facades, samples, route.slug],
+  );
 
   const visibleBuildings = useMemo(() => {
     // Hide any building whose AABB still clips the racing line.
@@ -517,10 +618,28 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       );
       return clear >= 1.0;
     });
-    // Keep densified Unreal massing visible — only thin on very low presets.
-    if (quality.sceneryDensity >= 0.6) return filtered;
+    // Named heroes and tall skyline silhouettes always remain. Generic infill
+    // is sampled deterministically by tier to cut hundreds of draw calls while
+    // keeping the city visually dense and stable between frames.
+    if (quality.sceneryDensity >= 0.95) return filtered;
+    const stride =
+      quality.sceneryDensity >= 0.8
+        ? 5
+        : quality.sceneryDensity >= 0.55
+          ? 3
+          : 4;
+    const keep =
+      quality.sceneryDensity >= 0.8
+        ? 4
+        : quality.sceneryDensity >= 0.55
+          ? 2
+          : 1;
     return filtered.filter(
-      (b, i) => Boolean(b.landmark) || b.height >= 55 || i % 2 === 0,
+      (b, i) =>
+        Boolean(b.landmark) ||
+        Boolean(b.name) ||
+        b.height >= 55 ||
+        i % stride < keep,
     );
   }, [buildings, samples, quality.sceneryDensity]);
 
@@ -556,7 +675,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           Math.hypot(
             nearest.position.x - o.position.x,
             nearest.position.z - o.position.z,
-          ) <= route.roadWidth + 18;
+          ) <=
+            route.roadWidth + 18;
         return {
           ...o,
           position: {
@@ -581,7 +701,8 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           Math.hypot(
             nearest.position.x - o.position.x,
             nearest.position.z - o.position.z,
-          ) <= route.roadWidth + 24;
+          ) <=
+            route.roadWidth + 24;
         return {
           ...o,
           position: {
@@ -664,14 +785,14 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
 
   // ---- route-specific environment ----
   const isWestminster = route.slug === "westminster-sprint";
-  const isEmbankment  = route.slug === "embankment-run";
-  const isCanary      = route.slug === "canary-wharf-loop";
-  const isEgypt       = route.slug === "egypt-pyramids";
-  const isDubai       = route.slug === "dubai-marina-circuit";
-  const isNewYork     = route.slug === "new-york-harbor-circuit";
-  const isTokyo       = route.slug === "tokyo-drift-circuit";
-  const isAlps        = route.slug === "alps-mountain-pass";
-  const isRio         = route.slug === "rio-coast-circuit";
+  const isEmbankment = route.slug === "embankment-run";
+  const isCanary = route.slug === "canary-wharf-loop";
+  const isEgypt = route.slug === "egypt-pyramids";
+  const isDubai = route.slug === "dubai-marina-circuit";
+  const isNewYork = route.slug === "new-york-harbor-circuit";
+  const isTokyo = route.slug === "tokyo-drift-circuit";
+  const isAlps = route.slug === "alps-mountain-pass";
+  const isRio = route.slug === "rio-coast-circuit";
 
   const alpineTerrain = useMemo(
     () =>
@@ -725,36 +846,20 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
     }
     const abbeyWest = abbey.normal.x <= 0 ? 1 : -1;
     return {
-      bigBen: [
-        hx + nx * 52,
-        0,
-        hz + nz * 52 - 58,
-      ] as [number, number, number],
-      parliament: [
-        hx + nx * 108,
-        0,
-        hz + nz * 108 + 42,
-      ] as [number, number, number],
+      bigBen: [hx + nx * 52, 0, hz + nz * 52 - 58] as [number, number, number],
+      parliament: [hx + nx * 108, 0, hz + nz * 108 + 42] as [
+        number,
+        number,
+        number,
+      ],
       abbey: [
         abbey.position.x + abbey.normal.x * abbeyWest * 62,
         0,
         abbey.position.z + abbey.normal.z * abbeyWest * 62,
       ] as [number, number, number],
-      bridge: [
-        hx + nx * 72,
-        0,
-        hz + nz * 72 + 90,
-      ] as [number, number, number],
-      eye: [
-        hx + nx * 95,
-        0,
-        hz + nz * 95 - 120,
-      ] as [number, number, number],
-      wall: [
-        hx + nx * 22,
-        1.2,
-        hz,
-      ] as [number, number, number],
+      bridge: [hx + nx * 72, 0, hz + nz * 72 + 90] as [number, number, number],
+      eye: [hx + nx * 95, 0, hz + nz * 95 - 120] as [number, number, number],
+      wall: [hx + nx * 22, 1.2, hz] as [number, number, number],
       yaw: Math.atan2(nx, nz),
     };
   }, [isWestminster, samples]);
@@ -826,10 +931,26 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
     const hz = kemmel.position.z;
     return {
       great: [hx + ex * 220, 0, hz + ez * 220 + 35] as [number, number, number],
-      khafre: [hx + ex * 310, 0, hz + ez * 310 + 110] as [number, number, number],
-      menkaure: [hx + ex * 360, 0, hz + ez * 360 - 50] as [number, number, number],
-      sphinx: [hx + ex * 180, 0, hz + ez * 180 - 95] as [number, number, number],
-      museum: [hx - Math.abs(ex) * 160 - 40, 0, hz - 120] as [number, number, number],
+      khafre: [hx + ex * 310, 0, hz + ez * 310 + 110] as [
+        number,
+        number,
+        number,
+      ],
+      menkaure: [hx + ex * 360, 0, hz + ez * 360 - 50] as [
+        number,
+        number,
+        number,
+      ],
+      sphinx: [hx + ex * 180, 0, hz + ez * 180 - 95] as [
+        number,
+        number,
+        number,
+      ],
+      museum: [hx - Math.abs(ex) * 160 - 40, 0, hz - 120] as [
+        number,
+        number,
+        number,
+      ],
       cairoTower: [bounds.minX - 160, 0, gcz] as [number, number, number],
     };
   }, [isEgypt, samples, bounds.minX, gcz]);
@@ -871,7 +992,21 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.02, 0]}>
           <planeGeometry args={[w, d]} />
           <meshStandardMaterial
-            color={isEgypt ? "#c4a06a" : isDubai ? "#c2a878" : isNewYork ? "#6a7580" : isAlps ? "#4a6b3a" : isRio ? "#5a8a5a" : isTokyo ? "#3a3a44" : "#7a848e"}
+            color={
+              isEgypt
+                ? "#c4a06a"
+                : isDubai
+                  ? "#c2a878"
+                  : isNewYork
+                    ? "#6a7580"
+                    : isAlps
+                      ? "#4a6b3a"
+                      : isRio
+                        ? "#5a8a5a"
+                        : isTokyo
+                          ? "#3a3a44"
+                          : "#7a848e"
+            }
             roughness={1}
           />
         </mesh>
@@ -1022,7 +1157,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       </mesh>
 
       {/* ---- Pavements ---- */}
-      <mesh geometry={leftPave}  receiveShadow={quality.shadows}>
+      <mesh geometry={leftPave} receiveShadow={quality.shadows}>
         <meshStandardMaterial
           map={sidewalk.color}
           roughnessMap={sidewalk.roughness}
@@ -1068,133 +1203,142 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             <CuboidCollider
               key={`bcol-${b.id}`}
               args={[hw, h / 2, hd]}
-              position={[
-                b.cx,
-                b.groundY + h / 2,
-                b.cz,
-              ]}
+              position={[b.cx, b.groundY + h / 2, b.cz]}
             />
           );
         })}
       </RigidBody>
 
-      {/* Alpine cliff + shoulder collision — blocks driving through mountains */}
-      {isAlps && alpineTerrain.length > 0 && (
-        <RigidBody type="fixed" colliders={false}>
-          {alpineTerrain.map((block) => (
-            <CuboidCollider
-              key={block.key}
-              args={block.halfExtents}
-              position={block.pos}
-              rotation={block.rot}
-            />
-          ))}
-        </RigidBody>
-      )}
+      {/* Alpine terrain is visual-only. Tecpro/stone ribbon barriers define the
+          legal road edge; large cliff boxes caused false blockages on hairpins. */}
 
       {/* F1 Tecpro — city circuits only (Alps uses stone walls) */}
       {!isAlps && (
         <>
-      {([0, 1] as const).map((parity) => {
-        const barriers = visualWalls.filter((wall) => wall.stripe === parity);
-        return (
-          <Instances key={`tecpro-${parity}`} limit={barriers.length + 1}>
-            <boxGeometry args={[0.7, 0.78, 1.85]} />
+          {([0, 1] as const).map((parity) => {
+            const barriers = visualWalls.filter(
+              (wall) => wall.stripe === parity,
+            );
+            return (
+              <Instances key={`tecpro-${parity}`} limit={barriers.length + 1}>
+                <boxGeometry args={[0.7, 0.78, 1.85]} />
+                <meshStandardMaterial
+                  color={parity === 0 ? "#f4f4f1" : "#d0102e"}
+                  roughness={0.55}
+                  metalness={0.02}
+                />
+                {barriers.map((wall) => (
+                  <Instance
+                    key={`tecpro-body-${wall.key}`}
+                    position={[wall.pos[0], wall.pos[1] + 0.06, wall.pos[2]]}
+                    rotation={wall.rot}
+                    scale={[1, 1, (wall.hl * 2) / 1.85]}
+                  />
+                ))}
+              </Instances>
+            );
+          })}
+          {([0, 1] as const).map((parity) => {
+            const barriers = visualWalls.filter(
+              (wall) => wall.stripe === parity,
+            );
+            return (
+              <Instances
+                key={`tecpro-mid-${parity}`}
+                limit={barriers.length + 1}
+              >
+                <boxGeometry args={[0.74, 0.14, 1.85]} />
+                <meshStandardMaterial
+                  color={parity === 0 ? "#c8102e" : "#f4f4f1"}
+                  roughness={0.5}
+                  metalness={0.03}
+                />
+                {barriers.map((wall) => (
+                  <Instance
+                    key={`tecpro-mid-${wall.key}`}
+                    position={[wall.pos[0], wall.pos[1] + 0.22, wall.pos[2]]}
+                    rotation={wall.rot}
+                    scale={[1, 1, (wall.hl * 2) / 1.85]}
+                  />
+                ))}
+              </Instances>
+            );
+          })}
+          {([0, 1] as const).map((parity) => {
+            const barriers = visualWalls.filter(
+              (wall) => wall.stripe === parity,
+            );
+            return (
+              <Instances
+                key={`tecpro-top-${parity}`}
+                limit={barriers.length + 1}
+              >
+                <boxGeometry args={[0.66, 0.34, 1.85]} />
+                <meshStandardMaterial
+                  color={parity === 0 ? "#efecea" : "#b80e28"}
+                  roughness={0.48}
+                  metalness={0.04}
+                />
+                {barriers.map((wall) => (
+                  <Instance
+                    key={`tecpro-top-${wall.key}`}
+                    position={[wall.pos[0], wall.pos[1] + 0.52, wall.pos[2]]}
+                    rotation={wall.rot}
+                    scale={[1, 1, (wall.hl * 2) / 1.85]}
+                  />
+                ))}
+              </Instances>
+            );
+          })}
+          <Instances limit={visualWalls.length + 1}>
+            <boxGeometry args={[0.78, 0.18, 1.85]} />
             <meshStandardMaterial
-              color={parity === 0 ? "#f4f4f1" : "#d0102e"}
-              roughness={0.55}
+              color="#1a1c20"
+              roughness={0.92}
               metalness={0.02}
             />
-            {barriers.map((wall) => (
+            {visualWalls.map((wall) => (
               <Instance
-                key={`tecpro-body-${wall.key}`}
-                position={[wall.pos[0], wall.pos[1] + 0.06, wall.pos[2]]}
+                key={`tecpro-base-${wall.key}`}
+                position={[wall.pos[0], wall.pos[1] - 0.38, wall.pos[2]]}
                 rotation={wall.rot}
                 scale={[1, 1, (wall.hl * 2) / 1.85]}
               />
             ))}
           </Instances>
-        );
-      })}
-      {([0, 1] as const).map((parity) => {
-        const barriers = visualWalls.filter((wall) => wall.stripe === parity);
-        return (
-          <Instances key={`tecpro-mid-${parity}`} limit={barriers.length + 1}>
-            <boxGeometry args={[0.74, 0.14, 1.85]} />
+          <Instances limit={visualWalls.length + 1}>
+            <boxGeometry args={[0.1, 0.14, 1.85]} />
             <meshStandardMaterial
-              color={parity === 0 ? "#c8102e" : "#f4f4f1"}
-              roughness={0.5}
-              metalness={0.03}
+              color="#d0d6dc"
+              roughness={0.28}
+              metalness={0.82}
             />
-            {barriers.map((wall) => (
+            {visualWalls.map((wall) => (
               <Instance
-                key={`tecpro-mid-${wall.key}`}
-                position={[wall.pos[0], wall.pos[1] + 0.22, wall.pos[2]]}
+                key={`armco-${wall.key}`}
+                position={[wall.pos[0], wall.pos[1] + 0.78, wall.pos[2]]}
                 rotation={wall.rot}
                 scale={[1, 1, (wall.hl * 2) / 1.85]}
               />
             ))}
           </Instances>
-        );
-      })}
-      {([0, 1] as const).map((parity) => {
-        const barriers = visualWalls.filter((wall) => wall.stripe === parity);
-        return (
-          <Instances key={`tecpro-top-${parity}`} limit={barriers.length + 1}>
-            <boxGeometry args={[0.66, 0.34, 1.85]} />
+          <Instances limit={Math.ceil(visualWalls.length / 3) + 1}>
+            <cylinderGeometry args={[0.045, 0.045, 2.6, 6]} />
             <meshStandardMaterial
-              color={parity === 0 ? "#efecea" : "#b80e28"}
-              roughness={0.48}
-              metalness={0.04}
+              color="#8a949e"
+              roughness={0.35}
+              metalness={0.65}
             />
-            {barriers.map((wall) => (
-              <Instance
-                key={`tecpro-top-${wall.key}`}
-                position={[wall.pos[0], wall.pos[1] + 0.52, wall.pos[2]]}
-                rotation={wall.rot}
-                scale={[1, 1, (wall.hl * 2) / 1.85]}
-              />
-            ))}
+            {visualWalls
+              .filter((_, index) => index % 3 === 0)
+              .map((wall) => (
+                <Instance
+                  key={`fence-post-${wall.key}`}
+                  position={[wall.pos[0], wall.pos[1] + 1.35, wall.pos[2]]}
+                  rotation={wall.rot}
+                />
+              ))}
           </Instances>
-        );
-      })}
-      <Instances limit={visualWalls.length + 1}>
-        <boxGeometry args={[0.78, 0.18, 1.85]} />
-        <meshStandardMaterial color="#1a1c20" roughness={0.92} metalness={0.02} />
-        {visualWalls.map((wall) => (
-          <Instance
-            key={`tecpro-base-${wall.key}`}
-            position={[wall.pos[0], wall.pos[1] - 0.38, wall.pos[2]]}
-            rotation={wall.rot}
-            scale={[1, 1, (wall.hl * 2) / 1.85]}
-          />
-        ))}
-      </Instances>
-      <Instances limit={visualWalls.length + 1}>
-        <boxGeometry args={[0.1, 0.14, 1.85]} />
-        <meshStandardMaterial color="#d0d6dc" roughness={0.28} metalness={0.82} />
-        {visualWalls.map((wall) => (
-          <Instance
-            key={`armco-${wall.key}`}
-            position={[wall.pos[0], wall.pos[1] + 0.78, wall.pos[2]]}
-            rotation={wall.rot}
-            scale={[1, 1, (wall.hl * 2) / 1.85]}
-          />
-        ))}
-      </Instances>
-      <Instances limit={Math.ceil(visualWalls.length / 3) + 1}>
-        <cylinderGeometry args={[0.045, 0.045, 2.6, 6]} />
-        <meshStandardMaterial color="#8a949e" roughness={0.35} metalness={0.65} />
-        {visualWalls
-          .filter((_, index) => index % 3 === 0)
-          .map((wall) => (
-            <Instance
-              key={`fence-post-${wall.key}`}
-              position={[wall.pos[0], wall.pos[1] + 1.35, wall.pos[2]]}
-              rotation={wall.rot}
-            />
-          ))}
-      </Instances>
         </>
       )}
 
@@ -1203,7 +1347,11 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
         <>
           <Instances limit={visualWalls.length + 1}>
             <boxGeometry args={[0.55, 0.95, 1.85]} />
-            <meshStandardMaterial color="#6a6e72" roughness={0.94} flatShading />
+            <meshStandardMaterial
+              color="#6a6e72"
+              roughness={0.94}
+              flatShading
+            />
             {visualWalls.map((wall) => (
               <Instance
                 key={`alps-stone-${wall.key}`}
@@ -1229,71 +1377,95 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       )}
 
       <Instances limit={Math.max(1, tyreStacks.length)}>
-              <torusGeometry args={[0.32, 0.11, 6, 10]} />
-              <meshStandardMaterial color="#1a1c20" roughness={0.92} metalness={0.04} />
-              {tyreStacks.map((item) => (
-                <Instance
-                  key={`${item.key}-a`}
-                  position={[item.pos[0], item.pos[1] + 0.12, item.pos[2]]}
-                  rotation={[Math.PI / 2, item.rot[1], 0]}
-                />
-              ))}
-            </Instances>
-            <Instances limit={Math.max(1, tyreStacks.length)}>
-              <torusGeometry args={[0.32, 0.11, 6, 10]} />
-              <meshStandardMaterial color="#2a2e34" roughness={0.9} metalness={0.04} />
-              {tyreStacks.map((item) => (
-                <Instance
-                  key={`${item.key}-b`}
-                  position={[item.pos[0], item.pos[1] + 0.34, item.pos[2]]}
-                  rotation={[Math.PI / 2, item.rot[1] + 0.4, 0]}
-                />
-              ))}
-            </Instances>
-            <Instances limit={Math.max(1, tyreStacks.length)}>
-              <torusGeometry args={[0.32, 0.11, 6, 10]} />
-              <meshStandardMaterial color="#14161a" roughness={0.94} metalness={0.03} />
-              {tyreStacks.map((item) => (
-                <Instance
-                  key={`${item.key}-c`}
-                  position={[item.pos[0], item.pos[1] + 0.56, item.pos[2]]}
-                  rotation={[Math.PI / 2, item.rot[1] + 0.8, 0]}
-                />
-              ))}
-            </Instances>
-            <Instances limit={Math.max(1, bollards.length)}>
-              <cylinderGeometry args={[0.09, 0.11, 0.85, 8]} />
-              <meshStandardMaterial color="#e8a020" roughness={0.45} metalness={0.08} />
-              {bollards.map((item) => (
-                <Instance
-                  key={item.key}
-                  position={[item.pos[0], item.pos[1] + 0.42, item.pos[2]]}
-                  rotation={item.rot}
-                />
-              ))}
-            </Instances>
-            <Instances limit={Math.max(1, marshalPosts.length)}>
-              <cylinderGeometry args={[0.05, 0.06, 2.15, 6]} />
-              <meshStandardMaterial color="#c45a1a" roughness={0.55} metalness={0.12} />
-              {marshalPosts.map((item) => (
-                <Instance
-                  key={item.key}
-                  position={[item.pos[0], item.pos[1] + 1.05, item.pos[2]]}
-                  rotation={item.rot}
-                />
-              ))}
-            </Instances>
-            <Instances limit={Math.max(1, marshalPosts.length)}>
-              <boxGeometry args={[0.42, 0.28, 0.04]} />
-              <meshStandardMaterial color="#f2f4f6" roughness={0.4} metalness={0.05} />
-              {marshalPosts.map((item) => (
-                <Instance
-                  key={`${item.key}-board`}
-                  position={[item.pos[0], item.pos[1] + 1.72, item.pos[2]]}
-                  rotation={item.rot}
-                />
-              ))}
-            </Instances>
+        <torusGeometry args={[0.32, 0.11, 6, 10]} />
+        <meshStandardMaterial
+          color="#1a1c20"
+          roughness={0.92}
+          metalness={0.04}
+        />
+        {tyreStacks.map((item) => (
+          <Instance
+            key={`${item.key}-a`}
+            position={[item.pos[0], item.pos[1] + 0.12, item.pos[2]]}
+            rotation={[Math.PI / 2, item.rot[1], 0]}
+          />
+        ))}
+      </Instances>
+      <Instances limit={Math.max(1, tyreStacks.length)}>
+        <torusGeometry args={[0.32, 0.11, 6, 10]} />
+        <meshStandardMaterial
+          color="#2a2e34"
+          roughness={0.9}
+          metalness={0.04}
+        />
+        {tyreStacks.map((item) => (
+          <Instance
+            key={`${item.key}-b`}
+            position={[item.pos[0], item.pos[1] + 0.34, item.pos[2]]}
+            rotation={[Math.PI / 2, item.rot[1] + 0.4, 0]}
+          />
+        ))}
+      </Instances>
+      <Instances limit={Math.max(1, tyreStacks.length)}>
+        <torusGeometry args={[0.32, 0.11, 6, 10]} />
+        <meshStandardMaterial
+          color="#14161a"
+          roughness={0.94}
+          metalness={0.03}
+        />
+        {tyreStacks.map((item) => (
+          <Instance
+            key={`${item.key}-c`}
+            position={[item.pos[0], item.pos[1] + 0.56, item.pos[2]]}
+            rotation={[Math.PI / 2, item.rot[1] + 0.8, 0]}
+          />
+        ))}
+      </Instances>
+      <Instances limit={Math.max(1, bollards.length)}>
+        <cylinderGeometry args={[0.09, 0.11, 0.85, 8]} />
+        <meshStandardMaterial
+          color="#e8a020"
+          roughness={0.45}
+          metalness={0.08}
+        />
+        {bollards.map((item) => (
+          <Instance
+            key={item.key}
+            position={[item.pos[0], item.pos[1] + 0.42, item.pos[2]]}
+            rotation={item.rot}
+          />
+        ))}
+      </Instances>
+      <Instances limit={Math.max(1, marshalPosts.length)}>
+        <cylinderGeometry args={[0.05, 0.06, 2.15, 6]} />
+        <meshStandardMaterial
+          color="#c45a1a"
+          roughness={0.55}
+          metalness={0.12}
+        />
+        {marshalPosts.map((item) => (
+          <Instance
+            key={item.key}
+            position={[item.pos[0], item.pos[1] + 1.05, item.pos[2]]}
+            rotation={item.rot}
+          />
+        ))}
+      </Instances>
+      <Instances limit={Math.max(1, marshalPosts.length)}>
+        <boxGeometry args={[0.42, 0.28, 0.04]} />
+        <meshStandardMaterial
+          color="#f2f4f6"
+          roughness={0.4}
+          metalness={0.05}
+        />
+        {marshalPosts.map((item) => (
+          <Instance
+            key={`${item.key}-board`}
+            position={[item.pos[0], item.pos[1] + 1.72, item.pos[2]]}
+            rotation={item.rot}
+          />
+        ))}
+      </Instances>
 
       {overpasses.map((pass) => (
         <TrackOverpassArch
@@ -1326,17 +1498,19 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       {/* --- Westminster Sprint --- */}
       {isWestminster && westminsterLandmarks && (
         <>
-          <ThamesRiver cx={riverCX} cz={riverCZ} length={riverLen} width={110} />
+          <ThamesRiver
+            cx={riverCX}
+            cz={riverCZ}
+            length={riverLen}
+            width={110}
+          />
           {/* Big Ben on the east riverside viewing straight */}
           <RigidBody
             type="fixed"
             colliders={false}
             position={westminsterLandmarks.bigBen}
           >
-            <CuboidCollider
-              args={[11, 42, 11]}
-              position={[0, 42, 0]}
-            />
+            <CuboidCollider args={[11, 42, 11]} position={[0, 42, 0]} />
             <group>
               <ClockTowerLandmark position={[0, 0, 0]} scale={1.35} />
               <LandmarkNameTag
@@ -1355,10 +1529,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             position={westminsterLandmarks.parliament}
             rotation={[0, westminsterLandmarks.yaw + Math.PI / 2, 0]}
           >
-            <CuboidCollider
-              args={[82, 34, 18]}
-              position={[0, 17, 0]}
-            />
+            <CuboidCollider args={[82, 34, 18]} position={[0, 17, 0]} />
             <group>
               <PalaceOfWestminsterLandmark
                 position={[0, 0, 0]}
@@ -1381,10 +1552,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             position={westminsterLandmarks.abbey}
             rotation={[0, -Math.PI / 2, 0]}
           >
-            <CuboidCollider
-              args={[38, 28, 22]}
-              position={[0, 14, 0]}
-            />
+            <CuboidCollider args={[38, 28, 22]} position={[0, 14, 0]} />
             <group>
               <WestminsterAbbeyLandmark
                 position={[0, 0, 0]}
@@ -1432,7 +1600,12 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
       {/* --- Embankment Run --- */}
       {isEmbankment && embankmentLandmarks && (
         <>
-          <ThamesRiver cx={riverCX} cz={riverCZ} length={riverLen} width={140} />
+          <ThamesRiver
+            cx={riverCX}
+            cz={riverCZ}
+            length={riverLen}
+            width={140}
+          />
           <group position={embankmentLandmarks.eye}>
             <LondonEyeLandmark
               position={[0, 0, 0]}
@@ -1577,7 +1750,11 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             />
           </group>
           <group position={egyptLandmarks.sphinx}>
-            <SphinxLandmark position={[0, 0, 0]} rotation={Math.PI * 0.35} scale={1.25} />
+            <SphinxLandmark
+              position={[0, 0, 0]}
+              rotation={Math.PI * 0.35}
+              scale={1.25}
+            />
             <LandmarkNameTag
               label="Sphinx"
               accent="#8a6840"
@@ -1623,10 +1800,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           {/* Inner marina basin the circuit wraps around */}
           <ThamesRiver cx={gcx} cz={gcz} length={240} width={160} />
           {/* Promenade quay around the basin */}
-          <mesh
-            position={[gcx, 0.06, gcz]}
-            rotation={[-Math.PI / 2, 0, 0]}
-          >
+          <mesh position={[gcx, 0.06, gcz]} rotation={[-Math.PI / 2, 0, 0]}>
             <ringGeometry args={[82, 98, 48]} />
             <meshStandardMaterial color="#b89a72" roughness={0.92} />
           </mesh>
@@ -1715,7 +1889,9 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               >
                 {block.shape === "boulder" ? (
                   <mesh castShadow={quality.shadows} rotation={[0.2, 0.4, 0.1]}>
-                    <dodecahedronGeometry args={[Math.max(hw, hh, hl) * 1.05, 0]} />
+                    <dodecahedronGeometry
+                      args={[Math.max(hw, hh, hl) * 1.05, 0]}
+                    />
                     <meshStandardMaterial
                       color={color}
                       roughness={0.97}
@@ -1724,7 +1900,10 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                   </mesh>
                 ) : block.shape === "wedge" ? (
                   <>
-                    <mesh castShadow={quality.shadows} position={[hw * 0.15, 0, 0]}>
+                    <mesh
+                      castShadow={quality.shadows}
+                      position={[hw * 0.15, 0, 0]}
+                    >
                       <boxGeometry args={[hw * 1.6, hh * 2, hl * 2]} />
                       <meshStandardMaterial
                         color={color}
@@ -1776,7 +1955,13 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                 position={[0, peak.height / 2, 0]}
                 castShadow={quality.shadows}
               >
-                <coneGeometry args={[peak.radius, peak.height, peak.key === "matterhorn" ? 6 : 7]} />
+                <coneGeometry
+                  args={[
+                    peak.radius,
+                    peak.height,
+                    peak.key === "matterhorn" ? 6 : 7,
+                  ]}
+                />
                 <meshStandardMaterial
                   color={peak.key === "matterhorn" ? "#5a6460" : "#556658"}
                   roughness={0.97}
@@ -1801,10 +1986,16 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
               )}
               {peak.key === "matterhorn" && (
                 <mesh
-                  position={[peak.radius * 0.55, peak.height * 0.42, peak.radius * 0.2]}
+                  position={[
+                    peak.radius * 0.55,
+                    peak.height * 0.42,
+                    peak.radius * 0.2,
+                  ]}
                   castShadow={quality.shadows}
                 >
-                  <coneGeometry args={[peak.radius * 0.55, peak.height * 0.62, 5]} />
+                  <coneGeometry
+                    args={[peak.radius * 0.55, peak.height * 0.62, 5]}
+                  />
                   <meshStandardMaterial
                     color="#4e5854"
                     roughness={0.97}
@@ -1828,10 +2019,18 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                   s.position.y + 0.35,
                   s.position.z + s.normal.z * side * offset,
                 ]}
-                rotation={[0, Math.atan2(s.tangent.x, s.tangent.z), 0.08 * side]}
+                rotation={[
+                  0,
+                  Math.atan2(s.tangent.x, s.tangent.z),
+                  0.08 * side,
+                ]}
               >
                 <boxGeometry args={[3.2, 0.9, 8]} />
-                <meshStandardMaterial color="#e8eef4" roughness={0.9} flatShading />
+                <meshStandardMaterial
+                  color="#e8eef4"
+                  roughness={0.9}
+                  flatShading
+                />
               </mesh>
             );
           })}
@@ -1907,7 +2106,10 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                   <cylinderGeometry args={[0.32, 0.48, trunkH, 5]} />
                   <meshStandardMaterial color="#3d2c1e" roughness={0.95} />
                 </mesh>
-                <mesh position={[0, trunkH + 2.8, 0]} castShadow={quality.shadows}>
+                <mesh
+                  position={[0, trunkH + 2.8, 0]}
+                  castShadow={quality.shadows}
+                >
                   <coneGeometry args={[3.2, 7.5, 6]} />
                   <meshStandardMaterial
                     color="#1f4a22"
@@ -1915,7 +2117,10 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
                     flatShading
                   />
                 </mesh>
-                <mesh position={[0, trunkH + 6.2, 0]} castShadow={quality.shadows}>
+                <mesh
+                  position={[0, trunkH + 6.2, 0]}
+                  castShadow={quality.shadows}
+                >
                   <coneGeometry args={[2.4, 6.2, 6]} />
                   <meshStandardMaterial
                     color="#2d5e2c"
@@ -1941,7 +2146,9 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             rotation={[-Math.PI / 2, 0, 0]}
             receiveShadow={quality.shadows}
           >
-            <planeGeometry args={[Math.max(900, spanX + 500), Math.max(900, spanZ + 500)]} />
+            <planeGeometry
+              args={[Math.max(900, spanX + 500), Math.max(900, spanZ + 500)]}
+            />
             <meshStandardMaterial color="#3d5a38" roughness={1} />
           </mesh>
         </>
@@ -1958,23 +2165,36 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             width={300}
           />
           {/* Beach strip */}
-          <mesh position={[bounds.maxX + 20, 0.03, gcz]} rotation={[-Math.PI / 2, 0, 0]}>
+          <mesh
+            position={[bounds.maxX + 20, 0.03, gcz]}
+            rotation={[-Math.PI / 2, 0, 0]}
+          >
             <planeGeometry args={[60, bounds.maxZ - bounds.minZ + 120]} />
             <meshStandardMaterial color="#e8d5a0" roughness={1} />
           </mesh>
           {/* Sugarloaf mountain */}
-          <mesh position={[bounds.maxX + 180, 0, bounds.minZ - 60]} castShadow={quality.shadows}>
+          <mesh
+            position={[bounds.maxX + 180, 0, bounds.minZ - 60]}
+            castShadow={quality.shadows}
+          >
             <coneGeometry args={[45, 70, 8]} />
             <meshStandardMaterial color="#4a6848" roughness={0.9} flatShading />
           </mesh>
           {/* Corcovado hill */}
-          <mesh position={[bounds.minX - 100, 0, gcz - 80]} castShadow={quality.shadows}>
+          <mesh
+            position={[bounds.minX - 100, 0, gcz - 80]}
+            castShadow={quality.shadows}
+          >
             <coneGeometry args={[55, 55, 7]} />
             <meshStandardMaterial color="#3d5c3a" roughness={0.9} flatShading />
           </mesh>
           {/* Palm trees along coast */}
           {[-150, -90, -30, 30, 90, 150].map((dz, i) => (
-            <PalmTree key={`rio-palm-${i}`} position={[bounds.maxX + 8, 0, gcz + dz]} scale={0.85 + (i % 3) * 0.1} />
+            <PalmTree
+              key={`rio-palm-${i}`}
+              position={[bounds.maxX + 8, 0, gcz + dz]}
+              scale={0.85 + (i % 3) * 0.1}
+            />
           ))}
         </>
       )}
@@ -2003,137 +2223,180 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             : null);
         const useIconic = Boolean(iconicKind && landmarkIdentity && b.name);
         return (
-        <group
-          key={b.id}
-          ref={(node) => {
-            buildingRefs.current[buildingIndex] = node;
-          }}
-          position={[b.cx, b.groundY, b.cz]}
-        >
-          {useIconic && iconicKind && landmarkIdentity && b.name ? (
-            <IconicTower
-              kind={iconicKind}
-              height={b.renderHeight}
-              width={b.width}
-              depth={b.depth}
-              identity={landmarkIdentity}
-              name={b.name}
-              facadeMaps={
-                b.facadeMaterial === "concrete" || b.facadeMaterial === "brick"
-                  ? facades.concrete
-                  : b.facadeMaterial === "sandstone"
-                    ? facades.sandstone
-                    : facades.glass
-              }
-              castShadow={
-                quality.shadows && (b.height >= 55 || buildingIndex % 4 === 0)
-              }
-            />
-          ) : (
-            <>
-          <mesh
-            geometry={b.geometry}
-            castShadow={
-              quality.shadows && (b.height >= 55 || buildingIndex % 4 === 0)
-            }
-            receiveShadow={false}
+          <group
+            key={b.id}
+            ref={(node) => {
+              buildingRefs.current[buildingIndex] = node;
+            }}
+            position={[b.cx, b.groundY, b.cz]}
           >
-            {b.facadeMaterial === "glass" || b.landmark ? (
-              <meshStandardMaterial
-                map={b.tex}
-                normalMap={b.normalTex}
-                normalScale={[0.4, 0.4]}
-                color={b.facadeColour}
-                roughness={b.landmark ? 0.32 : 0.24}
-                metalness={b.landmark ? 0.12 : 0.08}
-                envMapIntensity={1.05}
-                emissive="#f0d8a0"
-                emissiveMap={b.emissiveTex}
-                emissiveIntensity={0.72}
-              />
-            ) : b.facadeMaterial === "concrete" ? (
-              <meshStandardMaterial
-                map={b.tex}
-                normalMap={b.normalTex}
-                normalScale={[0.55, 0.55]}
-                color={b.facadeColour}
-                roughness={0.86}
-                metalness={0.06}
-                envMapIntensity={0.7}
+            {useIconic && iconicKind && landmarkIdentity && b.name ? (
+              <IconicTower
+                kind={iconicKind}
+                height={b.renderHeight}
+                width={b.width}
+                depth={b.depth}
+                identity={landmarkIdentity}
+                name={b.name}
+                facadeMaps={
+                  b.facadeMaterial === "concrete" ||
+                  b.facadeMaterial === "brick"
+                    ? facades.concrete
+                    : b.facadeMaterial === "sandstone"
+                      ? facades.sandstone
+                      : facades.glass
+                }
+                castShadow={
+                  quality.shadows && (b.height >= 55 || buildingIndex % 4 === 0)
+                }
               />
             ) : (
-              <meshStandardMaterial
-                map={b.tex}
-                normalMap={b.normalTex}
-                normalScale={[0.75, 0.75]}
-                color={b.facadeColour}
-                roughness={0.9}
-                metalness={0.02}
-                envMapIntensity={0.55}
-              />
+              <>
+                <mesh
+                  geometry={b.geometry}
+                  castShadow={
+                    quality.shadows &&
+                    (b.height >= 55 || buildingIndex % 4 === 0)
+                  }
+                  receiveShadow={false}
+                >
+                  {b.facadeMaterial === "glass" || b.landmark ? (
+                    <meshStandardMaterial
+                      map={b.tex}
+                      normalMap={b.normalTex}
+                      normalScale={[0.4, 0.4]}
+                      color={b.facadeColour}
+                      roughness={b.landmark ? 0.32 : 0.24}
+                      metalness={b.landmark ? 0.12 : 0.08}
+                      envMapIntensity={1.05}
+                      emissive="#f0d8a0"
+                      emissiveMap={b.emissiveTex}
+                      emissiveIntensity={0.72}
+                    />
+                  ) : b.facadeMaterial === "concrete" ? (
+                    <meshStandardMaterial
+                      map={b.tex}
+                      normalMap={b.normalTex}
+                      normalScale={[0.55, 0.55]}
+                      color={b.facadeColour}
+                      roughness={0.86}
+                      metalness={0.06}
+                      envMapIntensity={0.7}
+                    />
+                  ) : (
+                    <meshStandardMaterial
+                      map={b.tex}
+                      normalMap={b.normalTex}
+                      normalScale={[0.75, 0.75]}
+                      color={b.facadeColour}
+                      roughness={0.9}
+                      metalness={0.02}
+                      envMapIntensity={0.55}
+                    />
+                  )}
+                </mesh>
+                {!useIconic ? (
+                  <CityBlockDetail
+                    id={b.id}
+                    width={b.width}
+                    depth={b.depth}
+                    height={b.renderHeight}
+                    color={b.facadeColour}
+                    style={b.style}
+                    dense={quality.sceneryDensity >= 0.45}
+                    region={cityRegionFromSlug(route.slug)}
+                  />
+                ) : null}
+                {b.landmark ? (
+                  <CanaryTowerCrown
+                    name={b.name}
+                    width={b.width}
+                    depth={b.depth}
+                    renderHeight={b.renderHeight}
+                    castShadow={quality.shadows}
+                  />
+                ) : b.roofType === "pyramidal" ? (
+                  <mesh
+                    position={[0, b.renderHeight + 10, 0]}
+                    rotation={[0, Math.PI / 4, 0]}
+                    castShadow={quality.shadows}
+                  >
+                    <coneGeometry
+                      args={[Math.max(b.width, b.depth) * 0.64, 20, 4]}
+                    />
+                    <meshStandardMaterial
+                      color="#aab5be"
+                      roughness={0.35}
+                      metalness={0.35}
+                    />
+                  </mesh>
+                ) : b.roofType === "round" ? (
+                  <mesh
+                    position={[0, b.renderHeight + 1.5, 0]}
+                    castShadow={quality.shadows}
+                  >
+                    <cylinderGeometry
+                      args={[b.width * 0.48, b.width * 0.48, 3, 24]}
+                    />
+                    <meshStandardMaterial
+                      color="#64717c"
+                      roughness={0.5}
+                      metalness={0.25}
+                    />
+                  </mesh>
+                ) : b.roofType === "pitched" ? (
+                  <mesh
+                    position={[0, b.renderHeight + 1.5, 0]}
+                    rotation={[0, Math.PI / 4, 0]}
+                    castShadow={quality.shadows}
+                  >
+                    <coneGeometry
+                      args={[Math.max(b.width, b.depth) * 0.7, 3, 4]}
+                    />
+                    <meshStandardMaterial color="#4a3828" roughness={0.88} />
+                  </mesh>
+                ) : (
+                  <mesh position={[0, b.renderHeight + 0.35, 0]}>
+                    <boxGeometry
+                      args={[
+                        Math.max(2, b.width * 0.22),
+                        0.7,
+                        Math.max(2, b.depth * 0.22),
+                      ]}
+                    />
+                    <meshStandardMaterial color="#38434d" roughness={0.82} />
+                  </mesh>
+                )}
+                {!b.landmark && b.height >= 90 ? (
+                  <group
+                    position={[
+                      0,
+                      b.renderHeight + (b.roofType === "pyramidal" ? 21 : 2.4),
+                      0,
+                    ]}
+                  >
+                    <mesh>
+                      <cylinderGeometry args={[0.08, 0.12, 2.5, 6]} />
+                      <meshStandardMaterial
+                        color="#697581"
+                        metalness={0.55}
+                        roughness={0.4}
+                      />
+                    </mesh>
+                    <mesh position={[0, 1.4, 0]}>
+                      <sphereGeometry args={[0.22, 8, 6]} />
+                      <meshStandardMaterial
+                        color="#ff334d"
+                        emissive="#ff1738"
+                        emissiveIntensity={3}
+                        toneMapped={false}
+                      />
+                    </mesh>
+                  </group>
+                ) : null}
+              </>
             )}
-          </mesh>
-          {!useIconic ? (
-            <CityBlockDetail
-              id={b.id}
-              width={b.width}
-              depth={b.depth}
-              height={b.renderHeight}
-              color={b.facadeColour}
-              style={b.style}
-              dense={quality.sceneryDensity >= 0.45}
-              region={cityRegionFromSlug(route.slug)}
-            />
-          ) : null}
-          {b.landmark ? (
-            <CanaryTowerCrown
-              name={b.name}
-              width={b.width}
-              depth={b.depth}
-              renderHeight={b.renderHeight}
-              castShadow={quality.shadows}
-            />
-          ) : b.roofType === "pyramidal" ? (
-            <mesh position={[0, b.renderHeight + 10, 0]} rotation={[0, Math.PI / 4, 0]} castShadow={quality.shadows}>
-              <coneGeometry args={[Math.max(b.width, b.depth) * 0.64, 20, 4]} />
-              <meshStandardMaterial color="#aab5be" roughness={0.35} metalness={0.35} />
-            </mesh>
-          ) : b.roofType === "round" ? (
-            <mesh position={[0, b.renderHeight + 1.5, 0]} castShadow={quality.shadows}>
-              <cylinderGeometry args={[b.width * 0.48, b.width * 0.48, 3, 24]} />
-              <meshStandardMaterial color="#64717c" roughness={0.5} metalness={0.25} />
-            </mesh>
-          ) : b.roofType === "pitched" ? (
-            <mesh position={[0, b.renderHeight + 1.5, 0]} rotation={[0, Math.PI / 4, 0]} castShadow={quality.shadows}>
-              <coneGeometry args={[Math.max(b.width, b.depth) * 0.7, 3, 4]} />
-              <meshStandardMaterial color="#4a3828" roughness={0.88} />
-            </mesh>
-          ) : (
-            <mesh position={[0, b.renderHeight + 0.35, 0]}>
-              <boxGeometry args={[Math.max(2, b.width * 0.22), 0.7, Math.max(2, b.depth * 0.22)]} />
-              <meshStandardMaterial color="#38434d" roughness={0.82} />
-            </mesh>
-          )}
-          {!b.landmark && b.height >= 90 ? (
-            <group position={[0, b.renderHeight + (b.roofType === "pyramidal" ? 21 : 2.4), 0]}>
-              <mesh>
-                <cylinderGeometry args={[0.08, 0.12, 2.5, 6]} />
-                <meshStandardMaterial color="#697581" metalness={0.55} roughness={0.4} />
-              </mesh>
-              <mesh position={[0, 1.4, 0]}>
-                <sphereGeometry args={[0.22, 8, 6]} />
-                <meshStandardMaterial
-                  color="#ff334d"
-                  emissive="#ff1738"
-                  emissiveIntensity={3}
-                  toneMapped={false}
-                />
-              </mesh>
-            </group>
-          ) : null}
-            </>
-          )}
-        </group>
+          </group>
         );
       })}
 
@@ -2144,16 +2407,28 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
         <>
           <Instances limit={streetLights.length + 1}>
             <cylinderGeometry args={[0.08, 0.12, 5.2, 7]} />
-            <meshStandardMaterial color="#8d97a6" metalness={0.6} roughness={0.45} />
+            <meshStandardMaterial
+              color="#8d97a6"
+              metalness={0.6}
+              roughness={0.45}
+            />
             {streetLights.map((l) => (
-              <Instance key={l.id} position={[l.position.x, l.position.y + 2.6, l.position.z]} />
+              <Instance
+                key={l.id}
+                position={[l.position.x, l.position.y + 2.6, l.position.z]}
+              />
             ))}
           </Instances>
           <Instances limit={streetLights.length + 1}>
             <boxGeometry args={[1.0, 0.14, 0.28]} />
-            <meshStandardMaterial color="#e6edf5" emissive="#ffd8a0" emissiveIntensity={0.85} />
+            <meshStandardMaterial
+              color="#e6edf5"
+              emissive="#ffd8a0"
+              emissiveIntensity={0.85}
+            />
             {streetLights.map((l) => (
-              <Instance key={l.id}
+              <Instance
+                key={l.id}
                 position={[l.position.x, l.position.y + 5.3, l.position.z]}
                 rotation={[0, l.rotation, 0]}
               />
@@ -2168,14 +2443,22 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
             <cylinderGeometry args={[0.15, 0.24, 2.2, 6]} />
             <meshStandardMaterial color="#4a3a2c" roughness={1} />
             {trees.map((t) => (
-              <Instance key={t.id} position={[t.position.x, t.position.y + 1.1, t.position.z]} scale={t.scale} />
+              <Instance
+                key={t.id}
+                position={[t.position.x, t.position.y + 1.1, t.position.z]}
+                scale={t.scale}
+              />
             ))}
           </Instances>
           <Instances limit={trees.length + 1}>
             <coneGeometry args={[1.35, 2.4, 7]} />
-            <meshStandardMaterial color={isEgypt ? "#6a8a48" : isCanary ? "#2f5a42" : "#3a6040"} roughness={0.88} />
+            <meshStandardMaterial
+              color={isEgypt ? "#6a8a48" : isCanary ? "#2f5a42" : "#3a6040"}
+              roughness={0.88}
+            />
             {trees.map((t, i) => (
-              <Instance key={t.id}
+              <Instance
+                key={t.id}
                 position={[t.position.x, t.position.y + 2.9, t.position.z]}
                 rotation={[0, i * 1.618, 0]}
                 scale={0.85 + (i % 5) * 0.08}
@@ -2184,7 +2467,10 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           </Instances>
           <Instances limit={trees.length + 1}>
             <coneGeometry args={[1.05, 1.8, 6]} />
-            <meshStandardMaterial color={isEgypt ? "#8aa858" : isCanary ? "#3a6b4e" : "#4a7050"} roughness={0.9} />
+            <meshStandardMaterial
+              color={isEgypt ? "#8aa858" : isCanary ? "#3a6b4e" : "#4a7050"}
+              roughness={0.9}
+            />
             {trees.map((t, i) => (
               <Instance
                 key={`${t.id}-top`}
@@ -2201,7 +2487,7 @@ export function RouteWorld({ route, samples, quality, desert = false }: RouteWor
           CHECKPOINT GATES
           ================================================================ */}
       {route.checkpoints.map((cp, i) => {
-        const isStart  = i === 0;
+        const isStart = i === 0;
         const isFinish = i === route.checkpoints.length - 1;
         const color = isFinish ? "#34d399" : isStart ? "#f0f4ff" : "#38bdf8";
         return (

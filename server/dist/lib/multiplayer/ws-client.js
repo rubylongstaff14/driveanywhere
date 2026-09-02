@@ -41,16 +41,22 @@ export function connectWs(onMessage) {
             clearTimeout(reconnectTimer);
             reconnectTimer = null;
         }
+        startPingLoop();
         onOpenCallback?.();
     };
     socket.onmessage = (ev) => {
         try {
-            const msg = JSON.parse(ev.data);
-            handler?.(msg);
+            const raw = JSON.parse(ev.data);
+            if (raw.type === "pong") {
+                currentPingMs = Math.round(performance.now() - lastPingTime);
+                return;
+            }
+            handler?.(raw);
         }
         catch { /* ignore parse errors */ }
     };
     socket.onclose = () => {
+        stopPingLoop();
         socket = null;
         onCloseCallback?.();
         scheduleReconnect(onMessage);
@@ -65,6 +71,7 @@ function scheduleReconnect(onMessage) {
     reconnectTimer = setTimeout(() => connectWs(onMessage), delay);
 }
 export function disconnectWs() {
+    stopPingLoop();
     if (reconnectTimer) {
         clearTimeout(reconnectTimer);
         reconnectTimer = null;
@@ -87,4 +94,38 @@ export function sendCarState(state) {
 }
 export function isConnected() {
     return socket?.readyState === WebSocket.OPEN;
+}
+// Ping tracking
+let lastPingTime = 0;
+let currentPingMs = 0;
+let pingInterval = null;
+export function getPingMs() { return currentPingMs; }
+function startPingLoop() {
+    stopPingLoop();
+    pingInterval = setInterval(() => {
+        if (socket?.readyState === WebSocket.OPEN) {
+            lastPingTime = performance.now();
+            try {
+                socket.send(JSON.stringify({ type: "ping" }));
+            }
+            catch { /* ignore */ }
+        }
+    }, 2000);
+}
+function stopPingLoop() {
+    if (pingInterval) {
+        clearInterval(pingInterval);
+        pingInterval = null;
+    }
+}
+export function getConnectionQuality() {
+    if (!isConnected())
+        return "offline";
+    if (currentPingMs < 50)
+        return "excellent";
+    if (currentPingMs < 100)
+        return "good";
+    if (currentPingMs < 180)
+        return "fair";
+    return "poor";
 }

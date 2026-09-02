@@ -21,21 +21,21 @@ export interface QualityConfig {
 
 export const QUALITY_PRESETS: Record<QualityPreset, QualityConfig> = {
   low: {
-    dpr: [0.7, 1],
+    dpr: [0.6, 0.9],
     shadows: false,
     shadowMapSize: 512,
-    drawDistance: 280,
-    sceneryDensity: 0.75,
-    fogFar: 320,
+    drawDistance: 240,
+    sceneryDensity: 0.32,
+    fogFar: 290,
     antialias: false,
-    buildingColliderCap: 200,
+    buildingColliderCap: 120,
   },
   medium: {
     dpr: [0.85, 1.1],
     shadows: false,
     shadowMapSize: 512,
     drawDistance: 420,
-    sceneryDensity: 1,
+    sceneryDensity: 0.62,
     fogFar: 480,
     antialias: false,
     buildingColliderCap: 280,
@@ -45,7 +45,7 @@ export const QUALITY_PRESETS: Record<QualityPreset, QualityConfig> = {
     shadows: true,
     shadowMapSize: 1024,
     drawDistance: 620,
-    sceneryDensity: 1,
+    sceneryDensity: 0.84,
     fogFar: 700,
     antialias: true,
     buildingColliderCap: 400,
@@ -65,6 +65,9 @@ function detectDefaultPreset(): QualityPreset {
   const cores = navigator.hardwareConcurrency ?? 4;
   const memory = (navigator as Navigator & { deviceMemory?: number })
     .deviceMemory;
+  const coarse = window.matchMedia?.("(pointer: coarse)").matches ?? false;
+  const narrow = window.innerWidth < 900;
+  if (coarse && narrow) return "low";
   if (cores <= 4 || (memory !== undefined && memory <= 4)) return "medium";
   return "high";
 }

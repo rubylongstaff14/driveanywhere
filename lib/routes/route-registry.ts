@@ -8,6 +8,8 @@ import rioCoastCircuit from "@/public/routes/rio-coast-circuit.json";
 import tokyoDriftCircuit from "@/public/routes/tokyo-drift-circuit.json";
 import westminsterSprint from "@/public/routes/westminster-sprint.json";
 import { routeDataSchema, type RouteData } from "@/lib/validation/route-data";
+import { sampleRoad } from "@/lib/game/road-mesh";
+import { aabbAsphaltClearance } from "@/lib/game/building-road-clearance";
 
 /**
  * Route geometry is imported statically rather than fetched at runtime.
@@ -59,6 +61,36 @@ export function getRouteData(slug: string): RouteData | null {
     throw new Error(`Bundled route "${slug}" is invalid: ${details}`);
   }
 
-  cache.set(slug, parsed.data);
-  return parsed.data;
+  // Published source data can contain dense city-fill footprints that clip the
+  // racing ribbon. Remove those boxes once at load time so they cannot render
+  // as scenery or become invisible physics blockers on any quality preset.
+  const roadSamples = sampleRoad(parsed.data.roadPoints, 10);
+  const buildings = parsed.data.buildings.filter((building) => {
+    let minX = Infinity;
+    let maxX = -Infinity;
+    let minZ = Infinity;
+    let maxZ = -Infinity;
+    for (const point of building.footprint) {
+      minX = Math.min(minX, point.x);
+      maxX = Math.max(maxX, point.x);
+      minZ = Math.min(minZ, point.z);
+      maxZ = Math.max(maxZ, point.z);
+    }
+    return (
+      aabbAsphaltClearance(
+        roadSamples,
+        (minX + maxX) / 2,
+        (minZ + maxZ) / 2,
+        Math.max(0.9, (maxX - minX) / 2),
+        Math.max(0.9, (maxZ - minZ) / 2),
+      ) >= 0.5
+    );
+  });
+  const safeRoute =
+    buildings.length === parsed.data.buildings.length
+      ? parsed.data
+      : { ...parsed.data, buildings };
+
+  cache.set(slug, safeRoute);
+  return safeRoute;
 }

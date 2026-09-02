@@ -1,11 +1,4 @@
-import {
-  Flag,
-  Gauge,
-  Globe,
-  Trophy,
-  Users,
-  Zap,
-} from "lucide-react";
+import { Flag, Gauge, Globe, Trophy, Users, Zap } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 
 export function Hero() {
@@ -27,7 +20,7 @@ export function Hero() {
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
           <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
           <span className="font-mono text-[11px] tracking-[0.22em] text-emerald-400 uppercase">
-            Live online multiplayer · 9 world cities
+            V1.0.0 · Live online multiplayer · 9 world cities
           </span>
         </div>
 
@@ -39,8 +32,9 @@ export function Hero() {
               <span className="text-accent">streets.</span> Online.
             </h1>
             <p className="text-mist max-w-lg text-lg leading-relaxed">
-              Arcade racing built from real-world data — Westminster, Dubai, Tokyo, Silverstone
-              and more. Race strangers and friends in live multiplayer, or chase your personal best.
+              Arcade racing built from real-world data — Westminster, Dubai,
+              Tokyo, Silverstone and more. Race strangers and friends in live
+              multiplayer, or chase your personal best.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -61,7 +55,7 @@ export function Hero() {
               ].map((tag) => (
                 <span
                   key={tag}
-                  className="font-mono text-xs tracking-wide text-fog"
+                  className="text-fog font-mono text-xs tracking-wide"
                 >
                   ✓ {tag}
                 </span>
@@ -100,12 +94,27 @@ export function Hero() {
         {/* Feature strip */}
         <div className="border-line mt-14 grid grid-cols-2 divide-x divide-white/8 rounded-xl border bg-white/[0.03] sm:grid-cols-4">
           {[
-            { icon: Gauge, label: "Lap timing", desc: "Sector splits + PB delta" },
+            {
+              icon: Gauge,
+              label: "Lap timing",
+              desc: "Sector splits + PB delta",
+            },
             { icon: Flag, label: "Checkpoints", desc: "Gate-based validation" },
-            { icon: Users, label: "Up to 8 players", desc: "Live rooms with AI fill" },
-            { icon: Trophy, label: "Achievements", desc: "40 unlockable badges" },
+            {
+              icon: Users,
+              label: "Up to 8 players",
+              desc: "Live rooms with AI fill",
+            },
+            {
+              icon: Trophy,
+              label: "Achievements",
+              desc: "40 unlockable badges",
+            },
           ].map(({ icon: Icon, label, desc }) => (
-            <div key={label} className="flex flex-col items-center px-4 py-5 text-center">
+            <div
+              key={label}
+              className="flex flex-col items-center px-4 py-5 text-center"
+            >
               <Icon className="text-accent mb-2 h-5 w-5" aria-hidden />
               <p className="text-sm font-medium text-white">{label}</p>
               <p className="text-fog mt-0.5 text-xs">{desc}</p>

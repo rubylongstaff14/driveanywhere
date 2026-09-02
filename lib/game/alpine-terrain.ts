@@ -30,11 +30,11 @@ export function buildAlpineTerrainPads(
 ): TerrainBlock[] {
   const out: TerrainBlock[] = [];
   const step = Math.max(5, Math.floor(samples.length / 56));
-  const padHalfW = 18;
-  const padHalfL = 14;
+  const padHalfW = 10;
+  const padHalfL = 8;
   const roadHalf = roadWidth / 2;
   // Keep a clear channel for the car + kerb.
-  const clearMargin = 2.8;
+  const clearMargin = 9;
   const centreDist = roadHalf + clearMargin + padHalfW;
 
   for (let i = 0; i < samples.length; i += step) {
@@ -77,7 +77,7 @@ export function buildAlpineCliffs(
   const out: TerrainBlock[] = [];
   const step = Math.max(3, Math.floor(samples.length / 90));
   const roadHalf = roadWidth / 2;
-  const minClear = 5.5;
+  const minClear = 11;
 
   for (let i = 2; i < samples.length - 2; i += step) {
     const s = samples[i];
@@ -95,7 +95,7 @@ export function buildAlpineCliffs(
         ? Math.min(95, 16 + y * 0.65 + jitter * 4)
         : Math.min(14, 4.5 + y * 0.05);
       const depth = uphill ? 11 + (i % 3) : 5.5;
-      const halfLen = uphill ? 8 + (i % 4) * 0.6 : 7;
+      const halfLen = uphill ? 5.5 + (i % 3) * 0.5 : 5;
       const nearEdge = roadHalf + minClear;
       const dist = nearEdge + depth / 2;
       const px = s.position.x + s.normal.x * side * dist;
@@ -137,9 +137,7 @@ export function buildAlpineCliffs(
 }
 
 /** Far backdrop peaks for the Matterhorn / ridge silhouette. */
-export function buildAlpineBackdropPeaks(
-  samples: RoadSample[],
-): Array<{
+export function buildAlpineBackdropPeaks(samples: RoadSample[]): Array<{
   key: string;
   pos: [number, number, number];
   radius: number;

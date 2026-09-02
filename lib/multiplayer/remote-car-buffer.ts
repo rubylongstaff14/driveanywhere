@@ -77,5 +77,8 @@ export function ingestCarBatch(
  */
 export function remoteInterpDelayMs(): number {
   const gap = remoteCarBuffer.packetGapEma;
-  return Math.min(48, Math.max(18, gap * 1.15 + 4));
+  // Render roughly two packets behind. The extra latency is small (~65 ms at
+  // 30 Hz) but gives interpolation enough real samples to avoid oscillating
+  // between prediction and correction when Wi-Fi packets arrive unevenly.
+  return Math.min(145, Math.max(72, gap * 2 + 8));
 }

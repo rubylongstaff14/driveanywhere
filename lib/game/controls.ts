@@ -75,6 +75,7 @@ export class InputSampler {
     const clearInput = () => {
       this.keys.clear();
       this.smoothedSteer = 0;
+      clearTouchDrive();
     };
 
     window.addEventListener("keydown", onDown);
@@ -102,7 +103,17 @@ export class InputSampler {
     if (this.keys.has("KeyD") || this.keys.has("ArrowRight")) steer += 1;
     if (this.keys.has("Space")) handbrake = true;
 
-    const pad = typeof navigator !== "undefined" ? navigator.getGamepads?.()[0] : null;
+    const touch = sampleTouchDrive();
+    accelerate = Math.max(accelerate, touch.accelerate);
+    brake = Math.max(brake, touch.brake);
+    steer += touch.steer;
+    handbrake ||= touch.handbrake;
+    this.edge.reset ||= touch.resetPressed;
+    this.edge.pause ||= touch.pausePressed;
+    this.edge.camera ||= touch.cameraPressed;
+
+    const pad =
+      typeof navigator !== "undefined" ? navigator.getGamepads?.()[0] : null;
     if (pad) {
       const axisX = Math.abs(pad.axes[0] ?? 0) > 0.15 ? pad.axes[0] : 0;
       steer += axisX;
@@ -141,3 +152,4 @@ export class InputSampler {
     return state;
   }
 }
+import { clearTouchDrive, sampleTouchDrive } from "@/lib/game/touch-controls";

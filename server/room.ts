@@ -35,9 +35,11 @@ export interface ConnectedPlayer {
 }
 
 function broadcastIntervalMs(playerCount: number): number {
-  if (playerCount >= 6) return 20;
-  if (playerCount >= 4) return 14;
-  return 10;
+  // Physics stays client-side at 60 Hz. Sending whole-grid snapshots faster
+  // than ~30 Hz wastes bandwidth and creates queue jitter on ordinary Wi-Fi.
+  if (playerCount >= 6) return 40;
+  if (playerCount >= 4) return 36;
+  return 33;
 }
 
 export class Room {
@@ -60,7 +62,12 @@ export class Room {
   private finishGraceTimer: ReturnType<typeof setTimeout> | null = null;
   private countdownStarted = false;
 
-  constructor(name: string, map: string, difficulty: "easy" | "medium" | "hard", aiCount: number) {
+  constructor(
+    name: string,
+    map: string,
+    difficulty: "easy" | "medium" | "hard",
+    aiCount: number,
+  ) {
     this.id = `room_${nextRoomId++}`;
     this.name = name;
     this.map = map;
@@ -203,11 +210,19 @@ export class Room {
     this.status = "countdown";
     this.countdownStarted = false;
     for (const p of this.players) p.loaded = false;
-    this.broadcast({ type: "race_loading", map: this.map, vehicleId: this.vehicleId });
+    this.broadcast({
+      type: "race_loading",
+      map: this.map,
+      vehicleId: this.vehicleId,
+    });
     this.syncLoadProgress();
     if (this.loadTimeout) clearTimeout(this.loadTimeout);
     this.loadTimeout = setTimeout(() => {
-      if (this.status === "countdown" && !this.countdownStarted && this.players.length > 0) {
+      if (
+        this.status === "countdown" &&
+        !this.countdownStarted &&
+        this.players.length > 0
+      ) {
         this.beginCountdown();
       }
     }, LOAD_TIMEOUT_MS);
@@ -269,7 +284,11 @@ export class Room {
       p.path = [];
       p.progressHistory = [];
     }
-    this.broadcast({ type: "race_go", startTimestamp: this.raceStartTimestamp, vehicleId: this.vehicleId });
+    this.broadcast({
+      type: "race_go",
+      startTimestamp: this.raceStartTimestamp,
+      vehicleId: this.vehicleId,
+    });
     this.startBroadcastLoop();
     this.startPositionsLoop();
     if (this.raceTimeout) clearTimeout(this.raceTimeout);
@@ -404,7 +423,9 @@ export class Room {
     }
 
     const racers = this.players.filter((pl) => pl.role !== "spectator");
-    const finishedCount = racers.filter((pl) => pl.finishTimeMs !== null).length;
+    const finishedCount = racers.filter(
+      (pl) => pl.finishTimeMs !== null,
+    ).length;
 
     // Live board so P1 can watch later finishers roll in
     this.broadcastStandings(true);
@@ -461,31 +482,30 @@ export class Room {
       const sorted = [...this.players]
         .filter((p) => p.role !== "spectator")
         .sort((a, b) => {
-        const aFin = a.finishTimeMs !== null;
-        const bFin = b.finishTimeMs !== null;
-        if (aFin && !bFin) return -1;
-        if (!aFin && bFin) return 1;
-        if (aFin && bFin) {
-          return (a.finishTimeMs ?? 0) - (b.finishTimeMs ?? 0);
-        }
-        const aP =
-          a.carState?.trackProgress ??
-          (a.carState?.checkpointIndex ?? 0) / 100;
-        const bP =
-          b.carState?.trackProgress ??
-          (b.carState?.checkpointIndex ?? 0) / 100;
-        if (Math.abs(aP - bP) > 0.0005) return bP - aP;
-        return (
-          (a.carState?.raceTimeMs ?? Infinity) -
-          (b.carState?.raceTimeMs ?? Infinity)
-        );
-      });
+          const aFin = a.finishTimeMs !== null;
+          const bFin = b.finishTimeMs !== null;
+          if (aFin && !bFin) return -1;
+          if (!aFin && bFin) return 1;
+          if (aFin && bFin) {
+            return (a.finishTimeMs ?? 0) - (b.finishTimeMs ?? 0);
+          }
+          const aP =
+            a.carState?.trackProgress ??
+            (a.carState?.checkpointIndex ?? 0) / 100;
+          const bP =
+            b.carState?.trackProgress ??
+            (b.carState?.checkpointIndex ?? 0) / 100;
+          if (Math.abs(aP - bP) > 0.0005) return bP - aP;
+          return (
+            (a.carState?.raceTimeMs ?? Infinity) -
+            (b.carState?.raceTimeMs ?? Infinity)
+          );
+        });
       const leader = sorted[0];
       const leaderHist = leader?.progressHistory ?? [];
       const positions: RacePosition[] = sorted.map((p, i) => {
         const progress =
-          p.carState?.trackProgress ??
-          (p.carState?.checkpointIndex ?? 0) / 100;
+          p.carState?.trackProgress ?? (p.carState?.checkpointIndex ?? 0) / 100;
         let delta: number | null = null;
         if (i > 0 && leader) {
           const leaderT = this.timeAtProgress(leaderHist, progress);
@@ -499,7 +519,7 @@ export class Room {
               (leader.carState?.checkpointIndex ?? 0) / 100;
             const gapP = Math.max(0, leadP - progress);
             const spd = Math.max(8, (p.carState?.speed ?? 40) / 3.6);
-            delta = Math.round((gapP * 2500) / spd * 1000);
+            delta = Math.round(((gapP * 2500) / spd) * 1000);
           }
         }
         return {

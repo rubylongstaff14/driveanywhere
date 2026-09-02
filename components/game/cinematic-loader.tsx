@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const TIPS = [
   "Hold Space and steer to rotate the rear through hairpins.",
@@ -23,9 +23,13 @@ export function CinematicLoader({
   progress,
   compact = false,
 }: CinematicLoaderProps) {
-  const [tip] = useState(
-    () => TIPS[Math.floor(Math.random() * TIPS.length)],
-  );
+  const tip = useMemo(() => {
+    const seed = [...`${title}:${subtitle}`].reduce(
+      (total, character) => total + character.charCodeAt(0),
+      0,
+    );
+    return TIPS[seed % TIPS.length];
+  }, [subtitle, title]);
   const [sweep, setSweep] = useState(12);
 
   useEffect(() => {

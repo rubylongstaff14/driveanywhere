@@ -1,7 +1,6 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import Link from "next/link";
 import { useState } from "react";
 
 function subscribe() {
@@ -31,26 +30,23 @@ export function MobileDriveWarning({ routeSlug }: { routeSlug: string }) {
   }
 
   return (
-    <div className="absolute inset-0 z-30 flex items-center justify-center bg-ink-975/90 p-6">
-      <div className="max-w-md rounded-xl border border-line bg-panel p-6">
-        <h2 className="font-display text-2xl text-white">Desktop recommended</h2>
-        <p className="mt-3 text-sm leading-relaxed text-mist">
-          This driving prototype is currently designed for desktop browsers. You
-          can still browse routes, profiles and leaderboards on mobile.
+    <div className="bg-ink-975/90 absolute inset-0 z-30 flex items-center justify-center p-6">
+      <div className="border-line bg-panel max-w-md rounded-xl border p-6">
+        <h2 className="font-display text-2xl text-white">
+          Mobile controls ready
+        </h2>
+        <p className="text-mist mt-3 text-sm leading-relaxed">
+          Turn your phone sideways for the smoothest race. Graphics have been
+          reduced automatically for mobile and the driving buttons appear at the
+          bottom of the track.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link
-            href={`/routes/${routeSlug}`}
-            className="inline-flex h-11 items-center rounded-md bg-accent px-5 text-sm font-medium text-ink-950"
-          >
-            Back to route
-          </Link>
           <button
             type="button"
-            className="inline-flex h-11 items-center rounded-md border border-line px-5 text-sm text-fog"
+            className="bg-accent text-ink-950 inline-flex h-11 items-center rounded-md px-5 text-sm font-medium"
             onClick={() => setDismissed(true)}
           >
-            Try anyway
+            Start mobile race
           </button>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { GameHud } from "@/components/game/game-hud";
 import { Minimap } from "@/components/game/minimap";
 import { MobileDriveWarning } from "@/components/game/mobile-drive-warning";
+import { MobileControls } from "@/components/game/mobile-controls";
 import { PauseMenu } from "@/components/game/pause-menu";
 import { RaceCountdown } from "@/components/game/race-countdown";
 import { RaceSetupOverlay } from "@/components/game/race-setup-overlay";
@@ -86,7 +87,13 @@ export function GameExperience({
     hydrateAchievements();
     hydrateChallenges();
     hydrateTournament();
-  }, [hydrateSettings, hydrateProgression, hydrateAchievements, hydrateChallenges, hydrateTournament]);
+  }, [
+    hydrateSettings,
+    hydrateProgression,
+    hydrateAchievements,
+    hydrateChallenges,
+    hydrateTournament,
+  ]);
 
   useEffect(() => {
     const onEscape = (event: KeyboardEvent) => {
@@ -162,18 +169,19 @@ export function GameExperience({
   // Renderer settings are read once at mount, so wait for the stored preset.
   if (!settingsHydrated) {
     return (
-      <CinematicLoader
-        title={routeName}
-        subtitle="Reading graphics preset"
-      />
+      <CinematicLoader title={routeName} subtitle="Reading graphics preset" />
     );
   }
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-ink-975">
+    <div className="bg-ink-975 relative h-[100dvh] w-full overflow-hidden">
       <GameCanvas paused={paused || finished} route={route} />
       <CircuitBoot routeName={routeName} city={route.city} />
-      <GameHud routeName={routeName} cityVersion={route.metadata?.version} isTournamentRace={isTournamentRace} />
+      <GameHud
+        routeName={routeName}
+        cityVersion={route.metadata?.version}
+        isTournamentRace={isTournamentRace}
+      />
       <RouteIntroOverlay
         routeName={routeName}
         city={route.city}
@@ -187,7 +195,7 @@ export function GameExperience({
       {raceSetup.mode === "online" && <TauntWheel />}
       {raceSetup.mode === "online" && <SpectatorHud />}
 
-      <div className="pointer-events-none absolute bottom-4 right-4 z-10 hidden md:block">
+      <div className="pointer-events-none absolute right-4 bottom-4 z-10 hidden md:block">
         <Minimap route={route} />
       </div>
 
@@ -201,7 +209,10 @@ export function GameExperience({
       <AchievementToast />
       <ChallengesHud />
       {raceSetup.mode === "online" && <LagHud />}
-      {!garageConfirmed && !finished && countdown === null && raceSetup.mode !== "online" ? (
+      {!garageConfirmed &&
+      !finished &&
+      countdown === null &&
+      raceSetup.mode !== "online" ? (
         <VehicleSelect routeName={routeName} />
       ) : null}
       {garageConfirmed &&
@@ -213,6 +224,7 @@ export function GameExperience({
         <RaceSetupOverlay routeName={routeName} routeId={route.id} />
       ) : null}
       <MobileDriveWarning routeSlug={routeSlug} />
+      <MobileControls />
       <p className="pointer-events-none absolute bottom-3 left-4 z-10 font-mono text-[10px] text-white/40">
         {route.dataAttribution}
       </p>

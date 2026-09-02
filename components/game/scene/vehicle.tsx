@@ -23,11 +23,18 @@ import { RaceAudio } from "@/lib/game/race-audio";
 import type { RoadSample } from "@/lib/game/road-mesh";
 import { RoadTracker } from "@/lib/game/road-tracker";
 import { carTelemetry } from "@/lib/game/telemetry";
-import { applyArcadeDriving, resetVehicle } from "@/lib/game/vehicle-controller";
+import {
+  applyArcadeDriving,
+  resetVehicle,
+} from "@/lib/game/vehicle-controller";
 import { defaultLoadout, resolveLoadoutVisual } from "@/lib/game/cosmetics";
 import { getVehicle } from "@/lib/game/vehicles";
 import { useProgressionStore } from "@/stores/progression-store";
-import { GhostRecorder, loadGhostTape, saveGhostTape } from "@/lib/game/ghost-tape";
+import {
+  GhostRecorder,
+  loadGhostTape,
+  saveGhostTape,
+} from "@/lib/game/ghost-tape";
 import {
   isSectorEnd,
   sectorIndexForCheckpoint,
@@ -48,8 +55,8 @@ interface VehicleProps {
 }
 
 export function Vehicle({ route, samples }: VehicleProps) {
-  const bodyRef  = useRef<RapierRigidBody>(null);
-  const meshRef  = useRef<THREE.Group>(null);
+  const bodyRef = useRef<RapierRigidBody>(null);
+  const meshRef = useRef<THREE.Group>(null);
   const engineRef = useRef<EngineAudio | null>(null);
   const raceAudioRef = useRef<RaceAudio | null>(null);
   const impactAudioRef = useRef<ImpactAudio | null>(null);
@@ -60,9 +67,9 @@ export function Vehicle({ route, samples }: VehicleProps) {
   const sparkMesh = useRef<THREE.Mesh>(null);
   const gearboxRef = useRef<AutoGearbox | null>(null);
 
-  const input   = useMemo(() => new InputSampler(), []);
+  const input = useMemo(() => new InputSampler(), []);
   const tracker = useMemo(() => new RoadTracker(samples), [samples]);
-  const spawn   = useMemo(() => tracker.spawn(), [tracker]);
+  const spawn = useMemo(() => tracker.spawn(), [tracker]);
   const checkpoints = useMemo(
     () => [...route.checkpoints].sort((a, b) => a.index - b.index),
     [route.checkpoints],
@@ -89,14 +96,19 @@ export function Vehicle({ route, samples }: VehicleProps) {
   }, [loadout, onlinePaint, selectedVehicleId]);
   const engineVolume = useSettingsStore((s) => s.engineVolume);
 
-  const lastHudAt   = useRef(0);
-  const runStartAt  = useRef<number | null>(null);
-  const nextCp      = useRef(0);
-  const respawn     = useRef({ ...spawn.position, yaw: spawn.yaw });
-  const steerAngle  = useRef(0);
+  const lastHudAt = useRef(0);
+  const runStartAt = useRef<number | null>(null);
+  const nextCp = useRef(0);
+  const respawn = useRef({ ...spawn.position, yaw: spawn.yaw });
+  const steerAngle = useRef(0);
   const visualPitch = useRef(0);
   const visualRoll = useRef(0);
-  const visualInput = useRef({ accelerate: 0, brake: 0, handbrake: false, slip: 0 });
+  const visualInput = useRef({
+    accelerate: 0,
+    brake: 0,
+    handbrake: false,
+    slip: 0,
+  });
   const ghostRecorder = useRef(new GhostRecorder());
   const sessionBestSectors = useRef<(number | null)[]>([null, null, null]);
   const mouseLook = useRef({
@@ -107,32 +119,37 @@ export function Vehicle({ route, samples }: VehicleProps) {
     lastInputAt: 0,
   });
   const scratch = useRef({
-    camTarget:   new THREE.Vector3(),
-    lookAt:      new THREE.Vector3(),
+    camTarget: new THREE.Vector3(),
+    lookAt: new THREE.Vector3(),
     lookAtSmooth: new THREE.Vector3(),
-    camSmooth:   new THREE.Vector3(),
-    forward:     new THREE.Vector3(),
-    quat:        new THREE.Quaternion(),
-    camReady:    false,
+    camSmooth: new THREE.Vector3(),
+    forward: new THREE.Vector3(),
+    quat: new THREE.Quaternion(),
+    camReady: false,
     lastNetSend: 0,
-    gear:        0,
-    steer:       0,
+    gear: 0,
+    steer: 0,
   });
 
-  const paused     = useGameStore((s) => s.paused);
-  const finished   = useGameStore((s) => s.finished);
+  const paused = useGameStore((s) => s.paused);
+  const finished = useGameStore((s) => s.finished);
   const restartToken = useGameStore((s) => s.restartToken);
   const checkpointResetToken = useGameStore((s) => s.checkpointResetToken);
   const cameraMode = useGameStore((s) => s.cameraMode);
   const introActive = useGameStore((s) => s.introActive);
   const prevCameraMode = useRef(cameraMode);
-  const startRun   = useGameStore((s) => s.startRun);
-  const finishRun  = useGameStore((s) => s.finishRun);
+  const startRun = useGameStore((s) => s.startRun);
+  const finishRun = useGameStore((s) => s.finishRun);
   const toggleCamera = useGameStore((s) => s.toggleCamera);
-  const setHud     = useGameStore((s) => s.setHud);
-  const weather    = useGameStore((s) => s.weather);
+  const setHud = useGameStore((s) => s.setHud);
+  const weather = useGameStore((s) => s.weather);
   /** Catch-up + slipstream applied in physics via boostRef (stable, no flicker). */
-  const boostRef = useRef({ turbo: 1, draft: 1, turboUi: false, draftUi: false });
+  const boostRef = useRef({
+    turbo: 1,
+    draft: 1,
+    turboUi: false,
+    draftUi: false,
+  });
   const turboLatch = useRef({ on: false, since: 0 });
   const driveTuning = useMemo(
     () => ({
@@ -193,7 +210,12 @@ export function Vehicle({ route, samples }: VehicleProps) {
   useEffect(() => {
     const canvas = glRef.current.domElement;
     const onPointerDown = (event: PointerEvent) => {
-      if (paused || (cameraMode !== "chase" && cameraMode !== "far") || event.button > 2) return;
+      if (
+        paused ||
+        (cameraMode !== "chase" && cameraMode !== "far") ||
+        event.button > 2
+      )
+        return;
       mouseLook.current.dragging = true;
       mouseLook.current.lastInputAt = performance.now();
       canvas.setPointerCapture(event.pointerId);
@@ -261,10 +283,10 @@ export function Vehicle({ route, samples }: VehicleProps) {
     resetVehicle(body, spawn.position, spawn.yaw);
     tracker.reset();
     ghostRecorder.current.reset();
-    runStartAt.current  = null;
-    nextCp.current      = 0;
+    runStartAt.current = null;
+    nextCp.current = 0;
     carTelemetry.elapsedMs = 0;
-    respawn.current     = { ...spawn.position, yaw: spawn.yaw };
+    respawn.current = { ...spawn.position, yaw: spawn.yaw };
     scratch.current.camReady = false;
     setHud({
       speedKph: 0,
@@ -363,20 +385,24 @@ export function Vehicle({ route, samples }: VehicleProps) {
       let someoneAhead = false;
       for (const s of Object.values(remoteCarBuffer.states)) {
         const theirP = s.trackProgress;
-        if (theirP != null && theirP > myProgress + 0.003) {
+        if (theirP != null && theirP > myProgress + 0.006) {
           someoneAhead = true;
           break;
         }
       }
-      const behind = (me != null && me.position > 1) || someoneAhead;
+      const hasLiveRivals = Object.keys(remoteCarBuffer.states).length > 0;
+      const behind = hasLiveRivals
+        ? someoneAhead
+        : me != null && me.position > 1;
 
       const latch = turboLatch.current;
       if (behind) {
         latch.on = true;
         latch.since = performance.now();
       } else if (latch.on) {
-        // Only drop turbo after ~120ms clearly in the lead
-        if (performance.now() - latch.since > 120) {
+        // Hold through packet jitter and near-identical progress at overtakes.
+        // A clear lead must persist before assistance disengages.
+        if (performance.now() - latch.since > 800) {
           latch.on = false;
           latch.since = 0;
         }
@@ -395,11 +421,11 @@ export function Vehicle({ route, samples }: VehicleProps) {
         if (dist < 3 || dist > 14) continue;
         const along = (dx * fx + dz * fz) / dist;
         if (along > 0.72) {
-          draft = 1.045;
+          draft = 1.06;
           break;
         }
       }
-      boostRef.current.turbo = latch.on ? 1.025 : 1;
+      boostRef.current.turbo = latch.on ? 1.04 : 1;
       boostRef.current.draft = draft;
       boostRef.current.turboUi = latch.on;
       boostRef.current.draftUi = draft > 1.01;
@@ -411,7 +437,8 @@ export function Vehicle({ route, samples }: VehicleProps) {
     const b = boostRef.current;
     const liveTuning = {
       ...driveTuning,
-      maxSpeedMul: driveTuning.maxSpeedMul * b.turbo * (b.draft > 1 ? 1.015 : 1),
+      maxSpeedMul:
+        driveTuning.maxSpeedMul * b.turbo * (b.draft > 1 ? 1.025 : 1),
       accelMul: driveTuning.accelMul * b.turbo * b.draft,
       gripMul: driveTuning.gripMul * b.turbo,
       steerMul: driveTuning.steerMul * b.turbo,
@@ -490,7 +517,9 @@ export function Vehicle({ route, samples }: VehicleProps) {
     carTelemetry.yaw = yaw;
     carTelemetry.turbo = boostRef.current.turboUi;
     carTelemetry.drafting = boostRef.current.draftUi;
-    const elapsedNow = runStartAt.current ? performance.now() - runStartAt.current : 0;
+    const elapsedNow = runStartAt.current
+      ? performance.now() - runStartAt.current
+      : 0;
     carTelemetry.elapsedMs = elapsedNow;
     if (runStartAt.current) {
       ghostRecorder.current.sample(elapsedNow, after.x, after.y, after.z, yaw);
@@ -597,10 +626,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
     }
 
     if (Math.abs(position.y - nextY) > 0.0005) {
-      body.setTranslation(
-        { x: position.x, y: nextY, z: position.z },
-        true,
-      );
+      body.setTranslation({ x: position.x, y: nextY, z: position.z }, true);
     }
     const lv = body.linvel();
     if (lv.y !== 0) {
@@ -644,7 +670,11 @@ export function Vehicle({ route, samples }: VehicleProps) {
     if (meshRef.current) {
       meshRef.current.position.set(pos.x, pos.y, pos.z);
       meshRef.current.quaternion.copy(quat);
-      const speedWeight = THREE.MathUtils.clamp(carTelemetry.speedKph / 100, 0, 1);
+      const speedWeight = THREE.MathUtils.clamp(
+        carTelemetry.speedKph / 100,
+        0,
+        1,
+      );
       const drift = visualInput.current.handbrake ? 1 : 0;
       const targetRoll =
         -steerAngle.current * speedWeight * (0.07 + drift * 0.1) -
@@ -665,7 +695,10 @@ export function Vehicle({ route, samples }: VehicleProps) {
       meshRef.current.rotateX(visualPitch.current + accelPitch);
       const slipYaw =
         -Math.sign(steerAngle.current || 1) *
-        Math.min(0.16, (visualInput.current.slip * 0.01 + drift * 0.05) * speedWeight);
+        Math.min(
+          0.16,
+          (visualInput.current.slip * 0.01 + drift * 0.05) * speedWeight,
+        );
       meshRef.current.rotateY(slipYaw);
     }
 
@@ -673,7 +706,11 @@ export function Vehicle({ route, samples }: VehicleProps) {
     forward.set(0, 0, 1).applyQuaternion(quat).normalize();
 
     const speedKph = carTelemetry.speedKph;
-    const speedRatio = THREE.MathUtils.clamp(speedKph / (C.maxSpeedMs * 3.6), 0, 1);
+    const speedRatio = THREE.MathUtils.clamp(
+      speedKph / (C.maxSpeedMs * 3.6),
+      0,
+      1,
+    );
     const chaseLike = cameraMode === "chase" || cameraMode === "far";
     const bumperCam = cameraMode === "bumper";
 
@@ -684,8 +721,10 @@ export function Vehicle({ route, samples }: VehicleProps) {
         look.yaw = THREE.MathUtils.lerp(look.yaw, 0, recenter);
         look.pitch = THREE.MathUtils.lerp(look.pitch, 0, recenter);
       }
-      const baseDist = cameraMode === "far" ? C.cameraDistance * 1.55 : C.cameraDistance;
-      const baseH = cameraMode === "far" ? C.cameraHeight * 1.25 : C.cameraHeight;
+      const baseDist =
+        cameraMode === "far" ? C.cameraDistance * 1.55 : C.cameraDistance;
+      const baseH =
+        cameraMode === "far" ? C.cameraHeight * 1.25 : C.cameraHeight;
       const distance = baseDist + look.zoom;
       const horizontalDistance = Math.cos(look.pitch) * distance;
       const rearX = -forward.x;
@@ -711,29 +750,22 @@ export function Vehicle({ route, samples }: VehicleProps) {
         .set(pos.x, pos.y + 0.95, pos.z)
         .addScaledVector(forward, lookAheadDist);
     } else if (bumperCam) {
-      camTarget
-        .set(pos.x, pos.y + 0.55, pos.z)
-        .addScaledVector(forward, 2.15);
-      lookAt
-        .set(pos.x, pos.y + 0.62, pos.z)
-        .addScaledVector(forward, 24);
+      camTarget.set(pos.x, pos.y + 0.55, pos.z).addScaledVector(forward, 2.15);
+      lookAt.set(pos.x, pos.y + 0.62, pos.z).addScaledVector(forward, 24);
     } else {
       // Cockpit / windscreen cam — sit in the cabin looking out, not inside
       // the hood mesh. Slightly above the tub, just behind the windscreen.
       const eyeHeight = pos.y + 1.38;
-      camTarget
-        .set(pos.x, eyeHeight, pos.z)
-        .addScaledVector(forward, -0.15);
-      lookAt
-        .set(pos.x, eyeHeight - 0.08, pos.z)
-        .addScaledVector(forward, 28);
+      camTarget.set(pos.x, eyeHeight, pos.z).addScaledVector(forward, -0.15);
+      lookAt.set(pos.x, eyeHeight - 0.08, pos.z).addScaledVector(forward, 28);
     }
 
     const cam2 = cameraRef.current;
     const modeChanged = prevCameraMode.current !== cameraMode;
     prevCameraMode.current = cameraMode;
     const teleportDist = camSmooth.distanceToSquared(camTarget);
-    const jumped = !scratch.current.camReady || modeChanged || teleportDist > 900;
+    const jumped =
+      !scratch.current.camReady || modeChanged || teleportDist > 900;
     if (jumped) {
       camSmooth.copy(camTarget);
       lookAtSmooth.copy(lookAt);
@@ -760,7 +792,10 @@ export function Vehicle({ route, samples }: VehicleProps) {
       shakeRef.current = 0;
     }
     if (sparkMesh.current) {
-      const age = Math.max(0, (sparkMesh.current.userData.age ?? 0) - delta * 3.2);
+      const age = Math.max(
+        0,
+        (sparkMesh.current.userData.age ?? 0) - delta * 3.2,
+      );
       sparkMesh.current.userData.age = age;
       sparkMesh.current.visible = age > 0.05;
       const mat = sparkMesh.current.material;
@@ -777,8 +812,14 @@ export function Vehicle({ route, samples }: VehicleProps) {
       const mp = useMultiplayerStore.getState();
       const room = mp.currentRoom;
       const grid = room?.players.length ?? 2;
-      const sendEveryMs = grid >= 6 ? 20 : grid >= 4 ? 12 : 10;
-      if (!scratch.current.lastNetSend || now - scratch.current.lastNetSend > sendEveryMs) {
+      // Keep local simulation at 60 Hz, but send compact snapshots at a
+      // network-friendly rate. This prevents socket queues from ballooning
+      // when several players race from domestic connections.
+      const sendEveryMs = grid >= 6 ? 40 : grid >= 4 ? 36 : 33;
+      if (
+        !scratch.current.lastNetSend ||
+        now - scratch.current.lastNetSend > sendEveryMs
+      ) {
         scratch.current.lastNetSend = now;
         const rot = body.rotation();
         const lv = body.linvel();
@@ -786,8 +827,13 @@ export function Vehicle({ route, samples }: VehicleProps) {
         const mePaint =
           room?.players.find((p) => p.id === mp.myId)?.paint ?? undefined;
         sendCarState({
-          x: pos.x, y: pos.y, z: pos.z,
-          qx: rot.x, qy: rot.y, qz: rot.z, qw: rot.w,
+          x: pos.x,
+          y: pos.y,
+          z: pos.z,
+          qx: rot.x,
+          qy: rot.y,
+          qz: rot.z,
+          qw: rot.w,
           speed: speedKph,
           gear: scratch.current.gear ?? 0,
           steer: scratch.current.steer ?? 0,
@@ -827,7 +873,11 @@ export function Vehicle({ route, samples }: VehicleProps) {
         key={vehicle.id}
         ref={bodyRef}
         colliders={false}
-        position={[spawn.position.x, spawn.position.y + C.spawnHeight, spawn.position.z]}
+        position={[
+          spawn.position.x,
+          spawn.position.y + C.spawnHeight,
+          spawn.position.z,
+        ]}
         rotation={[0, spawn.yaw, 0]}
         mass={vehicle.mass}
         linearDamping={0.06}

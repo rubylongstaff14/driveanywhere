@@ -2,11 +2,13 @@ let nextRoomId = 1;
 const LOAD_TIMEOUT_MS = 45_000;
 const RACE_TIMEOUT_MS = 12 * 60_000;
 function broadcastIntervalMs(playerCount) {
+    // Physics stays client-side at 60 Hz. Sending whole-grid snapshots faster
+    // than ~30 Hz wastes bandwidth and creates queue jitter on ordinary Wi-Fi.
     if (playerCount >= 6)
-        return 20;
+        return 40;
     if (playerCount >= 4)
-        return 14;
-    return 10;
+        return 36;
+    return 33;
 }
 export class Room {
     id;
@@ -159,12 +161,18 @@ export class Room {
         this.countdownStarted = false;
         for (const p of this.players)
             p.loaded = false;
-        this.broadcast({ type: "race_loading", map: this.map, vehicleId: this.vehicleId });
+        this.broadcast({
+            type: "race_loading",
+            map: this.map,
+            vehicleId: this.vehicleId,
+        });
         this.syncLoadProgress();
         if (this.loadTimeout)
             clearTimeout(this.loadTimeout);
         this.loadTimeout = setTimeout(() => {
-            if (this.status === "countdown" && !this.countdownStarted && this.players.length > 0) {
+            if (this.status === "countdown" &&
+                !this.countdownStarted &&
+                this.players.length > 0) {
                 this.beginCountdown();
             }
         }, LOAD_TIMEOUT_MS);
@@ -226,7 +234,11 @@ export class Room {
             p.path = [];
             p.progressHistory = [];
         }
-        this.broadcast({ type: "race_go", startTimestamp: this.raceStartTimestamp, vehicleId: this.vehicleId });
+        this.broadcast({
+            type: "race_go",
+            startTimestamp: this.raceStartTimestamp,
+            vehicleId: this.vehicleId,
+        });
         this.startBroadcastLoop();
         this.startPositionsLoop();
         if (this.raceTimeout)
@@ -439,8 +451,7 @@ export class Room {
             const leader = sorted[0];
             const leaderHist = leader?.progressHistory ?? [];
             const positions = sorted.map((p, i) => {
-                const progress = p.carState?.trackProgress ??
-                    (p.carState?.checkpointIndex ?? 0) / 100;
+                const progress = p.carState?.trackProgress ?? (p.carState?.checkpointIndex ?? 0) / 100;
                 let delta = null;
                 if (i > 0 && leader) {
                     const leaderT = this.timeAtProgress(leaderHist, progress);
@@ -454,7 +465,7 @@ export class Room {
                             (leader.carState?.checkpointIndex ?? 0) / 100;
                         const gapP = Math.max(0, leadP - progress);
                         const spd = Math.max(8, (p.carState?.speed ?? 40) / 3.6);
-                        delta = Math.round((gapP * 2500) / spd * 1000);
+                        delta = Math.round(((gapP * 2500) / spd) * 1000);
                     }
                 }
                 return {
