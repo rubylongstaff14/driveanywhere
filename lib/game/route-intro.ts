@@ -3,7 +3,7 @@ import { GAME_CONSTANTS as C } from "@/lib/game/constants";
 import { getRouteBounds, type RoadSample } from "@/lib/game/road-mesh";
 import type { RouteData } from "@/lib/validation/route-data";
 
-export const ROUTE_INTRO_SECONDS = 9.5;
+export const ROUTE_INTRO_SECONDS = 5.5;
 
 export interface IntroSpawn {
   position: THREE.Vector3;

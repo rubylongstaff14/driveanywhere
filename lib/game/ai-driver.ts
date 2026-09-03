@@ -14,6 +14,21 @@ export interface AiPose {
   speedMs: number;
 }
 
+export type AiPersonality = "smooth" | "late-braker" | "defensive" | "charger";
+
+export function aiPersonality(gridIndex: number): AiPersonality {
+  return (["smooth", "late-braker", "defensive", "charger"] as const)[
+    Math.abs(gridIndex) % 4
+  ];
+}
+
+const PERSONALITY = {
+  smooth: { corner: 0.98, accel: 0.96, rhythm: 0.01 },
+  "late-braker": { corner: 1.045, accel: 1, rhythm: 0.035 },
+  defensive: { corner: 0.94, accel: 1.01, rhythm: 0.018 },
+  charger: { corner: 0.9, accel: 1.06, rhythm: 0.05 },
+} satisfies Record<AiPersonality, { corner: number; accel: number; rhythm: number }>;
+
 export interface AiArcCache {
   xs: Float32Array;
   ys: Float32Array;
@@ -220,7 +235,9 @@ export function stepAiAlongRoad(
   skill = 1,
   weatherGrip = 1,
   gearbox: AutoGearbox | null = null,
+  personality: AiPersonality = "smooth",
 ): { pose: AiPose; distanceM: number; speedMs: number } {
+  const character = PERSONALITY[personality];
   const target = racing
     ? upcomingGripLimit(
         arc,
@@ -229,7 +246,7 @@ export function stepAiAlongRoad(
         paceMul,
         currentSpeed,
         weatherGrip,
-        skill,
+        Math.max(0, Math.min(1, skill * character.corner)),
       )
     : 0;
 
@@ -246,11 +263,17 @@ export function stepAiAlongRoad(
       gearState.torqueMul,
       paceMul,
     );
-    const rate = currentSpeed > target ? brakeMs2 : accelMs2;
+    const rhythm =
+      1 + Math.sin(distanceM * 0.027 + personality.length) * character.rhythm;
+    const personalityTarget = Math.min(maxSpeedMs, target * rhythm);
+    const rate =
+      currentSpeed > personalityTarget
+        ? brakeMs2
+        : accelMs2 * character.accel;
     nextSpeed =
       currentSpeed +
-      Math.sign(target - currentSpeed) *
-        Math.min(rate * dt, Math.abs(target - currentSpeed));
+      Math.sign(personalityTarget - currentSpeed) *
+        Math.min(rate * dt, Math.abs(personalityTarget - currentSpeed));
     nextSpeed = THREE.MathUtils.clamp(nextSpeed, -C.maxReverseMs, maxSpeedMs);
 
     // Same mild corner bleed the player pays once the tyres are loaded.

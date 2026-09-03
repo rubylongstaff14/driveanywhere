@@ -91,6 +91,19 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
 
   useEffect(() => setRuntimeQuality(selectedQuality), [selectedQuality]);
 
+  useEffect(() => {
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    if (!coarse) return;
+    const cores = navigator.hardwareConcurrency ?? 4;
+    const memory = (navigator as Navigator & { deviceMemory?: number })
+      .deviceMemory;
+    if (cores <= 6 || (memory !== undefined && memory <= 6)) {
+      setRuntimeQuality("low");
+    } else {
+      setRuntimeQuality((current) => (current === "high" ? "medium" : current));
+    }
+  }, [selectedQuality]);
+
   // "soft" maps to PCFSoftShadowMap, which Three has deprecated.
   const shadowMode = quality.shadows ? "percentage" : false;
 

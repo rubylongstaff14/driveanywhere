@@ -6,6 +6,7 @@ import * as THREE from "three";
 import { VehicleBody } from "@/components/game/scene/vehicle-body";
 import {
   aiLaneOffset,
+  aiPersonality,
   aiStartDistance,
   getAiArc,
   stepAiAlongRoad,
@@ -79,6 +80,7 @@ export function AiPack({ samples, opponents }: AiPackProps) {
         opp.skill,
         weatherGrip,
         gearboxes.current[i] ?? null,
+        aiPersonality(opp.gridIndex),
       );
       group.position.set(pose.x, pose.y, pose.z);
       group.rotation.set(0, pose.yaw, 0);
@@ -134,6 +136,7 @@ export function AiPack({ samples, opponents }: AiPackProps) {
           opponents[i].skill,
           weatherGrip,
           gearboxes.current[i] ?? null,
+          aiPersonality(opponents[i].gridIndex),
         );
         distances.current[i] = stepped.distanceM;
         speeds.current[i] = stepped.speedMs;
@@ -155,6 +158,7 @@ export function AiPack({ samples, opponents }: AiPackProps) {
         opponents[i].skill,
         weatherGrip,
         gearboxes.current[i] ?? null,
+        aiPersonality(opponents[i].gridIndex),
       );
       group.position.set(stepped.pose.x, stepped.pose.y, stepped.pose.z);
       group.rotation.set(0, stepped.pose.yaw, 0);

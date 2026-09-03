@@ -7,6 +7,7 @@ import { Minimap } from "@/components/game/minimap";
 import { MobileDriveWarning } from "@/components/game/mobile-drive-warning";
 import { MobileControls } from "@/components/game/mobile-controls";
 import { DrivingSkillHud } from "@/components/game/driving-skill-hud";
+import { FinishCelebration } from "@/components/game/finish-celebration";
 import { PauseMenu } from "@/components/game/pause-menu";
 import { RaceCountdown } from "@/components/game/race-countdown";
 import { RaceSetupOverlay } from "@/components/game/race-setup-overlay";
@@ -190,6 +191,7 @@ export function GameExperience({
       />
       <RaceCountdown />
       <DrivingSkillHud />
+      <FinishCelebration />
       {raceSetup.mode === "online" && <OnlineRaceSync route={route} />}
       {raceSetup.mode === "online" && <OnlineResultsOverlay route={route} />}
       {raceSetup.mode === "online" && <RaceChat />}

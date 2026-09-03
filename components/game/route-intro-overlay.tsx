@@ -16,6 +16,8 @@ export function RouteIntroOverlay({
   country,
 }: RouteIntroOverlayProps) {
   const introActive = useGameStore((s) => s.introActive);
+  const finishIntro = useGameStore((s) => s.finishIntro);
+  const beginCountdown = useGameStore((s) => s.beginCountdown);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -52,6 +54,16 @@ export function RouteIntroOverlay({
           </div>
         </div>
       ) : null}
+      <button
+        type="button"
+        className="pointer-events-auto absolute right-4 bottom-4 rounded-full border border-white/20 bg-black/65 px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-md active:scale-95"
+        onClick={() => {
+          finishIntro();
+          beginCountdown();
+        }}
+      >
+        Skip to grid
+      </button>
     </div>
   );
 }

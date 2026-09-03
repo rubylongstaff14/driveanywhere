@@ -9,8 +9,8 @@ import { getRouteBounds, sampleRoad } from "@/lib/game/road-mesh";
 import { getRouteData, getRouteDataSlugs } from "@/lib/routes/route-registry";
 
 describe("route intro", () => {
-  it("lasts seven seconds before the start lights", () => {
-    expect(ROUTE_INTRO_SECONDS).toBe(9.5);
+  it("gets players to the start lights promptly", () => {
+    expect(ROUTE_INTRO_SECONDS).toBe(5.5);
   });
 
   it("builds a smooth spline fly-through for every bundled circuit", () => {

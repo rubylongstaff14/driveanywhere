@@ -7,9 +7,11 @@ export class DriveAmbienceAudio {
   private scrubGain: GainNode | null = null;
   private scrubFilter: BiquadFilterNode | null = null;
   private windGain: GainNode | null = null;
+  private kerbGain: GainNode | null = null;
   private windFilter: BiquadFilterNode | null = null;
   private scrubSrc: AudioBufferSourceNode | null = null;
   private windSrc: AudioBufferSourceNode | null = null;
+  private kerbSrc: OscillatorNode | null = null;
   private started = false;
   private volume = 0.5;
 
@@ -81,6 +83,15 @@ export class DriveAmbienceAudio {
     this.windGain.connect(this.master);
     this.windSrc.start();
 
+    this.kerbGain = ctx.createGain();
+    this.kerbGain.gain.value = 0;
+    this.kerbSrc = ctx.createOscillator();
+    this.kerbSrc.type = "square";
+    this.kerbSrc.frequency.value = 48;
+    this.kerbSrc.connect(this.kerbGain);
+    this.kerbGain.connect(this.master);
+    this.kerbSrc.start();
+
     this.started = true;
     if (ctx.state === "suspended") await ctx.resume();
   }
@@ -92,6 +103,8 @@ export class DriveAmbienceAudio {
     forwardSpeed: number;
     handbrake: boolean;
     offRoad: boolean;
+    onKerb?: boolean;
+    drafting?: boolean;
     paused: boolean;
   }) {
     if (!this.started || !this.ctx || !this.scrubGain || !this.windGain) return;
@@ -101,6 +114,7 @@ export class DriveAmbienceAudio {
     if (opts.paused) {
       this.scrubGain.gain.setTargetAtTime(0, t, 0.08);
       this.windGain.gain.setTargetAtTime(0, t, 0.1);
+      this.kerbGain?.gain.setTargetAtTime(0, t, 0.05);
       return;
     }
 
@@ -113,6 +127,7 @@ export class DriveAmbienceAudio {
 
     const speed = Math.abs(opts.forwardSpeed);
     const wind = Math.min(1, Math.max(0, (speed - 8) / 28));
+    const draftRush = opts.drafting ? 0.035 : 0;
 
     if (this.scrubFilter) {
       this.scrubFilter.frequency.setTargetAtTime(
@@ -130,13 +145,23 @@ export class DriveAmbienceAudio {
     if (this.windFilter) {
       this.windFilter.frequency.setTargetAtTime(280 + wind * 900, t, 0.08);
     }
-    this.windGain.gain.setTargetAtTime(wind * 0.1 * this.volume, t, 0.1);
+    this.windGain.gain.setTargetAtTime(
+      (wind * 0.1 + draftRush) * this.volume,
+      t,
+      0.1,
+    );
+    this.kerbGain?.gain.setTargetAtTime(
+      opts.onKerb ? Math.min(0.045, speed * 0.0015) * this.volume : 0,
+      t,
+      0.025,
+    );
   }
 
   dispose() {
     try {
       this.scrubSrc?.stop();
       this.windSrc?.stop();
+      this.kerbSrc?.stop();
       void this.ctx?.close();
     } catch {
       // ignore
@@ -145,10 +170,12 @@ export class DriveAmbienceAudio {
     this.master = null;
     this.scrubGain = null;
     this.windGain = null;
+    this.kerbGain = null;
     this.scrubFilter = null;
     this.windFilter = null;
     this.scrubSrc = null;
     this.windSrc = null;
+    this.kerbSrc = null;
     this.started = false;
   }
 }

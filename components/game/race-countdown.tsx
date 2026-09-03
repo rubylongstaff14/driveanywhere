@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { RaceAudio } from "@/lib/game/race-audio";
 import { useGameStore } from "@/stores/game-store";
 
 /** Start-light sequence shown after the player commits to a run. */
@@ -8,6 +9,16 @@ export function RaceCountdown() {
   const countdown = useGameStore((s) => s.countdown);
   const tickCountdown = useGameStore((s) => s.tickCountdown);
   const raceMode = useGameStore((s) => s.raceMode);
+  const audio = useRef<RaceAudio | null>(null);
+
+  useEffect(() => {
+    audio.current = new RaceAudio();
+    return () => audio.current?.dispose();
+  }, []);
+
+  useEffect(() => {
+    if (countdown !== null) void audio.current?.playLights(countdown);
+  }, [countdown]);
 
   useEffect(() => {
     // The multiplayer server is the single countdown clock. Letting every

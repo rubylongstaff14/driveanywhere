@@ -67,7 +67,8 @@ function detectDefaultPreset(): QualityPreset {
     .deviceMemory;
   const coarse = window.matchMedia?.("(pointer: coarse)").matches ?? false;
   const narrow = window.innerWidth < 900;
-  if (coarse && narrow) return "low";
+  const phoneLandscape = coarse && window.innerHeight < 650;
+  if (coarse && (narrow || phoneLandscape)) return "low";
   if (cores <= 4 || (memory !== undefined && memory <= 4)) return "medium";
   return "high";
 }

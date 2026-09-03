@@ -11,6 +11,7 @@ import {
 import {
   aiCruiseSpeed,
   aiLaneOffset,
+  aiPersonality,
   aiSkillCornerMul,
   getAiArc,
   peekAiPoint,
@@ -210,6 +211,16 @@ describe("hitboxes and AI lanes", () => {
     expect(aiCruiseSpeed(VEHICLES.sports, 1, 2400)).toBeCloseTo(
       C.maxSpeedMs * VEHICLES.sports.tuning.maxSpeedMul,
     );
+  });
+
+  it("assigns stable driving personalities across the AI grid", () => {
+    expect([0, 1, 2, 3, 4].map(aiPersonality)).toEqual([
+      "smooth",
+      "late-braker",
+      "defensive",
+      "charger",
+      "smooth",
+    ]);
   });
 });
 

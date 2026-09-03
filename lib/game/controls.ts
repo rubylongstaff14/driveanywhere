@@ -91,7 +91,7 @@ export class InputSampler {
     };
   }
 
-  sample(): ControlState {
+  sample(speedKph = 0): ControlState {
     let accelerate = 0;
     let brake = 0;
     let steer = 0;
@@ -106,7 +106,11 @@ export class InputSampler {
     const touch = sampleTouchDrive();
     accelerate = Math.max(accelerate, touch.accelerate);
     brake = Math.max(brake, touch.brake);
-    steer += touch.steer;
+    const touchSteerAuthority = Math.max(
+      0.56,
+      1 - Math.max(0, speedKph - 35) / 300,
+    );
+    steer += touch.steer * touchSteerAuthority;
     handbrake ||= touch.handbrake;
     this.edge.reset ||= touch.resetPressed;
     this.edge.pause ||= touch.pausePressed;
@@ -129,7 +133,7 @@ export class InputSampler {
     }
 
     const targetSteer = Math.min(1, Math.max(-1, steer));
-    const steerStep = 0.22;
+    const steerStep = touch.steer !== 0 ? 0.13 : 0.22;
     this.smoothedSteer += Math.min(
       steerStep,
       Math.max(-steerStep, targetSteer - this.smoothedSteer),

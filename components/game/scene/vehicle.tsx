@@ -324,7 +324,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
 
     // Pause / camera toggles are available even when the menu is open,
     // but movement is suppressed when paused or finished.
-    const controls = input.sample();
+    const controls = input.sample(carTelemetry.speedKph);
     if (controls.cameraPressed) toggleCamera();
 
     if (paused || finished) return;
@@ -508,6 +508,8 @@ export function Vehicle({ route, samples }: VehicleProps) {
       forwardSpeed: drive.forwardSpeed,
       handbrake: controls.handbrake,
       offRoad: !onRoad,
+      onKerb: kerb.onKerb,
+      drafting: boostRef.current.draftUi,
       paused: false,
     });
 
