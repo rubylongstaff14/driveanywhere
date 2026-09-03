@@ -71,6 +71,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
   const lastLatSpeed = useRef(0);
   const sparkMesh = useRef<THREE.Mesh>(null);
   const gearboxRef = useRef<AutoGearbox | null>(null);
+  const coarsePointerRef = useRef(false);
 
   const input = useMemo(() => new InputSampler(), []);
   const tracker = useMemo(() => new RoadTracker(samples), [samples]);
@@ -174,6 +175,10 @@ export function Vehicle({ route, samples }: VehicleProps) {
 
   // Attach keyboard/gamepad listeners to window.
   useEffect(() => input.attach(), [input]);
+
+  useEffect(() => {
+    coarsePointerRef.current = window.matchMedia("(pointer: coarse)").matches;
+  }, []);
 
   useEffect(() => {
     const engine = new EngineAudio();
@@ -850,7 +855,15 @@ export function Vehicle({ route, samples }: VehicleProps) {
       // Keep local simulation at 60 Hz, but send compact snapshots at a
       // network-friendly rate. This prevents socket queues from ballooning
       // when several players race from domestic connections.
-      const sendEveryMs = grid >= 6 ? 40 : grid >= 4 ? 36 : 33;
+      // Phones save radio, serialization and server work by sending at 20 Hz;
+      // buffered interpolation keeps rivals smooth between those packets.
+      const sendEveryMs = coarsePointerRef.current
+        ? 50
+        : grid >= 6
+          ? 40
+          : grid >= 4
+            ? 36
+            : 33;
       if (
         !scratch.current.lastNetSend ||
         now - scratch.current.lastNetSend > sendEveryMs

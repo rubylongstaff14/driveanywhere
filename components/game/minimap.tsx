@@ -13,7 +13,8 @@ interface MinimapProps {
 
 /**
  * Draws the route outline and live car position on a 2D canvas.
- * Runs on its own animation frame and never touches React state.
+ * Draws at a capped rate and never touches React state. The map does not need
+ * the 60-120 updates per second used by the driving camera.
  */
 export function Minimap({ route, size = 168 }: MinimapProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -46,7 +47,8 @@ export function Minimap({ route, size = 168 }: MinimapProps) {
       size / 2 + (z - centreZ) * scale,
     ];
 
-    let frame = 0;
+    const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+    const intervalMs = coarsePointer ? 80 : 50;
 
     const draw = () => {
       ctx.clearRect(0, 0, size, size);
@@ -121,11 +123,11 @@ export function Minimap({ route, size = 168 }: MinimapProps) {
       ctx.fill();
       ctx.restore();
 
-      frame = requestAnimationFrame(draw);
     };
 
-    frame = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(frame);
+    draw();
+    const timer = window.setInterval(draw, intervalMs);
+    return () => window.clearInterval(timer);
   }, [route, size]);
 
   return (

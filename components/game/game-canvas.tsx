@@ -125,6 +125,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
         toneMapping: THREE.NoToneMapping,
         toneMappingExposure: 1.0,
         stencil: false,
+        precision: runtimeQuality === "low" ? "mediump" : "highp",
       }}
       onCreated={({ gl }) => {
         gl.domElement.addEventListener("webglcontextlost", (event) => {
@@ -148,6 +149,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
                   : "low",
             )
           }
+          onFallback={() => setRuntimeQuality("low")}
         />
         <AdaptiveDpr />
         <SceneEnvironment

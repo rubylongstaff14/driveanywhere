@@ -27,6 +27,9 @@ export function AiPack({ samples, opponents }: AiPackProps) {
   const groups = useRef<Array<THREE.Group | null>>([]);
   const distances = useRef<Float32Array>(new Float32Array(0));
   const speeds = useRef<Float32Array>(new Float32Array(0));
+  const poses = useRef<
+    Array<ReturnType<typeof stepAiAlongRoad>["pose"] | undefined>
+  >([]);
   const placed = useRef(false);
   const tickAcc = useRef(0);
   const gearboxes = useRef<AutoGearbox[]>([]);
@@ -82,6 +85,7 @@ export function AiPack({ samples, opponents }: AiPackProps) {
         gearboxes.current[i] ?? null,
         aiPersonality(opp.gridIndex),
       );
+      poses.current[i] = pose;
       group.position.set(pose.x, pose.y, pose.z);
       group.rotation.set(0, pose.yaw, 0);
       group.visible = true;
@@ -140,28 +144,15 @@ export function AiPack({ samples, opponents }: AiPackProps) {
         );
         distances.current[i] = stepped.distanceM;
         speeds.current[i] = stepped.speedMs;
+        poses.current[i] = stepped.pose;
       }
     }
     for (let i = 0; i < opponents.length; i += 1) {
       const group = groups.current[i];
-      if (!group) continue;
-      const stepped = stepAiAlongRoad(
-        samples,
-        distances.current[i] ?? starts[i],
-        vehicles[i],
-        opponents[i].paceMul,
-        0,
-        true,
-        laterals[i],
-        arc,
-        speeds.current[i] ?? 0,
-        opponents[i].skill,
-        weatherGrip,
-        gearboxes.current[i] ?? null,
-        aiPersonality(opponents[i].gridIndex),
-      );
-      group.position.set(stepped.pose.x, stepped.pose.y, stepped.pose.z);
-      group.rotation.set(0, stepped.pose.yaw, 0);
+      const pose = poses.current[i];
+      if (!group || !pose) continue;
+      group.position.set(pose.x, pose.y, pose.z);
+      group.rotation.set(0, pose.yaw, 0);
     }
   });
 

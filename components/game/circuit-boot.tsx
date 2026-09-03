@@ -35,7 +35,7 @@ export function CircuitBoot({
     <div className="absolute inset-0 z-50">
       <CinematicLoader
         title={routeName}
-        subtitle={`V1.0.0 · Staging ${city} — lighting, colliders, skyline`}
+        subtitle={`V1.0.1 · Staging ${city} — lighting, colliders, skyline`}
         progress={progress}
       />
     </div>

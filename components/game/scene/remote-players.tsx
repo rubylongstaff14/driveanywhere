@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import * as THREE from "three";
@@ -23,6 +29,7 @@ interface RemoteCarProps {
   wing: WingStyle;
   kit: KitStyle;
   ghost?: boolean;
+  showLabel?: boolean;
 }
 
 const FALLBACK_COLORS = [
@@ -33,6 +40,20 @@ const FALLBACK_COLORS = [
   "#fbbf24",
   "#f59e0b",
 ];
+
+function subscribeCoarsePointer(onChange: () => void) {
+  const query = window.matchMedia("(pointer: coarse)");
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+
+function useCoarsePointer() {
+  return useSyncExternalStore(
+    subscribeCoarsePointer,
+    () => window.matchMedia("(pointer: coarse)").matches,
+    () => false,
+  );
+}
 
 /** Linear blend between samples — Hermite overshoots when packets jitter. */
 function sampleAt(
@@ -105,6 +126,7 @@ function RemoteCar({
   wing,
   kit,
   ghost = false,
+  showLabel = true,
 }: RemoteCarProps) {
   const meshRef = useRef<THREE.Group>(null);
   const targetPos = useRef(new THREE.Vector3());
@@ -129,20 +151,21 @@ function RemoteCar({
     const delay = remoteInterpDelayMs();
     const renderTime = performance.now() - delay;
 
-    const applyPaint = (hex?: string) => {
-      if (!hex || hex === paintRef.current) return;
-      paintRef.current = hex;
-      setPaint(hex);
-    };
-
     if (!history || history.length < 2) {
       const state = remoteCarBuffer.states[playerId];
       if (!state) return;
-      applyPaint(state.paint);
+      if (state.paint && state.paint !== paintRef.current) {
+        paintRef.current = state.paint;
+        setPaint(state.paint);
+      }
       targetPos.current.set(state.x, state.y, state.z);
       targetQuat.current.set(state.qx, state.qy, state.qz, state.qw);
     } else {
-      applyPaint(history[history.length - 1].state.paint);
+      const latestPaint = history[history.length - 1].state.paint;
+      if (latestPaint && latestPaint !== paintRef.current) {
+        paintRef.current = latestPaint;
+        setPaint(latestPaint);
+      }
       sampleAt(
         history,
         renderTime,
@@ -183,7 +206,7 @@ function RemoteCar({
         simple
         ghost={ghost}
       />
-      <Html
+      {showLabel ? <Html
         position={[0, 2.15, 0]}
         center
         distanceFactor={18}
@@ -198,7 +221,7 @@ function RemoteCar({
             {playerName}
           </span>
         </div>
-      </Html>
+      </Html> : null}
     </group>
   );
 }
@@ -261,6 +284,7 @@ export function RemotePlayers() {
   const currentRoom = useMultiplayerStore((s) => s.currentRoom);
   const remotePlayerIdKey = useMultiplayerStore((s) => s.remotePlayerIdKey);
   const spectating = useMultiplayerStore((s) => s.spectating);
+  const coarsePointer = useCoarsePointer();
 
   const ids = useMemo(
     () => (remotePlayerIdKey ? remotePlayerIdKey.split(",") : []),
@@ -294,6 +318,7 @@ export function RemotePlayers() {
             wing={wing}
             kit={kit}
             ghost={spectating}
+            showLabel={!coarsePointer && remotePlayers.length <= 4}
           />
         );
       })}

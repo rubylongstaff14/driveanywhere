@@ -618,28 +618,29 @@ export function RouteWorld({
       );
       return clear >= 1.0;
     });
-    // Named heroes and tall skyline silhouettes always remain. Generic infill
-    // is sampled deterministically by tier to cut hundreds of draw calls while
-    // keeping the city visually dense and stable between frames.
+    // True hero landmarks always remain. Named OSM buildings are much more
+    // numerous, so lower tiers sample those as well as generic infill. This is
+    // deterministic: scenery never pops merely because React rendered again.
     if (quality.sceneryDensity >= 0.95) return filtered;
-    const stride =
-      quality.sceneryDensity >= 0.8
-        ? 5
-        : quality.sceneryDensity >= 0.55
-          ? 3
-          : 4;
-    const keep =
-      quality.sceneryDensity >= 0.8
-        ? 4
-        : quality.sceneryDensity >= 0.55
-          ? 2
-          : 1;
+    if (quality.sceneryDensity < 0.5) {
+      return filtered.filter(
+        (b, i) =>
+          Boolean(b.landmark) ||
+          b.height >= 70 ||
+          (Boolean(b.name) ? i % 3 === 0 : i % 6 === 0),
+      );
+    }
+    if (quality.sceneryDensity < 0.8) {
+      return filtered.filter(
+        (b, i) =>
+          Boolean(b.landmark) ||
+          b.height >= 60 ||
+          (Boolean(b.name) ? i % 2 === 0 : i % 3 !== 2),
+      );
+    }
     return filtered.filter(
       (b, i) =>
-        Boolean(b.landmark) ||
-        Boolean(b.name) ||
-        b.height >= 55 ||
-        i % stride < keep,
+        Boolean(b.landmark) || Boolean(b.name) || b.height >= 55 || i % 5 < 4,
     );
   }, [buildings, samples, quality.sceneryDensity]);
 

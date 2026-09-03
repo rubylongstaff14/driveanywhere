@@ -22,7 +22,6 @@ export function RacePositionsHud() {
       setBoost({ turbo: false, draft: false });
       return;
     }
-    let raf = 0;
     const tick = () => {
       setBoost((prev) => {
         const next = {
@@ -32,10 +31,9 @@ export function RacePositionsHud() {
         if (prev.turbo === next.turbo && prev.draft === next.draft) return prev;
         return next;
       });
-      raf = requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    const timer = window.setInterval(tick, 120);
+    return () => window.clearInterval(timer);
   }, [racing]);
 
   const myRow = racePositions.find((p) => p.playerId === myId);
