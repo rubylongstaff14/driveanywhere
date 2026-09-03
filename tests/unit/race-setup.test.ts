@@ -33,6 +33,7 @@ describe("race setup", () => {
       ghost: false,
       weather: "clear",
       vehicleId: "sports",
+      lapCount: 1,
     });
     expect(resolveAiOpponents(setup, "sports")).toEqual([]);
     expect(raceSetupSearchParams(setup)).toBe("");
@@ -54,6 +55,7 @@ describe("race setup", () => {
       ghost: false,
       weather: "clear",
       vehicleId: "sports",
+      lapCount: 1,
     });
     const pack = resolveAiOpponents(setup, "sports");
     expect(pack).toHaveLength(4);
@@ -79,6 +81,7 @@ describe("race setup", () => {
       ghost: true,
       weather: "clear",
       vehicleId: "sports",
+      lapCount: 1,
     });
     expect(query).toBe("?mode=ai&ai=3&difficulty=40");
     expect(parseRaceSetup(Object.fromEntries(new URLSearchParams(query)))).toEqual({
@@ -88,6 +91,7 @@ describe("race setup", () => {
       ghost: false,
       weather: "clear",
       vehicleId: "sports",
+      lapCount: 1,
     });
   });
 
@@ -100,6 +104,7 @@ describe("race setup", () => {
       ghost: true,
       weather: "rain",
       vehicleId: "sports",
+      lapCount: 1,
     });
     expect(raceSetupSearchParams(soloGhost)).toBe("?ghost=1&weather=rain");
     const withAi = parseRaceSetup({
@@ -126,6 +131,12 @@ describe("race setup", () => {
     const pack = resolveAiOpponents(setup, setup.vehicleId);
     expect(pack).toHaveLength(3);
     expect(pack.every((car) => car.vehicleId === "f1")).toBe(true);
+  });
+
+  it("round-trips the optional two-lap distance", () => {
+    const setup = parseRaceSetup({ laps: "2" });
+    expect(setup.lapCount).toBe(2);
+    expect(raceSetupSearchParams(setup)).toBe("?laps=2");
   });
 });
 

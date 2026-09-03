@@ -37,6 +37,7 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
     hostSetMap,
     hostSetDifficulty,
     hostSetAi,
+    hostSetLaps,
     hostSetVehicle,
     hostKick,
     hostStart,
@@ -94,7 +95,7 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
         slot?.vehicleId ?? raceVehicleId ?? currentRoom.vehicleId ?? "sports";
       const difficulty = lobbyDifficultyToSkill(currentRoom.difficulty);
       router.push(
-        `/play/${currentRoom.map}?mode=online&roomId=${currentRoom.id}&vehicle=${vehicle}&ai=${currentRoom.aiCount}&difficulty=${difficulty}`,
+        `/play/${currentRoom.map}?mode=online&roomId=${currentRoom.id}&vehicle=${vehicle}&ai=${currentRoom.aiCount}&difficulty=${difficulty}&laps=${currentRoom.lapCount}`,
       );
     }
   }, [raceLoading, currentRoom, router, raceVehicleId, myId]);
@@ -138,6 +139,7 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
               {" · "}
               {vehicles.find((v) => v.id === currentRoom.vehicleId)?.name ?? "Sports Car"}
               {currentRoom.aiCount > 0 && ` · ${currentRoom.aiCount} AI`}
+              {` · ${currentRoom.lapCount} ${currentRoom.lapCount === 1 ? "lap" : "laps"}`}
             </p>
           </div>
           <button
@@ -221,6 +223,17 @@ export function RoomLobby({ roomId }: RoomLobbyProps) {
                   {vehicles.map((v) => (
                     <option key={v.id} value={v.id}>{v.name}</option>
                   ))}
+                </select>
+              </div>
+              <div>
+                <label className="mb-1 block text-[10px] text-mist">Race distance</label>
+                <select
+                  className="w-full rounded-lg border border-white/10 bg-ink-975 px-2 py-1.5 text-xs text-white"
+                  value={currentRoom.lapCount}
+                  onChange={(e) => hostSetLaps(Number(e.target.value) === 2 ? 2 : 1)}
+                >
+                  <option value={1}>1 lap</option>
+                  <option value={2}>2 laps</option>
                 </select>
               </div>
               <div>

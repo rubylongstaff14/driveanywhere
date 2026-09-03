@@ -23,6 +23,7 @@ export interface RaceSetup {
   weather: WeatherId;
   /** Locked for the whole grid — host pick online, player pick solo/AI. */
   vehicleId: VehicleId;
+  lapCount: 1 | 2;
 }
 
 export interface ResolvedAiOpponent {
@@ -65,6 +66,7 @@ export function parseRaceSetup(input: {
   ghost?: string | boolean | null;
   weather?: string | null;
   vehicle?: string | null;
+  laps?: string | number | null;
 }): RaceSetup {
   const mode: RaceMode =
     input.mode === "online" ? "online" : input.mode === "ai" ? "ai" : "solo";
@@ -83,6 +85,7 @@ export function parseRaceSetup(input: {
     ghost: mode === "solo" && ghostFlag,
     weather: parseWeather(input.weather),
     vehicleId: parseVehicleId(input.vehicle),
+    lapCount: Number(input.laps) === 2 ? 2 : 1,
   };
 }
 
@@ -101,6 +104,7 @@ export function raceSetupSearchParams(setup: RaceSetup): string {
   }
   if (setup.vehicleId !== "sports") params.set("vehicle", setup.vehicleId);
   if (setup.weather !== "clear") params.set("weather", setup.weather);
+  if (setup.lapCount === 2) params.set("laps", "2");
   const query = params.toString();
   return query ? `?${query}` : "";
 }

@@ -31,6 +31,8 @@ interface GameHudSnapshot {
 }
 
 interface GameStoreState extends GameHudSnapshot {
+  lapCount: 1 | 2;
+  currentLap: number;
   paused: boolean;
   started: boolean;
   finished: boolean;
@@ -74,6 +76,7 @@ interface GameStoreState extends GameHudSnapshot {
   confirmGarage: () => void;
   hydrateRaceSetup: (setup: RaceSetup) => void;
   confirmSession: (setup: RaceSetup) => void;
+  setCurrentLap: (lap: number) => void;
 }
 
 const hudDefaults: GameHudSnapshot = {
@@ -113,7 +116,10 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
   ghostEnabled: false,
   weather: "clear",
   photoMode: false,
+  lapCount: 1,
+  currentLap: 1,
   setPhotoMode: (v) => set({ photoMode: v }),
+  setCurrentLap: (lap) => set({ currentLap: Math.max(1, Math.min(get().lapCount, lap)) }),
   setHud: (partial) => set(partial),
   setPaused: (paused) => set({ paused }),
   togglePause: () => set({ paused: !get().paused }),
@@ -209,6 +215,8 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       ghostEnabled: setup.mode === "solo" && setup.ghost,
       weather: parseWeather(setup.weather),
       selectedVehicleId: setup.vehicleId,
+      lapCount: setup.lapCount,
+      currentLap: 1,
     }),
   confirmSession: (setup) =>
     set({
@@ -220,6 +228,8 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       difficulty: clampDifficulty(setup.difficulty),
       ghostEnabled: setup.mode === "solo" && setup.ghost,
       weather: parseWeather(setup.weather),
+      lapCount: setup.lapCount,
+      currentLap: 1,
       selectedVehicleId: setup.vehicleId,
       sessionConfirmed: true,
       paused: true,

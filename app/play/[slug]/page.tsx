@@ -14,6 +14,7 @@ interface PlayPageProps {
     ghost?: string | string[];
     weather?: string | string[];
     vehicle?: string | string[];
+    laps?: string | string[];
     roomId?: string | string[];
     tournament?: string | string[];
   }>;
@@ -47,6 +48,7 @@ export default async function PlayPage({ params, searchParams }: PlayPageProps) 
     ghost: first(query.ghost),
     weather: first(query.weather),
     vehicle: first(query.vehicle),
+    laps: first(query.laps),
   });
 
   const isTournamentRace = first(query.tournament) === "1";

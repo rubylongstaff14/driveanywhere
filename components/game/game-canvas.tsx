@@ -65,6 +65,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
               ghost: false,
               weather,
               vehicleId: selectedVehicleId,
+              lapCount: useGameStore.getState().lapCount,
             },
             selectedVehicleId,
           )

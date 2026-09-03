@@ -147,6 +147,8 @@ export function Vehicle({ route, samples }: VehicleProps) {
   const finishRun = useGameStore((s) => s.finishRun);
   const toggleCamera = useGameStore((s) => s.toggleCamera);
   const setHud = useGameStore((s) => s.setHud);
+  const lapCount = useGameStore((s) => s.lapCount);
+  const setCurrentLap = useGameStore((s) => s.setCurrentLap);
   const weather = useGameStore((s) => s.weather);
   /** Catch-up + slipstream applied in physics via boostRef (stable, no flicker). */
   const boostRef = useRef({
@@ -290,6 +292,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
     ghostRecorder.current.reset();
     runStartAt.current = null;
     nextCp.current = 0;
+    setCurrentLap(1);
     carTelemetry.elapsedMs = 0;
     respawn.current = { ...spawn.position, yaw: spawn.yaw };
     scratch.current.camReady = false;
@@ -307,7 +310,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
       splitDeltaMs: null,
       splitTone: null,
     });
-  }, [checkpoints.length, restartToken, setHud, spawn, tracker]);
+  }, [checkpoints.length, restartToken, setCurrentLap, setHud, spawn, tracker]);
 
   // Pause-menu / intentional CP reset — snap to last gate without wiping the run.
   useEffect(() => {
@@ -593,15 +596,23 @@ export function Vehicle({ route, samples }: VehicleProps) {
       }
 
       if (nextCp.current >= checkpoints.length) {
-        void raceAudioRef.current?.playFinish();
-        const tape = ghostRecorder.current.finish(
-          route.id,
-          selectedVehicleId,
-          elapsedMs,
-        );
-        if (tape) saveGhostTape(tape);
-        finishRun();
-        setHud({ checkpointIndex: checkpoints.length, progress: 1 });
+        const completedLap = useGameStore.getState().currentLap;
+        if (completedLap < lapCount) {
+          nextCp.current = Math.min(1, checkpoints.length - 1);
+          setCurrentLap(completedLap + 1);
+          void raceAudioRef.current?.playCheckpoint(passedIndex);
+          setHud({ checkpointIndex: nextCp.current, progress: completedLap / lapCount });
+        } else {
+          void raceAudioRef.current?.playFinish();
+          const tape = ghostRecorder.current.finish(
+            route.id,
+            selectedVehicleId,
+            elapsedMs,
+          );
+          if (tape && lapCount === 1) saveGhostTape(tape);
+          finishRun();
+          setHud({ checkpointIndex: checkpoints.length, progress: 1 });
+        }
       } else {
         void raceAudioRef.current?.playCheckpoint(passedIndex);
         setHud({ checkpointIndex: nextCp.current });
@@ -615,7 +626,8 @@ export function Vehicle({ route, samples }: VehicleProps) {
       setHud({
         speedKph: Math.abs(drive.forwardSpeed) * 3.6,
         elapsedMs: runStartAt.current ? now - runStartAt.current : 0,
-        progress: hit.progress,
+        progress:
+          (useGameStore.getState().currentLap - 1 + hit.progress) / lapCount,
         gear: gearState.gear,
         rpm: gearState.rpm,
         rpmNorm: gearState.rpmNorm,

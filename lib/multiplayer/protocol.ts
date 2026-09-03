@@ -9,6 +9,7 @@ export interface RoomInfo {
   map: string;
   difficulty: "easy" | "medium" | "hard";
   aiCount: number;
+  lapCount: 1 | 2;
   vehicleId: string;
   maxPlayers: number;
   players: PlayerSlot[];
@@ -98,6 +99,7 @@ export type ClientMessage =
   | { type: "host_set_map"; map: string }
   | { type: "host_set_difficulty"; difficulty: "easy" | "medium" | "hard" }
   | { type: "host_set_ai"; aiCount: number }
+  | { type: "host_set_laps"; lapCount: 1 | 2 }
   | { type: "host_set_vehicle"; vehicleId: string }
   | { type: "set_loadout"; vehicleId: string; paint?: string; bumper?: string; wing?: string; kit?: string }
   | { type: "host_kick"; playerId: string }

@@ -19,6 +19,7 @@ describe("drive envelope parity", () => {
           ghost: false,
           weather: "clear",
           vehicleId,
+          lapCount: 1,
         },
         vehicleId,
       );

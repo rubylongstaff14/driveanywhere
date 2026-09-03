@@ -32,7 +32,9 @@ export const VEHICLES = {
         stats: { speed: 98, accel: 96, grip: 92, weight: 28 },
         tuning: {
             maxSpeedMul: 1.22,
-            accelMul: 1.32,
+            // Strong launch is part of the class identity. The previous value was
+            // softened twice by the torque curve and felt slower than the GT.
+            accelMul: 1.55,
             brakeMul: 1.25,
             gripMul: 1.2,
             steerMul: 1.15,

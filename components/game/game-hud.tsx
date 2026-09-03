@@ -158,6 +158,8 @@ export function GameHud({
   const tournamentActive = useTournamentStore((s) => s.active);
   const tournamentCurrentRound = tournamentActive?.rounds.find((r) => !r.completed);
   const streak = useAchievementStore((s) => s.stats.currentStreak);
+  const currentLap = useGameStore((s) => s.currentLap);
+  const lapCount = useGameStore((s) => s.lapCount);
 
   useEffect(() => {
     if (splitMs == null) return;
@@ -213,7 +215,7 @@ export function GameHud({
         </div>
         <div className="min-w-20 text-right">
           <p className="font-mono text-xs font-bold tabular-nums text-white">
-            CP {checkpointIndex}/{checkpointTotal}
+            L{currentLap}/{lapCount} · CP {checkpointIndex}/{checkpointTotal}
           </p>
           <div className="mt-1 h-1 overflow-hidden rounded-full bg-white/15">
             <div
@@ -292,7 +294,7 @@ export function GameHud({
         <div className="min-w-[200px] rounded-xl border border-white/16 bg-ink-950/78 px-4 py-2.5 shadow-inner backdrop-blur-sm">
           <div className="flex items-baseline justify-between">
             <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-fog">
-              Checkpoint
+              Lap {currentLap}/{lapCount} · Checkpoint
             </p>
             <span className="font-mono text-sm tabular-nums text-white">
               {checkpointIndex}

@@ -82,6 +82,7 @@ interface MultiplayerState {
   hostSetMap: (map: string) => void;
   hostSetDifficulty: (d: "easy" | "medium" | "hard") => void;
   hostSetAi: (count: number) => void;
+  hostSetLaps: (count: 1 | 2) => void;
   hostSetVehicle: (vehicleId: string) => void;
   setLoadout: (
     vehicleId: string,
@@ -419,6 +420,7 @@ export const useMultiplayerStore = create<MultiplayerState>((set, get) => {
     hostSetDifficulty: (d) =>
       sendMsg({ type: "host_set_difficulty", difficulty: d }),
     hostSetAi: (count) => sendMsg({ type: "host_set_ai", aiCount: count }),
+    hostSetLaps: (count) => sendMsg({ type: "host_set_laps", lapCount: count }),
     hostSetVehicle: (vehicleId) =>
       sendMsg({ type: "host_set_vehicle", vehicleId }),
     hostKick: (playerId) => sendMsg({ type: "host_kick", playerId }),

@@ -23,6 +23,7 @@ export function RaceSetupOverlay({ routeName, routeId }: RaceSetupOverlayProps) 
   const storedDifficulty = useGameStore((s) => s.difficulty);
   const storedWeather = useGameStore((s) => s.weather);
   const storedGhost = useGameStore((s) => s.ghostEnabled);
+  const storedLapCount = useGameStore((s) => s.lapCount);
   const personalBestMs = useGameStore((s) => s.personalBestMs);
   const confirmSession = useGameStore((s) => s.confirmSession);
   const setGarageOpen = () =>
@@ -40,6 +41,7 @@ export function RaceSetupOverlay({ routeName, routeId }: RaceSetupOverlayProps) 
   const [difficulty, setDifficulty] = useState(storedDifficulty);
   const [weather, setWeather] = useState<WeatherId>(storedWeather);
   const [ghost, setGhost] = useState(storedGhost);
+  const [lapCount, setLapCount] = useState<1 | 2>(storedLapCount);
 
   const difficultyLabel =
     difficulty < 34 ? "Easy" : difficulty < 67 ? "Medium" : "Hard";
@@ -175,6 +177,28 @@ export function RaceSetupOverlay({ routeName, routeId }: RaceSetupOverlayProps) 
 
         <div className="mt-4">
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-fog">
+            Race distance
+          </p>
+          <div className="mt-2 grid grid-cols-2 gap-2">
+            {([1, 2] as const).map((laps) => (
+              <button
+                key={laps}
+                type="button"
+                onClick={() => setLapCount(laps)}
+                className={
+                  lapCount === laps
+                    ? "rounded-lg border-2 border-accent bg-ink-950/80 px-3 py-2 text-white"
+                    : "rounded-lg border border-line bg-ink-950/40 px-3 py-2 text-mist"
+                }
+              >
+                {laps} {laps === 1 ? "lap" : "laps"}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-fog">
             Weather
           </p>
           <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -208,6 +232,7 @@ export function RaceSetupOverlay({ routeName, routeId }: RaceSetupOverlayProps) 
                 ghost: mode === "solo" && ghost,
                 weather,
                 vehicleId: useGameStore.getState().selectedVehicleId,
+                lapCount,
               })
             }
           >

@@ -15,6 +15,7 @@ export class Room {
     map;
     difficulty;
     aiCount;
+    lapCount = 1;
     vehicleId = "sports";
     maxPlayers = 8;
     persistent = false;
@@ -48,6 +49,7 @@ export class Room {
             map: this.map,
             difficulty: this.difficulty,
             aiCount: this.aiCount,
+            lapCount: this.lapCount,
             vehicleId: this.vehicleId,
             maxPlayers: this.maxPlayers,
             players: this.players.map((p) => ({
