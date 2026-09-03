@@ -40,8 +40,8 @@ export function OnlineResultsOverlay({ route }: { route: RouteData }) {
   }
 
   return (
-    <div className="absolute inset-0 z-40 flex items-center justify-center overflow-y-auto bg-ink-975/85 py-6 backdrop-blur-sm">
-      <div className="mx-4 w-full max-w-xl rounded-2xl border border-white/10 bg-ink-950 p-6 shadow-2xl">
+    <div className="mobile-scroll-overlay absolute inset-0 z-40 flex items-center justify-center overflow-y-auto bg-ink-975/85 py-6 backdrop-blur-sm">
+      <div className="mobile-scroll-panel mx-4 w-full max-w-xl rounded-2xl border border-white/10 bg-ink-950 p-6 shadow-2xl">
         <div className="mb-5 text-center">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
             {resultsProvisional ? "Live standings" : "Race Complete"}

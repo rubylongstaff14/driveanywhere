@@ -233,4 +233,49 @@
     right: 0.65rem !important;
     padding: 0.3rem 0.45rem !important;
   }
+
+  .mobile-race-secondary,
+  .mobile-challenges-panel {
+    display: none !important;
+  }
+
+  .mobile-scroll-overlay {
+    align-items: flex-start !important;
+    padding: 0.4rem !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  .mobile-scroll-panel {
+    max-height: calc(100dvh - 0.8rem) !important;
+    margin-block: auto;
+    overflow-y: auto !important;
+    padding: 0.85rem !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  .mobile-scroll-panel > div {
+    scroll-margin-block: 0.5rem;
+  }
+}
+
+@media (pointer: coarse) and (max-width: 1024px) {
+  .mobile-scroll-overlay {
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  .mobile-scroll-panel {
+    max-height: calc(100dvh - 1rem) !important;
+    margin-block: auto;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
 }

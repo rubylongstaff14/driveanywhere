@@ -230,10 +230,14 @@ export function GameExperience({
       <MobileDriveWarning routeSlug={routeSlug} />
       <MobileControls
         active={
-          garageConfirmed && sessionConfirmed && !finished && !introActive
+          garageConfirmed &&
+          sessionConfirmed &&
+          !finished &&
+          !introActive &&
+          (!paused || countdown !== null)
         }
       />
-      <p className="pointer-events-none absolute bottom-3 left-4 z-10 font-mono text-[10px] text-white/40">
+      <p className="mobile-race-secondary pointer-events-none absolute bottom-3 left-4 z-10 font-mono text-[10px] text-white/40">
         {route.dataAttribution}
       </p>
     </div>

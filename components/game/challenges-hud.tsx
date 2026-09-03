@@ -177,6 +177,7 @@ export function ChallengesHud() {
   if (!open) {
     return (
       <button
+        className="mobile-race-secondary"
         onClick={() => setOpen(true)}
         style={{
           position: "fixed",
@@ -218,6 +219,7 @@ export function ChallengesHud() {
 
   return (
     <div
+      className="mobile-challenges-panel"
       style={{
         position: "fixed",
         bottom: "1rem",

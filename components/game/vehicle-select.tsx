@@ -102,8 +102,8 @@ export function VehicleSelect({ routeName }: VehicleSelectProps) {
   ];
 
   return (
-    <div className="absolute inset-0 z-20 flex items-center justify-center bg-ink-975/85 p-4 backdrop-blur-md da-fade-in">
-      <div className="w-full max-w-3xl rounded-2xl border border-white/10 bg-panel shadow-2xl da-fade-up">
+    <div className="mobile-scroll-overlay absolute inset-0 z-20 flex items-center justify-center overflow-y-auto bg-ink-975/85 p-4 backdrop-blur-md da-fade-in">
+      <div className="mobile-scroll-panel w-full max-w-3xl rounded-2xl border border-white/10 bg-panel shadow-2xl da-fade-up">
         {/* Header */}
         <div className="border-b border-white/8 px-6 py-5">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
