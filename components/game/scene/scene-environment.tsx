@@ -41,8 +41,10 @@ export function SceneEnvironment({
             : duskLook
               ? ([-120, 45, -180] as const)
               : ([80, 90, -140] as const);
+  // The HDR city/forest preset is expensive to upload and sample. Keep it
+  // for the showcase preset; medium quality uses the authored sky and lights.
   const useEnvironmentMap =
-    quality.drawDistance >= 360 && !desert && !night;
+    quality.shadows && !desert && !night;
 
   useFrame(() => {
     const light = sunRef.current;

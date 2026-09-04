@@ -57,6 +57,20 @@ export function OnlineRaceSync({ route }: { route: RouteData }) {
         introActive: false,
       });
     }
+    // The server remains authoritative for race_go, but keep the local
+    // presentation moving if one countdown packet is delayed by a busy
+    // browser tab or a congested websocket. Without this, the UI can appear
+    // frozen on 3/5 even though the server is still progressing.
+    if (countdownValue === null) return;
+    const fallback = window.setInterval(() => {
+      const state = useGameStore.getState();
+      const multiplayer = useMultiplayerStore.getState();
+      if (multiplayer.racing || state.countdown === null) return;
+      if (state.countdown > 1) {
+        useGameStore.setState({ countdown: state.countdown - 1 });
+      }
+    }, 1100);
+    return () => window.clearInterval(fallback);
   }, [countdownValue]);
 
   useEffect(() => {

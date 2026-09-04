@@ -184,7 +184,7 @@ export function GameCanvas({ paused, route }: GameCanvasProps) {
         ) : null}
         <RemotePlayers />
         <RainField wet={weather === "rain"} />
-        {quality.drawDistance >= 300 && (
+        {quality.shadows && runtimeQuality === "high" && (
           <EffectComposer>
             {quality.shadows ? (
               <>

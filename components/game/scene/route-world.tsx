@@ -2324,7 +2324,7 @@ export function RouteWorld({
                     height={b.renderHeight}
                     color={b.facadeColour}
                     style={b.style}
-                    dense={quality.sceneryDensity >= 0.45}
+                    dense={quality.sceneryDensity >= 0.8}
                     region={cityRegionFromSlug(route.slug)}
                   />
                 ) : null}
