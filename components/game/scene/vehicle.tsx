@@ -439,13 +439,13 @@ export function Vehicle({ route, samples }: VehicleProps) {
           slipstreamStrength(dist, along),
         );
       }
-      const previousStrength = (boostRef.current.draft - 1) / 0.075;
+      const previousStrength = (boostRef.current.draft - 1) / 0.04;
       const smoothStrength = THREE.MathUtils.lerp(
         previousStrength,
         targetDraftStrength,
         targetDraftStrength > previousStrength ? 0.12 : 0.06,
       );
-      const draft = 1 + Math.max(0, smoothStrength) * 0.075;
+      const draft = 1 + Math.max(0, smoothStrength) * 0.04;
       boostRef.current.turbo = latch.on ? 1.04 : 1;
       boostRef.current.draft = draft;
       boostRef.current.turboUi = latch.on;
@@ -461,7 +461,7 @@ export function Vehicle({ route, samples }: VehicleProps) {
     const liveTuning = {
       ...driveTuning,
       maxSpeedMul:
-        driveTuning.maxSpeedMul * b.turbo * (1 + (b.draft - 1) * 0.47),
+        driveTuning.maxSpeedMul * b.turbo * b.draft,
       accelMul: driveTuning.accelMul * b.turbo * b.draft,
       gripMul: driveTuning.gripMul * b.turbo * kerbGrip,
       steerMul: driveTuning.steerMul * b.turbo,

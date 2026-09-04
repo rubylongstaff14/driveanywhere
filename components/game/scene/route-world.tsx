@@ -988,9 +988,14 @@ export function RouteWorld({
       const dz = building.cz - camera.position.z;
       const distanceSq = dx * dx + dz * dz;
       const famous = isFamousCanaryBuilding(building.name, building.height);
-      group.visible = famous
+      const isVisible = famous
         ? distanceSq <= skylineDistanceSq
         : distanceSq <= maximumDistanceSq;
+      group.visible = isVisible;
+      const detailDistanceSq = maximumDistanceSq * 0.42;
+      for (let childIndex = 1; childIndex < group.children.length; childIndex += 1) {
+        group.children[childIndex].visible = isVisible && (famous || distanceSq <= detailDistanceSq);
+      }
     }
   });
 

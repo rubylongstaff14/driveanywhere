@@ -20,7 +20,7 @@ export function Hero() {
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-sm">
           <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
           <span className="font-mono text-[11px] tracking-[0.22em] text-emerald-400 uppercase">
-            V1.0.1 · Live online multiplayer · 9 world cities
+            V1.0.2 · Live online multiplayer · 9 world cities
           </span>
         </div>
 

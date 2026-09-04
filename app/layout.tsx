@@ -4,6 +4,7 @@ import { AuthProvider } from "@/components/auth/auth-provider";
 import { ConditionalFooter } from "@/components/layout/conditional-footer";
 import { ConditionalModeBanner } from "@/components/layout/conditional-mode-banner";
 import { Header } from "@/components/layout/header";
+import { RuntimeCache } from "@/components/performance/runtime-cache";
 import "./globals.css";
 
 const display = Outfit({
@@ -68,9 +69,10 @@ export default function RootLayout({
           Skip to content
         </a>
         <AuthProvider>
+          <RuntimeCache />
           <ConditionalModeBanner />
           <Header />
-          <main id="main-content" className="flex-1">
+          <main id="main-content" className="da-page-transition flex-1">
             {children}
           </main>
           <ConditionalFooter />

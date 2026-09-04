@@ -88,6 +88,8 @@
     animation: daFadeIn 0.4s ease-out both;
   }
 
+  .da-page-transition { animation: daPageEnter 0.36s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
   .da-crate-reel {
     animation: daCrateReel 1.55s cubic-bezier(0.12, 0.82, 0.18, 1) both;
   }
@@ -126,6 +128,11 @@
   to {
     opacity: 1;
   }
+}
+
+@keyframes daPageEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes daCrateReel {

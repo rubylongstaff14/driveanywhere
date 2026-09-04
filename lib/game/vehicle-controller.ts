@@ -81,8 +81,10 @@ export function applyArcadeDriving(
     0.72,
     1.28,
   );
+  const rearLoad = THREE.MathUtils.clamp(2 - frontLoad, 0.72, 1.28);
+  const axleBalance = THREE.MathUtils.clamp(0.82 + Math.min(frontLoad, rearLoad) * 0.18, 0.82, 1.05);
 
-  const peakLateral = peakLateralAccel(fwd, tuning.gripMul);
+  const peakLateral = peakLateralAccel(fwd, tuning.gripMul * axleBalance);
   const predictedYaw = Math.min(
     C.maxYawRate,
     (Math.abs(fwd) / C.wheelbaseMetres) *
@@ -194,7 +196,7 @@ export function applyArcadeDriving(
     : onRoad
       ? THREE.MathUtils.lerp(
           C.gripTau,
-          C.gripTauAtTopSpeed,
+          C.gripTauAtTopSpeed / axleBalance,
           speedRatio,
         ) /
         (tuning.gripMul * (1 + steerAbs * C.frontSlipScrub))

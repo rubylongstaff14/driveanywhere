@@ -110,7 +110,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Logo />
           <span className="border-accent/30 bg-accent/10 text-accent rounded border px-1.5 py-0.5 font-mono text-[9px] tracking-wider">
-            V1.0.1
+            V1.0.2
           </span>
         </div>
 

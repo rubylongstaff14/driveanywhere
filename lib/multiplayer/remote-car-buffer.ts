@@ -9,7 +9,7 @@ import type { CarState } from "@/lib/multiplayer/protocol";
 
 export type RemoteSample = { state: CarState; timestamp: number };
 
-const MAX_HISTORY = 32;
+const MAX_HISTORY = 48;
 
 export const remoteCarBuffer = {
   states: {} as Record<string, CarState>,
@@ -80,5 +80,5 @@ export function remoteInterpDelayMs(): number {
   // Render roughly two packets behind. The extra latency is small (~65 ms at
   // 30 Hz) but gives interpolation enough real samples to avoid oscillating
   // between prediction and correction when Wi-Fi packets arrive unevenly.
-  return Math.min(145, Math.max(72, gap * 2 + 8));
+  return Math.min(180, Math.max(90, gap * 2.4 + 12));
 }
